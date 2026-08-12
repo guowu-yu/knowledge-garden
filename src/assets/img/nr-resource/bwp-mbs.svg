@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="BWP and Common MBS frequency resources">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="48" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">BWP and Common MBS Frequency Resources</text>
+  <text x="40" y="76" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">BWP: UE unicast working window; Common MBS: multicast/broadcast common frequency resource</text>
+
+  <rect x="70" y="130" width="820" height="70" rx="12" fill="#d5e6ec" stroke="#0f7a8a"/>
+  <text x="480" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" fill="#0a5561">Carrier bandwidth</text>
+
+  <rect x="180" y="145" width="320" height="40" rx="8" fill="#0f7a8a"/>
+  <text x="340" y="171" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Active BWP (contiguous RBs)</text>
+
+  <line x1="340" y1="210" x2="340" y2="250" stroke="#0a5561" stroke-width="2"/>
+  <polygon points="340,258 334,246 346,246" fill="#0a5561"/>
+
+  <rect x="120" y="270" width="440" height="140" rx="14" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="340" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#0a5561">BWP role</text>
+  <text x="340" y="345" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Scheduling / reception / measurement BW</text>
+  <text x="340" y="375" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Wide/narrow switch for capability &amp; power</text>
+
+  <rect x="560" y="145" width="200" height="40" rx="8" fill="#c9852c"/>
+  <text x="660" y="171" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Common MBS resource</text>
+  <line x1="660" y1="210" x2="660" y2="250" stroke="#8a5a14" stroke-width="2"/>
+  <polygon points="660,258 654,246 666,246" fill="#8a5a14"/>
+
+  <rect x="580" y="270" width="300" height="140" rx="14" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="730" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#8a5a14">MBS common band</text>
+  <text x="730" y="345" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Many UEs receive same TX</text>
+  <text x="730" y="375" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Aligned on common resources</text>
+</svg>

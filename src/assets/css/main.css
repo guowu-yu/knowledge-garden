@@ -610,6 +610,35 @@ body {
   color: var(--ink-soft);
 }
 
+.prose img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1.25rem 0 0.4rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.prose .img-caption {
+  margin: 0 0 1.4rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.prose figure {
+  margin: 1.4rem 0;
+}
+
+.prose figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
 .related {
   max-width: var(--max);
   margin: 0 auto;

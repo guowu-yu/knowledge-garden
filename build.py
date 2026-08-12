@@ -84,15 +84,16 @@ def render_tags(tags: list[str]) -> str:
     return "".join(f'<span class="tag">{escape_html(t)}</span>' for t in tags)
 
 
-def topic_card(topic: dict) -> str:
+def topic_card(topic: dict, href_prefix: str = "topics/") -> str:
     if topic["cover"]:
         cover = (
             f'<div class="card-cover" style="background-image:url(\'{escape_html(topic["cover"])}\')"></div>'
         )
     else:
         cover = '<div class="card-cover card-cover--fallback"></div>'
+    slug = sanitize_slug(topic["slug"])
     return f"""
-    <a class="topic-card" href="topics/{escape_html(topic['slug'])}.html" data-title="{escape_html(topic['title'])}" data-tags="{escape_html(' '.join(topic['tags']))}" data-summary="{escape_html(topic['summary'])}">
+    <a class="topic-card" href="{href_prefix}{escape_html(slug)}.html" data-title="{escape_html(topic['title'])}" data-tags="{escape_html(' '.join(topic['tags']))}" data-summary="{escape_html(topic['summary'])}">
       {cover}
       <div class="card-body">
         <div class="card-meta">
@@ -105,6 +106,13 @@ def topic_card(topic: dict) -> str:
     </a>"""
 
 
+def sanitize_slug(slug: str) -> str:
+    slug = slug.strip().replace(" ", "-")
+    slug = re.sub(r"[^\w\-.\u4e00-\u9fff]+", "-", slug)
+    slug = re.sub(r"-{2,}", "-", slug).strip("-")
+    return slug or "topic"
+
+
 def load_topics() -> list[dict]:
     if not CONTENT.exists():
         return []
@@ -112,7 +120,7 @@ def load_topics() -> list[dict]:
     for path in CONTENT.glob("*.md"):
         raw = path.read_text(encoding="utf-8")
         meta, body = parse_front_matter(raw)
-        slug = meta.get("slug") or path.stem
+        slug = sanitize_slug(meta.get("slug") or path.stem)
         tags = meta.get("tags") or []
         if isinstance(tags, str):
             tags = [tags]
@@ -171,7 +179,7 @@ def build() -> None:
         if related:
             related_html = (
                 '<section class="related"><h2>相关专题</h2>'
-                f'<div class="related-grid">{"".join(topic_card(t) for t in related)}</div>'
+                f'<div class="related-grid">{"".join(topic_card(t, href_prefix="") for t in related)}</div>'
                 "</section>"
             )
 
