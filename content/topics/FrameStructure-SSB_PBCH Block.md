@@ -97,6 +97,24 @@ CORESET / PDCCH → 调度 DCI → PDSCH → UE 解调（靠 DM-RS）
 | PBCH | 符号 1、2、3 | 与 PSS/SSS 交错分布，共约 576 个 RE（含 DM-RS） |
 | PBCH DM-RS | 与 PBCH 同符号 | 按固定间隔插入 |
 
+| Channel or signal | OFDM symbol number  
+relative to the start of an SS/PBCH block
+ | Subcarrier number  
+relative to the start of an SS/PBCH block
+ |
+| --- | --- | --- |
+| PSS | 符号 0 | 56, 57, …, 182 |
+| SSS | 符号 2 | 56, 57, …, 182 |
+| set 0 | 符号 0 | 0, 1, …, 55, 183, 184, …, 239 |
+| set 0 | 符号 2 | 48, 49, …, 55, 183, 184, …, 191  |
+| PBCH | 符号 1、3 | 0, 1, …, 239|
+| PBCH | 符号 2 | 0, 1, …, 47, 
+192, 193, …, 239
+    |
+| PBCH DM-RS | 与 PBCH 同符号 | 按固定间隔插入 |
+
+
+
 ## 回顾
 
 1. 5G 相较 LTE 在帧结构 / numerology 上的主要区别是什么？
