@@ -610,6 +610,39 @@ body {
   color: var(--ink-soft);
 }
 
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0 1.6rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background: #fff;
+  border: 1px solid #cfd6dd;
+}
+
+.prose thead th {
+  background: #3a4b5c;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.72rem 0.9rem;
+  text-align: left !important;
+  border: 1px solid #2f3d4b;
+  white-space: nowrap;
+}
+
+.prose tbody td {
+  padding: 0.68rem 0.9rem;
+  color: var(--ink);
+  text-align: left !important;
+  vertical-align: top;
+  border: 1px solid #d5dce8;
+  background: #fff;
+}
+
+.prose tbody tr:nth-child(even) td {
+  background: #f8fafb;
+}
+
 .prose img {
   display: block;
   width: 100%;
