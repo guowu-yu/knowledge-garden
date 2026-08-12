@@ -2,7 +2,7 @@
 title: 天线端口、QCL 与 NR 资源网格
 slug: antenna-port-qcl-resource-grid
 date: 2026-08-12
-tags: [天线端口, QCL, 资源网格, Point A, BWP, 38.211]
+tags: [天线端口, QCL, 资源网格, Point-A, BWP, 38.211]
 summary: 从天线端口与准共址出发，串起 RE/RB、Point A、CRB/PRB/VRB、BWP 与 Common MBS 频率资源。
 cover: https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80
 ---
