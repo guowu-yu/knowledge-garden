@@ -1,0 +1,9 @@
+{
+  "name": "knowledge-garden",
+  "version": "1.0.0",
+  "private": true,
+  "description": "凌云知境 — 5G 通信知识回顾与整理",
+  "scripts": {
+    "build": "python build.py"
+  }
+}
