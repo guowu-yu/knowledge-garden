@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="PSS SSS PCI acquisition">
+  <rect width="960" height="540" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PSS / SSS -&gt; PCI</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Physical Cell ID: PCI = 3 * NID(1) + NID(2), range 0..1007</text>
+
+  <rect x="60" y="110" width="380" height="200" rx="14" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="250" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#0a5561">PSS</text>
+  <text x="250" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Primary sync signal</text>
+  <text x="250" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#0b1c28">Find symbol timing</text>
+  <text x="250" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#0b1c28">Detect NID(2) in {0,1,2}</text>
+  <text x="250" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#0a5561">SSB symbol 0</text>
+
+  <rect x="520" y="110" width="380" height="200" rx="14" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="710" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#8a5a14">SSS</text>
+  <text x="710" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Secondary sync signal</text>
+  <text x="710" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#0b1c28">Detect NID(1) in 0..335</text>
+  <text x="710" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#0b1c28">Confirm SSB structure</text>
+  <text x="710" y="285" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#8a5a14">SSB symbol 2</text>
+
+  <rect x="180" y="350" width="600" height="140" rx="14" fill="#0a5561"/>
+  <text x="480" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">PCI = 3 * NID(1) + NID(2)</text>
+  <text x="480" y="435" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#e7f3f7">1008 possible cell IDs (0..1007)</text>
+  <text x="480" y="465" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#d9e8ef">Needed for scrambling / reference signals later</text>
+</svg>

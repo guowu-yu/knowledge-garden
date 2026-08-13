@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="PBCH MIB after sync">
+  <rect width="960" height="560" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">After PSS/SSS: PBCH / MIB</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Same SSB, channel estimates from DMRS, then decode Master Information Block</text>
+
+  <rect x="60" y="110" width="840" height="120" rx="14" fill="#fff" stroke="#d0dde3"/>
+  <text x="80" y="150" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0a5561">Inputs already known</text>
+  <text x="80" y="180" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">PCI, coarse timing, SSB SCS, frequency location of the 20-RB SSB grid</text>
+  <text x="80" y="208" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">PBCH DMRS (same antenna port as PSS/SSS/PBCH) helps channel estimation</text>
+
+  <rect x="60" y="260" width="400" height="240" rx="14" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="260" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#0a5561">MIB highlights</text>
+  <text x="90" y="340" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- systemFrameNumber bits</text>
+  <text x="90" y="370" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- subCarrierSpacingCommon</text>
+  <text x="90" y="400" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- ssb-SubcarrierOffset</text>
+  <text x="90" y="430" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- dmrs-TypeA-Position</text>
+  <text x="90" y="460" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- pdcch-ConfigSIB1</text>
+  <text x="90" y="485" font-family="Segoe UI, sans-serif" font-size="13" fill="#0a5561">-&gt; where to find CORESET#0 / SIB1</text>
+
+  <rect x="500" y="260" width="400" height="240" rx="14" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="700" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#8a5a14">Also recovered</text>
+  <text x="530" y="340" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- SSB index (beam / time idx)</text>
+  <text x="530" y="370" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- half-frame timing bits</text>
+  <text x="530" y="400" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- fine frame timing</text>
+  <text x="530" y="440" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">UE now knows:</text>
+  <text x="530" y="470" font-family="Segoe UI, sans-serif" font-size="14" fill="#0b1c28">"which cell, which beam,</text>
+  <text x="530" y="492" font-family="Segoe UI, sans-serif" font-size="14" fill="#0b1c28"> where SIB1 lives"</text>
+</svg>
