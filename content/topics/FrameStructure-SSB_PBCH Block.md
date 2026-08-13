@@ -4,7 +4,7 @@ slug: frame-structure-ssb
 date: 2026-08-12
 tags: [5G, FrameStructure, SSB]
 summary: 5G 的帧结构构成以及 SS/PBCH Block 的时频资源映射。
-cover: https://images.unsplash.com/photo-1544197150-b99a580bb7a2?auto=format&fit=crop&w=1600&q=80
+cover: https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=2000&q=80
 ---
 
 ## 帧结构与物理资源
