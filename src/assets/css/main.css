@@ -627,7 +627,11 @@ body {
   padding: 0.72rem 0.9rem;
   text-align: left !important;
   border: 1px solid #2f3d4b;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.35;
+  vertical-align: bottom;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .prose tbody td {

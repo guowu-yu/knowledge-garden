@@ -92,27 +92,75 @@ CORESET / PDCCH → 调度 DCI → PDSCH → UE 解调（靠 DM-RS）
 
 > 说明：**Set to 0** 表示该时频位置不发送（置零）；PBCH DM-RS 子载波与 `v = NID_cell mod 4` 有关。
 
-| Channel or signal | OFDM symbol number relative to the start of an SS/PBCH block | Subcarrier number relative to the start of an SS/PBCH block |
-| --- | --- | --- |
-| PSS | 0 | 56, 57, …, 182 |
-| SSS | 2 | 56, 57, …, 182 |
-| Set to 0 | 0 | 0, 1, …, 55, 183, 184, …, 239 |
-| Set to 0 | 2 | 48, 49, …, 55, 183, 184, …, 191 |
-| PBCH | 1, 3 | 0, 1, …, 239 |
-| PBCH | 2 | 0, 1, …, 47, 192, 193, …, 239 |
-| DM-RS for PBCH | 1, 2, 3 | 0+v, 4+v, 8+v, …, 236+v |
+<table>
+<thead>
+<tr>
+  <th>Channel or signal</th>
+  <th>OFDM symbol number<br>relative to the start of an SS/PBCH block</th>
+  <th>Subcarrier number<br>relative to the start of an SS/PBCH block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>PSS</td>
+  <td>0</td>
+  <td>56, 57, …, 182</td>
+</tr>
+<tr>
+  <td>SSS</td>
+  <td>2</td>
+  <td>56, 57, …, 182</td>
+</tr>
+<tr>
+  <td>Set to 0</td>
+  <td>0</td>
+  <td>0, 1, …, 55, 183, 184, …, 239</td>
+</tr>
+<tr>
+  <td>Set to 0</td>
+  <td>2</td>
+  <td>48, 49, …, 55, 183, 184, …, 191</td>
+</tr>
+<tr>
+  <td>PBCH</td>
+  <td>1, 3</td>
+  <td>0, 1, …, 239</td>
+</tr>
+<tr>
+  <td>PBCH</td>
+  <td>2</td>
+  <td>0, 1, …, 47, 192, 193, …, 239</td>
+</tr>
+<tr>
+  <td>DM-RS for PBCH</td>
+  <td>1, 2, 3</td>
+  <td>0+v, 4+v, 8+v, …, 236+v</td>
+</tr>
+</tbody>
+</table>
 
 中文对照（便于记忆）：
 
-| 信道/信号 | 相对 SSB 起始的 OFDM 符号号 | 相对 SSB 起始的子载波号 |
-| --- | --- | --- |
-| PSS | 0 | 56, 57, …, 182 |
-| SSS | 2 | 56, 57, …, 182 |
-| Set to 0（置零） | 0 | 0, 1, …, 55, 183, 184, …, 239 |
-| Set to 0（置零） | 2 | 48, 49, …, 55, 183, 184, …, 191 |
-| PBCH | 1, 3 | 0, 1, …, 239 |
-| PBCH | 2 | 0, 1, …, 47, 192, 193, …, 239 |
-| PBCH DM-RS | 1, 2, 3 | 0+v, 4+v, 8+v, …, 236+v |
+<table>
+<thead>
+<tr>
+  <th>信道/信号</th>
+  <th>OFDM 符号号<br>（相对 SSB 起始）</th>
+  <th>子载波号<br>（相对 SSB 起始）</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>PSS</td><td>0</td><td>56, 57, …, 182</td></tr>
+<tr><td>SSS</td><td>2</td><td>56, 57, …, 182</td></tr>
+<tr><td>Set to 0（置零）</td><td>0</td><td>0, 1, …, 55, 183, 184, …, 239</td></tr>
+<tr><td>Set to 0（置零）</td><td>2</td><td>48, 49, …, 55, 183, 184, …, 191</td></tr>
+<tr><td>PBCH</td><td>1, 3</td><td>0, 1, …, 239</td></tr>
+<tr><td>PBCH</td><td>2</td><td>0, 1, …, 47, 192, 193, …, 239</td></tr>
+<tr><td>PBCH DM-RS</td><td>1, 2, 3</td><td>0+v, 4+v, 8+v, …, 236+v</td></tr>
+</tbody>
+</table>
+
+
 ## 回顾
 
 1. 5G 相较 LTE 在帧结构 / numerology 上的主要区别是什么？
