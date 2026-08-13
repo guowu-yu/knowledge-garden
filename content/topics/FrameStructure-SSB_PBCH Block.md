@@ -98,19 +98,15 @@ CORESET / PDCCH → 调度 DCI → PDSCH → UE 解调（靠 DM-RS）
 | PBCH DM-RS | 与 PBCH 同符号 | 按固定间隔插入 |
 
 | Channel or signal | OFDM symbol number  
-relative to the start of an SS/PBCH block
- | Subcarrier number  
-relative to the start of an SS/PBCH block
- |
+relative to the start of an SS/PBCH block | Subcarrier number  
+relative to the start of an SS/PBCH block |  
 | --- | --- | --- |
-| PSS | 符号 0 | 56, 57, …, 182 |
-| SSS | 符号 2 | 56, 57, …, 182 |
-| set 0 | 符号 0 | 0, 1, …, 55, 183, 184, …, 239 |
-| set 0 | 符号 2 | 48, 49, …, 55, 183, 184, …, 191  |
-| PBCH | 符号 1、3 | 0, 1, …, 239|
-| PBCH | 符号 2 | 0, 1, …, 47, 
-192, 193, …, 239
-    |
+| PSS | 0 | 56,57,…,182 |
+| SSS | 2 | 56,57,…,182 |
+| set 0 | 0 | 0,1,…,55,183,184,…,239 |
+| set 0 | 2 | 48,49,…,55,183,184,…,191  |
+| PBCH | 1、3 | 0,1,…,239|
+| PBCH | 2 | 0,1,…,47,192,193,…,239|
 | PBCH DM-RS | 与 PBCH 同符号 | 按固定间隔插入 |
 
 
