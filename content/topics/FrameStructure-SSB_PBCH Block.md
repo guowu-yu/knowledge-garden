@@ -88,29 +88,31 @@ CORESET / PDCCH → 调度 DCI → PDSCH → UE 解调（靠 DM-RS）
 
 [![SSB 时频资源示意](https://s41.ax1x.com/2026/08/12/pmLlXUf.png)](https://imgchr.com/i/pmLlXUf)
 
-表 7.4.3.1-1：SS/PBCH block 内 PSS、SSS、PBCH 与 PBCH DM-RS 的资源映射（示意）：
+表 7.4.3.1-1：SS/PBCH block 内 PSS、SSS、PBCH 与 PBCH DM-RS 的资源映射。
 
-| 信号 | 时域符号（SSB 内） | 频域子载波（示意） |
+> 说明：**Set to 0** 表示该时频位置不发送（置零）；PBCH DM-RS 子载波与 `v = NID_cell mod 4` 有关。
+
+| Channel or signal | OFDM symbol number relative to the start of an SS/PBCH block | Subcarrier number relative to the start of an SS/PBCH block |
 | --- | --- | --- |
-| PSS | 符号 0 | 中间 127 个子载波 |
-| SSS | 符号 2 | 中间 127 个子载波 |
-| PBCH | 符号 1、2、3 | 与 PSS/SSS 交错分布，共约 576 个 RE（含 DM-RS） |
-| PBCH DM-RS | 与 PBCH 同符号 | 按固定间隔插入 |
+| PSS | 0 | 56, 57, …, 182 |
+| SSS | 2 | 56, 57, …, 182 |
+| Set to 0 | 0 | 0, 1, …, 55, 183, 184, …, 239 |
+| Set to 0 | 2 | 48, 49, …, 55, 183, 184, …, 191 |
+| PBCH | 1, 3 | 0, 1, …, 239 |
+| PBCH | 2 | 0, 1, …, 47, 192, 193, …, 239 |
+| DM-RS for PBCH | 1, 2, 3 | 0+v, 4+v, 8+v, …, 236+v |
 
-| Channel or signal | OFDM symbol number  
-relative to the start of an SS/PBCH block | Subcarrier number  
-relative to the start of an SS/PBCH block |  
+中文对照（便于记忆）：
+
+| 信道/信号 | 相对 SSB 起始的 OFDM 符号号 | 相对 SSB 起始的子载波号 |
 | --- | --- | --- |
-| PSS | 0 | 56,57,…,182 |
-| SSS | 2 | 56,57,…,182 |
-| set 0 | 0 | 0,1,…,55,183,184,…,239 |
-| set 0 | 2 | 48,49,…,55,183,184,…,191  |
-| PBCH | 1、3 | 0,1,…,239|
-| PBCH | 2 | 0,1,…,47,192,193,…,239|
-| PBCH DM-RS | 与 PBCH 同符号 | 按固定间隔插入 |
-
-
-
+| PSS | 0 | 56, 57, …, 182 |
+| SSS | 2 | 56, 57, …, 182 |
+| Set to 0（置零） | 0 | 0, 1, …, 55, 183, 184, …, 239 |
+| Set to 0（置零） | 2 | 48, 49, …, 55, 183, 184, …, 191 |
+| PBCH | 1, 3 | 0, 1, …, 239 |
+| PBCH | 2 | 0, 1, …, 47, 192, 193, …, 239 |
+| PBCH DM-RS | 1, 2, 3 | 0+v, 4+v, 8+v, …, 236+v |
 ## 回顾
 
 1. 5G 相较 LTE 在帧结构 / numerology 上的主要区别是什么？
