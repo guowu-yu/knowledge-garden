@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="SSB Cases overview">
+  <rect width="960" height="520" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="48" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">SSB Cases Overview (TS 38.213)</text>
+  <text x="40" y="76" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Different SCS and candidate first-symbol patterns in a half-frame (5 ms)</text>
+
+  <!-- Case cards -->
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="40" y="110" width="170" height="160" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+    <rect x="40" y="110" width="170" height="36" rx="12" fill="#0f7a8a"/>
+    <rect x="40" y="130" width="170" height="16" fill="#0f7a8a"/>
+    <text x="125" y="134" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Case A</text>
+    <text x="125" y="175" text-anchor="middle" font-size="14" fill="#0b1c28">SCS = 15 kHz</text>
+    <text x="125" y="200" text-anchor="middle" font-size="13" fill="#1f3a4d">FR1</text>
+    <text x="125" y="228" text-anchor="middle" font-size="12" fill="#1f3a4d">Lmax = 4 / 8</text>
+    <text x="125" y="250" text-anchor="middle" font-size="12" fill="#0a5561">{2,8}+14n</text>
+
+    <rect x="230" y="110" width="170" height="160" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+    <rect x="230" y="110" width="170" height="36" rx="12" fill="#c9852c"/>
+    <rect x="230" y="130" width="170" height="16" fill="#c9852c"/>
+    <text x="315" y="134" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Case B</text>
+    <text x="315" y="175" text-anchor="middle" font-size="14" fill="#0b1c28">SCS = 30 kHz</text>
+    <text x="315" y="200" text-anchor="middle" font-size="13" fill="#1f3a4d">FR1</text>
+    <text x="315" y="228" text-anchor="middle" font-size="12" fill="#1f3a4d">Lmax = 4 / 8</text>
+    <text x="315" y="250" text-anchor="middle" font-size="12" fill="#8a5a14">{4,8,16,20}+28n</text>
+
+    <rect x="420" y="110" width="170" height="160" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+    <rect x="420" y="110" width="170" height="36" rx="12" fill="#0a5561"/>
+    <rect x="420" y="130" width="170" height="16" fill="#0a5561"/>
+    <text x="505" y="134" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Case C</text>
+    <text x="505" y="175" text-anchor="middle" font-size="14" fill="#0b1c28">SCS = 30 kHz</text>
+    <text x="505" y="200" text-anchor="middle" font-size="13" fill="#1f3a4d">FR1</text>
+    <text x="505" y="228" text-anchor="middle" font-size="12" fill="#1f3a4d">Lmax = 4 / 8</text>
+    <text x="505" y="250" text-anchor="middle" font-size="12" fill="#0a5561">{2,8}+14n</text>
+
+    <rect x="610" y="110" width="150" height="160" rx="12" fill="#fff" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="610" y="110" width="150" height="36" rx="12" fill="#1f3a4d"/>
+    <rect x="610" y="130" width="150" height="16" fill="#1f3a4d"/>
+    <text x="685" y="134" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Case D</text>
+    <text x="685" y="175" text-anchor="middle" font-size="14" fill="#0b1c28">SCS = 120 kHz</text>
+    <text x="685" y="200" text-anchor="middle" font-size="13" fill="#1f3a4d">FR2</text>
+    <text x="685" y="228" text-anchor="middle" font-size="12" fill="#1f3a4d">Lmax = 64</text>
+    <text x="685" y="250" text-anchor="middle" font-size="11" fill="#1f3a4d">dense beams</text>
+
+    <rect x="780" y="110" width="140" height="160" rx="12" fill="#fff" stroke="#8a5a14" stroke-width="2"/>
+    <rect x="780" y="110" width="140" height="36" rx="12" fill="#8a5a14"/>
+    <rect x="780" y="130" width="140" height="16" fill="#8a5a14"/>
+    <text x="850" y="134" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Case E</text>
+    <text x="850" y="175" text-anchor="middle" font-size="14" fill="#0b1c28">SCS = 240 kHz</text>
+    <text x="850" y="200" text-anchor="middle" font-size="13" fill="#1f3a4d">FR2</text>
+    <text x="850" y="228" text-anchor="middle" font-size="12" fill="#1f3a4d">Lmax = 64</text>
+    <text x="850" y="250" text-anchor="middle" font-size="11" fill="#8a5a14">denser grid</text>
+  </g>
+
+  <!-- Bottom memory -->
+  <rect x="40" y="310" width="880" height="160" rx="14" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="350" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#0a5561">How to pick a Case?</text>
+  <text x="60" y="385" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">1) Frequency range: FR1 vs FR2</text>
+  <text x="60" y="415" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">2) SSB subcarrier spacing (15 / 30 / 120 / 240 kHz)</text>
+  <text x="60" y="445" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">3) Then look up candidate first-OFDM-symbol indices in a 5 ms half-frame</text>
+</svg>

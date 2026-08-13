@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-label="Case C SSB count 2 4 6 8 time patterns">
+  <rect width="960" height="640" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="38" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" fill="#0b1c28">Case C time pattern - SSB count = 2 / 4 / 6 / 8</text>
+  <text x="40" y="62" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Half-frame symbol axis. Colored blocks = transmitted SSBs (each 4 OFDM symbols). Gray = unused candidates.</text>
+
+  <!-- symbol axis labels -->
+  <g font-family="Segoe UI, sans-serif" font-size="10" fill="#1f3a4d">
+    <text x="140" y="95" text-anchor="middle">2</text>
+    <text x="220" y="95" text-anchor="middle">8</text>
+    <text x="300" y="95" text-anchor="middle">16</text>
+    <text x="380" y="95" text-anchor="middle">22</text>
+    <text x="460" y="95" text-anchor="middle">30</text>
+    <text x="540" y="95" text-anchor="middle">36</text>
+    <text x="620" y="95" text-anchor="middle">44</text>
+    <text x="700" y="95" text-anchor="middle">50</text>
+    <text x="800" y="95" fill="#0a5561">first-symbol index</text>
+  </g>
+
+  <!-- helper: positions x for candidates: 140,220,300,380,460,540,620,700 -->
+  <!-- Row SSB=2 -->
+  <text x="40" y="140" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0a5561">SSB=2</text>
+  <rect x="120" y="118" width="640" height="44" rx="6" fill="#eef5f7" stroke="#d0dde3"/>
+  <rect x="130" y="126" width="56" height="28" rx="4" fill="#0f7a8a"/><text x="158" y="145" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#0</text>
+  <rect x="210" y="126" width="56" height="28" rx="4" fill="#0f7a8a"/><text x="238" y="145" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#1</text>
+  <rect x="290" y="126" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="370" y="126" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="450" y="126" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="530" y="126" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="610" y="126" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="690" y="126" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <text x="780" y="145" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">sym 2,8</text>
+
+  <!-- Row SSB=4 -->
+  <text x="40" y="220" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0a5561">SSB=4</text>
+  <rect x="120" y="198" width="640" height="44" rx="6" fill="#eef5f7" stroke="#d0dde3"/>
+  <rect x="130" y="206" width="56" height="28" rx="4" fill="#0f7a8a"/><text x="158" y="225" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#0</text>
+  <rect x="210" y="206" width="56" height="28" rx="4" fill="#0f7a8a"/><text x="238" y="225" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#1</text>
+  <rect x="290" y="206" width="56" height="28" rx="4" fill="#c9852c"/><text x="318" y="225" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#2</text>
+  <rect x="370" y="206" width="56" height="28" rx="4" fill="#c9852c"/><text x="398" y="225" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#3</text>
+  <rect x="450" y="206" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="530" y="206" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="610" y="206" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="690" y="206" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <text x="780" y="225" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">2..22</text>
+
+  <!-- Row SSB=6 -->
+  <text x="40" y="300" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0a5561">SSB=6</text>
+  <rect x="120" y="278" width="640" height="44" rx="6" fill="#eef5f7" stroke="#d0dde3"/>
+  <rect x="130" y="286" width="56" height="28" rx="4" fill="#0f7a8a"/><text x="158" y="305" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#0</text>
+  <rect x="210" y="286" width="56" height="28" rx="4" fill="#0f7a8a"/><text x="238" y="305" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#1</text>
+  <rect x="290" y="286" width="56" height="28" rx="4" fill="#c9852c"/><text x="318" y="305" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#2</text>
+  <rect x="370" y="286" width="56" height="28" rx="4" fill="#c9852c"/><text x="398" y="305" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#3</text>
+  <rect x="450" y="286" width="56" height="28" rx="4" fill="#1a8f9e"/><text x="478" y="305" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#4</text>
+  <rect x="530" y="286" width="56" height="28" rx="4" fill="#1a8f9e"/><text x="558" y="305" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#5</text>
+  <rect x="610" y="286" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <rect x="690" y="286" width="56" height="28" rx="4" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <text x="780" y="305" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">2..36</text>
+
+  <!-- Row SSB=8 -->
+  <text x="40" y="380" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0a5561">SSB=8</text>
+  <rect x="120" y="358" width="640" height="44" rx="6" fill="#eef5f7" stroke="#d0dde3"/>
+  <rect x="130" y="366" width="56" height="28" rx="4" fill="#0f7a8a"/><text x="158" y="385" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#0</text>
+  <rect x="210" y="366" width="56" height="28" rx="4" fill="#0f7a8a"/><text x="238" y="385" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#1</text>
+  <rect x="290" y="366" width="56" height="28" rx="4" fill="#c9852c"/><text x="318" y="385" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#2</text>
+  <rect x="370" y="366" width="56" height="28" rx="4" fill="#c9852c"/><text x="398" y="385" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#3</text>
+  <rect x="450" y="366" width="56" height="28" rx="4" fill="#1a8f9e"/><text x="478" y="385" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#4</text>
+  <rect x="530" y="366" width="56" height="28" rx="4" fill="#1a8f9e"/><text x="558" y="385" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#5</text>
+  <rect x="610" y="366" width="56" height="28" rx="4" fill="#8a5a14"/><text x="638" y="385" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#6</text>
+  <rect x="690" y="366" width="56" height="28" rx="4" fill="#8a5a14"/><text x="718" y="385" text-anchor="middle" font-size="11" fill="#fff" font-family="Segoe UI, sans-serif">#7</text>
+  <text x="780" y="385" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">all 8</text>
+
+  <rect x="40" y="430" width="880" height="170" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="465" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">How to read this figure</text>
+  <text x="60" y="495" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">- Colored = transmitted (ssb-PositionsInBurst bits set). Gray = candidate not sent.</text>
+  <text x="60" y="520" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">- Illustration uses the first N Case-C candidates (common teaching example).</text>
+  <text x="60" y="545" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">- Real networks may enable other subsets (e.g. every other index) for beam planning.</text>
+  <text x="60" y="575" font-family="Segoe UI, sans-serif" font-size="13" fill="#0a5561">- In frequency, each transmitted SSB still occupies the same 20-RB SS/PBCH grid.</text>
+</svg>

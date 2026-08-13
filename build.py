@@ -77,7 +77,11 @@ def plain_text(md: str) -> str:
 
 def render_md(body: str) -> str:
     ensure_markdown()
-    return md_lib.markdown(body, extensions=["tables", "fenced_code", "nl2br"])
+    html = md_lib.markdown(body, extensions=["tables", "fenced_code", "nl2br"])
+    # Allow MD preview paths from content/topics → src/assets, then rewrite for dist/topics
+    html = html.replace("../../src/assets/", "../assets/")
+    html = html.replace("../src/assets/", "../assets/")
+    return html
 
 
 def render_tags(tags: list[str]) -> str:

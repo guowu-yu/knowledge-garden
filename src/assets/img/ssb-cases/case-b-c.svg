@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Case B vs Case C">
+  <rect width="960" height="540" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="42" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Case B vs Case C (both 30 kHz, FR1)</text>
+  <text x="40" y="70" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Same SCS, different candidate first-symbol patterns</text>
+
+  <rect x="40" y="100" width="430" height="280" rx="14" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="255" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#8a5a14">Case B</text>
+  <text x="255" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">{4, 8, 16, 20} + 28n</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="70" y="200" width="50" height="36" rx="4" fill="#c9852c"/><text x="95" y="223" text-anchor="middle" fill="#fff">4</text>
+    <rect x="130" y="200" width="50" height="36" rx="4" fill="#c9852c"/><text x="155" y="223" text-anchor="middle" fill="#fff">8</text>
+    <rect x="190" y="200" width="50" height="36" rx="4" fill="#c9852c"/><text x="215" y="223" text-anchor="middle" fill="#fff">16</text>
+    <rect x="250" y="200" width="50" height="36" rx="4" fill="#c9852c"/><text x="275" y="223" text-anchor="middle" fill="#fff">20</text>
+    <text x="255" y="270" text-anchor="middle" fill="#1f3a4d">Lmax=4 candidates</text>
+    <text x="255" y="300" text-anchor="middle" fill="#1f3a4d">Lmax=8: also +28 -&gt; 32,36,44,48</text>
+    <text x="255" y="340" text-anchor="middle" fill="#8a5a14">More clustered in time</text>
+  </g>
+
+  <rect x="490" y="100" width="430" height="280" rx="14" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="705" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#0a5561">Case C</text>
+  <text x="705" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">{2, 8} + 14n</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="540" y="200" width="50" height="36" rx="4" fill="#0f7a8a"/><text x="565" y="223" text-anchor="middle" fill="#fff">2</text>
+    <rect x="600" y="200" width="50" height="36" rx="4" fill="#0f7a8a"/><text x="625" y="223" text-anchor="middle" fill="#fff">8</text>
+    <rect x="660" y="200" width="50" height="36" rx="4" fill="#0f7a8a"/><text x="685" y="223" text-anchor="middle" fill="#fff">16</text>
+    <rect x="720" y="200" width="50" height="36" rx="4" fill="#0f7a8a"/><text x="745" y="223" text-anchor="middle" fill="#fff">22</text>
+    <text x="705" y="270" text-anchor="middle" fill="#1f3a4d">Lmax=4: 2,8,16,22</text>
+    <text x="705" y="300" text-anchor="middle" fill="#1f3a4d">Same pattern as Case A</text>
+    <text x="705" y="340" text-anchor="middle" fill="#0a5561">Evenly spaced every half-slot pair</text>
+  </g>
+
+  <rect x="40" y="410" width="880" height="90" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="450" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Why two 30 kHz cases?</text>
+  <text x="60" y="478" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Band / duplex / spectrum type selects Case B or C. Always check the operating band table in 38.213 / 38.101.</text>
+</svg>

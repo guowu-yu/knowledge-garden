@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="Case C 100 MHz frequency setup">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Case C example setup - 100 MHz cell</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">SSB SCS = 30 kHz, channel BW = 100 MHz, N_RB = 273, one SSB = 20 RBs</text>
+
+  <!-- carrier bar -->
+  <text x="40" y="110" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0a5561">Frequency (PRB index within carrier)</text>
+  <rect x="60" y="130" width="840" height="56" rx="8" fill="#d9e8ef" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="480" y="164" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#0a5561">100 MHz carrier - 273 PRBs @ 30 kHz</text>
+
+  <!-- SSB 20 RB block approx centered: 20/273 * 840 ~ 61.5 px -->
+  <rect x="449" y="138" width="62" height="40" rx="4" fill="#c9852c"/>
+  <text x="480" y="163" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">SSB 20 RB</text>
+
+  <text x="60" y="215" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">PRB 0</text>
+  <text x="900" y="215" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">PRB 272</text>
+  <text x="480" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#8a5a14">SSB location set by offset (Point A / k_SSB) - shown near center for illustration</text>
+
+  <rect x="40" y="245" width="880" height="140" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="280" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">Fixed facts for this example</text>
+  <text x="60" y="312" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">1) Time pattern: Case C first symbols = {2,8}+14n in a 5 ms half-frame</text>
+  <text x="60" y="340" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">2) Candidates (Lmax=8): 2, 8, 16, 22, 30, 36, 44, 50</text>
+  <text x="60" y="368" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">3) SSB count 2/4/6/8 = how many of these candidates are actually transmitted</text>
+</svg>
