@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="SIB1 major IE groups">
+  <rect width="960" height="560" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">SIB1 major IE groups</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Read by purpose: access, SI map, serving-cell common, barring/timers</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="13">
+    <rect x="40" y="100" width="280" height="150" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+    <text x="180" y="135" text-anchor="middle" font-weight="700" fill="#0a5561" font-size="15">Access / identity</text>
+    <text x="60" y="170" fill="#1f3a4d">cellAccessRelatedInfo</text>
+    <text x="60" y="195" fill="#1f3a4d">cellSelectionInfo</text>
+    <text x="60" y="220" fill="#1f3a4d">PLMN / TAC / cellId</text>
+
+    <rect x="340" y="100" width="280" height="150" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+    <text x="480" y="135" text-anchor="middle" font-weight="700" fill="#8a5a14" font-size="15">SI map</text>
+    <text x="360" y="170" fill="#1f3a4d">si-SchedulingInfo</text>
+    <text x="360" y="195" fill="#1f3a4d">SI windows / periods</text>
+    <text x="360" y="220" fill="#1f3a4d">which SIBs in which SI</text>
+
+    <rect x="640" y="100" width="280" height="150" rx="12" fill="#fff" stroke="#1f3a4d" stroke-width="2"/>
+    <text x="780" y="135" text-anchor="middle" font-weight="700" fill="#1f3a4d" font-size="15">Serving cell</text>
+    <text x="660" y="170" fill="#1f3a4d">servingCellConfigCommon</text>
+    <text x="660" y="195" fill="#1f3a4d">DL/UL common / BWP</text>
+    <text x="660" y="220" fill="#1f3a4d">SSB positions / power</text>
+
+    <rect x="40" y="280" width="280" height="150" rx="12" fill="#fff" stroke="#0a5561" stroke-width="2"/>
+    <text x="180" y="315" text-anchor="middle" font-weight="700" fill="#0a5561" font-size="15">Access control</text>
+    <text x="60" y="350" fill="#1f3a4d">uac-BarringInfo</text>
+    <text x="60" y="375" fill="#1f3a4d">connEstFailureControl</text>
+    <text x="60" y="400" fill="#1f3a4d">congestion / barring</text>
+
+    <rect x="340" y="280" width="280" height="150" rx="12" fill="#fff" stroke="#8a5a14" stroke-width="2"/>
+    <text x="480" y="315" text-anchor="middle" font-weight="700" fill="#8a5a14" font-size="15">Timers / IMS</text>
+    <text x="360" y="350" fill="#1f3a4d">ue-TimersAndConstants</text>
+    <text x="360" y="375" fill="#1f3a4d">ims-EmergencySupport</text>
+    <text x="360" y="400" fill="#1f3a4d">eCallOverIMS-Support</text>
+
+    <rect x="640" y="280" width="280" height="150" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+    <text x="780" y="315" text-anchor="middle" font-weight="700" fill="#0a5561" font-size="15">Extensions</text>
+    <text x="660" y="350" fill="#1f3a4d">useFullResumeID</text>
+    <text x="660" y="375" fill="#1f3a4d">nonCriticalExtension</text>
+    <text x="660" y="400" fill="#1f3a4d">release-specific IEs</text>
+  </g>
+
+  <text x="480" y="480" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Exact IE set grows by 3GPP release - always cross-check your 38.331 version.</text>
+  <text x="480" y="505" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#0a5561">Learn the groups first, then drill into fields used by your product logs.</text>
+</svg>

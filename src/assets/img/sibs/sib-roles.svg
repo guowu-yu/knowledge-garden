@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="Common NR SIB roles">
+  <rect width="960" height="560" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Common NR SIB roles (intuition)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Exact fields evolve by release; remember by purpose first</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="13">
+    <rect x="40" y="100" width="280" height="180" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+    <text x="180" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#0a5561">SIB1</text>
+    <text x="60" y="175" fill="#1f3a4d">cell access / PLMN</text>
+    <text x="60" y="200" fill="#1f3a4d">SI scheduling map</text>
+    <text x="60" y="225" fill="#1f3a4d">serving cell / UAC</text>
+    <text x="60" y="250" fill="#1f3a4d">IMS / emergency hints</text>
+
+    <rect x="340" y="100" width="280" height="180" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+    <text x="480" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#8a5a14">SIB2</text>
+    <text x="360" y="175" fill="#1f3a4d">cell reselection</text>
+    <text x="360" y="200" fill="#1f3a4d">(intra-freq related)</text>
+    <text x="360" y="225" fill="#1f3a4d">serving-cell quality</text>
+    <text x="360" y="250" fill="#1f3a4d">reselection params</text>
+
+    <rect x="640" y="100" width="280" height="180" rx="12" fill="#fff" stroke="#1f3a4d" stroke-width="2"/>
+    <text x="780" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#1f3a4d">SIB3 / SIB4</text>
+    <text x="660" y="175" fill="#1f3a4d">SIB3: intra-freq neighbors</text>
+    <text x="660" y="200" fill="#1f3a4d">SIB4: inter-freq NR</text>
+    <text x="660" y="225" fill="#1f3a4d">neighbor cell lists</text>
+    <text x="660" y="250" fill="#1f3a4d">reselection aids</text>
+
+    <rect x="40" y="310" width="280" height="180" rx="12" fill="#fff" stroke="#0a5561" stroke-width="2"/>
+    <text x="180" y="350" text-anchor="middle" font-size="16" font-weight="700" fill="#0a5561">SIB5</text>
+    <text x="60" y="385" fill="#1f3a4d">inter-RAT E-UTRA</text>
+    <text x="60" y="410" fill="#1f3a4d">LTE reselection info</text>
+    <text x="60" y="435" fill="#1f3a4d">useful in NSA/EPS</text>
+    <text x="60" y="460" fill="#1f3a4d">fallback scenarios</text>
+
+    <rect x="340" y="310" width="280" height="180" rx="12" fill="#fff" stroke="#8a5a14" stroke-width="2"/>
+    <text x="480" y="350" text-anchor="middle" font-size="16" font-weight="700" fill="#8a5a14">SIB6-8...</text>
+    <text x="360" y="385" fill="#1f3a4d">warning / ETWS / CMAS</text>
+    <text x="360" y="410" fill="#1f3a4d">public warning related</text>
+    <text x="360" y="435" fill="#1f3a4d">(release dependent)</text>
+    <text x="360" y="460" fill="#1f3a4d">often event-driven</text>
+
+    <rect x="640" y="310" width="280" height="180" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+    <text x="780" y="350" text-anchor="middle" font-size="16" font-weight="700" fill="#0a5561">Later SIBs</text>
+    <text x="660" y="385" fill="#1f3a4d">positioning, NTN,</text>
+    <text x="660" y="410" fill="#1f3a4d">MBS, slice-related,</text>
+    <text x="660" y="435" fill="#1f3a4d">feature expansions</text>
+    <text x="660" y="460" fill="#1f3a4d">check 38.331 list</text>
+  </g>
+</svg>

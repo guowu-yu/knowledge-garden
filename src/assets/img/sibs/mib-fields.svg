@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="MIB field map">
+  <rect width="960" height="520" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">MIB field map (TS 38.331)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Compact PBCH payload: timing + SCS + offset + CORESET#0 keys + barring</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="100" width="210" height="80" rx="10" fill="#0f7a8a"/>
+    <text x="145" y="135" text-anchor="middle" fill="#fff" font-weight="700">systemFrameNumber</text>
+    <text x="145" y="160" text-anchor="middle" fill="#e7f3f7">SFN MSBs (6 bits)</text>
+
+    <rect x="270" y="100" width="210" height="80" rx="10" fill="#1a8f9e"/>
+    <text x="375" y="135" text-anchor="middle" fill="#fff" font-weight="700">subCarrierSpacingCommon</text>
+    <text x="375" y="160" text-anchor="middle" fill="#e7f3f7">SIB1/SI/Msg2 SCS</text>
+
+    <rect x="500" y="100" width="200" height="80" rx="10" fill="#0a5561"/>
+    <text x="600" y="135" text-anchor="middle" fill="#fff" font-weight="700">ssb-SubcarrierOffset</text>
+    <text x="600" y="160" text-anchor="middle" fill="#e7f3f7">k_SSB / SIB1 presence</text>
+
+    <rect x="720" y="100" width="200" height="80" rx="10" fill="#c9852c"/>
+    <text x="820" y="135" text-anchor="middle" fill="#fff" font-weight="700">dmrs-TypeA-Position</text>
+    <text x="820" y="160" text-anchor="middle" fill="#e7f3f7">pos2 / pos3</text>
+
+    <rect x="40" y="210" width="430" height="100" rx="10" fill="#8a5a14"/>
+    <text x="255" y="250" text-anchor="middle" fill="#fff" font-weight="700">pdcch-ConfigSIB1</text>
+    <text x="255" y="280" text-anchor="middle" fill="#fff">controlResourceSetZero + searchSpaceZero</text>
+
+    <rect x="490" y="210" width="200" height="100" rx="10" fill="#1f3a4d"/>
+    <text x="590" y="250" text-anchor="middle" fill="#fff" font-weight="700">cellBarred</text>
+    <text x="590" y="280" text-anchor="middle" fill="#e7f3f7">barred / notBarred</text>
+
+    <rect x="710" y="210" width="210" height="100" rx="10" fill="#0f7a8a"/>
+    <text x="815" y="250" text-anchor="middle" fill="#fff" font-weight="700">intraFreqReselection</text>
+    <text x="815" y="280" text-anchor="middle" fill="#e7f3f7">allowed / notAllowed</text>
+  </g>
+
+  <rect x="40" y="350" width="880" height="130" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="390" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">UE reading order (intuition)</text>
+  <text x="60" y="420" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">1) Am I barred?  2) What SCS for SIB1?  3) Where is CORESET#0/SS#0?</text>
+  <text x="60" y="450" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">4) How does SSB align to common grid (k_SSB)?  5) DMRS TypeA position for later PDSCH</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="5G System Information hierarchy">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="42" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">5G System Information map</text>
+  <text x="40" y="70" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">MIB on PBCH, then SIB1, then other SI messages carrying SIBs</text>
+
+  <rect x="60" y="110" width="200" height="120" rx="12" fill="#0f7a8a"/>
+  <text x="160" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">MIB</text>
+  <text x="160" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">on PBCH / SSB</text>
+  <text x="160" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">find SIB1</text>
+
+  <rect x="320" y="110" width="200" height="120" rx="12" fill="#c9852c"/>
+  <text x="420" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">SIB1</text>
+  <text x="420" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">always scheduled</text>
+  <text x="420" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">SI map + cell access</text>
+
+  <rect x="580" y="100" width="320" height="140" rx="12" fill="#0a5561"/>
+  <text x="740" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">Other SIBs</text>
+  <text x="740" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">SIB2 / SIB3 / SIB4 / ...</text>
+  <text x="740" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">carried in SI messages</text>
+  <text x="740" y="225" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">periodic or on-demand</text>
+
+  <path d="M260 170 H316 M520 170 H576" stroke="#1f3a4d" stroke-width="2"/>
+
+  <rect x="60" y="280" width="840" height="150" rx="14" fill="#fff" stroke="#d0dde3"/>
+  <text x="80" y="320" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0a5561">Remember</text>
+  <text x="80" y="355" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">SIB = content type (what information). SI message = transport container on PDSCH.</text>
+  <text x="80" y="385" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">SIB1 tells UE which SIBs exist, how they are grouped, and when/where to receive them.</text>
+</svg>

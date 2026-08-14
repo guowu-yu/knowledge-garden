@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="SI scheduling window concept">
+  <rect width="960" height="540" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">SI message scheduling (concept)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">SIB1 points to SI periods and SI windows; UE listens in the window for that SI</text>
+
+  <!-- timeline -->
+  <line x1="80" y1="200" x2="900" y2="200" stroke="#0a5561" stroke-width="2"/>
+  <text x="490" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#0a5561">time</text>
+
+  <rect x="120" y="150" width="140" height="50" rx="8" fill="#c9852c"/>
+  <text x="190" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">SI window</text>
+
+  <rect x="400" y="150" width="140" height="50" rx="8" fill="#d9e8ef" stroke="#9bb8c2"/>
+  <text x="470" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">wait</text>
+
+  <rect x="680" y="150" width="140" height="50" rx="8" fill="#c9852c"/>
+  <text x="750" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">SI window</text>
+
+  <text x="190" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#8a5a14">period N</text>
+  <text x="750" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#8a5a14">period N+1</text>
+
+  <rect x="60" y="280" width="840" height="210" rx="14" fill="#fff" stroke="#d0dde3"/>
+  <text x="80" y="320" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">Inside one SI window</text>
+  <text x="80" y="355" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- UE monitors PDCCH for SI-RNTI</text>
+  <text x="80" y="385" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- DCI points to PDSCH carrying an SI message</text>
+  <text x="80" y="415" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">- That SI message may contain one or more SIBs (as configured)</text>
+  <text x="80" y="450" font-family="Segoe UI, sans-serif" font-size="14" fill="#0a5561">- If not received, UE retries in later windows / periods</text>
+</svg>
