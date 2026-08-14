@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="Search Space monitoring">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Search Space: monitoring occasions</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Periodicity + offset + slot symbols decide WHEN to blind-decode in a CORESET</text>
+
+  <!-- timeline -->
+  <line x1="60" y1="180" x2="900" y2="180" stroke="#1f3a4d" stroke-width="3"/>
+  <text x="60" y="150" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">slots over time</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="100" y="150" width="70" height="60" rx="6" fill="#0f7a8a"/>
+    <text x="135" y="185" text-anchor="middle" fill="#fff" font-weight="700">MO</text>
+    <rect x="280" y="150" width="70" height="60" rx="6" fill="#d0dde3"/>
+    <rect x="370" y="150" width="70" height="60" rx="6" fill="#0f7a8a"/>
+    <text x="405" y="185" text-anchor="middle" fill="#fff" font-weight="700">MO</text>
+    <rect x="550" y="150" width="70" height="60" rx="6" fill="#d0dde3"/>
+    <rect x="640" y="150" width="70" height="60" rx="6" fill="#0f7a8a"/>
+    <text x="675" y="185" text-anchor="middle" fill="#fff" font-weight="700">MO</text>
+    <rect x="820" y="150" width="70" height="60" rx="6" fill="#d0dde3"/>
+  </g>
+  <text x="480" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">monitoringSlotPeriodicityAndOffset  (example period = 2 slots)</text>
+
+  <!-- boxes below -->
+  <rect x="40" y="290" width="280" height="140" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="180" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0a5561">Where</text>
+  <text x="60" y="360" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">controlResourceSetId</text>
+  <text x="60" y="385" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">monitoringSymbolsWithinSlot</text>
+
+  <rect x="340" y="290" width="280" height="140" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="480" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#8a5a14">What</text>
+  <text x="360" y="360" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">nrofCandidates (AL 1..16)</text>
+  <text x="360" y="385" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">searchSpaceType / DCI formats</text>
+
+  <rect x="640" y="290" width="280" height="140" rx="12" fill="#fff" stroke="#1f3a4d" stroke-width="2"/>
+  <text x="780" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#1f3a4d">Why</text>
+  <text x="660" y="360" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">CSS: SI / RA / Paging / ...</text>
+  <text x="660" y="385" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">USS: UE-specific scheduling</text>
+</svg>
