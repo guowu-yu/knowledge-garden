@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-label="Contention resolution">
+  <rect width="960" height="460" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Contention resolution (why Msg4 exists)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Two UEs may pick the same preamble on the same RO</text>
+
+  <rect x="60" y="110" width="180" height="80" rx="10" fill="#0f7a8a"/>
+  <text x="150" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">UE-A Msg1</text>
+  <text x="150" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">preamble k</text>
+
+  <rect x="60" y="220" width="180" height="80" rx="10" fill="#1a8f9e"/>
+  <text x="150" y="255" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">UE-B Msg1</text>
+  <text x="150" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">preamble k</text>
+
+  <path d="M250 150 H320" stroke="#1f3a4d" stroke-width="2"/>
+  <path d="M250 260 H320" stroke="#1f3a4d" stroke-width="2"/>
+  <path d="M320 150 V260" stroke="#1f3a4d" stroke-width="2"/>
+  <path d="M320 205 H380" stroke="#1f3a4d" stroke-width="2"/>
+
+  <rect x="390" y="160" width="200" height="90" rx="10" fill="#c9852c"/>
+  <text x="490" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Same Msg2?</text>
+  <text x="490" y="225" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">both may send Msg3</text>
+
+  <path d="M600 205 H660" stroke="#1f3a4d" stroke-width="2"/>
+
+  <rect x="670" y="120" width="240" height="170" rx="12" fill="#1f3a4d"/>
+  <text x="790" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#fff">Msg4 decides</text>
+  <text x="790" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">UE identity / CR MAC CE</text>
+  <text x="790" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">match = success</text>
+  <text x="790" y="265" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">mismatch = retry RACH</text>
+
+  <text x="40" y="400" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">CFRA avoids this branch by dedicating a preamble to one UE.</text>
+</svg>

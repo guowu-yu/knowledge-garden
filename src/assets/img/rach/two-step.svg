@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="2-step RACH">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">2-step RACH (MsgA / MsgB)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Rel-16+: combine preamble + PUSCH in MsgA; network replies with MsgB</text>
+
+  <rect x="80" y="130" width="320" height="140" rx="14" fill="#0f7a8a"/>
+  <text x="240" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" fill="#fff">MsgA</text>
+  <text x="240" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">PRACH preamble + PUSCH payload</text>
+  <text x="240" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">(H Msg1 + Msg3 bundled)</text>
+
+  <path d="M420 200 H500" stroke="#1f3a4d" stroke-width="3" marker-end="url(#b)"/>
+  <defs>
+    <marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1f3a4d"/>
+    </marker>
+  </defs>
+
+  <rect x="520" y="130" width="360" height="140" rx="14" fill="#c9852c"/>
+  <text x="700" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" fill="#fff">MsgB</text>
+  <text x="700" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">success / fallback / CR info</text>
+  <text x="700" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">(H Msg2 + Msg4 roles)</text>
+
+  <rect x="40" y="320" width="880" height="120" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="360" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Why 2-step?</text>
+  <text x="60" y="395" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Lower latency and signaling round-trips when channel is good enough for MsgA PUSCH to be decoded.</text>
+  <text x="60" y="420" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">If MsgA PUSCH fails, network may fall back toward 4-step-like recovery (implementation/spec rules).</text>
+</svg>

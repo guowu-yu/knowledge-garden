@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="CBRA vs CFRA">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">CBRA vs CFRA</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Contention-based vs Contention-free random access</text>
+
+  <rect x="40" y="110" width="420" height="250" rx="14" fill="#0f7a8a"/>
+  <text x="250" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">CBRA</text>
+  <text x="70" y="200" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">UE picks preamble from common set</text>
+  <text x="70" y="235" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Collision possible (same preamble)</text>
+  <text x="70" y="270" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Needs contention resolution (Msg4)</text>
+  <text x="70" y="305" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Typical: initial access from Idle</text>
+
+  <rect x="500" y="110" width="420" height="250" rx="14" fill="#c9852c"/>
+  <text x="710" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">CFRA</text>
+  <text x="530" y="200" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Network assigns dedicated preamble</text>
+  <text x="530" y="235" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">No contention with others</text>
+  <text x="530" y="270" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Often ends after RAR success</text>
+  <text x="530" y="305" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Typical: HO / BFR / dedicated RA</text>
+</svg>

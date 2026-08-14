@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="PRACH preamble format families">
+  <rect width="960" height="480" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PRACH preamble format families</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Long sequence (L_RA=839) vs short sequence (L_RA=139)</text>
+
+  <rect x="40" y="100" width="430" height="280" rx="14" fill="#0f7a8a"/>
+  <text x="255" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">Long formats</text>
+  <text x="255" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">L_RA = 839</text>
+  <text x="70" y="220" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Formats: 0 / 1 / 2 / 3</text>
+  <text x="70" y="255" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">PRACH SCS: 1.25 or 5 kHz</text>
+  <text x="70" y="290" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">FR1, larger cells / LTE-like</text>
+  <text x="70" y="325" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Longer CP / duration options</text>
+
+  <rect x="490" y="100" width="430" height="280" rx="14" fill="#c9852c"/>
+  <text x="705" y="145" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">Short formats</text>
+  <text x="705" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">L_RA = 139</text>
+  <text x="520" y="220" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">A1 A2 A3 / B1..B4 / C0 C2</text>
+  <text x="520" y="255" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">SCS: 15/30 (FR1), 60/120 (FR2)</text>
+  <text x="520" y="290" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Smaller cells / beam / low latency</text>
+  <text x="520" y="325" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Fits NR slot numerology better</text>
+
+  <text x="40" y="430" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Chosen via prach-ConfigurationIndex (+ msg1-SubcarrierSpacing). Later releases may add more L_RA options.</text>
+</svg>

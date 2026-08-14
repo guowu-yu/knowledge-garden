@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-label="Why random access">
+  <rect width="960" height="440" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Why Random Access?</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">UE has sync and SI, but still no dedicated UL identity / timing / grant for connection</text>
+
+  <rect x="40" y="110" width="280" height="260" rx="14" fill="#0f7a8a"/>
+  <text x="180" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Before RACH</text>
+  <text x="60" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- DL sync (SSB)</text>
+  <text x="60" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- MIB / SIB1 known</text>
+  <text x="60" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- Camped (often Idle)</text>
+  <text x="60" y="290" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- No C-RNTI yet</text>
+  <text x="60" y="320" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- UL timing unknown</text>
+
+  <rect x="340" y="180" width="80" height="50" rx="10" fill="#1f3a4d"/>
+  <text x="380" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">RACH</text>
+
+  <rect x="440" y="110" width="480" height="260" rx="14" fill="#c9852c"/>
+  <text x="680" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">After successful RACH</text>
+  <text x="470" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- Timing Advance applied</text>
+  <text x="470" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- Temporary / C-RNTI obtained</text>
+  <text x="470" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- First UL message delivered</text>
+  <text x="470" y="290" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- Path to RRC Connected</text>
+  <text x="470" y="320" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">- Beam / resource aligned</text>
+</svg>

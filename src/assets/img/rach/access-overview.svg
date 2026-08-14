@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-label="End-to-end NR access overview">
+  <rect width="1000" height="560" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">End-to-end access overview (Idle to Connected)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Where RACH sits in the full bootstrapping chain</text>
+
+  <!-- row 1 -->
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="30" y="100" width="140" height="70" rx="10" fill="#0f7a8a"/>
+    <text x="100" y="130" text-anchor="middle" fill="#fff" font-weight="700">1. Cell Search</text>
+    <text x="100" y="152" text-anchor="middle" fill="#e7f3f7">PSS/SSS/PCI</text>
+
+    <path d="M175 135 H195" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="200" y="100" width="140" height="70" rx="10" fill="#1a8f9e"/>
+    <text x="270" y="130" text-anchor="middle" fill="#fff" font-weight="700">2. MIB</text>
+    <text x="270" y="152" text-anchor="middle" fill="#e7f3f7">PBCH / CORESET#0</text>
+
+    <path d="M345 135 H365" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="370" y="100" width="140" height="70" rx="10" fill="#0a5561"/>
+    <text x="440" y="130" text-anchor="middle" fill="#fff" font-weight="700">3. SIB1</text>
+    <text x="440" y="152" text-anchor="middle" fill="#e7f3f7">RACH-Config</text>
+
+    <path d="M515 135 H535" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="540" y="100" width="140" height="70" rx="10" fill="#1f3a4d"/>
+    <text x="610" y="130" text-anchor="middle" fill="#fff" font-weight="700">4. Camp</text>
+    <text x="610" y="152" text-anchor="middle" fill="#e7f3f7">Idle / select</text>
+
+    <path d="M685 135 H705" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="710" y="100" width="250" height="70" rx="10" fill="#c9852c"/>
+    <text x="835" y="130" text-anchor="middle" fill="#fff" font-weight="700">5. Trigger access</text>
+    <text x="835" y="152" text-anchor="middle" fill="#fff">MO / MT / HO / BFR...</text>
+  </g>
+
+  <!-- arrow down -->
+  <path d="M835 175 V210" stroke="#c9852c" stroke-width="3"/>
+  <text x="850" y="205" font-family="Segoe UI, sans-serif" font-size="12" fill="#8a5a14">RACH</text>
+
+  <!-- row 2 RACH box -->
+  <rect x="30" y="220" width="940" height="160" rx="14" fill="#fff" stroke="#c9852c" stroke-width="3"/>
+  <text x="50" y="250" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#8a5a14">Random Access (this topic)</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="50" y="270" width="180" height="80" rx="10" fill="#0f7a8a"/>
+    <text x="140" y="305" text-anchor="middle" fill="#fff" font-weight="700">Msg1 PRACH</text>
+    <text x="140" y="328" text-anchor="middle" fill="#e7f3f7">preamble on RO</text>
+
+    <path d="M240 310 H265" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="270" y="270" width="180" height="80" rx="10" fill="#1a8f9e"/>
+    <text x="360" y="305" text-anchor="middle" fill="#fff" font-weight="700">Msg2 RAR</text>
+    <text x="360" y="328" text-anchor="middle" fill="#e7f3f7">RA-RNTI / TA / grant</text>
+
+    <path d="M460 310 H485" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="490" y="270" width="180" height="80" rx="10" fill="#0a5561"/>
+    <text x="580" y="305" text-anchor="middle" fill="#fff" font-weight="700">Msg3 PUSCH</text>
+    <text x="580" y="328" text-anchor="middle" fill="#e7f3f7">RRC / identity</text>
+
+    <path d="M680 310 H705" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="710" y="270" width="230" height="80" rx="10" fill="#1f3a4d"/>
+    <text x="825" y="305" text-anchor="middle" fill="#fff" font-weight="700">Msg4 CR</text>
+    <text x="825" y="328" text-anchor="middle" fill="#e7f3f7">contention resolved</text>
+  </g>
+
+  <!-- row 3 -->
+  <path d="M500 380 V410" stroke="#1f3a4d" stroke-width="3"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="120" y="420" width="220" height="70" rx="10" fill="#8a5a14"/>
+    <text x="230" y="450" text-anchor="middle" fill="#fff" font-weight="700">6. RRC Setup</text>
+    <text x="230" y="472" text-anchor="middle" fill="#fff">+ Security</text>
+
+    <path d="M350 455 H390" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="400" y="420" width="220" height="70" rx="10" fill="#0f7a8a"/>
+    <text x="510" y="450" text-anchor="middle" fill="#fff" font-weight="700">7. Connected</text>
+    <text x="510" y="472" text-anchor="middle" fill="#e7f3f7">C-RNTI scheduling</text>
+
+    <path d="M630 455 H670" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="680" y="420" width="220" height="70" rx="10" fill="#1a8f9e"/>
+    <text x="790" y="450" text-anchor="middle" fill="#fff" font-weight="700">8. DCI / UCI loop</text>
+    <text x="790" y="472" text-anchor="middle" fill="#e7f3f7">normal data path</text>
+  </g>
+</svg>

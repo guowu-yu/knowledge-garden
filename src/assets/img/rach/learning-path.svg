@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="RACH learning path">
+  <rect width="960" height="420" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Learning path into RACH</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">How earlier topics feed Msg1 readiness</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="120" width="140" height="70" rx="10" fill="#0f7a8a"/>
+    <text x="110" y="160" text-anchor="middle" fill="#fff" font-weight="700">Cell Search</text>
+    <path d="M190 155 H220" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="230" y="120" width="140" height="70" rx="10" fill="#1a8f9e"/>
+    <text x="300" y="160" text-anchor="middle" fill="#fff" font-weight="700">SIB1</text>
+    <path d="M380 155 H410" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="420" y="120" width="160" height="70" rx="10" fill="#0a5561"/>
+    <text x="500" y="150" text-anchor="middle" fill="#fff" font-weight="700">RACH-Config</text>
+    <text x="500" y="170" text-anchor="middle" fill="#e7f3f7">Common</text>
+    <path d="M590 155 H620" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="630" y="120" width="140" height="70" rx="10" fill="#c9852c"/>
+    <text x="700" y="160" text-anchor="middle" fill="#fff" font-weight="700">Msg1</text>
+    <path d="M780 155 H810" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="820" y="120" width="100" height="70" rx="10" fill="#1f3a4d"/>
+    <text x="870" y="160" text-anchor="middle" fill="#fff" font-weight="700">...</text>
+  </g>
+
+  <rect x="40" y="230" width="880" height="140" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="275" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Also needed</text>
+  <text x="60" y="310" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">CORESET/SearchSpace Type1 for Msg2; UL BWP / Point A for PRACH frequency; SSB beam for RO mapping</text>
+  <text x="60" y="340" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">After success: DCI/UCI loop takes over for normal connected-mode scheduling</text>
+</svg>

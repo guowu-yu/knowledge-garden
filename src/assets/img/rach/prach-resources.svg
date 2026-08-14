@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="PRACH resource concepts">
+  <rect width="960" height="520" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PRACH resource concepts</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Occasion (RO) x preamble index x format / root sequence</text>
+
+  <rect x="40" y="100" width="280" height="170" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="180" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0a5561">RACH Occasion</text>
+  <text x="60" y="180" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Time-frequency slot</text>
+  <text x="60" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">where preamble may be sent</text>
+  <text x="60" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">from prach-ConfigurationIndex</text>
+
+  <rect x="340" y="100" width="280" height="170" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="480" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#8a5a14">Preamble</text>
+  <text x="360" y="180" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Index 0..63 typically</text>
+  <text x="360" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">from root + cyclic shift</text>
+  <text x="360" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">CB / CF pools split</text>
+
+  <rect x="640" y="100" width="280" height="170" rx="12" fill="#fff" stroke="#1f3a4d" stroke-width="2"/>
+  <text x="780" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#1f3a4d">Format / SCS</text>
+  <text x="660" y="180" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Format 0..3, A1..C2...</text>
+  <text x="660" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">length / CP / occupancy</text>
+  <text x="660" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">FR1/FR2 &amp; cell size</text>
+
+  <rect x="40" y="300" width="880" height="170" rx="12" fill="#0f7a8a"/>
+  <text x="60" y="345" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#fff">SSB &lt;-&gt; RO association (beam access)</text>
+  <text x="60" y="385" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">UE selects a good SSB beam, then picks an RO / preamble associated to that SSB</text>
+  <text x="60" y="420" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Network learns preferred beam from which RO/preamble was detected</text>
+</svg>

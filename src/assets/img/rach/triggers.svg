@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="RACH triggers">
+  <rect width="960" height="520" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">When does UE start RACH?</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Multiple procedures share the same PRACH toolbox</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="13">
+    <rect x="40" y="100" width="280" height="100" rx="10" fill="#0f7a8a"/>
+    <text x="180" y="140" text-anchor="middle" fill="#fff" font-weight="700">Initial access</text>
+    <text x="180" y="170" text-anchor="middle" fill="#e7f3f7">Idle -&gt; Connected (Msg3 often RRCSetupRequest)</text>
+
+    <rect x="340" y="100" width="280" height="100" rx="10" fill="#1a8f9e"/>
+    <text x="480" y="140" text-anchor="middle" fill="#fff" font-weight="700">RRC Resume / Reestab</text>
+    <text x="480" y="170" text-anchor="middle" fill="#e7f3f7">Inactive or failure recovery</text>
+
+    <rect x="640" y="100" width="280" height="100" rx="10" fill="#0a5561"/>
+    <text x="780" y="140" text-anchor="middle" fill="#fff" font-weight="700">Handover</text>
+    <text x="780" y="170" text-anchor="middle" fill="#e7f3f7">Often CFRA with dedicated preamble</text>
+
+    <rect x="40" y="230" width="280" height="100" rx="10" fill="#c9852c"/>
+    <text x="180" y="270" text-anchor="middle" fill="#fff" font-weight="700">UL data arrival</text>
+    <text x="180" y="300" text-anchor="middle" fill="#fff">no PUCCH SR / out-of-sync</text>
+
+    <rect x="340" y="230" width="280" height="100" rx="10" fill="#8a5a14"/>
+    <text x="480" y="270" text-anchor="middle" fill="#fff" font-weight="700">DL data arrival</text>
+    <text x="480" y="300" text-anchor="middle" fill="#fff">paging then access / PDCP...</text>
+
+    <rect x="640" y="230" width="280" height="100" rx="10" fill="#1f3a4d"/>
+    <text x="780" y="270" text-anchor="middle" fill="#fff" font-weight="700">Beam Failure Recovery</text>
+    <text x="780" y="300" text-anchor="middle" fill="#e7f3f7">BFR via PRACH (CFRA/CBRA)</text>
+  </g>
+
+  <rect x="40" y="370" width="880" height="110" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="415" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Shared goals across triggers</text>
+  <text x="60" y="450" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Obtain / re-obtain UL timing, identity, and a first scheduled UL opportunity toward the network.</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="Power ramping and retry">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Retry: power ramping and backoff</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">If no RAR / CR fails, UE may ramp power and reselect resources</text>
+
+  <polyline points="80,340 180,300 280,250 380,200 480,160 580,130" fill="none" stroke="#0f7a8a" stroke-width="4"/>
+  <circle cx="80" cy="340" r="8" fill="#0f7a8a"/>
+  <circle cx="180" cy="300" r="8" fill="#0f7a8a"/>
+  <circle cx="280" cy="250" r="8" fill="#0f7a8a"/>
+  <circle cx="380" cy="200" r="8" fill="#0f7a8a"/>
+  <circle cx="480" cy="160" r="8" fill="#0f7a8a"/>
+  <circle cx="580" cy="130" r="8" fill="#0f7a8a"/>
+  <text x="80" y="370" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">try1</text>
+  <text x="280" y="280" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">+ preambleReceivedTargetPower step</text>
+  <text x="520" y="120" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">higher Tx power</text>
+
+  <rect x="640" y="120" width="280" height="280" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="780" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#8a5a14">Key knobs</text>
+  <text x="660" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">preambleReceivedTargetPower</text>
+  <text x="660" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">powerRampingStep</text>
+  <text x="660" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">preambleTransMax</text>
+  <text x="660" y="290" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">ra-ResponseWindow</text>
+  <text x="660" y="320" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">ra-ContentionResolutionTimer</text>
+  <text x="660" y="350" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Backoff Indicator (BI)</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="4-step RACH">
+  <rect width="960" height="560" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">4-step RACH (CBRA)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Msg1 PRACH - Msg2 RAR - Msg3 PUSCH - Msg4 contention resolution</text>
+
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="80" y="120" width="160" height="90" rx="12" fill="#0f7a8a"/>
+    <text x="160" y="155" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Msg1</text>
+    <text x="160" y="185" text-anchor="middle" font-size="12" fill="#e7f3f7">PRACH preamble</text>
+
+    <path d="M250 165 H310" stroke="#1f3a4d" stroke-width="3" marker-end="url(#a)"/>
+    <defs>
+      <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#1f3a4d"/>
+      </marker>
+    </defs>
+
+    <rect x="320" y="120" width="160" height="90" rx="12" fill="#1a8f9e"/>
+    <text x="400" y="155" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Msg2</text>
+    <text x="400" y="185" text-anchor="middle" font-size="12" fill="#e7f3f7">RAR (RA-RNTI)</text>
+
+    <path d="M490 165 H550" stroke="#1f3a4d" stroke-width="3" marker-end="url(#a)"/>
+
+    <rect x="560" y="120" width="160" height="90" rx="12" fill="#c9852c"/>
+    <text x="640" y="155" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Msg3</text>
+    <text x="640" y="185" text-anchor="middle" font-size="12" fill="#fff">PUSCH (TC-RNTI)</text>
+
+    <path d="M730 165 H790" stroke="#1f3a4d" stroke-width="3" marker-end="url(#a)"/>
+
+    <rect x="800" y="120" width="120" height="90" rx="12" fill="#1f3a4d"/>
+    <text x="860" y="155" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Msg4</text>
+    <text x="860" y="185" text-anchor="middle" font-size="12" fill="#e7f3f7">CR success</text>
+  </g>
+
+  <rect x="40" y="250" width="880" height="260" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="290" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Payload intuition</text>
+  <text x="60" y="325" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Msg1: only preamble sequence on PRACH occasion (no UE identity yet)</text>
+  <text x="60" y="355" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Msg2: Timing Advance + UL grant + Temporary C-RNTI (+ RAPID match)</text>
+  <text x="60" y="385" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Msg3: first scheduled UL (e.g. RRCSetupRequest) using grant from RAR</text>
+  <text x="60" y="415" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Msg4: contention resolution MAC CE / RRC; winner keeps identity and continues</text>
+  <text x="60" y="450" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Losers restart RACH (new preamble / power ramp / backoff as configured)</text>
+</svg>
