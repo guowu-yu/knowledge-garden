@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="UCI types and channels">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">UCI content and carriers</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Three classic payloads; two main physical carriers</text>
+
+  <rect x="40" y="110" width="280" height="150" rx="12" fill="#c9852c"/>
+  <text x="180" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">HARQ-ACK</text>
+  <text x="180" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">ACK / NACK for DL</text>
+  <text x="180" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">drives retransmission</text>
+
+  <rect x="340" y="110" width="280" height="150" rx="12" fill="#0f7a8a"/>
+  <text x="480" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">SR</text>
+  <text x="480" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Scheduling Request</text>
+  <text x="480" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">ask for UL grant</text>
+
+  <rect x="640" y="110" width="280" height="150" rx="12" fill="#1f3a4d"/>
+  <text x="780" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">CSI</text>
+  <text x="780" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">CQI / PMI / RI / LI...</text>
+  <text x="780" y="220" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">channel / beam report</text>
+
+  <rect x="40" y="300" width="430" height="130" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="255" y="345" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#0a5561">PUCCH</text>
+  <text x="255" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">dedicated UCI channel (formats 0..4)</text>
+
+  <rect x="490" y="300" width="430" height="130" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="705" y="345" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#8a5a14">PUSCH</text>
+  <text x="705" y="380" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">UCI piggyback when UL data is sent</text>
+</svg>

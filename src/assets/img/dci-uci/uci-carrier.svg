@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="UCI on PUCCH or PUSCH">
+  <rect width="960" height="420" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Where does UCI go?</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Decision depends on whether PUSCH is scheduled in the same slot (simplified)</text>
+
+  <rect x="80" y="120" width="200" height="80" rx="10" fill="#1f3a4d"/>
+  <text x="180" y="168" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#fff">UCI ready</text>
+
+  <path d="M290 160 H340" stroke="#1f3a4d" stroke-width="3" marker-end="url(#m)"/>
+  <defs>
+    <marker id="m" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1f3a4d"/>
+    </marker>
+  </defs>
+
+  <rect x="350" y="110" width="240" height="100" rx="10" fill="#0f7a8a"/>
+  <text x="470" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">PUSCH in same slot?</text>
+  <text x="470" y="180" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">plus multiplexing rules</text>
+
+  <path d="M470 220 V250" stroke="#1f3a4d" stroke-width="3"/>
+  <path d="M300 250 H640" stroke="#1f3a4d" stroke-width="3"/>
+  <path d="M300 250 V280" stroke="#1f3a4d" stroke-width="3"/>
+  <path d="M640 250 V280" stroke="#1f3a4d" stroke-width="3"/>
+
+  <rect x="180" y="290" width="240" height="80" rx="10" fill="#c9852c"/>
+  <text x="300" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">No / keep PUCCH</text>
+  <text x="300" y="350" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">send on PUCCH</text>
+
+  <rect x="520" y="290" width="240" height="80" rx="10" fill="#0a5561"/>
+  <text x="640" y="325" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Yes / piggyback</text>
+  <text x="640" y="350" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">multiplex onto PUSCH</text>
+</svg>

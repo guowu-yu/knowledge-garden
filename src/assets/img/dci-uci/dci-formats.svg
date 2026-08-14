@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="DCI format families">
+  <rect width="960" height="560" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">DCI format families (intuition)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Grouped by job: UL grant / DL assign / group common / special</text>
+
+  <rect x="40" y="100" width="280" height="180" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="180" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#0a5561">UL scheduling</text>
+  <text x="60" y="180" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Format 0_0  (fallback)</text>
+  <text x="60" y="210" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Format 0_1  (rich UL)</text>
+  <text x="60" y="245" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">-&gt; PUSCH grant</text>
+
+  <rect x="340" y="100" width="280" height="180" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+  <text x="480" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#8a5a14">DL scheduling</text>
+  <text x="360" y="180" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Format 1_0  (fallback)</text>
+  <text x="360" y="210" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Format 1_1  (rich DL)</text>
+  <text x="360" y="245" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">-&gt; PDSCH assign</text>
+
+  <rect x="640" y="100" width="280" height="180" rx="12" fill="#fff" stroke="#1f3a4d" stroke-width="2"/>
+  <text x="780" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#1f3a4d">Group / common</text>
+  <text x="660" y="180" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">2_0 slot format</text>
+  <text x="660" y="210" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">2_1 / 2_2 / 2_3 ...</text>
+  <text x="660" y="245" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">preemption, TPC, ...</text>
+
+  <rect x="40" y="310" width="880" height="200" rx="12" fill="#0f7a8a"/>
+  <text x="60" y="355" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#fff">Also remember</text>
+  <text x="60" y="395" font-family="Segoe UI, sans-serif" font-size="14" fill="#e7f3f7">SI / RAR / paging often reuse compact DL-like formats (commonly discussed as 1_0 family usage)</text>
+  <text x="60" y="430" font-family="Segoe UI, sans-serif" font-size="14" fill="#e7f3f7">Exact field sets depend on RRC configuration and 38.212 tables</text>
+  <text x="60" y="465" font-family="Segoe UI, sans-serif" font-size="14" fill="#e7f3f7">Fallback formats stay decodable with fewer assumptions (robust / early / common cases)</text>
+</svg>

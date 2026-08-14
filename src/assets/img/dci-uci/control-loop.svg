@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="Control information loop">
+  <rect width="960" height="480" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Closed loop: DCI schedules, UCI reports</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Typical DL data path with HARQ feedback</text>
+
+  <rect x="60" y="120" width="160" height="70" rx="10" fill="#0f7a8a"/>
+  <text x="140" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">PDCCH</text>
+  <text x="140" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">DCI (e.g. 1_1)</text>
+
+  <path d="M230 155 H280" stroke="#1f3a4d" stroke-width="3" marker-end="url(#ar)"/>
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1f3a4d"/>
+    </marker>
+  </defs>
+
+  <rect x="290" y="120" width="160" height="70" rx="10" fill="#1a8f9e"/>
+  <text x="370" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">PDSCH</text>
+  <text x="370" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">DL data</text>
+
+  <path d="M460 155 H510" stroke="#1f3a4d" stroke-width="3" marker-end="url(#ar)"/>
+
+  <rect x="520" y="120" width="160" height="70" rx="10" fill="#0a5561"/>
+  <text x="600" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">UE decode</text>
+  <text x="600" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">CRC OK / FAIL</text>
+
+  <path d="M690 155 H740" stroke="#1f3a4d" stroke-width="3" marker-end="url(#ar)"/>
+
+  <rect x="750" y="120" width="160" height="70" rx="10" fill="#c9852c"/>
+  <text x="830" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">UCI</text>
+  <text x="830" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">HARQ-ACK</text>
+
+  <path d="M830 200 V260 H140 V190" fill="none" stroke="#c9852c" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#ar2)"/>
+  <defs>
+    <marker id="ar2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#c9852c"/>
+    </marker>
+  </defs>
+  <text x="480" y="250" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#8a5a14">feedback on PUCCH / PUSCH</text>
+
+  <rect x="60" y="300" width="840" height="130" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="80" y="340" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Also in the loop</text>
+  <text x="80" y="375" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">UL grant DCI (0_0/0_1) -&gt; PUSCH;  SR asks for UL resource;  CSI helps gNB pick MCS / beams / RI...</text>
+  <text x="80" y="405" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Without UCI, scheduler flies blind; without DCI, UE does not know where data/control lives.</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="Key DCI fields">
+  <rect width="960" height="520" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Typical DCI fields (what UE must learn)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Not every format has every field; this is the shared vocabulary</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="13">
+    <rect x="40" y="100" width="210" height="90" rx="10" fill="#0f7a8a"/>
+    <text x="145" y="140" text-anchor="middle" fill="#fff" font-weight="700">Identifier</text>
+    <text x="145" y="165" text-anchor="middle" fill="#e7f3f7">UL/DL flag, RNTI</text>
+
+    <rect x="270" y="100" width="210" height="90" rx="10" fill="#1a8f9e"/>
+    <text x="375" y="140" text-anchor="middle" fill="#fff" font-weight="700">Freq resource</text>
+    <text x="375" y="165" text-anchor="middle" fill="#e7f3f7">FDRA / BWP</text>
+
+    <rect x="500" y="100" width="210" height="90" rx="10" fill="#0a5561"/>
+    <text x="605" y="140" text-anchor="middle" fill="#fff" font-weight="700">Time resource</text>
+    <text x="605" y="165" text-anchor="middle" fill="#e7f3f7">TDRA / K0 K2</text>
+
+    <rect x="730" y="100" width="190" height="90" rx="10" fill="#c9852c"/>
+    <text x="825" y="140" text-anchor="middle" fill="#fff" font-weight="700">MCS / NDI</text>
+    <text x="825" y="165" text-anchor="middle" fill="#fff">RV / HARQ</text>
+
+    <rect x="40" y="220" width="210" height="90" rx="10" fill="#1f3a4d"/>
+    <text x="145" y="260" text-anchor="middle" fill="#fff" font-weight="700">Antenna</text>
+    <text x="145" y="285" text-anchor="middle" fill="#e7f3f7">antenna ports / DMRS</text>
+
+    <rect x="270" y="220" width="210" height="90" rx="10" fill="#8a5a14"/>
+    <text x="375" y="260" text-anchor="middle" fill="#fff" font-weight="700">PUCCH / TPC</text>
+    <text x="375" y="285" text-anchor="middle" fill="#fff">resource / power</text>
+
+    <rect x="500" y="220" width="210" height="90" rx="10" fill="#0f7a8a"/>
+    <text x="605" y="260" text-anchor="middle" fill="#fff" font-weight="700">CSI request</text>
+    <text x="605" y="285" text-anchor="middle" fill="#e7f3f7">aperiodic trigger</text>
+
+    <rect x="730" y="220" width="190" height="90" rx="10" fill="#1a8f9e"/>
+    <text x="825" y="260" text-anchor="middle" fill="#fff" font-weight="700">Others</text>
+    <text x="825" y="285" text-anchor="middle" fill="#e7f3f7">DAI, SRS, ...</text>
+  </g>
+
+  <rect x="40" y="350" width="880" height="130" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="390" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Reading tip</text>
+  <text x="60" y="425" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">First ask: which format? which RNTI? Then: where (FDRA/TDRA), how coded (MCS/RV/NDI/HARQ), how to feedback (PUCCH resource).</text>
+  <text x="60" y="455" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Fallback 0_0/1_0 keep a shorter field set for robustness and common procedures.</text>
+</svg>
