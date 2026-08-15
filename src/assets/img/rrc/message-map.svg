@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="RRC message families">
+  <rect width="960" height="420" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">NR RRC message families (map)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Where Reconfiguration sits among Setup / Resume / Reestab / Release</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="110" width="210" height="120" rx="10" fill="#0f7a8a"/>
+    <text x="145" y="150" text-anchor="middle" fill="#fff" font-weight="700">Setup</text>
+    <text x="145" y="180" text-anchor="middle" fill="#e7f3f7">SetupRequest</text>
+    <text x="145" y="205" text-anchor="middle" fill="#e7f3f7">Setup / Complete</text>
+
+    <rect x="270" y="110" width="210" height="120" rx="10" fill="#c9852c"/>
+    <text x="375" y="150" text-anchor="middle" fill="#fff" font-weight="700">Reconfig</text>
+    <text x="375" y="180" text-anchor="middle" fill="#fff">Reconfiguration</text>
+    <text x="375" y="205" text-anchor="middle" fill="#fff">Complete</text>
+
+    <rect x="500" y="110" width="210" height="120" rx="10" fill="#1a8f9e"/>
+    <text x="605" y="150" text-anchor="middle" fill="#fff" font-weight="700">Inactive</text>
+    <text x="605" y="180" text-anchor="middle" fill="#e7f3f7">Resume / Release</text>
+    <text x="605" y="205" text-anchor="middle" fill="#e7f3f7">Suspend config</text>
+
+    <rect x="730" y="110" width="190" height="120" rx="10" fill="#1f3a4d"/>
+    <text x="825" y="150" text-anchor="middle" fill="#fff" font-weight="700">Recovery</text>
+    <text x="825" y="180" text-anchor="middle" fill="#e7f3f7">Reestablishment</text>
+    <text x="825" y="205" text-anchor="middle" fill="#e7f3f7">Reject / Failure</text>
+  </g>
+
+  <rect x="40" y="270" width="880" height="100" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="315" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Also</text>
+  <text x="60" y="345" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">SecurityMode*, MeasurementReport, UECapability*, DL/ULInformationTransfer, MobilityFromNRCommand...</text>
+</svg>

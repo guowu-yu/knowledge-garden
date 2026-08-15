@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-label="Connection establishment message flow">
+  <rect width="1000" height="560" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Message flow: Idle to Connected (sketch)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">RACH then RRC setup, security, then first Reconfiguration(s)</text>
+
+  <text x="120" y="110" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0a5561">UE</text>
+  <text x="820" y="110" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#8a5a14">gNB / network</text>
+  <line x1="140" y1="120" x2="140" y2="520" stroke="#d0dde3" stroke-width="2"/>
+  <line x1="840" y1="120" x2="840" y2="520" stroke="#d0dde3" stroke-width="2"/>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <path d="M160 150 H820" stroke="#0f7a8a" stroke-width="2" marker-end="url(#ar)"/>
+    <text x="500" y="142" text-anchor="middle" fill="#0a5561">Msg1..Msg4 (RACH) / RRCSetupRequest in Msg3</text>
+
+    <path d="M820 200 H160" stroke="#c9852c" stroke-width="2" marker-end="url(#ar2)"/>
+    <text x="500" y="192" text-anchor="middle" fill="#8a5a14">RRCSetup (Msg4 path)</text>
+
+    <path d="M160 250 H820" stroke="#0f7a8a" stroke-width="2" marker-end="url(#ar)"/>
+    <text x="500" y="242" text-anchor="middle" fill="#0a5561">RRCSetupComplete</text>
+
+    <path d="M820 300 H160" stroke="#c9852c" stroke-width="2" marker-end="url(#ar2)"/>
+    <text x="500" y="292" text-anchor="middle" fill="#8a5a14">SecurityModeCommand</text>
+
+    <path d="M160 350 H820" stroke="#0f7a8a" stroke-width="2" marker-end="url(#ar)"/>
+    <text x="500" y="342" text-anchor="middle" fill="#0a5561">SecurityModeComplete</text>
+
+    <path d="M820 400 H160" stroke="#c9852c" stroke-width="2" marker-end="url(#ar2)"/>
+    <text x="500" y="392" text-anchor="middle" fill="#8a5a14">RRCReconfiguration (SRB2/DRB/...)</text>
+
+    <path d="M160 450 H820" stroke="#0f7a8a" stroke-width="2" marker-end="url(#ar)"/>
+    <text x="500" y="442" text-anchor="middle" fill="#0a5561">RRCReconfigurationComplete</text>
+  </g>
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0f7a8a"/></marker>
+    <marker id="ar2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c9852c"/></marker>
+  </defs>
+</svg>

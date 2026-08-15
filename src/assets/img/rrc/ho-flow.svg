@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-label="HO reconfiguration flow">
+  <rect width="1000" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Mobility: Reconfiguration with sync (HO sketch)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Source configures target; UE syncs then Completes toward target</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="120" width="200" height="90" rx="10" fill="#0f7a8a"/>
+    <text x="140" y="160" text-anchor="middle" fill="#fff" font-weight="700">MeasReport</text>
+    <text x="140" y="185" text-anchor="middle" fill="#e7f3f7">UE -&gt; source</text>
+
+    <path d="M250 165 H300" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="310" y="120" width="220" height="90" rx="10" fill="#c9852c"/>
+    <text x="420" y="160" text-anchor="middle" fill="#fff" font-weight="700">RRCReconfiguration</text>
+    <text x="420" y="185" text-anchor="middle" fill="#fff">withSync + target</text>
+
+    <path d="M540 165 H590" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="600" y="120" width="180" height="90" rx="10" fill="#1a8f9e"/>
+    <text x="690" y="160" text-anchor="middle" fill="#fff" font-weight="700">RACH / CFRA</text>
+    <text x="690" y="185" text-anchor="middle" fill="#e7f3f7">to target</text>
+
+    <path d="M790 165 H830" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="840" y="120" width="120" height="90" rx="10" fill="#1f3a4d"/>
+    <text x="900" y="160" text-anchor="middle" fill="#fff" font-weight="700">Complete</text>
+    <text x="900" y="185" text-anchor="middle" fill="#e7f3f7">to target</text>
+  </g>
+
+  <rect x="40" y="260" width="920" height="160" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="300" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Inside withSync (intuition)</text>
+  <text x="60" y="335" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">spCellConfigCommon / new UE-Identity (C-RNTI) / t304 / rach-ConfigDedicated ...</text>
+  <text x="60" y="370" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Failure to sync before t304 -&gt; mobility failure / reestablishment path</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="RRCReconfiguration IE groups">
+  <rect width="960" height="560" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">RRCReconfiguration major IE groups</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Read by purpose: radio bearers, cell group, meas, NAS, HO helpers</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="100" width="280" height="130" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+    <text x="180" y="135" text-anchor="middle" font-weight="700" fill="#0a5561" font-size="14">Transaction</text>
+    <text x="60" y="170" fill="#1f3a4d">rrc-TransactionIdentifier</text>
+    <text x="60" y="195" fill="#1f3a4d">criticalExtensions</text>
+
+    <rect x="340" y="100" width="280" height="130" rx="12" fill="#fff" stroke="#c9852c" stroke-width="2"/>
+    <text x="480" y="135" text-anchor="middle" font-weight="700" fill="#8a5a14" font-size="14">Bearers</text>
+    <text x="360" y="170" fill="#1f3a4d">radioBearerConfig</text>
+    <text x="360" y="195" fill="#1f3a4d">SRB / DRB / SDAP / PDCP</text>
+
+    <rect x="640" y="100" width="280" height="130" rx="12" fill="#fff" stroke="#1f3a4d" stroke-width="2"/>
+    <text x="780" y="135" text-anchor="middle" font-weight="700" fill="#1f3a4d" font-size="14">Cell group</text>
+    <text x="660" y="170" fill="#1f3a4d">masterCellGroup / SCG</text>
+    <text x="660" y="195" fill="#1f3a4d">MAC / PHY / SpCell...</text>
+
+    <rect x="40" y="260" width="280" height="130" rx="12" fill="#fff" stroke="#0a5561" stroke-width="2"/>
+    <text x="180" y="295" text-anchor="middle" font-weight="700" fill="#0a5561" font-size="14">Measurement</text>
+    <text x="60" y="330" fill="#1f3a4d">measConfig</text>
+    <text x="60" y="355" fill="#1f3a4d">objects / reports / IDs</text>
+
+    <rect x="340" y="260" width="280" height="130" rx="12" fill="#fff" stroke="#8a5a14" stroke-width="2"/>
+    <text x="480" y="295" text-anchor="middle" font-weight="700" fill="#8a5a14" font-size="14">NAS / other</text>
+    <text x="360" y="330" fill="#1f3a4d">dedicatedNAS-Message</text>
+    <text x="360" y="355" fill="#1f3a4d">fullConfig, etc.</text>
+
+    <rect x="640" y="260" width="280" height="130" rx="12" fill="#fff" stroke="#0f7a8a" stroke-width="2"/>
+    <text x="780" y="295" text-anchor="middle" font-weight="700" fill="#0a5561" font-size="14">Mobility</text>
+    <text x="660" y="330" fill="#1f3a4d">reconfigurationWithSync</text>
+    <text x="660" y="355" fill="#1f3a4d">HO / target cell sync</text>
+  </g>
+
+  <rect x="40" y="430" width="880" height="90" rx="12" fill="#0f7a8a"/>
+  <text x="60" y="470" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Not every message carries every IE - only the delta the network needs now.</text>
+  <text x="60" y="498" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">HO-oriented Reconfiguration often includes reconfigurationWithSync + meas/bearer updates.</text>
+</svg>

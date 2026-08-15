@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="NR RRC states">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">NR RRC states</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Idle / Inactive / Connected - where reconfiguration mainly lives</text>
+
+  <rect x="60" y="140" width="220" height="140" rx="14" fill="#0f7a8a"/>
+  <text x="170" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">RRC_IDLE</text>
+  <text x="170" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">camp, SI, paging</text>
+
+  <rect x="370" y="140" width="220" height="140" rx="14" fill="#1a8f9e"/>
+  <text x="480" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">RRC_INACTIVE</text>
+  <text x="480" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">keep AS context</text>
+
+  <rect x="680" y="140" width="220" height="140" rx="14" fill="#c9852c"/>
+  <text x="790" y="195" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">RRC_CONNECTED</text>
+  <text x="790" y="230" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">full config / HO</text>
+
+  <text x="40" y="360" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">RRCReconfiguration is primarily an RRC_CONNECTED procedure (also used in HO / resume paths).</text>
+</svg>
