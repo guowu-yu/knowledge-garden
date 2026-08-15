@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-label="NR measurement events A1 to A6">
+  <rect width="1000" height="560" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">NR events A1-A6 (intuition map)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Serving / SpCell / SCell / Neighbour thresholds and offsets</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="100" width="300" height="100" rx="10" fill="#0f7a8a"/>
+    <text x="190" y="140" text-anchor="middle" fill="#fff" font-weight="700">A1 Serving better than Th</text>
+    <text x="190" y="170" text-anchor="middle" fill="#e7f3f7">stop extra meas / gaps often</text>
+
+    <rect x="360" y="100" width="300" height="100" rx="10" fill="#1a8f9e"/>
+    <text x="510" y="140" text-anchor="middle" fill="#fff" font-weight="700">A2 Serving worse than Th</text>
+    <text x="510" y="170" text-anchor="middle" fill="#e7f3f7">start looking around</text>
+
+    <rect x="680" y="100" width="280" height="100" rx="10" fill="#c9852c"/>
+    <text x="820" y="140" text-anchor="middle" fill="#fff" font-weight="700">A3 Neighbour offset better SpCell</text>
+    <text x="820" y="170" text-anchor="middle" fill="#fff">classic intra-RAT HO</text>
+
+    <rect x="40" y="230" width="300" height="100" rx="10" fill="#8a5a14"/>
+    <text x="190" y="270" text-anchor="middle" fill="#fff" font-weight="700">A4 Neighbour better than Th</text>
+    <text x="190" y="300" text-anchor="middle" fill="#fff">absolute neighbour quality</text>
+
+    <rect x="360" y="230" width="300" height="100" rx="10" fill="#0a5561"/>
+    <text x="510" y="270" text-anchor="middle" fill="#fff" font-weight="700">A5 SpCell bad AND Neighbour good</text>
+    <text x="510" y="300" text-anchor="middle" fill="#e7f3f7">two-threshold HO</text>
+
+    <rect x="680" y="230" width="280" height="100" rx="10" fill="#1f3a4d"/>
+    <text x="820" y="270" text-anchor="middle" fill="#fff" font-weight="700">A6 Neighbour offset better SCell</text>
+    <text x="820" y="300" text-anchor="middle" fill="#e7f3f7">CA SCell change / swap</text>
+  </g>
+
+  <rect x="40" y="370" width="920" height="140" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="410" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Common knobs</text>
+  <text x="60" y="445" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">threshold / a3-Offset / hysteresis / timeToTrigger / reportOnLeave / reportAmount / reportInterval</text>
+  <text x="60" y="475" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Trigger quantity: RSRP / RSRQ / SINR (as configured). Inter-RAT uses B1/B2 (not A-series).</text>
+</svg>

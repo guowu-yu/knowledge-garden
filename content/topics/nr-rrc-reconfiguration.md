@@ -2,8 +2,8 @@
 title: NR RRC 与 RRC Reconfiguration：连接态配置的核心
 slug: nr-rrc-reconfiguration
 date: 2026-08-15
-tags: [RRC, RRCReconfiguration, 38.331, SRB, DRB, measConfig, HO, RRC_CONNECTED]
-summary: 详细讲解 5G NR RRC 状态与消息体系，聚焦 RRCReconfiguration：消息流、主要 IE/字段含义、建立后配置与切换 withSync，并衔接到 RACH 与物理层专题。
+tags: [RRC, RRCReconfiguration, 38.331, SRB, DRB, measConfig, A1, A2, A3, A4, A5, A6, HO, RRC_CONNECTED]
+summary: 详细讲解 5G NR RRC 与 RRCReconfiguration：消息流、主要 IE，并专题展开 measConfig 事件 A1–A6 的触发条件、参数与 HO 衔接。
 cover: https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80
 ---
 
@@ -247,9 +247,131 @@ RRCReconfiguration-IEs ::= SEQUENCE {
 | **measGapConfig** | 测量间隙 | 异频/异系统测量时隙 |
 | **measGapSharingConfig** 等 | Gap 共享 | 多任务共享间隙 |
 
-事件名直觉（NR）：**A1–A6** 管服务/邻区门限与偏移；异系统另有 B 类等（版本相关）。
+三者关系口诀：
+
+```text
+measObject  = 测哪（频点 / 小区集合 / SSB 等）
+reportConfig = 何时报、报什么（周期 or 事件 A1–A6）
+measId       = 把上面两者绑成一条任务
+```
 
 UE 按配置测量后，用 **`MeasurementReport`** 上报 → 网络常据此下发下一次 **RRCReconfiguration（HO）**。
+
+---
+
+### D2. 事件触发详解：A1–A6（同 RAT）
+
+对照 **TS 38.331 §5.5.4**。A 系列是 **NR 内**事件；异系统（如 LTE）常用 **B1/B2**（本小节末点到）。
+
+![事件 A1–A6](../../src/assets/img/rrc/meas-events-a1a6.svg)
+
+*图：服务变好/变差、邻区相对/绝对门限、双门限、以及针对 SCell 的 A6*
+
+#### 总表
+
+| 事件 | 规范一句话 | 进入条件直觉 | 典型用途 |
+| --- | --- | --- | --- |
+| **A1** | Serving becomes better than threshold | 服务小区测量量 **好于** 门限 | 服务已恢复 → 常用来 **停异频测量 / 关 measGap** 等 |
+| **A2** | Serving becomes worse than threshold | 服务小区 **差于** 门限 | 服务变差 → **开始加强邻区/异频测量** |
+| **A3** | Neighbour becomes offset better than SpCell | 邻区比 **SpCell** 好出一个 **offset** | **最常用的同频/同 RAT 切换触发** |
+| **A4** | Neighbour becomes better than threshold | 邻区 **绝对** 好于门限 | 邻区够好即报（不直接比服务） |
+| **A5** | SpCell worse than Th1 **and** neighbour better than Th2 | **双条件**：服务差 **且** 邻区好 | 更“保守”的 HO，减少乒乓 |
+| **A6** | Neighbour becomes offset better than **SCell** | 邻区比某 **SCell** 好出 offset | **CA** 下 SCell 变更/替换相关 |
+
+> **SpCell** = 特殊小区（MCG 的 PCell 或 SCG 的 PSCell）。  
+> **SCell** = 辅载波小区（载波聚合）。A6 盯的是 SCell，不是 SpCell。
+
+#### 逐事件展开
+
+**A1 — 服务变好**
+
+- 进入：服务测量量 + 迟滞关系 **超过 threshold**（规范进入/离开不等式含 hysteresis）  
+- 工程直觉：之前可能因 A2 打开了额外测量；服务回升后用 A1 **收敛测量开销**  
+- 常见参数：`a1-Threshold`、`hysteresis`、`timeToTrigger`
+
+**A2 — 服务变差**
+
+- 进入：服务测量量 **低于 threshold**  
+- 工程直觉：预警“待不住了”，网络可据此 **配置异频对象、开 gap、准备 HO**  
+- 常与后续 A3/A5 配合：先 A2 扩视野，再 A3/A5 决策切
+
+**A3 — 邻区相对 SpCell 更好（经典 HO）**
+
+进入条件（规范形式直觉）：
+
+\[
+M_n + O_{fn} + O_{cn} - Hys > M_p + O_{fp} + O_{cp} + Off
+\]
+
+| 符号 | 含义 |
+| --- | --- |
+| \(M_n\) | 邻区测量结果 |
+| \(M_p\) | SpCell 测量结果 |
+| \(O_{fn}/O_{fp}\) | 测量对象频点偏移 `offsetMO` |
+| \(O_{cn}/O_{cp}\) | 小区级偏移 `cellIndividualOffset` |
+| \(Hys\) | 迟滞 `hysteresis`（防抖） |
+| \(Off\) | 事件偏移 **`a3-Offset`** |
+
+- **离开条件**大致把不等式反过来并调整 Hys 符号，避免刚上报又立刻退出  
+- 工程直觉：邻区比服务“明显更好”才切；`a3-Offset` 越大越不易 HO（更稳、可能更晚切）
+
+**A4 — 邻区绝对够好**
+
+- 进入：邻区测量量 **好于** `a4-Threshold`（含迟滞）  
+- **不要求**与 SpCell 做相对比较  
+- 用途：绝对质量达标的邻区发现、准备、或特定策略；也可与其它逻辑组合使用
+
+**A5 — 服务差且邻区好（双门限）**
+
+- 同时满足：  
+  - SpCell **差于** `a5-Threshold1`  
+  - 邻区 **好于** `a5-Threshold2`  
+- 直觉：**A2 + A4 的合取** → 既要求“待不下去”，又要求“对面够好”  
+- 相对纯 A3：往往 **更少误切/乒乓**，但可能 **更晚** 才触发
+
+**A6 — 邻区相对 SCell 更好（CA）**
+
+- 类似 A3，但比较基准是 **SCell**，不是 SpCell  
+- 用途：辅载波质量差、有更好邻频/邻区候选时，触发 **SCell 变更** 一类决策  
+- 无 CA / 无相关 SCell 时通常不必关注 A6
+
+#### 事件公共旋钮（读 `reportConfigNR` 时）
+
+| 字段 | 含义 | 作用 |
+| --- | --- | --- |
+| **rsType** | SSB / CSI-RS 等 | 测哪类参考信号 |
+| **reportInterval / reportAmount** | 上报间隔与次数 | 事件触发后周期性再报多少次 |
+| **reportQuantityCell / rsIndex…** | 上报哪些量、是否报 beam | MeasurementReport 里带什么 |
+| **hysteresis** | 迟滞 | 进出事件防抖 |
+| **timeToTrigger (TTT)** | 条件需持续满足的时长 | 滤瞬时起伏，防乒乓 |
+| **reportOnLeave** | 离开事件是否也报 | 让网络知道条件已解除 |
+| **maxReportCells** | 最多报几个邻区 | 控制报告大小 |
+| **includeBeamMeasurements** 等 | 是否含波束级 | FR2/波束管理相关 |
+
+触发量可以是 **RSRP / RSRQ / SINR**（由配置决定），滤波还受 `quantityConfig` 影响。
+
+#### 和 HO 消息流怎么接
+
+```text
+measConfig 配好 A2/A3/A5...
+        ↓
+条件满足且 TTT 到
+        ↓
+MeasurementReport（携带 measId、服务/邻区结果）
+        ↓
+gNB 决策
+        ↓
+RRCReconfiguration（常含 reconfigurationWithSync）
+```
+
+#### 异系统对照（点到为止）
+
+| 事件 | 直觉 |
+| --- | --- |
+| **B1** | 异系统邻区好于门限 |
+| **B2** | NR PCell 差于 Th1 **且** 异系统邻区好于 Th2 |
+
+A 系列管 NR 内；落到 LTE 等用 B 系列。
 
 ---
 
@@ -384,7 +506,7 @@ RRCReconfiguration {
 2. 画出 Idle→Connected 的消息流，标出第一次 Reconfiguration 常出现的位置。  
 3. `rrc-TransactionIdentifier` 有什么用？  
 4. `radioBearerConfig` 与 `masterCellGroup` 分别管哪类“菜谱”？  
-5. `measConfig` 里 Object / Report / measId 三者关系？  
+5. `measConfig` 里 Object / Report / measId 关系？A1–A6 各触发什么？A3 与 A5、A6 差别？  
 6. `reconfigurationWithSync` 里 `t304`、`newUE-Identity`、`rach-ConfigDedicated` 各管什么？  
 7. Complete 发失败或 HO 超时，UE 可能走向什么挽救过程？
 
