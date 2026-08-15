@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-label="After PDSCH feedback">
+  <rect width="960" height="400" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">After PDSCH: close the loop</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Successful user-data PDSCH usually triggers UCI HARQ-ACK</text>
+
+  <rect x="60" y="130" width="160" height="80" rx="10" fill="#0f7a8a"/>
+  <text x="140" y="178" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">PDCCH</text>
+  <path d="M230 170 H280" stroke="#1f3a4d" stroke-width="3"/>
+  <rect x="290" y="130" width="160" height="80" rx="10" fill="#c9852c"/>
+  <text x="370" y="178" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">PDSCH</text>
+  <path d="M460 170 H510" stroke="#1f3a4d" stroke-width="3"/>
+  <rect x="520" y="130" width="160" height="80" rx="10" fill="#0a5561"/>
+  <text x="600" y="178" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Decode</text>
+  <path d="M690 170 H740" stroke="#1f3a4d" stroke-width="3"/>
+  <rect x="750" y="130" width="160" height="80" rx="10" fill="#8a5a14"/>
+  <text x="830" y="178" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">UCI ACK</text>
+
+  <text x="40" y="280" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Exceptions: some common PDSCH (e.g. RAR) may not expect HARQ-ACK the same way as C-RNTI data.</text>
+  <text x="40" y="315" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">UL path is dual: PDCCH can also carry UL grant DCI -&gt; PUSCH (not PDSCH).</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="PUCCH vs PUSCH">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PUCCH vs PUSCH</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Uplink control channel vs uplink shared (data) channel</text>
+
+  <rect x="40" y="110" width="400" height="230" rx="14" fill="#0f7a8a"/>
+  <text x="240" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#fff">PUCCH</text>
+  <text x="240" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Physical Uplink Control Channel</text>
+  <text x="70" y="230" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Carries UCI</text>
+  <text x="70" y="260" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">HARQ-ACK / SR / CSI</text>
+  <text x="70" y="290" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Formats 0..4 (short / long)</text>
+
+  <rect x="520" y="110" width="400" height="230" rx="14" fill="#c9852c"/>
+  <text x="720" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#fff">PUSCH</text>
+  <text x="720" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Physical Uplink Shared Channel</text>
+  <text x="550" y="230" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Carries UL-SCH data</text>
+  <text x="550" y="260" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Scheduled by UL DCI (0_x)</text>
+  <text x="550" y="290" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Can piggyback UCI</text>
+
+  <text x="40" y="385" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">One-liner: PUCCH reports; PUSCH uploads - together they close the UL side of NR.</text>
+</svg>

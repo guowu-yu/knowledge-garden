@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="PDSCH resource composition">
+  <rect width="960" height="480" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PDSCH resource composition</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Scheduled RBs in a BWP; data REs + DMRS (+ optional PTRS etc.)</text>
+
+  <rect x="80" y="110" width="560" height="260" rx="10" fill="#fff" stroke="#d0dde3"/>
+  <!-- fake grid -->
+  <g>
+    <rect x="120" y="150" width="480" height="40" fill="#c9852c" opacity="0.85"/>
+    <rect x="120" y="200" width="480" height="40" fill="#e8b56a"/>
+    <rect x="120" y="250" width="480" height="40" fill="#c9852c" opacity="0.85"/>
+    <rect x="120" y="300" width="480" height="40" fill="#e8b56a"/>
+    <!-- dmrs stripes -->
+    <rect x="120" y="200" width="480" height="12" fill="#1f3a4d"/>
+    <rect x="120" y="300" width="480" height="12" fill="#1f3a4d"/>
+  </g>
+  <text x="360" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff" font-weight="700">data REs</text>
+  <text x="360" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">DMRS</text>
+
+  <rect x="680" y="130" width="240" height="220" rx="12" fill="#1f3a4d"/>
+  <text x="800" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Indicated by DCI</text>
+  <text x="700" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">FDRA: which RBs</text>
+  <text x="700" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">TDRA: symbols / K0</text>
+  <text x="700" y="270" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">MCS / layers / ports</text>
+  <text x="700" y="300" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">HARQ / NDI / RV</text>
+
+  <text x="40" y="430" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">PDSCH can carry: user data, SIB1/SI, Msg2/Msg4, paging message, etc. depending on RNTI.</text>
+</svg>

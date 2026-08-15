@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-label="UL in access and data">
+  <rect width="1000" height="480" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PUCCH / PUSCH across the journey</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">From first UL message to steady connected-mode traffic</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="110" width="220" height="140" rx="12" fill="#0f7a8a"/>
+    <text x="150" y="150" text-anchor="middle" fill="#fff" font-weight="700">RACH Msg3</text>
+    <text x="60" y="185" fill="#fff">early PUSCH</text>
+    <text x="60" y="210" fill="#fff">grant from RAR</text>
+
+    <rect x="280" y="110" width="220" height="140" rx="12" fill="#1a8f9e"/>
+    <text x="390" y="150" text-anchor="middle" fill="#fff" font-weight="700">After DL data</text>
+    <text x="300" y="185" fill="#fff">HARQ-ACK UCI</text>
+    <text x="300" y="210" fill="#fff">often short PUCCH</text>
+
+    <rect x="520" y="110" width="220" height="140" rx="12" fill="#c9852c"/>
+    <text x="630" y="150" text-anchor="middle" fill="#fff" font-weight="700">Need UL resource</text>
+    <text x="540" y="185" fill="#fff">SR on PUCCH</text>
+    <text x="540" y="210" fill="#fff">then PUSCH grant</text>
+
+    <rect x="760" y="110" width="200" height="140" rx="12" fill="#1f3a4d"/>
+    <text x="860" y="150" text-anchor="middle" fill="#fff" font-weight="700">CSI report</text>
+    <text x="780" y="185" fill="#fff">PUCCH Fmt 2/3/4</text>
+    <text x="780" y="210" fill="#fff">or on PUSCH</text>
+  </g>
+
+  <rect x="40" y="290" width="920" height="140" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="330" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Symmetric to DL</text>
+  <text x="60" y="365" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">DL: PDCCH schedules PDSCH; UL: PDCCH (UL DCI) schedules PUSCH; PUCCH returns control without needing UL-SCH.</text>
+  <text x="60" y="395" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Together with PDCCH/PDSCH they form the full duplex control-data loop of NR.</text>
+</svg>

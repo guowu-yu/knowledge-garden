@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-label="Roles across access and data">
+  <rect width="1000" height="560" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Where PDCCH/PDSCH matter in the journey</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">From SIB1 to Connected-mode DL data - always the same pair</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="110" width="220" height="160" rx="12" fill="#0f7a8a"/>
+    <text x="150" y="145" text-anchor="middle" fill="#fff" font-weight="700">SIB1 / SI</text>
+    <text x="60" y="180" fill="#fff">Type0/0A PDCCH</text>
+    <text x="60" y="205" fill="#fff">SI-RNTI</text>
+    <text x="60" y="230" fill="#fff">PDSCH = SIB payload</text>
+
+    <rect x="280" y="110" width="220" height="160" rx="12" fill="#1a8f9e"/>
+    <text x="390" y="145" text-anchor="middle" fill="#fff" font-weight="700">RACH Msg2/4</text>
+    <text x="300" y="180" fill="#fff">Type1 PDCCH</text>
+    <text x="300" y="205" fill="#fff">RA-/TC-RNTI</text>
+    <text x="300" y="230" fill="#fff">PDSCH = RAR / CR</text>
+
+    <rect x="520" y="110" width="220" height="160" rx="12" fill="#0a5561"/>
+    <text x="630" y="145" text-anchor="middle" fill="#fff" font-weight="700">Paging</text>
+    <text x="540" y="180" fill="#fff">Type2 PDCCH</text>
+    <text x="540" y="205" fill="#fff">P-RNTI</text>
+    <text x="540" y="230" fill="#fff">PDSCH = paging msg</text>
+
+    <rect x="760" y="110" width="200" height="160" rx="12" fill="#c9852c"/>
+    <text x="860" y="145" text-anchor="middle" fill="#fff" font-weight="700">UE data</text>
+    <text x="780" y="180" fill="#fff">USS PDCCH</text>
+    <text x="780" y="205" fill="#fff">C-RNTI</text>
+    <text x="780" y="230" fill="#fff">PDSCH = TB</text>
+  </g>
+
+  <rect x="40" y="310" width="920" height="200" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="350" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">Invariant pattern</text>
+  <text x="60" y="390" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">1) Monitor the right Search Space / RNTI on PDCCH</text>
+  <text x="60" y="425" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">2) Decode DCI -&gt; learn PDSCH time-frequency and coding</text>
+  <text x="60" y="460" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">3) Decode PDSCH -&gt; deliver SI / RAR / paging / user IP packets to higher layers</text>
+</svg>

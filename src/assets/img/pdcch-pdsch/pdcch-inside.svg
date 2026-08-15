@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="PDCCH DMRS and DCI">
+  <rect width="960" height="420" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">What is inside PDCCH</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Physical channel = DMRS-assisted coded DCI bits mapped on CCEs</text>
+
+  <rect x="40" y="120" width="280" height="200" rx="12" fill="#0f7a8a"/>
+  <text x="180" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">DCI bits</text>
+  <text x="180" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">polar coded</text>
+  <text x="180" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">CRC + RNTI</text>
+
+  <rect x="340" y="120" width="280" height="200" rx="12" fill="#1a8f9e"/>
+  <text x="480" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">PDCCH DMRS</text>
+  <text x="480" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">channel estimate</text>
+  <text x="480" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">QCL / TCI aware</text>
+
+  <rect x="640" y="120" width="280" height="200" rx="12" fill="#1f3a4d"/>
+  <text x="780" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Mapping</text>
+  <text x="780" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">to REG/CCE</text>
+  <text x="780" y="245" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">in CORESET</text>
+</svg>
