@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="Channels power control">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Per uplink channel</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Same philosophy, different P0 / formula details</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="110" width="210" height="160" rx="12" fill="#0f7a8a"/>
+    <text x="145" y="150" text-anchor="middle" fill="#fff" font-weight="700">PRACH</text>
+    <text x="60" y="185" fill="#fff">preambleReceived</text>
+    <text x="60" y="210" fill="#fff">TargetPower + PL</text>
+    <text x="60" y="235" fill="#fff">+ power ramping</text>
+
+    <rect x="270" y="110" width="210" height="160" rx="12" fill="#1a8f9e"/>
+    <text x="375" y="150" text-anchor="middle" fill="#fff" font-weight="700">PUSCH</text>
+    <text x="290" y="185" fill="#fff">main data UL PC</text>
+    <text x="290" y="210" fill="#fff">grant / CG aware</text>
+    <text x="290" y="235" fill="#fff">TPC accum/abs</text>
+
+    <rect x="500" y="110" width="210" height="160" rx="12" fill="#c9852c"/>
+    <text x="605" y="150" text-anchor="middle" fill="#fff" font-weight="700">PUCCH</text>
+    <text x="520" y="185" fill="#fff">UCI reliability</text>
+    <text x="520" y="210" fill="#fff">format dependent</text>
+    <text x="520" y="235" fill="#fff">delta_F + TPC</text>
+
+    <rect x="730" y="110" width="190" height="160" rx="12" fill="#1f3a4d"/>
+    <text x="825" y="150" text-anchor="middle" fill="#fff" font-weight="700">SRS</text>
+    <text x="750" y="185" fill="#e7f3f7">sounding power</text>
+    <text x="750" y="210" fill="#e7f3f7">own P0/alpha</text>
+    <text x="750" y="235" fill="#e7f3f7">TPC for SRS</text>
+  </g>
+
+  <rect x="40" y="310" width="880" height="120" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="355" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Priority when colliding</text>
+  <text x="60" y="390" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">If total power would exceed PCMAX, UE drops / scales channels by priority rules (e.g. favor PRACH/PUCCH over PUSCH in many cases).</text>
+</svg>

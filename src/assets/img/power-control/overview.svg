@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="Why power control">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Why power control in NR?</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Enough SNR to decode, not so strong as to burn battery or drown neighbors</text>
+
+  <rect x="40" y="110" width="280" height="220" rx="14" fill="#0f7a8a"/>
+  <text x="180" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Coverage</text>
+  <text x="60" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Compensate pathloss</text>
+  <text x="60" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Cell-edge vs near</text>
+  <text x="60" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Open-loop baseline</text>
+
+  <rect x="340" y="110" width="280" height="220" rx="14" fill="#c9852c"/>
+  <text x="480" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Interference</text>
+  <text x="360" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Limit other-cell I</text>
+  <text x="360" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">MU / beam sharing</text>
+  <text x="360" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Closed-loop TPC</text>
+
+  <rect x="640" y="110" width="280" height="220" rx="14" fill="#1f3a4d"/>
+  <text x="780" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Device limits</text>
+  <text x="660" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">PCMAX / MPR</text>
+  <text x="660" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Battery / PA</text>
+  <text x="660" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">PHR feedback</text>
+</svg>

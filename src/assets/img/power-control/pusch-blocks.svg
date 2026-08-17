@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="PUSCH power formula blocks">
+  <rect width="960" height="520" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PUSCH power building blocks</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">P_PUSCH = min( PCMAX, open-loop + bandwidth + deltaTF + TPC )</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="110" width="200" height="100" rx="10" fill="#0f7a8a"/>
+    <text x="140" y="150" text-anchor="middle" fill="#fff" font-weight="700">P0 + alpha*PL</text>
+    <text x="140" y="180" text-anchor="middle" fill="#e7f3f7">target + fractional PL</text>
+
+    <rect x="260" y="110" width="200" height="100" rx="10" fill="#1a8f9e"/>
+    <text x="360" y="150" text-anchor="middle" fill="#fff" font-weight="700">10 log10(2^mu * M)</text>
+    <text x="360" y="180" text-anchor="middle" fill="#e7f3f7">RB bandwidth</text>
+
+    <rect x="480" y="110" width="200" height="100" rx="10" fill="#c9852c"/>
+    <text x="580" y="150" text-anchor="middle" fill="#fff" font-weight="700">delta_TF</text>
+    <text x="580" y="180" text-anchor="middle" fill="#fff">MCS / TF dependent</text>
+
+    <rect x="700" y="110" width="220" height="100" rx="10" fill="#1f3a4d"/>
+    <text x="810" y="150" text-anchor="middle" fill="#fff" font-weight="700">f(i) or g accum</text>
+    <text x="810" y="180" text-anchor="middle" fill="#e7f3f7">closed-loop TPC</text>
+  </g>
+
+  <rect x="40" y="250" width="880" height="220" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="290" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Parameter map</text>
+  <text x="60" y="325" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">P0: desired receive power baseline (RRC: p0-Nominal / p0-UE)</text>
+  <text x="60" y="355" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">alpha: 0..1 fractional pathloss compensation (1 = full, less = share load with near UEs)</text>
+  <text x="60" y="385" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">M_RB: number of scheduled RBs; mu: numerology (SCS)</text>
+  <text x="60" y="415" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">TPC: from DCI (e.g. Format 0_x / 2_2 / 2_3 depending on use)</text>
+  <text x="60" y="445" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">See TS 38.213 for exact equation variants (with/without grant, msg3, etc.).</text>
+</svg>

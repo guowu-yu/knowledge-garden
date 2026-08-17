@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-label="Open loop and closed loop">
+  <rect width="1000" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Open-loop + closed-loop</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Baseline from pathloss; fine tune from TPC</text>
+
+  <rect x="60" y="120" width="200" height="90" rx="10" fill="#0f7a8a"/>
+  <text x="160" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Estimate PL</text>
+  <text x="160" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">SSB / CSI-RS</text>
+
+  <path d="M270 165 H310" stroke="#1f3a4d" stroke-width="3"/>
+  <rect x="320" y="120" width="220" height="90" rx="10" fill="#1a8f9e"/>
+  <text x="430" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Open-loop P0 + alpha*PL</text>
+  <text x="430" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">+ bandwidth factor</text>
+
+  <path d="M550 165 H590" stroke="#1f3a4d" stroke-width="3"/>
+  <rect x="600" y="120" width="160" height="90" rx="10" fill="#c9852c"/>
+  <text x="680" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">+ f(i) TPC</text>
+  <text x="680" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">closed loop</text>
+
+  <path d="M770 165 H810" stroke="#1f3a4d" stroke-width="3"/>
+  <rect x="820" y="120" width="140" height="90" rx="10" fill="#1f3a4d"/>
+  <text x="890" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">min(PCMAX,</text>
+  <text x="890" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7"> ... )</text>
+
+  <rect x="60" y="260" width="880" height="160" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="80" y="300" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Intuition</text>
+  <text x="80" y="335" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Open loop: if pathloss doubles, raise Tx (scaled by alpha) so gNB still hears you.</text>
+  <text x="80" y="365" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Closed loop: gNB sends TPC up/down based on measured UL quality / interference.</text>
+  <text x="80" y="395" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Hard cap: never exceed PCMAX (and MPR/AMPR reductions).</text>
+</svg>

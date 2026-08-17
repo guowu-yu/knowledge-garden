@@ -75,9 +75,50 @@ def plain_text(md: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+_MATH_DISPLAY = re.compile(r"\\\[((?:.|\n)*?)\\\]")
+_MATH_INLINE = re.compile(r"\\\(((?:.|\n)*?)\\\)")
+_MATH_DOLLAR = re.compile(r"\$\$((?:.|\n)*?)\$\$")
+
+
+def _extract_math(body: str) -> tuple[str, list[tuple[str, str]]]:
+    """Pull LaTeX out before Markdown so \\(, \\[, \\{ etc. are not escaped."""
+    slots: list[tuple[str, str]] = []
+
+    def park(kind: str, tex: str) -> str:
+        slots.append((kind, tex))
+        return f"@@MATH{len(slots) - 1}@@"
+
+    def park_display(m: re.Match) -> str:
+        return park("display", m.group(1))
+
+    def park_inline(m: re.Match) -> str:
+        return park("inline", m.group(1))
+
+    body = _MATH_DOLLAR.sub(park_display, body)
+    body = _MATH_DISPLAY.sub(park_display, body)
+    body = _MATH_INLINE.sub(park_inline, body)
+    return body, slots
+
+
+def _restore_math(html: str, slots: list[tuple[str, str]]) -> str:
+    for i, (kind, tex) in enumerate(slots):
+        token = f"@@MATH{i}@@"
+        if kind == "display":
+            repl = f"\\[{tex}\\]"
+        else:
+            repl = f"\\({tex}\\)"
+        html = html.replace(token, repl)
+        # Prefer bare display math over a wrapping paragraph
+        html = html.replace(f"<p>\\[{tex}\\]</p>", f"\\[{tex}\\]")
+        html = html.replace(f"<p>\\[{tex}\\]<br />\n</p>", f"\\[{tex}\\]")
+    return html
+
+
 def render_md(body: str) -> str:
     ensure_markdown()
+    body, math_slots = _extract_math(body)
     html = md_lib.markdown(body, extensions=["tables", "fenced_code", "nl2br"])
+    html = _restore_math(html, math_slots)
     # Allow MD preview paths from content/topics → src/assets, then rewrite for dist/topics
     html = html.replace("../../src/assets/", "../assets/")
     html = html.replace("../src/assets/", "../assets/")

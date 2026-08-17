@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="PHR">
+  <rect width="960" height="420" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Power Headroom (PHR)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">How much Tx power budget is left under PCMAX</text>
+
+  <rect x="80" y="140" width="800" height="60" rx="8" fill="#d0dde3"/>
+  <rect x="80" y="140" width="520" height="60" rx="8" fill="#0f7a8a"/>
+  <text x="200" y="175" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Used / estimated P_PUSCH</text>
+  <text x="700" y="175" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#1f3a4d">Headroom</text>
+
+  <text x="80" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">PH ~ PCMAX - P_estimated  (sign/type variants in 38.213 / 38.321)</text>
+  <text x="80" y="275" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Positive large PH: can schedule more RBs / higher MCS power-wise</text>
+  <text x="80" y="310" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Near zero / negative: power limited - scheduler should shrink allocation</text>
+  <text x="80" y="355" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Reported via MAC CE (periodic / event-triggered PHR).</text>
+</svg>

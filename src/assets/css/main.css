@@ -647,6 +647,18 @@ body {
   background: #f8fafb;
 }
 
+.prose mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.prose mjx-container[display="true"] {
+  display: block;
+  margin: 1.1rem 0;
+  text-align: center;
+}
+
 .prose img {
   display: block;
   width: 100%;
