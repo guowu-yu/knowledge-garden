@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="CSI reporting loop">
+  <rect width="960" height="420" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">CSI loop</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Configure RS -&gt; measure -&gt; report UCI -&gt; schedule better</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="140" width="160" height="80" rx="10" fill="#0f7a8a"/>
+    <text x="120" y="175" text-anchor="middle" fill="#fff" font-weight="700">RRC config</text>
+    <text x="120" y="200" text-anchor="middle" fill="#e7f3f7">csi-MeasConfig</text>
+
+    <path d="M210 180 H250" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="260" y="140" width="160" height="80" rx="10" fill="#1a8f9e"/>
+    <text x="340" y="175" text-anchor="middle" fill="#fff" font-weight="700">NZP CSI-RS</text>
+    <text x="340" y="200" text-anchor="middle" fill="#e7f3f7">(+ CSI-IM)</text>
+
+    <path d="M430 180 H470" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="480" y="140" width="160" height="80" rx="10" fill="#c9852c"/>
+    <text x="560" y="175" text-anchor="middle" fill="#fff" font-weight="700">UE compute</text>
+    <text x="560" y="200" text-anchor="middle" fill="#fff">CSI / L1-RSRP</text>
+
+    <path d="M650 180 H690" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="700" y="140" width="200" height="80" rx="10" fill="#1f3a4d"/>
+    <text x="800" y="175" text-anchor="middle" fill="#fff" font-weight="700">UCI report</text>
+    <text x="800" y="200" text-anchor="middle" fill="#e7f3f7">PUCCH / PUSCH</text>
+  </g>
+
+  <path d="M800 230 V280 H120 V220" fill="none" stroke="#c9852c" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="480" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#8a5a14">gNB updates MCS / beams / TCI / grants</text>
+
+  <text x="40" y="370" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Periodic: RRC timing; Semi-persistent: MAC CE activate; Aperiodic: DCI CSI-request.</text>
+</svg>

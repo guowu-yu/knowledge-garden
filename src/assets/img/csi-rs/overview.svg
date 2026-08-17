@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="What is CSI-RS">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">CSI-RS in NR</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Configurable downlink reference signals for CSI, beams, tracking...</text>
+
+  <rect x="40" y="110" width="280" height="220" rx="14" fill="#0f7a8a"/>
+  <text x="180" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Why</text>
+  <text x="60" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">No always-on CRS like LTE</text>
+  <text x="60" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">On-demand / configured RS</text>
+  <text x="60" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Multi-beam / massive MIMO</text>
+
+  <rect x="340" y="110" width="280" height="220" rx="14" fill="#c9852c"/>
+  <text x="480" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">What UE gets</text>
+  <text x="360" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Channel estimate</text>
+  <text x="360" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">CQI / PMI / RI / CRI...</text>
+  <text x="360" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Beam / tracking metrics</text>
+
+  <rect x="640" y="110" width="280" height="220" rx="14" fill="#1f3a4d"/>
+  <text x="780" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Report path</text>
+  <text x="660" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">UCI on PUCCH/PUSCH</text>
+  <text x="660" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">or L1-RSRP for BM</text>
+  <text x="660" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">feeds gNB scheduler</text>
+</svg>

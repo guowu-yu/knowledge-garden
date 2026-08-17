@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-label="CSI-RS use cases">
+  <rect width="1000" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Main use cases</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Same family of signals, different resource sets and reports</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="40" y="110" width="220" height="160" rx="12" fill="#0f7a8a"/>
+    <text x="150" y="150" text-anchor="middle" fill="#fff" font-weight="700">CSI acquisition</text>
+    <text x="60" y="185" fill="#fff">CQI / PMI / RI / LI</text>
+    <text x="60" y="215" fill="#fff">link adaptation</text>
+    <text x="60" y="245" fill="#fff">MIMO precoding</text>
+
+    <rect x="280" y="110" width="220" height="160" rx="12" fill="#c9852c"/>
+    <text x="390" y="150" text-anchor="middle" fill="#fff" font-weight="700">Beam management</text>
+    <text x="300" y="185" fill="#fff">CRI / L1-RSRP</text>
+    <text x="300" y="215" fill="#fff">P1/P2/P3 style</text>
+    <text x="300" y="245" fill="#fff">TCI / QCL updates</text>
+
+    <rect x="520" y="110" width="220" height="160" rx="12" fill="#1a8f9e"/>
+    <text x="630" y="150" text-anchor="middle" fill="#fff" font-weight="700">Tracking (TRS)</text>
+    <text x="540" y="185" fill="#fff">time/freq track</text>
+    <text x="540" y="215" fill="#fff">dense periodic RS</text>
+    <text x="540" y="245" fill="#fff">often QCL to SSB</text>
+
+    <rect x="760" y="110" width="200" height="160" rx="12" fill="#1f3a4d"/>
+    <text x="860" y="150" text-anchor="middle" fill="#fff" font-weight="700">Other</text>
+    <text x="780" y="185" fill="#fff">mobility / RRM</text>
+    <text x="780" y="215" fill="#fff">RLM in some cfgs</text>
+    <text x="780" y="245" fill="#fff">rate matching</text>
+  </g>
+
+  <rect x="40" y="310" width="920" height="120" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="355" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">SSB vs CSI-RS</text>
+  <text x="60" y="390" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">SSB: always for sync / initial beam; CSI-RS: finer, UE-configured, denser options for connected-mode CSI and beams.</text>
+</svg>

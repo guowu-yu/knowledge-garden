@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="CSI-RS time frequency">
+  <rect width="960" height="480" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Time-frequency placement (intuition)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Ports, density, CDM, firstOFDMSymbol, freqDomainAllocation</text>
+
+  <rect x="80" y="110" width="520" height="280" rx="10" fill="#fff" stroke="#d0dde3"/>
+  <!-- grid dots representing RE -->
+  <g>
+    <rect x="120" y="150" width="18" height="18" fill="#0f7a8a"/>
+    <rect x="160" y="150" width="18" height="18" fill="#d0dde3"/>
+    <rect x="200" y="150" width="18" height="18" fill="#0f7a8a"/>
+    <rect x="240" y="150" width="18" height="18" fill="#d0dde3"/>
+    <rect x="280" y="150" width="18" height="18" fill="#0f7a8a"/>
+    <rect x="120" y="200" width="18" height="18" fill="#d0dde3"/>
+    <rect x="160" y="200" width="18" height="18" fill="#c9852c"/>
+    <rect x="200" y="200" width="18" height="18" fill="#d0dde3"/>
+    <rect x="240" y="200" width="18" height="18" fill="#c9852c"/>
+    <rect x="280" y="200" width="18" height="18" fill="#d0dde3"/>
+    <rect x="120" y="250" width="18" height="18" fill="#0f7a8a"/>
+    <rect x="160" y="250" width="18" height="18" fill="#d0dde3"/>
+    <rect x="200" y="250" width="18" height="18" fill="#0f7a8a"/>
+    <rect x="240" y="250" width="18" height="18" fill="#d0dde3"/>
+    <rect x="280" y="250" width="18" height="18" fill="#0f7a8a"/>
+  </g>
+  <text x="340" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">colored = CSI-RS REs</text>
+  <text x="340" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">density / CDM packs ports</text>
+  <text x="340" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">into RE groups</text>
+
+  <rect x="640" y="120" width="280" height="260" rx="12" fill="#1f3a4d"/>
+  <text x="780" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Key knobs</text>
+  <text x="660" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">nrofPorts (1..32)</text>
+  <text x="660" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">density (0.5/1/3...)</text>
+  <text x="660" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">cdm-Type</text>
+  <text x="660" y="290" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">firstOFDMSymbolInTimeDomain</text>
+  <text x="660" y="320" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">periodicityAndOffset</text>
+
+  <text x="40" y="440" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Exact RE mapping tables: TS 38.211. PDSCH rate-matches around CSI-RS when configured.</text>
+</svg>

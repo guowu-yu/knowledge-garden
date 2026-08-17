@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="CSI-RS types">
+  <rect width="960" height="480" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Three CSI-RS related resource ideas</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">NZP CSI-RS / ZP CSI-RS / CSI-IM - different jobs</text>
+
+  <rect x="40" y="110" width="280" height="280" rx="14" fill="#0f7a8a"/>
+  <text x="180" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">NZP CSI-RS</text>
+  <text x="60" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Non-Zero Power</text>
+  <text x="60" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Actually transmitted</text>
+  <text x="60" y="270" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Channel / beam estimate</text>
+  <text x="60" y="305" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Main CSI / BM / TRS</text>
+
+  <rect x="340" y="110" width="280" height="280" rx="14" fill="#c9852c"/>
+  <text x="480" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">ZP CSI-RS</text>
+  <text x="360" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Zero Power</text>
+  <text x="360" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">RE muted (rate match)</text>
+  <text x="360" y="270" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Protect / measure IMR</text>
+  <text x="360" y="305" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Often with CSI-IM</text>
+
+  <rect x="640" y="110" width="280" height="280" rx="14" fill="#1f3a4d"/>
+  <text x="780" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">CSI-IM</text>
+  <text x="660" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Interference Measurement</text>
+  <text x="660" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Measure interference</text>
+  <text x="660" y="270" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">for CQI accuracy</text>
+  <text x="660" y="305" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Pattern of REs</text>
+</svg>

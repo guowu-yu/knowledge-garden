@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="NZP ZP CSI-IM example">
+  <rect width="960" height="520" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Example: one PRB slice in a CSI slot</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Same grid, three jobs: probe / mute / listen to interference</text>
+
+  <rect x="80" y="110" width="200" height="220" rx="10" fill="#0f7a8a"/>
+  <text x="180" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">NZP REs</text>
+  <text x="100" y="190" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">gNB sends known</text>
+  <text x="100" y="220" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">sequence (energy)</text>
+  <text x="100" y="250" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">UE: H = Y / X</text>
+  <text x="100" y="290" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">channel estimate</text>
+
+  <rect x="320" y="110" width="200" height="220" rx="10" fill="#c9852c"/>
+  <text x="420" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">ZP REs</text>
+  <text x="340" y="190" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">gNB sends nothing</text>
+  <text x="340" y="220" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">PDSCH skips these</text>
+  <text x="340" y="250" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">rate matching</text>
+  <text x="340" y="290" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">protect the holes</text>
+
+  <rect x="560" y="110" width="200" height="220" rx="10" fill="#1f3a4d"/>
+  <text x="660" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">CSI-IM REs</text>
+  <text x="580" y="190" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">ideally no wanted</text>
+  <text x="580" y="220" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">signal from serving</text>
+  <text x="580" y="250" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">UE hears I + N</text>
+  <text x="580" y="290" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">for CQI</text>
+
+  <rect x="780" y="110" width="140" height="220" rx="10" fill="#fff" stroke="#d0dde3" stroke-width="2"/>
+  <text x="850" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0b1c28">CQI</text>
+  <text x="850" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">uses H</text>
+  <text x="850" y="240" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">and I+N</text>
+  <text x="850" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">together</text>
+
+  <text x="40" y="390" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Analogy: NZP = flashlight to see the road; ZP = keep that patch empty so nobody drives over it;</text>
+  <text x="40" y="420" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">CSI-IM = listen in a quiet patch to hear how noisy the street is (interference).</text>
+  <text x="40" y="460" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">ZP and CSI-IM often overlap in spirit (muted REs), but IE / process roles differ in RRC.</text>
+</svg>

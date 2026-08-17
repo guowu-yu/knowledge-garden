@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="Cell specific vs UE specific CSI-RS">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Cell-specific vs UE-specific CSI-RS</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Same NZP family; different audience and configuration scope</text>
+
+  <rect x="40" y="110" width="420" height="230" rx="14" fill="#0f7a8a"/>
+  <text x="250" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">Cell-specific</text>
+  <text x="70" y="195" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Shared by many UEs in cell</text>
+  <text x="70" y="230" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Often TRS / common BM / RRM</text>
+  <text x="70" y="265" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Same resources, same timing</text>
+  <text x="70" y="300" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Lower per-UE overhead</text>
+
+  <rect x="500" y="110" width="420" height="230" rx="14" fill="#c9852c"/>
+  <text x="710" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">UE-specific</text>
+  <text x="530" y="195" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Configured per UE (RRC)</text>
+  <text x="530" y="230" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Fine CSI / dedicated beams</text>
+  <text x="530" y="265" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Ports, period, QCL tailored</text>
+  <text x="530" y="300" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">More flexible, more cost</text>
+
+  <text x="40" y="385" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Both are still CSI-RS (often NZP); "cell/UE specific" is a deployment/config role, not a third physical waveform family.</text>
+</svg>

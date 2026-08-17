@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="CSI-RS resource hierarchy">
+  <rect width="960" height="520" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Resource hierarchy (RRC)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Resource -&gt; ResourceSet -&gt; ResourceConfig / Setting -&gt; ReportConfig</text>
+
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="80" y="110" width="800" height="55" rx="10" fill="#0a5561"/>
+    <text x="480" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">CSI-ReportConfig (what/when to report on UCI)</text>
+
+    <rect x="120" y="190" width="720" height="55" rx="10" fill="#0f7a8a"/>
+    <text x="480" y="225" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">CSI-ResourceConfig (which NZP / IM / ZP sets)</text>
+
+    <rect x="180" y="270" width="600" height="55" rx="10" fill="#1a8f9e"/>
+    <text x="480" y="305" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">NZP-CSI-RS-ResourceSet / CSI-IM-ResourceSet</text>
+
+    <rect x="240" y="350" width="480" height="55" rx="10" fill="#c9852c"/>
+    <text x="480" y="385" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">NZP-CSI-RS-Resource (ports, RE map, period...)</text>
+  </g>
+
+  <text x="40" y="460" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Periodic / semi-persistent / aperiodic is configured across resources and reporting.</text>
+  <text x="40" y="490" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Aperiodic CSI often triggered by DCI CSI-request.</text>
+</svg>
