@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-label="Type2 multiple CDM groups">
+  <rect width="1000" height="520" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Type 2: how more ports fit (CDM groups sketch)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Different CDM groups use different 4-RE clusters in the same PRB/symbol</text>
+
+  <text x="80" y="115" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#8a5a14">CDM group A (example REs 0,1,6,7)</text>
+  <g>
+    <rect x="80" y="130" width="40" height="40" fill="#c9852c"/><rect x="125" y="130" width="40" height="40" fill="#c9852c"/>
+    <rect x="170" y="130" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="215" y="130" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="260" y="130" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="305" y="130" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="350" y="130" width="40" height="40" fill="#c9852c"/><rect x="395" y="130" width="40" height="40" fill="#c9852c"/>
+    <rect x="440" y="130" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="485" y="130" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="530" y="130" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="575" y="130" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+  </g>
+
+  <text x="80" y="210" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0a5561">CDM group B (shifted cluster, e.g. 2,3,8,9)</text>
+  <g>
+    <rect x="80" y="225" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="125" y="225" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="170" y="225" width="40" height="40" fill="#0f7a8a"/><rect x="215" y="225" width="40" height="40" fill="#0f7a8a"/>
+    <rect x="260" y="225" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="305" y="225" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="350" y="225" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="395" y="225" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="440" y="225" width="40" height="40" fill="#0f7a8a"/><rect x="485" y="225" width="40" height="40" fill="#0f7a8a"/>
+    <rect x="530" y="225" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="575" y="225" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+  </g>
+
+  <text x="80" y="305" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#1f3a4d">CDM group C (another shift, e.g. 4,5,10,11)</text>
+  <g>
+    <rect x="80" y="320" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="125" y="320" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="170" y="320" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="215" y="320" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="260" y="320" width="40" height="40" fill="#1f3a4d"/><rect x="305" y="320" width="40" height="40" fill="#1f3a4d"/>
+    <rect x="350" y="320" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="395" y="320" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="440" y="320" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/><rect x="485" y="320" width="40" height="40" fill="#e8eef1" stroke="#d0dde3"/>
+    <rect x="530" y="320" width="40" height="40" fill="#1f3a4d"/><rect x="575" y="320" width="40" height="40" fill="#1f3a4d"/>
+  </g>
+
+  <rect x="680" y="130" width="280" height="280" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="820" y="170" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Why Type2?</text>
+  <text x="700" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">More non-overlapping</text>
+  <text x="700" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">CDM groups in frequency</text>
+  <text x="700" y="280" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">=&gt; more orthogonal</text>
+  <text x="700" y="310" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">ports (up to 12</text>
+  <text x="700" y="340" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">single-symbol case)</text>
+  <text x="700" y="380" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Good for MU-MIMO</text>
+
+  <text x="40" y="420" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Type1 instead packs a denser comb; FD-CDM still multiplexes ports, but the grid shape differs and max ports are fewer (typ. 8).</text>
+  <text x="40" y="450" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Offsets above are teaching sketches - always confirm with 38.211 mapping equations for implementation.</text>
+  <text x="40" y="490" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Within one colored cluster, orthogonal cover codes separate ports that share those REs.</text>
+</svg>

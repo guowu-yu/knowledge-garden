@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="What is DMRS">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">DMRS: Demodulation Reference Signal</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Front-loaded pilots to decode the associated physical channel</text>
+
+  <rect x="40" y="110" width="280" height="220" rx="14" fill="#0f7a8a"/>
+  <text x="180" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Purpose</text>
+  <text x="60" y="205" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Estimate channel for</text>
+  <text x="60" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">THIS transmission</text>
+  <text x="60" y="265" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Coherent demodulation</text>
+
+  <rect x="340" y="110" width="280" height="220" rx="14" fill="#c9852c"/>
+  <text x="480" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Carried with</text>
+  <text x="360" y="205" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">PDSCH / PUSCH</text>
+  <text x="360" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">PDCCH / PBCH</text>
+  <text x="360" y="265" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Same beam / ports idea</text>
+
+  <rect x="640" y="110" width="280" height="220" rx="14" fill="#1f3a4d"/>
+  <text x="780" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Not CSI-RS</text>
+  <text x="660" y="205" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">CSI-RS -&gt; report CSI</text>
+  <text x="660" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">DMRS -&gt; decode now</text>
+  <text x="660" y="265" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Different jobs</text>
+</svg>

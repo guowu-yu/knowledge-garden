@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-label="Front-loaded and additional DMRS">
+  <rect width="1000" height="480" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Front-loaded + additional DMRS positions</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Early DMRS enables early decoding; extra symbols track time variation</text>
+
+  <rect x="80" y="120" width="840" height="100" rx="10" fill="#fff" stroke="#d0dde3"/>
+  <rect x="120" y="145" width="70" height="50" fill="#0f7a8a"/>
+  <text x="155" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#fff">DMRS</text>
+  <rect x="210" y="145" width="280" height="50" fill="#c9852c" opacity="0.85"/>
+  <text x="350" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">data</text>
+  <rect x="520" y="145" width="70" height="50" fill="#0f7a8a"/>
+  <text x="555" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#fff">+DMRS</text>
+  <rect x="610" y="145" width="260" height="50" fill="#c9852c" opacity="0.85"/>
+  <text x="740" y="175" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">data</text>
+
+  <text x="80" y="270" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0a5561">dmrs-AdditionalPosition</text>
+  <text x="80" y="305" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">pos0: front-loaded only | pos1/pos2/pos3: more mid/late DMRS for high Doppler / long slots</text>
+
+  <rect x="80" y="340" width="400" height="80" rx="10" fill="#0f7a8a"/>
+  <text x="280" y="375" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Single-symbol DMRS</text>
+  <text x="280" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">lower overhead</text>
+
+  <rect x="520" y="340" width="400" height="80" rx="10" fill="#c9852c"/>
+  <text x="720" y="375" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Double-symbol DMRS</text>
+  <text x="720" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">more ports / robustness</text>
+</svg>

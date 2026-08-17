@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-label="DMRS vs CSI-RS">
+  <rect width="960" height="460" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">DMRS vs CSI-RS</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Both are reference signals; jobs differ</text>
+
+  <rect x="40" y="110" width="420" height="250" rx="14" fill="#0f7a8a"/>
+  <text x="250" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">DMRS</text>
+  <text x="70" y="200" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Tied to a scheduled channel</text>
+  <text x="70" y="235" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Same ports / precoding idea</text>
+  <text x="70" y="270" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Decode PDSCH/PUSCH/PDCCH</text>
+  <text x="70" y="305" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Indicated largely by DCI</text>
+
+  <rect x="500" y="110" width="420" height="250" rx="14" fill="#c9852c"/>
+  <text x="710" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">CSI-RS</text>
+  <text x="530" y="200" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Configured measurement RS</text>
+  <text x="530" y="235" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">May differ from data beam</text>
+  <text x="530" y="270" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Report CQI/PMI/RI/CRI</text>
+  <text x="530" y="305" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">csi-MeasConfig + triggers</text>
+
+  <text x="40" y="420" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">QCL can link them: e.g. PDSCH DMRS QCL-ed to a CSI-RS or SSB for large-scale properties.</text>
+</svg>

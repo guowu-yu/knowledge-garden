@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="DMRS channels">
+  <rect width="960" height="420" rx="18" fill="#f3f7f9"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Where DMRS appears</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Each physical channel has its own DMRS design</text>
+
+  <g font-family="Segoe UI, sans-serif" font-size="13">
+    <rect x="40" y="110" width="210" height="140" rx="12" fill="#0f7a8a"/>
+    <text x="145" y="160" text-anchor="middle" fill="#fff" font-weight="700">PDSCH DMRS</text>
+    <text x="145" y="195" text-anchor="middle" fill="#e7f3f7">Type1 / Type2</text>
+    <text x="145" y="225" text-anchor="middle" fill="#e7f3f7">ports / positions</text>
+
+    <rect x="270" y="110" width="210" height="140" rx="12" fill="#c9852c"/>
+    <text x="375" y="160" text-anchor="middle" fill="#fff" font-weight="700">PUSCH DMRS</text>
+    <text x="375" y="195" text-anchor="middle" fill="#fff">similar types</text>
+    <text x="375" y="225" text-anchor="middle" fill="#fff">UL transform precoding</text>
+
+    <rect x="500" y="110" width="210" height="140" rx="12" fill="#1a8f9e"/>
+    <text x="605" y="160" text-anchor="middle" fill="#fff" font-weight="700">PDCCH DMRS</text>
+    <text x="605" y="195" text-anchor="middle" fill="#e7f3f7">in CORESET REs</text>
+    <text x="605" y="225" text-anchor="middle" fill="#e7f3f7">wideband / REG</text>
+
+    <rect x="730" y="110" width="190" height="140" rx="12" fill="#1f3a4d"/>
+    <text x="825" y="160" text-anchor="middle" fill="#fff" font-weight="700">PBCH DMRS</text>
+    <text x="825" y="195" text-anchor="middle" fill="#e7f3f7">inside SSB</text>
+    <text x="825" y="225" text-anchor="middle" fill="#e7f3f7">PCI related</text>
+  </g>
+
+  <text x="40" y="320" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">MIB also indicates dmrs-TypeA-Position (pos2/pos3) for Type-A mapping of later PDSCH.</text>
+  <text x="40" y="360" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Most study time usually goes to PDSCH/PUSCH DMRS Type1 vs Type2.</text>
+</svg>

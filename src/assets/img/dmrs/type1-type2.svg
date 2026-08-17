@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="DMRS Type1 vs Type2">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PDSCH/PUSCH DMRS: Type 1 vs Type 2</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Different RE patterns and max orthogonal ports</text>
+
+  <rect x="40" y="110" width="420" height="260" rx="14" fill="#0f7a8a"/>
+  <text x="250" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">Type 1</text>
+  <text x="70" y="200" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Comb-2 style in frequency</text>
+  <text x="70" y="235" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Up to 8 ports (single-symbol)</text>
+  <text x="70" y="270" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Common default choice</text>
+  <text x="70" y="305" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Good density / simplicity</text>
+
+  <rect x="500" y="110" width="420" height="260" rx="14" fill="#c9852c"/>
+  <text x="710" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">Type 2</text>
+  <text x="530" y="200" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Different FD pattern</text>
+  <text x="530" y="235" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Up to 12 ports (single-symbol)</text>
+  <text x="530" y="270" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">More MU-MIMO ports</text>
+  <text x="530" y="305" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Slightly different overhead</text>
+
+  <text x="40" y="430" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Exact RE maps: TS 38.211. Configured by dmrs-Type in PDSCH/PUSCH-Config; DCI indicates ports.</text>
+</svg>
