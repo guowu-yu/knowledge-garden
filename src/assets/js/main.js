@@ -82,6 +82,7 @@ function setupSearch(index) {
 function setupTagFilters() {
   const grid = document.getElementById("topic-grid");
   const bar = document.getElementById("tag-filters");
+  const toggle = document.getElementById("tag-filters-toggle");
   if (!grid || !bar) return;
 
   const cards = [...grid.querySelectorAll(".topic-card")];
@@ -101,9 +102,48 @@ function setupTagFilters() {
     )
     .join("");
 
+  let expanded = false;
+  let locking = false;
+
+  const syncCollapse = () => {
+    if (locking || !toggle) return;
+    locking = true;
+    try {
+      const chips = [...bar.querySelectorAll(".filter-chip")];
+      if (!chips.length) return;
+
+      // Measure with every chip visible
+      chips.forEach((chip) => {
+        chip.hidden = false;
+      });
+
+      if (expanded) {
+        toggle.hidden = false;
+        toggle.textContent = "收起";
+        toggle.setAttribute("aria-expanded", "true");
+        return;
+      }
+
+      const firstTop = chips[0].offsetTop;
+      let overflowCount = 0;
+      chips.forEach((chip) => {
+        if (chip.offsetTop > firstTop + 1) {
+          chip.hidden = true;
+          overflowCount += 1;
+        }
+      });
+
+      toggle.hidden = overflowCount === 0;
+      toggle.textContent = "展开全部";
+      toggle.setAttribute("aria-expanded", "false");
+    } finally {
+      locking = false;
+    }
+  };
+
   bar.addEventListener("click", (e) => {
     const btn = e.target.closest(".filter-chip");
-    if (!btn) return;
+    if (!btn || btn.hidden) return;
     bar.querySelectorAll(".filter-chip").forEach((el) => el.classList.remove("is-active"));
     btn.classList.add("is-active");
     const tag = btn.dataset.tag;
@@ -112,6 +152,33 @@ function setupTagFilters() {
       card.classList.toggle("is-hidden", !show);
     });
   });
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      expanded = !expanded;
+      syncCollapse();
+    });
+  }
+
+  const schedule = () => {
+    requestAnimationFrame(() => requestAnimationFrame(syncCollapse));
+  };
+  schedule();
+  window.addEventListener("load", schedule);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(schedule).catch(() => {});
+  }
+  window.addEventListener("resize", schedule);
+  if (typeof ResizeObserver !== "undefined") {
+    let lastWidth = -1;
+    const ro = new ResizeObserver((entries) => {
+      const width = entries[0]?.contentRect?.width ?? 0;
+      if (Math.abs(width - lastWidth) < 1) return;
+      lastWidth = width;
+      schedule();
+    });
+    ro.observe(bar);
+  }
 }
 
 setupTagFilters();

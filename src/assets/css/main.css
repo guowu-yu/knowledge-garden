@@ -358,11 +358,15 @@ body {
   color: var(--ink-soft);
 }
 
+.filter-panel {
+  margin-bottom: 1.4rem;
+}
+
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.55rem;
-  margin-bottom: 1.4rem;
 }
 
 .filter-chip {
@@ -380,6 +384,25 @@ body {
   background: var(--teal-deep);
   border-color: var(--teal-deep);
   color: #f4fbfd;
+}
+
+.filter-expand {
+  display: inline-block;
+  margin-top: 0.65rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--teal-deep);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.filter-expand:hover {
+  color: var(--teal);
 }
 
 .topic-grid,

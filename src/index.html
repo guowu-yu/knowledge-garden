@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&family=Orbitron:wght@500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css?v=20260818" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -62,7 +62,18 @@
           <h2>专题星图</h2>
           <p>当前共 <strong>{{TOPIC_COUNT}}</strong> 篇 · 按日期持续更新</p>
         </div>
-        <div class="filter-bar" id="tag-filters"></div>
+        <div class="filter-panel">
+          <div class="filter-bar" id="tag-filters"></div>
+          <button
+            type="button"
+            class="filter-expand"
+            id="tag-filters-toggle"
+            hidden
+            aria-expanded="false"
+          >
+            展开全部
+          </button>
+        </div>
         <div class="topic-grid" id="topic-grid">
           {{TOPIC_CARDS}}
         </div>
@@ -91,6 +102,6 @@
       <p class="muted">知识回顾与整理 · 托管于 GitHub Pages</p>
     </footer>
 
-    <script src="assets/js/main.js" type="module"></script>
+    <script src="assets/js/main.js?v=20260818" type="module"></script>
   </body>
 </html>
