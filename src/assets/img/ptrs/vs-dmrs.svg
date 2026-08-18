@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="PTRS vs DMRS">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PTRS vs DMRS</text>
+
+  <rect x="40" y="90" width="420" height="260" rx="14" fill="#0f7a8a"/>
+  <text x="250" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">DMRS</text>
+  <text x="70" y="175" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Estimate H (amplitude + phase)</text>
+  <text x="70" y="210" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Needed every coherent demod</text>
+  <text x="70" y="245" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Denser pattern / more ports</text>
+  <text x="70" y="280" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Front-loaded + optional add.</text>
+
+  <rect x="500" y="90" width="420" height="260" rx="14" fill="#c9852c"/>
+  <text x="710" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">PTRS</text>
+  <text x="530" y="175" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Track residual phase vs time</text>
+  <text x="530" y="210" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Optional; MCS/BW dependent</text>
+  <text x="530" y="245" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Sparse freq, denser time</text>
+  <text x="530" y="280" font-family="Segoe UI, sans-serif" font-size="14" fill="#fff">Tied to one associated DMRS port</text>
+
+  <text x="40" y="390" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Both live inside the scheduled PDSCH/PUSCH; PTRS never replaces DMRS.</text>
+</svg>

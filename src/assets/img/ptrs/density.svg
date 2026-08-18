@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="PTRS time frequency density">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Density sketch: L_PTRS and K_PTRS</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Time density L = every L symbols; Frequency density K = every K RBs</text>
+
+  <!-- time -->
+  <text x="40" y="110" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">Time (L_PTRS = 2 example)</text>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <rect x="40" y="130" width="50" height="36" fill="#d9e8ef"/><text x="65" y="152" text-anchor="middle" fill="#1f3a4d">s0</text>
+    <rect x="95" y="130" width="50" height="36" fill="#0f7a8a"/><text x="120" y="152" text-anchor="middle" fill="#fff">P</text>
+    <rect x="150" y="130" width="50" height="36" fill="#d9e8ef"/><text x="175" y="152" text-anchor="middle" fill="#1f3a4d">s2</text>
+    <rect x="205" y="130" width="50" height="36" fill="#0f7a8a"/><text x="230" y="152" text-anchor="middle" fill="#fff">P</text>
+    <rect x="260" y="130" width="50" height="36" fill="#d9e8ef"/><text x="285" y="152" text-anchor="middle" fill="#1f3a4d">s4</text>
+    <rect x="315" y="130" width="50" height="36" fill="#0f7a8a"/><text x="340" y="152" text-anchor="middle" fill="#fff">P</text>
+    <rect x="370" y="130" width="50" height="36" fill="#c9852c"/><text x="395" y="152" text-anchor="middle" fill="#fff">D</text>
+    <text x="460" y="152" fill="#1f3a4d">P=PTRS, D=DMRS (simplified)</text>
+  </g>
+
+  <!-- frequency -->
+  <text x="40" y="220" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">Frequency (K_PTRS = 2 example)</text>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <rect x="40" y="240" width="70" height="40" fill="#0f7a8a"/><text x="75" y="264" text-anchor="middle" fill="#fff">RB0 P</text>
+    <rect x="115" y="240" width="70" height="40" fill="#d9e8ef"/><text x="150" y="264" text-anchor="middle" fill="#1f3a4d">RB1</text>
+    <rect x="190" y="240" width="70" height="40" fill="#0f7a8a"/><text x="225" y="264" text-anchor="middle" fill="#fff">RB2 P</text>
+    <rect x="265" y="240" width="70" height="40" fill="#d9e8ef"/><text x="300" y="264" text-anchor="middle" fill="#1f3a4d">RB3</text>
+    <rect x="340" y="240" width="70" height="40" fill="#0f7a8a"/><text x="375" y="264" text-anchor="middle" fill="#fff">RB4 P</text>
+  </g>
+  <text x="40" y="310" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Only inside scheduled BW; subcarrier offset from resourceElementOffset / association rules</text>
+
+  <rect x="40" y="340" width="880" height="100" rx="12" fill="#1f3a4d"/>
+  <text x="60" y="380" font-family="Segoe UI, sans-serif" font-size="14" fill="#e7f3f7">RRC gives MCS / BW thresholds --&gt; this grant picks L_PTRS and K_PTRS (or "not present").</text>
+  <text x="60" y="410" font-family="Segoe UI, sans-serif" font-size="14" fill="#e7f3f7">Higher MCS --&gt; denser in time; wider schedule --&gt; denser (or present) in frequency.</text>
+</svg>
