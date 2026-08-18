@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-label="S criteria">
+  <rect width="960" height="460" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">S准则：测到的量要高于网络门限</text>
+  <text x="40" y="68" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">Srxlev &gt; 0 且（若要求质量）Squal &gt; 0，才算无线电条件合格</text>
+
+  <rect x="40" y="100" width="280" height="200" rx="14" fill="#0f7a8a"/>
+  <text x="180" y="140" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#fff">UE 测量</text>
+  <text x="60" y="180" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">Qrxlevmeas（如 SS-RSRP）</text>
+  <text x="60" y="215" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">Qqualmeas（如 SS-RSRQ）</text>
+  <text x="60" y="250" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">在同步到的 SSB 上测</text>
+
+  <rect x="340" y="100" width="280" height="200" rx="14" fill="#1f3a4d"/>
+  <text x="480" y="140" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#fff">SIB1 门限</text>
+  <text x="360" y="180" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">q-RxLevMin</text>
+  <text x="360" y="215" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">q-QualMin（可选）</text>
+  <text x="360" y="250" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">+ 偏移 / 补偿项</text>
+
+  <rect x="640" y="100" width="280" height="200" rx="14" fill="#c9852c"/>
+  <text x="780" y="140" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#fff">判决</text>
+  <text x="660" y="180" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">算出 Srxlev、Squal</text>
+  <text x="660" y="215" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">都 &gt; 0 → 过 S 准则</text>
+  <text x="660" y="250" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">否则换小区 / 继续搜</text>
+
+  <rect x="40" y="330" width="880" height="90" rx="12" fill="#d9e8ef"/>
+  <text x="60" y="370" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">注意：过 S 准则只说明无线电够格；还要过 PLMN 与是否禁止，才算 suitable 并可驻留。</text>
+  <text x="60" y="400" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">精确公式与单位以 TS 38.304 为准；此处抓教学直觉。</text>
+</svg>

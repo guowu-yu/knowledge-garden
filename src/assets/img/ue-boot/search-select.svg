@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="Cell search and selection">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Steps 3-4: Cell search then cell selection</text>
+
+  <rect x="40" y="90" width="430" height="250" rx="14" fill="#0f7a8a"/>
+  <text x="255" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">3 Cell search (AS sync)</text>
+  <text x="60" y="165" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">PSS: timing + NID2</text>
+  <text x="60" y="195" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">SSS: NID1 -&gt; PCI</text>
+  <text x="60" y="225" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">PBCH/MIB: Type0 door</text>
+  <text x="60" y="255" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">SSB index / half-frame</text>
+  <text x="60" y="285" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Beam candidate quality</text>
+
+  <rect x="490" y="90" width="430" height="250" rx="14" fill="#c9852c"/>
+  <text x="705" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">4 Cell selection (camp)</text>
+  <text x="510" y="165" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Decode SIB1 (SI-RNTI)</text>
+  <text x="510" y="195" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">PLMN list matches?</text>
+  <text x="510" y="225" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">S-criteria (RxLev/Qual)</text>
+  <text x="510" y="255" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">barred / reserved?</text>
+  <text x="510" y="285" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Camp Idle + read more SI</text>
+
+  <text x="40" y="385" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Search finds a syncable cell; selection decides if this cell is allowed and strong enough to camp.</text>
+</svg>

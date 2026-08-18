@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-label="Frequency scan">
+  <rect width="960" height="400" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Step 2: Frequency / band scan</text>
+
+  <rect x="40" y="90" width="200" height="220" rx="12" fill="#1f3a4d"/>
+  <text x="140" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">UE capability</text>
+  <text x="60" y="170" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">supported bands</text>
+  <text x="60" y="200" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">FR1 / FR2</text>
+  <text x="60" y="230" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">SCS options</text>
+
+  <rect x="260" y="90" width="200" height="220" rx="12" fill="#0a5561"/>
+  <text x="360" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Stored info</text>
+  <text x="280" y="170" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">history cells</text>
+  <text x="280" y="200" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">last freq / PCI</text>
+  <text x="280" y="230" font-family="Segoe UI, sans-serif" font-size="12" fill="#e7f3f7">fast re-acquire</text>
+
+  <rect x="480" y="90" width="200" height="220" rx="12" fill="#0f7a8a"/>
+  <text x="580" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Sync raster</text>
+  <text x="500" y="170" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">GSCN candidates</text>
+  <text x="500" y="200" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">SSB center tries</text>
+  <text x="500" y="230" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">not every ARFCN</text>
+
+  <rect x="700" y="90" width="220" height="220" rx="12" fill="#c9852c"/>
+  <text x="810" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#fff">Per candidate</text>
+  <text x="720" y="170" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">try SSB SCS</text>
+  <text x="720" y="200" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">run cell search</text>
+  <text x="720" y="230" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff">keep / discard</text>
+
+  <text x="40" y="360" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Scan answers WHERE; cell search answers WHETHER a cell is there and HOW to sync.</text>
+</svg>

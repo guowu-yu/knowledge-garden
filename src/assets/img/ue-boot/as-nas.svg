@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="AS vs NAS layers">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">AS vs NAS along the journey</text>
+
+  <rect x="40" y="90" width="440" height="320" rx="14" fill="#0f7a8a"/>
+  <text x="260" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700" fill="#fff">Access Stratum (AS)</text>
+  <text x="60" y="175" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Freq scan / cell search</text>
+  <text x="60" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">MIB / SIB / camp</text>
+  <text x="60" y="245" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">RACH + RRC Setup</text>
+  <text x="60" y="280" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Security AS / DRB later</text>
+  <text x="60" y="315" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Talks to gNB</text>
+  <text x="60" y="350" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Specs: 38.3xx</text>
+
+  <rect x="500" y="90" width="420" height="320" rx="14" fill="#1f3a4d"/>
+  <text x="710" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700" fill="#fff">Non-Access Stratum</text>
+  <text x="520" y="175" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">PLMN selection</text>
+  <text x="520" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Registration / mobility</text>
+  <text x="520" y="245" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Auth / security context</text>
+  <text x="520" y="280" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">PDU session (SMF/UPF)</text>
+  <text x="520" y="315" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Talks to AMF (5GC)</text>
+  <text x="520" y="350" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Specs: 24.501 / 23.502...</text>
+
+  <text x="40" y="450" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">NAS messages ride in RRC containers once AS is connected.</text>
+</svg>

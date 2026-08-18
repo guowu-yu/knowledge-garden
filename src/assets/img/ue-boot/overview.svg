@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="UE power-on end-to-end flow">
+  <rect width="960" height="520" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">UE power-on: end-to-end big picture</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">PLMN -&gt; scan -&gt; cell search -&gt; select/camp -&gt; RACH -&gt; register</text>
+
+  <rect x="30" y="100" width="140" height="70" rx="10" fill="#1f3a4d"/>
+  <text x="100" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">1 PLMN</text>
+  <text x="100" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#e7f3f7">which network</text>
+
+  <path d="M170 135 H195" stroke="#c9852c" stroke-width="3"/>
+
+  <rect x="195" y="100" width="140" height="70" rx="10" fill="#0a5561"/>
+  <text x="265" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">2 Freq scan</text>
+  <text x="265" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#e7f3f7">bands / raster</text>
+
+  <path d="M335 135 H360" stroke="#c9852c" stroke-width="3"/>
+
+  <rect x="360" y="100" width="140" height="70" rx="10" fill="#0f7a8a"/>
+  <text x="430" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">3 Cell search</text>
+  <text x="430" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#e7f3f7">PSS/SSS/MIB</text>
+
+  <path d="M500 135 H525" stroke="#c9852c" stroke-width="3"/>
+
+  <rect x="525" y="100" width="140" height="70" rx="10" fill="#0f7a8a"/>
+  <text x="595" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">4 Select</text>
+  <text x="595" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#e7f3f7">SIB1 / camp</text>
+
+  <path d="M665 135 H690" stroke="#c9852c" stroke-width="3"/>
+
+  <rect x="690" y="100" width="110" height="70" rx="10" fill="#c9852c"/>
+  <text x="745" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">5 RACH</text>
+  <text x="745" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">TA / C-RNTI</text>
+
+  <path d="M800 135 H825" stroke="#c9852c" stroke-width="3"/>
+
+  <rect x="825" y="100" width="110" height="70" rx="10" fill="#c9852c"/>
+  <text x="880" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">6 Reg</text>
+  <text x="880" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">NAS / AMF</text>
+
+  <rect x="40" y="210" width="880" height="260" rx="14" fill="#d9e8ef"/>
+  <text x="60" y="250" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">State milestones</text>
+  <text x="60" y="290" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">After 1-2: know where to look</text>
+  <text x="60" y="320" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">After 3: synced (time/freq/PCI) + can open Type0 for SIB1</text>
+  <text x="60" y="350" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">After 4: camped Idle on a suitable cell (AS ready, NAS not yet registered)</text>
+  <text x="60" y="380" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">After 5: uplink timed + identity for scheduling (RRC setup path)</text>
+  <text x="60" y="410" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">After 6: registered with 5GC (RM-REGISTERED), ready for services</text>
+
+  <text x="40" y="500" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Focus: SA NR path. NSA anchors on LTE first -- see NSA vs SA topic.</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-label="PLMN selection">
+  <rect width="960" height="400" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">Step 1: PLMN selection</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">Decide which public land mobile network to look for</text>
+
+  <rect x="40" y="100" width="280" height="220" rx="14" fill="#1f3a4d"/>
+  <text x="180" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#fff">Inputs</text>
+  <text x="60" y="180" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">USIM: HPLMN / EHPLMN</text>
+  <text x="60" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">OPLMN / user preferred</text>
+  <text x="60" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Forbidden PLMN list</text>
+  <text x="60" y="270" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">Last RPLMN (if any)</text>
+
+  <rect x="340" y="100" width="280" height="220" rx="14" fill="#0f7a8a"/>
+  <text x="480" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#fff">Modes</text>
+  <text x="360" y="180" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Automatic selection</text>
+  <text x="360" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Manual selection</text>
+  <text x="360" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Priority / roaming rules</text>
+  <text x="360" y="270" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">(NAS / 23.122 style)</text>
+
+  <rect x="640" y="100" width="280" height="220" rx="14" fill="#c9852c"/>
+  <text x="780" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#fff">Output</text>
+  <text x="660" y="180" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Selected PLMN (MCC+MNC)</text>
+  <text x="660" y="210" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Drives which cells OK</text>
+  <text x="660" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">Checked later vs SIB1</text>
+  <text x="660" y="270" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">plmn-IdentityList</text>
+
+  <text x="40" y="370" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">PLMN choice is NAS-level intent; AS still must find a suitable cell of that PLMN.</text>
+</svg>
