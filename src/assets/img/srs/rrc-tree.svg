@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-label="SRS RRC tree">
+  <rect width="960" height="460" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">RRC: srs-Config hierarchy</text>
+
+  <rect x="340" y="70" width="280" height="50" rx="10" fill="#1f3a4d"/>
+  <text x="480" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#fff">srs-Config</text>
+
+  <path d="M480 120 V150" stroke="#1f3a4d" stroke-width="2"/>
+  <path d="M180 150 H780" stroke="#1f3a4d" stroke-width="2"/>
+  <path d="M180 150 V175" stroke="#1f3a4d" stroke-width="2"/>
+  <path d="M480 150 V175" stroke="#1f3a4d" stroke-width="2"/>
+  <path d="M780 150 V175" stroke="#1f3a4d" stroke-width="2"/>
+
+  <rect x="60" y="175" width="240" height="70" rx="10" fill="#0f7a8a"/>
+  <text x="180" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">SRS-ResourceSet</text>
+  <text x="180" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#e7f3f7">usage / type / trigger</text>
+
+  <rect x="360" y="175" width="240" height="70" rx="10" fill="#c9852c"/>
+  <text x="480" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">SRS-Resource</text>
+  <text x="480" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#fff">ports / comb / time / BW</text>
+
+  <rect x="660" y="175" width="240" height="70" rx="10" fill="#0a5561"/>
+  <text x="780" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">power / TPC links</text>
+  <text x="780" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#e7f3f7">p0 / alpha / pathloss RS</text>
+
+  <rect x="60" y="280" width="840" height="130" rx="12" fill="#d9e8ef"/>
+  <text x="80" y="315" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Typical chain</text>
+  <text x="80" y="345" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">BWP-UplinkDedicated -&gt; srs-Config -&gt; ResourceSet(s) -&gt; Resource(s)</text>
+  <text x="80" y="375" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f3a4d">Aperiodic: + DCI Format 0_1/1_1/... SRS request  |  SP: + MAC CE</text>
+</svg>

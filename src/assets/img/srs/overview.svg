@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="SRS overview">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">SRS in NR (Sounding Reference Signal)</text>
+  <text x="40" y="68" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">UE transmits known pilots so gNB can "hear" the uplink channel</text>
+
+  <rect x="40" y="110" width="200" height="220" rx="14" fill="#0f7a8a"/>
+  <text x="140" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">UE</text>
+  <text x="60" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">SRS resource(s)</text>
+  <text x="60" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">ports / comb / BW</text>
+  <text x="60" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">periodic / SP / AP</text>
+
+  <path d="M260 220 H340" stroke="#c9852c" stroke-width="4" marker-end="url(#a)"/>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#c9852c"/>
+    </marker>
+  </defs>
+  <text x="300" y="205" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#c9852c">UL</text>
+
+  <rect x="360" y="110" width="240" height="220" rx="14" fill="#c9852c"/>
+  <text x="480" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">gNB hears</text>
+  <text x="380" y="200" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">UL channel estimate</text>
+  <text x="380" y="230" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">beam / pathloss feel</text>
+  <text x="380" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">rank / precoder hint</text>
+
+  <path d="M620 220 H700" stroke="#1f3a4d" stroke-width="4" marker-end="url(#b)"/>
+  <defs>
+    <marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1f3a4d"/>
+    </marker>
+  </defs>
+
+  <rect x="720" y="110" width="200" height="220" rx="14" fill="#1f3a4d"/>
+  <text x="820" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#fff">Then use</text>
+  <text x="740" y="195" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">UL grant / MCS</text>
+  <text x="740" y="225" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">PUSCH precoding</text>
+  <text x="740" y="255" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">DL via reciprocity</text>
+  <text x="740" y="285" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">UL beam manage</text>
+
+  <text x="40" y="380" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">One-liner: CSI-RS probes DL; SRS probes UL (and can feed TDD reciprocity).</text>
+</svg>

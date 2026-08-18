@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="SRS trigger types">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">How SRS is triggered</text>
+
+  <rect x="40" y="90" width="280" height="250" rx="14" fill="#0f7a8a"/>
+  <text x="180" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700" fill="#fff">periodic</text>
+  <text x="60" y="175" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">RRC period + offset</text>
+  <text x="60" y="205" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">always on schedule</text>
+  <text x="60" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">good for steady UL</text>
+  <text x="60" y="265" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">resourceType periodic</text>
+
+  <rect x="340" y="90" width="280" height="250" rx="14" fill="#c9852c"/>
+  <text x="480" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700" fill="#fff">semi-persistent</text>
+  <text x="360" y="175" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">RRC configures</text>
+  <text x="360" y="205" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">MAC CE activate/deact</text>
+  <text x="360" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">on/off without full RRC</text>
+  <text x="360" y="265" font-family="Segoe UI, sans-serif" font-size="13" fill="#fff">resourceType SP</text>
+
+  <rect x="640" y="90" width="280" height="250" rx="14" fill="#1f3a4d"/>
+  <text x="780" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700" fill="#fff">aperiodic</text>
+  <text x="660" y="175" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">RRC configures set</text>
+  <text x="660" y="205" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">DCI SRS-request</text>
+  <text x="660" y="235" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">on-demand sounding</text>
+  <text x="660" y="265" font-family="Segoe UI, sans-serif" font-size="13" fill="#e7f3f7">resourceType aperiodic</text>
+
+  <text x="40" y="385" font-family="Segoe UI, sans-serif" font-size="14" fill="#1f3a4d">A resource set usually shares one resourceType + one usage.</text>
+</svg>
