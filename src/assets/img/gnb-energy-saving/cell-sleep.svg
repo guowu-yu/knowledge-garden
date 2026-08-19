@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400" role="img" aria-label="小区睡眠与容量层">
+  <rect width="1000" height="400" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">小区睡眠：覆盖层 vs 容量层（38.300）</text>
+  <rect x="60" y="80" width="380" height="120" rx="12" fill="#0f7a8a"/>
+  <text x="280" y="110" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">覆盖小区 Coverage</text>
+  <text x="280" y="140" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">保底覆盖，通常保持在线</text>
+  <text x="280" y="165" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">负载高时可请求唤醒容量层</text>
+  <rect x="560" y="80" width="380" height="120" rx="12" fill="#c9852c" opacity="0.5"/>
+  <text x="780" y="110" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">容量层 Capacity Booster</text>
+  <text x="780" y="140" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#fff">低负载自主关断（inactive）</text>
+  <text x="780" y="165" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#fff">Xn 通知邻站；禁止 idle 驻留</text>
+  <rect x="60" y="220" width="880" height="150" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="80" y="255" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">流程直觉</text>
+  <text x="80" y="285" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">1. 容量层 gNB 根据负载/O&amp;M 策略关断小区</text>
+  <text x="80" y="310" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">2. Xn 通知邻站；邻区关系配置仍保留</text>
+  <text x="80" y="335" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">3. 覆盖层需容量时发 Cell Activation 请求唤醒</text>
+  <text x="80" y="360" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">4. O&amp;M 也可配置开关策略与最小保持激活时间</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-label="符号关断与 DTX">
+  <rect width="1000" height="360" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">符号关断与 Cell DTX</text>
+  <text x="40" y="90" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">有调度符号</text>
+  <rect x="40" y="110" width="60" height="40" rx="4" fill="#0f7a8a"/>
+  <rect x="110" y="110" width="60" height="40" rx="4" fill="#d0dde3"/>
+  <rect x="180" y="110" width="60" height="40" rx="4" fill="#0f7a8a"/>
+  <rect x="250" y="110" width="60" height="40" rx="4" fill="#d0dde3"/>
+  <rect x="320" y="110" width="60" height="40" rx="4" fill="#0f7a8a"/>
+  <text x="400" y="135" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#1f3a4d">青=发射 灰=关断</text>
+  <text x="40" y="200" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">符号关断：无数据符号不驱动功放</text>
+  <text x="40" y="230" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">Cell DTX：整时隙无 PDSCH/PDCCH 时可不发射业务波</text>
+  <text x="40" y="260" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">注意：SSB、寻呼、PRACH 监听等常发/必听信号限制睡眠窗口</text>
+  <text x="40" y="310" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">例子：深夜无流量，gNB 仅在 SSB 周期发同步块，其余符号大量关断</text>
+</svg>

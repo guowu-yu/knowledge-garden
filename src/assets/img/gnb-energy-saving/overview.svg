@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-label="基站节电总览">
+  <rect width="1000" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">gNB 节电：电花在哪、从哪省</text>
+  <text x="40" y="65" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">按负载动态关资源，而不是 7x24 满功率发射</text>
+  <rect x="40" y="90" width="180" height="70" rx="10" fill="#b33a3a"/>
+  <text x="130" y="120" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">功放 PA</text>
+  <text x="130" y="145" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#fff">发射时大头</text>
+  <rect x="200" y="90" width="180" height="70" rx="10" fill="#c9852c"/>
+  <text x="290" y="120" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">数传 / 基带</text>
+  <text x="290" y="145" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#fff">处理链</text>
+  <rect x="360" y="90" width="180" height="70" rx="10" fill="#0f7a8a"/>
+  <text x="450" y="120" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">常发信号</text>
+  <text x="450" y="145" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">SSB/SI/CSI-RS</text>
+  <rect x="520" y="90" width="180" height="70" rx="10" fill="#1a8f9e"/>
+  <text x="610" y="120" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">多天线 MIMO</text>
+  <text x="610" y="145" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">通道数</text>
+  <rect x="40" y="200" width="920" height="180" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="235" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">节电思路（网络侧 NES）</text>
+  <text x="60" y="265" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">没业务：符号/时隙不发射（DTX、符号关断）</text>
+  <text x="60" y="295" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">负载低：关载波、减天线层数、缩 BWP</text>
+  <text x="60" y="325" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">深夜：小区睡眠 / 深度睡眠，邻区保底覆盖</text>
+  <text x="60" y="355" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">规范：TS 38.300 第 15.4 节（系统内节能）等</text>
+</svg>
