@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-label="UE RX chain">
+  <rect width="960" height="440" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">UE PDSCH receive chain (mirror order)</text>
+
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12">
+    <rect x="30" y="100" width="80" height="44" rx="8" fill="#1f3a4d"/><text x="70" y="127" text-anchor="middle" fill="#e7f3f7">RF</text>
+    <rect x="110" y="100" width="100" height="44" rx="8" fill="#1f3a4d"/><text x="160" y="127" text-anchor="middle" fill="#e7f3f7">OFDM demod</text>
+    <rect x="210" y="100" width="110" height="44" rx="8" fill="#0f7a8a"/><text x="265" y="127" text-anchor="middle" fill="#fff">DMRS est</text>
+    <rect x="320" y="100" width="100" height="44" rx="8" fill="#0f7a8a"/><text x="370" y="127" text-anchor="middle" fill="#fff">PTRS track</text>
+    <rect x="440" y="100" width="110" height="44" rx="8" fill="#0f7a8a"/><text x="505" y="127" text-anchor="middle" fill="#fff">Equalize</text>
+    <rect x="570" y="100" width="100" height="44" rx="8" fill="#c9852c"/><text x="620" y="127" text-anchor="middle" fill="#fff">Demod LLR</text>
+    <rect x="650" y="100" width="100" height="44" rx="8" fill="#c9852c"/><text x="700" y="127" text-anchor="middle" fill="#fff">Descramble</text>
+    <rect x="770" y="100" width="100" height="44" rx="8" fill="#c9852c"/><text x="820" y="127" text-anchor="middle" fill="#fff">LDPC dec</text>
+    <rect x="880" y="100" width="70" height="44" rx="8" fill="#0a5561"/><text x="915" y="127" text-anchor="middle" fill="#fff">TB</text>
+  </g>
+
+  <rect x="40" y="180" width="880" height="110" rx="12" fill="#d9e8ef"/>
+  <text x="60" y="210" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Before PHY: PDCCH blind decode</text>
+  <text x="60" y="240" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">Search Space + RNTI -&gt; DCI -&gt; know FDRA/TDRA/MCS/DMRS ports/RV...</text>
+  <text x="60" y="270" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">Without valid DCI, UE cannot know which REs belong to this PDSCH</text>
+
+  <rect x="40" y="310" width="880" height="100" rx="12" fill="#1f3a4d"/>
+  <text x="60" y="345" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#e7f3f7">HARQ: store LLRs per process; retransmission with new RV soft-combines before LDPC</text>
+  <text x="60" y="375" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#e7f3f7">CRC fail -&gt; NACK UCI; CRC pass -&gt; deliver TB to MAC</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-label="PDCCH vs PDSCH">
+  <rect width="960" height="400" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PDCCH vs PDSCH PHY differences</text>
+
+  <rect x="40" y="90" width="420" height="250" rx="14" fill="#0f7a8a"/>
+  <text x="250" y="125" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#fff">PDCCH (control)</text>
+  <text x="70" y="165" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">Payload: DCI bits (small)</text>
+  <text x="70" y="200" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">Coding: Polar + CRC</text>
+  <text x="70" y="235" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">Map: CORESET / CCE / REG</text>
+  <text x="70" y="270" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">DMRS: PDCCH DMRS in CORESET</text>
+  <text x="70" y="305" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">UE: blind search many candidates</text>
+
+  <rect x="500" y="90" width="420" height="250" rx="14" fill="#c9852c"/>
+  <text x="710" y="125" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#fff">PDSCH (shared data)</text>
+  <text x="530" y="165" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">Payload: DL-SCH codeword (large)</text>
+  <text x="530" y="200" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">Coding: LDPC chain on TB</text>
+  <text x="530" y="235" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">Map: PRB grid from DCI FDRA/TDRA</text>
+  <text x="530" y="270" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">DMRS + optional PTRS on data</text>
+  <text x="530" y="305" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">UE: decode after DCI tells when/where</text>
+
+  <text x="40" y="375" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">PDCCH schedules PDSCH; both share scramble/mod/OFDM ideas but differ in codec and resource mapping.</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="DL-SCH chain">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">DL-SCH: transport block to codeword</text>
+  <text x="40" y="68" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">38.212 channel coding chain (PDSCH payload)</text>
+
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13">
+    <rect x="40" y="110" width="120" height="50" rx="8" fill="#1f3a4d"/><text x="100" y="140" text-anchor="middle" fill="#fff">TB</text>
+    <path d="M180 135 H210" stroke="#c9852c" stroke-width="2"/>
+    <rect x="210" y="110" width="130" height="50" rx="8" fill="#0f7a8a"/><text x="265" y="140" text-anchor="middle" fill="#fff">TB CRC</text>
+    <path d="M360 135 H390" stroke="#c9852c" stroke-width="2"/>
+    <rect x="390" y="110" width="150" height="50" rx="8" fill="#0f7a8a"/><text x="465" y="140" text-anchor="middle" fill="#fff">CB segment + CRC</text>
+    <path d="M560 135 H590" stroke="#c9852c" stroke-width="2"/>
+    <rect x="590" y="110" width="120" height="50" rx="8" fill="#c9852c"/><text x="650" y="140" text-anchor="middle" fill="#fff">LDPC enc</text>
+    <path d="M730 135 H760" stroke="#c9852c" stroke-width="2"/>
+    <rect x="760" y="110" width="120" height="50" rx="8" fill="#c9852c"/><text x="820" y="140" text-anchor="middle" fill="#fff">Rate match</text>
+    <path d="M860 135 H890" stroke="#c9852c" stroke-width="2"/>
+    <rect x="890" y="110" width="90" height="50" rx="8" fill="#0a5561"/><text x="935" y="140" text-anchor="middle" fill="#fff">CW</text>
+  </g>
+
+  <rect x="40" y="200" width="880" height="180" rx="12" fill="#d9e8ef"/>
+  <text x="60" y="235" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Key knobs (from DCI / RRC)</text>
+  <text x="60" y="265" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">TB size A, MCS -&gt; modulation order, target code rate, RV (HARQ), nlayers</text>
+  <text x="60" y="295" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">LDPC base graph BG1/BG2 chosen from TB size and code rate</text>
+  <text x="60" y="325" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">Rate match output bits must match PDSCH RE capacity (G bits)</text>
+  <text x="60" y="355" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">HARQ: same TB + new RV -&gt; soft combine at LDPC decoder</text>
+</svg>

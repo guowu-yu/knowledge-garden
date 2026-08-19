@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-label="PDSCH TX PHY">
+  <rect width="960" height="440" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">PDSCH PHY transmit (after codeword)</text>
+
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12">
+    <rect x="30" y="100" width="90" height="44" rx="8" fill="#0a5561"/><text x="75" y="127" text-anchor="middle" fill="#fff">CW</text>
+    <rect x="130" y="100" width="100" height="44" rx="8" fill="#0f7a8a"/><text x="180" y="127" text-anchor="middle" fill="#fff">Scramble</text>
+    <rect x="240" y="100" width="100" height="44" rx="8" fill="#0f7a8a"/><text x="290" y="127" text-anchor="middle" fill="#fff">Modulation</text>
+    <rect x="360" y="100" width="110" height="44" rx="8" fill="#0f7a8a"/><text x="395" y="127" text-anchor="middle" fill="#fff">Layer map</text>
+    <rect x="470" y="100" width="110" height="44" rx="8" fill="#c9852c"/><text x="525" y="127" text-anchor="middle" fill="#fff">Precoding</text>
+    <rect x="610" y="100" width="120" height="44" rx="8" fill="#c9852c"/><text x="650" y="127" text-anchor="middle" fill="#fff">RE mapping</text>
+    <rect x="730" y="100" width="110" height="44" rx="8" fill="#1f3a4d"/><text x="775" y="127" text-anchor="middle" fill="#e7f3f7">OFDM mod</text>
+    <rect x="860" y="100" width="80" height="44" rx="8" fill="#1f3a4d"/><text x="900" y="127" text-anchor="middle" fill="#e7f3f7">Ant</text>
+  </g>
+
+  <rect x="40" y="180" width="880" height="120" rx="12" fill="#d9e8ef"/>
+  <text x="60" y="210" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">RE mapping puts symbols on the grid</text>
+  <text x="60" y="240" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">Data RE + DMRS RE + optional PTRS; skip ZP CSI-RS / reserved RE</text>
+  <text x="60" y="270" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">FDRA/TDRA from DCI: which RBs and symbols; VRB/PRB mapping if configured</text>
+
+  <rect x="40" y="310" width="880" height="100" rx="12" fill="#1f3a4d"/>
+  <text x="60" y="345" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#e7f3f7">Scrambling: dataScramblingId + RNTI + codeword index (38.211)</text>
+  <text x="60" y="375" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#e7f3f7">Precoding: codebook TPMI or non-codebook; antenna ports follow DMRS port semantics</text>
+</svg>

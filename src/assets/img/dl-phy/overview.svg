@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="DL PHY overview">
+  <rect width="960" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">NR downlink PHY chain (big picture)</text>
+  <text x="40" y="68" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">gNB: bits to airwaves; UE: airwaves back to bits</text>
+
+  <rect x="40" y="100" width="400" height="300" rx="14" fill="#0f7a8a"/>
+  <text x="250" y="135" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">gNB transmit</text>
+  <text x="60" y="175" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">MAC TB</text>
+  <text x="60" y="205" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">DL-SCH: CRC / LDPC / RM</text>
+  <text x="60" y="235" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">PDSCH: scramble / mod / layer / precoding</text>
+  <text x="60" y="265" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">RE map + DMRS / PTRS</text>
+  <text x="60" y="305" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">OFDM mod -&gt; RF</text>
+  <text x="60" y="345" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">PDCCH path: DCI + Polar (parallel)</text>
+
+  <path d="M460 250 H500" stroke="#c9852c" stroke-width="4" marker-end="url(#a)"/>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c9852c"/></marker></defs>
+  <text x="480" y="235" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#c9852c">air</text>
+
+  <rect x="520" y="100" width="400" height="300" rx="14" fill="#1f3a4d"/>
+  <text x="700" y="135" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#fff">UE receive</text>
+  <text x="540" y="175" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">RF -&gt; OFDM demod</text>
+  <text x="540" y="205" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">DMRS est + PTRS track</text>
+  <text x="540" y="235" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">equalize / MIMO detect</text>
+  <text x="540" y="265" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">demod / descramble</text>
+  <text x="540" y="305" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">LDPC decode / TB CRC</text>
+  <text x="540" y="345" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">PDCCH: blind decode DCI first</text>
+
+  <text x="40" y="450" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">One-liner: DCI tells how to decode PDSCH; DL-SCH turns TB into codeword; PHY maps codeword onto RE grid.</text>
+</svg>

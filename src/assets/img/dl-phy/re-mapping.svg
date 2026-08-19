@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-label="RE mapping">
+  <rect width="960" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">RE mapping on the downlink grid</text>
+  <text x="40" y="68" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">Symbols land on scheduled RBs within active BWP</text>
+
+  <text x="40" y="110" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">One slot sketch (simplified)</text>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <rect x="40" y="130" width="880" height="180" rx="10" fill="#fff" stroke="#d5dce8"/>
+    <text x="55" y="155" fill="#1f3a4d">sym0</text>
+    <rect x="90" y="140" width="760" height="22" fill="#d9e8ef"/><text x="450" y="155" text-anchor="middle" fill="#1f3a4d">PDCCH CORESET region</text>
+    <rect x="90" y="175" width="760" height="28" fill="#0f7a8a" opacity="0.25"/>
+    <rect x="120" y="180" width="40" height="18" fill="#c9852c"/><text x="140" y="193" text-anchor="middle" fill="#fff">D</text>
+    <rect x="200" y="180" width="40" height="18" fill="#0f7a8a"/><text x="220" y="193" text-anchor="middle" fill="#fff">M</text>
+    <rect x="280" y="180" width="40" height="18" fill="#c9852c"/><text x="300" y="193" text-anchor="middle" fill="#fff">D</text>
+    <text x="450" y="195" text-anchor="middle" fill="#1f3a4d">PDSCH: D=data M=DMRS P=PTRS</text>
+    <rect x="360" y="180" width="40" height="18" fill="#1f3a4d"/><text x="380" y="193" text-anchor="middle" fill="#fff">P</text>
+    <rect x="90" y="210" width="760" height="28" fill="#eef5f7"/>
+    <rect x="150" y="215" width="30" height="18" fill="#9bb8c4"/><text x="165" y="228" text-anchor="middle" fill="#fff">ZP</text>
+    <text x="450" y="228" text-anchor="middle" fill="#1f3a4d">ZP CSI-RS RE: PDSCH rate-match around</text>
+  </g>
+
+  <rect x="40" y="320" width="880" height="80" rx="12" fill="#d9e8ef"/>
+  <text x="60" y="355" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">BWP defines the grid; CORESET is PDCCH-only footprint; PDSCH footprint changes every schedule.</text>
+  <text x="60" y="380" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">SSB/PBCH/MIB path is separate early bootstrap; connected data follows PDCCH-&gt;PDSCH pattern.</text>
+</svg>
