@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400" role="img" aria-label="DAPS 切换">
+  <rect width="1000" height="400" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">DAPS 切换（双激活协议栈）</text>
+  <text x="40" y="65" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">UE 同步目标时仍可在源小区接收</text>
+
+  <rect x="60" y="100" width="380" height="120" rx="12" fill="#0f7a8a" opacity="0.9"/>
+  <text x="280" y="135" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">源协议栈 活跃</text>
+  <text x="280" y="165" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">仍在源小区收数据</text>
+  <text x="280" y="195" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">目标早期同步期间</text>
+
+  <rect x="560" y="100" width="380" height="120" rx="12" fill="#1a8f9e" opacity="0.7"/>
+  <text x="780" y="135" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">目标协议栈 建立中</text>
+  <text x="780" y="165" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">目标 RACH + 同步</text>
+  <text x="780" y="195" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">第二套 PHY 并行激活</text>
+
+  <path d="M440 160 H560" stroke="#c9852c" stroke-width="3" stroke-dasharray="8 4"/>
+  <text x="500" y="150" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#c9852c">重叠窗口</text>
+
+  <rect x="60" y="250" width="880" height="120" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="80" y="285" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">为何用 DAPS？</text>
+  <text x="80" y="315" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">减少切换期间用户面中断；利于 URLLC / 语音连续性</text>
+  <text x="80" y="340" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">需 UE 能力 daps-HO；射频更复杂（可能双收或严格 Gap）</text>
+  <text x="80" y="365" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">目标就绪后释放源栈，仅在目标继续</text>
+</svg>

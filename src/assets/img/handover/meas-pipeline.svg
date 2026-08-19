@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" role="img" aria-label="测量驱动切换流水线">
+  <rect width="1000" height="380" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">测量驱动切换流水线</text>
+
+  <rect x="40" y="80" width="150" height="70" rx="10" fill="#1f3a4d"/>
+  <text x="115" y="110" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">measConfig</text>
+  <text x="115" y="132" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">A2/A3/A5…</text>
+
+  <path d="M210 115 H250" stroke="#c9852c" stroke-width="3"/>
+  <rect x="260" y="80" width="150" height="70" rx="10" fill="#0f7a8a"/>
+  <text x="335" y="110" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">UE 测量</text>
+  <text x="335" y="132" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">SSB/CSI-RS</text>
+
+  <path d="M410 115 H450" stroke="#c9852c" stroke-width="3"/>
+  <rect x="460" y="80" width="150" height="70" rx="10" fill="#0f7a8a"/>
+  <text x="535" y="110" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">事件 + TTT</text>
+  <text x="535" y="132" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">迟滞防抖</text>
+
+  <path d="M610 115 H650" stroke="#c9852c" stroke-width="3"/>
+  <rect x="660" y="80" width="150" height="70" rx="10" fill="#c9852c"/>
+  <text x="735" y="110" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">测量报告</text>
+  <text x="735" y="132" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#fff">UE → 源站</text>
+
+  <path d="M810 115 H850" stroke="#c9852c" stroke-width="3"/>
+  <rect x="860" y="80" width="120" height="70" rx="10" fill="#1a8f9e"/>
+  <text x="900" y="110" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">切换命令</text>
+  <text x="900" y="132" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">withSync</text>
+
+  <rect x="40" y="200" width="920" height="160" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="235" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">典型事件链（示例）</text>
+  <text x="60" y="265" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">A2：服务 RSRP 低于门限 → 网络加异频测量 / measGap</text>
+  <text x="60" y="295" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">A3：邻区 RSRP &gt; 服务 + offset（最常用同频切换触发）</text>
+  <text x="60" y="325" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">A5：服务 &lt; Th1 且 邻区 &gt; Th2（更保守，减少乒乓）</text>
+  <text x="60" y="355" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">异系统到 LTE：常用 B1/B2 事件（见 measConfig interRAT）</text>
+</svg>

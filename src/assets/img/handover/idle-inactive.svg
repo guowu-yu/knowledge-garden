@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400" role="img" aria-label="空闲与非激活移动性">
+  <rect width="1000" height="400" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">非连接态移动：空闲 / 非激活</text>
+
+  <rect x="40" y="80" width="440" height="140" rx="12" fill="#1a8f9e"/>
+  <text x="260" y="110" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#fff">RRC_IDLE：小区重选</text>
+  <text x="60" y="145" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">UE 自主排序小区（S 准则、R 准则）</text>
+  <text x="60" y="175" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">不上报测量报告；无 withSync</text>
+  <text x="60" y="205" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#e7f3f7">驻留更好小区；有业务时再 RACH</text>
+
+  <rect x="520" y="80" width="440" height="140" rx="12" fill="#c9852c"/>
+  <text x="740" y="110" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#fff">RRC_INACTIVE：恢复</text>
+  <text x="540" y="145" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">保留 AS 上下文 + I-RNTI；RNA 跟踪区域</text>
+  <text x="540" y="175" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">在原小区或 RNA 内邻区 Resume</text>
+  <text x="540" y="205" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#fff">比完整 Setup 快（非完整 HO）</text>
+
+  <rect x="40" y="250" width="920" height="130" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="285" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">重定向（离开当前载波）</text>
+  <text x="60" y="315" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">RRCRelease + redirectedCarrierInfo：UE 去新频点 / 新 RAT 驻留</text>
+  <text x="60" y="345" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">MobilityFromNRCommand：异系统切换命令（如到 LTE）</text>
+  <text x="60" y="375" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">属移动性，但不是 NR 连接态系统内 withSync 切换</text>
+</svg>

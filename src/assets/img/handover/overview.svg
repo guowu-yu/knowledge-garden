@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-label="NR 移动性总览">
+  <rect width="1000" height="420" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">NR 移动性：什么算切换？</text>
+  <text x="40" y="68" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">连接态切换 / 空闲重选 / 非激活恢复 / 重定向</text>
+
+  <rect x="40" y="100" width="200" height="100" rx="12" fill="#0f7a8a"/>
+  <text x="140" y="130" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">RRC_CONNECTED</text>
+  <text x="140" y="155" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">切换（HO）</text>
+  <text x="140" y="180" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">withSync / DAPS / CHO</text>
+
+  <rect x="280" y="100" width="200" height="100" rx="12" fill="#1a8f9e"/>
+  <text x="380" y="130" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">RRC_IDLE</text>
+  <text x="380" y="155" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">小区重选</text>
+  <text x="380" y="180" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">不叫 HO</text>
+
+  <rect x="520" y="100" width="200" height="100" rx="12" fill="#c9852c"/>
+  <text x="620" y="130" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">RRC_INACTIVE</text>
+  <text x="620" y="155" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#fff">恢复 / RNA 更新</text>
+  <text x="620" y="180" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#fff">快速回到连接态</text>
+
+  <rect x="760" y="100" width="200" height="100" rx="12" fill="#1f3a4d"/>
+  <text x="860" y="130" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">离开 NR</text>
+  <text x="860" y="155" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#e7f3f7">重定向 / 异系统</text>
+  <text x="860" y="180" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">MobilityFromNR…</text>
+
+  <rect x="40" y="240" width="920" height="140" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="275" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">连接态切换核心思想</text>
+  <text x="60" y="305" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">UE 在源小区保留 C-RNTI 上下文，直到 reconfigurationWithSync 迁到目标小区</text>
+  <text x="60" y="330" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">典型流程：测量报告 → RRCReconfiguration(withSync) → 目标 RACH → Complete</text>
+  <text x="60" y="355" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">规范：TS 38.331（RRC）、38.423（Xn）、38.413（N2）</text>
+</svg>

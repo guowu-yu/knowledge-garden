@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-label="Xn 与 N2 切换">
+  <rect width="1000" height="460" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">站间切换：Xn 与 N2</text>
+
+  <text x="40" y="75" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#0f7a8a">Xn 切换（有 Xn 时优先）</text>
+  <rect x="80" y="95" width="120" height="60" rx="8" fill="#0f7a8a"/>
+  <text x="140" y="128" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">源 gNB</text>
+  <path d="M200 125 H280" stroke="#1f3a4d" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="240" y="115" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#1f3a4d">切换请求</text>
+  <rect x="280" y="95" width="120" height="60" rx="8" fill="#1a8f9e"/>
+  <text x="340" y="128" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">目标 gNB</text>
+  <text x="500" y="128" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#1f3a4d">gNB 直连准备；AMF 后续获知（路径切换在后）</text>
+
+  <text x="40" y="210" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#c9852c">N2 切换（无 Xn 或回退）</text>
+  <rect x="80" y="230" width="100" height="55" rx="8" fill="#0f7a8a"/>
+  <text x="130" y="260" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">源站</text>
+  <path d="M220 257 H300" stroke="#1f3a4d" stroke-width="2"/>
+  <rect x="300" y="230" width="100" height="55" rx="8" fill="#1f3a4d"/>
+  <text x="350" y="260" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">AMF</text>
+  <path d="M400 257 H480" stroke="#1f3a4d" stroke-width="2"/>
+  <rect x="480" y="230" width="100" height="55" rx="8" fill="#1a8f9e"/>
+  <text x="530" y="260" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">目标站</text>
+  <text x="620" y="260" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#1f3a4d">经核心网准备；信令更多</text>
+
+  <rect x="40" y="320" width="920" height="120" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="355" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">UE 空口侧类似；差异在核心网 / gNB 准备路径</text>
+  <text x="60" y="380" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">共同收尾：RRCReconfiguration(withSync) → 目标 RACH → Complete → 路径切换 / 数据转发</text>
+  <text x="60" y="400" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">UPF 路径切换：用户面锚点改到目标 gNB</text>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1f3a4d"/></marker></defs>
+</svg>

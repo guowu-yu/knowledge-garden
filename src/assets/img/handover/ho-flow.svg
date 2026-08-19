@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-label="切换重配流程">
+  <rect width="1000" height="480" rx="18" fill="#eef5f7"/>
+  <text x="40" y="40" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">移动性：带同步的重配（切换示意）</text>
+  <text x="40" y="68" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">源站配目标；UE 同步后在目标发 Complete</text>
+
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12">
+    <rect x="40" y="120" width="200" height="90" rx="10" fill="#0f7a8a"/>
+    <text x="140" y="155" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">测量报告</text>
+    <text x="140" y="180" text-anchor="middle" fill="#e7f3f7">UE 到 源站</text>
+
+    <path d="M250 165 H300" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="310" y="120" width="220" height="90" rx="10" fill="#c9852c"/>
+    <text x="420" y="150" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">RRC 重配</text>
+    <text x="420" y="175" text-anchor="middle" fill="#fff">withSync + 目标</text>
+
+    <path d="M540 165 H590" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="600" y="120" width="180" height="90" rx="10" fill="#1a8f9e"/>
+    <text x="690" y="155" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">RACH / CFRA</text>
+    <text x="690" y="180" text-anchor="middle" fill="#e7f3f7">在目标小区</text>
+
+    <path d="M790 165 H830" stroke="#1f3a4d" stroke-width="2"/>
+    <rect x="840" y="120" width="120" height="90" rx="10" fill="#1f3a4d"/>
+    <text x="900" y="155" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">Complete</text>
+    <text x="900" y="180" text-anchor="middle" fill="#e7f3f7">在目标小区</text>
+  </g>
+
+  <rect x="40" y="260" width="920" height="160" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="300" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">withSync 内含（直觉）</text>
+  <text x="60" y="335" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">spCellConfigCommon / 新 UE 标识（C-RNTI）/ t304 / rach-ConfigDedicated 等</text>
+  <text x="60" y="370" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">t304 前未完成同步 - 移动性失败 - 重建流程</text>
+</svg>

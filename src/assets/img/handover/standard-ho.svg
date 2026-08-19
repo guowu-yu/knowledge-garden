@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-label="标准切换时序">
+  <rect width="1000" height="440" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">标准切换（先断后连）</text>
+  <text x="40" y="65" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" fill="#1f3a4d">UE 应用 withSync 并离开源小区前，源小区仍活跃</text>
+
+  <line x1="60" y1="120" x2="940" y2="120" stroke="#d0dde3" stroke-width="2"/>
+  <text x="60" y="105" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#1f3a4d">时间</text>
+
+  <rect x="80" y="140" width="140" height="50" rx="8" fill="#0f7a8a"/>
+  <text x="150" y="170" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">在源小区</text>
+
+  <rect x="240" y="140" width="160" height="50" rx="8" fill="#c9852c"/>
+  <text x="320" y="170" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">收 withSync</text>
+
+  <rect x="420" y="140" width="140" height="50" rx="8" fill="#1a8f9e"/>
+  <text x="500" y="170" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">目标 RACH</text>
+
+  <rect x="580" y="140" width="160" height="50" rx="8" fill="#1f3a4d"/>
+  <text x="660" y="170" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">目标 Complete</text>
+
+  <rect x="780" y="140" width="140" height="50" rx="8" fill="#0a5561"/>
+  <text x="850" y="170" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">在目标小区</text>
+
+  <rect x="80" y="220" width="860" height="180" rx="12" fill="#fff" stroke="#d0dde3"/>
+  <text x="100" y="255" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">withSync 携带内容（直觉）</text>
+  <text x="100" y="285" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">目标 spCellConfigCommon、新 C-RNTI、t304 定时器</text>
+  <text x="100" y="310" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">rach-ConfigDedicated：CFRA 专用前导</text>
+  <text x="100" y="335" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">masterCellGroup：目标 PHY/MAC（BWP、CORESET、承载可延续）</text>
+  <text x="100" y="360" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">t304 超时未完成 → 切换失败 → 尝试重建</text>
+  <text x="100" y="385" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">源→目标过渡期间 UE 有数据空窗（无 DAPS）</text>
+</svg>

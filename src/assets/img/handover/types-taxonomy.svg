@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-label="切换类型分类">
+  <rect width="1000" height="500" rx="18" fill="#eef5f7"/>
+  <text x="40" y="38" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#0b1c28">NR 切换类型分类（连接态）</text>
+
+  <rect x="40" y="70" width="180" height="50" rx="8" fill="#0b1c28"/>
+  <text x="130" y="100" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">按频点</text>
+
+  <rect x="240" y="60" width="160" height="70" rx="8" fill="#0f7a8a"/>
+  <text x="320" y="95" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">同频切换</text>
+  <text x="320" y="118" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">同一 ARFCN</text>
+
+  <rect x="420" y="60" width="160" height="70" rx="8" fill="#1a8f9e"/>
+  <text x="500" y="95" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">异频切换</text>
+  <text x="500" y="118" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">常需 measGap</text>
+
+  <rect x="40" y="150" width="180" height="50" rx="8" fill="#0b1c28"/>
+  <text x="130" y="180" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">按 gNB</text>
+
+  <rect x="240" y="140" width="160" height="70" rx="8" fill="#c9852c"/>
+  <text x="320" y="175" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">站内切换</text>
+  <text x="320" y="198" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#fff">同一 DU/CU</text>
+
+  <rect x="420" y="140" width="160" height="70" rx="8" fill="#c9852c"/>
+  <text x="500" y="175" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">站间切换</text>
+  <text x="500" y="198" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#fff">Xn 或 N2 路径</text>
+
+  <rect x="40" y="230" width="180" height="50" rx="8" fill="#0b1c28"/>
+  <text x="130" y="260" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">按流程</text>
+
+  <rect x="240" y="220" width="130" height="70" rx="8" fill="#0f7a8a"/>
+  <text x="305" y="255" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">标准切换</text>
+
+  <rect x="400" y="220" width="130" height="70" rx="8" fill="#1a8f9e"/>
+  <text x="465" y="255" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">DAPS 切换</text>
+
+  <rect x="560" y="220" width="130" height="70" rx="8" fill="#1f3a4d"/>
+  <text x="605" y="255" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">条件切换 CHO</text>
+
+  <rect x="720" y="220" width="130" height="70" rx="8" fill="#6b4c9a"/>
+  <text x="775" y="255" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#fff">盲切换</text>
+
+  <rect x="40" y="320" width="180" height="50" rx="8" fill="#0b1c28"/>
+  <text x="130" y="350" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#fff">按接口</text>
+
+  <rect x="240" y="310" width="200" height="70" rx="8" fill="#0a5561"/>
+  <text x="360" y="345" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">Xn 切换</text>
+  <text x="360" y="368" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">gNB 直连准备</text>
+
+  <rect x="480" y="310" width="200" height="70" rx="8" fill="#0a5561"/>
+  <text x="600" y="345" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#fff">N2 切换</text>
+  <text x="600" y="368" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#e7f3f7">无 Xn 时经 AMF</text>
+
+  <rect x="40" y="400" width="920" height="80" rx="10" fill="#fff" stroke="#d0dde3"/>
+  <text x="60" y="435" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">常见组合：站间 + 异频 + DAPS + Xn</text>
+  <text x="60" y="460" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" fill="#1f3a4d">CA：PSCell 变更 / SCell 增删与移动性相关，但不一定是完整 HO</text>
+</svg>
