@@ -16,7 +16,7 @@ cover: https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&
 > **一条主线**：NTN 的所有关键增强，都是为了回答同一个问题——当往返时延达到几十甚至几百毫秒时，UE 与网络如何依然保持时间与频率上的对齐。
 
 对照：**TS 38.300**（NTN 总体与定时调度）、**38.213**（定时提前）、**38.321**（MAC/HARQ）、**38.331**（SIB19 星历）。
-相关：[5G 帧结构与 SS/PBCH Block](frame-structure-ssb.html)、[随机接入](random-access.html)、[小区搜索](cell-search.html)、[DCI 与 UCI](dci-uci.html)、[NR Power Control](nr-power-control.html)。
+相关：[3GPP 规范地图](3gpp-spec-map.html)、[5G 帧结构与 SS/PBCH Block](frame-structure-ssb.html)、[随机接入](random-access.html)、[小区搜索](cell-search.html)、[DCI 与 UCI](dci-uci.html)、[NR Power Control](nr-power-control.html)。
 
 ---
 
@@ -266,8 +266,10 @@ Rel-19 的取舍很值得玩味：3GPP 讨论约一年后（决议落在 2023 �
 
 ### 延伸阅读
 
-- TS 38.300 §16.14——NTN 总体描述、定时与调度（本节多数结论的规范出处）
-- TS 38.213 §4.2——定时提前与 \(N_{TA,offset}\) 的定义
-- TS 38.321——MAC 层 HARQ 模式与定时器行为
-- TS 38.331——SIB19、`ta-Common`、星历等 RRC 参数
-- TS 38.101-5——NTN 频段与 UE 射频要求（Satellite Access Node）
+以下规范的定位与关键章节，见本站 [3GPP 规范地图](3gpp-spec-map.html)：
+
+- [TS 38.300 §16.14](3gpp-spec-map.html#ts-38300)——NTN 总体描述、定时与调度（本节多数结论的规范出处），[官方页面](https://www.3gpp.org/dynareport/38300.htm)
+- [TS 38.213 §4.2](3gpp-spec-map.html#ts-38213)——定时提前与 \(N_{TA,offset}\) 的定义，[官方页面](https://www.3gpp.org/dynareport/38213.htm)
+- [TS 38.321](3gpp-spec-map.html#ts-38321)——MAC 层 HARQ 模式与定时器行为，[官方页面](https://www.3gpp.org/dynareport/38321.htm)
+- [TS 38.331](3gpp-spec-map.html#ts-38331)——SIB19、`ta-Common`、星历等 RRC 参数，[官方页面](https://www.3gpp.org/dynareport/38331.htm)
+- [TS 38.101-5](3gpp-spec-map.html#ts-38101-5)——NTN 频段与 UE 射频要求（Satellite Access Node），[官方页面](https://www.3gpp.org/dynareport/38101-5.htm)
