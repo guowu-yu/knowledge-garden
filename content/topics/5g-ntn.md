@@ -1,7 +1,7 @@
 ---
 title: 5G NTN：非地面网络综合专题
 slug: 5g-ntn
-date: 2026-08-20
+date: 2026-10-07
 tags: [5G, NTN, 卫星, Rel-17, 38.300, 定时补偿, 多普勒, HARQ, LEO, GEO]
 summary: 5G NTN 综合专题：体系架构、轨道类型对比，以及大时延与大频偏如何倒逼定时补偿、频率预补偿、HARQ 与移动性机制重新设计，梳理 Rel-17/18/19 演进脉络。
 cover: https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=2000&q=80
