@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-label="三类 service link 覆盖形态">
+  <rect width="900" height="300" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">三类 service link 的覆盖形态</text>
+  <g>
+    <rect x="14" y="52" width="280" height="228" rx="12" fill="#f9fbfc" stroke="#dde5ea"/>
+    <text x="154" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Earth-fixed</text>
+    <rect x="44" y="130" width="220" height="100" fill="#dfeae4"/>
+    <ellipse cx="154" cy="180" rx="66" ry="38" fill="#0f7a8a" opacity="0.85"/>
+    <text x="154" y="184" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f4fafc">同一区域</text>
+    <text x="154" y="258" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">覆盖区固定不动</text>
+  </g>
+  <g>
+    <rect x="308" y="52" width="280" height="228" rx="12" fill="#f9fbfc" stroke="#dde5ea"/>
+    <text x="448" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Quasi-Earth-fixed</text>
+    <rect x="338" y="130" width="220" height="100" fill="#dfeae4"/>
+    <ellipse cx="418" cy="178" rx="52" ry="36" fill="#0f7a8a" opacity="0.85"/>
+    <ellipse cx="502" cy="196" rx="52" ry="36" fill="#c9852c" opacity="0.75"/>
+    <text x="418" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#f4fafc">时段 1</text>
+    <text x="502" y="200" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#fff8ef">时段 2</text>
+    <text x="448" y="258" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">分时段覆盖不同区域</text>
+  </g>
+  <g>
+    <rect x="602" y="52" width="284" height="228" rx="12" fill="#f9fbfc" stroke="#dde5ea"/>
+    <text x="744" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">Earth-moving</text>
+    <rect x="632" y="130" width="224" height="100" fill="#dfeae4"/>
+    <ellipse cx="690" cy="180" rx="46" ry="32" fill="#0f7a8a" opacity="0.35"/>
+    <ellipse cx="734" cy="176" rx="46" ry="32" fill="#0f7a8a" opacity="0.6"/>
+    <ellipse cx="784" cy="172" rx="46" ry="32" fill="#0f7a8a" opacity="0.9"/>
+    <path d="M672 216 L800 210" stroke="#a9681f" stroke-width="1.8" marker-end="url(#ar3)"/>
+    <text x="744" y="258" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">覆盖区向地表滑移</text>
+  </g>
+  <defs>
+    <marker id="ar3" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#a9681f"/>
+    </marker>
+  </defs>
+</svg>
