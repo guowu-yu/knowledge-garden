@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-label="星间链路与存储转发">
+  <rect width="900" height="380" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">星间链路（ISL）与存储转发</text>
+  <rect x="0" y="52" width="900" height="190" fill="#e2eef4"/>
+  <text x="20" y="74" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">太空</text>
+  <rect x="0" y="330" width="900" height="50" fill="#dfeae4"/>
+  <text x="20" y="360" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">地面</text>
+  <defs>
+    <marker id="arI" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#0f7a8a"/>
+    </marker>
+    <marker id="arU" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#c9852c"/>
+    </marker>
+    <marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#8a99a8"/>
+    </marker>
+  </defs>
+
+  <!-- 三颗卫星 -->
+  <g>
+    <rect x="90" y="86" width="170" height="70" rx="10" fill="#0f7a8a"/>
+    <text x="175" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#f4fafc">gNB-1（无网关可视）</text>
+    <text x="175" y="134" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#cfeaf0">缓存下行数据</text>
+  </g>
+  <g>
+    <rect x="380" y="86" width="170" height="70" rx="10" fill="#0f7a8a"/>
+    <text x="465" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#f4fafc">gNB-2</text>
+    <text x="465" y="134" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#cfeaf0">经 ISL 回传</text>
+  </g>
+  <g>
+    <rect x="660" y="86" width="170" height="70" rx="10" fill="#0f7a8a"/>
+    <text x="745" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#f4fafc">gNB-3</text>
+    <text x="745" y="134" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#cfeaf0">服务另一波束</text>
+  </g>
+  <line x1="260" y1="121" x2="378" y2="121" stroke="#0f7a8a" stroke-width="2.4" marker-end="url(#arI)"/>
+  <text x="319" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0a5561">ISL / Xn</text>
+  <line x1="550" y1="121" x2="658" y2="121" stroke="#0f7a8a" stroke-width="2.4" marker-end="url(#arI)"/>
+  <text x="604" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0a5561">ISL / Xn</text>
+
+  <!-- UE -->
+  <g>
+    <rect x="120" y="256" width="110" height="52" rx="10" fill="#ffffff" stroke="#c9852c" stroke-width="1.6"/>
+    <text x="175" y="286" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0b1c28">UE（远洋）</text>
+  </g>
+  <line x1="175" y1="254" x2="175" y2="158" stroke="#c9852c" stroke-width="2" marker-end="url(#arU)"/>
+  <text x="185" y="216" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">service link</text>
+
+  <!-- 网关 -->
+  <g>
+    <rect x="430" y="256" width="170" height="52" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="515" y="278" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0b1c28">Gateway + 5GC</text>
+    <text x="515" y="296" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">大陆关口站</text>
+  </g>
+  <line x1="475" y1="254" x2="465" y2="158" stroke="#8a99a8" stroke-width="2" marker-end="url(#arG)"/>
+  <text x="545" y="216" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">feeder link（NG）</text>
+
+  <!-- 存储转发标注 -->
+  <g>
+    <rect x="330" y="168" width="260" height="34" rx="8" fill="#fdf3e3" stroke="#c9852c" stroke-width="1.2"/>
+    <text x="460" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">存储转发：馈电中断期间先缓存，恢复后再回传</text>
+  </g>
+  <line x1="340" y1="168" x2="200" y2="150" stroke="#c9852c" stroke-width="1.2" stroke-dasharray="5 4"/>
+
+  <text x="330" y="240" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">业务可跨多星经 ISL 路由到最近网关，海洋上空无需本地关口站</text>
+</svg>

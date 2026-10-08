@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" role="img" aria-label="功能切分选项：gNB-DU 上星 vs 完整 gNB 上星">
+  <rect width="900" height="330" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">功能切分：把什么放到星上？</text>
+  <defs>
+    <marker id="arS2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#3a4b5c"/>
+    </marker>
+  </defs>
+
+  <!-- 方案 A：DU 上星 -->
+  <text x="225" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">方案 A：gNB-DU 上星</text>
+  <rect x="30" y="82" width="390" height="110" rx="12" fill="#e2eef4"/>
+  <g>
+    <rect x="60" y="100" width="150" height="72" rx="10" fill="#0f7a8a"/>
+    <text x="135" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#f4fafc">DU（L1/L2）</text>
+    <text x="135" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#cfeaf0">星上：PHY / MAC / RLC</text>
+  </g>
+  <g>
+    <rect x="250" y="100" width="150" height="72" rx="10" fill="#3a4b5c"/>
+    <text x="325" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#ffffff">CU（RRC / PDCP）</text>
+    <text x="325" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c8d6e0">地面</text>
+  </g>
+  <line x1="210" y1="136" x2="248" y2="136" stroke="#3a4b5c" stroke-width="2" marker-end="url(#arS2)"/>
+  <text x="229" y="126" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#3a4b5c">F1</text>
+  <text x="225" y="216" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">F1 接口跑在馈电链路上，</text>
+  <text x="225" y="234" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">RRC / PDCP 时序仍受馈电时延牵制</text>
+  <rect x="30" y="252" width="390" height="52" rx="10" fill="#ffffff" stroke="#8a99a8" stroke-width="1.2"/>
+  <text x="225" y="274" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">优点：星上功能少、计算与功耗低</text>
+  <text x="225" y="292" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">缺点：星间切换仍要经地面 CU，路径绕</text>
+
+  <!-- 方案 B：完整 gNB 上星 -->
+  <text x="675" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0b1c28">方案 B：完整 gNB 上星（Rel-19 选择）</text>
+  <rect x="480" y="82" width="390" height="110" rx="12" fill="#e2eef4"/>
+  <g>
+    <rect x="530" y="100" width="180" height="72" rx="10" fill="#0f7a8a"/>
+    <text x="620" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#f4fafc">完整 gNB</text>
+    <text x="620" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#cfeaf0">CU + DU 全部在星上</text>
+  </g>
+  <g>
+    <rect x="760" y="100" width="100" height="72" rx="10" fill="#3a4b5c"/>
+    <text x="810" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#ffffff">5GC</text>
+    <text x="810" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c8d6e0">地面</text>
+  </g>
+  <line x1="710" y1="136" x2="758" y2="136" stroke="#3a4b5c" stroke-width="2" marker-end="url(#arS2)"/>
+  <text x="734" y="126" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#3a4b5c">NG</text>
+  <text x="675" y="216" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">RRC / PDCP 与空口同处一星，</text>
+  <text x="675" y="234" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">星间移动性可经 Xn 在轨直接完成</text>
+  <rect x="480" y="252" width="390" height="52" rx="10" fill="#ffffff" stroke="#c9852c" stroke-width="1.6"/>
+  <text x="675" y="274" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#a9681f">优点：原生支持 ISL 与星间切换，流程 RTT 最短</text>
+  <text x="675" y="292" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">代价：星上算力 / 功耗 / 散热 / 在轨运维压力大</text>
+</svg>

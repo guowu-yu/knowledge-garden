@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-label="HARQ RTT 构成对比">
+  <rect width="900" height="300" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">一个 HARQ 往返的时延构成（以 LEO 单程约 3 ms、馈电单程约 3 ms 为例）</text>
+  <text x="24" y="56" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">数值随轨道高度与几何关系变化，此处仅示意构成比例</text>
+  <defs>
+    <marker id="arR1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#0a5561"/>
+    </marker>
+  </defs>
+
+  <!-- 透明转发时间线 -->
+  <text x="60" y="100" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0b1c28">透明转发</text>
+  <rect x="60" y="112" width="150" height="26" fill="#c9852c"/>
+  <text x="135" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">服务链路去程</text>
+  <rect x="210" y="112" width="150" height="26" fill="#0a5561"/>
+  <text x="285" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">馈电链路去程</text>
+  <rect x="360" y="112" width="120" height="26" fill="#8a99a8"/>
+  <text x="420" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">gNB 处理</text>
+  <rect x="480" y="112" width="150" height="26" fill="#0a5561"/>
+  <text x="555" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">馈电链路回程</text>
+  <rect x="630" y="112" width="150" height="26" fill="#c9852c"/>
+  <text x="705" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">服务链路回程</text>
+  <line x1="60" y1="158" x2="780" y2="158" stroke="#3a4b5c" stroke-width="1.6" marker-end="url(#arR1)"/>
+  <text x="810" y="162" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b1c28">HARQ RTT</text>
+  <text x="60" y="182" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">反馈往返要跨越「服务 + 馈电」两条空间链路</text>
+
+  <!-- 再生转发时间线 -->
+  <text x="60" y="218" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0b1c28">再生转发</text>
+  <rect x="60" y="230" width="300" height="26" fill="#c9852c"/>
+  <text x="210" y="248" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">服务链路去程</text>
+  <rect x="360" y="230" width="120" height="26" fill="#0f7a8a"/>
+  <text x="420" y="248" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">星上 gNB 处理</text>
+  <rect x="480" y="230" width="300" height="26" fill="#c9852c"/>
+  <text x="630" y="248" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">服务链路回程</text>
+  <line x1="60" y1="276" x2="780" y2="276" stroke="#3a4b5c" stroke-width="1.6" marker-end="url(#arR1)"/>
+  <text x="810" y="280" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b1c28">HARQ RTT</text>
+</svg>
