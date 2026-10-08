@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-label="NTN UE 能力判断流程">
+  <rect width="900" height="620" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">网络侧对 NTN UE 能力的判断链</text>
+  <defs>
+    <marker id="arF1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#3a4b5c"/>
+    </marker>
+  </defs>
+
+  <!-- 步骤1：能力查询 -->
+  <g>
+    <rect x="60" y="56" width="340" height="58" rx="10" fill="#0f7a8a"/>
+    <text x="230" y="80" text-anchor="middle" font-family="Consolas, monospace" font-size="13" font-weight="700" fill="#f4fafc">UECapabilityEnquiry</text>
+    <text x="230" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#cfeaf0">gNB 发起；band 过滤含 NTN 频段</text>
+  </g>
+  <line x1="400" y1="85" x2="470" y2="85" stroke="#3a4b5c" stroke-width="2" marker-end="url(#arF1)"/>
+  <g>
+    <rect x="470" y="56" width="360" height="58" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="650" y="80" text-anchor="middle" font-family="Consolas, monospace" font-size="13" font-weight="700" fill="#0b1c28">UECapabilityInformation</text>
+    <text x="650" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">UE-NR-Capability + v1700 扩展</text>
+  </g>
+  <line x1="650" y1="114" x2="650" y2="146" stroke="#3a4b5c" stroke-width="2" marker-end="url(#arF1)"/>
+
+  <!-- 判断1：总开关 -->
+  <g>
+    <polygon points="650,146 790,196 650,246 510,196" fill="#fdf3e3" stroke="#c9852c" stroke-width="1.6"/>
+    <text x="650" y="190" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#a9681f">nonTerrestrialNetwork-r17</text>
+    <text x="650" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#a9681f">存在？</text>
+  </g>
+  <line x1="510" y1="196" x2="180" y2="196" stroke="#c9852c" stroke-width="1.8" marker-end="url(#arF1)"/>
+  <text x="470" y="186" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#a9681f">否</text>
+  <g>
+    <rect x="40" y="168" width="200" height="56" rx="10" fill="#ffffff" stroke="#8a99a8" stroke-width="1.4"/>
+    <text x="140" y="192" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#3a4b5c">按地面 UE 配置</text>
+    <text x="140" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">不启用任何 NTN 增强</text>
+  </g>
+  <line x1="650" y1="246" x2="650" y2="278" stroke="#0f7a8a" stroke-width="1.8" marker-end="url(#arF1)"/>
+  <text x="662" y="268" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0a5561">是</text>
+
+  <!-- 判断2：场景匹配 -->
+  <g>
+    <rect x="440" y="280" width="420" height="76" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="650" y="304" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#0a5561">ntn-ScenarioSupport-r17 ∈ {gso, ngso}</text>
+    <text x="650" y="324" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">缺席 = 同时支持 GSO + NGSO 且支持互相移动</text>
+    <text x="650" y="344" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">网络对照自身星座类型检查匹配性</text>
+  </g>
+  <line x1="650" y1="356" x2="650" y2="388" stroke="#3a4b5c" stroke-width="1.8" marker-end="url(#arF1)"/>
+
+  <!-- 判断3：频段级字段 -->
+  <g>
+    <rect x="440" y="390" width="420" height="96" rx="10" fill="#ffffff" stroke="#c9852c" stroke-width="1.6"/>
+    <text x="650" y="414" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#a9681f">BandNR 频段级检查（n255 / n256 / HAPS）</text>
+    <text x="650" y="436" text-anchor="middle" font-family="Consolas, monospace" font-size="11.5" fill="#0b1c28">uplinkPreCompensation-r17（NTN UE 必报）</text>
+    <text x="650" y="456" text-anchor="middle" font-family="Consolas, monospace" font-size="11.5" fill="#0b1c28">max-HARQ-ProcessNumber-r17 → 可配 32 进程？</text>
+    <text x="650" y="476" text-anchor="middle" font-family="Consolas, monospace" font-size="11.5" fill="#0b1c28">typeX-HARQ-Codebook / ue-specific-K-Offset-r17</text>
+  </g>
+  <line x1="650" y1="486" x2="650" y2="518" stroke="#3a4b5c" stroke-width="1.8" marker-end="url(#arF1)"/>
+
+  <!-- 判断4：差分容器 + 输出 -->
+  <g>
+    <rect x="440" y="520" width="420" height="72" rx="10" fill="#e2eef4"/>
+    <text x="650" y="546" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#0a5561">NTN-Parameters-r17 差分容器</text>
+    <text x="650" y="566" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">有 → 用 NTN 版 MAC/PHY/测量能力；无 → 沿用地面能力</text>
+    <text x="650" y="584" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">输出：K_offset / K_mac、HARQ 策略、SDT、RRC_INACTIVE、CHO 触发</text>
+  </g>
+  <g>
+    <rect x="40" y="390" width="340" height="202" rx="12" fill="#ffffff" stroke="#3a4b5c" stroke-width="1.4"/>
+    <text x="58" y="416" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b1c28">运行时先决（每次传输都检查）</text>
+    <text x="58" y="440" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">1. NTN 能力已声明（历史事实）</text>
+    <text x="58" y="462" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">2. GNSS 位置有效（UE 实现）</text>
+    <text x="58" y="484" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">3. 星历 + Common TA 有效（SIB19）</text>
+    <text x="58" y="506" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">   （ntn-UlSyncValidityDuration / T430）</text>
+    <text x="58" y="534" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">三者齐备 → 预补偿 TA 与频偏 → PRACH</text>
+    <text x="58" y="556" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">任一失效 → 停止上行，直至恢复</text>
+    <text x="58" y="580" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">（TS 38.300 §16.14：NTN UE 视为 GNSS-capable）</text>
+  </g>
+</svg>
