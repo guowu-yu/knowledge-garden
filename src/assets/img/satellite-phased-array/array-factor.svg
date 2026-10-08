@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-label="阵元间距对阵列方向图与栅瓣的影响">
+  <rect width="900" height="430" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">阵元间距 d 决定栅瓣是否进入可见空间</text>
+  <text x="24" y="56" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">横轴为 sinθ（−1 至 +1 即全部可见空间），纵轴为归一化阵列因子 |AF|</text>
+
+  <!-- 三面板 -->
+  <g>
+    <rect x="30" y="80" width="270" height="290" rx="10" fill="#ffffff" stroke="#cfe0e8" stroke-width="1.2"/>
+    <text x="52" y="106" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">d = 0.5λ</text>
+    <text x="52" y="126" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">无栅瓣，可扫到 ±90°</text>
+    <line x1="52" y1="240" x2="278" y2="240" stroke="#b9c8d2" stroke-width="1.2"/>
+    <line x1="165" y1="150" x2="165" y2="330" stroke="#dde7ec" stroke-width="1"/>
+    <line x1="52" y1="240" x2="52" y2="150" stroke="#dde7ec" stroke-width="1"/>
+    <line x1="278" y1="240" x2="278" y2="150" stroke="#dde7ec" stroke-width="1"/>
+    <!-- 主瓣 -->
+    <path d="M52 240 Q120 232 165 152 Q210 232 278 240" fill="#0f7a8a" fill-opacity="0.28" stroke="#0f7a8a" stroke-width="2"/>
+    <!-- 副瓣 -->
+    <path d="M52 240 Q66 214 80 240" fill="#0f7a8a" fill-opacity="0.16" stroke="#0f7a8a" stroke-width="1.4"/>
+    <path d="M250 240 Q264 214 278 240" fill="#0f7a8a" fill-opacity="0.16" stroke="#0f7a8a" stroke-width="1.4"/>
+    <text x="118" y="352" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">sinθ = −1</text>
+    <text x="210" y="352" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">sinθ = +1</text>
+  </g>
+
+  <g>
+    <rect x="315" y="80" width="270" height="290" rx="10" fill="#ffffff" stroke="#cfe0e8" stroke-width="1.2"/>
+    <text x="337" y="106" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#a9681f">d = 0.7λ</text>
+    <text x="337" y="126" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">栅瓣逼近可见空间边缘</text>
+    <line x1="337" y1="240" x2="563" y2="240" stroke="#b9c8d2" stroke-width="1.2"/>
+    <line x1="450" y1="150" x2="450" y2="330" stroke="#dde7ec" stroke-width="1"/>
+    <path d="M337 240 Q405 232 450 152 Q495 232 563 240" fill="#0f7a8a" fill-opacity="0.28" stroke="#0f7a8a" stroke-width="2"/>
+    <!-- 即将出现的栅瓣 -->
+    <path d="M337 240 Q344 222 352 240" fill="#c9852c" fill-opacity="0.22" stroke="#c9852c" stroke-width="1.6"/>
+    <path d="M548 240 Q556 222 563 240" fill="#c9852c" fill-opacity="0.22" stroke="#c9852c" stroke-width="1.6"/>
+    <text x="330" y="180" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">抬升的副瓣</text>
+    <text x="403" y="352" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">sinθ = −1</text>
+    <text x="495" y="352" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">sinθ = +1</text>
+  </g>
+
+  <g>
+    <rect x="600" y="80" width="270" height="290" rx="10" fill="#ffffff" stroke="#e0c9a6" stroke-width="1.4"/>
+    <text x="622" y="106" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#a9681f">d = 1.0λ</text>
+    <text x="622" y="126" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">栅瓣完整进入可见空间</text>
+    <line x1="622" y1="240" x2="848" y2="240" stroke="#b9c8d2" stroke-width="1.2"/>
+    <line x1="735" y1="150" x2="735" y2="330" stroke="#dde7ec" stroke-width="1"/>
+    <path d="M622 240 Q690 232 735 152 Q780 232 848 240" fill="#0f7a8a" fill-opacity="0.28" stroke="#0f7a8a" stroke-width="2"/>
+    <!-- 对称栅瓣 -->
+    <path d="M622 240 Q645 176 668 240" fill="#c9852c" fill-opacity="0.30" stroke="#c9852c" stroke-width="2"/>
+    <path d="M802 240 Q825 176 848 240" fill="#c9852c" fill-opacity="0.30" stroke="#c9852c" stroke-width="2"/>
+    <text x="622" y="168" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#a9681f">栅瓣 −30°</text>
+    <text x="782" y="168" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#a9681f">栅瓣 +30°</text>
+    <text x="688" y="352" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">sinθ = −1</text>
+    <text x="780" y="352" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">sinθ = +1</text>
+  </g>
+
+  <text x="30" y="404" font-family="Segoe UI, sans-serif" font-size="12" fill="#1f3a4d">栅瓣条件：d·(sinθ₀ − sinθ) = mλ，m = ±1, ±2 …；要使 |sinθ| ≤ 1 内无解，必须 d ≤ λ / (1 + |sinθ₀|)</text>
+</svg>

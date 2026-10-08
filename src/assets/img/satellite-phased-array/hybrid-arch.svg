@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-label="模拟、数字与混合波束成形架构对比">
+  <rect width="900" height="470" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">三种波束成形架构：射频链放在哪一级</text>
+  <text x="24" y="56" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">阵元数 N 与射频链数 N_RF 的比值，决定波束的灵活度与整机功耗</text>
+
+  <!-- 面板 1：模拟 -->
+  <rect x="24" y="76" width="272" height="356" rx="10" fill="#ffffff" stroke="#cfe0e8" stroke-width="1.2"/>
+  <text x="44" y="102" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">模拟波束成形（PESA / AESA）</text>
+  <text x="44" y="122" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">N_RF = 1，移相器在射频端</text>
+
+  <rect x="44" y="142" width="82" height="34" rx="7" fill="#3a4b5c"/>
+  <text x="85" y="164" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#ffffff">基带</text>
+  <line x1="126" y1="159" x2="160" y2="159" stroke="#8a99a8" stroke-width="1.8"/>
+  <rect x="160" y="142" width="60" height="34" rx="7" fill="#0f7a8a"/>
+  <text x="190" y="164" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#f4fafc">RF</text>
+  <line x1="220" y1="159" x2="244" y2="159" stroke="#8a99a8" stroke-width="1.8"/>
+
+  <!-- 功分 + 移相器 + 阵元 -->
+  <g stroke="#8a99a8" stroke-width="1.4">
+    <line x1="244" y1="159" x2="244" y2="196"/>
+    <line x1="244" y1="196" x2="244" y2="352"/>
+    <line x1="244" y1="196" x2="262" y2="196"/>
+    <line x1="244" y1="240" x2="262" y2="240"/>
+    <line x1="244" y1="284" x2="262" y2="284"/>
+    <line x1="244" y1="328" x2="262" y2="328"/>
+  </g>
+  <g fill="#ffffff" stroke="#c9852c" stroke-width="1.4">
+    <rect x="262" y="184" width="30" height="24" rx="5"/>
+    <rect x="262" y="228" width="30" height="24" rx="5"/>
+    <rect x="262" y="272" width="30" height="24" rx="5"/>
+    <rect x="262" y="316" width="30" height="24" rx="5"/>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="10" fill="#a9681f" text-anchor="middle">
+    <text x="277" y="200">φ₁</text>
+    <text x="277" y="244">φ₂</text>
+    <text x="277" y="288">φ₃</text>
+    <text x="277" y="332">φ₄</text>
+  </g>
+  <g fill="#0f7a8a">
+    <circle cx="308" cy="196" r="6"/>
+    <circle cx="308" cy="240" r="6"/>
+    <circle cx="308" cy="284" r="6"/>
+    <circle cx="308" cy="328" r="6"/>
+  </g>
+  <text x="44" y="376" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">优点：功耗低、成本低、可做大阵列</text>
+  <text x="44" y="396" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">代价：一次只能一个波束，窄带</text>
+  <text x="44" y="416" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">移相器量化 + 波束斜视限制带宽</text>
+
+  <!-- 面板 2：全数字 -->
+  <rect x="314" y="76" width="272" height="356" rx="10" fill="#ffffff" stroke="#cfe0e8" stroke-width="1.2"/>
+  <text x="334" y="102" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">全数字波束成形（DBF）</text>
+  <text x="334" y="122" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">N_RF = N，每阵元一条收发链</text>
+
+  <rect x="334" y="142" width="76" height="34" rx="7" fill="#3a4b5c"/>
+  <text x="372" y="164" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#ffffff">FPGA 数字域</text>
+  <g stroke="#8a99a8" stroke-width="1.4">
+    <line x1="410" y1="159" x2="428" y2="159"/>
+    <line x1="428" y1="159" x2="428" y2="352"/>
+    <line x1="428" y1="196" x2="446" y2="196"/>
+    <line x1="428" y1="240" x2="446" y2="240"/>
+    <line x1="428" y1="284" x2="446" y2="284"/>
+    <line x1="428" y1="328" x2="446" y2="328"/>
+  </g>
+  <g fill="#ffffff" stroke="#0f7a8a" stroke-width="1.4">
+    <rect x="446" y="184" width="34" height="24" rx="5"/>
+    <rect x="446" y="228" width="34" height="24" rx="5"/>
+    <rect x="446" y="272" width="34" height="24" rx="5"/>
+    <rect x="446" y="316" width="34" height="24" rx="5"/>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="10" fill="#0a5561" text-anchor="middle">
+    <text x="463" y="200">DAC</text>
+    <text x="463" y="244">DAC</text>
+    <text x="463" y="288">DAC</text>
+    <text x="463" y="332">DAC</text>
+  </g>
+  <g fill="#0f7a8a">
+    <circle cx="500" cy="196" r="6"/>
+    <circle cx="500" cy="240" r="6"/>
+    <circle cx="500" cy="284" r="6"/>
+    <circle cx="500" cy="328" r="6"/>
+  </g>
+  <!-- 多波束标注 -->
+  <g stroke="#c9852c" stroke-width="2" fill="none">
+    <path d="M506 196 L570 176"/>
+    <path d="M506 240 L570 240"/>
+    <path d="M506 284 L570 304"/>
+  </g>
+  <text x="512" y="166" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#a9681f">多波束同时</text>
+  <text x="334" y="376" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">优点：多波束、超分辨、零陷抗干扰</text>
+  <text x="334" y="396" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">带宽不受波束斜视限制</text>
+  <text x="334" y="416" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">代价：ADC/DAC 与算力功耗巨大</text>
+
+  <!-- 面板 3：混合 -->
+  <rect x="604" y="76" width="272" height="356" rx="10" fill="#ffffff" stroke="#e0c9a6" stroke-width="1.4"/>
+  <text x="624" y="102" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#a9681f">混合波束成形（Hybrid）</text>
+  <text x="624" y="122" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">N_RF &lt; N，先子阵模拟、再数字</text>
+
+  <rect x="624" y="142" width="76" height="34" rx="7" fill="#3a4b5c"/>
+  <text x="662" y="164" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#ffffff">数字基带</text>
+  <g stroke="#8a99a8" stroke-width="1.4">
+    <line x1="700" y1="159" x2="722" y2="159"/>
+    <line x1="722" y1="159" x2="722" y2="216"/>
+    <line x1="722" y1="216" x2="744" y2="216"/>
+    <line x1="722" y1="300" x2="744" y2="300"/>
+    <line x1="722" y1="159" x2="722" y2="300"/>
+  </g>
+  <!-- 子阵 1 -->
+  <rect x="744" y="196" width="40" height="34" rx="6" fill="#0f7a8a"/>
+  <text x="764" y="217" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#f4fafc">子阵1</text>
+  <g fill="#0f7a8a">
+    <circle cx="802" cy="200" r="5"/>
+    <circle cx="816" cy="200" r="5"/>
+    <circle cx="830" cy="200" r="5"/>
+    <circle cx="844" cy="200" r="5"/>
+  </g>
+  <line x1="784" y1="213" x2="796" y2="206" stroke="#8a99a8" stroke-width="1.2"/>
+  <!-- 子阵 2 -->
+  <rect x="744" y="282" width="40" height="34" rx="6" fill="#0f7a8a"/>
+  <text x="764" y="303" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#f4fafc">子阵2</text>
+  <g fill="#0f7a8a">
+    <circle cx="802" cy="286" r="5"/>
+    <circle cx="816" cy="286" r="5"/>
+    <circle cx="830" cy="286" r="5"/>
+    <circle cx="844" cy="286" r="5"/>
+  </g>
+  <line x1="784" y1="299" x2="796" y2="292" stroke="#8a99a8" stroke-width="1.2"/>
+  <text x="624" y="376" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">优点：功耗与灵活度折中，工程主流</text>
+  <text x="624" y="396" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">子阵内移相、子阵间数字加权</text>
+  <text x="624" y="416" font-family="Segoe UI, sans-serif" font-size="11" fill="#a9681f">代价：子阵间存在量化栅瓣，需阵列设计抑制</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" role="img" aria-label="LEO 跟踪与星间波束切换">
+  <rect width="900" height="440" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">LEO 过顶时的波束跟踪与切换</text>
+  <text x="24" y="56" font-family="Segoe UI, sans-serif" font-size="12" fill="#7a8b99">可视时长约 5～10 分钟，角速率可达 2°/s，波束需连续重指并做 make-before-break</text>
+
+  <defs>
+    <marker id="lp-ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#0a5561"/>
+    </marker>
+  </defs>
+
+  <!-- 地球弧 -->
+  <path d="M40 396 Q450 300 860 396" fill="none" stroke="#0f7a8a" stroke-width="2.4"/>
+  <path d="M40 396 Q450 300 860 396 L860 424 L40 424 Z" fill="#dfeae4"/>
+  <text x="60" y="416" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">地球</text>
+
+  <!-- 卫星轨迹弧 -->
+  <path d="M150 96 Q450 40 754 96" fill="none" stroke="#c9852c" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="600" y="66" font-family="Segoe UI, sans-serif" font-size="12" fill="#a9681f">LEO 轨道（约 600 km）</text>
+
+  <!-- 卫星 1 -->
+  <g>
+    <rect x="286" y="120" width="60" height="34" rx="6" fill="#0f7a8a"/>
+    <text x="316" y="142" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#f4fafc">SAT-1</text>
+    <!-- 波束扇形 -->
+    <path d="M316 158 L262 396 L370 396 Z" fill="#0f7a8a" fill-opacity="0.14" stroke="#0f7a8a" stroke-width="1.2"/>
+    <line x1="316" y1="158" x2="316" y2="392" stroke="#0f7a8a" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <ellipse cx="316" cy="394" rx="54" ry="9" fill="#0f7a8a" fill-opacity="0.22" stroke="#0f7a8a" stroke-width="1"/>
+    <text x="316" y="398" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#0a5561">波束足迹</text>
+  </g>
+
+  <!-- 卫星 2 -->
+  <g>
+    <rect x="606" y="104" width="60" height="34" rx="6" fill="#3a4b5c"/>
+    <text x="636" y="126" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#ffffff">SAT-2</text>
+    <path d="M636 142 L578 396 L694 396 Z" fill="#c9852c" fill-opacity="0.12" stroke="#c9852c" stroke-width="1.2"/>
+    <line x1="636" y1="142" x2="636" y2="392" stroke="#c9852c" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <ellipse cx="636" cy="394" rx="58" ry="9" fill="#c9852c" fill-opacity="0.20" stroke="#c9852c" stroke-width="1"/>
+    <text x="636" y="398" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#a9681f">波束足迹</text>
+  </g>
+
+  <!-- 重叠区标注 -->
+  <rect x="370" y="378" width="208" height="22" rx="5" fill="#ffffff" fill-opacity="0.9" stroke="#8a99a8" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="474" y="393" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#1f3a4d">重叠区：make-before-break 切换窗口</text>
+
+  <!-- UE -->
+  <g>
+    <rect x="452" y="410" width="52" height="22" rx="5" fill="#ffffff" stroke="#0b1c28" stroke-width="1.4"/>
+    <text x="478" y="425" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b1c28">UE</text>
+  </g>
+
+  <!-- 角速率标注 -->
+  <path d="M316 356 A 40 40 0 0 0 342 336" fill="none" stroke="#0b1c28" stroke-width="1.6" marker-end="url(#lp-ar)"/>
+  <text x="228" y="300" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b1c28">波束需连续重指</text>
+  <text x="228" y="320" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">跟踪角速率 ~ 2°/s</text>
+
+  <!-- 右侧说明 -->
+  <rect x="700" y="180" width="176" height="164" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.4"/>
+  <text x="716" y="206" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b1c28">跟踪三要素</text>
+  <text x="716" y="234" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">1. 星历 + GNSS 定位</text>
+  <text x="716" y="258" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">2. 波束指向实时解算</text>
+  <text x="716" y="282" font-family="Segoe UI, sans-serif" font-size="11" fill="#1f3a4d">3. 多普勒预补偿</text>
+  <text x="716" y="312" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">机械天线跟不上，</text>
+  <text x="716" y="330" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">必须电扫阵列</text>
+</svg>
