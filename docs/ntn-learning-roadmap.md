@@ -3,7 +3,7 @@
 > 更新日期：2026-10-09 ｜ 站点：https://guowu-yu.github.io/knowledge-garden/
 > 用法：逐个专题学习，完成后勾选；每个专题发布到知识站后把状态改为「已上线」并附链接。
 >
-> **当前进度**：已完成 7 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ），剩余 14 个待学专题。建议顺序：P1 随机接入 ✅ → P1 多普勒 ✅ → P1 调度与 HARQ ✅ → P1 定时器全表 → P1 卫星切换 → P2 功控 → P2 RLM/BFM → P2 测量 CSI → P2 信道链路预算 → P2 Rel-18 增强 → P2 轨道架构 → P3 射频频段 → P3 IoT NTN → P3 Rel-19/未来 → P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
+> **当前进度**：已完成 8 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表），剩余 13 个待学专题。建议顺序：P1 随机接入 ✅ → P1 多普勒 ✅ → P1 调度与 HARQ ✅ → P1 定时器全表 ✅ → P1 卫星切换 → P2 功控 → P2 RLM/BFM → P2 测量 CSI → P2 信道链路预算 → P2 Rel-18 增强 → P2 轨道架构 → P3 射频频段 → P3 IoT NTN → P3 Rel-19/未来 → P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
 
 ## 已完成（基础层 · 静态视角）
 
@@ -16,6 +16,7 @@
 | ✅ 已上线 | NTN 多普勒与时频补偿 | 时延与多普勒如何被预补偿、残差预算 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-doppler.html |
 | ✅ 已上线 | NTN 随机接入增强 | RACH 在 NTN 里如何被自举反转改造 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-rach.html |
 | ✅ 已上线 | NTN 调度与 HARQ | 停等重传在长管道里如何各就其位 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-harq.html |
+| ✅ 已上线 | NTN 定时器与定时关系全表 | 偏移/拉长/新生三类机制、T430、全表汇总 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-timers.html |
 
 ---
 
@@ -34,7 +35,7 @@
 
 | 状态 | 专题 | 核心问题 | 规范锚点 | 优先级 |
 | --- | --- | --- | --- | --- |
-| ☐ | NTN 定时器与定时关系全表 | 所有被放大的定时器：T310、DRX、MAC/RLC/PDCP 计时器、SI 窗口——一张表看懂「大时延改写了哪些钟」 | 38.321 / 38.331 | P1 |
+| ✅ 已上线 | NTN 定时器与定时关系全表 | 所有被放大的定时器：T310、DRX、MAC/RLC/PDCP 计时器、SI 窗口——一张表看懂「大时延改写了哪些钟」 | 38.321 / 38.331 | P1 |
 | ☐ | NTN 无线链路监测与 BFM | RLM/BFD 定时放大、慢衰落与卫星遮蔽的区分、波束失败恢复在 NTN 的适配 | 38.213 §5/§7 | P2 |
 | ☐ | NTN 移动性与卫星切换 | 事件 D1/D2、条件切换（CHO）、硬切换/软切换/换星重同步、多波束小区边界管理 | 38.331 / 38.304 | P1 |
 | ☐ | NTN 测量与 CSI 上报 | 基于 UE 位置的 CSI-RS 触发、测量 gap 增强（gap 内读 SI）、CSI 上报周期与 rank 限制 | 38.214 | P2 |
