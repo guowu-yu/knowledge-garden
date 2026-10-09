@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="620" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">RLM 状态机：从假设 PDCCH BLER 到 RLF（38.213 §6 / 38.331）</text>
+
+  <!-- evaluation box -->
+  <rect x="60" y="70" width="740" height="120" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">PHY 层持续评估（active DL BWP 内）</text>
+  <text x="85" y="122" font-size="12.5" fill="#37474f">输入：RLM-RS（SSB / CSI-RS / 组合；未配置时用 active PDCCH TCI 的 QCL-TypeD RS）</text>
+  <text x="85" y="144" font-size="12.5" fill="#37474f">判决：映射为一次<tspan font-family="Consolas" fill="#0f7a8a">假设 PDCCH</tspan>（DCI 1_0，CCE 聚合 4，CORESET 2 符号）的 BLER</text>
+  <text x="85" y="168" font-size="12.5" fill="#37474f">上报节流：相邻两次 indication 间隔 ≥ max(10 ms, T_RLM-RS,M)（38.133 评估周期）</text>
+
+  <!-- left: OOS path -->
+  <rect x="60" y="215" width="350" height="180" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="243" font-size="15" font-weight="bold" fill="#c62828">变差路径：全部 RLM-RS &lt; Q_out</text>
+  <text x="85" y="267" font-size="12.5" fill="#37474f">Q_out：假设 PDCCH BLER = 10%（不可靠）</text>
+  <text x="85" y="290" font-size="12.5" fill="#37474f">→ PHY 向 RRC 发 <tspan font-family="Consolas" fill="#c62828">out-of-sync</tspan> indication</text>
+  <text x="85" y="313" font-size="12.5" fill="#37474f">连续 <tspan font-family="Consolas" fill="#c62828">N310</tspan> 个 OOS → 启动 <tspan font-family="Consolas" fill="#c62828">T310</tspan></text>
+  <text x="85" y="336" font-size="12.5" fill="#37474f">T310 超时 → 判定 <tspan font-family="Consolas" fill="#c62828">RLF</tspan></text>
+  <text x="85" y="360" font-size="12.5" fill="#455a64">→ RRC 重建立 / 进入 IDLE 重选</text>
+  <text x="85" y="382" font-size="11.5" fill="#78909c">（SCG 场景：T310a/SCG 失败上报，不直接掉话）</text>
+
+  <!-- right: IS path -->
+  <rect x="450" y="215" width="350" height="180" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="475" y="243" font-size="15" font-weight="bold" fill="#2e7d32">恢复路径：任一 RLM-RS &gt; Q_in</text>
+  <text x="475" y="267" font-size="12.5" fill="#37474f">Q_in：假设 PDCCH BLER = 2%（高可靠）</text>
+  <text x="475" y="290" font-size="12.5" fill="#37474f">→ PHY 向 RRC 发 <tspan font-family="Consolas" fill="#2e7d32">in-sync</tspan> indication</text>
+  <text x="475" y="313" font-size="12.5" fill="#37474f">连续 <tspan font-family="Consolas" fill="#2e7d32">N311</tspan> 个 IS → 停止并复位 T310</text>
+  <text x="475" y="336" font-size="12.5" fill="#37474f">链路恢复，重新进入正常监测</text>
+  <text x="475" y="360" font-size="12.5" fill="#455a64">Q_in 比 Q_out 好 2%→10% BLER，留迟滞防抖动</text>
+  <text x="475" y="382" font-size="11.5" fill="#78909c">门限可由 rlmInSyncOutOfSyncThreshold 切换到 38.133 备用组</text>
+
+  <!-- bottom: NTN notes -->
+  <rect x="60" y="420" width="740" height="170" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="448" font-size="15" font-weight="bold" fill="#0f7a8a">NTN 里的两处放大（38.331 Rel-17）</text>
+  <text x="85" y="474" font-size="12.5" fill="#37474f">① T310 取值档位扩展：新增 2 s / 4 s / 8 s / 12 s 档（地面最长 2 s）——判决周期必须覆盖长 RTT + 慢衰落起伏</text>
+  <text x="85" y="498" font-size="12.5" fill="#37474f">② 判决信号只剩 SSB：Rel-17 NTN 无波束指示（TCI 框架不适用），RLM-RS 实际退化为 SSB，K_offset 拉长的调度周期</text>
+  <text x="85" y="522" font-size="12.5" fill="#37474f">    使「失败 → 确认 → 恢复」每一步都比地面慢 1~2 个量级</text>
+  <text x="85" y="550" font-size="12.5" fill="#455a64">设计含义：N310/T310 要配大，宁可多观察、不可误杀；几何可预测的劣化应交给切换，而不是等 RLM 兜底</text>
+  <text x="85" y="574" font-size="11.5" fill="#78909c">GEO 透明载荷 RTT ≈ 541 ms：T310=12 s 也只够跑 ~22 轮 OOS 评估，误判代价极高</text>
+</svg>

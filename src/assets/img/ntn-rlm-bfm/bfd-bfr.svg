@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="560" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">BFD/BFR 计数与恢复（38.321 §5.17，Rel-17 NTN 未启用）</text>
+
+  <!-- BFD detection -->
+  <rect x="60" y="70" width="360" height="150" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">BFD：BFD-RS 集 AND 判决</text>
+  <text x="85" y="124" font-size="12.5" fill="#37474f">集合内<tspan font-weight="bold">所有</tspan> RS 在同一评估周期</text>
+  <text x="85" y="147" font-size="12.5" fill="#37474f">都低于 Q_out → 产生 1 个 beam failure instance</text>
+  <text x="85" y="171" font-size="12.5" fill="#455a64">只坏一个 RS ≠ 失败（PDCCH 还有别的路）</text>
+  <text x="85" y="194" font-size="11.5" fill="#78909c">只看 RSRP 排查 BFD 是 FR2 调试常见误区：高干扰下</text>
+  <text x="85" y="214" font-size="11.5" fill="#78909c">RSRP 正常也可能 BLER 超 10%</text>
+
+  <!-- counter -->
+  <rect x="450" y="70" width="350" height="150" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="475" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">MAC 计数（38.321 5.17）</text>
+  <text x="475" y="124" font-size="12.5" fill="#37474f">收到 instance → 重启 <tspan font-family="Consolas" fill="#0f7a8a">beamFailureDetectionTimer</tspan></text>
+  <text x="475" y="147" font-size="12.5" fill="#37474f"><tspan font-family="Consolas" fill="#0f7a8a">BFI_COUNTER</tspan> += 1</text>
+  <text x="475" y="171" font-size="12.5" fill="#37474f">≥ <tspan font-family="Consolas" fill="#0f7a8a">beamFailureInstanceMaxCount</tspan> → 触发 BFR</text>
+  <text x="475" y="194" font-size="12.5" fill="#455a64">检测定时器超时 / 配置重配 → 计数清零</text>
+  <text x="475" y="214" font-size="11.5" fill="#78909c">RLM 只计数，BFD 才行动——同一假设 PDCCH，两种消费方</text>
+
+  <!-- BFR branch -->
+  <rect x="60" y="250" width="740" height="150" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="278" font-size="15" font-weight="bold" fill="#0f7a8a">BFR 两条腿：先无竞争、再竞争</text>
+  <rect x="85" y="292" width="330" height="92" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="315" font-size="13" font-weight="bold" fill="#0f7a8a">SpCell：CFRA 优先</text>
+  <text x="100" y="337" font-size="12" fill="#37474f">candidateBeamRSList + ra-OccasionList</text>
+  <text x="100" y="358" font-size="12" fill="#37474f">PRACH 指名候选波束，ra-ResponseWindow 内等 RAR</text>
+  <text x="100" y="378" font-size="11.5" fill="#455a64">成功 → BFI_COUNTER=0，恢复完成</text>
+  <rect x="445" y="292" width="330" height="92" rx="8" fill="#fff8f0" stroke="#ef6c00"/>
+  <text x="460" y="315" font-size="13" font-weight="bold" fill="#ef6c00">失败 → 竞争 RACH 兜底</text>
+  <text x="460" y="337" font-size="12" fill="#37474f">CFRA 次数耗尽 / 无可用候选波束</text>
+  <text x="460" y="358" font-size="12" fill="#37474f">→ 常规 CBRA；仍失败则走 RLF（T310 超时路径）</text>
+  <text x="460" y="378" font-size="11.5" fill="#455a64">SCell：不发 RACH，用 BFR MAC CE 经 SR 上报</text>
+
+  <!-- NTN box -->
+  <rect x="60" y="430" width="740" height="100" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="458" font-size="15" font-weight="bold" fill="#c62828">为什么 Rel-17 NTN 把这条链整个关掉</text>
+  <text x="85" y="484" font-size="12.5" fill="#37474f">① 单波束假设：UE 与小区仅一个服务波束，没有「候选波束」可指名——CFRA 无从谈起；② 无 TCI/波束指示框架，BFD-RS 集合退化为 SSB；</text>
+  <text x="85" y="508" font-size="12.5" fill="#37474f">③ 恢复环路太长：BFR 的收益（几十 ms 内换波束）在 GEO 550 ms RTT 面前消失。NTN 的恢复路径在 RRC：切换 / 重配置 / 重选（见下一张图）</text>
+</svg>

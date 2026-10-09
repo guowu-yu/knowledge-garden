@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 600" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="600" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">NTN 链路劣化的两个世界：可预测 vs 突发</text>
+
+  <!-- left: predictable -->
+  <rect x="40" y="70" width="390" height="440" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="65" y="100" font-size="16" font-weight="bold" fill="#2e7d32">可预测的几何劣化（占绝大多数）</text>
+  <text x="65" y="124" font-size="12.5" fill="#37474f">卫星按轨道飞，UE 何时离开波束可提前算出</text>
+
+  <rect x="65" y="142" width="340" height="106" rx="8" fill="#f1f8f9" stroke="#2e7d32"/>
+  <text x="80" y="166" font-size="13" font-weight="bold" fill="#2e7d32">仰角缓慢下降</text>
+  <text x="80" y="188" font-size="12" fill="#37474f">LEO 一次过境路损变化可达 6~10 dB</text>
+  <text x="80" y="208" font-size="12" fill="#37474f">链路质量沿抛物线缓降，分钟级尺度</text>
+  <text x="80" y="228" font-size="11.5" fill="#455a64">→ 测量事件 A3/A5 或 D1/D2 提前触发</text>
+
+  <rect x="65" y="260" width="340" height="106" rx="8" fill="#f1f8f9" stroke="#2e7d32"/>
+  <text x="80" y="284" font-size="13" font-weight="bold" fill="#2e7d32">波束覆盖离开（移动小区）</text>
+  <text x="80" y="306" font-size="12" fill="#37474f">准地球固定波束按时间表移交下一颗星</text>
+  <text x="80" y="326" font-size="12" fill="#37474f">t-Service 窗口在 SIB19 里广播</text>
+  <text x="80" y="346" font-size="11.5" fill="#455a64">→ CHO（条件切换）提前下发、到点自执行</text>
+
+  <rect x="65" y="378" width="340" height="106" rx="8" fill="#f1f8f9" stroke="#2e7d32"/>
+  <text x="80" y="402" font-size="13" font-weight="bold" fill="#2e7d32">卫星退出服务 / 馈电计划性维护</text>
+  <text x="80" y="424" font-size="12" fill="#37474f">星座运营方提前调度，波束关闭时间已知</text>
+  <text x="80" y="444" font-size="12" fill="#37474f">邻星接力或回地面网</text>
+  <text x="80" y="464" font-size="11.5" fill="#455a64">→ 移动性流程（换星重同步 / 重定向）兜住</text>
+
+  <text x="65" y="498" font-size="13" font-weight="bold" fill="#2e7d32">处理层：L3 移动性（RRC）</text>
+  <text x="65" y="520" font-size="12" fill="#455a64">关键是「提前」——不等链路坏掉再动作</text>
+
+  <!-- right: sudden -->
+  <rect x="450" y="70" width="390" height="440" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="475" y="100" font-size="16" font-weight="bold" fill="#c62828">突发的物理劣化（RLM 的真正职责）</text>
+  <text x="475" y="124" font-size="12.5" fill="#37474f">时间上不可预报，只能靠监测 + 兜底</text>
+
+  <rect x="475" y="142" width="340" height="100" rx="8" fill="#fdf0ef" stroke="#c62828"/>
+  <text x="490" y="166" font-size="13" font-weight="bold" fill="#c62828">遮蔽与体衰</text>
+  <text x="490" y="188" font-size="12" fill="#37474f">入隧道 / 进楼 / 树冠遮挡：S 频段可深衰 15~25 dB</text>
+  <text x="490" y="208" font-size="12" fill="#37474f">秒级甚至瞬断，出来后链路自然恢复</text>
+  <text x="490" y="228" font-size="11.5" fill="#455a64">→ T310 取大值容忍短暂遮蔽，避免无谓 RLF</text>
+
+  <rect x="475" y="254" width="340" height="100" rx="8" fill="#fdf0ef" stroke="#c62828"/>
+  <text x="490" y="278" font-size="13" font-weight="bold" fill="#c62828">雨衰（Ka 频段为主）</text>
+  <text x="490" y="300" font-size="12" fill="#37474f">强降雨可引入 >10 dB 衰减，分钟级持续</text>
+  <text x="490" y="320" font-size="12" fill="#37474f">S 频段几乎无感，FR2-NTN 是主战场</text>
+  <text x="490" y="340" font-size="11.5" fill="#455a64">→ RLM 判决窗口要拉长，防止雨团瞬间误判</text>
+
+  <rect x="475" y="366" width="340" height="100" rx="8" fill="#fdf0ef" stroke="#c62828"/>
+  <text x="490" y="390" font-size="13" font-weight="bold" fill="#c62828">终端侧失效</text>
+  <text x="490" y="412" font-size="12" fill="#37474f">GNSS 定位丢失 → 预补偿失效 → TA 漂移超环</text>
+  <text x="490" y="432" font-size="12" fill="#37474f">多普勒残差超限 / 时钟漂移超阈值</text>
+  <text x="490" y="452" font-size="11.5" fill="#455a64">→ 表现为持续 OOS，是 NTN 特有的失步来源</text>
+
+  <text x="475" y="498" font-size="13" font-weight="bold" fill="#c62828">处理层：L1 监测 + 定时器兜底</text>
+  <text x="475" y="520" font-size="12" fill="#455a64">N310/T310 判失步 → RLF → 重建立 / 重选</text>
+
+  <!-- divider -->
+  <line x1="435" y1="80" x2="435" y2="500" stroke="#c9dde3" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="435" y="530" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">工程分工：能预测的交给切换，不能预测的交给 RLM</text>
+  <text x="435" y="552" text-anchor="middle" font-size="11.5" fill="#78909c">RLF 在 NTN 是罕见兜底而非常态出口——这与地面网「切换失败才 RLF」的体验一致，但比例更悬殊</text>
+</svg>
