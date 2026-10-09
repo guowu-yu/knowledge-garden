@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480" role="img" aria-label="时频补偿全景：TTA 四分量公式与频率预补偿">
+  <rect width="900" height="480" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">时频补偿全景：一次上行发射，UE 同时预付时间与频率两笔账</text>
+
+  <g>
+    <rect x="50" y="56" width="820" height="180" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="70" y="84" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">时域：上行帧提前量（TS 38.211 §4.3.1）</text>
+
+    <text x="80" y="120" font-family="Consolas, monospace" font-size="15" font-weight="700" fill="#0b1c28">T_TA = ( N_TA + N_TA,offset + N_TA,adj^common + N_TA,adj^UE ) · T_c</text>
+
+    <text x="80" y="150" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">N_TA / N_TA,offset —— 地面遗留部分：RAR 12bit + MAC CE 6bit 闭环，只修残差</text>
+    <text x="80" y="172" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">N_TA,adj^common —— 馈电侧公共 TA：SIB19 二阶模型外推（ta-Common / Drift / DriftVariant）</text>
+    <text x="80" y="194" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">N_TA,adj^UE —— 服务链路双程时延：UE 用 GNSS 位置 + 星历自己算，8× 步进量化</text>
+    <text x="80" y="220" font-family="Consolas, monospace" font-size="11.5" font-weight="700" fill="#0a5561">Delay_common(t) = TA_Common/2 + TA_CommonDrift/2·(t−t_epoch) + TA_CommonDriftVariant/2·(t−t_epoch)²</text>
+  </g>
+
+  <g>
+    <rect x="50" y="256" width="400" height="180" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="70" y="284" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">频域：上行载频预搬移</text>
+    <text x="70" y="318" font-family="Consolas, monospace" font-size="14" font-weight="700" fill="#0b1c28">f_TX = f_UL_nominal − f_d(service)</text>
+    <text x="70" y="348" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">f_d(service) = v_radial · f_c / c</text>
+    <text x="70" y="372" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">v_radial：UE→卫星 视线方向相对速度</text>
+    <text x="70" y="396" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">输入：GNSS 位置 + SIB19 星历（位置+速度）</text>
+    <text x="70" y="420" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">含 PRACH 前导在内的一切上行发射都适用</text>
+  </g>
+
+  <g>
+    <rect x="470" y="256" width="370" height="180" rx="12" fill="#fdf3e3" stroke="#c9852c" stroke-width="1.6"/>
+    <text x="490" y="284" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#a9681f">预补偿后的残差预算</text>
+    <text x="490" y="312" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">GNSS 定位误差（数米 → v 误差可忽略）</text>
+    <text x="490" y="336" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">星历误差 + 外推时间（epoch 过期 → 误差平方增长）</text>
+    <text x="490" y="360" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">UE 自身运动：飞机 1200 km/h ≈ 1.11 ppm —— 在 GEO 场景</text>
+    <text x="490" y="380" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">里反超卫星本身（0.93 ppm），成为网络无法预测的主项</text>
+    <text x="490" y="404" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">振荡器频差 + 温漂（终端晶振 ppm 级）</text>
+    <text x="490" y="428" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">残差由闭环跟踪与接收机频偏估计吸收，量级 ≪ 0.5×SCS</text>
+  </g>
+</svg>

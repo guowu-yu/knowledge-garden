@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-label="LEO 卫星一次过境的多普勒 S 曲线">
+  <rect width="900" height="470" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">一次过境的 S 曲线：频移从 +48 kHz 扫到 −48 kHz，过顶瞬间变号</text>
+
+  <g>
+    <rect x="50" y="56" width="820" height="300" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+
+    <!-- axes -->
+    <line x1="110" y1="90" x2="110" y2="320" stroke="#c7d6e0" stroke-width="1.4"/>
+    <line x1="110" y1="205" x2="850" y2="205" stroke="#c7d6e0" stroke-width="1.4"/>
+    <text x="102" y="95" text-anchor="end" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">+48 kHz</text>
+    <text x="102" y="209" text-anchor="end" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">0</text>
+    <text x="102" y="320" text-anchor="end" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">−48 kHz</text>
+    <text x="480" y="338" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">时间（一次过境约 5–10 分钟）</text>
+
+    <!-- S curve: approaching positive, zero at zenith, negative receding -->
+    <path d="M 130 90 C 220 92, 280 100, 340 140 C 400 180, 430 200, 480 205 C 530 210, 560 230, 620 270 C 680 310, 740 318, 830 320"
+          fill="none" stroke="#0f7a8a" stroke-width="3"/>
+
+    <!-- satellite positions along top -->
+    <circle cx="160" cy="76" r="10" fill="#0a5561"/>
+    <text x="160" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">SAT</text>
+    <text x="160" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">升起（低仰角）</text>
+    <text x="160" y="122" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a9681f">径向速度最大</text>
+
+    <circle cx="480" cy="76" r="10" fill="#0a5561"/>
+    <text x="480" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">SAT</text>
+    <text x="480" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">过顶（高仰角）</text>
+    <text x="480" y="122" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#a9681f">v_radial ≈ 0 → 变号</text>
+
+    <circle cx="800" cy="76" r="10" fill="#0a5561"/>
+    <text x="800" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9" fill="#ffffff">SAT</text>
+    <text x="800" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">落下（低仰角）</text>
+
+    <!-- slope annotations -->
+    <line x1="200" y1="122" x2="290" y2="122" stroke="#c9852c" stroke-width="1.2"/>
+    <text x="300" y="126" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#a9681f">斜率 = 多普勒率 ≈ −540 Hz/s @2 GHz</text>
+
+    <text x="620" y="248" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">（过顶附近斜率最陡：</text>
+    <text x="620" y="262" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">频移过零但变化率最大）</text>
+
+    <text x="130" y="168" font-family="Consolas, monospace" font-size="12.5" font-weight="700" fill="#0a5561">f_d = v_radial · f_c / c</text>
+    <text x="130" y="184" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">v_radial = 卫星速度在视线方向的投影（LEO 全速 7.56 km/s）</text>
+  </g>
+
+  <g>
+    <rect x="50" y="372" width="820" height="72" rx="12" fill="#fdf3e3" stroke="#c9852c" stroke-width="1.4"/>
+    <text x="70" y="396" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#a9681f">同一物理，两副面孔</text>
+    <text x="70" y="416" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">多普勒（ppm）× 2 ≈ 往返时延漂移（μs/s）：24 ppm ↔ ±48 μs/s —— 频域的 S 曲线就是时域斜距曲线的导数</text>
+    <text x="70" y="434" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">读 NTN 文献时用这条恒等式交叉校验：若两数对不上，多半在描述不同的链路（服务链路 vs 含馈电的整链）</text>
+  </g>
+</svg>

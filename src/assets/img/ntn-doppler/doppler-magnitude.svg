@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-label="多普勒频移量级对比：地面、GEO、LEO">
+  <rect width="900" height="470" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">多普勒量级：NTN 不是「大一点」，是大两个数量级（2 GHz 载频）</text>
+
+  <g>
+    <rect x="50" y="56" width="820" height="330" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="70" y="84" font-family="Segoe UI, sans-serif" font-size="12.5" fill="#7a8b99">最大多普勒频移 |f_d|（Hz，f_c = 2 GHz，静止地面 UE）</text>
+
+    <line x1="90" y1="100" x2="90" y2="360" stroke="#c7d6e0" stroke-width="1.4"/>
+    <line x1="90" y1="360" x2="850" y2="360" stroke="#c7d6e0" stroke-width="1.4"/>
+
+    <!-- 15 kHz SCS reference line -->
+    <line x1="90" y1="180" x2="850" y2="180" stroke="#c9852c" stroke-width="1.4" stroke-dasharray="6 4"/>
+    <text x="846" y="172" text-anchor="end" font-family="Consolas, monospace" font-size="11.5" font-weight="700" fill="#a9681f">15 kHz 子载波间隔 = 同步门限的天然标尺</text>
+
+    <!-- bars: scale 48000 Hz -> 240 px height -->
+    <!-- terrestrial 925 Hz -> 4.6px (min visible 5) -->
+    <rect x="130" y="355" width="80" height="5" fill="#9db6c4"/>
+    <text x="170" y="378" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">地面 NR</text>
+    <text x="170" y="393" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">高铁 350 km/h</text>
+    <text x="170" y="336" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#0b1c28">±0.93 kHz</text>
+
+    <!-- GEO 1.9 kHz -> 9.5px -->
+    <rect x="300" y="350" width="80" height="10" fill="#4a8fa0"/>
+    <text x="340" y="378" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">GEO</text>
+    <text x="340" y="393" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">35786 km</text>
+    <text x="340" y="336" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#0b1c28">±1.9 kHz</text>
+
+    <!-- LEO 1200 42 kHz -> 210px -->
+    <rect x="470" y="150" width="80" height="210" fill="#0f7a8a"/>
+    <text x="510" y="378" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">LEO 1200 km</text>
+    <text x="510" y="393" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">21 ppm</text>
+    <text x="510" y="136" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#0a5561">±42 kHz</text>
+
+    <!-- LEO 600 48 kHz -> 240px -->
+    <rect x="640" y="120" width="80" height="240" fill="#0a5561"/>
+    <text x="680" y="378" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">LEO 600 km</text>
+    <text x="680" y="393" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">24 ppm</text>
+    <text x="680" y="106" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#0a5561">±48 kHz</text>
+
+    <!-- annotation: 3 subcarriers -->
+    <line x1="722" y1="120" x2="790" y2="120" stroke="#a9681f" stroke-width="1.2"/>
+    <text x="795" y="116" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#a9681f">≈ 3 个 15 kHz</text>
+    <text x="795" y="130" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#a9681f">子载波宽度</text>
+
+    <text x="90" y="440" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">同一几何换到 30 GHz（Ka 频段）：数值 ×15 —— LEO 600 km 达 ±720 kHz；频移与载频成正比，与轨道高度成反比</text>
+  </g>
+</svg>

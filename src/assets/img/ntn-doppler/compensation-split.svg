@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-label="多普勒与时延补偿的分工：UE 补服务链路，网络补馈电链路">
+  <rect width="900" height="470" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">补偿分工：谁掌握几何信息，谁负责补偿（Rel-17 切分）</text>
+
+  <!-- chain: gNB -> gateway -> feeder -> satellite -> service -> UE -->
+  <g>
+    <rect x="60" y="70" width="130" height="54" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="125" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#0a5561">gNB</text>
+    <text x="125" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">地面</text>
+
+    <rect x="230" y="70" width="130" height="54" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="295" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#0a5561">NTN 网关</text>
+    <text x="295" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">馈电链路地面端</text>
+
+    <rect x="410" y="62" width="150" height="70" rx="10" fill="#0a5561"/>
+    <text x="485" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">卫星（透明载荷）</text>
+    <text x="485" y="112" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#cfe6ec">变频 + 放大</text>
+
+    <rect x="640" y="70" width="200" height="54" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="740" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#0a5561">UE</text>
+    <text x="740" y="110" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">GNSS 定位 + 星历 + Common TA</text>
+
+    <line x1="190" y1="97" x2="230" y2="97" stroke="#7a8b99" stroke-width="1.6"/>
+    <line x1="360" y1="97" x2="410" y2="97" stroke="#7a8b99" stroke-width="1.6"/>
+    <line x1="560" y1="97" x2="640" y2="97" stroke="#7a8b99" stroke-width="1.6"/>
+
+    <!-- brackets -->
+    <path d="M 300 140 L 300 152 L 470 152 L 470 140" fill="none" stroke="#c9852c" stroke-width="1.6"/>
+    <text x="385" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="700" fill="#a9681f">馈电链路：网络负责（网关位置 / 转发器本振频差 UE 一无所知）</text>
+
+    <path d="M 560 140 L 560 152 L 640 152 L 640 140" fill="none" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="770" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="700" fill="#0a5561">服务链路：UE 负责</text>
+  </g>
+
+  <g>
+    <rect x="60" y="200" width="385" height="220" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="80" y="228" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">UE 侧：开环预补偿 + 残差跟踪</text>
+    <line x1="80" y1="242" x2="425" y2="242" stroke="#e2eef4" stroke-width="1.4"/>
+    <text x="80" y="266" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">上行发射前：计算服务链路瞬时多普勒并预搬移载频</text>
+    <text x="80" y="290" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">上行定时：四分量 TTA 提前发送（Common TA + UE 专用 TA）</text>
+    <text x="80" y="314" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">下行接收：接收机估计残余频偏（SSB/PTRS），闭环跟踪</text>
+    <text x="80" y="338" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">连接态持续更新：TA 与频偏都是时变量，不是一次性设置</text>
+    <text x="80" y="368" font-family="Consolas, monospace" font-size="11.5" font-weight="700" fill="#0a5561">38.300 §16.14.2.2：无 GNSS/星历/Common TA → 禁止发射</text>
+    <text x="80" y="392" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">msgA 例外：PUSCH 上的 MsgA 使用 N_TA = 0</text>
+  </g>
+
+  <g>
+    <rect x="470" y="200" width="370" height="220" rx="12" fill="#fdf3e3" stroke="#c9852c" stroke-width="1.6"/>
+    <text x="490" y="228" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#a9681f">网络侧：馈电链路 + 转发器频差</text>
+    <line x1="490" y1="242" x2="820" y2="242" stroke="#ffffff" stroke-width="1.4"/>
+    <text x="490" y="266" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">网关侧对馈电链路多普勒进行补偿（实现自由）</text>
+    <text x="490" y="290" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">转发器本振误差（上/下行变频引入）由网络管理</text>
+    <text x="490" y="314" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">Rel-17 对此无任何规范影响 —— 纯网元实现</text>
+    <text x="490" y="344" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">分界原理：信息可得性 —— UE 知道自己的位置，</text>
+    <text x="490" y="364" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">但不知道网关在哪、馈电路由怎么走、本振漂多少</text>
+    <text x="490" y="396" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">RAN2#117-e 共识原文：feeder link Doppler "left to the</text>
+    <text x="490" y="410" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">network implementation without specification impacts"</text>
+  </g>
+</svg>
