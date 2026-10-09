@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 600" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="600" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">CSI 老化：报告到手的时刻，信道已经走远</text>
+
+  <!-- LEO row -->
+  <rect x="30" y="70" width="800" height="220" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="55" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">LEO（透明载荷，RTT ≈ 25~50 ms）</text>
+  <line x1="70" y1="200" x2="790" y2="200" stroke="#90a4ae" stroke-width="2"/>
+  <circle cx="110" cy="200" r="6" fill="#0f7a8a"/>
+  <text x="110" y="224" text-anchor="middle" font-size="11.5" fill="#37474f">t0 CSI-RS 测量</text>
+  <circle cx="290" cy="200" r="6" fill="#0f7a8a"/>
+  <text x="290" y="224" text-anchor="middle" font-size="11.5" fill="#37474f">+处理延迟 Z'</text>
+  <circle cx="480" cy="200" r="6" fill="#0f7a8a"/>
+  <text x="480" y="224" text-anchor="middle" font-size="11.5" fill="#37474f">+K_offset 上报</text>
+  <circle cx="670" cy="200" r="6" fill="#0f7a8a"/>
+  <text x="670" y="224" text-anchor="middle" font-size="11.5" fill="#37474f">+RTT gNB 收到</text>
+  <rect x="110" y="120" width="560" height="34" rx="6" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="390" y="142" text-anchor="middle" font-size="12" fill="#0f7a8a">总老化 ≈ 50~100 ms —— 对 LEO 仍可接受</text>
+  <text x="55" y="262" font-size="12.5" fill="#455a64">有利因素：LoS 主导 + 时频预补偿 → 小尺度衰落慢，几何变化（仰角/路损）才是主变量，百 ms 尺度内宽带 CQI 基本有效</text>
+
+  <!-- GEO row -->
+  <rect x="30" y="310" width="800" height="220" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="55" y="338" font-size="15" font-weight="bold" fill="#0f7a8a">GEO（透明载荷，RTT ≈ 541 ms）</text>
+  <line x1="70" y1="440" x2="790" y2="440" stroke="#90a4ae" stroke-width="2"/>
+  <circle cx="110" cy="440" r="6" fill="#c62828"/>
+  <text x="110" y="464" text-anchor="middle" font-size="11.5" fill="#37474f">t0 CSI-RS 测量</text>
+  <circle cx="290" cy="440" r="6" fill="#c62828"/>
+  <text x="290" y="464" text-anchor="middle" font-size="11.5" fill="#37474f">+处理延迟</text>
+  <circle cx="480" cy="440" r="6" fill="#c62828"/>
+  <text x="480" y="464" text-anchor="middle" font-size="11.5" fill="#37474f">+K_offset 上报</text>
+  <circle cx="670" cy="440" r="6" fill="#c62828"/>
+  <text x="670" y="464" text-anchor="middle" font-size="11.5" fill="#37474f">+RTT gNB 收到</text>
+  <rect x="110" y="360" width="560" height="34" rx="6" fill="#fdf0ef" stroke="#c62828"/>
+  <text x="390" y="382" text-anchor="middle" font-size="12" fill="#c62828">总老化 ≈ 0.6~1 s —— 精细 CSI 到手即过期</text>
+  <text x="55" y="502" font-size="12.5" fill="#455a64">应对：降粒度（宽带 CQI 优先、弱化 PMI/子带）、降频次（拉长报告周期）、降 rank（手持终端典型 2 层）——</text>
+  <text x="55" y="526" font-size="12.5" fill="#455a64">GEO 的信道本身慢变（卫星对地静止），老化的是「确认时刻」而不是信道本身，粗粒度报告反而性价比最高</text>
+</svg>

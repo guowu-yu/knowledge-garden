@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 640" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="640" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">近远效应：RSRP 失灵，位置与时间接管</text>
+
+  <!-- near-far effect -->
+  <rect x="60" y="70" width="740" height="190" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">地面 vs 卫星：RSRP 的区分度崩塌</text>
+  <!-- TN illustration -->
+  <rect x="85" y="112" width="330" height="130" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="134" font-size="12.5" font-weight="bold" fill="#0f7a8a">地面小区（1~几 km）</text>
+  <circle cx="130" cy="200" r="10" fill="#0f7a8a"/>
+  <text x="130" y="222" text-anchor="middle" font-size="11" fill="#37474f">基站</text>
+  <circle cx="250" cy="180" r="7" fill="#2e7d32"/>
+  <text x="250" y="168" text-anchor="middle" font-size="11" fill="#2e7d32">中心 -70 dBm</text>
+  <circle cx="370" cy="200" r="7" fill="#ef6c00"/>
+  <text x="370" y="226" text-anchor="middle" font-size="11" fill="#ef6c00">边缘 -105 dBm</text>
+  <text x="250" y="234" text-anchor="middle" font-size="11" fill="#455a64">差距 30+ dB，RSRP 一测便知</text>
+  <!-- NTN illustration -->
+  <rect x="445" y="112" width="330" height="130" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="460" y="134" font-size="12.5" font-weight="bold" fill="#0f7a8a">卫星波束（数百 km）</text>
+  <circle cx="490" cy="150" r="9" fill="#0f7a8a"/>
+  <text x="490" y="140" text-anchor="middle" font-size="11" fill="#37474f">星</text>
+  <circle cx="570" cy="185" r="7" fill="#2e7d32"/>
+  <text x="570" y="173" text-anchor="middle" font-size="11" fill="#2e7d32">星下点 -120 dBm</text>
+  <circle cx="730" cy="185" r="7" fill="#ef6c00"/>
+  <text x="730" y="208" text-anchor="middle" font-size="11" fill="#ef6c00">边缘 -124 dBm</text>
+  <text x="610" y="232" text-anchor="middle" font-size="11" fill="#c62828">差距仅几 dB（近远效应）</text>
+
+  <!-- IDLE -->
+  <rect x="60" y="280" width="360" height="180" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="308" font-size="15" font-weight="bold" fill="#0f7a8a">IDLE/INACTIVE：测量发起的开关（38.304）</text>
+  <text x="85" y="334" font-size="12.5" fill="#37474f">地面规则：服务小区 RSRP 够好（Srxlev &gt; S..Search）</text>
+  <text x="85" y="357" font-size="12.5" fill="#37474f">就不必测邻区——省电</text>
+  <text x="85" y="383" font-size="12.5" fill="#c62828">NTN 补丁：RSRP 好不等于位置安全</text>
+  <text x="85" y="406" font-size="12.5" fill="#37474f">· 位置触发：UE 距服务小区参考位置 &lt; 阈值</text>
+  <text x="85" y="429" font-size="12.5" fill="#37474f">  时可跳过邻区测量</text>
+  <text x="85" y="452" font-size="12.5" fill="#37474f">· 时间触发：t-Service 停止服务前，无视 RSRP</text>
+  <text x="85" y="474" font-size="12.5" fill="#455a64">  必须发起邻区测量、提前重选</text>
+
+  <!-- connected -->
+  <rect x="440" y="280" width="360" height="180" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="465" y="308" font-size="15" font-weight="bold" fill="#0f7a8a">CONNECTED：条件切换的新触发元</text>
+  <text x="465" y="334" font-size="12.5" fill="#37474f">Rel-17 为 CHO 增设两个 NTN 专属条件事件：</text>
+  <rect x="465" y="348" width="310" height="50" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="480" y="368" font-size="12.5" font-weight="bold" fill="#0f7a8a">CondEvent T1（时间）</text>
+  <text x="480" y="388" font-size="11.5" fill="#37474f">到达配置的时间窗内执行切换</text>
+  <rect x="465" y="404" width="310" height="50" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="480" y="424" font-size="12.5" font-weight="bold" fill="#0f7a8a">CondEvent D1（位置）</text>
+  <text x="480" y="444" font-size="11.5" fill="#37474f">距源小区 &gt; D1 且距目标 &lt; D2 时执行</text>
+
+  <!-- bottom -->
+  <rect x="60" y="480" width="740" height="130" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="508" font-size="15" font-weight="bold" fill="#0f7a8a">统一的哲学：几何可算，就别靠射频猜</text>
+  <text x="85" y="534" font-size="12.5" fill="#37474f">卫星星历 + GNSS 位置让「UE 什么时候离开波束」成为确定事件。测量与 CSI 管道继续跑（提供射频证据），</text>
+  <text x="85" y="558" font-size="12.5" fill="#37474f">但切换/重选的「决策开关」交给位置与时间——这与 RLM 篇的分工一脉相承：可预测的交给移动性，不可预测的交给兜底。</text>
+  <text x="85" y="588" font-size="11.5" fill="#78909c">规范锚点：TS 38.304 §5.2.2（位置/时间触发测量发起）、TS 38.331 CondEventT1/D1、TR 38.821（近远效应评估）</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="620" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">测量与 CSI 全景：同一套信号，回答两个问题</text>
+
+  <!-- signal sources -->
+  <rect x="60" y="70" width="740" height="100" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">参考信号源（38.211/38.214）</text>
+  <rect x="85" y="110" width="320" height="44" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="128" font-size="12.5" font-weight="bold" fill="#0f7a8a">SSB（始终存在）</text>
+  <text x="100" y="146" font-size="11.5" fill="#37474f">小区搜索 / 移动性 / 低开销 CSI</text>
+  <rect x="445" y="110" width="330" height="44" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="460" y="128" font-size="12.5" font-weight="bold" fill="#0f7a8a">CSI-RS（Rel-17 NTN 仅周期）</text>
+  <text x="460" y="146" font-size="11.5" fill="#37474f">CSI 获取；无 TRS、无非周期/半持续</text>
+
+  <!-- left pipeline: mobility -->
+  <rect x="60" y="190" width="360" height="220" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="218" font-size="15" font-weight="bold" fill="#0f7a8a">管道 ①：移动性测量</text>
+  <text x="85" y="242" font-size="12.5" fill="#37474f">测什么：SSB 的 RSRP / RSRQ / SINR</text>
+  <text x="85" y="265" font-size="12.5" fill="#37474f">对象：服务小区 + 邻小区（同频/异频/异 RAT）</text>
+  <text x="85" y="288" font-size="12.5" fill="#37474f">消费方：L3 事件（A3/A5、D1/D2、T1）→ 切换</text>
+  <text x="85" y="311" font-size="12.5" fill="#c62828">NTN 陷阱：近远效应使 RSRP 区分度差</text>
+  <text x="85" y="334" font-size="12.5" fill="#455a64">→ 位置/时间触发补位（见第四张图）</text>
+  <text x="85" y="362" font-size="11.5" fill="#78909c">跨频点测量需要 measurement gap（见第三张图）</text>
+  <text x="85" y="388" font-size="11.5" fill="#78909c">IDLE 态：38.304 位置/时间触发测量发起</text>
+
+  <!-- right pipeline: CSI -->
+  <rect x="440" y="190" width="360" height="220" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="465" y="218" font-size="15" font-weight="bold" fill="#0f7a8a">管道 ②：CSI 上报</text>
+  <text x="465" y="242" font-size="12.5" fill="#37474f">测什么：CSI-RS / SSB → CQI、RI、PMI、CRI</text>
+  <text x="465" y="265" font-size="12.5" fill="#37474f">配置：CSI-MeasConfig（资源集 + 报告设置）</text>
+  <text x="465" y="288" font-size="12.5" fill="#37474f">消费方：gNB 调度器（MCS / rank / 预编码）</text>
+  <text x="465" y="311" font-size="12.5" fill="#c62828">NTN 陷阱：报告环路 = 处理延迟 + K_offset + RTT</text>
+  <text x="465" y="334" font-size="12.5" fill="#455a64">→ CQI 到手时信道已「老」一个往返（见第二张图）</text>
+  <text x="465" y="362" font-size="11.5" fill="#78909c">Rel-17 NTN：无波束管理 → CSI-RS 的 QCL 挂在 SSB 上</text>
+  <text x="465" y="388" font-size="11.5" fill="#78909c">低开销兜底：基于 SSB 的宽带 CQI / CRI 上报</text>
+
+  <!-- bottom note -->
+  <rect x="60" y="430" width="740" height="160" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="458" font-size="15" font-weight="bold" fill="#0f7a8a">框架不变、部件变</text>
+  <text x="85" y="484" font-size="12.5" fill="#37474f">38.214 的 CSI 框架（资源 → 测量 → 报告 → 调度使用）一字未改；改的是：可用信号类型收窄（仅周期 CSI-RS、无 TRS/波束管理）、</text>
+  <text x="85" y="508" font-size="12.5" fill="#37474f">所有时间量叠加 K_offset、rank 与层数受 UE 天线能力约束（手持终端典型 2 层）。</text>
+  <text x="85" y="536" font-size="12.5" fill="#455a64">Rel-18 补了一块拼图：引入 CSI-RS for tracking（TRS）支持——大 Doppler 动态下做相位/频率跟踪，之前只能靠 PT-RS + 预补偿硬顶。</text>
+  <text x="85" y="564" font-size="11.5" fill="#78909c">规范锚点：TS 38.214 §5（CSI）、TS 38.331 CSI-MeasConfig、TS 38.133（测量/gap 一致性）、TS 38.304（IDLE 测量发起）</text>
+</svg>

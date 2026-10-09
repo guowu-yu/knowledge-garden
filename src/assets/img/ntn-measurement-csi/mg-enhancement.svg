@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="620" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">测量 gap：为什么跨频点要看「窗」</text>
+
+  <!-- why gap -->
+  <rect x="60" y="70" width="740" height="130" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">什么情况需要 gap（UE 只有一套射频）</text>
+  <text x="85" y="124" font-size="12.5" fill="#37474f">① 邻波束异频：NTN 波束间频率复用，相邻小区的 SSB 可能根本不在当前载波上；</text>
+  <text x="85" y="148" font-size="12.5" fill="#37474f">② 邻星异频：换星目标小区常在另一个载波；③ TN/NTN 互测（Rel-18 起）：地面网与卫星网互为邻区。</text>
+  <text x="85" y="176" font-size="12.5" fill="#455a64">gap 期间 UE 把收发机调到目标频点测 SSB——代价是服务小区这段时间「失聪」，gap 模式由 38.133 规定</text>
+
+  <!-- Rel-18 enhancement -->
+  <rect x="60" y="220" width="740" height="180" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="248" font-size="15" font-weight="bold" fill="#0f7a8a">Rel-18 增强：gap 里不但测量，还读系统消息</text>
+  <rect x="85" y="262" width="690" height="60" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="284" font-size="12.5" fill="#37474f">问题：换星/换频前的目标小区，UE 需要先读它的 SIB1/SIB19 才能完成接入——但读 SI 也要调到目标频点，</text>
+  <text x="100" y="306" font-size="12.5" fill="#37474f">Rel-17 的 gap 只授权「测量」，UE 无从合法地借用这段窗口去读邻区的系统消息</text>
+  <rect x="85" y="330" width="690" height="56" rx="8" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="352" font-size="12.5" fill="#37474f">Rel-18 方案：网络通过专用信令提供邻区 SI 的调度信息（SI 位置/周期），UE 在 gap 内既测 SSB 也按图索骥读 SI；</text>
+  <text x="100" y="374" font-size="12.5" fill="#455a64">配合预配置 gap，切换执行前的「测量 + 读 SI」两步在同一窗口完成，缩短换星中断时间</text>
+
+  <!-- NTN specifics -->
+  <rect x="60" y="420" width="740" height="170" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="448" font-size="15" font-weight="bold" fill="#0f7a8a">NTN 场景的三个 gap 设计要点</text>
+  <text x="85" y="474" font-size="12.5" fill="#37474f">① 频率规划决定 gap 需求：若星座采用 S 频段单载波 + 波束同频，同频测量无需 gap，gap 压力大幅下降；</text>
+  <text x="85" y="498" font-size="12.5" fill="#37474f">② gap 与 t-Service 联动：邻星窗口可预测 → 网络可提前把 gap 模式与预期换星时刻对齐，而不是随机散布；</text>
+  <text x="85" y="522" font-size="12.5" fill="#37474f">③ 长周期信号的代价：邻区 SSB 周期 20 ms 时一次完整测量要跨越多个 gap 周期，测量收敛时间被 gap 占空比拉长。</text>
+  <text x="85" y="554" font-size="11.5" fill="#78909c">工程含义：gap 越省越好——能用同频复用解决就不开异频，能用预测对齐就不加密集 gap，UE 省电、服务小区少失聪</text>
+  <text x="85" y="580" font-size="11.5" fill="#78909c">规范锚点：TS 38.133 §9（gap 模式与一致性）、TS 38.331 MeasConfig/measGapConfig、Rel-18 gap 内 SI 获取增强</text>
+</svg>

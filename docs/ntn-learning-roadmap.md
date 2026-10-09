@@ -3,7 +3,7 @@
 > 更新日期：2026-10-10 ｜ 站点：https://guowu-yu.github.io/knowledge-garden/
 > 用法：逐个专题学习，完成后勾选；每个专题发布到知识站后把状态改为「已上线」并附链接。
 >
-> **当前进度**：已完成 11 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM），剩余 10 个待学专题。建议顺序：P2 测量 CSI → P2 信道链路预算 → P2 Rel-18 增强 → P2 轨道架构 → P3 射频频段 → P3 IoT NTN → P3 Rel-19/未来 → P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
+> **当前进度**：已完成 12 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM/测量与 CSI），剩余 9 个待学专题。建议顺序：P2 信道链路预算 → P2 Rel-18 增强 → P2 轨道架构 → P3 射频频段 → P3 IoT NTN → P3 Rel-19/未来 → P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
 
 ## 已完成（基础层 · 静态视角）
 
@@ -20,10 +20,11 @@
 | ✅ 已上线 | NTN 移动性与卫星切换 | 几何/时间驱动切换、CHO、硬/软换星重同步 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-mobility.html |
 | ✅ 已上线 | NTN 功率控制 | 开环主导闭环微调、链路预算、功率等级与 PHR | https://guowu-yu.github.io/knowledge-garden/topics/ntn-power.html |
 | ✅ 已上线 | NTN 无线链路监测与 BFM | RLM/BFD 判决机制、Rel-17 为何关闭 BFR、可预测与突发劣化的工程分工 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-rlm-bfm.html |
+| ✅ 已上线 | NTN 测量与 CSI 上报 | 近远效应与位置/时间触发、CSI 老化与 K_offset、测量 gap 与 gap 内读 SI | https://guowu-yu.github.io/knowledge-garden/topics/ntn-measurement-csi.html |
 
 ---
 
-## 待学习（10 个专题 · 动态过程视角）
+## 待学习（9 个专题 · 动态过程视角）
 
 ### 模块一：接入与链路层过程（怎么接入、怎么发数据）
 
@@ -41,7 +42,7 @@
 | ✅ 已上线 | NTN 定时器与定时关系全表 | 所有被放大的定时器：T310、DRX、MAC/RLC/PDCP 计时器、SI 窗口——一张表看懂「大时延改写了哪些钟」 | 38.321 / 38.331 | P1 |
 | ✅ 已上线 | NTN 无线链路监测与 BFM | RLM/BFD 定时放大、慢衰落与卫星遮蔽的区分、Rel-17 关闭 BFR 的取舍、波束失败恢复在 NTN 的替代路径 | 38.213 §6 / 38.321 §5.17 | P2 |
 | ✅ 已上线 | NTN 移动性与卫星切换 | 事件 D1/D2、条件切换（CHO）、硬切换/软切换/换星重同步、多波束小区边界管理 | 38.331 / 38.304 | P1 |
-| ☐ | NTN 测量与 CSI 上报 | 基于 UE 位置的 CSI-RS 触发、测量 gap 增强（gap 内读 SI）、CSI 上报周期与 rank 限制 | 38.214 | P2 |
+| ✅ 已上线 | NTN 测量与 CSI 上报 | 近远效应使 RSRP 失灵、位置/时间触发测量发起与 CondEvent T1/D1、CSI-RS 支持收窄与 TRS、K_offset 下的 CSI 老化、测量 gap 与 Rel-18 gap 内读 SI | 38.214 / 38.133 / 38.304 | P2 |
 | ☐ | NTN IDLE/INACTIVE 态行为 | 基于 t-Service 的重选、位置触发测量、多 TAC 寻呼区域、TN/NTN 边界驻留策略 | 38.304 / 38.300 | P3 |
 
 ### 模块三：架构与工程（系统怎么设计、链路怎么算）
@@ -66,7 +67,7 @@
 ## 建议学习顺序
 
 1. **先啃 P1 的 6 个**：随机接入增强 → 多普勒补偿 → 调度与 HARQ → 定时器全表 → 卫星切换（NTN 相对地面 5G 改动最狠、最常被问的地方）
-2. **再补 P2 的 6 个**：功控、RLM/BFM ✅、测量 CSI、架构、链路预算、Rel-18 全集（建立工程完整性）
+2. **再补 P2 的 5 个**：功控、RLM/BFM ✅、测量 CSI ✅、架构、链路预算、Rel-18 全集（建立工程完整性）
 3. **最后 P3 的 3 个**：射频频段、IoT NTN、Rel-19/混合组网（面向演进方向）
 
 > 性价比提示：「NTN 定时器与定时关系全表」一张表收尽 T310/DRX/HARQ RTT/SI 窗口的放大量纲，与已发布的 SIB19 有效期、再生载荷 HARQ RTT 两篇互为索引。
