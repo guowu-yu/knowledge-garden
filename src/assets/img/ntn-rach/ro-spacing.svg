@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" role="img" aria-label="差分时延与 RO 间距设计">
+  <rect width="900" height="440" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">差分时延决定 RO 间距（TR 38.821 Table 7.2.1.1.1.2-1/-2）</text>
+
+  <g>
+    <rect x="60" y="60" width="780" height="120" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="80" y="86" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">两个不同的「时延」，破坏两个不同的东西</text>
+    <text x="80" y="112" font-family="Segoe UI, sans-serif" font-size="12" fill="#0b1c28">绝对时延（GEO 单程约 270 ms vs LEO 约 26 ms）＝ 高度问题 → 破坏定时器、HARQ RTT（用偏移治）</text>
+    <text x="80" y="138" font-family="Segoe UI, sans-serif" font-size="12" fill="#0b1c28">差分时延（小区内最近与最远 UE 的到达差）＝ 小区尺寸问题 → 破坏前导检测（用 RO 间距治）</text>
+    <text x="80" y="164" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#a9681f">规则：1/ρ（相邻 RO 间隔）&gt; 2 × 最大差分时延；经验式 2×D/c 误差 &lt; 4%</text>
+  </g>
+
+  <g>
+    <rect x="60" y="200" width="780" height="220" rx="12" fill="#e2eef4"/>
+    <text x="80" y="228" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#0a5561">小区尺寸        到达扩散(2×Δ)    选取 ρ    RO 间距 1/ρ    余量      典型前导/配置</text>
+    <line x1="80" y1="240" x2="820" y2="240" stroke="#ffffff" stroke-width="1.4"/>
+    <text x="80" y="264" font-family="Consolas, monospace" font-size="12" fill="#0b1c28">GEO 1000 km    6.44 ms         100       10 ms          3.56 ms   fmt 0/1/2 (idx 16/44/58)</text>
+    <text x="80" y="292" font-family="Consolas, monospace" font-size="12" fill="#0b1c28">GEO 500 km     3.26 ms         200       5 ms           1.74 ms   fmt 0/1/3 (idx 19/47/78)</text>
+    <text x="80" y="320" font-family="Consolas, monospace" font-size="12" fill="#0b1c28">LEO 200 km     1.306 ms        500       2 ms           0.69 ms   fmt 0/3 (idx 25/84)</text>
+    <text x="80" y="348" font-family="Consolas, monospace" font-size="12" fill="#0b1c28">LEO 100 km     0.654 ms        1000      1 ms           0.35 ms   fmt 0/3 (idx 27/86)</text>
+    <text x="80" y="386" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">矛盾：小区越大 → RO 越稀（接入机会每秒 1000 → 100）且 contender 越多——两个效应同向恶化</text>
+    <text x="80" y="406" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">注意：约束是差分时延而非绝对时延——GEO 若按 270 ms 绝对时延布 RO，ρ≈2，完全不可用</text>
+  </g>
+</svg>
