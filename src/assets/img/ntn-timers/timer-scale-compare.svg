@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" font-family="Segoe UI, 'Microsoft YaHei', sans-serif">
+  <rect width="840" height="480" fill="#eef5f8"/>
+  <text x="420" y="28" text-anchor="middle" font-size="19" font-weight="bold" fill="#164e63">拉长类定时器：地面默认 → NTN 配置</text>
+  <text x="420" y="47" text-anchor="middle" font-size="11.5" fill="#64748b">对数横轴（ms）。真正的扩容发生在 RLC 与 MAC 窗口；RRC 枚举一个没改，只是「选最大值」</text>
+
+  <!-- 对数刻度轴线 -->
+  <g font-size="9" fill="#94a3b8">
+    <line x1="390" y1="60" x2="390" y2="428" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="390" y="442" text-anchor="middle">10⁰</text>
+    <text x="457" y="442" text-anchor="middle">10¹</text>
+    <text x="523" y="442" text-anchor="middle">10²</text>
+    <text x="590" y="442" text-anchor="middle">10³</text>
+    <text x="657" y="442" text-anchor="middle">10⁴</text>
+    <text x="723" y="442" text-anchor="middle">10⁵</text>
+    <text x="790" y="442" text-anchor="middle">10⁶</text>
+    <!-- 参考线 -->
+    <g stroke="#e2e8f0" stroke-dasharray="3 3">
+      <line x1="457" y1="60" x2="457" y2="428"/>
+      <line x1="523" y1="60" x2="523" y2="428"/>
+      <line x1="590" y1="60" x2="590" y2="428"/>
+      <line x1="657" y1="60" x2="657" y2="428"/>
+      <line x1="723" y1="60" x2="723" y2="428"/>
+      <line x1="790" y1="60" x2="790" y2="428"/>
+    </g>
+    <!-- RTT 参考带 -->
+    <rect x="500" y="60" width="12" height="368" fill="#f59e0b" fill-opacity="0.12"/>
+    <text x="506" y="55" text-anchor="middle" font-size="9" fill="#b45309">LEO RTT ≈ 25–40 ms</text>
+    <rect x="561" y="60" width="10" height="368" fill="#dc2626" fill-opacity="0.10"/>
+    <text x="566" y="55" text-anchor="middle" font-size="9" fill="#dc2626">GEO RTT ≈ 540 ms</text>
+  </g>
+
+  <!-- 条目：y 起 74，每条高 36 -->
+  <g font-size="11" fill="#334155">
+    <!-- 1. t-Reassembly -->
+    <text x="382" y="88" text-anchor="end" font-family="Consolas, monospace" font-weight="bold" fill="#0f7a8a">t-Reassembly</text>
+    <text x="382" y="101" text-anchor="end" font-size="9" fill="#64748b">RLC 重组（地面默认 max）</text>
+    <rect x="390" y="76" width="133" height="12" rx="3" fill="#94a3b8"/>
+    <text x="527" y="86" font-size="9.5" fill="#64748b">200 ms（地面枚举上限）</text>
+    <rect x="390" y="92" width="267" height="12" rx="3" fill="#b45309"/>
+    <text x="661" y="102" font-size="9.5" fill="#b45309" font-weight="bold">2200 ms（t-ReassemblyExt-r17）</text>
+
+    <!-- 2. ra-ResponseWindow -->
+    <text x="382" y="136" text-anchor="end" font-family="Consolas, monospace" font-weight="bold" fill="#0f7a8a">ra-ResponseWindow</text>
+    <text x="382" y="149" text-anchor="end" font-size="9" fill="#64748b">RAR 接收窗口（含起点偏移）</text>
+    <rect x="390" y="124" width="100" height="12" rx="3" fill="#94a3b8"/>
+    <text x="494" y="134" font-size="9.5" fill="#64748b">地面 ≈ 10 ms</text>
+    <rect x="390" y="140" width="260" height="12" rx="3" fill="#b45309"/>
+    <text x="654" y="150" font-size="9.5" fill="#b45309" font-weight="bold">NTN：起点 +T_TA+k_mac，长度再配大</text>
+
+    <!-- 3. T300 -->
+    <text x="382" y="184" text-anchor="end" font-family="Consolas, monospace" font-weight="bold" fill="#0f7a8a">T300</text>
+    <text x="382" y="197" text-anchor="end" font-size="9" fill="#64748b">RRCSetupRequest 守护</text>
+    <rect x="390" y="172" width="200" height="12" rx="3" fill="#94a3b8"/>
+    <text x="594" y="182" font-size="9.5" fill="#64748b">默认 1000 ms</text>
+    <rect x="390" y="188" width="267" height="12" rx="3" fill="#b45309"/>
+    <text x="661" y="198" font-size="9.5" fill="#b45309" font-weight="bold">2000 ms（枚举未扩，取最大值）</text>
+
+    <!-- 4. T310 -->
+    <text x="382" y="232" text-anchor="end" font-family="Consolas, monospace" font-weight="bold" fill="#0f7a8a">T310</text>
+    <text x="382" y="245" text-anchor="end" font-size="9" fill="#64748b">RLF 判定（N310 失步后）</text>
+    <rect x="390" y="220" width="200" height="12" rx="3" fill="#94a3b8"/>
+    <text x="594" y="230" font-size="9.5" fill="#64748b">默认 1000 ms</text>
+    <rect x="390" y="236" width="267" height="12" rx="3" fill="#b45309"/>
+    <text x="661" y="246" font-size="9.5" fill="#b45309" font-weight="bold">2000 ms；GEO 段靠 T311 = 30 s 兜底</text>
+
+    <!-- 5. 寻呼周期 -->
+    <text x="382" y="280" text-anchor="end" font-family="Consolas, monospace" font-weight="bold" fill="#0f7a8a">defaultPagingCycle</text>
+    <text x="382" y="293" text-anchor="end" font-size="9" fill="#64748b">IDLE/INACTIVE 寻呼周期</text>
+    <rect x="390" y="268" width="167" height="12" rx="3" fill="#94a3b8"/>
+    <text x="561" y="278" font-size="9.5" fill="#64748b">rf128 = 1.28 s</text>
+    <rect x="390" y="284" width="300" height="12" rx="3" fill="#047857"/>
+    <text x="694" y="294" font-size="9.5" fill="#047857" font-weight="bold">rf1024 = 10.24 s（ExtendedPagingCycle-r17）</text>
+
+    <!-- 6. PDCP discardTimer -->
+    <text x="382" y="328" text-anchor="end" font-family="Consolas, monospace" font-weight="bold" fill="#0f7a8a">PDCP discardTimer</text>
+    <text x="382" y="341" text-anchor="end" font-size="9" fill="#64748b">SDU 过旧丢弃</text>
+    <rect x="390" y="316" width="167" height="12" rx="3" fill="#94a3b8"/>
+    <text x="561" y="326" font-size="9.5" fill="#64748b">o500ms / o1500ms 常见</text>
+    <rect x="390" y="332" width="334" height="12" rx="3" fill="#b45309"/>
+    <text x="728" y="342" font-size="9.5" fill="#b45309" font-weight="bold">o30s…o120s（枚举早已有，选大即可）</text>
+
+    <!-- 7. t-Service -->
+    <text x="382" y="376" text-anchor="end" font-family="Consolas, monospace" font-weight="bold" fill="#0f7a8a">t-Service</text>
+    <text x="382" y="389" text-anchor="end" font-size="9" fill="#64748b">准固定小区停止服务时刻</text>
+    <rect x="390" y="364" width="400" height="12" rx="3" fill="#047857"/>
+    <text x="640" y="382" font-size="9.5" fill="#047857" font-weight="bold">绝对时刻（1900 纪元，10 ms 步进，上限 ≈ 54975581 天）</text>
+
+    <!-- 8. T430 -->
+    <text x="382" y="424" text-anchor="end" font-family="Consolas, monospace" font-weight="bold" fill="#0f7a8a">T430</text>
+    <text x="382" y="437" text-anchor="end" font-size="9" fill="#64748b">NTN UL 同步有效期</text>
+    <rect x="390" y="412" width="334" height="12" rx="3" fill="#047857"/>
+    <text x="728" y="422" font-size="9.5" fill="#047857" font-weight="bold">s5 … s900（LEO 高频重读 / GEO 长星历）</text>
+  </g>
+</svg>

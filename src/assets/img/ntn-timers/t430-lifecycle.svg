@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" font-family="Segoe UI, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#0f7a8a"/>
+    </marker>
+    <marker id="arrR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="840" height="480" fill="#eef5f8"/>
+  <text x="420" y="28" text-anchor="middle" font-size="19" font-weight="bold" fill="#164e63">T430：NTN 唯一的新 RRC 定时器</text>
+  <text x="420" y="47" text-anchor="middle" font-size="11.5" fill="#64748b">上行同步的「信任凭证」——锚定在星历锚点 epochTime，而非 UE 收到 SIB19 的时刻</text>
+
+  <!-- 主流程：CONNECTED -->
+  <rect x="30" y="66" width="500" height="90" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-opacity="0.4"/>
+  <text x="280" y="88" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">RRC_CONNECTED：收到 SIB19</text>
+  <text x="280" y="108" text-anchor="middle" font-size="11" fill="#334155">从 <tspan font-family="Consolas, monospace" font-weight="bold">epochTime</tspan> 指示的子帧起，以 <tspan font-family="Consolas, monospace" font-weight="bold">ntn-UlSyncValidityDuration</tspan></text>
+  <text x="280" y="126" text-anchor="middle" font-size="11" fill="#334155">启动 / 重启 T430（s5, s10, s20, s30, s60, s90, s120, s180, s300, s600, s900）</text>
+  <text x="280" y="144" text-anchor="middle" font-size="10" fill="#64748b">NOTE：UE 应在有效期结束前自行重读 SIB19（实现自便，规范不强制周期）</text>
+
+  <line x1="280" y1="156" x2="280" y2="182" stroke="#0f7a8a" stroke-width="1.6" marker-end="url(#arr2)"/>
+  <text x="292" y="173" font-size="10" fill="#64748b">T430 运行中：上层向 MAC 声明「UL 同步有效」，允许上行发送</text>
+
+  <rect x="30" y="186" width="500" height="86" rx="10" fill="#ffffff" stroke="#dc2626" stroke-opacity="0.5"/>
+  <text x="280" y="208" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#dc2626">T430 到期（38.331 §5.2.2.6）</text>
+  <text x="280" y="227" text-anchor="middle" font-size="11" fill="#334155">1. 通知下层 UL 同步丢失（38.321 §5.2a）</text>
+  <text x="280" y="244" text-anchor="middle" font-size="11" fill="#334155">2. MAC：清空所有 HARQ 缓冲区，不再执行任何上行发送</text>
+  <text x="280" y="261" text-anchor="middle" font-size="11" fill="#334155">3. 立即重新获取 SIB19 → 成功后通知下层恢复 UL 同步（不算 RLF）</text>
+
+  <line x1="280" y1="272" x2="280" y2="298" stroke="#0f7a8a" stroke-width="1.6" marker-end="url(#arr2)"/>
+  <rect x="30" y="302" width="500" height="56" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-opacity="0.4"/>
+  <text x="280" y="323" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f7a8a">恢复：重读 SIB19 成功</text>
+  <text x="280" y="341" text-anchor="middle" font-size="10.5" fill="#334155">UL 同步的恢复时刻 = 新 epochTime 子帧（也可略早，留给 UE 实现）→ 重启 T430</text>
+  <text x="280" y="354" text-anchor="middle" font-size="9.5" fill="#64748b">期间不触发 T310/RLF——星历过期是「可预期的失步」，与无线链路故障是两码事</text>
+
+  <!-- 右侧：切换时停表 -->
+  <rect x="556" y="66" width="258" height="130" rx="10" fill="#ffffff" stroke="#f59e0b" stroke-opacity="0.55"/>
+  <text x="685" y="88" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#b45309">reconfigurationWithSync</text>
+  <text x="685" y="108" text-anchor="middle" font-size="10.5" fill="#334155">停止 T430（若在运行）→ 启动 T304</text>
+  <text x="685" y="126" text-anchor="middle" font-size="10.5" fill="#334155">目标小区若带 NTN-Config：</text>
+  <text x="685" y="143" text-anchor="middle" font-size="10.5" fill="#334155">从目标小区的 epochTime 子帧起</text>
+  <text x="685" y="160" text-anchor="middle" font-size="10.5" fill="#334155">以目标 ntn-UlSyncValidityDuration 重启 T430</text>
+  <text x="685" y="182" text-anchor="middle" font-size="9.5" fill="#64748b">换星 / 换小区 = 换一套时间锚点</text>
+
+  <!-- 右侧：IDLE/INACTIVE -->
+  <rect x="556" y="212" width="258" height="146" rx="10" fill="#ffffff" stroke="#047857" stroke-opacity="0.5"/>
+  <text x="685" y="234" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#047857">RRC_IDLE / RRC_INACTIVE</text>
+  <text x="685" y="253" text-anchor="middle" font-size="10.5" fill="#334155">没有 T430（它是 CONNECTED 专属）</text>
+  <text x="685" y="272" text-anchor="middle" font-size="10.5" fill="#334155">但必须持有有效的 SIB19：</text>
+  <text x="685" y="290" text-anchor="middle" font-size="10.5" fill="#334155">有效期到期 → 不得发起任何上行</text>
+  <text x="685" y="308" text-anchor="middle" font-size="10.5" fill="#334155">（发起 RACH / TA 更新前须先重新获取）</text>
+  <text x="685" y="328" text-anchor="middle" font-size="10.5" fill="#334155">三态一致性：有效期字段同时约束三态</text>
+  <text x="685" y="346" text-anchor="middle" font-size="9.5" fill="#64748b">邻区 NTN-Config 缺省该字段 → 沿用服务小区有效期</text>
+
+  <!-- 底部对比：地面机制 -->
+  <rect x="30" y="372" width="784" height="100" rx="10" fill="#ffffff" stroke="#64748b" stroke-dasharray="5 3" stroke-opacity="0.6"/>
+  <text x="422" y="394" text-anchor="middle" font-size="12" font-weight="bold" fill="#475569">对照：地面 NR 怎么维护 UL 同步？</text>
+  <text x="422" y="413" text-anchor="middle" font-size="10.5" fill="#334155">地面：<tspan font-family="Consolas, monospace">timeAlignmentTimer</tspan> —— 每收到 TA 命令就重置；到期才认为失步（gNB 实时测、实时纠）</text>
+  <text x="422" y="431" text-anchor="middle" font-size="10.5" fill="#334155">NTN：gNB 只修「残差」（预补偿由 UE 用星历自算），无法承担实时维护 → 信任关系倒转为</text>
+  <text x="422" y="449" text-anchor="middle" font-size="10.5" fill="#334155">「星历有效 = 我还有资格上行」，T430 是这条信任链的计数器，锚点必须是 epochTime 而非接收时刻</text>
+  <text x="422" y="466" text-anchor="middle" font-size="10" fill="#b45309" font-weight="bold">同一颗星的 SIB19 重复接收不会刷新 T430——只有新的 epochTime/星历才重启它</text>
+</svg>
