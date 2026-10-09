@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="620" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">下行链路预算瀑布（38.821 示例：LEO-600 · S 频段 · 手持 UE）</text>
+
+  <!-- waterfall chart -->
+  <rect x="60" y="70" width="740" height="360" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <!-- baseline y=380, scale: 1 dB = 2.2px -->
+  <!-- EIRP bar -->
+  <rect x="110" y="100" width="70" height="280" fill="#0f7a8a"/>
+  <text x="145" y="402" text-anchor="middle" font-size="11.5" fill="#37474f">EIRP</text>
+  <text x="145" y="418" text-anchor="middle" font-size="11" font-family="Consolas" fill="#0f7a8a">48.8 dBW</text>
+  <text x="145" y="92" text-anchor="middle" font-size="10.5" fill="#78909c">34 dBW/MHz × 30 MHz</text>
+  <!-- FSPL -->
+  <rect x="210" y="100" width="70" height="280" fill="#e3eef1" opacity="0.4"/>
+  <rect x="210" y="100" width="70" height="256" fill="#c62828"/>
+  <text x="245" y="402" text-anchor="middle" font-size="11.5" fill="#37474f">FSPL</text>
+  <text x="245" y="418" text-anchor="middle" font-size="11" font-family="Consolas" fill="#c62828">−154.8 dB</text>
+  <!-- shadow -->
+  <rect x="310" y="161" width="70" height="1" fill="#c62828"/>
+  <rect x="310" y="100" width="70" height="61" fill="#e3eef1"/>
+  <rect x="310" y="160" width="70" height="1" fill="#c62828"/>
+  <text x="345" y="402" text-anchor="middle" font-size="11.5" fill="#37474f">阴影</text>
+  <text x="345" y="418" text-anchor="middle" font-size="11" font-family="Consolas" fill="#c62828">−0.4 dB</text>
+  <!-- additional -->
+  <rect x="410" y="100" width="70" height="4.4" fill="#c62828"/>
+  <text x="445" y="402" text-anchor="middle" font-size="11.5" fill="#37474f">附加损耗</text>
+  <text x="445" y="418" text-anchor="middle" font-size="11" font-family="Consolas" fill="#c62828">−2 dB</text>
+  <!-- G/T -->
+  <rect x="510" y="104" width="70" height="69.6" fill="#ef6c00"/>
+  <text x="545" y="402" text-anchor="middle" font-size="11.5" fill="#37474f">UE G/T</text>
+  <text x="545" y="418" text-anchor="middle" font-size="11" font-family="Consolas" fill="#ef6c00">−31.6 dB/K</text>
+  <!-- k -->
+  <rect x="610" y="100" width="70" height="278" fill="#2e7d32"/>
+  <text x="645" y="402" text-anchor="middle" font-size="11.5" fill="#37474f">+k 项</text>
+  <text x="645" y="418" text-anchor="middle" font-size="11" font-family="Consolas" fill="#2e7d32">+228.6</text>
+  <!-- CN0 result -->
+  <rect x="710" y="100" width="60" height="278" fill="#0f7a8a" opacity="0.85"/>
+  <text x="740" y="402" text-anchor="middle" font-size="11.5" fill="#37474f">C/N0</text>
+  <text x="740" y="418" text-anchor="middle" font-size="11" font-family="Consolas" fill="#0f7a8a">88.8 dBHz</text>
+
+  <text x="430" y="452" text-anchor="middle" font-size="12.5" font-family="Consolas" fill="#0f7a8a">C/N0 = EIRP − PL + G/T − (−228.6) ≈ 88.8 dB·Hz</text>
+  <text x="430" y="474" text-anchor="middle" font-size="12.5" fill="#37474f">折合 30 MHz 带宽：CNR ≈ 88.8 − 74.8 ≈ 14~16 dB —— 支撑中阶 MCS</text>
+
+  <!-- uplink box -->
+  <rect x="60" y="450" width="740" height="140" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="478" font-size="15" font-weight="bold" fill="#0f7a8a">上行才是瓶颈方向</text>
+  <text x="85" y="504" font-size="12.5" fill="#37474f">手持 UE：23 dBm + 0 dBi → EIRP ≈ −7 dBW，比卫星下行弱 5~6 个数量级。38.821 的对策：上行信道带宽压到</text>
+  <text x="85" y="528" font-size="12.5" fill="#37474f">360 kHz（噪声地板随带宽收窄下降 ~19 dB）＋ 卫星侧大天线高 G/T ＋（Rel-18）重复/DMRS 捆绑换增益。</text>
+  <text x="85" y="556" font-size="12.5" fill="#455a64">VSAT 终端（Ka 频段）：33~40 dBm + 40 dBi 抛物面，上下行对称，宽带 100~400 MHz。</text>
+  <text x="85" y="582" font-size="11.5" fill="#78909c">规范锚点：TR 38.821 §6.1（链路预算参数与示例）、TR 38.811 §6.6.2（FSPL/CL/SF）、ITU-R P.618（雨衰）</text>
+</svg>

@@ -3,7 +3,7 @@
 > 更新日期：2026-10-10 ｜ 站点：https://guowu-yu.github.io/knowledge-garden/
 > 用法：逐个专题学习，完成后勾选；每个专题发布到知识站后把状态改为「已上线」并附链接。
 >
-> **当前进度**：已完成 12 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM/测量与 CSI），剩余 9 个待学专题。建议顺序：P2 信道链路预算 → P2 Rel-18 增强 → P2 轨道架构 → P3 射频频段 → P3 IoT NTN → P3 Rel-19/未来 → P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
+> **当前进度**：已完成 13 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM/测量与 CSI/信道与链路预算），剩余 8 个待学专题。建议顺序：P2 Rel-18 增强 → P2 轨道架构 → P3 射频频段 → P3 IoT NTN → P3 Rel-19/未来 → P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
 
 ## 已完成（基础层 · 静态视角）
 
@@ -21,10 +21,11 @@
 | ✅ 已上线 | NTN 功率控制 | 开环主导闭环微调、链路预算、功率等级与 PHR | https://guowu-yu.github.io/knowledge-garden/topics/ntn-power.html |
 | ✅ 已上线 | NTN 无线链路监测与 BFM | RLM/BFD 判决机制、Rel-17 为何关闭 BFR、可预测与突发劣化的工程分工 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-rlm-bfm.html |
 | ✅ 已上线 | NTN 测量与 CSI 上报 | 近远效应与位置/时间触发、CSI 老化与 K_offset、测量 gap 与 gap 内读 SI | https://guowu-yu.github.io/knowledge-garden/topics/ntn-measurement-csi.html |
+| ✅ 已上线 | NTN 信道与链路预算 | 38.811 大尺度五件套、仰角新坐标轴、38.821 链路预算瀑布、S/Ka 两本余量账 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-channel-link-budget.html |
 
 ---
 
-## 待学习（9 个专题 · 动态过程视角）
+## 待学习（8 个专题 · 动态过程视角）
 
 ### 模块一：接入与链路层过程（怎么接入、怎么发数据）
 
@@ -50,7 +51,7 @@
 | 状态 | 专题 | 核心问题 | 规范锚点 | 优先级 |
 | --- | --- | --- | --- | --- |
 | ☐ | 轨道与系统架构 | GEO/MEO/LEO/HAPS 的时延多普勒指纹、准固定小区 vs 移动小区、馈电链路与多波束频率复用 | TR 38.811 | P2 |
-| ☐ | NTN 信道与链路预算 | TR 38.811 信道模型、雨衰（ITU-R P.618）、遮蔽分级、EIRP/G/T、链路预算计算实务 | TR 38.811 / P.618 | P2 |
+| ✅ 已上线 | NTN 信道与链路预算 | TR 38.811 信道模型（FSPL/杂波/阴影/大气/闪烁、TDL/CDL）、雨衰（ITU-R P.618）、遮蔽分级、EIRP/G/T 与链路预算计算实务 | TR 38.811 / 38.821 / P.618 | P2 |
 | ☐ | NTN 射频与频段 | n255/n256 频段、UE 功率等级与带外发射、双卫星同时收发的射频要求 | 38.101-5 / 38.307 | P3 |
 | ☐ | IoT NTN（NB-IoT/eMTC） | Rel-17/18/19 IoT NTN 与 NR NTN 的差异、SIB31、GNSS 定位增强、极端覆盖 | 36 系列 / 38.331 | P3 |
 
@@ -67,7 +68,7 @@
 ## 建议学习顺序
 
 1. **先啃 P1 的 6 个**：随机接入增强 → 多普勒补偿 → 调度与 HARQ → 定时器全表 → 卫星切换（NTN 相对地面 5G 改动最狠、最常被问的地方）
-2. **再补 P2 的 5 个**：功控、RLM/BFM ✅、测量 CSI ✅、架构、链路预算、Rel-18 全集（建立工程完整性）
+2. **再补 P2 的 4 个**：功控、RLM/BFM ✅、测量 CSI ✅、链路预算 ✅、架构、Rel-18 全集（建立工程完整性）
 3. **最后 P3 的 3 个**：射频频段、IoT NTN、Rel-19/混合组网（面向演进方向）
 
 > 性价比提示：「NTN 定时器与定时关系全表」一张表收尽 T310/DRX/HARQ RTT/SI 窗口的放大量纲，与已发布的 SIB19 有效期、再生载荷 HARQ RTT 两篇互为索引。

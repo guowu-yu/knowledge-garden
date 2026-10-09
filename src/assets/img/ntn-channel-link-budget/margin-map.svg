@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 600" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="600" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">余量分配：S 频段与 Ka 频段的两本账</text>
+
+  <!-- S band -->
+  <rect x="60" y="70" width="360" height="240" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">S 频段（手持直连，n255/n256）</text>
+  <rect x="85" y="112" width="310" height="34" rx="6" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="134" font-size="12" fill="#37474f">阴影余量：3 dB（38.821，非 VSAT）</text>
+  <rect x="85" y="154" width="310" height="34" rx="6" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="176" font-size="12" fill="#37474f">电离层闪烁：1% 最差 ~2.2 dB（低仰角/低纬）</text>
+  <rect x="85" y="196" width="310" height="34" rx="6" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="218" font-size="12" fill="#37474f">雨衰/云衰：忽略（&lt;6 GHz）</text>
+  <rect x="85" y="238" width="310" height="34" rx="6" fill="#f1f8f9" stroke="#0f7a8a"/>
+  <text x="100" y="260" font-size="12" fill="#37474f">极化失配：~3 dB（圆极化设计压到最小）</text>
+  <text x="85" y="296" font-size="12.5" font-weight="bold" fill="#c62828">真正的敌人：遮蔽与体衰（15~25 dB）</text>
+  <text x="85" y="318" font-size="11.5" fill="#78909c">不是余量能覆盖的——靠重试/换星/容忍中断</text>
+
+  <!-- Ka band -->
+  <rect x="440" y="70" width="360" height="240" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="465" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">Ka 频段（VSAT，n510~512）</text>
+  <rect x="465" y="112" width="310" height="34" rx="6" fill="#f1f8f9" stroke="#ef6c00"/>
+  <text x="480" y="134" font-size="12" fill="#37474f">雨衰（ITU-R P.618）：强降雨可 &gt;10 dB</text>
+  <rect x="465" y="154" width="310" height="34" rx="6" fill="#f1f8f9" stroke="#ef6c00"/>
+  <text x="480" y="176" font-size="12" fill="#37474f">大气气体吸收：20/30 GHz 处显著</text>
+  <rect x="465" y="196" width="310" height="34" rx="6" fill="#f1f8f9" stroke="#ef6c00"/>
+  <text x="480" y="218" font-size="12" fill="#37474f">对流层闪烁：~1 dB 量级（可破 1 dB）</text>
+  <rect x="465" y="238" width="310" height="34" rx="6" fill="#f1f8f9" stroke="#ef6c00"/>
+  <text x="480" y="260" font-size="12" fill="#37474f">阴影余量：0 dB（VSAT 高增益天线常驻 LoS）</text>
+  <text x="465" y="296" font-size="12.5" font-weight="bold" fill="#c62828">真正的敌人：天气</text>
+  <text x="465" y="318" font-size="11.5" fill="#78909c">余量按 99.x% 时间可用性（P.618 统计曲线）设计</text>
+
+  <!-- shared box -->
+  <rect x="60" y="330" width="740" height="130" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="358" font-size="15" font-weight="bold" fill="#0f7a8a">余量的用法：可用性换容量</text>
+  <text x="85" y="384" font-size="12.5" fill="#37474f">ITU-R P.618 给出雨衰随「超出时间百分比」的统计曲线：留 10 dB 余量可能意味着 99.99% 时间可用，</text>
+  <text x="85" y="408" font-size="12.5" fill="#37474f">留 3 dB 则暴雨天降级。NTN 的工程选择：把余量花在大概率事件（阴影/闪烁），小概率深衰靠自适应</text>
+  <text x="85" y="432" font-size="12.5" fill="#455a64">（MCS 下调、重传、HARQ）扛，而不是无限加余量。</text>
+
+  <!-- margin vs throughput -->
+  <rect x="60" y="480" width="740" height="90" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="85" y="508" font-size="15" font-weight="bold" fill="#0f7a8a">为什么手持直连如此艰难（回顾功率篇）</text>
+  <text x="85" y="534" font-size="12.5" fill="#37474f">S 频段下行 EIRP ~48 dBW 打 155 dB 路损 + 手持 0 dBi 接收 → CNR 只有十几 dB，再扣 3+2.2 dB 余量后，</text>
+  <text x="85" y="558" font-size="12.5" fill="#37474f">MCS/带宽/带宽内复用全部精打细算——这就是 NTN 各协议专题里所有「减法」的物理根源。</text>
+</svg>
