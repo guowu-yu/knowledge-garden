@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="560" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">地面切换 vs NTN 切换：触发源的根本不同</text>
+
+  <!-- Left: terrestrial -->
+  <rect x="30" y="70" width="390" height="240" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="225" y="98" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f7a8a">地面网络：RSRP 驱动</text>
+  <!-- base stations -->
+  <rect x="90" y="150" width="10" height="90" fill="#546e7a"/>
+  <polygon points="85,150 105,150 95,125" fill="#546e7a"/>
+  <text x="95" y="262" text-anchor="middle" font-size="12" fill="#37474f">gNB A</text>
+  <rect x="290" y="150" width="10" height="90" fill="#546e7a"/>
+  <polygon points="285,150 305,150 295,125" fill="#546e7a"/>
+  <text x="295" y="262" text-anchor="middle" font-size="12" fill="#37474f">gNB B</text>
+  <!-- UE + fading -->
+  <circle cx="190" cy="230" r="9" fill="#0f7a8a"/>
+  <text x="190" y="258" text-anchor="middle" font-size="12" fill="#37474f">UE</text>
+  <path d="M110 175 Q150 165 185 222" stroke="#ef6c00" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+  <path d="M290 175 Q245 165 200 222" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <text x="60" y="185" font-size="12" fill="#ef6c00">RSRP↓</text>
+  <text x="320" y="185" font-size="12" fill="#2e7d32">RSRP↑</text>
+  <text x="225" y="295" text-anchor="middle" font-size="13" fill="#455a64">信号质量变化 = 随机不可预测</text>
+  <text x="225" y="296" font-size="1" fill="none">.</text>
+
+  <!-- Right: NTN -->
+  <rect x="440" y="70" width="390" height="240" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="635" y="98" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f7a8a">NTN：几何/时间驱动</text>
+  <!-- satellite -->
+  <g transform="translate(635,140)">
+    <rect x="-16" y="-10" width="32" height="20" rx="4" fill="#0f7a8a"/>
+    <rect x="-42" y="-4" width="22" height="8" fill="#4dd0e1"/>
+    <rect x="20" y="-4" width="22" height="8" fill="#4dd0e1"/>
+  </g>
+  <text x="700" y="132" font-size="12" fill="#37474f">LEO · 7.5 km/s</text>
+  <!-- earth arc -->
+  <path d="M470 290 Q635 200 800 290" stroke="#b0bec5" stroke-width="3" fill="#f7fbfc"/>
+  <circle cx="560" cy="252" r="8" fill="#0f7a8a"/>
+  <text x="560" y="278" text-anchor="middle" font-size="12" fill="#37474f">UE</text>
+  <path d="M628 152 Q590 190 566 243" stroke="#0f7a8a" stroke-width="2" fill="none"/>
+  <text x="470" y="330" font-size="13" fill="#455a64">波束扫过头顶是确定事件：位置(GNSS)+星历</text>
+  <text x="470" y="330" font-size="1" fill="none">.</text>
+
+  <!-- bottom band: three new events -->
+  <rect x="30" y="345" width="800" height="180" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="430" y="373" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">Rel-17/18 为 NTN 新增的「可预知」触发源</text>
+
+  <rect x="55" y="392" width="240" height="112" rx="8" fill="#f2fafb" stroke="#9fd3db"/>
+  <text x="175" y="416" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f7a8a">Event D1 / D2</text>
+  <text x="175" y="436" text-anchor="middle" font-size="12" fill="#37474f">基于距离</text>
+  <text x="175" y="456" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#0f7a8a">referenceLocation</text>
+  <text x="175" y="474" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#0f7a8a">movingReferenceLocation (D2)</text>
+  <text x="175" y="492" text-anchor="middle" font-size="11" fill="#607d8b">d &gt; Thresh1 且 d&apos; &lt; Thresh2</text>
+
+  <rect x="315" y="392" width="240" height="112" rx="8" fill="#f2fafb" stroke="#9fd3db"/>
+  <text x="435" y="416" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f7a8a">CondEvent T1</text>
+  <text x="435" y="436" text-anchor="middle" font-size="12" fill="#37474f">基于时间窗口</text>
+  <text x="435" y="456" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#0f7a8a">t1-Threshold + duration</text>
+  <text x="435" y="474" text-anchor="middle" font-size="11" fill="#607d8b">对应 t-Service 的可预测终点</text>
+  <text x="435" y="492" text-anchor="middle" font-size="11" fill="#607d8b">「在这个时间窗内执行切换」</text>
+
+  <rect x="575" y="392" width="240" height="112" rx="8" fill="#f2fafb" stroke="#9fd3db"/>
+  <text x="695" y="416" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f7a8a">SatSwitchWithReSync</text>
+  <text x="695" y="436" text-anchor="middle" font-size="12" fill="#37474f">同 PCI 换星（Rel-18）</text>
+  <text x="695" y="456" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#0f7a8a">t-Service / t-ServiceStart</text>
+  <text x="695" y="474" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#0f7a8a">ssb-TimeOffset</text>
+  <text x="695" y="492" text-anchor="middle" font-size="11" fill="#607d8b">网络连切换命令都不用发</text>
+
+  <text x="430" y="556" text-anchor="middle" font-size="1" fill="none">.</text>
+</svg>

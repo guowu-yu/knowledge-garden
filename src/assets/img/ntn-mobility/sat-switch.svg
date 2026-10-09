@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 580" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="580" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">换星重同步：Hard vs Soft（Rel-18 satSwitchWithReSync）</text>
+
+  <!-- Hard switch -->
+  <rect x="30" y="66" width="800" height="230" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="60" y="94" font-size="16" font-weight="bold" fill="#0f7a8a">硬切换（Hard）：t-Service 时刻断旧连新</text>
+  <line x1="70" y1="200" x2="790" y2="200" stroke="#90a4ae" stroke-width="2"/>
+  <text x="770" y="222" text-anchor="end" font-size="11" fill="#607d8b">UTC（1900-01-01 纪元，10ms 步进）</text>
+  <!-- t-service -->
+  <line x1="520" y1="130" x2="520" y2="200" stroke="#d32f2f" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="520" y="122" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#d32f2f">t-Service</text>
+  <!-- sat1 segment -->
+  <g transform="translate(240,165)">
+    <rect x="-14" y="-9" width="28" height="18" rx="3" fill="#0f7a8a"/>
+    <rect x="-36" y="-3" width="19" height="6" fill="#4dd0e1"/>
+    <rect x="17" y="-3" width="19" height="6" fill="#4dd0e1"/>
+  </g>
+  <text x="240" y="196" text-anchor="middle" font-size="11.5" fill="#37474f">卫星 A 在服务（STA1）</text>
+  <!-- gap -->
+  <rect x="521" y="182" width="70" height="14" fill="#ffcdd2"/>
+  <text x="556" y="178" text-anchor="middle" font-size="11" fill="#d32f2f">中断</text>
+  <!-- sat2 -->
+  <g transform="translate(660,165)">
+    <rect x="-14" y="-9" width="28" height="18" rx="3" fill="#2e7d32"/>
+    <rect x="-36" y="-3" width="19" height="6" fill="#a5d6a7"/>
+    <rect x="17" y="-3" width="19" height="6" fill="#a5d6a7"/>
+  </g>
+  <text x="660" y="196" text-anchor="middle" font-size="11.5" fill="#37474f">卫星 B 接棒（STA2）</text>
+  <text x="60" y="240" font-size="12.5" fill="#455a64">UE 行为（38.331 §5.7.19）：stop T430 → 通知底层 UL 同步丢失 → 按 SatSwitchWithReSync 里的</text>
+  <text x="60" y="262" font-size="12.5" fill="#455a64">ntn-Config 重新同步目标卫星 DL → 从新 epochTime 重启 T430 → 恢复 UL 同步。同一 PCI，无 RRC 重配。</text>
+  <text x="60" y="284" font-size="12.5" fill="#d32f2f">中断时间要求（38.523/RAN4）：Tinterrupt = Tsearch + Tprocessing(≤10ms) + T∆ + Tmargin(≤2ms)</text>
+
+  <!-- Soft switch -->
+  <rect x="30" y="316" width="800" height="230" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="60" y="344" font-size="16" font-weight="bold" fill="#0f7a8a">软切换（Soft）：t-ServiceStart 起提前预同步</text>
+  <line x1="70" y1="470" x2="790" y2="470" stroke="#90a4ae" stroke-width="2"/>
+  <!-- t-ServiceStart -->
+  <line x1="380" y1="396" x2="380" y2="470" stroke="#ef6c00" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="380" y="390" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#ef6c00">t-ServiceStart</text>
+  <!-- t-service -->
+  <line x1="560" y1="396" x2="560" y2="470" stroke="#d32f2f" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="560" y="390" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#d32f2f">t-Service</text>
+  <!-- overlap window -->
+  <rect x="381" y="452" width="178" height="14" fill="#ffe0b2"/>
+  <text x="470" y="448" text-anchor="middle" font-size="11.5" fill="#ef6c00">双星重叠窗（T-duration）</text>
+  <g transform="translate(240,435)">
+    <rect x="-14" y="-9" width="28" height="18" rx="3" fill="#0f7a8a"/>
+    <rect x="-36" y="-3" width="19" height="6" fill="#4dd0e1"/>
+    <rect x="17" y="-3" width="19" height="6" fill="#4dd0e1"/>
+  </g>
+  <text x="240" y="466" text-anchor="middle" font-size="11.5" fill="#37474f">卫星 A 服务至 t-Service</text>
+  <g transform="translate(680,435)">
+    <rect x="-14" y="-9" width="28" height="18" rx="3" fill="#2e7d32"/>
+    <rect x="-36" y="-3" width="19" height="6" fill="#a5d6a7"/>
+    <rect x="17" y="-3" width="19" height="6" fill="#a5d6a7"/>
+  </g>
+  <text x="680" y="466" text-anchor="middle" font-size="11.5" fill="#37474f">卫星 B（预同步后接棒）</text>
+  <text x="60" y="504" font-size="12.5" fill="#455a64">UE 在窗口内自行择机完成 DL 同步：ssb-TimeOffset（0..159 子帧）给出源/目标卫星 SSB 的时间偏移，</text>
+  <text x="60" y="526" font-size="12.5" fill="#455a64">UE 无需全盲搜索。软切换延迟要求：Tsoft = max(t-Service−t-ServiceStart, Tsearch+T∆+Tmargin) + Tprocessing。</text>
+  <text x="60" y="548" font-size="12.5" fill="#2e7d32">要求：两星 SSB 在 UE 接收端时间上至少间隔 1 个 OFDM 符号，期间允许调度限制保护目标 SSB。</text>
+
+  <text x="430" y="576" text-anchor="middle" font-size="1" fill="none">.</text>
+</svg>

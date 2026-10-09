@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="620" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">NTN 移动性全景：三个状态、四类迁移</text>
+
+  <!-- three states -->
+  <rect x="70" y="80" width="200" height="70" rx="10" fill="#f2fafb" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="170" y="110" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">RRC_IDLE</text>
+  <text x="170" y="132" text-anchor="middle" font-size="12" fill="#455a64">小区重选</text>
+
+  <rect x="330" y="80" width="200" height="70" rx="10" fill="#f2fafb" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="430" y="110" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">RRC_INACTIVE</text>
+  <text x="430" y="132" text-anchor="middle" font-size="12" fill="#455a64">重选 / RNA 更新</text>
+
+  <rect x="590" y="80" width="200" height="70" rx="10" fill="#f2fafb" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="690" y="110" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">RRC_CONNECTED</text>
+  <text x="690" y="132" text-anchor="middle" font-size="12" fill="#455a64">切换 / 换星</text>
+
+  <!-- row1: idle reselection -->
+  <rect x="50" y="185" width="760" height="120" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="70" y="212" font-size="14.5" font-weight="bold" fill="#0f7a8a">① IDLE/INACTIVE 重选（38.304）——距离与时间决定要不要测</text>
+  <text x="70" y="238" font-size="12.5" font-family="Consolas, monospace" fill="#37474f">distanceThresh（50m 步进）</text>
+  <text x="70" y="258" font-size="12.5" fill="#455a64">UE-GNSS 距小区参考点 &lt; 阈值 → 可不测量（信号必然还在覆盖内）；超阈值才启动。</text>
+  <text x="70" y="280" font-size="12.5" font-family="Consolas, monospace" fill="#d32f2f">t-Service 强制条款</text>
+  <text x="70" y="298" font-size="12.5" fill="#455a64">服务将止 → 无论距离与 S 准则，必须开始邻区测量，时间由 UE 实现决定。</text>
+
+  <!-- row2: connected handover -->
+  <rect x="50" y="325" width="760" height="120" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="70" y="352" font-size="14.5" font-weight="bold" fill="#0f7a8a">② CONNECTED 小区间切换——CHO + 几何/时间事件</text>
+  <text x="70" y="378" font-size="12.5" font-family="Consolas, monospace" fill="#37474f">condRRCReconfig（≤8 候选）+ CondEvent D1/D2/T1（或 A3/A5）</text>
+  <text x="70" y="400" font-size="12.5" fill="#455a64">网络提前部署，UE 条件满足即执行；T304 在目标小区成功 RA 后停止。</text>
+  <text x="70" y="422" font-size="12.5" fill="#455a64">候选目标来自 SIB19 的 ntn-NeighCellConfigList（含邻区 ntn-Config / 载频 / PCI）。</text>
+
+  <!-- row3: satellite switch -->
+  <rect x="50" y="465" width="760" height="120" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="70" y="492" font-size="14.5" font-weight="bold" fill="#0f7a8a">③ 同小区换星（Rel-18 satSwitchWithReSync）——连切换命令都省了</text>
+  <text x="70" y="518" font-size="12.5" font-family="Consolas, monospace" fill="#37474f">Hard: t-Service 断旧连新 | Soft: t-ServiceStart 预同步 + ssb-TimeOffset</text>
+  <text x="70" y="540" font-size="12.5" fill="#455a64">PCI 不变、无 RRC 重配；SIB19 广播即生效（仅 RRC_CONNECTED 执行，收到时在 IDLE 不触发）。</text>
+  <text x="70" y="562" font-size="12.5" fill="#455a64">t-Service 同样覆盖移动波束系统的馈电链路切换——网关换星对 UE 透明的保障。</text>
+
+  <!-- key insight -->
+  <rect x="70" y="600" width="0" height="0" fill="none"/>
+  <text x="430" y="616" text-anchor="middle" font-size="1" fill="none">.</text>
+</svg>
