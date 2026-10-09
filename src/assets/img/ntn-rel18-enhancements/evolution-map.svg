@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="560" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">NR-NTN 标准演进地图：Rel-17 → Rel-18 → Rel-19</text>
+
+  <!-- Rel-17 -->
+  <rect x="40" y="80" width="270" height="400" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="40" y="80" width="270" height="46" rx="12" fill="#0f7a8a"/>
+  <text x="175" y="110" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">Rel-17（2022）奠基</text>
+  <g font-size="14" fill="#333">
+    <text x="58" y="158">▸ 透明（弯管）载荷，gNB 在地面</text>
+    <text x="58" y="190">▸ FR1：n255 L 频段 / n256 S 频段</text>
+    <text x="58" y="222">▸ 手持终端（23 dBm），GNSS 必选</text>
+    <text x="58" y="254">▸ SIB19 / ta-Common 三阶外推</text>
+    <text x="58" y="286">▸ K_offset / 32 进程 HARQ</text>
+    <text x="58" y="318">▸ 时间/位置触发的 CHO</text>
+    <text x="58" y="350">▸ 无 TCI / 无 BFR（单波束假设）</text>
+    <text x="58" y="382">▸ IoT-NTN（NB-IoT / eMTC）</text>
+    <text x="58" y="414">▸ FR1 带宽 ≤ 30 MHz</text>
+  </g>
+  <rect x="58" y="436" width="234" height="30" rx="6" fill="#0f7a8a" opacity="0.12"/>
+  <text x="175" y="456" text-anchor="middle" font-size="13" fill="#0f7a8a" font-weight="bold">关键词：能通、能驻留、能切换</text>
+
+  <!-- arrow -->
+  <path d="M 318 280 L 350 280" stroke="#0f7a8a" stroke-width="3" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#0f7a8a"/></marker></defs>
+
+  <!-- Rel-18 -->
+  <rect x="358" y="80" width="270" height="400" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2.5"/>
+  <rect x="358" y="80" width="270" height="46" rx="12" fill="#c96a1f"/>
+  <text x="493" y="110" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">Rel-18（2024）增强</text>
+  <g font-size="14" fill="#333">
+    <text x="376" y="158">▸ FR2 Ka 频段：n510/n511/n512</text>
+    <text x="376" y="190">　（DL 17.3–20.2 / UL 27.5–30 GHz）</text>
+    <text x="376" y="222">▸ VSAT 终端分级（Type 1~5）</text>
+    <text x="376" y="254">▸ n254：L 发 S 收跨带组合</text>
+    <text x="376" y="286">▸ 上行覆盖增强（PUCCH 重复）</text>
+    <text x="376" y="318">▸ NTN-TN / NTN-NTN 移动性增强</text>
+    <text x="376" y="350">▸ 网络侧验证 UE 位置（RTT 法）</text>
+    <text x="376" y="382">▸ &gt;10 GHz Doppler 补偿细化</text>
+    <text x="376" y="414">▸ IoT-NTN 间断覆盖节电</text>
+  </g>
+  <rect x="376" y="436" width="234" height="30" rx="6" fill="#c96a1f" opacity="0.14"/>
+  <text x="493" y="456" text-anchor="middle" font-size="13" fill="#c96a1f" font-weight="bold">关键词：更宽、更稳、可管可信</text>
+
+  <!-- arrow 2 -->
+  <path d="M 636 280 L 668 280" stroke="#0f7a8a" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- Rel-19 -->
+  <rect x="676" y="80" width="250" height="400" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="676" y="80" width="250" height="46" rx="12" fill="#4a7a3a"/>
+  <text x="801" y="110" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">Rel-19（2025）跨越</text>
+  <g font-size="14" fill="#333">
+    <text x="694" y="158">▸ 再生载荷（gNB 上星）</text>
+    <text x="694" y="190">▸ 存储转发 S&amp;F + 馈电切换</text>
+    <text x="694" y="222">▸ GNSS 不再强制</text>
+    <text x="694" y="254">▸ RedCap 进 NTN（FR1）</text>
+    <text x="694" y="286">▸ 下行覆盖 / 上行容量增强</text>
+    <text x="694" y="318">▸ 广播组播大服务区</text>
+    <text x="694" y="350">▸ 新功率等级</text>
+  </g>
+  <rect x="694" y="436" width="214" height="30" rx="6" fill="#4a7a3a" opacity="0.14"/>
+  <text x="801" y="456" text-anchor="middle" font-size="13" fill="#4a7a3a" font-weight="bold">关键词：卫星成为网络节点</text>
+
+  <text x="480" y="522" text-anchor="middle" font-size="14" fill="#666">Rel-20（规划 2027）：抗 GNSS 干扰/欺骗、多轨道运行、面向 6G 的 NTN 空口重新设计</text>
+  <text x="480" y="546" text-anchor="middle" font-size="12" fill="#999">本篇聚焦 Rel-18：NR_NTN_enh（RP-223590）/ NR_NTN_LSband / IoT-NTN 增强</text>
+</svg>

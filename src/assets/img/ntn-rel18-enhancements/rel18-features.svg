@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">Rel-18 NR-NTN 增强四大板块（NR_NTN_enh 工作项）</text>
+
+  <!-- CE -->
+  <rect x="40" y="80" width="440" height="240" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="40" y="80" width="440" height="42" rx="12" fill="#0f7a8a"/>
+  <text x="260" y="108" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">① 上行覆盖增强（CE）</text>
+  <g font-size="13.5" fill="#333">
+    <text x="58" y="152">问题：手持 UE 23 dBm 打 600 km 卫星，小区边缘</text>
+    <text x="58" y="172">Msg4 的 HARQ-ACK 常常发不出去。</text>
+    <text x="58" y="206">▸ <tspan font-weight="bold">PUCCH 重复传输</tspan>：针对 Msg4 HARQ-ACK</text>
+    <text x="58" y="228">　以多次低速率重复换覆盖半径，RAN1 基线复用</text>
+    <text x="58" y="250">　地面 CE 结论，参数面向 NTN 重新调优。</text>
+    <text x="58" y="282">▸ <tspan font-weight="bold">PUSCH DMRS 捆绑增强</tspan>：时序漂移（多普勒</text>
+    <text x="58" y="304">　残余）下维持相位连续性，相干合并不塌。</text>
+  </g>
+
+  <!-- Mobility -->
+  <rect x="500" y="80" width="420" height="240" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="500" y="80" width="420" height="42" rx="12" fill="#c96a1f"/>
+  <text x="710" y="108" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">② NTN-TN / NTN-NTN 移动性增强</text>
+  <g font-size="13.5" fill="#333">
+    <text x="518" y="152">▸ <tspan font-weight="bold">TN 的 SIB19</tspan>：地面小区广播 NTN 邻区参数</text>
+    <text x="518" y="174">　（星历/t-Service），TN↔NTN 双向移动不再盲测。</text>
+    <text x="518" y="206">▸ <tspan font-weight="bold">SAN 广播 TN 地理区域清单</tspan>：卫星在 SIB 里带</text>
+    <text x="518" y="228">　"哪里有地面网 + 对应频点"，出坑前先知坑外。</text>
+    <text x="518" y="260">▸ 时间/位置触发 CHO 条件打磨：阈值评估考虑</text>
+    <text x="518" y="282">　UE 位置 + 星历推演，执行更准。</text>
+    <text x="518" y="314">▸ <tspan font-weight="bold">satSwitchWithReSync</tspan>：换星即换定时基线。</text>
+  </g>
+
+  <!-- Location -->
+  <rect x="40" y="340" width="440" height="240" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="40" y="340" width="440" height="42" rx="12" fill="#4a7a3a"/>
+  <text x="260" y="368" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">③ 网络侧验证 UE 位置</text>
+  <g font-size="13.5" fill="#333">
+    <text x="58" y="412">驱动：监管要求（紧急呼叫路由、合法监听、</text>
+    <text x="58" y="432">地域性业务授权）——不能只信 UE 自报的 GNSS。</text>
+    <text x="58" y="464">▸ 定义一组 <tspan font-weight="bold">UE 与 gNB 的 Rx/Tx 时间测量</tspan></text>
+    <text x="58" y="486">　（测量组 + 上报框架，不做定位算法本身）。</text>
+    <text x="58" y="518">▸ 单卫星 <tspan font-weight="bold">多次 RTT</tspan>（不同波束/时隙）+ 已知</text>
+    <text x="58" y="540">　星历 → 交出可信的位置约束，欺骗成本骤增。</text>
+    <text x="58" y="572">▸ Rel-17 纯信任模型（GNSS 必选）→ Rel-18 可验证。</text>
+  </g>
+
+  <!-- Doppler + IoT -->
+  <rect x="500" y="340" width="420" height="240" rx="12" fill="#ffffff" stroke="#8a4f9e" stroke-width="2"/>
+  <rect x="500" y="340" width="420" height="42" rx="12" fill="#8a4f9e"/>
+  <text x="710" y="368" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">④ &gt;10 GHz 补偿细化 + IoT-NTN 节电</text>
+  <g font-size="13.5" fill="#333">
+    <text x="518" y="412">▸ Ka 频段 Doppler ±800 kHz 量级：预补偿残余的</text>
+    <text x="518" y="434">　绝对值随频率放大 → 新增补偿细化与频偏</text>
+    <text x="518" y="456">　跟踪要求（配合 Rel-18 补齐的 TRS 使用）。</text>
+    <text x="518" y="488">▸ IoT-NTN：稀疏星座 = 间断覆盖 → 不在无覆盖期</text>
+    <text x="518" y="510">　空耗电池的 <tspan font-weight="bold">节电机制</tspan>（t-Service 知晓覆盖</text>
+    <text x="518" y="532">　窗口，醒来即接入）。</text>
+    <text x="518" y="564">▸ NB-IoT/eMTC 覆盖与移动性增强（本篇不展开）。</text>
+  </g>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="560" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">Rel-18 NTN 频谱版图：FR1 三兄弟 + FR2 Ka 频段三剑客</text>
+
+  <!-- FR1 bands -->
+  <g font-family="Consolas,monospace">
+    <!-- n255 -->
+    <rect x="60" y="110" width="150" height="54" rx="6" fill="#0f7a8a" opacity="0.85"/>
+    <text x="135" y="132" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">n255 L 频段</text>
+    <text x="135" y="152" text-anchor="middle" font-size="12" fill="#fff">Rel-17</text>
+    <!-- n256 -->
+    <rect x="230" y="110" width="110" height="54" rx="6" fill="#0f7a8a" opacity="0.7"/>
+    <text x="285" y="132" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">n256 S 频段</text>
+    <text x="285" y="152" text-anchor="middle" font-size="12" fill="#fff">Rel-17</text>
+    <!-- n254 -->
+    <rect x="360" y="110" width="90" height="54" rx="6" fill="#c96a1f" opacity="0.85"/>
+    <text x="405" y="132" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">n254</text>
+    <text x="405" y="152" text-anchor="middle" font-size="12" fill="#fff">Rel-18</text>
+  </g>
+  <g font-size="12" fill="#555" font-family="Consolas,monospace">
+    <text x="135" y="180" text-anchor="middle">UL 1626.5–1660.5</text>
+    <text x="135" y="196" text-anchor="middle">DL 1525–1559 MHz</text>
+    <text x="285" y="180" text-anchor="middle">UL 1980–2010</text>
+    <text x="285" y="196" text-anchor="middle">DL 2170–2200 MHz</text>
+    <text x="405" y="180" text-anchor="middle">UL 1610–1626.5（L）</text>
+    <text x="405" y="196" text-anchor="middle">DL 2483.5–2500 MHz（S）</text>
+  </g>
+  <text x="60" y="98" font-size="14" font-weight="bold" fill="#333">FR1-NTN（410 MHz – 7.125 GHz）· 手持终端 · 带宽 ≤ 30~100 MHz</text>
+
+  <!-- big gap arrow -->
+  <path d="M 480 220 L 480 260" stroke="#c96a1f" stroke-width="3" marker-end="url(#arr2)"/>
+  <defs><marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c96a1f"/></marker></defs>
+  <text x="500" y="245" font-size="13" fill="#c96a1f" font-weight="bold">跨入 FR2-NTN（17.3 – 30 GHz）· VSAT 类终端 · CBW 最高 400 MHz</text>
+
+  <!-- FR2 axis -->
+  <line x1="80" y1="300" x2="880" y2="300" stroke="#0f7a8a" stroke-width="2"/>
+  <g font-family="Consolas,monospace" font-size="12" fill="#0f7a8a">
+    <text x="80" y="290">17.3</text><text x="880" y="290" text-anchor="end">30 GHz</text>
+  </g>
+
+  <!-- DL block -->
+  <rect x="120" y="238" width="330" height="52" rx="6" fill="#0f7a8a" opacity="0.85"/>
+  <text x="285" y="260" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">下行（SAN 发 / UE 收）</text>
+  <text x="285" y="280" text-anchor="middle" font-size="13" fill="#fff" font-family="Consolas,monospace">17.3 – 20.2 GHz</text>
+  <text x="285" y="308" text-anchor="middle" font-size="11" fill="#555">DL 频率低于 UL —— 卫星发更高增益方向的同时压低大气/雨衰损耗</text>
+
+  <!-- UL blocks -->
+  <rect x="470" y="238" width="120" height="52" rx="6" fill="#c96a1f" opacity="0.9"/>
+  <text x="530" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">n510 UL</text>
+  <text x="530" y="280" text-anchor="middle" font-size="12" fill="#fff" font-family="Consolas,monospace">27.5–28.35</text>
+
+  <rect x="600" y="238" width="150" height="52" rx="6" fill="#c96a1f" opacity="0.75"/>
+  <text x="675" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">n511 UL</text>
+  <text x="675" y="280" text-anchor="middle" font-size="12" fill="#fff" font-family="Consolas,monospace">28.35–30.0</text>
+
+  <rect x="760" y="238" width="120" height="52" rx="6" fill="#8a4f9e" opacity="0.85"/>
+  <text x="820" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">n512 UL</text>
+  <text x="820" y="280" text-anchor="middle" font-size="12" fill="#fff" font-family="Consolas,monospace">27.5–30.0</text>
+
+  <g font-size="12" fill="#555">
+    <text x="530" y="308" text-anchor="middle">（US 划分）</text>
+    <text x="675" y="308" text-anchor="middle">（EU 划分）</text>
+    <text x="820" y="308" text-anchor="middle">（全范围备选）</text>
+  </g>
+
+  <!-- VSAT classes table -->
+  <rect x="60" y="340" width="840" height="190" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="80" y="368" font-size="15" font-weight="bold" fill="#0f7a8a">FR2-NTN 终端画像：不是手机，是"锅"（TS 38.101-5 VSAT 分类）</text>
+  <g font-size="13.5" fill="#333">
+    <text x="80" y="400">▸ <tspan font-weight="bold">Type 1/2</tspan>：固定 VSAT —— 电子转向 / 机械转向天线，口径大、可指向、EIRP 最低保证 70 dBm</text>
+    <text x="80" y="426">▸ <tspan font-weight="bold">Type 3</tspan>：仅 LEO 固定 VSAT（波束切换快，扫描负担小）—— EIRP 61 dBm 起步</text>
+    <text x="80" y="452">▸ <tspan font-weight="bold">Type 4/5</tspan>：移动 VSAT（ESIM，飞机/船/车载）—— 同样 70 dBm 起步</text>
+    <text x="80" y="478">▸ EIRP 上限 86.2 dBm；离轴 EIRP 密度有严格包络，保护邻星与地面业务（ITU 规则的直接映射）</text>
+    <text x="80" y="504">▸ RRM 区分 Type 1（电子转向，波束可快扫）与 Type 2（机械转向，重定向秒级）→ 测量/切换节奏不同</text>
+  </g>
+</svg>

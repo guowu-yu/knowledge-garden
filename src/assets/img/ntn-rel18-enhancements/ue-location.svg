@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="600" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">网络侧验证 UE 位置：单卫星多 RTT 的几何账</text>
+
+  <!-- satellite -->
+  <g transform="translate(480,130)">
+    <rect x="-46" y="-30" width="92" height="60" rx="8" fill="#0f7a8a"/>
+    <rect x="-110" y="-14" width="58" height="28" rx="3" fill="#0f7a8a" opacity="0.75"/>
+    <rect x="52" y="-14" width="58" height="28" rx="3" fill="#0f7a8a" opacity="0.75"/>
+    <text x="0" y="-38" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">卫星（星历精确已知）</text>
+    <text x="0" y="52" text-anchor="middle" font-size="13" fill="#0f7a8a" font-family="Consolas,monospace">位置 P₁(t) 由 ephemeris 供给</text>
+  </g>
+
+  <!-- beams -->
+  <g stroke="#0f7a8a" fill="none" opacity="0.6">
+    <path d="M 440 175 L 220 420" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <path d="M 480 175 L 480 430" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <path d="M 520 175 L 740 420" stroke-width="1.5" stroke-dasharray="6 4"/>
+  </g>
+
+  <!-- UE -->
+  <g transform="translate(480,455)">
+    <rect x="-26" y="-26" width="52" height="52" rx="10" fill="#c96a1f"/>
+    <text x="0" y="8" text-anchor="middle" font-size="22" fill="#fff">📡</text>
+    <text x="0" y="46" text-anchor="middle" font-size="14" font-weight="bold" fill="#c96a1f">UE（位置待验证）</text>
+  </g>
+
+  <!-- RTT annotations -->
+  <g font-family="Consolas,monospace" font-size="13" fill="#333">
+    <text x="120" y="330" text-anchor="middle">RTT₁ = 2d₁/c</text>
+    <text x="480" y="330" text-anchor="middle">RTT₂ = 2d₂/c</text>
+    <text x="840" y="330" text-anchor="middle">RTT₃ = 2d₃/c</text>
+  </g>
+  <g font-size="13" fill="#333">
+    <text x="120" y="352" text-anchor="middle">波束 A 时刻 t₁</text>
+    <text x="480" y="352" text-anchor="middle">波束 B 时刻 t₂</text>
+    <text x="840" y="352" text-anchor="middle">波束 C 时刻 t₃</text>
+  </g>
+
+  <!-- geometry explanation -->
+  <rect x="60" y="500" width="840" height="82" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <g font-size="14" fill="#333">
+    <text x="80" y="528">几何账：每次 RTT 给出「UE 到该时刻卫星位置的距离约束」；不同波束/时隙的卫星位置不同 → 三个不同圆球面相交</text>
+    <text x="80" y="552">只有真实位置能同时满足全部约束 → 伪造单一 RTT 不够，须连时间轴一起伪造，欺骗成本骤增。</text>
+    <text x="80" y="574" fill="#0f7a8a" font-weight="bold">规格化产物：一组 UE / gNB 的 Rx–Tx 时间测量与上报框架（38.215），定位算法本身留给实现。</text>
+  </g>
+
+</svg>
