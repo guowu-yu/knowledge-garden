@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-label="Koffset 对调度时序的重塑：k0 k1 k2 公式">
+  <rect width="900" height="500" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">K_offset：所有「DL 调度 → UL 发送」时序统一加上的那一段（RAN1#98 决议 → 38.214/38.213）</text>
+
+  <!-- DL timeline -->
+  <g>
+    <text x="70" y="72" font-family="Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#0a5561">下行时间轴（gNB 侧）</text>
+    <line x1="90" y1="88" x2="850" y2="88" stroke="#0f7a8a" stroke-width="2"/>
+    <rect x="150" y="76" width="110" height="24" rx="4" fill="#0f7a8a"/>
+    <text x="205" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#ffffff">PDCCH（DCI 调度）</text>
+    <text x="150" y="118" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">slot n</text>
+
+    <rect x="330" y="76" width="110" height="24" rx="4" fill="#4a8fa0"/>
+    <text x="385" y="92" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#ffffff">PDSCH</text>
+    <text x="330" y="118" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">n + k0</text>
+
+    <path d="M 260 88 L 326 88" stroke="#7a8b99" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#7a8b99"/></marker></defs>
+    <text x="293" y="78" text-anchor="middle" font-family="Consolas, monospace" font-size="10.5" fill="#7a8b99">k0</text>
+  </g>
+
+  <!-- propagation gap -->
+  <g>
+    <rect x="120" y="140" width="660" height="56" rx="10" fill="#fdf3e3" stroke="#c9852c" stroke-width="1.4"/>
+    <text x="450" y="163" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#a9681f">K_offset（≈ 服务链路 RTT + Common TA，以 15 kHz slot 计）</text>
+    <text x="450" y="183" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">SIB19 广播 cellSpecificKoffset；UE 专属时由 MAC CE 换成 ue-specific-K-Offset（对应 UE 能力）</text>
+  </g>
+
+  <!-- UL timeline -->
+  <g>
+    <text x="70" y="236" font-family="Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#a9681f">上行时间轴（UE 侧，已预补偿对齐）</text>
+    <line x1="90" y1="252" x2="850" y2="252" stroke="#c9852c" stroke-width="2"/>
+
+    <rect x="300" y="240" width="110" height="24" rx="4" fill="#c9852c"/>
+    <text x="355" y="256" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#ffffff">PUSCH</text>
+    <text x="300" y="282" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">n·2^(μ_UL−μ_PDCCH) + k2 + K_offset</text>
+
+    <rect x="580" y="240" width="120" height="24" rx="4" fill="#a9681f"/>
+    <text x="640" y="256" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#ffffff">PUCCH：HARQ-ACK</text>
+    <text x="580" y="282" font-family="Consolas, monospace" font-size="11" fill="#7a8b99">PDSCH 结束于 slot m → m + k1 + K_offset</text>
+
+    <path d="M 440 252 L 576 252" stroke="#7a8b99" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <text x="508" y="242" text-anchor="middle" font-family="Consolas, monospace" font-size="10.5" fill="#7a8b99">k1</text>
+  </g>
+
+  <!-- key points -->
+  <g>
+    <rect x="50" y="316" width="400" height="160" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="70" y="344" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">为什么加 K_offset 而不是放大 k1/k2？</text>
+    <text x="70" y="370" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">k1/k2 只覆盖处理时延（UE/GNB 能力决定）</text>
+    <text x="70" y="392" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">传播时延随卫星几何逐秒变化 → 单独变量广播</text>
+    <text x="70" y="414" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">调度器不必为每个 UE 配超长 k1/k2 表，复用一套</text>
+    <text x="70" y="436" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">kmac 另管 DL 定时参考偏移（38.213 §4.2 家族）</text>
+    <text x="70" y="462" font-family="Segoe UI, sans-serif" font-size="10" fill="#7a8b99">CSI 参考资源也减 K_offset：n − n_CSI_ref − K_offset</text>
+  </g>
+
+  <g>
+    <rect x="470" y="316" width="380" height="160" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="490" y="344" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">K_offset 必须满足的下界</text>
+    <text x="490" y="372" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">≥ 小区最大 RTT（含馈电段公共 TA），否则调度不因果：</text>
+    <text x="490" y="394" font-family="Segoe UI, sans-serif" font-size="11.5" fill="#0b1c28">Msg3/PUSCH 会在信号物理到达之前被「发出去」</text>
+    <text x="490" y="420" font-family="Consolas, monospace" font-size="11" font-weight="700" fill="#0a5561">LEO-600 透明 ≈ 26 slot｜GSO ≈ 541 slot｜上限 1023</text>
+    <text x="490" y="446" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">30 kHz SCS 下数值 ×2 换算（以 15 kHz slot 计数）</text>
+    <text x="490" y="464" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">换星/UE 专属时序由 MAC CE 动态修正</text>
+  </g>
+</svg>

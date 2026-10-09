@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-label="分层可靠性：HARQ、RLC AM、PDCP 在 NTN 中的角色重塑">
+  <rect width="900" height="470" rx="18" fill="#eef5f8"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0b1c28">可靠性分层重构：地面网里 HARQ 干 99% 的活，NTN 里 RLC 升主角</text>
+
+  <!-- protocol stack -->
+  <g>
+    <rect x="60" y="60" width="300" height="350" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="80" y="88" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">协议栈：每层的时延量级</text>
+
+    <rect x="90" y="106" width="240" height="52" rx="8" fill="#e2eef4"/>
+    <text x="210" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b1c28">PDCP</text>
+    <text x="210" y="146" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">discardTimer / t-Reordering 放大覆盖长 RTT</text>
+
+    <rect x="90" y="170" width="240" height="52" rx="8" fill="#0f7a8a"/>
+    <text x="210" y="192" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#ffffff">RLC（AM / UM）</text>
+    <text x="210" y="210" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#cfe6ec">STATUS 报告 + ARQ 重传：确定性兜底</text>
+
+    <rect x="90" y="234" width="240" height="52" rx="8" fill="#e2eef4"/>
+    <text x="210" y="256" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b1c28">MAC</text>
+    <text x="210" y="274" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">32 进程池 / 反馈开关 / DRX-RTT 定时器放大</text>
+
+    <rect x="90" y="298" width="240" height="52" rx="8" fill="#e2eef4"/>
+    <text x="210" y="320" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b1c28">PHY（HARQ-ACK）</text>
+    <text x="210" y="338" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">软合并：快但依赖反馈回路</text>
+
+    <text x="210" y="384" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">地面网：RLC 重传率 &lt; 0.1%（HARQ 承包 99% 差错）</text>
+    <text x="210" y="402" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">NTN GEO：RLC 从配角变唯一纠错层</text>
+  </g>
+
+  <!-- right: two columns comparing modes -->
+  <g>
+    <rect x="380" y="60" width="245" height="350" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="502" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0a5561">LEO 模式：HARQ 保留</text>
+    <text x="398" y="116" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">32 进程 + K_offset 时序</text>
+    <text x="398" y="140" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">反馈回路 ≈ RTT（20–40 ms）</text>
+    <text x="398" y="164" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">软合并增益保留（2–3 dB）</text>
+    <text x="398" y="188" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">RLC 只兜底极端漏检</text>
+    <text x="398" y="222" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">DCI 进程号 5 bit</text>
+    <text x="398" y="246" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">软缓存翻倍（成本）</text>
+    <text x="398" y="286" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">适用：LEO-600 全场景、</text>
+    <text x="398" y="304" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">LEO-1200 大部分场景</text>
+    <text x="502" y="352" text-anchor="middle" font-family="Consolas, monospace" font-size="10.5" font-weight="700" fill="#0a5561">快重传 + 低 BLER 目标</text>
+    <text x="502" y="384" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">（RTT 内管道保持满流）</text>
+  </g>
+
+  <g>
+    <rect x="645" y="60" width="245" height="350" rx="12" fill="#fdf3e3" stroke="#c9852c" stroke-width="1.6"/>
+    <text x="767" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#a9681f">GEO 模式：反馈禁用</text>
+    <text x="663" y="116" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">进程数无关紧要（547 需求无解）</text>
+    <text x="663" y="140" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">盲重传 + 保守 MCS 首传</text>
+    <text x="663" y="164" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">无软合并，损失 2–3 dB</text>
+    <text x="663" y="188" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">RLC AM 全责纠错（慢 RTT）</text>
+    <text x="663" y="222" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">进程立即释放 → 无停转</text>
+    <text x="663" y="246" font-family="Segoe UI, sans-serif" font-size="11" fill="#0b1c28">软缓存占用降低</text>
+    <text x="767" y="286" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">适用：GEO/高时延 LEO、</text>
+    <text x="767" y="304" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a8b99">广播类、时延不敏感业务</text>
+    <text x="767" y="352" text-anchor="middle" font-family="Consolas, monospace" font-size="10.5" font-weight="700" fill="#a9681f">首传必达 + RLC 兜底</text>
+    <text x="767" y="384" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10.5" fill="#7a8b99">（把快反馈换成首传鲁棒性）</text>
+  </g>
+
+  <g>
+    <rect x="60" y="424" width="830" height="30" rx="8" fill="#e2eef4"/>
+    <text x="475" y="443" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#0a5561">核心权衡：HARQ 用「时延」换「纠错速度」，RLC 用「重传 RTT」换「确定性」——NTN 逼着网络按轨道选边站</text>
+  </g>
+</svg>
