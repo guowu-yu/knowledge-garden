@@ -3,7 +3,7 @@
 > 更新日期：2026-10-10 ｜ 站点：https://guowu-yu.github.io/knowledge-garden/
 > 用法：逐个专题学习，完成后勾选；每个专题发布到知识站后把状态改为「已上线」并附链接。
 >
-> **当前进度**：已完成 9 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换），剩余 12 个待学专题。模块一（接入与链路层）P1 全部完成 ✅。建议顺序：P2 功控 → P2 RLM/BFM → P2 测量 CSI → P2 信道链路预算 → P2 Rel-18 增强 → P2 轨道架构 → P3 射频频段 → P3 IoT NTN → P3 Rel-19/未来 → P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
+> **当前进度**：已完成 10 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控），剩余 11 个待学专题。建议顺序：P2 RLM/BFM → P2 测量 CSI → P2 信道链路预算 → P2 Rel-18 增强 → P2 轨道架构 → P3 射频频段 → P3 IoT NTN → P3 Rel-19/未来 → P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
 
 ## 已完成（基础层 · 静态视角）
 
@@ -18,6 +18,7 @@
 | ✅ 已上线 | NTN 调度与 HARQ | 停等重传在长管道里如何各就其位 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-harq.html |
 | ✅ 已上线 | NTN 定时器与定时关系全表 | 偏移/拉长/新生三类机制、T430、全表汇总 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-timers.html |
 | ✅ 已上线 | NTN 移动性与卫星切换 | 几何/时间驱动切换、CHO、硬/软换星重同步 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-mobility.html |
+| ✅ 已上线 | NTN 功率控制 | 开环主导闭环微调、链路预算、功率等级与 PHR | https://guowu-yu.github.io/knowledge-garden/topics/ntn-power.html |
 
 ---
 
@@ -29,7 +30,7 @@
 | --- | --- | --- | --- | --- |
 | ✅ 已上线 | NTN 随机接入增强 | PRACH 长前导、MSG1/MSG3 重传放大、ra-ResponseTimer 容忍分钟级延迟、两步 RACH 在 NTN 的适配 | 38.213 / 38.321 | P1 |
 | ✅ 已上线 | NTN 多普勒与时频补偿 | UE 预补偿的具体算法：GNSS 时钟如何换算频偏、LoS 多普勒模型、公共/专用频偏的分工 | 38.211 / TR 38.811 | P1 |
-| ☐ | NTN 功率控制 | 路损估计基于 UE 位置而非测量、开环主导 + 闭环失配、PUSCH/PUCCH/PRACH 功控适配 | 38.213 §7 | P2 |
+| ✅ 已上线 | NTN 功率控制 | 路损估计基于 UE 位置而非测量、开环主导 + 闭环失配、PUSCH/PUCCH/PRACH 功控适配 | 38.213 §7 | P2 |
 | ✅ 已上线 | NTN 调度与 HARQ | 32 个 HARQ 进程、feedback-disabled 模式与盲重传、Koffset 对调度时序的重塑、RLC/ARQ 大窗口 | 38.214 / 38.321 | P1 |
 
 ### 模块二：连接保持与移动性（怎么不掉线、怎么换星）

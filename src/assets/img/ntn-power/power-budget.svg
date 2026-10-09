@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="560" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">NTN 功控第一道关：23 dBm 要打过两千公里</text>
+
+  <!-- left: geometry -->
+  <rect x="30" y="70" width="390" height="270" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="225" y="98" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f7a8a">链路几何 vs 地面</text>
+  <!-- earth -->
+  <path d="M60 300 Q225 210 390 300" stroke="#b0bec5" stroke-width="3" fill="#f7fbfc"/>
+  <rect x="105" y="255" width="10" height="40" fill="#546e7a"/>
+  <polygon points="100,255 120,255 110,232" fill="#546e7a"/>
+  <text x="110" y="316" text-anchor="middle" font-size="12" fill="#37474f">地面 gNB</text>
+  <circle cx="240" cy="262" r="8" fill="#0f7a8a"/>
+  <text x="240" y="288" text-anchor="middle" font-size="12" fill="#37474f">UE</text>
+  <text x="205" y="240" text-anchor="middle" font-size="12" fill="#ef6c00">~1 km 量级</text>
+  <!-- satellite arc -->
+  <g transform="translate(560,140)">
+    <rect x="-14" y="-9" width="28" height="18" rx="3" fill="#0f7a8a"/>
+    <rect x="-36" y="-3" width="19" height="6" fill="#4dd0e1"/>
+    <rect x="17" y="-3" width="19" height="6" fill="#4dd0e1"/>
+  </g>
+  <text x="640" y="132" font-size="12" fill="#37474f">LEO-600</text>
+  <path d="M552 150 Q470 200 448 256" stroke="#0f7a8a" stroke-width="2" fill="none"/>
+  <circle cx="445" cy="262" r="8" fill="#0f7a8a"/>
+  <text x="445" y="288" text-anchor="middle" font-size="12" fill="#37474f">UE</text>
+  <text x="500" y="200" text-anchor="middle" font-size="12" fill="#ef6c00">600–1200 km（斜距）</text>
+
+  <!-- right: budget table -->
+  <rect x="440" y="70" width="390" height="270" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="635" y="98" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f7a8a">自由空间路损（FSPL）对比</text>
+  <line x1="465" y1="120" x2="815" y2="120" stroke="#c9dde3"/>
+  <text x="465" y="142" font-size="12.5" fill="#37474f" font-weight="bold">场景</text>
+  <text x="640" y="142" font-size="12.5" fill="#37474f" font-weight="bold">斜距</text>
+  <text x="735" y="142" font-size="12.5" fill="#37474f" font-weight="bold">FSPL@2GHz</text>
+  <line x1="465" y1="154" x2="815" y2="154" stroke="#e3edf1"/>
+  <text x="465" y="176" font-size="12.5" fill="#455a64">地面宏站（1 km）</text>
+  <text x="655" y="176" font-size="12.5" fill="#455a64">1 km</text>
+  <text x="730" y="176" font-size="12.5" font-family="Consolas, monospace" fill="#2e7d32">≈ 118 dB</text>
+  <text x="465" y="204" font-size="12.5" fill="#455a64">LEO 过顶（天底）</text>
+  <text x="655" y="204" font-size="12.5" fill="#455a64">600 km</text>
+  <text x="730" y="204" font-size="12.5" font-family="Consolas, monospace" fill="#ef6c00">≈ 174 dB</text>
+  <text x="465" y="232" font-size="12.5" fill="#455a64">LEO 低仰角</text>
+  <text x="655" y="232" font-size="12.5" fill="#455a64">~1200 km</text>
+  <text x="730" y="232" font-size="12.5" font-family="Consolas, monospace" fill="#d32f2f">≈ 180 dB</text>
+  <text x="465" y="260" font-size="12.5" fill="#455a64">GEO</text>
+  <text x="655" y="260" font-size="12.5" fill="#455a64">~36000 km+</text>
+  <text x="730" y="260" font-size="12.5" font-family="Consolas, monospace" fill="#d32f2f">≈ 210 dB</text>
+  <line x1="465" y1="280" x2="815" y2="280" stroke="#c9dde3"/>
+  <text x="635" y="306" text-anchor="middle" font-size="13" fill="#455a64">比地面多出 <tspan font-weight="bold" fill="#d32f2f">60–90 dB</tspan>——卫星侧用高增益天线补一半，</text>
+  <text x="635" y="326" text-anchor="middle" font-size="13" fill="#455a64">剩下全压在 UE 的发射功率和链路预算上。</text>
+
+  <!-- bottom: power classes -->
+  <rect x="30" y="360" width="800" height="160" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="430" y="388" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">UE 功率等级（TS 38.101-5 卫星接入）</text>
+  <line x1="60" y1="404" x2="800" y2="404" stroke="#c9dde3"/>
+  <text x="90" y="426" font-size="12.5" fill="#37474f" font-weight="bold">等级</text>
+  <text x="260" y="426" font-size="12.5" fill="#37474f" font-weight="bold">最大发射功率</text>
+  <text x="470" y="426" font-size="12.5" fill="#37474f" font-weight="bold">频段</text>
+  <text x="660" y="426" font-size="12.5" fill="#37474f" font-weight="bold">形态</text>
+  <line x1="60" y1="438" x2="800" y2="438" stroke="#e3edf1"/>
+  <text x="90" y="460" font-size="12.5" font-family="Consolas, monospace" fill="#0f7a8a">PC3（默认）</text>
+  <text x="275" y="460" font-size="12.5" font-family="Consolas, monospace" fill="#0f7a8a">23 dBm ±2</text>
+  <text x="470" y="460" font-size="12.5" fill="#455a64">n255 / n256 / n254</text>
+  <text x="660" y="460" font-size="12.5" fill="#455a64">手持（Rel-17）</text>
+  <text x="90" y="484" font-size="12.5" font-family="Consolas, monospace" fill="#0f7a8a">PC2 / PC1（HPUE）</text>
+  <text x="275" y="484" font-size="12.5" font-family="Consolas, monospace" fill="#0f7a8a">26 / 31 dBm</text>
+  <text x="470" y="484" font-size="12.5" fill="#455a64">n256 / n255（Rel-19）</text>
+  <text x="660" y="484" font-size="12.5" fill="#455a64">车载/固定终端</text>
+  <text x="90" y="508" font-size="12.5" font-family="Consolas, monospace" fill="#0f7a8a">VSAT（FR2-NTN）</text>
+  <text x="275" y="508" font-size="12.5" font-family="Consolas, monospace" fill="#0f7a8a">EIRP 86.2 dBm</text>
+  <text x="470" y="508" font-size="12.5" fill="#455a64">n510/n511/n512 Ka 频段</text>
+  <text x="660" y="508" font-size="12.5" fill="#455a64">固定/船载 VSAT</text>
+
+  <text x="430" y="545" text-anchor="middle" font-size="13" fill="#607d8b">手持 UE 一瓦都不到，NTN 功控的本质是「预算管理」：每一 dB 都要花在刀刃上</text>
+</svg>

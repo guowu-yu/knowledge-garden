@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 600" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="600" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">同一套公式，两种角色分配</text>
+
+  <!-- formula banner -->
+  <rect x="60" y="66" width="740" height="76" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="430" y="98" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#0f7a8a">P_PUSCH = min( P_CMAX, 10·lg(2^μ·M_RB) + P0 + α·PL + Δ_TF + f(i) )</text>
+  <text x="430" y="124" text-anchor="middle" font-size="12.5" fill="#607d8b">38.213 §7.1 —— NTN 一字未改；变的是每个变量的时间尺度和可信度</text>
+
+  <!-- comparison table -->
+  <rect x="30" y="166" width="800" height="330" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <line x1="60" y1="200" x2="800" y2="200" stroke="#c9dde3"/>
+  <text x="90" y="224" font-size="13" fill="#37474f" font-weight="bold">维度</text>
+  <text x="300" y="224" font-size="13" fill="#37474f" font-weight="bold">地面网络</text>
+  <text x="590" y="224" font-size="13" fill="#37474f" font-weight="bold">NTN</text>
+  <line x1="60" y1="238" x2="800" y2="238" stroke="#e3edf1"/>
+
+  <text x="90" y="264" font-size="12.5" fill="#455a64">PL 来源</text>
+  <text x="300" y="264" font-size="12.5" fill="#455a64">DL RSRP 测量（SSB/CSI-RS）</text>
+  <text x="590" y="264" font-size="12.5" fill="#455a64">RSRP + 几何可预计算（GNSS+星历）</text>
+
+  <text x="90" y="294" font-size="12.5" fill="#455a64">PL 时变尺度</text>
+  <text x="300" y="294" font-size="12.5" fill="#455a64">UE 移动/衰落，随机</text>
+  <text x="590" y="294" font-size="12.5" fill="#455a64">卫星过境确定函数（LEO 一次过境 ~6 dB）</text>
+
+  <text x="90" y="324" font-size="12.5" fill="#455a64">闭环 TPC 角色</text>
+  <text x="300" y="324" font-size="12.5" fill="#455a64">主力（ms 级闭环）</text>
+  <text x="590" y="324" font-size="12.5" fill="#0f7a8a" font-weight="bold">慢速微调（LEO 数十 ms / GEO 550 ms+）</text>
+
+  <text x="90" y="354" font-size="12.5" fill="#455a64">α 取值倾向</text>
+  <text x="300" y="354" font-size="12.5" fill="#455a64">分数补偿（0.4–0.9，干扰受限）</text>
+  <text x="590" y="354" font-size="12.5" fill="#0f7a8a" font-weight="bold">α=1 全补偿（噪声受限为主）</text>
+
+  <text x="90" y="384" font-size="12.5" fill="#455a64">UE 功率预算</text>
+  <text x="300" y="384" font-size="12.5" fill="#455a64">PC3 23 dBm 通常够用</text>
+  <text x="590" y="384" font-size="12.5" fill="#455a64">常贴 P_CMAX 上限（预算寸土寸金）</text>
+
+  <text x="90" y="414" font-size="12.5" fill="#455a64">PHR 价值</text>
+  <text x="300" y="414" font-size="12.5" fill="#455a64">调度参考之一</text>
+  <text x="590" y="414" font-size="12.5" fill="#455a64">长 RTT 下几乎唯一准确的余量信息</text>
+
+  <text x="90" y="444" font-size="12.5" fill="#455a64">覆盖手段</text>
+  <text x="300" y="444" font-size="12.5" fill="#455a64">重复传输（部分）</text>
+  <text x="590" y="444" font-size="12.5" fill="#455a64">重复 + 大波束增益 + HPUE/VSAT 等级</text>
+
+  <text x="90" y="474" font-size="12.5" fill="#455a64">干扰场景</text>
+  <text x="300" y="474" font-size="12.5" fill="#455a64">小区间干扰受限（α&lt;1 控干扰）</text>
+  <text x="590" y="474" font-size="12.5" fill="#455a64">波束内噪声受限（大波束、低密度）</text>
+
+  <!-- insight -->
+  <rect x="60" y="516" width="740" height="60" rx="10" fill="#f2fafb" stroke="#9fd3db"/>
+  <text x="430" y="542" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f7a8a">一句话：地面功控在「追干扰」，NTN 功控在「追预算」</text>
+  <text x="430" y="564" text-anchor="middle" font-size="12" fill="#607d8b">α、闭环、重复、功率等级，全部服务于同一个目标——把有限的 23 dBm 花在刀刃上</text>
+</svg>

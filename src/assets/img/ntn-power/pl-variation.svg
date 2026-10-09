@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="560" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">开环主导：路损是可预测的几何函数</text>
+
+  <!-- SLANT RANGE curve -->
+  <rect x="30" y="70" width="800" height="250" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="430" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">LEO-600 一次过境的斜距与 FSPL（示意）</text>
+  <!-- axes -->
+  <line x1="80" y1="280" x2="790" y2="280" stroke="#90a4ae" stroke-width="1.5"/>
+  <line x1="80" y1="120" x2="80" y2="280" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="60" y="126" font-size="11" fill="#607d8b">dB</text>
+  <text x="770" y="298" font-size="11" fill="#607d8b">时间（升起 → 过顶 → 落下）</text>
+  <!-- FSPL curve: high at ends, dip in middle -->
+  <path d="M100 145 C 200 150, 300 165, 400 215 C 435 235, 465 240, 500 222 C 600 180, 700 152, 780 145" stroke="#0f7a8a" stroke-width="3" fill="none"/>
+  <text x="155" y="170" font-size="11.5" fill="#0f7a8a">低仰角 ≈ 180 dB（~1200 km）</text>
+  <text x="415" y="252" font-size="11.5" fill="#0f7a8a">过顶 ≈ 174 dB（600 km）</text>
+  <text x="580" y="200" font-size="11.5" fill="#0f7a8a">差值 ≈ 6 dB</text>
+  <!-- markers -->
+  <line x1="447" y1="238" x2="447" y2="280" stroke="#90a4ae" stroke-dasharray="4 3"/>
+  <text x="447" y="296" text-anchor="middle" font-size="11" fill="#607d8b">过顶</text>
+  <text x="110" y="296" font-size="11" fill="#607d8b">升起</text>
+  <text x="755" y="296" font-size="11" fill="#607d8b">落下</text>
+  <text x="430" y="312" text-anchor="middle" font-size="12.5" fill="#455a64">UE 知道自己在哪（GNSS）+ 卫星在哪（星历）→ 斜距是纯几何 → PL 可提前算出，不需要等测量</text>
+
+  <!-- bottom: three info sources -->
+  <rect x="30" y="345" width="800" height="175" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="430" y="373" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">NTN 开环的三块拼图（缺一不通信）</text>
+
+  <rect x="55" y="392" width="240" height="108" rx="8" fill="#f2fafb" stroke="#9fd3db"/>
+  <text x="175" y="416" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f7a8a">GNSS 位置</text>
+  <text x="175" y="438" text-anchor="middle" font-size="12" fill="#37474f">UE 自己的坐标（必选能力）</text>
+  <text x="175" y="458" text-anchor="middle" font-size="11" fill="#607d8b">无有效定位 → 不得与网络通信</text>
+  <text x="175" y="476" text-anchor="middle" font-family="Consolas, monospace" font-size="10.5" fill="#0f7a8a">38.300 §16.14 / 38.101-5</text>
+
+  <rect x="315" y="392" width="240" height="108" rx="8" fill="#f2fafb" stroke="#9fd3db"/>
+  <text x="435" y="416" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f7a8a">卫星星历</text>
+  <text x="435" y="438" text-anchor="middle" font-size="12" fill="#37474f">SIB19 广播（stateVectors/orbital）</text>
+  <text x="435" y="458" text-anchor="middle" font-size="11" fill="#607d8b">含 epochTime 有效期边界</text>
+  <text x="435" y="476" text-anchor="middle" font-family="Consolas, monospace" font-size="10.5" fill="#0f7a8a">positionVelocity / orbital</text>
+
+  <rect x="575" y="392" width="240" height="108" rx="8" fill="#f2fafb" stroke="#9fd3db"/>
+  <text x="695" y="416" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f7a8a">网络目标电平</text>
+  <text x="695" y="438" text-anchor="middle" font-family="Consolas, monospace" font-size="11.5" fill="#0f7a8a">P0 + α (RRC 配置)</text>
+  <text x="695" y="458" text-anchor="middle" font-size="11" fill="#607d8b">「希望收到多强」</text>
+  <text x="695" y="476" text-anchor="middle" font-size="11" fill="#607d8b">38.213 §7.1/7.2 公式原样适用</text>
+
+  <text x="430" y="540" text-anchor="middle" font-size="1" fill="none">.</text>
+</svg>

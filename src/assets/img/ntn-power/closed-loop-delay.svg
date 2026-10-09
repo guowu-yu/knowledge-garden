@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 580" font-family="'Segoe UI', sans-serif">
+  <rect width="860" height="580" fill="#eef5f8"/>
+  <text x="430" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">闭环降级：TPC 命令的时延账</text>
+
+  <!-- timeline ground -->
+  <rect x="30" y="70" width="800" height="200" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="60" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">地面：闭环 ms 级到位，是主力</text>
+  <line x1="70" y1="180" x2="790" y2="180" stroke="#90a4ae" stroke-width="2"/>
+  <!-- events -->
+  <circle cx="140" cy="180" r="6" fill="#0f7a8a"/>
+  <text x="140" y="204" text-anchor="middle" font-size="11.5" fill="#37474f">t0 gNB 测到偏差</text>
+  <circle cx="300" cy="180" r="6" fill="#0f7a8a"/>
+  <text x="300" y="204" text-anchor="middle" font-size="11.5" fill="#37474f">+数 ms DCI 带 TPC</text>
+  <circle cx="470" cy="180" r="6" fill="#0f7a8a"/>
+  <text x="470" y="204" text-anchor="middle" font-size="11.5" fill="#37474f">+1–2 ms UE 调整功率</text>
+  <circle cx="640" cy="180" r="6" fill="#0f7a8a"/>
+  <text x="640" y="204" text-anchor="middle" font-size="11.5" fill="#37474f">信道几乎没变</text>
+  <text x="430" y="248" text-anchor="middle" font-size="12.5" fill="#455a64">反馈环全程 &lt; 10 ms：信道（快衰落 ms 级、慢变化 s 级）在环内被持续修正</text>
+
+  <!-- timeline NTN GEO -->
+  <rect x="30" y="290" width="800" height="250" rx="10" fill="#ffffff" stroke="#c9dde3"/>
+  <text x="60" y="318" font-size="15" font-weight="bold" fill="#0f7a8a">NTN（GEO）：闭环 ~550 ms 起步，只能做慢速校正</text>
+  <line x1="70" y1="420" x2="790" y2="420" stroke="#90a4ae" stroke-width="2"/>
+  <circle cx="120" cy="420" r="6" fill="#0f7a8a"/>
+  <text x="120" y="444" text-anchor="middle" font-size="11.5" fill="#37474f">t0 gNB 测到偏差</text>
+  <circle cx="300" cy="420" r="6" fill="#2e7d32"/>
+  <text x="300" y="444" text-anchor="middle" font-size="11.5" fill="#37474f">DCI 调度 +K_offset 生效</text>
+  <circle cx="510" cy="420" r="6" fill="#d32f2f"/>
+  <text x="510" y="444" text-anchor="middle" font-size="11.5" fill="#37474f">UE 实际改变功率</text>
+  <!-- delay bracket -->
+  <line x1="120" y1="380" x2="510" y2="380" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrR)"/>
+  <defs>
+    <marker id="arrR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#d32f2f"/>
+    </marker>
+  </defs>
+  <text x="315" y="368" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#d32f2f">GEO 单向 ~270 ms × 2 + 调度时隙 ≈ 550 ms+</text>
+  <text x="430" y="482" text-anchor="middle" font-size="12.5" fill="#455a64">环还没闭上，卫星几何已经又变了。TPC 追「慢变化」还行（PL 分钟级），追快变化没戏。</text>
+  <text x="430" y="506" text-anchor="middle" font-size="12.5" fill="#0f7a8a">结论：开环把功率算到 ±几 dB，闭环只修残差——分工由物理定律决定，不是规范偏好。</text>
+
+  <text x="430" y="565" text-anchor="middle" font-size="1" fill="none">.</text>
+</svg>
