@@ -182,12 +182,80 @@ NTN_ROADMAP_ORDER = [
     "ntn-idle-inactive",
 ]
 
+# 相控阵天线学习路线图：第 21 篇总览 + 后续 32 个专题（按六阶段顺序）
+# 注意：尚未创建的 slug 会被自动跳过（悬窗只展示已上线专题），
+# 因此这份清单可以先行写入，随专题逐篇上线自动补全。
+PA_ROADMAP_ORDER = [
+    # 总览与物理机制篇
+    "phased-array-roadmap",
+    "satellite-phased-array",
+    # S1 数学与电磁地基
+    "pa-math-complex-phasor",
+    "pa-spatial-frequency-fft",
+    "pa-sampling-aliasing-grating",
+    "pa-far-field-near-field",
+    "pa-electromagnetics-basics",
+    # S2 阵列与波束基础
+    "pa-array-factor",
+    "pa-beamwidth-gain-aperture",
+    "pa-half-wavelength-criterion",
+    "pa-scan-loss",
+    "pa-amplitude-tapering",
+    "pa-pattern-synthesis-shaping",
+    # S3 硬件与器件
+    "pa-tr-module-rf-frontend",
+    "pa-phase-shifter-ttd",
+    "pa-feed-network-mutual-coupling",
+    "pa-adc-dac-dynamic-range",
+    "pa-architecture-selection",
+    # S4 波束成形算法与软件
+    "pa-conventional-beamforming",
+    "pa-adaptive-mvdr-lcmv",
+    "pa-doa-music-esprit",
+    "pa-null-broadening-robust",
+    "pa-beam-squint-wideband",
+    "pa-hybrid-beamforming",
+    "pa-fixed-point-quantization",
+    "pa-fpga-hls-implementation",
+    # S5 校准与实时实现
+    "pa-channel-error-impact",
+    "pa-rev-calibration",
+    "pa-nearfield-encoding-loopback",
+    "pa-calibration-engineering",
+    # S6 测试与一致性
+    "pa-ota-necessity",
+    "pa-ota-methods-chamber",
+    "pa-ota-metrics-spherical-scan",
+    "pa-conformance-standards",
+]
 
-def roadmap_items(topics: list[dict]) -> str:
-    """生成悬窗里的 20 条 NTN 专题导航项（按学习顺序）。"""
+
+# 悬窗配置：key = 悬窗 id 后缀（用于 DOM id / CSS 定位），其余为展示与内容定义
+ROADMAP_FLOATS = [
+    {
+        "id": "ntn",
+        "title": "5G NTN 专题学习路线图",
+        "aria": "5G NTN 专题学习路线图",
+        "hint": "点击任一项，开始学习该专题",
+        "order": NTN_ROADMAP_ORDER,
+        "variant": "ntn",
+    },
+    {
+        "id": "pa",
+        "title": "相控阵天线学习路线图",
+        "aria": "相控阵天线学习路线图",
+        "hint": "六阶段 32 个专题，点击任一项开始学习",
+        "order": PA_ROADMAP_ORDER,
+        "variant": "pa",
+    },
+]
+
+
+def roadmap_items(order: list[str], topics: list[dict]) -> str:
+    """生成悬窗里的专题导航项（按给定学习顺序）。"""
     by_slug = {t["slug"]: t for t in topics}
     rows = []
-    for i, slug in enumerate(NTN_ROADMAP_ORDER, 1):
+    for i, slug in enumerate(order, 1):
         topic = by_slug.get(slug)
         if not topic:
             continue
@@ -204,33 +272,47 @@ def roadmap_items(topics: list[dict]) -> str:
     return "\n".join(rows)
 
 
-def roadmap_float(topics: list[dict], href_prefix: str = "topics/") -> str:
-    """生成「5G NTN 专题学习路线图」飘动悬窗的 HTML。
+def roadmap_float(topics: list[dict], href_prefix: str = "topics/", cfg: dict | None = None) -> str:
+    """生成单个飘动悬窗的 HTML。
 
     href_prefix：首页用 "topics/"，专题页（位于 dist/topics/）用 "../topics/"。
+    cfg：ROADMAP_FLOATS 中的一项；缺省取第一个（NTN）。
     """
-    items = roadmap_items(topics).replace('href="topics/', f'href="{href_prefix}')
+    cfg = cfg or ROADMAP_FLOATS[0]
+    slug_id = cfg["id"]
+    items = roadmap_items(cfg["order"], topics).replace(
+        'href="topics/', f'href="{href_prefix}'
+    )
+    count = sum(1 for s in cfg["order"] if any(t["slug"] == s for t in topics))
+    variant_cls = f' roadmap-float--{cfg["variant"]}' if cfg.get("variant") else ""
     return f"""
-    <div class="roadmap-float" id="roadmap-float">
+    <div class="roadmap-float{variant_cls}" id="roadmap-float-{slug_id}">
       <button
         type="button"
         class="roadmap-toggle"
-        id="roadmap-toggle"
+        id="roadmap-toggle-{slug_id}"
         aria-expanded="false"
-        aria-controls="roadmap-panel"
+        aria-controls="roadmap-panel-{slug_id}"
       >
         <span class="roadmap-toggle-dot" aria-hidden="true"></span>
-        <span class="roadmap-toggle-text">5G NTN 专题学习路线图</span>
-        <span class="roadmap-toggle-count">20</span>
+        <span class="roadmap-toggle-text">{escape_html(cfg["title"])}</span>
+        <span class="roadmap-toggle-count">{count}</span>
         <span class="roadmap-chevron" aria-hidden="true"></span>
       </button>
-      <div class="roadmap-panel" id="roadmap-panel" role="menu" aria-label="5G NTN 专题学习路线图">
-        <p class="roadmap-hint">点击任一项，开始学习该专题</p>
+      <div class="roadmap-panel" id="roadmap-panel-{slug_id}" role="menu" aria-label="{escape_html(cfg["aria"])}">
+        <p class="roadmap-hint">{escape_html(cfg["hint"])}</p>
         <div class="roadmap-list">
           {items}
         </div>
       </div>
     </div>"""
+
+
+def roadmap_floats(topics: list[dict], href_prefix: str = "topics/") -> str:
+    """生成全部飘动悬窗（多个悬窗纵向堆叠）。"""
+    return "\n".join(
+        roadmap_float(topics, href_prefix=href_prefix, cfg=cfg) for cfg in ROADMAP_FLOATS
+    )
 
 
 def load_topics() -> list[dict]:
@@ -285,7 +367,7 @@ def build() -> None:
     )
     index_html = index_tpl.replace("{{TOPIC_COUNT}}", str(len(topics))).replace(
         "{{TOPIC_CARDS}}", cards
-    ).replace("{{NTN_ROADMAP_FLOAT}}", roadmap_float(topics, href_prefix="topics/"))
+    ).replace("{{NTN_ROADMAP_FLOAT}}", roadmap_floats(topics, href_prefix="topics/"))
     (DIST / "index.html").write_text(index_html, encoding="utf-8")
 
     for topic in topics:
@@ -319,7 +401,7 @@ def build() -> None:
             "{{COVER_BLOCK}}": cover_block,
             "{{CONTENT}}": topic["html"],
             "{{RELATED}}": related_html,
-            "{{NTN_ROADMAP_FLOAT}}": roadmap_float(topics, href_prefix="../topics/"),
+            "{{NTN_ROADMAP_FLOAT}}": roadmap_floats(topics, href_prefix="../topics/"),
         }
         for k, v in replacements.items():
             html = html.replace(k, v)

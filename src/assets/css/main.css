@@ -758,15 +758,26 @@ body {
   }
 }
 
-/* ── 5G NTN 专题学习路线图 · 飘动悬窗 ─────────────────────────── */
+/* ── 专题学习路线图 · 飘动悬窗（NTN / 相控阵，多枚纵向堆叠） ──────── */
+/* 堆叠顺序：后写入的在下层。用 flex 反向栈让每枚悬窗各自贴着上/下定位。 */
 .roadmap-float {
   position: fixed;
   right: 22px;
-  bottom: 22px;
   z-index: 60;
   width: min(340px, calc(100vw - 32px));
   font-family: var(--font-sans);
   animation: roadmap-float-drift 6.5s ease-in-out infinite;
+}
+
+/* NTN 悬窗固定在下角 */
+#roadmap-float-ntn {
+  bottom: 22px;
+}
+
+/* 相控阵悬窗叠在 NTN 悬窗之上，用 JS 依 NTN 实际高度回填 bottom */
+#roadmap-float-pa {
+  bottom: 92px;
+  animation-delay: -3.2s; /* 与 NTN 悬窗错开相位，避免同步浮动 */
 }
 
 @keyframes roadmap-float-drift {
@@ -806,6 +817,44 @@ body {
 .roadmap-toggle:hover {
   transform: translateY(-2px);
   box-shadow: 0 20px 42px rgba(6, 34, 46, 0.42);
+}
+
+/* 相控阵悬窗：换一套配色（紫 → 品红），与 NTN 的青绿区分 */
+.roadmap-float--pa .roadmap-toggle {
+  border-color: rgba(138, 58, 106, 0.5);
+  background: linear-gradient(135deg, #8a3a6a, #5c2247);
+  box-shadow: 0 14px 34px rgba(58, 12, 40, 0.34);
+}
+
+.roadmap-float--pa .roadmap-toggle:hover {
+  box-shadow: 0 20px 42px rgba(58, 12, 40, 0.44);
+}
+
+.roadmap-float--pa .roadmap-toggle-dot {
+  background: #f3a8cf;
+  animation-name: roadmap-pulse-pa;
+}
+
+@keyframes roadmap-pulse-pa {
+  0% {
+    box-shadow: 0 0 0 0 rgba(243, 168, 207, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(243, 168, 207, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(243, 168, 207, 0);
+  }
+}
+
+.roadmap-float--pa .roadmap-index {
+  color: #b04a85;
+}
+
+.roadmap-float--pa .roadmap-item:hover,
+.roadmap-float--pa .roadmap-item:focus-visible {
+  background: rgba(138, 58, 106, 0.12);
+  color: #6b2a52;
 }
 
 .roadmap-toggle-dot {
@@ -947,8 +996,11 @@ body {
 
   .roadmap-float {
     right: 12px;
-    bottom: 12px;
     width: min(320px, calc(100vw - 24px));
+  }
+
+  #roadmap-float-ntn {
+    bottom: 12px;
   }
 }
 

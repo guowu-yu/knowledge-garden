@@ -184,28 +184,77 @@ function setupTagFilters() {
 setupTagFilters();
 
 function setupRoadmapFloat() {
-  const box = document.getElementById("roadmap-float");
-  const toggle = document.getElementById("roadmap-toggle");
-  if (!box || !toggle) return;
+  const floats = Array.from(document.querySelectorAll(".roadmap-float"));
+  if (!floats.length) return;
 
-  const setOpen = (open) => {
-    box.classList.toggle("is-open", open);
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-  };
+  // 每枚悬窗独立开合
+  floats.forEach((box) => {
+    const toggle = box.querySelector(".roadmap-toggle");
+    if (!toggle) return;
 
-  toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    setOpen(!box.classList.contains("is-open"));
+    const setOpen = (open) => {
+      box.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setOpen(!box.classList.contains("is-open"));
+    });
   });
 
-  // 点击悬窗外部收起
+  // 点击悬窗外部 / Esc 收起全部
+  const closeAll = () => {
+    floats.forEach((box) => {
+      box.classList.remove("is-open");
+      const t = box.querySelector(".roadmap-toggle");
+      if (t) t.setAttribute("aria-expanded", "false");
+    });
+  };
+
   document.addEventListener("click", (e) => {
-    if (!box.contains(e.target)) setOpen(false);
+    if (!floats.some((box) => box.contains(e.target))) closeAll();
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setOpen(false);
+    if (e.key === "Escape") closeAll();
   });
+
+  stackRoadmapFloats(floats);
+  window.addEventListener("resize", () => stackRoadmapFloats(floats));
+}
+
+/**
+ * 把多枚悬窗自下而上堆叠：NTN 贴底，其余各枚依次叠在下方那枚的上面。
+ * 用 ResizeObserver 跟随展开/收起引起的 toggle 高度变化。
+ */
+function stackRoadmapFloats(floats) {
+  const gap = 12;
+  // 自下而上排序：bottom 值越大越靠下（先处理靠下的）
+  const ordered = floats
+    .map((box) => ({ box, bottom: parseFloat(getComputedStyle(box).bottom) || 0 }))
+    .sort((a, b) => a.bottom - b.bottom);
+
+  let cursor = null;
+  ordered.forEach(({ box }) => {
+    if (cursor === null) {
+      // 贴底那枚保持自身 bottom（由 CSS 决定）
+      cursor = parseFloat(getComputedStyle(box).bottom) || 0;
+    } else {
+      box.style.bottom = cursor + gap + "px";
+      cursor = cursor + gap + box.offsetHeight;
+    }
+  });
+
+  // 观察每枚悬窗高度变化，重新堆叠
+  if (typeof ResizeObserver !== "undefined") {
+    floats.forEach((box) => {
+      if (box.dataset.stackObserved === "1") return;
+      box.dataset.stackObserved = "1";
+      const ro = new ResizeObserver(() => stackRoadmapFloats(floats));
+      ro.observe(box);
+    });
+  }
 }
 
 setupRoadmapFloat();
