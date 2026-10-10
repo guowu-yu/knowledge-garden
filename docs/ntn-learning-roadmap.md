@@ -1,6 +1,10 @@
 # 5G NTN 专题学习路线图
 
 > 更新日期：2026-10-10 ｜ 站点：https://guowu-yu.github.io/knowledge-garden/
+>
+> **📡 系列外延**：NTN 20 篇收官后新增「相控阵天线学习体系：六阶段路线图（算法 / 软件视角）」——从"卫星怎么把信号打下来"往下钻一层到"天线本身怎么设计、实现、校准与认证"。
+> 👉 https://guowu-yu.github.io/knowledge-garden/topics/phased-array-roadmap.html
+> 配合既有物理篇 👉 https://guowu-yu.github.io/knowledge-garden/topics/satellite-phased-array.html
 > 用法：逐个专题学习，完成后勾选；每个专题发布到知识站后把状态改为「已上线」并附链接。
 >
 > **当前进度**：🎉 **20/20 全部完成**（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM/测量与 CSI/信道与链路预算/Rel-18 增强全集/轨道与系统架构深读/射频频段与共存/IoT NTN/Rel-19 与未来/TN-NTN 混合组网/IDLE-INACTIVE 态行为），20 项学习路线已全部上线。
