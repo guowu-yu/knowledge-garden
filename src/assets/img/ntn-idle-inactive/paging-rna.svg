@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">寻呼、TAI 锚定与 RNA：让"移动小区"能被找到</text>
+
+  <!-- paging -->
+  <rect x="34" y="62" width="436" height="250" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="62" width="436" height="34" rx="12" fill="#0f7a8a"/>
+  <text x="252" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">寻呼：波束在动，怎么找到 UE</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="120">▸ UE 在 DRX 周期里听 <tspan font-family="Consolas,monospace">P-RNTI</tspan> 的寻呼时机（PO）</text>
+    <text x="54" y="142">▸ PO 由 UE_ID（5G-S-TMSI）算出——这部分与地面一致</text>
+    <text x="54" y="168" font-weight="bold" fill="#0f7a8a">NTN 的特殊之处：</text>
+    <text x="54" y="190">· 波束扫过地理，UE 可能在"下一颗星"下</text>
+    <text x="54" y="210">· 寻呼必须发到 UE 真正所在的地理区块</text>
+    <text x="54" y="230">· 覆盖窗口约束了 PO 的有效时刻</text>
+    <text x="54" y="256" font-weight="bold" fill="#0f7a8a">→ 依赖 TAC/TAI 的地理锚定</text>
+    <text x="54" y="280" font-size="11" fill="#667">多 TAC 寻呼区域：跨星覆盖下的寻呼可达性</text>
+    <text x="54" y="300" font-size="11" fill="#667">（Rel-19 持续优化，与 LP-WUS/PEI 协同省电）</text>
+  </g>
+
+  <!-- TAI anchoring -->
+  <rect x="490" y="62" width="436" height="250" rx="12" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+  <rect x="490" y="62" width="436" height="34" rx="12" fill="#8a3a6a"/>
+  <text x="708" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">TAI / VCID 地理锚定</text>
+
+  <rect x="530" y="112" width="150" height="70" rx="7" fill="#eef5f8" stroke="#8a3a6a"/>
+  <text x="605" y="134" text-anchor="middle" font-size="10.5" fill="#8a3a6a" font-weight="bold">移动波束</text>
+  <rect x="550" y="144" width="44" height="26" rx="4" fill="#8a3a6a" opacity="0.75"/>
+  <text x="572" y="161" text-anchor="middle" font-size="8.5" fill="#fff">beam</text>
+  <text x="605" y="176" text-anchor="middle" font-size="9" fill="#667">小区 ID 随波束漂移</text>
+
+  <path d="M 690 147 L 726 147" stroke="#8a3a6a" stroke-width="2" marker-end="url(#a3)"/>
+  <defs><marker id="a3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8a3a6a"/></marker></defs>
+
+  <rect x="726" y="112" width="180" height="70" rx="7" fill="#f6eef3" stroke="#8a3a6a"/>
+  <text x="816" y="134" text-anchor="middle" font-size="10.5" fill="#8a3a6a" font-weight="bold">地理区块（固定）</text>
+  <text x="816" y="154" text-anchor="middle" font-size="9.5" fill="#334">VCID / 固定 TAI</text>
+  <text x="816" y="172" text-anchor="middle" font-size="9.5" fill="#334">映射到地理而非波束</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="510" y="210">▸ 让核心网把"移动小区"当作"固定小区"处理</text>
+    <text x="510" y="232">▸ AMF 据此选对管辖核心网（按国家）</text>
+    <text x="510" y="254">▸ 位置验证（多 RTT，5~10 km）保证映射可信</text>
+    <text x="510" y="282" fill="#8a3a6a" font-weight="bold">没有地理锚定：同一小区 ID 会随波束跨境，</text>
+    <text x="510" y="300" fill="#8a3a6a" font-weight="bold">寻呼与策略路由全部失准</text>
+  </g>
+
+  <!-- RNA -->
+  <rect x="34" y="330" width="892" height="266" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="34" y="330" width="892" height="34" rx="12" fill="#4a7a3a"/>
+  <text x="480" y="353" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">INACTIVE 态：RNA（RAN 通知区）在移动小区里的设计</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="388" font-weight="bold" fill="#4a7a3a">地面 TN 的 RNA</text>
+    <text x="54" y="410">· RNA = 一组<tspan font-weight="bold">固定小区</tspan>的集合</text>
+    <text x="54" y="430">· UE 在 RNA 内移动不通知网络（省信令）</text>
+    <text x="54" y="450">· 出 RNA 才发 RNA Update（Resume 触发）</text>
+    <text x="54" y="472" fill="#667">小区边界静止 → "区"的边界也静止</text>
+
+    <!-- diagram -->
+    <rect x="360" y="382" width="240" height="120" rx="8" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="480" y="404" text-anchor="middle" font-size="11" fill="#4a7a3a" font-weight="bold">NTN：地理锚定的 RNA</text>
+    <rect x="386" y="416" width="76" height="34" rx="5" fill="#4a7a3a" opacity="0.7"/>
+    <text x="424" y="437" text-anchor="middle" font-size="9" fill="#fff">地理区 1</text>
+    <rect x="474" y="416" width="76" height="34" rx="5" fill="#4a7a3a" opacity="0.7"/>
+    <text x="512" y="437" text-anchor="middle" font-size="9" fill="#fff">地理区 2</text>
+    <text x="480" y="470" text-anchor="middle" font-size="9.5" fill="#334">波束扫过，但"区"按地理划分</text>
+    <text x="480" y="488" text-anchor="middle" font-size="9.5" fill="#4a7a3a">UE 移动看的是"地理跨界"</text>
+
+    <text x="632" y="392" font-weight="bold" fill="#4a7a3a">与混合组网的耦合</text>
+    <text x="632" y="414" font-size="11">· 边界驻留：TN/NTN 交界的 RNA 划分</text>
+    <text x="632" y="434" font-size="11">· 出 NTN 区进 TN 区 → 一次 Res 或 Setup</text>
+    <text x="632" y="454" font-size="11">· 优先级偏好决定"该驻留哪一侧"</text>
+    <text x="632" y="476" font-size="11" fill="#667">详见 [TN/NTN 混合组网篇]</text>
+    <text x="632" y="498" font-size="11" fill="#4a7a3a" font-weight="bold">RNA 的"区"= 地理概念，不是"小区集合"</text>
+  </g>
+
+  <text x="480" y="582" text-anchor="middle" font-size="11.5" fill="#0f7a8a" font-weight="bold">贯穿全篇的一条主线：NTN 把空闲/非激活态的"坐标"从"小区"换成了"地理 + 时间"。</text>
+</svg>

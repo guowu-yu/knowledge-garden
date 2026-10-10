@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">重选与测量：从"看信号"到"看时间与位置"</text>
+
+  <!-- TN baseline -->
+  <rect x="34" y="62" width="436" height="220" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="62" width="436" height="34" rx="12" fill="#0f7a8a"/>
+  <text x="252" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">地面 TN 的经典重选逻辑</text>
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="120" font-weight="bold" fill="#0f7a8a">① S 准则（能否驻留）</text>
+    <text x="54" y="142" font-size="11">Srxlev &gt; 0 且 Squal &gt; 0</text>
+    <text x="54" y="160" font-size="11" font-family="Consolas,monospace">Srxlev = Qrxlevmeas − (Qrxlevmin + Qrxlevminoffset) − Pcomp</text>
+
+    <text x="54" y="190" font-weight="bold" fill="#0f7a8a">② 测量门限（要不要测）</text>
+    <text x="54" y="212" font-size="11">服务小区好 → 可不测低优先级</text>
+    <text x="54" y="230" font-size="11">高优先级频点 → 必须一直测</text>
+
+    <text x="54" y="258" font-weight="bold" fill="#0f7a8a">③ R 准则（选谁）</text>
+    <text x="54" y="276" font-size="11" font-family="Consolas,monospace">Rs = Qmeas,s + Qhyst ；Rn = Qmeas,n − Qoffset</text>
+  </g>
+
+  <!-- NTN additions -->
+  <rect x="490" y="62" width="436" height="220" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="490" y="62" width="436" height="34" rx="12" fill="#c96a1f"/>
+  <text x="708" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">NTN 新增的两个维度</text>
+  <g font-size="11.5" fill="#333">
+    <rect x="508" y="112" width="400" height="76" rx="7" fill="#eef5f8" stroke="#c96a1f"/>
+    <text x="522" y="134" font-weight="bold" fill="#c96a1f">维度 A：距离（referenceLocation + distanceThresh）</text>
+    <text x="522" y="156" font-size="10.5">若服务小区广播了参考点与 distanceThresh（步长 50 m），</text>
+    <text x="522" y="174" font-size="10.5">且 UE 已知自身位置 → 离参考点近可不测同频/低优先级邻区</text>
+
+    <rect x="508" y="198" width="400" height="76" rx="7" fill="#eef5f8" stroke="#8a3a6a"/>
+    <text x="522" y="220" font-weight="bold" fill="#8a3a6a">维度 B：时间（t-Service）</text>
+    <text x="522" y="242" font-size="10.5">若服务小区的 t-Service 存在 → UE 必须在其<b>之前</b>测</text>
+    <text x="522" y="260" font-size="10.5">无论距离多远、质量多好——卫星要走了，必须提前准备</text>
+  </g>
+
+  <!-- conflict rule -->
+  <rect x="34" y="300" width="892" height="66" rx="10" fill="#fff7ee" stroke="#c96a1f" stroke-width="2"/>
+  <text x="480" y="326" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#c96a1f">冲突规则：时间触发优先于距离判断</text>
+  <text x="480" y="350" text-anchor="middle" font-size="11.5" fill="#333">distanceThresh 是"省电优化"（能不测就不测）；t-Service 是"服务保障"（必须提前测）——两者冲突时 t-Service 赢。</text>
+
+  <!-- sequence -->
+  <rect x="34" y="384" width="892" height="202" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="34" y="384" width="892" height="34" rx="12" fill="#4a7a3a"/>
+  <text x="480" y="407" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">一次典型的"过境重选"时序（LEO）</text>
+
+  <line x1="70" y1="500" x2="890" y2="500" stroke="#4a7a3a" stroke-width="3"/>
+  <g font-size="10.5" text-anchor="middle">
+    <circle cx="140" cy="500" r="8" fill="#0f7a8a"/>
+    <text x="140" y="482" font-weight="bold" fill="#0f7a8a">t0 驻留</text>
+    <text x="140" y="530" fill="#334">服务星覆盖，质量好</text>
+    <text x="140" y="548" fill="#667">可不做同频测量</text>
+
+    <circle cx="380" cy="500" r="8" fill="#c96a1f"/>
+    <text x="380" y="482" font-weight="bold" fill="#c96a1f">t0→t1 临近 t-Service</text>
+    <text x="380" y="530" fill="#334">无论距离/质量，</text>
+    <text x="380" y="548" fill="#667">必须开始测量邻区</text>
+
+    <circle cx="630" cy="500" r="8" fill="#8a3a6a"/>
+    <text x="630" y="482" font-weight="bold" fill="#8a3a6a">t1 重选判决</text>
+    <text x="630" y="530" fill="#334">Rn 持续 &gt; Rs（Treselection）</text>
+    <text x="630" y="548" fill="#667">触发重选至邻星/邻波束</text>
+
+    <circle cx="850" cy="500" r="8" fill="#4a7a3a"/>
+    <text x="850" y="482" font-weight="bold" fill="#4a7a3a">t2 新小区驻留</text>
+    <text x="850" y="530" fill="#334">读新 SIB19</text>
+    <text x="850" y="548" fill="#667">重建补偿参数</text>
+  </g>
+  <text x="480" y="574" text-anchor="middle" font-size="11" fill="#4a7a3a" font-weight="bold">关键：NTN 的重选是"可预测"的——时间/位置信息让 UE 能提前、而非被动地准备换星。</text>
+</svg>

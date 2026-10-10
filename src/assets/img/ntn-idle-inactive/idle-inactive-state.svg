@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">IDLE / INACTIVE 态在 NTN 里的特殊性</text>
+
+  <!-- state machine -->
+  <rect x="34" y="62" width="892" height="200" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="54" y="90" font-size="15" font-weight="bold" fill="#0f7a8a">三态回顾：空闲态与非激活态是"无连接但有事做"的状态</text>
+
+  <rect x="90" y="112" width="180" height="60" rx="9" fill="#0f7a8a" opacity="0.85"/>
+  <text x="180" y="138" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">RRC_IDLE</text>
+  <text x="180" y="158" text-anchor="middle" font-size="10.5" fill="#fff">驻留 · 读 SI · 听寻呼</text>
+
+  <rect x="390" y="112" width="200" height="60" rx="9" fill="#c96a1f" opacity="0.9"/>
+  <text x="490" y="138" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">RRC_INACTIVE</text>
+  <text x="490" y="158" text-anchor="middle" font-size="10.5" fill="#fff">保留 AS 上下文 · I-RNTI · RNA</text>
+
+  <rect x="710" y="112" width="180" height="60" rx="9" fill="#4a7a3a" opacity="0.85"/>
+  <text x="800" y="138" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">RRC_CONNECTED</text>
+  <text x="800" y="158" text-anchor="middle" font-size="10.5" fill="#fff">完整连接 · 数据收发</text>
+
+  <path d="M 270 142 L 390 142" stroke="#667" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="330" y="132" text-anchor="middle" font-size="9.5" fill="#667">Suspend</text>
+  <path d="M 390 130 L 270 130" stroke="#667" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="330" y="108" text-anchor="middle" font-size="9.5" fill="#667">Resume</text>
+  <path d="M 590 142 L 710 142" stroke="#667" stroke-width="2" marker-end="url(#a1)"/>
+  <path d="M 710 130 L 590 130" stroke="#667" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="650" y="132" text-anchor="middle" font-size="9.5" fill="#667">Setup/Release</text>
+  <defs><marker id="a1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#667"/></marker></defs>
+
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="200">▸ 两个"无连接"状态都要做：<tspan font-weight="bold">小区选择/重选、读系统信息、听寻呼</tspan>——在 NTN 里这三件事全部被卫星改写了</text>
+    <text x="54" y="224">▸ INACTIVE 额外管：<tspan font-weight="bold">RNA（RAN 通知区）内的移动</tspan>与寻呼响应——卫星小区在动，RNA 的划分变成难题</text>
+    <text x="54" y="248" fill="#0f7a8a" font-weight="bold">一句话：连接态靠网络指挥，空闲/非激活态靠 UE 自己判断——而 NTN 让"自己判断"异常复杂。</text>
+  </g>
+
+  <!-- four changes -->
+  <rect x="34" y="282" width="892" height="304" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="34" y="282" width="892" height="36" rx="12" fill="#c96a1f"/>
+  <text x="480" y="307" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">NTN 对空闲态/非激活态行为的四大改写</text>
+
+  <g font-size="11.5" fill="#333">
+    <rect x="52" y="334" width="424" height="112" rx="8" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="68" y="358" font-weight="bold" fill="#0f7a8a">① 小区重选：加入"时间"与"距离"两个维度</text>
+    <text x="68" y="380" font-size="10.5">· 传统 TN：只看 RSRP/RSRQ（S 准则、R 准则）</text>
+    <text x="68" y="400" font-size="10.5">· NTN 新增：<tspan font-family="Consolas,monospace">t-Service</tspan>（卫星何时走）→ 必须提前测</text>
+    <text x="68" y="420" font-size="10.5">· NTN 新增：<tspan font-family="Consolas,monospace">distanceThresh</tspan>（离参考点多远）→ 可省测</text>
+    <text x="68" y="440" font-size="10.5" fill="#0f7a8a">时间触发优先于距离判断</text>
+
+    <rect x="490" y="334" width="424" height="112" rx="8" fill="#eef5f8" stroke="#c96a1f"/>
+    <text x="506" y="358" font-weight="bold" fill="#c96a1f">② SIB19 是"必要系统信息"，读不到就禁止</text>
+    <text x="506" y="380" font-size="10.5">· Rel-17/18：SIB19 缺失 = 无法算补偿 = 无法接入</text>
+    <text x="506" y="400" font-size="10.5">· 规则：拟 NTN 接入但建连前/T311 期间读不到 → <tspan font-weight="bold">视为禁止</tspan></text>
+    <text x="506" y="420" font-size="10.5">· 后果：停驻留、进重选黑名单（约 300 s）、另寻小区</text>
+    <text x="506" y="440" font-size="10.5" fill="#c96a1f">Rel-19 细化以避免误伤"只驻留不发射"的 UE</text>
+
+    <rect x="52" y="458" width="424" height="112" rx="8" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="68" y="482" font-weight="bold" fill="#4a7a3a">③ 寻呼：波束在动，寻呼区域与 TAI 都要锚定</text>
+    <text x="68" y="504" font-size="10.5">· 地面：TAC/TAI 固定 → 寻呼范围明确</text>
+    <text x="68" y="524" font-size="10.5">· NTN：波束扫过地理 → 需 VCID/固定 TAI 映射</text>
+    <text x="68" y="544" font-size="10.5">· 寻呼时机（PO）仍按 DRX 算，但覆盖窗口约束</text>
+    <text x="68" y="564" font-size="10.5" fill="#4a7a3a">多 TAC / 地理锚定是寻呼可达性的前提</text>
+
+    <rect x="490" y="458" width="424" height="112" rx="8" fill="#eef5f8" stroke="#8a3a6a"/>
+    <text x="506" y="482" font-weight="bold" fill="#8a3a6a">④ INACTIVE：RNA 在"移动小区"里如何划分</text>
+    <text x="506" y="504" font-size="10.5">· 地面：RNA = 固定小区集合，移动不出区不通知</text>
+    <text x="506" y="524" font-size="10.5">· NTN：小区本身在动，"区"的边界也在动</text>
+    <text x="506" y="544" font-size="10.5">· 解法：按地理区块（地理 RNA）+ VCID 划分</text>
+    <text x="506" y="564" font-size="10.5" fill="#8a3a6a">与 TN/NTN 混合组网的边界驻留联合设计</text>
+  </g>
+</svg>

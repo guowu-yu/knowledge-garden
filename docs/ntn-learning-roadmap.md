@@ -3,7 +3,7 @@
 > 更新日期：2026-10-10 ｜ 站点：https://guowu-yu.github.io/knowledge-garden/
 > 用法：逐个专题学习，完成后勾选；每个专题发布到知识站后把状态改为「已上线」并附链接。
 >
-> **当前进度**：已完成 19 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM/测量与 CSI/信道与链路预算/Rel-18 增强全集/轨道与系统架构深读/射频频段与共存/IoT NTN/Rel-19 与未来/TN-NTN 混合组网），剩余 1 个待学专题。建议顺序：P3 IDLE/INACTIVE 行为。
+> **当前进度**：🎉 **20/20 全部完成**（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM/测量与 CSI/信道与链路预算/Rel-18 增强全集/轨道与系统架构深读/射频频段与共存/IoT NTN/Rel-19 与未来/TN-NTN 混合组网/IDLE-INACTIVE 态行为），20 项学习路线已全部上线。
 
 ## 已完成（基础层 · 静态视角）
 
@@ -28,10 +28,13 @@
 | ✅ 已上线 | IoT NTN（NB-IoT/eMTC） | SIB31-NB 参数地图、HARQ 关闭盲重传、极窄带+128 重复、间断覆盖与 eDRX 扩展、部署画像与竞争格局 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-iot.html |
 | ✅ 已上线 | Rel-19 NTN 与未来 | 再生载荷与 ISL、S&F、UE-Sat-UE 直连、GNSS 非必选、覆盖/容量增强、MBS/RedCap/TDD/HPUE、Ku 频段、Rel-20 与 6G 展望 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-rel19-future.html |
 | ✅ 已上线 | TN/NTN 混合组网 | TN 与 NTN 优先级建模（类别维度）、重选三问与 t-Service/distanceThresh、TN 的 SIB19 与卫星广播 TN 地理区域清单、协调区域、连接态四种切换组合与无 DAPS 约束、VDID/TAI 地理锚定与 AMF 按国选择、三种部署模式 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-tn-ntn-interworking.html |
+| ✅ 已上线 | NTN IDLE/INACTIVE 态行为 | 三态位置与"待机为何最难"、SIB19 必要系统信息与读不到即禁止（T311 连锁）、重选距离/时间两维（t-Service 优先）、movingReferenceLocation、寻呼与多 TAC/TAI 锚定、INACTIVE RNA 地理化、Rel-18/19 节电与重选优化 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-idle-inactive.html |
 
 ---
 
-## 待学习（1 个专题 · 动态过程视角）
+## ✅ 学习路线全部完成（0 个待学专题）
+
+> **20/20 收官**：从"物理几何 → 同步补偿 → 连接管理 → 演进融合"四层骨架全部覆盖。下一步可考虑：① 按主题做横向串联综述（如"定时关系一张总图"）；② 跟踪 Rel-20（2027-03）冻结后补新增强；③ 把系列整理成电子书 / 速查手册。
 
 ### 模块一：接入与链路层过程（怎么接入、怎么发数据）
 
@@ -50,7 +53,7 @@
 | ✅ 已上线 | NTN 无线链路监测与 BFM | RLM/BFD 定时放大、慢衰落与卫星遮蔽的区分、Rel-17 关闭 BFR 的取舍、波束失败恢复在 NTN 的替代路径 | 38.213 §6 / 38.321 §5.17 | P2 |
 | ✅ 已上线 | NTN 移动性与卫星切换 | 事件 D1/D2、条件切换（CHO）、硬切换/软切换/换星重同步、多波束小区边界管理 | 38.331 / 38.304 | P1 |
 | ✅ 已上线 | NTN 测量与 CSI 上报 | 近远效应使 RSRP 失灵、位置/时间触发测量发起与 CondEvent T1/D1、CSI-RS 支持收窄与 TRS、K_offset 下的 CSI 老化、测量 gap 与 Rel-18 gap 内读 SI | 38.214 / 38.133 / 38.304 | P2 |
-| ☐ | NTN IDLE/INACTIVE 态行为 | 基于 t-Service 的重选、位置触发测量、多 TAC 寻呼区域、TN/NTN 边界驻留策略 | 38.304 / 38.300 | P3 |
+| ✅ 已上线 | NTN IDLE/INACTIVE 态行为 | 三态位置、SIB19 必要系统信息与读不到即禁止（T311 连锁）、重选的 t-Service/distanceThresh 两维（时间优先）、movingReferenceLocation、寻呼与多 TAC/TAI 锚定、INACTIVE RNA 地理化、Rel-18/19 节电与重选优化 | 38.304 / 38.300 | P3 |
 
 ### 模块三：架构与工程（系统怎么设计、链路怎么算）
 
@@ -76,8 +79,8 @@
 
 1. **先啃 P1 的 6 个**：随机接入增强 → 多普勒补偿 → 调度与 HARQ → 定时器全表 → 卫星切换（NTN 相对地面 5G 改动最狠、最常被问的地方）
 2. **再补 P2 的 2 个**：功控、RLM/BFM ✅、测量 CSI ✅、链路预算 ✅、Rel-18 全集 ✅、架构 ✅（P2 工程完整性达成）
-3. **最后 P3 的 4 个**：射频频段 ✅、IoT NTN ✅、Rel-19/未来 ✅、TN/NTN 混合组网 ✅（仅剩 IDLE/INACTIVE 行为）
+3. **最后 P3 的 5 个**：射频频段 ✅、IoT NTN ✅、Rel-19/未来 ✅、TN/NTN 混合组网 ✅、IDLE/INACTIVE 行为 ✅
 
-> 混合组网篇已上线：**TN/NTN 混合组网** 👉 https://guowu-yu.github.io/knowledge-garden/topics/ntn-tn-ntn-interworking.html —— 至此 20 篇路线覆盖"物理几何 → 同步补偿 → 连接管理 → 演进融合"四层，且补齐了唯一的"天地协同"视角；仅剩 NTN IDLE/INACTIVE 态行为一篇。
+> 🎉 **全篇收官**：**NTN IDLE/INACTIVE 态行为** 👉 https://guowu-yu.github.io/knowledge-garden/topics/ntn-idle-inactive.html —— 至此 20 篇学习路线全部上线，覆盖"物理几何 → 同步补偿 → 连接管理 → 演进融合"四层骨架。从"卫星当弯管"到"基站飞上天"，从物理层补偿到天地一体，20 篇构成一个完整的 5G NTN 知识体系。
 
 > 性价比提示：「NTN 定时器与定时关系全表」一张表收尽 T310/DRX/HARQ RTT/SI 窗口的放大量纲，与已发布的 SIB19 有效期、再生载荷 HARQ RTT 两篇互为索引。

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">SIB19 获取失败：NTN 空闲态最硬的一条红线</text>
+
+  <!-- why essential -->
+  <rect x="34" y="62" width="892" height="104" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="54" y="90" font-size="15" font-weight="bold" fill="#0f7a8a">为什么 SIB19 是"必要系统信息"</text>
+  <g font-size="12" fill="#333">
+    <text x="54" y="116">▸ 没有 SIB19 → 没有星历、没有公共 TA、没有 K_offset → <tspan font-weight="bold">UE 根本算不出预补偿</tspan></text>
+    <text x="54" y="138">▸ 算不出预补偿 → PRACH 发不出去、上行对不上 → <tspan font-weight="bold">连不上这个 NTN 小区</tspan></text>
+    <text x="54" y="158" fill="#c96a1f" font-weight="bold">所以：一个读不到 SIB19 的 NTN 小区，对 UE 而言等于"不可用"。</text>
+  </g>
+
+  <!-- T430 vs idle -->
+  <rect x="34" y="182" width="436" height="238" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="34" y="182" width="436" height="34" rx="12" fill="#c96a1f"/>
+  <text x="252" y="205" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">连接态：T430 守护（回顾）</text>
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="240">▸ 连接态下 SIB19 由 <tspan font-family="Consolas,monospace">T430</tspan> 计时器守护</text>
+    <text x="54" y="262">▸ T430 在收到 SIB19 时启动/重启</text>
+    <text x="54" y="284">▸ 过期 → 星历失效 → 停止用旧星历发上行</text>
+    <text x="54" y="306">▸ 过期 ≠ 立即断连，而是"处置"旧参数</text>
+    <text x="54" y="328">▸ 依赖网络的刷新通道恢复（SIB1 valueTag 豁免）</text>
+    <text x="54" y="356" fill="#c96a1f" font-weight="bold">详见 [SIB19 篇] 与 [定时器全表篇]</text>
+    <text x="54" y="380" fill="#667">连接态有网络兜着，出错代价相对可控</text>
+    <text x="54" y="402" fill="#667">空闲态没有网络指挥，规则必须更"硬"</text>
+  </g>
+
+  <!-- idle rule -->
+  <rect x="490" y="182" width="436" height="238" rx="12" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+  <rect x="490" y="182" width="436" height="34" rx="12" fill="#8a3a6a"/>
+  <text x="708" y="205" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">空闲/非激活态：读不到就"禁止"</text>
+  <g font-size="11.5" fill="#333">
+    <text x="510" y="240" font-weight="bold" fill="#8a3a6a">判定条件（缺一不可）</text>
+    <text x="510" y="262">① UE 拟选择 NTN 接入</text>
+    <text x="510" y="282">② 在建 RRC 连接/恢复之前，或</text>
+    <text x="510" y="302">　　T311 运行期间（连接重建中）</text>
+    <text x="510" y="322">③ 无法获取该小区的 SIB19</text>
+    <text x="510" y="348" font-weight="bold" fill="#8a3a6a">后果：该小区"视为禁止"</text>
+    <text x="510" y="370" font-size="11">停驻留 → 剔出候选（约 300 s）→ 另寻小区</text>
+    <text x="510" y="394" font-size="11" fill="#8a3a6a">Rel-19 细化：避免误伤"仅驻留不发射"的 UE</text>
+  </g>
+
+  <!-- flow -->
+  <rect x="34" y="436" width="892" height="150" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="34" y="436" width="892" height="32" rx="12" fill="#4a7a3a"/>
+  <text x="480" y="458" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#fff">T311 期间读不到 SIB19 的连锁反应（连接重建场景）</text>
+
+  <g font-size="11" fill="#333">
+    <rect x="52" y="480" width="160" height="48" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="132" y="500" text-anchor="middle" font-weight="bold" fill="#0f7a8a">RLF 发生</text>
+    <text x="132" y="518" text-anchor="middle" font-size="10">（可能因 T430 过期）</text>
+
+    <path d="M 212 504 L 252 504" stroke="#667" stroke-width="1.8" marker-end="url(#a2)"/>
+    <defs><marker id="a2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#667"/></marker></defs>
+
+    <rect x="252" y="480" width="180" height="48" rx="7" fill="#eef5f8" stroke="#c96a1f"/>
+    <text x="342" y="500" text-anchor="middle" font-weight="bold" fill="#c96a1f">启动 T311 搜小区</text>
+    <text x="342" y="518" text-anchor="middle" font-size="10">选定新 NTN 小区</text>
+
+    <path d="M 432 504 L 472 504" stroke="#667" stroke-width="1.8" marker-end="url(#a2)"/>
+
+    <rect x="472" y="480" width="196" height="48" rx="7" fill="#fff7ee" stroke="#c96a1f"/>
+    <text x="570" y="500" text-anchor="middle" font-weight="bold" fill="#c96a1f">尝试读 SIB19</text>
+    <text x="570" y="518" text-anchor="middle" font-size="10">（发重建请求的前提）</text>
+
+    <path d="M 668 504 L 708 504" stroke="#667" stroke-width="1.8" marker-end="url(#a2)"/>
+
+    <rect x="708" y="480" width="202" height="48" rx="7" fill="#f6eef3" stroke="#8a3a6a"/>
+    <text x="809" y="500" text-anchor="middle" font-weight="bold" fill="#8a3a6a">读不到 → 禁止该小区</text>
+    <text x="809" y="518" text-anchor="middle" font-size="10">继续搜；T311 超时 → 回 IDLE</text>
+  </g>
+</svg>
