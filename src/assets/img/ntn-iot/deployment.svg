@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="600" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">IoT-NTN 部署画像：什么场景值得上天</text>
+
+  <!-- orbit choice -->
+  <rect x="40" y="70" width="290" height="220" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="40" y="70" width="290" height="40" rx="12" fill="#0f7a8a"/>
+  <text x="185" y="96" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">GEO：恒在但够不着口袋</text>
+  <g font-size="13" fill="#333">
+    <text x="58" y="136">▸ 永远在头顶，随时能发</text>
+    <text x="58" y="164">▸ 但 RTT ≈ 500 ms（透明双链路）</text>
+    <text x="58" y="192">▸ 路损最大 → 终端要大天线/高功率</text>
+    <text x="58" y="220">▸ 适合：海事终端、车载台、</text>
+    <text x="58" y="248">　固定监测站（EchoStar Mobile 模式）</text>
+    <text x="58" y="276" fill="#555">不适合手持纽扣设备</text>
+  </g>
+
+  <rect x="335" y="70" width="290" height="220" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="335" y="70" width="290" height="40" rx="12" fill="#c96a1f"/>
+  <text x="480" y="96" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">大 LEO：够得着但要等</text>
+  <g font-size="13" fill="#333">
+    <text x="353" y="136">▸ 终端成本/功耗友好（路损小 30 dB+）</text>
+    <text x="353" y="164">▸ 单星过境几分钟 → 间断覆盖</text>
+    <text x="353" y="192">▸ Doppler 大（预补偿 + 频偏鲁棒波形）</text>
+    <text x="353" y="220">▸ 适合：资产追踪、抄表、农业、</text>
+    <text x="353" y="248">　环境监测（Skylo/Sateliot 模式）</text>
+    <text x="353" y="276" fill="#555">需星座够密才能保证窗口频率</text>
+  </g>
+
+  <rect x="630" y="70" width="290" height="220" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="630" y="70" width="290" height="40" rx="12" fill="#4a7a3a"/>
+  <text x="775" y="96" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">多模融合：主流答案</text>
+  <g font-size="13" fill="#333">
+    <text x="648" y="136">▸ 同一模块：地面 NB-IoT 为主，</text>
+    <text x="648" y="164">　卫星兜底（85% 地表无地面覆盖）</text>
+    <text x="648" y="192">▸ 成本账：只在出坑时用星，</text>
+    <text x="648" y="220">　流量费与电池按"次数"算</text>
+    <text x="648" y="248">▸ 应用层无感：对应用就像开 UDP</text>
+    <text x="648" y="276" fill="#4a7a3a" font-weight="bold">u-blox SARA-S5 一类多模模组</text>
+  </g>
+
+  <!-- spec map -->
+  <rect x="40" y="315" width="880" height="130" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="60" y="343" font-size="15" font-weight="bold" fill="#0f7a8a">规范落点速查</text>
+  <g font-size="13.5" fill="#333">
+    <text x="60" y="371">▸ Rel-17 IoT-NTN：NB-IoT + eMTC 上星（透明载荷）、SIB31-NB、HARQ 关闭、eDRX 扩展、间断覆盖语义</text>
+    <text x="60" y="397">▸ Rel-18：间断覆盖节电完善、移动性增强、覆盖增强打磨</text>
+    <text x="60" y="423">▸ RF：复用 n255/n256，3/5/15 MHz 内的 NB-IoT 窄带部署；SAN 同 NR（38.108）；UE 一致性 37/38.521 系列 + 36 系列 NTN 扩展</text>
+  </g>
+
+  <!-- ecosystem -->
+  <rect x="40" y="465" width="880" height="110" rx="12" fill="#ffffff" stroke="#8a4f9e" stroke-width="1.5"/>
+  <text x="60" y="493" font-size="15" font-weight="bold" fill="#8a4f9e">竞争格局一句话</text>
+  <text x="60" y="521" font-size="13.5" fill="#333">3GPP IoT-NTN 的胜负手是<tspan font-weight="bold">监管合法性与多供应商硅片竞争</tspan>（Roaming/漫游像地面网一样自然）；</text>
+  <text x="60" y="547" font-size="13.5" fill="#333">LoRa-FHSS 派（Lacuna 等）赌的是<tspan font-weight="bold">终端极致便宜</tspan>（无 GNSS、无预补偿，复杂度全在网络侧）。两条路线服务不同价格带。</text>
+  <text x="60" y="569" font-size="12" fill="#666">ZOOZ Engineering 的概括：同一个 Release-17 终端，对 Sateliot 五星、Iridium 66 星、EchoStar 混合网"看起来完全一样"——可替换性才是标准化的意义。</text>
+</svg>

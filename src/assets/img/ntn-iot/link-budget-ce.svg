@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="600" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">极窄带 + 重复：IoT NTN 的链路账</text>
+
+  <!-- PSD principle -->
+  <rect x="40" y="70" width="430" height="240" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="40" y="70" width="430" height="40" rx="12" fill="#0f7a8a"/>
+  <text x="255" y="96" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">第一招：把能量挤进极窄的缝</text>
+  <!-- spectrum bars -->
+  <g font-family="Consolas,monospace" font-size="11.5" fill="#555">
+    <rect x="70" y="180" width="80" height="60" fill="#0f7a8a" opacity="0.35"/>
+    <text x="110" y="255" text-anchor="middle">地面 LTE</text>
+    <text x="110" y="272" text-anchor="middle">15 kHz × 12</text>
+    <rect x="200" y="130" width="80" height="110" fill="#0f7a8a" opacity="0.6"/>
+    <text x="240" y="255" text-anchor="middle">NB-IoT 单音</text>
+    <text x="240" y="272" text-anchor="middle">15 kHz × 1</text>
+    <rect x="330" y="90" width="80" height="150" fill="#c96a1f"/>
+    <text x="370" y="255" text-anchor="middle" font-weight="bold" fill="#c96a1f">3.75 kHz 单音</text>
+    <text x="370" y="272" text-anchor="middle">48 子载波均分 180 kHz</text>
+  </g>
+  <text x="255" y="300" text-anchor="middle" font-size="13" fill="#333">功率集中 → 功率谱密度提升，<tspan font-weight="bold" fill="#c96a1f">较 GPRS 链路增益 20 dB</tspan></text>
+
+  <!-- repetition -->
+  <rect x="490" y="70" width="430" height="240" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="490" y="70" width="430" height="40" rx="12" fill="#c96a1f"/>
+  <text x="705" y="96" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">第二招：用时间换分贝</text>
+  <g font-size="13" fill="#333">
+    <text x="508" y="136">▸ NPUSCH 重复最多 <tspan font-weight="bold" font-family="Consolas,monospace">128 次</tspan>（NPDSCH 同理），</text>
+    <text x="508" y="158">　NPRACH 前导组可更长</text>
+    <text x="508" y="190">▸ RU 时长参考：3.75 kHz 单音 RU = 32 ms，</text>
+    <text x="508" y="212">　×128 重复 = <tspan font-weight="bold" fill="#c96a1f">一个传输块要 4 秒钟</tspan></text>
+    <text x="508" y="244">▸ 地面 MCL 达 <tspan font-weight="bold" font-family="Consolas,monospace">164 dB</tspan>（覆盖增强 20 dB vs GPRS）；</text>
+    <text x="508" y="266">　NTN 再叠加卫星路损——重复与窄带</text>
+    <text x="508" y="288">　是仅有的两张牌，速率让路（几十 kbps）</text>
+  </g>
+
+  <!-- NTN extra costs -->
+  <rect x="40" y="330" width="880" height="120" rx="12" fill="#ffffff" stroke="#8a4f9e" stroke-width="2"/>
+  <text x="60" y="358" font-size="15" font-weight="bold" fill="#8a4f9e">NTN 额外扣的三笔账（38.821 评估结论的直觉版）</text>
+  <g font-size="13.5" fill="#333">
+    <text x="60" y="386">① Doppler ±50 kHz @2 GHz（LEO）：预补偿后残余仍在 3.75 kHz 子载波间隔的同量级 → 单音传输的频偏鲁棒性是硬要求；</text>
+    <text x="60" y="410">② HARQ 关闭：可靠性全靠重复 → 实际传输时长 = 名义重复 × 隐性盲重传；</text>
+    <text x="60" y="434">③ LEO 快速过境：TA/Doppler 变化率大，同步有效期（ul-SyncValidityDuration）短，接入窗口内完成全部流程的时间压力大。</text>
+  </g>
+
+  <!-- verdict -->
+  <rect x="40" y="470" width="880" height="105" rx="12" fill="#0f7a8a" opacity="0.08"/>
+  <text x="480" y="502" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">设计哲学：速率 20~60 kbps 级、延迟秒级都不是目标</text>
+  <text x="480" y="530" text-anchor="middle" font-size="14" fill="#333">目标是<tspan font-weight="bold">"一节电池用十年、一针数据能穿过 600 km"</tspan>——抄表、资产追踪、环境监测、海洋浮标</text>
+  <text x="480" y="556" text-anchor="middle" font-size="13" fill="#666">所有带宽、速率、时延的牺牲，都是在为链路预算的每一分贝让路。</text>
+</svg>

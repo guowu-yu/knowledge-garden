@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">NB-IoT NTN 参数地图：一份 SIB31-NB 里的全部秘密</text>
+
+  <!-- attach flow simplified -->
+  <rect x="40" y="70" width="880" height="200" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="60" y="98" font-size="15" font-weight="bold" fill="#0f7a8a">附着流程中的 NTN 挂点（TS 36.331 / 36.321）</text>
+  <g font-size="13" fill="#333">
+    <rect x="60" y="115" width="120" height="34" rx="6" fill="#0f7a8a" opacity="0.85"/>
+    <text x="120" y="137" text-anchor="middle" font-size="12" fill="#fff">MIB-NB</text>
+    <rect x="210" y="115" width="150" height="34" rx="6" fill="#0f7a8a" opacity="0.75"/>
+    <text x="285" y="130" text-anchor="middle" font-size="11.5" fill="#fff">SIB1-NB</text>
+    <text x="285" y="143" text-anchor="middle" font-size="9.5" fill="#fff">调度 SIB31·barred 位</text>
+    <rect x="390" y="115" width="150" height="34" rx="6" fill="#0f7a8a" opacity="0.65"/>
+    <text x="465" y="130" text-anchor="middle" font-size="11.5" fill="#fff">SIB2-NB</text>
+    <text x="465" y="143" text-anchor="middle" font-size="9.5" fill="#fff">TA 上报·t318-r17</text>
+    <rect x="570" y="115" width="180" height="34" rx="6" fill="#c96a1f"/>
+    <text x="660" y="130" text-anchor="middle" font-size="11.5" fill="#fff" font-weight="bold">SIB31-NB（NTN 核心）</text>
+    <text x="660" y="143" text-anchor="middle" font-size="9.5" fill="#fff">星历·ta-Common·k-Offset</text>
+    <rect x="780" y="115" width="120" height="34" rx="6" fill="#4a7a3a"/>
+    <text x="840" y="137" text-anchor="middle" font-size="11.5" fill="#fff">NPRACH</text>
+    <path d="M 180 132 L 210 132 M 360 132 L 390 132 M 540 132 L 570 132 M 750 132 L 780 132" stroke="#555" stroke-width="1.5"/>
+  </g>
+  <g font-size="12.5" fill="#333">
+    <text x="60" y="180">▸ UE 侧预补偿：自报 GNSS 位置 + SIB31 星历 → 算延迟与 Doppler → <tspan font-weight="bold">发出去的信号在卫星看来就是正常地面 NB-IoT</tspan></text>
+    <text x="60" y="204">▸ MAC CE 两件套：<tspan font-weight="bold" font-family="Consolas,monospace">TA_REPORT</tspan>（UE 特有 TA 分量）与 <tspan font-weight="bold" font-family="Consolas,monospace">K_OFFSET</tspan>（UE 特有调度偏移，示例值 63）</text>
+    <text x="60" y="228">▸ RRC 连接建立后：长 RLC 定时器 + <tspan font-weight="bold">无限定时对齐计时器</tspan>（卫星在动，TA 永远在变，索性不设截止）</text>
+    <text x="60" y="252">▸ offsetThresholdTA-r17：TA 变化超过门限才上报——用稀疏上报换信令开销与电池</text>
+  </g>
+
+  <!-- SIB31 fields detail -->
+  <rect x="40" y="290" width="430" height="300" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="40" y="290" width="430" height="40" rx="12" fill="#c96a1f"/>
+  <text x="255" y="316" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">SIB31-NB 字段清单</text>
+  <g font-size="13" fill="#333" font-family="Consolas,monospace">
+    <text x="58" y="356">ephemeris（位置+速度向量）</text>
+    <text x="58" y="380">ta-Common　+ ta-CommonDrift</text>
+    <text x="58" y="404">　+ ta-CommonDriftVariant（三阶外推）</text>
+    <text x="58" y="428">epochTime（星历有效时间原点）</text>
+    <text x="58" y="452">ul-SyncValidityDuration（TA 有效期）</text>
+    <text x="58" y="476">k-Offset-r17（UE 调度时序偏移）</text>
+    <text x="58" y="500">nEphemerisValidity / t-Service</text>
+    <text x="58" y="524">neighbour ephemeris（邻星预知）</text>
+  </g>
+  <text x="58" y="556" font-size="12" fill="#666">与 NR 的 SIB19 同构——NR-NTN 与 IoT-NTN</text>
+  <text x="58" y="576" font-size="12" fill="#666">共用同一套"星历 + 定时"参数哲学。</text>
+
+  <!-- key differences -->
+  <rect x="490" y="290" width="430" height="300" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="490" y="290" width="430" height="40" rx="12" fill="#0f7a8a"/>
+  <text x="705" y="316" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">与 NR-NTN 的关键差异</text>
+  <g font-size="13" fill="#333">
+    <text x="508" y="356">▸ <tspan font-weight="bold">HARQ 直接关闭</tspan>：NB-IoT 的快速 ACK/NACK 循环</text>
+    <text x="508" y="378">　被卫星 RTT 拖垮 → 用盲重传替代可靠性</text>
+    <text x="508" y="412">▸ <tspan font-weight="bold">TA 值空间扩展两个数量级</tspan>：地面 TA 只够</text>
+    <text x="508" y="434">　100 km 量级，NTN 由 ta-Common（公共项，</text>
+    <text x="508" y="456">　最大 270.7 ms）+ UE 特有分量拼出</text>
+    <text x="508" y="490">▸ <tspan font-weight="bold">NPRACH 前导加长</tspan>：CP 必须装下最大延迟差</text>
+    <text x="508" y="522">▸ 简化移动性：IoT 终端不动或慢动，</text>
+    <text x="508" y="544">　重选为主，无连接态切换</text>
+    <text x="508" y="576" fill="#0f7a8a" font-weight="bold">一句话：能砍的全砍，能省的全省。</text>
+  </g>
+</svg>
