@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="560" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">软件工程师的电磁知识地图：该懂什么、不必懂什么</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">目标不是成为天线设计专家，而是知道"模型的边界在哪"——知道什么会让仿真与真实不同</text>
+
+  <!-- layer 1: must know deeply -->
+  <rect x="30" y="84" width="900" height="142" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="30" y="84" width="8" height="142" rx="4" fill="#0f7a8a"/>
+  <text x="56" y="112" font-size="14" font-weight="bold" fill="#0f7a8a">第一层 · 必须真正理解（会进你的模型）</text>
+
+  <rect x="56" y="126" width="212" height="84" rx="7" fill="#e4f3f5" stroke="#0f7a8a" stroke-width="1.3"/>
+  <text x="162" y="148" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f7a8a">阵元方向图 G_e(θ)</text>
+  <text x="162" y="168" text-anchor="middle" font-size="10.5" fill="#333">总方向图 = G_e × |AF|</text>
+  <text x="162" y="186" text-anchor="middle" font-size="10.5" fill="#556">"方向图乘积定理"</text>
+  <text x="162" y="202" text-anchor="middle" font-size="10.5" fill="#8a3a6a">没有它，副瓣预测全错</text>
+
+  <rect x="284" y="126" width="212" height="84" rx="7" fill="#e4f3f5" stroke="#0f7a8a" stroke-width="1.3"/>
+  <text x="390" y="148" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f7a8a">极化与交叉极化</text>
+  <text x="390" y="168" text-anchor="middle" font-size="10.5" fill="#333">主极化 / 交叉极化比</text>
+  <text x="390" y="186" text-anchor="middle" font-size="10.5" fill="#556">典型要求 &gt; 20~25 dB</text>
+  <text x="390" y="202" text-anchor="middle" font-size="10.5" fill="#8a3a6a">认证必测项，仿真常漏</text>
+
+  <rect x="512" y="126" width="212" height="84" rx="7" fill="#e4f3f5" stroke="#0f7a8a" stroke-width="1.3"/>
+  <text x="618" y="148" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f7a8a">互耦与有源驻波</text>
+  <text x="618" y="168" text-anchor="middle" font-size="10.5" fill="#333">单元阻抗随扫描角变化</text>
+  <text x="618" y="186" text-anchor="middle" font-size="10.5" fill="#556">→ 扫描盲区 / 效率下降</text>
+  <text x="618" y="202" text-anchor="middle" font-size="10.5" fill="#8a3a6a">不改权值算法，只改可用域</text>
+
+  <rect x="740" y="126" width="166" height="84" rx="7" fill="#e4f3f5" stroke="#0f7a8a" stroke-width="1.3"/>
+  <text x="823" y="148" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f7a8a">互易定理</text>
+  <text x="823" y="170" text-anchor="middle" font-size="10.5" fill="#333">收发可共用</text>
+  <text x="823" y="188" text-anchor="middle" font-size="10.5" fill="#333">一组权值</text>
+  <text x="823" y="206" text-anchor="middle" font-size="10.5" fill="#4a7a3a">省一半的验证工作</text>
+
+  <!-- layer 2 -->
+  <rect x="30" y="240" width="900" height="120" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <rect x="30" y="240" width="8" height="120" rx="4" fill="#c96a1f"/>
+  <text x="56" y="268" font-size="14" font-weight="bold" fill="#c96a1f">第二层 · 要知道结论与量级（会进你的判断）</text>
+
+  <rect x="56" y="282" width="284" height="62" rx="7" fill="#faf0e6" stroke="#c96a1f" stroke-width="1.3"/>
+  <text x="198" y="304" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#c96a1f">表面波与介质基板</text>
+  <text x="198" y="324" text-anchor="middle" font-size="10.5" fill="#333">厚基板 → 表面波 → 扫描盲区与效率损失</text>
+
+  <rect x="354" y="282" width="284" height="62" rx="7" fill="#faf0e6" stroke="#c96a1f" stroke-width="1.3"/>
+  <text x="496" y="304" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#c96a1f">阵列效率的构成</text>
+  <text x="496" y="324" text-anchor="middle" font-size="10.5" fill="#333">辐射效率 × 口径效率，典型 0.5 ~ 0.8</text>
+
+  <rect x="652" y="282" width="254" height="62" rx="7" fill="#faf0e6" stroke="#c96a1f" stroke-width="1.3"/>
+  <text x="779" y="304" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#c96a1f">单元间距的物理下界</text>
+  <text x="779" y="324" text-anchor="middle" font-size="10.5" fill="#333">d 不能太小：互耦、盲区、加工</text>
+
+  <!-- layer 3 -->
+  <rect x="30" y="374" width="900" height="168" rx="10" fill="#ffffff" stroke="#6a5a8a" stroke-width="1.6"/>
+  <rect x="30" y="374" width="8" height="168" rx="4" fill="#6a5a8a"/>
+  <text x="56" y="402" font-size="14" font-weight="bold" fill="#6a5a8a">第三层 · 明确不必深入（会分散你的精力）</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="60" y="430">✗ 麦克斯韦方程组的完整求解与推导</text>
+    <text x="60" y="454">✗ 矩量法 / 有限元 / FDTD 的数值实现细节</text>
+    <text x="60" y="478">✗ 天线单元的具体几何优化（贴片开槽、馈电点位置、寄生单元尺寸）</text>
+    <text x="60" y="502">✗ 介质材料参数的提取与测量方法</text>
+    <text x="60" y="526">✗ 电磁兼容（EMC）的完整建模流程</text>
+  </g>
+
+  <rect x="640" y="410" width="266" height="116" rx="8" fill="#f0edf5" stroke="#6a5a8a" stroke-width="1.4"/>
+  <text x="773" y="434" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#6a5a8a">但要能"读懂"</text>
+  <text x="773" y="456" text-anchor="middle" font-size="10.5" fill="#333">看天线工程师的仿真报告时，</text>
+  <text x="773" y="474" text-anchor="middle" font-size="10.5" fill="#333">知道 S11 / 增益 / 效率 / 交叉极化</text>
+  <text x="773" y="492" text-anchor="middle" font-size="10.5" fill="#333">分别在说什么、什么量级正常</text>
+  <text x="773" y="514" text-anchor="middle" font-size="10.5" fill="#8a3a6a">→ 这是"沟通能力"而非"设计能力"</text>
+</svg>

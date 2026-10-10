@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">相位 ↔ 时延：窄带近似的适用边界</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">φ = −2πf·τ 只在一个频点上严格成立；带宽一宽，"配相"就从方向图指向退化中暴露出来</text>
+
+  <!-- Left: exact delay -->
+  <rect x="40" y="86" width="430" height="230" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="60" y="112" font-size="14" font-weight="bold" fill="#0f7a8a">真时延（TTD）：对所有频率一视同仁</text>
+  <text x="60" y="136" font-size="11.5" fill="#333" font-family="Consolas,monospace">τ = d·sinθ / c      （与 f 无关）</text>
+
+  <line x1="70" y1="270" x2="450" y2="270" stroke="#8899a6" stroke-width="1.2"/>
+  <line x1="70" y1="170" x2="70" y2="300" stroke="#8899a6" stroke-width="1.2"/>
+  <text x="454" y="274" font-size="10.5" fill="#556">f</text>
+  <text x="74" y="168" font-size="10.5" fill="#556">φ</text>
+
+  <line x1="90" y1="286" x2="430" y2="192" stroke="#4a7a3a" stroke-width="2.4"/>
+  <text x="300" y="212" font-size="11.5" fill="#4a7a3a" font-family="Consolas,monospace">φ(f) = -2πf·τ  线性 ↑</text>
+  <text x="150" y="300" font-size="11" fill="#556">斜率正是 τ：全带内指向一致</text>
+
+  <!-- Right: phase shifter -->
+  <rect x="490" y="86" width="430" height="230" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="510" y="112" font-size="14" font-weight="bold" fill="#c96a1f">移相器（PS）：只对一个频点正确</text>
+  <text x="510" y="136" font-size="11.5" fill="#333" font-family="Consolas,monospace">φ₀ = -2πf₀·τ      （f 变了 φ₀ 不变）</text>
+
+  <line x1="520" y1="270" x2="900" y2="270" stroke="#8899a6" stroke-width="1.2"/>
+  <line x1="520" y1="170" x2="520" y2="300" stroke="#8899a6" stroke-width="1.2"/>
+  <text x="904" y="274" font-size="10.5" fill="#556">f</text>
+  <text x="524" y="168" font-size="10.5" fill="#556">φ</text>
+
+  <line x1="540" y1="232" x2="880" y2="232" stroke="#c96a1f" stroke-width="2.4"/>
+  <text x="700" y="224" font-size="11.5" fill="#c96a1f" font-family="Consolas,monospace">φ = const  水平 →</text>
+  <line x1="540" y1="270" x2="880" y2="192" stroke="#4a7a3a" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="600" y="292" font-size="11" fill="#8a3a6a">理想时延线</text>
+
+  <!-- error fan -->
+  <path d="M 540 232 L 880 232 L 880 192 Z" fill="#c96a1f" opacity="0.13"/>
+  <text x="640" y="264" font-size="11" fill="#c96a1f">相位误差随带宽线性增长</text>
+
+  <!-- beam squint -->
+  <rect x="40" y="336" width="880" height="170" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="60" y="362" font-size="14" font-weight="bold" fill="#8a3a6a">后果：波束斜视（beam squint）</text>
+
+  <!-- array -->
+  <line x1="90" y1="440" x2="430" y2="440" stroke="#0f7a8a" stroke-width="3"/>
+  <g fill="#0f7a8a">
+    <rect x="96" y="428" width="10" height="12" rx="2"/>
+    <rect x="136" y="428" width="10" height="12" rx="2"/>
+    <rect x="176" y="428" width="10" height="12" rx="2"/>
+    <rect x="216" y="428" width="10" height="12" rx="2"/>
+    <rect x="256" y="428" width="10" height="12" rx="2"/>
+    <rect x="296" y="428" width="10" height="12" rx="2"/>
+    <rect x="336" y="428" width="10" height="12" rx="2"/>
+    <rect x="376" y="428" width="10" height="12" rx="2"/>
+    <rect x="414" y="428" width="10" height="12" rx="2"/>
+  </g>
+  <text x="260" y="462" text-anchor="middle" font-size="11" fill="#556">N 元线阵，间隔 d</text>
+
+  <!-- beams -->
+  <line x1="260" y1="428" x2="180" y2="368" stroke="#4a7a3a" stroke-width="2.2"/>
+  <text x="120" y="362" font-size="11" fill="#4a7a3a">f₀ 指向 θ₀（正确）</text>
+
+  <line x1="260" y1="428" x2="248" y2="364" stroke="#c96a1f" stroke-width="2.2"/>
+  <text x="252" y="356" font-size="11" fill="#c96a1f">f₁ &gt; f₀ 指向 θ₁（偏内）</text>
+
+  <line x1="260" y1="428" x2="130" y2="382" stroke="#8a3a6a" stroke-width="2.2"/>
+  <text x="78" y="394" font-size="11" fill="#8a3a6a">f₂ &lt; f₀ 指向 θ₂（偏外）</text>
+
+  <text x="560" y="400" font-size="11.5" fill="#333" font-family="Consolas,monospace">Δθ ≈ −tanθ₀ · (Δf/f₀)  （小角近似）</text>
+  <text x="560" y="424" font-size="11.5" fill="#333" font-family="Consolas,monospace">相对带宽 10% · θ₀=60° → 指向误差 ~5°</text>
+  <text x="560" y="452" font-size="11.5" fill="#556">工程判据：带宽 × 阵列口径 ≫ c ⇒ 必须引入真时延或子带补偿</text>
+  <text x="560" y="478" font-size="11.5" fill="#8a3a6a">软件视角：窄带假设写进代码容易，改回来很贵——先确认带宽再定架构</text>
+</svg>

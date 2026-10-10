@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="500" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">复数运算在相控阵里的五个落点：从公式到代码</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">同一个 e^{jφ}，在不同层级上的名字不同，但数学是同一件事</text>
+
+  <!-- stages -->
+  <rect x="30" y="90" width="170" height="120" rx="9" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="115" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">① 导向矢量</text>
+  <text x="115" y="142" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">a(θ₀)[n] =</text>
+  <text x="115" y="160" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">e^{j2πnd·sinθ₀/λ}</text>
+  <text x="115" y="186" text-anchor="middle" font-size="10" fill="#556">"这个方向来波</text>
+  <text x="115" y="200" text-anchor="middle" font-size="10" fill="#556">各通道该是什么相位"</text>
+
+  <rect x="215" y="90" width="170" height="120" rx="9" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="300" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">② 权值（配相）</text>
+  <text x="300" y="142" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">w[n] = a[n]·e^{-jφ_n}</text>
+  <text x="300" y="160" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">= conj(a(θ₀)[n])</text>
+  <text x="300" y="186" text-anchor="middle" font-size="10" fill="#556">共轭 = "预先把</text>
+  <text x="300" y="200" text-anchor="middle" font-size="10" fill="#556">波程差反着补回来"</text>
+
+  <rect x="400" y="90" width="170" height="120" rx="9" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="485" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#c96a1f">③ 复数乘加</text>
+  <text x="485" y="142" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">y = Σ w*[n]·x[n]</text>
+  <text x="485" y="160" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">（4 次实乘 / 拍）</text>
+  <text x="485" y="186" text-anchor="middle" font-size="10" fill="#556">FPGA 数据面</text>
+  <text x="485" y="200" text-anchor="middle" font-size="10" fill="#556">每采样执行一次</text>
+
+  <rect x="585" y="90" width="170" height="120" rx="9" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.8"/>
+  <text x="670" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a7a3a">④ 通道校正</text>
+  <text x="670" y="142" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">w'[n] = c[n]·w[n]</text>
+  <text x="670" y="160" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">c[n] = 1/(g_n e^{jε_n})</text>
+  <text x="670" y="186" text-anchor="middle" font-size="10" fill="#556">补偿器件误差</text>
+  <text x="670" y="200" text-anchor="middle" font-size="10" fill="#556">（S5 校准的产物）</text>
+
+  <rect x="770" y="90" width="160" height="120" rx="9" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.8"/>
+  <text x="850" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">⑤ 定点表示</text>
+  <text x="850" y="142" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">I/Q 定点 Q(1.15)</text>
+  <text x="850" y="160" text-anchor="middle" font-size="10.5" fill="#333" font-family="Consolas,monospace">CORDIC / LUT</text>
+  <text x="850" y="186" text-anchor="middle" font-size="10" fill="#556">位宽不够 →</text>
+  <text x="850" y="200" text-anchor="middle" font-size="10" fill="#556">副瓣抬高、零陷变浅</text>
+
+  <!-- arrows -->
+  <g stroke="#8899a6" stroke-width="1.8">
+    <line x1="200" y1="150" x2="213" y2="150"/>
+    <line x1="385" y1="150" x2="398" y2="150"/>
+    <line x1="570" y1="150" x2="583" y2="150"/>
+    <line x1="755" y1="150" x2="768" y2="150"/>
+  </g>
+  <g fill="#8899a6">
+    <polygon points="213,150 206,146 206,154"/>
+    <polygon points="398,150 391,146 391,154"/>
+    <polygon points="583,150 576,146 576,154"/>
+    <polygon points="768,150 761,146 761,154"/>
+  </g>
+
+  <!-- code sample -->
+  <rect x="30" y="240" width="470" height="230" rx="9" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="50" y="266" font-size="13" font-weight="bold" fill="#0f7a8a">NumPy 原型（10 行看懂全部）</text>
+  <text x="50" y="292" font-size="11" fill="#333" font-family="Consolas,monospace">import numpy as np</text>
+  <text x="50" y="312" font-size="11" fill="#333" font-family="Consolas,monospace">N, d = 16, 0.5            # 元数, 间距(λ)</text>
+  <text x="50" y="332" font-size="11" fill="#333" font-family="Consolas,monospace">n = np.arange(N)</text>
+  <text x="50" y="352" font-size="11" fill="#333" font-family="Consolas,monospace">th0 = np.deg2rad(30.0)</text>
+  <text x="50" y="372" font-size="11" fill="#333" font-family="Consolas,monospace">a0 = np.exp(1j*2*np.pi*d*n*np.sin(th0))</text>
+  <text x="50" y="392" font-size="11" fill="#333" font-family="Consolas,monospace">w  = a0.conj() / N        # 配相 + 归一</text>
+  <text x="50" y="412" font-size="11" fill="#333" font-family="Consolas,monospace">th = np.linspace(-np.pi/2, np.pi/2, 1801)</text>
+  <text x="50" y="432" font-size="11" fill="#333" font-family="Consolas,monospace">A  = np.exp(1j*2*np.pi*d*np.outer(np.sin(th), n))</text>
+  <text x="50" y="452" font-size="11" fill="#333" font-family="Consolas,monospace">P  = np.abs(A @ w)**2    # 方向图</text>
+
+  <!-- pitfalls -->
+  <rect x="520" y="240" width="410" height="230" rx="9" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="540" y="266" font-size="13" font-weight="bold" fill="#c96a1f">三个最常见的"复数陷阱"</text>
+
+  <text x="540" y="294" font-size="11.5" fill="#333">① 共轭方向搞反</text>
+  <text x="556" y="312" font-size="11" fill="#556">接收用 conj(a)，发射用 a（或反之），</text>
+  <text x="556" y="328" font-size="11" fill="#556">搞反后波束指向镜像角度。</text>
+
+  <text x="540" y="356" font-size="11.5" fill="#333">② 用 atan2 求相位后直接平均</text>
+  <text x="556" y="374" font-size="11" fill="#556">相位缠绕 ±π 处平均会跳变；</text>
+  <text x="556" y="390" font-size="11" fill="#556">应先转成 I/Q 复数再平均。</text>
+
+  <text x="540" y="418" font-size="11.5" fill="#333">③ 把"归一化相位"当"绝对相位"</text>
+  <text x="556" y="436" font-size="11" fill="#556">移相器只需要 φ mod 2π，</text>
+  <text x="556" y="452" font-size="11" fill="#556">但校准量是绝对量，别在两步之间丢符号。</text>
+</svg>

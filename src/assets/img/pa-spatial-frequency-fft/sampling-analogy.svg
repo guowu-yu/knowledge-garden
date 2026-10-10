@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="500" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">时域采样 ↔ 空间采样：逐项对照表</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">把"时间"换成"阵元位置"，把"频率"换成"sinθ"，数字信号处理的那一套全部平移过来</text>
+
+  <!-- header -->
+  <rect x="30" y="84" width="900" height="46" rx="8" fill="#0f7a8a"/>
+  <text x="180" y="113" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">时域（DSP 熟悉的那套）</text>
+  <text x="480" y="113" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">↔</text>
+  <text x="780" y="113" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">空间域（相控阵）</text>
+
+  <!-- rows -->
+  <g font-size="11.5">
+    <rect x="30" y="130" width="900" height="42" fill="#ffffff"/>
+    <text x="50" y="157" font-size="11.5" fill="#333" font-family="Consolas,monospace">自变量 t（秒）</text>
+    <text x="480" y="157" text-anchor="middle" font-size="13" fill="#8899a6">↔</text>
+    <text x="530" y="157" font-size="11.5" fill="#333" font-family="Consolas,monospace">自变量 x = n·d（米，阵元位置）</text>
+
+    <rect x="30" y="172" width="900" height="42" fill="#f7fbfc"/>
+    <text x="50" y="199" font-size="11.5" fill="#333" font-family="Consolas,monospace">信号 s(t)</text>
+    <text x="480" y="199" text-anchor="middle" font-size="13" fill="#8899a6">↔</text>
+    <text x="530" y="199" font-size="11.5" fill="#333" font-family="Consolas,monospace">阵元激励 w_n</text>
+
+    <rect x="30" y="214" width="900" height="42" fill="#ffffff"/>
+    <text x="50" y="241" font-size="11.5" fill="#333" font-family="Consolas,monospace">频谱 S(f)</text>
+    <text x="480" y="241" text-anchor="middle" font-size="13" fill="#8899a6">↔</text>
+    <text x="530" y="241" font-size="11.5" fill="#333" font-family="Consolas,monospace">方向图 AF(u)，u = sinθ</text>
+
+    <rect x="30" y="256" width="900" height="42" fill="#f7fbfc"/>
+    <text x="50" y="283" font-size="11.5" fill="#333" font-family="Consolas,monospace">采样间隔 T_s</text>
+    <text x="480" y="283" text-anchor="middle" font-size="13" fill="#8899a6">↔</text>
+    <text x="530" y="283" font-size="11.5" fill="#333" font-family="Consolas,monospace">阵元间距 d</text>
+
+    <rect x="30" y="298" width="900" height="42" fill="#ffffff"/>
+    <text x="50" y="325" font-size="11.5" fill="#333" font-family="Consolas,monospace">采样率 f_s = 1/T_s</text>
+    <text x="480" y="325" text-anchor="middle" font-size="13" fill="#8899a6">↔</text>
+    <text x="530" y="325" font-size="11.5" fill="#333" font-family="Consolas,monospace">空间采样率 1/d</text>
+
+    <rect x="30" y="340" width="900" height="42" fill="#f7fbfc"/>
+    <text x="50" y="367" font-size="11.5" fill="#c96a1f" font-family="Consolas,monospace">最高频率 f_max</text>
+    <text x="480" y="367" text-anchor="middle" font-size="13" fill="#8899a6">↔</text>
+    <text x="530" y="367" font-size="11.5" fill="#c96a1f" font-family="Consolas,monospace">最高空间频率 1/λ（|u| ≤ 1）</text>
+
+    <rect x="30" y="382" width="900" height="42" fill="#ffffff"/>
+    <text x="50" y="409" font-size="11.5" fill="#4a7a3a" font-weight="bold" font-family="Consolas,monospace">奈奎斯特：f_s ≥ 2·f_max</text>
+    <text x="480" y="409" text-anchor="middle" font-size="13" fill="#8899a6">↔</text>
+    <text x="530" y="409" font-size="11.5" fill="#4a7a3a" font-weight="bold" font-family="Consolas,monospace">空间奈奎斯特：d ≤ λ/2</text>
+
+    <rect x="30" y="424" width="900" height="42" fill="#f7fbfc"/>
+    <text x="50" y="451" font-size="11.5" fill="#8a3a6a" font-weight="bold" font-family="Consolas,monospace">混叠（aliasing）→ 假频率</text>
+    <text x="480" y="451" text-anchor="middle" font-size="13" fill="#8899a6">↔</text>
+    <text x="530" y="451" font-size="11.5" fill="#8a3a6a" font-weight="bold" font-family="Consolas,monospace">栅瓣（grating lobe）→ 假方向</text>
+  </g>
+
+  <text x="480" y="488" text-anchor="middle" font-size="11.5" fill="#333">同一个定理，两套词汇 ｜ "栅瓣就是空间域的混叠"——这句话是 S1 最该带走的一句</text>
+</svg>

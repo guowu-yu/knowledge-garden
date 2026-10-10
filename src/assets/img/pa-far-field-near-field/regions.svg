@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="560" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">三个区域的划分与"糊掉"的方向图</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">近场里波前是弯的，"方向图"这个概念本身失效 —— 不能再算远场增益，只能算空间功率分布</text>
+
+  <!-- regions bar -->
+  <rect x="40" y="86" width="880" height="86" rx="9" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <line x1="70" y1="150" x2="890" y2="150" stroke="#8899a6" stroke-width="1.4"/>
+
+  <!-- reactive near -->
+  <rect x="70" y="118" width="86" height="32" rx="4" fill="#8a3a6a" opacity="0.75"/>
+  <text x="113" y="139" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fff">反应近场</text>
+  <text x="113" y="170" text-anchor="middle" font-size="10" fill="#556">R &lt; 0.62√(D³/λ)</text>
+
+  <!-- fresnel -->
+  <rect x="156" y="118" width="386" height="32" rx="4" fill="#c96a1f" opacity="0.72"/>
+  <text x="349" y="139" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fff">菲涅尔区（辐射近场 / Fresnel）</text>
+  <text x="349" y="170" text-anchor="middle" font-size="10" fill="#556">0.62√(D³/λ) &lt; R &lt; 2D²/λ</text>
+
+  <!-- fraunhofer -->
+  <rect x="542" y="118" width="348" height="32" rx="4" fill="#4a7a3a" opacity="0.75"/>
+  <text x="716" y="139" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fff">远场（Fraunhofer）</text>
+  <text x="716" y="170" text-anchor="middle" font-size="10" fill="#556">R &gt; 2D²/λ</text>
+
+  <!-- distance arrow -->
+  <line x1="70" y1="200" x2="890" y2="200" stroke="#8899a6" stroke-width="1.2"/>
+  <polygon points="890,200 882,196 882,204" fill="#8899a6"/>
+  <text x="480" y="216" text-anchor="middle" font-size="11" fill="#556">距离 R（对数刻度，左近右远）</text>
+
+  <!-- Left: near field -->
+  <rect x="40" y="232" width="430" height="230" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="60" y="258" font-size="13" font-weight="bold" fill="#c96a1f">近场：球面波前，等相位面是弧</text>
+
+  <!-- array -->
+  <line x1="80" y1="430" x2="430" y2="430" stroke="#0f7a8a" stroke-width="3.4"/>
+  <g fill="#0f7a8a">
+    <rect x="88" y="418" width="9" height="12" rx="2"/>
+    <rect x="128" y="418" width="9" height="12" rx="2"/>
+    <rect x="168" y="418" width="9" height="12" rx="2"/>
+    <rect x="208" y="418" width="9" height="12" rx="2"/>
+    <rect x="248" y="418" width="9" height="12" rx="2"/>
+    <rect x="288" y="418" width="9" height="12" rx="2"/>
+    <rect x="328" y="418" width="9" height="12" rx="2"/>
+    <rect x="368" y="418" width="9" height="12" rx="2"/>
+    <rect x="408" y="418" width="9" height="12" rx="2"/>
+  </g>
+
+  <!-- curved wavefronts -->
+  <path d="M 100 350 Q 255 320 410 350" fill="none" stroke="#c96a1f" stroke-width="1.8"/>
+  <path d="M 100 320 Q 255 286 410 320" fill="none" stroke="#c96a1f" stroke-width="1.8"/>
+  <path d="M 100 292 Q 255 254 410 292" fill="none" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="255" y="278" text-anchor="middle" font-size="10.5" fill="#c96a1f">波前明显弯曲 → 各阵元看到的相位关系</text>
+  <text x="255" y="294" text-anchor="middle" font-size="10.5" fill="#c96a1f">不能用一个"方向 θ"描述</text>
+
+  <circle cx="255" cy="356" r="4" fill="#8a3a6a"/>
+  <text x="290" y="368" font-size="10.5" fill="#8a3a6a">焦点：近场可做聚焦</text>
+
+  <!-- Right: far field -->
+  <rect x="490" y="232" width="430" height="230" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="510" y="258" font-size="13" font-weight="bold" fill="#4a7a3a">远场：平面波前，只有一个方向 θ</text>
+
+  <line x1="530" y1="430" x2="880" y2="430" stroke="#0f7a8a" stroke-width="3.4"/>
+  <g fill="#0f7a8a">
+    <rect x="538" y="418" width="9" height="12" rx="2"/>
+    <rect x="578" y="418" width="9" height="12" rx="2"/>
+    <rect x="618" y="418" width="9" height="12" rx="2"/>
+    <rect x="658" y="418" width="9" height="12" rx="2"/>
+    <rect x="698" y="418" width="9" height="12" rx="2"/>
+    <rect x="738" y="418" width="9" height="12" rx="2"/>
+    <rect x="778" y="418" width="9" height="12" rx="2"/>
+    <rect x="818" y="418" width="9" height="12" rx="2"/>
+    <rect x="858" y="418" width="9" height="12" rx="2"/>
+  </g>
+
+  <!-- straight wavefronts at angle -->
+  <line x1="600" y1="340" x2="800" y2="392" stroke="#4a7a3a" stroke-width="2"/>
+  <line x1="560" y1="330" x2="760" y2="382" stroke="#4a7a3a" stroke-width="2"/>
+  <line x1="620" y1="300" x2="820" y2="352" stroke="#4a7a3a" stroke-width="2" stroke-dasharray="6 4"/>
+
+  <!-- theta -->
+  <line x1="705" y1="430" x2="705" y2="330" stroke="#0f7a8a" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <path d="M 705 386 A 44 44 0 0 0 660 372" fill="none" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="660" y="366" font-size="12" font-weight="bold" fill="#0f7a8a">θ</text>
+
+  <text x="705" y="316" text-anchor="middle" font-size="10.5" fill="#4a7a3a">波前是直线 → 各阵元相位差只与 θ 有关</text>
+  <text x="705" y="392" text-anchor="middle" font-size="10.5" fill="#4a7a3a">→ 方向图 AF(θ) 有定义</text>
+
+  <!-- bottom -->
+  <rect x="40" y="478" width="880" height="66" rx="9" fill="#faf0e6" stroke="#c96a1f" stroke-width="1.4"/>
+  <text x="60" y="504" font-size="11.5" fill="#c96a1f" font-weight="bold">如果测试距离不够（R &lt; 2D²/λ）：</text>
+  <text x="60" y="526" font-size="11.5" fill="#333">测得的增益系统性偏低、主瓣变宽、副瓣结构被"糊"平 —— 这是误差，不是天线的问题。工程上有两条出路：拉远距离，或用 CATR 反射器/近场变换把远场"算出来"。</text>
+</svg>

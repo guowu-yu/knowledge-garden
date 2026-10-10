@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">间距-扫描角对照：d/λ 能放宽到多少？</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">免栅瓣条件 d/λ ≤ 1/(1+|sinθ_max|)；扫描范围越大，间距越受压迫，阵元数越多、成本越高</text>
+
+  <!-- axes -->
+  <rect x="60" y="90" width="640" height="380" rx="9" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <line x1="110" y1="430" x2="670" y2="430" stroke="#8899a6" stroke-width="1.6"/>
+  <line x1="110" y1="120" x2="110" y2="440" stroke="#8899a6" stroke-width="1.6"/>
+  <text x="676" y="434" font-size="11" fill="#556">θ_max</text>
+  <text x="66" y="118" font-size="11" fill="#556">d/λ</text>
+
+  <!-- y ticks -->
+  <text x="86" y="124" font-size="10" fill="#556">0.5</text>
+  <text x="86" y="434" font-size="10" fill="#556">0</text>
+  <line x1="104" y1="120" x2="110" y2="120" stroke="#8899a6"/>
+  <line x1="110" y1="120" x2="670" y2="120" stroke="#c7d8dd" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- x ticks -->
+  <g font-size="10" fill="#556" text-anchor="middle">
+    <text x="110" y="450">0°</text>
+    <text x="250" y="450">30°</text>
+    <text x="390" y="450">45°</text>
+    <text x="530" y="450">60°</text>
+    <text x="660" y="450">90°</text>
+  </g>
+  <g stroke="#c7d8dd" stroke-width="1">
+    <line x1="250" y1="120" x2="250" y2="430" stroke-dasharray="3 4"/>
+    <line x1="390" y1="120" x2="390" y2="430" stroke-dasharray="3 4"/>
+    <line x1="530" y1="120" x2="530" y2="430" stroke-dasharray="3 4"/>
+  </g>
+
+  <!-- curve d/lambda = 1/(1+sin theta) -->
+  <path d="M 110 120 L 180 146 L 220 168 L 260 194 L 300 224 L 340 256 L 380 292 L 420 330 L 460 366 L 500 392 L 540 410 L 590 422 L 640 428 L 670 430"
+        fill="none" stroke="#0f7a8a" stroke-width="3"/>
+
+  <!-- region labels -->
+  <text x="200" y="130" font-size="11" fill="#4a7a3a" font-weight="bold">上方：安全区（无栅瓣）</text>
+  <text x="330" y="392" font-size="11" fill="#c96a1f" font-weight="bold">下方：出现栅瓣</text>
+
+  <!-- markers -->
+  <circle cx="110" cy="120" r="4" fill="#c96a1f"/>
+  <text x="118" y="114" font-size="10.5" fill="#c96a1f">0.500</text>
+
+  <circle cx="250" cy="188" r="4" fill="#c96a1f"/>
+  <text x="258" y="182" font-size="10.5" fill="#c96a1f">0.667</text>
+
+  <circle cx="390" cy="298" r="4" fill="#c96a1f"/>
+  <text x="398" y="292" font-size="10.5" fill="#c96a1f">0.586</text>
+
+  <circle cx="530" cy="408" r="4" fill="#c96a1f"/>
+  <text x="538" y="402" font-size="10.5" fill="#c96a1f">0.536</text>
+
+  <circle cx="660" cy="430" r="4" fill="#c96a1f"/>
+  <text x="600" y="424" font-size="10.5" fill="#c96a1f">0.500</text>
+
+  <!-- hard line -->
+  <line x1="110" y1="120" x2="670" y2="120" stroke="#8a3a6a" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="620" y="114" font-size="10.5" fill="#8a3a6a">硬红线 d = λ/2</text>
+
+  <text x="380" y="490" text-anchor="middle" font-size="11" fill="#556">曲线下方区域：d 过大 → 栅瓣进入可见空间</text>
+
+  <!-- table -->
+  <rect x="720" y="90" width="210" height="380" rx="9" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="825" y="116" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">常用取值</text>
+  <line x1="736" y1="128" x2="914" y2="128" stroke="#e0d2c2" stroke-width="1.4"/>
+
+  <g font-size="11" fill="#333">
+    <text x="740" y="152">扫描 ±90°</text>
+    <text x="860" y="152" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">0.500λ</text>
+
+    <text x="740" y="184">扫描 ±60°</text>
+    <text x="860" y="184" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">0.536λ</text>
+
+    <text x="740" y="216">扫描 ±45°</text>
+    <text x="860" y="216" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">0.586λ</text>
+
+    <text x="740" y="248">扫描 ±30°</text>
+    <text x="860" y="248" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">0.667λ</text>
+
+    <text x="740" y="280">扫描 ±15°</text>
+    <text x="860" y="280" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">0.795λ</text>
+  </g>
+
+  <line x1="736" y1="300" x2="914" y2="300" stroke="#e0d2c2" stroke-width="1.4"/>
+  <text x="825" y="322" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8a3a6a">互耦下界</text>
+  <text x="825" y="344" text-anchor="middle" font-size="10.5" fill="#333">d 过小 → 互耦增强</text>
+  <text x="825" y="362" text-anchor="middle" font-size="10.5" fill="#333">有源驻波恶化、扫描盲区</text>
+  <text x="825" y="386" text-anchor="middle" font-size="11.5" fill="#4a7a3a" font-weight="bold">工程下限 ≈ 0.3 ~ 0.4 λ</text>
+
+  <line x1="736" y1="404" x2="914" y2="404" stroke="#e0d2c2" stroke-width="1.4"/>
+  <text x="825" y="426" text-anchor="middle" font-size="10.5" fill="#333">三角栅格可放宽至</text>
+  <text x="825" y="446" text-anchor="middle" font-size="12" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">0.577λ</text>
+</svg>

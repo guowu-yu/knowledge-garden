@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">方向图乘积定理：单元的印记 × 阵列的干涉</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">G_total(θ) = G_e(θ) × |AF(θ)| —— 单元决定"包络"，阵列决定"细纹"</text>
+
+  <!-- G_e -->
+  <rect x="30" y="84" width="290" height="280" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="50" y="110" font-size="13" font-weight="bold" fill="#0f7a8a">① 单元方向图 G_e(θ)</text>
+  <text x="50" y="130" font-size="10.5" fill="#556">单个阵元能覆盖到的角度范围</text>
+
+  <!-- polar-ish plot -->
+  <line x1="175" y1="320" x2="175" y2="146" stroke="#8899a6" stroke-width="1.2"/>
+  <line x1="70" y1="250" x2="290" y2="250" stroke="#8899a6" stroke-width="1.2"/>
+  <text x="294" y="254" font-size="10" fill="#556">0°</text>
+  <text x="175" y="142" font-size="10" fill="#556">±90°</text>
+
+  <!-- element pattern: cos(theta) like -->
+  <path d="M 78 250 C 120 246, 148 214, 162 186 C 168 176, 172 172, 175 172 C 178 172, 182 176, 188 186 C 202 214, 230 246, 272 250"
+        fill="none" stroke="#0f7a8a" stroke-width="2.6"/>
+  <text x="180" y="166" font-size="10" fill="#0f7a8a">宽（几十度 ~ 上百度的 HPBW）</text>
+  <text x="180" y="286" font-size="10.5" fill="#556">贴片阵元典型：近似 cosθ 形</text>
+  <text x="180" y="304" font-size="10.5" fill="#8a3a6a">端射方向趋于零</text>
+  <text x="180" y="330" font-size="10.5" fill="#4a7a3a">这是"免费的副瓣抑制器"</text>
+  <text x="180" y="348" font-size="10.5" fill="#556">大角副瓣被单元方向图自然压低</text>
+
+  <!-- AF -->
+  <rect x="335" y="84" width="290" height="280" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="355" y="110" font-size="13" font-weight="bold" fill="#c96a1f">② 阵列因子 |AF(θ)|</text>
+  <text x="355" y="130" font-size="10.5" fill="#556">N 个理想点源干涉出的"细密结构"</text>
+
+  <line x1="475" y1="320" x2="475" y2="146" stroke="#8899a6" stroke-width="1.2"/>
+  <line x1="360" y1="290" x2="600" y2="290" stroke="#8899a6" stroke-width="1.2"/>
+  <text x="604" y="294" font-size="10" fill="#556">θ</text>
+
+  <!-- comb-like pattern -->
+  <path d="M 362 290 C 380 290, 388 286, 396 282 C 410 274, 420 250, 430 216 C 436 196, 440 186, 444 184 C 448 186, 452 196, 458 216 C 468 250, 478 274, 492 282 C 500 286, 508 290, 524 290
+           C 536 290, 542 286, 550 282 C 562 274, 570 254, 578 226 C 583 210, 586 204, 589 204 C 592 204, 595 210, 600 226 C 608 254, 616 274, 628 282 C 636 286, 644 290, 658 290"
+        fill="none" stroke="#c96a1f" stroke-width="2.4"/>
+  <text x="445" y="176" text-anchor="middle" font-size="10" fill="#8a3a6a">主瓣</text>
+  <text x="545" y="268" font-size="10" fill="#556">副瓣</text>
+  <text x="480" y="330" font-size="10.5" fill="#556">窄（HPBW ≈ 0.886λ/L），副瓣密</text>
+  <text x="480" y="348" font-size="10.5" fill="#556">第一副瓣 −13.2 dB（均匀激励）</text>
+
+  <!-- result -->
+  <rect x="640" y="84" width="290" height="280" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+  <text x="660" y="110" font-size="13" font-weight="bold" fill="#8a3a6a">③ 总方向图 = ① × ②</text>
+  <text x="660" y="130" font-size="10.5" fill="#556">乘积：包络 × 细纹</text>
+
+  <line x1="785" y1="320" x2="785" y2="146" stroke="#8899a6" stroke-width="1.2"/>
+  <line x1="665" y1="290" x2="910" y2="290" stroke="#8899a6" stroke-width="1.2"/>
+
+  <path d="M 667 290 C 685 290, 693 288, 701 286 C 715 281, 725 264, 735 230 C 741 208, 745 196, 749 194 C 753 196, 757 208, 763 230 C 773 264, 783 281, 797 286 C 805 288, 813 290, 828 290
+           C 840 290, 844 288, 850 286 C 862 282, 868 270, 872 254 C 876 240, 878 234, 880 234 C 882 234, 884 240, 888 254 C 892 268, 896 280, 902 284"
+        fill="none" stroke="#8a3a6a" stroke-width="2.4"/>
+  <text x="700" y="238" font-size="9.5" fill="#8a3a6a">主瓣被 G_e 轻微压低</text>
+  <text x="850" y="246" font-size="9.5" fill="#4a7a3a">大角副瓣被 G_e 压掉</text>
+
+  <text x="785" y="330" font-size="10.5" fill="#556">副瓣电平 = AF 副瓣 × G_e 在该角的值</text>
+  <text x="785" y="348" font-size="10.5" fill="#8a3a6a" font-weight="bold">⇒ 设计副瓣时必须带上 G_e</text>
+
+  <!-- bottom: implications -->
+  <rect x="30" y="380" width="900" height="148" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="50" y="406" font-size="13.5" font-weight="bold" fill="#4a7a3a">三个软件工程师必须内化的推论</text>
+
+  <text x="60" y="434" font-size="11.5" fill="#0f7a8a" font-weight="bold">推论一：只用 |AF| 做仿真，副瓣预测会偏悲观</text>
+  <text x="76" y="454" font-size="11" fill="#333">真实系统里，大角副瓣被 G_e 压低。忽略 G_e ⇒ 你预测的副瓣比实测高（"过度保守"）。</text>
+
+  <text x="60" y="480" font-size="11.5" fill="#c96a1f" font-weight="bold">推论二：单元不一致 ⇒ 方向图乘积定理失效</text>
+  <text x="76" y="500" font-size="11" fill="#333">如果各阵元的 G_e 不同（互耦、边缘效应）或位置有误差，"一个 G_e × 一个 AF"不再成立，必须用逐元实测方向图（或阵列流形修正）。</text>
+
+  <text x="60" y="522" font-size="11.5" fill="#8a3a6a" font-weight="bold">推论三：扫描时 G_e(θ) 与 AF 在同步变化，扫描损耗里两项都在动</text>
+  <text x="640" y="522" font-size="11" fill="#4a7a3a">→ 见 S2 扫描损耗篇</text>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="520" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">三种"非均匀"路径：稀疏、子阵、随机</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">当 d &gt; λ/2 无法避免时，出路是"破坏周期性"——但每条路都有它的代价</text>
+
+  <!-- A: uniform sparse -->
+  <rect x="30" y="84" width="290" height="196" rx="9" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="50" y="110" font-size="12.5" font-weight="bold" fill="#0f7a8a">A. 均匀稀疏阵</text>
+  <text x="50" y="130" font-size="10.5" fill="#333">f(x) = comb_T(x) · g(x)</text>
+
+  <line x1="50" y1="200" x2="300" y2="200" stroke="#8899a6" stroke-width="1.2"/>
+  <g fill="#0f7a8a">
+    <rect x="60" y="182" width="8" height="18" rx="2"/>
+    <rect x="110" y="182" width="8" height="18" rx="2"/>
+    <rect x="160" y="182" width="8" height="18" rx="2"/>
+    <rect x="210" y="182" width="8" height="18" rx="2"/>
+    <rect x="260" y="182" width="8" height="18" rx="2"/>
+  </g>
+  <text x="175" y="222" text-anchor="middle" font-size="10.5" fill="#556">间距 1.2λ（均匀但过大）</text>
+
+  <!-- pattern -->
+  <line x1="50" y1="268" x2="300" y2="268" stroke="#8899a6" stroke-width="1"/>
+  <path d="M 60 268 C 80 268, 90 260, 100 250 C 115 236, 125 210, 135 196 C 142 188, 146 186, 150 186 C 154 186, 158 188, 165 196 C 175 210, 185 236, 200 250 C 210 260, 220 268, 240 268"
+        fill="none" stroke="#c96a1f" stroke-width="2"/>
+  <path d="M 190 268 C 200 268, 205 262, 212 254 C 222 242, 228 226, 236 214 C 242 206, 246 204, 250 204 C 254 204, 258 206, 264 214 C 274 226, 280 242, 290 254"
+        fill="none" stroke="#c96a1f" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="250" y="200" font-size="10" fill="#c96a1f">栅瓣</text>
+  <text x="50" y="270" font-size="0" fill="#333">.</text>
+  <text x="175" y="286" text-anchor="middle" font-size="10.5" fill="#8a3a6a">栅瓣依然存在 → 这条路走不通</text>
+
+  <!-- B: subarray -->
+  <rect x="335" y="84" width="290" height="196" rx="9" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="355" y="110" font-size="12.5" font-weight="bold" fill="#c96a1f">B. 子阵（阵元级密集）</text>
+  <text x="355" y="130" font-size="10.5" fill="#333">阵元 d=λ/2，子阵间距 → 大</text>
+
+  <line x1="355" y1="200" x2="605" y2="200" stroke="#8899a6" stroke-width="1.2"/>
+  <!-- subarray 1 -->
+  <g fill="#0f7a8a">
+    <rect x="365" y="182" width="7" height="18" rx="2"/>
+    <rect x="379" y="182" width="7" height="18" rx="2"/>
+    <rect x="393" y="182" width="7" height="18" rx="2"/>
+    <rect x="407" y="182" width="7" height="18" rx="2"/>
+  </g>
+  <rect x="360" y="176" width="60" height="30" rx="4" fill="none" stroke="#c96a1f" stroke-width="1.4"/>
+  <!-- subarray 2 -->
+  <g fill="#0f7a8a">
+    <rect x="460" y="182" width="7" height="18" rx="2"/>
+    <rect x="474" y="182" width="7" height="18" rx="2"/>
+    <rect x="488" y="182" width="7" height="18" rx="2"/>
+    <rect x="502" y="182" width="7" height="18" rx="2"/>
+  </g>
+  <rect x="455" y="176" width="60" height="30" rx="4" fill="none" stroke="#c96a1f" stroke-width="1.4"/>
+  <!-- subarray 3 -->
+  <g fill="#0f7a8a">
+    <rect x="555" y="182" width="7" height="18" rx="2"/>
+    <rect x="569" y="182" width="7" height="18" rx="2"/>
+  </g>
+  <rect x="550" y="176" width="42" height="30" rx="4" fill="none" stroke="#c96a1f" stroke-width="1.4"/>
+
+  <text x="480" y="228" text-anchor="middle" font-size="10.5" fill="#556">子阵间距 = 4×(λ/2) = 2λ</text>
+
+  <path d="M 370 268 C 390 268, 400 258, 412 248 C 426 234, 436 208, 446 194 C 453 186, 457 184, 461 184 C 465 184, 469 186, 476 194 C 486 208, 496 234, 510 248 C 520 258, 530 268, 550 268"
+        fill="none" stroke="#0f7a8a" stroke-width="2.2"/>
+  <path d="M 440 268 C 450 268, 456 262, 464 254 C 476 242, 484 224, 494 212 C 501 204, 505 202, 509 202 C 513 202, 517 204, 524 212 C 534 224, 542 242, 554 254"
+        fill="none" stroke="#8a3a6a" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <text x="540" y="198" font-size="10" fill="#8a3a6a">子阵栅瓣</text>
+  <text x="480" y="286" text-anchor="middle" font-size="10.5" fill="#8a3a6a">主瓣变窄但仍出现"量化栅瓣"</text>
+
+  <!-- C: random sparse -->
+  <rect x="640" y="84" width="290" height="196" rx="9" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="660" y="110" font-size="12.5" font-weight="bold" fill="#4a7a3a">C. 随机 / 稀疏非均匀</text>
+  <text x="660" y="130" font-size="10.5" fill="#333">位置随机，无周期性</text>
+
+  <line x1="660" y1="200" x2="910" y2="200" stroke="#8899a6" stroke-width="1.2"/>
+  <g fill="#4a7a3a">
+    <rect x="668" y="182" width="8" height="18" rx="2"/>
+    <rect x="702" y="182" width="8" height="18" rx="2"/>
+    <rect x="760" y="182" width="8" height="18" rx="2"/>
+    <rect x="790" y="182" width="8" height="18" rx="2"/>
+    <rect x="845" y="182" width="8" height="18" rx="2"/>
+    <rect x="898" y="182" width="8" height="18" rx="2"/>
+  </g>
+  <text x="785" y="222" text-anchor="middle" font-size="10.5" fill="#556">平均间距 ~1.2λ，位置不等间隔</text>
+
+  <line x1="660" y1="268" x2="910" y2="268" stroke="#8899a6" stroke-width="1"/>
+  <path d="M 668 268 C 700 268, 716 262, 736 252 C 756 242, 772 224, 786 208 C 794 200, 798 198, 802 198 C 806 198, 810 200, 818 208 C 832 224, 848 242, 868 252 C 882 260, 894 266, 908 268"
+        fill="none" stroke="#4a7a3a" stroke-width="2.2"/>
+  <line x1="668" y1="268" x2="908" y2="268" stroke="#4a7a3a" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
+  <path d="M 668 258 C 700 258, 716 254, 736 250 C 756 246, 772 240, 786 236 C 794 234, 798 233, 802 233 C 806 233, 810 234, 818 236 C 832 240, 848 246, 868 250 C 882 253, 894 256, 908 258"
+        fill="none" stroke="#8a3a6a" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="700" y="246" font-size="10" fill="#8a3a6a">弥散副瓣"基台"</text>
+  <text x="785" y="286" text-anchor="middle" font-size="10.5" fill="#4a7a3a">栅瓣被打散 → 换来整体副瓣抬升</text>
+
+  <!-- bottom tradeoff -->
+  <rect x="30" y="300" width="900" height="200" rx="9" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="50" y="326" font-size="13.5" font-weight="bold" fill="#8a3a6a">三条路的代价对照</text>
+
+  <line x1="50" y1="344" x2="910" y2="344" stroke="#e2d5e5" stroke-width="1.4"/>
+
+  <text x="60" y="368" font-size="11.5" font-weight="bold" fill="#0f7a8a">A. 均匀稀疏</text>
+  <text x="60" y="388" font-size="11" fill="#333">栅瓣位置：不变（仍周期性）</text>
+  <text x="60" y="408" font-size="11" fill="#333">代价：无 — 因为根本没用</text>
+  <text x="60" y="432" font-size="11" fill="#c96a1f">结论：除非同时改变间距，否则无效</text>
+
+  <text x="360" y="368" font-size="11.5" font-weight="bold" fill="#c96a1f">B. 子阵/量化</text>
+  <text x="360" y="388" font-size="11" fill="#333">栅瓣位置：由子阵间距决定</text>
+  <text x="360" y="408" font-size="11" fill="#333">代价：BRAM 与波控复杂度</text>
+  <text x="360" y="432" font-size="11" fill="#c96a1f">结论：可预测、可抑制；HBF 常用</text>
+
+  <text x="660" y="368" font-size="11.5" font-weight="bold" fill="#4a7a3a">C. 随机稀疏</text>
+  <text x="660" y="388" font-size="11" fill="#333">栅瓣位置：被打散成弥散副瓣</text>
+  <text x="660" y="408" font-size="11" fill="#333">代价：平均副瓣抬至 ≈ -10log₁₀N</text>
+  <text x="660" y="432" font-size="11" fill="#4a7a3a">结论：天文/低频大阵常用（T 型、Y 型）</text>
+
+  <text x="480" y="476" text-anchor="middle" font-size="11.5" fill="#556">共同点：三者的"栅瓣/副瓣"能量都来自"位置离散化"，差别只在于能量是被"集中"还是"摊开"</text>
+</svg>

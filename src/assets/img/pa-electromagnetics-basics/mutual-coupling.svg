@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="520" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">互耦：为什么"一个单元的性能"不等于"它在阵列里的性能"</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">N 元阵不是 N 个独立天线，而是一个 N 端口网络 —— 端口之间通过空间与馈电网络耦合</text>
+
+  <!-- left: isolated vs in array -->
+  <rect x="30" y="84" width="430" height="230" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="50" y="110" font-size="13" font-weight="bold" fill="#0f7a8a">孤立单元 vs 阵中单元</text>
+
+  <!-- isolated -->
+  <line x1="70" y1="220" x2="200" y2="220" stroke="#8899a6" stroke-width="1.6"/>
+  <g fill="#4a7a3a">
+    <rect x="128" y="200" width="14" height="20" rx="3"/>
+  </g>
+  <text x="135" y="248" text-anchor="middle" font-size="10.5" fill="#4a7a3a">孤立：Z_in = Z_11</text>
+  <path d="M 135 200 C 110 170, 100 140, 135 122" fill="none" stroke="#4a7a3a" stroke-width="1.8"/>
+  <path d="M 135 200 C 160 170, 170 140, 135 122" fill="none" stroke="#4a7a3a" stroke-width="1.8"/>
+
+  <!-- in array -->
+  <line x1="240" y1="220" x2="430" y2="220" stroke="#8899a6" stroke-width="1.6"/>
+  <g fill="#0f7a8a">
+    <rect x="252" y="200" width="14" height="20" rx="3"/>
+    <rect x="294" y="200" width="14" height="20" rx="3"/>
+    <rect x="336" y="200" width="14" height="20" rx="3"/>
+    <rect x="378" y="200" width="14" height="20" rx="3"/>
+  </g>
+  <!-- coupling arrows -->
+  <g stroke="#c96a1f" stroke-width="1.5" marker-end="url(#ar)">
+    <line x1="266" y1="214" x2="292" y2="214"/>
+    <line x1="308" y1="228" x2="334" y2="228"/>
+    <line x1="350" y1="214" x2="376" y2="214"/>
+  </g>
+  <defs>
+    <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#c96a1f"/>
+    </marker>
+  </defs>
+  <text x="335" y="248" text-anchor="middle" font-size="10.5" fill="#0f7a8a">阵中：Z_in = Z_11 + Σ Z_1m·(I_m/I_1)</text>
+
+  <text x="50" y="278" font-size="11" fill="#333" font-family="Consolas,monospace">V_1 = Z_11 I_1 + Z_12 I_2 + ⋯ + Z_1N I_N</text>
+  <text x="50" y="300" font-size="11" fill="#8a3a6a">→ 有源阻抗依赖"所有单元的激励"，因此依赖扫描角</text>
+
+  <!-- right: active impedance vs scan -->
+  <rect x="490" y="84" width="440" height="230" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="510" y="110" font-size="13" font-weight="bold" fill="#c96a1f">有源反射系数随扫描角变化</text>
+
+  <line x1="530" y1="270" x2="910" y2="270" stroke="#8899a6" stroke-width="1.4"/>
+  <line x1="530" y1="130" x2="530" y2="280" stroke="#8899a6" stroke-width="1.4"/>
+  <text x="914" y="274" font-size="10.5" fill="#556">θ₀</text>
+  <text x="534" y="126" font-size="10.5" fill="#556">|Γ|</text>
+
+  <g font-size="10" fill="#556" text-anchor="middle">
+    <text x="530" y="290">0°</text>
+    <text x="640" y="290">30°</text>
+    <text x="750" y="290">60°</text>
+    <text x="860" y="290">80°</text>
+  </g>
+
+  <!-- curve -->
+  <path d="M 530 250 C 570 248, 600 245, 640 240 C 680 234, 710 226, 750 214 C 790 200, 820 178, 850 152 C 862 140, 870 132, 878 128"
+        fill="none" stroke="#c96a1f" stroke-width="2.6"/>
+  <line x1="530" y1="250" x2="910" y2="250" stroke="#4a7a3a" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="560" y="244" font-size="10" fill="#4a7a3a">正扫时匹配良好</text>
+
+  <circle cx="860" cy="144" r="4.5" fill="#8a3a6a"/>
+  <text x="856" y="136" font-size="10.5" fill="#8a3a6a" text-anchor="end">扫描盲区（|Γ|→1）</text>
+
+  <text x="510" y="308" font-size="11" fill="#333">机理：表面波 / Floquet 高阶模与阵元耦合</text>
+
+  <!-- bottom -->
+  <rect x="30" y="334" width="900" height="164" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="50" y="360" font-size="13.5" font-weight="bold" fill="#8a3a6a">对算法/软件工程师的三条实际影响</text>
+
+  <text x="60" y="390" font-size="11.5" fill="#0f7a8a" font-weight="bold">① 阵列流形不再是"纯几何"的</text>
+  <text x="76" y="410" font-size="11" fill="#333">a(θ) 的理想形式 exp(j·2πd·n·sinθ/λ) 假设各单元相同且独立。互耦让每个单元的复响应不同且随 θ 变化 ⇒ 真实流形要按角度实测，或用"互耦矩阵"修正。</text>
+
+  <text x="60" y="438" font-size="11.5" fill="#c96a1f" font-weight="bold">② 这个误差"随扫描角变化"，不能靠一次校准搞定</text>
+  <text x="76" y="458" font-size="11" fill="#333">通道校准（S5）测的是"给定激励下各通道的幅相"，但互耦引起的误差是"随扫描角变化"的 ⇒ 补偿表必须是"角度相关"的，或者要做有源方向图标定。</text>
+
+  <text x="60" y="486" font-size="11.5" fill="#4a7a3a" font-weight="bold">③ 好消息：互易定理让收发可共用</text>
+  <text x="600" y="486" font-size="11" fill="#556">同一组权值收发可复用，验证工作量减半</text>
+</svg>

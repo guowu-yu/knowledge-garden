@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="520" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">远场距离的工程后果：测试距离与孔径-频率对照</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">R_ff = 2D²/λ 随 D² 增长、随 λ 减小（频率升高）增长 —— 高频大阵的远场可能在几十米外</text>
+
+  <!-- formula -->
+  <rect x="30" y="82" width="900" height="52" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12" fill="#333" font-family="Consolas,monospace">R_ff = 2·D²/λ = 2·D²·f / c</text>
+  <text x="480" y="124" text-anchor="middle" font-size="11" fill="#556">D = 阵列最大口径（含对角线）｜λ = 波长 ｜ 该式已含"相位误差 ≤ π/8"判据</text>
+
+  <!-- table -->
+  <rect x="30" y="148" width="430" height="330" rx="9" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="50" y="174" font-size="13" font-weight="bold" fill="#c96a1f">典型场景（含 NTN / 5G FR2）</text>
+  <line x1="50" y1="186" x2="440" y2="186" stroke="#e0d2c2" stroke-width="1.4"/>
+
+  <!-- header row -->
+  <text x="56" y="208" font-size="10.5" font-weight="bold" fill="#556">频段</text>
+  <text x="130" y="208" font-size="10.5" font-weight="bold" fill="#556">口径 D</text>
+  <text x="240" y="208" font-size="10.5" font-weight="bold" fill="#556">λ</text>
+  <text x="330" y="208" font-size="10.5" font-weight="bold" fill="#556">R_ff</text>
+  <line x1="50" y1="216" x2="440" y2="216" stroke="#e8ddcf" stroke-width="1"/>
+
+  <g font-size="11" fill="#333" font-family="Consolas,monospace">
+    <text x="56" y="240">2 GHz</text><text x="130" y="240">0.5 m</text><text x="240" y="240">15.0 cm</text><text x="330" y="240" fill="#0f7a8a">3.3 m</text>
+    <text x="56" y="266">3.5 GHz</text><text x="130" y="266">0.5 m</text><text x="240" y="266">8.6 cm</text><text x="330" y="266" fill="#0f7a8a">5.8 m</text>
+    <text x="56" y="292">10 GHz</text><text x="130" y="292">0.30 m</text><text x="240" y="292">3.0 cm</text><text x="330" y="292" fill="#0f7a8a">6.0 m</text>
+    <text x="56" y="318">20 GHz</text><text x="130" y="318">0.30 m</text><text x="240" y="318">1.5 cm</text><text x="330" y="318" fill="#0f7a8a">12.0 m</text>
+    <text x="56" y="344">28 GHz</text><text x="130" y="344">0.10 m</text><text x="240" y="344">1.07 cm</text><text x="330" y="344" fill="#0f7a8a">1.9 m</text>
+    <text x="56" y="370">28 GHz</text><text x="130" y="370">0.20 m</text><text x="240" y="370">1.07 cm</text><text x="330" y="370" fill="#0f7a8a">7.5 m</text>
+    <text x="56" y="396">28 GHz</text><text x="130" y="396">0.30 m</text><text x="240" y="396">1.07 cm</text><text x="330" y="396" fill="#c96a1f">16.8 m</text>
+    <text x="56" y="422">60 GHz</text><text x="130" y="422">0.10 m</text><text x="240" y="422">5.0 mm</text><text x="330" y="422" fill="#c96a1f">4.0 m</text>
+  </g>
+  <line x1="50" y1="434" x2="440" y2="434" stroke="#e8ddcf" stroke-width="1"/>
+  <text x="56" y="456" font-size="10.5" fill="#556">注：D 用最大口径（矩形阵取对角线）。</text>
+  <text x="56" y="472" font-size="10.5" fill="#556">口径加倍 → R_ff 变为 4 倍（平方关系）。</text>
+
+  <!-- decision tree -->
+  <rect x="480" y="148" width="450" height="330" rx="9" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="500" y="174" font-size="13" font-weight="bold" fill="#4a7a3a">测试方案决策：暗室放得下吗？</text>
+
+  <rect x="500" y="190" width="410" height="46" rx="7" fill="#edf4ea" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="705" y="210" text-anchor="middle" font-size="11.5" fill="#4a7a3a" font-weight="bold">需求：在 R ≥ R_ff 处建立准平面波</text>
+  <text x="705" y="228" text-anchor="middle" font-size="10.5" fill="#556">（否则方向图/增益/EIRP 都不是远场量）</text>
+
+  <text x="500" y="264" font-size="11.5" fill="#333" font-weight="bold">▸ 暗室长度 ≥ R_ff ？</text>
+  <text x="516" y="284" font-size="11" fill="#4a7a3a">是 → 直接远场 DFF（真距离，最可信）</text>
+
+  <text x="500" y="314" font-size="11.5" fill="#333" font-weight="bold">▸ 暗室太小？</text>
+  <text x="516" y="334" font-size="11" fill="#c96a1f">① CATR：抛物面反射器把球面波准直为平面波，</text>
+  <text x="536" y="350" font-size="11" fill="#c96a1f">在"静区"内获得远场条件（成本高，约 DFF 的 10 倍）</text>
+  <text x="516" y="372" font-size="11" fill="#8a3a6a">② NFTF：近场扫描 + 近远场变换（数学上把远场算出来）</text>
+  <text x="516" y="394" font-size="11" fill="#4a7a3a">③ 混响室：只测 TRP（总辐射功率），不测方向图</text>
+
+  <line x1="500" y1="410" x2="910" y2="410" stroke="#d8e2d4" stroke-width="1.2"/>
+  <text x="500" y="432" font-size="11" fill="#333" font-weight="bold">软件工程师的位置：</text>
+  <text x="500" y="452" font-size="11" fill="#556">近远场变换（球面/柱面/平面波展开）、静区校验、</text>
+  <text x="500" y="470" font-size="11" fill="#556">球面扫描数据的积分与插值 —— 全是可编程的活。</text>
+  <text x="700" y="470" font-size="11" fill="#4a7a3a">→ 见 S6 测试篇</text>
+</svg>

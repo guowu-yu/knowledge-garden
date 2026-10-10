@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="520" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">阵列激励与方向图：一对空间傅里叶变换</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">你设计激励（空间域），天线给你方向图（空间频域）——它们是同一个函数的两张脸</text>
+
+  <!-- Domain A -->
+  <rect x="30" y="86" width="420" height="200" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="50" y="112" font-size="13.5" font-weight="bold" fill="#0f7a8a">空间域：w_n（离散、有限长）</text>
+  <line x1="60" y1="250" x2="430" y2="250" stroke="#8899a6" stroke-width="1.2"/>
+  <line x1="60" y1="130" x2="60" y2="256" stroke="#8899a6" stroke-width="1.2"/>
+
+  <!-- uniform weights -->
+  <g fill="#0f7a8a">
+    <rect x="76" y="170" width="13" height="80" rx="2"/>
+    <rect x="112" y="170" width="13" height="80" rx="2"/>
+    <rect x="148" y="170" width="13" height="80" rx="2"/>
+    <rect x="184" y="170" width="13" height="80" rx="2"/>
+    <rect x="220" y="170" width="13" height="80" rx="2"/>
+    <rect x="256" y="170" width="13" height="80" rx="2"/>
+    <rect x="292" y="170" width="13" height="80" rx="2"/>
+    <rect x="328" y="170" width="13" height="80" rx="2"/>
+    <rect x="364" y="170" width="13" height="80" rx="2"/>
+    <rect x="400" y="170" width="13" height="80" rx="2"/>
+  </g>
+  <text x="245" y="146" text-anchor="middle" font-size="11" fill="#0f7a8a">均匀激励：|w_n| = 常数</text>
+  <text x="245" y="272" text-anchor="middle" font-size="10.5" fill="#556">n = 0 ⋯ N-1（位置 n·d）</text>
+
+  <!-- transform arrow -->
+  <line x1="150" y1="300" x2="330" y2="300" stroke="#8a3a6a" stroke-width="2"/>
+  <polygon points="330,300 322,296 322,304" fill="#8a3a6a"/>
+  <text x="240" y="292" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a3a6a">空间 DFT</text>
+  <text x="240" y="318" text-anchor="middle" font-size="10.5" fill="#556">AF(u) = Σ w_n e^{j2π(d/λ)n·u}</text>
+
+  <!-- Domain B -->
+  <rect x="510" y="86" width="420" height="200" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="530" y="112" font-size="13.5" font-weight="bold" fill="#c96a1f">空间频域：AF(u)（连续、周期）</text>
+  <line x1="540" y1="250" x2="910" y2="250" stroke="#8899a6" stroke-width="1.2"/>
+  <line x1="725" y1="130" x2="725" y2="256" stroke="#8899a6" stroke-width="1.2"/>
+
+  <text x="548" y="268" font-size="10.5" fill="#556">u=-1</text>
+  <text x="718" y="268" font-size="10.5" fill="#556">0</text>
+  <text x="894" y="268" font-size="10.5" fill="#556">+1</text>
+
+  <!-- sinc-like pattern -->
+  <path d="M 550 248 C 580 248, 596 234, 610 226 C 630 214, 650 180, 680 152 C 700 134, 712 130, 725 130 C 738 130, 750 134, 770 152 C 800 180, 820 214, 840 226 C 854 234, 870 248, 900 248"
+        fill="none" stroke="#c96a1f" stroke-width="2.6"/>
+  <line x1="725" y1="130" x2="725" y2="250" stroke="#8a3a6a" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="725" y="124" text-anchor="middle" font-size="10.5" fill="#8a3a6a">主瓣 (u=0)</text>
+
+  <text x="640" y="188" font-size="10" fill="#556">第一副瓣</text>
+  <line x1="648" y1="192" x2="676" y2="180" stroke="#8899a6" stroke-width="1"/>
+  <circle cx="684" cy="178" r="2.8" fill="#556"/>
+
+  <line x1="580" y1="250" x2="580" y2="242" stroke="#4a7a3a" stroke-width="1.2"/>
+  <line x1="870" y1="250" x2="870" y2="242" stroke="#4a7a3a" stroke-width="1.2"/>
+  <text x="600" y="238" font-size="10" fill="#4a7a3a">可见空间边界 |u|=1</text>
+
+  <!-- operations -->
+  <rect x="30" y="336" width="900" height="172" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="50" y="362" font-size="13.5" font-weight="bold" fill="#4a7a3a">三条"跟着直觉走"的操作规则</text>
+
+  <text x="60" y="392" font-size="11.5" fill="#0f7a8a" font-weight="bold">① 扫描 = 空间频移</text>
+  <text x="60" y="412" font-size="11" fill="#333">给 w_n 乘线性相位 e^{j·n·Δφ}</text>
+  <text x="60" y="432" font-size="11" fill="#333">⇔ 把 AF(u) 沿 u 轴平移 sinθ₀</text>
+  <text x="60" y="456" font-size="10.5" fill="#556">代价：平移出可见空间的能量"折返"</text>
+  <text x="60" y="474" font-size="10.5" fill="#556">（这正是栅瓣的频域解释）</text>
+
+  <text x="350" y="392" font-size="11.5" fill="#c96a1f" font-weight="bold">② 加窗 = 空间低通/平滑</text>
+  <text x="350" y="412" font-size="11" fill="#333">w_n ← w_n · t_n（泰勒/切比雪夫）</text>
+  <text x="350" y="432" font-size="11" fill="#333">⇔ AF 与窗谱卷积</text>
+  <text x="350" y="456" font-size="10.5" fill="#556">副瓣 ↓（振铃被平滑）</text>
+  <text x="350" y="474" font-size="10.5" fill="#556">代价：主瓣 ↑（分辨率↓）</text>
+
+  <text x="640" y="392" font-size="11.5" fill="#8a3a6a" font-weight="bold">③ 有限孔径 = 天然加窗</text>
+  <text x="640" y="412" font-size="11" fill="#333">N 元截断 = 乘以矩形窗</text>
+  <text x="640" y="432" font-size="11" fill="#333">⇔ AF ∝ Dirichlet 核（sinc 形）</text>
+  <text x="640" y="456" font-size="10.5" fill="#556">-13.2 dB 副瓣就是矩形窗的旁瓣</text>
+  <text x="640" y="474" font-size="10.5" fill="#556">不是天线的缺陷，是"截断"的必然</text>
+</svg>

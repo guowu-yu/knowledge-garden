@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">远场条件的来历：从 D²/(8R) 到 2D²/λ</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">判据的本质是"把球面波当成平面波时，跨孔径的最大相位误差不超过 λ/16（= π/8，22.5°）"</text>
+
+  <!-- geometry -->
+  <rect x="30" y="84" width="470" height="250" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="50" y="110" font-size="13" font-weight="bold" fill="#0f7a8a">几何：口径边缘比中心远了多少？</text>
+
+  <!-- aperture -->
+  <line x1="90" y1="280" x2="430" y2="280" stroke="#0f7a8a" stroke-width="3.4"/>
+  <circle cx="260" cy="280" r="5" fill="#0f7a8a"/>
+  <text x="268" y="298" font-size="10.5" fill="#0f7a8a">中心</text>
+  <circle cx="410" cy="280" r="5" fill="#c96a1f"/>
+  <text x="396" y="298" font-size="10.5" fill="#c96a1f">边缘</text>
+
+  <!-- D -->
+  <line x1="260" y1="310" x2="410" y2="310" stroke="#8a3a6a" stroke-width="1.6"/>
+  <line x1="260" y1="304" x2="260" y2="316" stroke="#8a3a6a" stroke-width="1.6"/>
+  <line x1="410" y1="304" x2="410" y2="316" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="335" y="326" text-anchor="middle" font-size="11.5" fill="#8a3a6a">D/2</text>
+
+  <!-- observation point -->
+  <circle cx="260" cy="150" r="4.5" fill="#4a7a3a"/>
+  <text x="200" y="146" font-size="11" fill="#4a7a3a">观察点（轴上，距离 R）</text>
+
+  <!-- rays -->
+  <line x1="260" y1="150" x2="260" y2="278" stroke="#4a7a3a" stroke-width="2"/>
+  <text x="266" y="220" font-size="11" fill="#4a7a3a">R</text>
+
+  <line x1="260" y1="150" x2="410" y2="278" stroke="#c96a1f" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="330" y="196" font-size="11" fill="#c96a1f">R + Δr</text>
+
+  <!-- path difference -->
+  <text x="50" y="356" font-size="12" fill="#333" font-family="Consolas,monospace">由勾股定理：Δr = √(R² + (D/2)²) − R</text>
+  <text x="50" y="378" font-size="12" fill="#333" font-family="Consolas,monospace">二项式展开（R ≫ D）：Δr ≈ (D/2)² / (2R) = D² / (8R)</text>
+
+  <!-- derivation box -->
+  <rect x="520" y="84" width="410" height="250" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.8"/>
+  <text x="540" y="110" font-size="13" font-weight="bold" fill="#4a7a3a">判据推导：令相位误差 ≤ π/8</text>
+
+  <text x="540" y="142" font-size="12" fill="#333" font-family="Consolas,monospace">Δφ = (2π/λ)·Δr</text>
+  <text x="540" y="164" font-size="12" fill="#333" font-family="Consolas,monospace">     = (2π/λ)·D²/(8R)</text>
+
+  <text x="540" y="196" font-size="12" fill="#333" font-family="Consolas,monospace">令 Δφ ≤ π/8：</text>
+  <text x="540" y="220" font-size="12" fill="#333" font-family="Consolas,monospace">(2π/λ)·D²/(8R) ≤ π/8</text>
+  <text x="540" y="242" font-size="12" fill="#333" font-family="Consolas,monospace">D²/(4λR) ≤ 1/4</text>
+
+  <rect x="540" y="256" width="370" height="52" rx="7" fill="#edf4ea" stroke="#4a7a3a" stroke-width="1.8"/>
+  <text x="725" y="290" text-anchor="middle" font-size="20" font-weight="bold" fill="#4a7a3a" font-family="Consolas,monospace">R &gt; 2D² / λ</text>
+
+  <!-- interpretation -->
+  <rect x="30" y="352" width="900" height="176" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="50" y="378" font-size="13.5" font-weight="bold" fill="#c96a1f">三个必须同时满足的条件（不是只看 2D²/λ）</text>
+
+  <text x="60" y="408" font-size="11.5" fill="#333" font-family="Consolas,monospace">① R &gt; 2D²/λ        —— 孔径相位曲率可忽略（大天线决定）</text>
+  <text x="60" y="432" font-size="11.5" fill="#333" font-family="Consolas,monospace">② R ≫ D             —— 距离远大于天线尺寸（平面波近似）</text>
+  <text x="60" y="456" font-size="11.5" fill="#333" font-family="Consolas,monospace">③ R ≫ λ             —— 已在辐射远区（波源不决定场）</text>
+  <text x="60" y="486" font-size="11.5" fill="#8a3a6a" font-weight="bold">工程上取三者中最严格的那个（数值最大）</text>
+  <text x="60" y="512" font-size="11.5" fill="#556">提醒：2D²/λ 不是"唯一判据"，而是"最常见的那个约束"。小天线由 ③ 主导，大阵由 ① 主导。</text>
+</svg>
