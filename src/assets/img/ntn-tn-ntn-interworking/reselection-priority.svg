@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">优先级与重选：TN 与 NTN 两种"价值取向"</text>
+
+  <!-- priority classes concept -->
+  <rect x="34" y="62" width="892" height="150" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="54" y="90" font-size="15" font-weight="bold" fill="#0f7a8a">同一张系统信息里，两套优先级的表达</text>
+  <g font-size="12" fill="#333">
+    <text x="54" y="116">▸ 频点优先级：<tspan font-family="Consolas,monospace" fill="#0f7a8a">CellReselectionPriority</tspan>（0~7，越大越高）+ <tspan font-family="Consolas,monospace">SubPriority</tspan>（0.2 步进）</text>
+    <text x="54" y="140">▸ 但 TN 与 NTN 不是"两个频点"，而是<tspan font-weight="bold">两个体系</tspan>——要把它们装进同一套优先级框架，需要一个"类别"维度</text>
+    <text x="54" y="164">▸ 3GPP 的解法：在系统信息与 RRC 信令里把邻区<tspan font-weight="bold">分类为 TN 类 / NTN 类</tspan>，每类赋予独立优先级</text>
+    <text x="54" y="188">▸ 还可细分 NTN 平台：GEO / MEO / LEO / HAPS / ATG（空中地面网）各成一类</text>
+  </g>
+
+  <!-- priority table -->
+  <rect x="34" y="226" width="436" height="228" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="226" width="436" height="34" rx="12" fill="#0f7a8a"/>
+  <text x="252" y="249" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">情形 A：TN 优先（大众场景）</text>
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="284">▸ 配置：<tspan font-family="Consolas,monospace" fill="#0f7a8a">TN priority 高</tspan> &gt; NTN priority</text>
+    <text x="54" y="308">▸ 行为：只要有 TN 邻区（<tspan font-weight="bold">哪怕 RSRP 很低</tspan>），</text>
+    <text x="54" y="326">　就选 TN，不管 NTN 状态好坏</text>
+    <text x="54" y="352">▸ 测量：TN 满足 S 准则时可不测 NTN</text>
+    <text x="54" y="376">▸ 应用：城市、近郊、沿海——有地面网的绝大多数</text>
+    <text x="54" y="400">▸ 卫星只在出地面网覆盖时被搜索/驻留</text>
+    <text x="54" y="428" fill="#0f7a8a" font-weight="bold">本质：卫星是"补盲"，不该抢主网容量</text>
+  </g>
+
+  <rect x="490" y="226" width="436" height="228" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="490" y="226" width="436" height="34" rx="12" fill="#c96a1f"/>
+  <text x="708" y="249" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">情形 B：NTN 优先（行业场景）</text>
+  <g font-size="11.5" fill="#333">
+    <text x="510" y="284">▸ 配置：<tspan font-family="Consolas,monospace" fill="#c96a1f">NTN priority 高</tspan> &gt; TN priority</text>
+    <text x="510" y="308">▸ 行为：只要有 NTN 可用（同样哪怕 RSRP 低），</text>
+    <text x="510" y="326">　就选 NTN，不管 TN 状态好坏</text>
+    <text x="510" y="352">▸ 测量：优先评估 NTN 类邻区</text>
+    <text x="510" y="376">▸ 应用：海事、航空、油气平台、极地科考——</text>
+    <text x="510" y="394">　地面网不存在或不稳定，靠卫星为主</text>
+    <text x="510" y="428" fill="#c96a1f" font-weight="bold">本质：卫星是"主网"，需要在网内连续</text>
+  </g>
+
+  <!-- reselection procedure -->
+  <rect x="34" y="470" width="892" height="136" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="34" y="470" width="892" height="32" rx="12" fill="#4a7a3a"/>
+  <text x="480" y="492" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">重选决策的"三问"（TS 38.304）</text>
+  <g font-size="11.5" fill="#333">
+    <rect x="52" y="514" width="276" height="80" rx="7" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="66" y="536" font-weight="bold" fill="#4a7a3a">问 1：要不要测量？</text>
+    <text x="66" y="556" font-size="10.5">服务小区好（Srxlev/Squal &gt; 门限）</text>
+    <text x="66" y="572" font-size="10.5">→ 可不测低优先级频点</text>
+    <text x="66" y="588" font-size="10.5">但高优先级频点必须一直测</text>
+
+    <rect x="342" y="514" width="276" height="80" rx="7" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="356" y="536" font-weight="bold" fill="#4a7a3a">问 2：NTN 特有的时间/距离门限？</text>
+    <text x="356" y="556" font-size="10.5">distanceThresh：离参考点近则不测</text>
+    <text x="356" y="572" font-size="10.5">t-Service：服务窗口到期前必须测</text>
+    <text x="356" y="588" font-size="10.5">（时间触发优先于距离判断）</text>
+
+    <rect x="632" y="514" width="278" height="80" rx="7" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="646" y="536" font-weight="bold" fill="#4a7a3a">问 3：选谁？（R 准则排序）</text>
+    <text x="646" y="556" font-size="10.5">同优先级内按 Rs / Rn 排序</text>
+    <text x="646" y="572" font-size="10.5">Rs = Qmeas,s + Qhyst</text>
+    <text x="646" y="588" font-size="10.5">Rn = Qmeas,n − Qoffset</text>
+  </g>
+</svg>

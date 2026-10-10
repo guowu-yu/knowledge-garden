@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">TN/NTN 混合组网：一张网里住着两个世界</text>
+
+  <!-- motivation -->
+  <rect x="34" y="62" width="892" height="118" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="54" y="90" font-size="15" font-weight="bold" fill="#0f7a8a">为什么必须"混合"，而不是"二选一"</text>
+  <g font-size="12.5" fill="#333">
+    <text x="54" y="118">▸ 地面网（TN）：容量大、时延小、成本低，但只覆盖约 <tspan font-weight="bold">15%</tspan> 地表——海洋、沙漠、山区、极地是空白</text>
+    <text x="54" y="140">▸ 卫星网（NTN）：唯一能覆盖 <tspan font-weight="bold">100%</tspan> 地表的手段，但容量有限、时延大、终端贵</text>
+    <text x="54" y="162">▸ 混合组网的目标：<tspan font-weight="bold" fill="#c96a1f">地面为主、卫星兜底</tspan>——终端在两者之间无缝来回，用户感知不到切换</text>
+  </g>
+
+  <!-- two worlds -->
+  <rect x="34" y="196" width="436" height="180" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="196" width="436" height="34" rx="12" fill="#0f7a8a"/>
+  <text x="252" y="219" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">地面网 TN：静止的稠密世界</text>
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="252">▸ 小区位置<tspan font-weight="bold">固定不动</tspan>，覆盖可精确预测</text>
+    <text x="54" y="274">▸ 时延 &lt; 10 ms，容量大，频谱效率高</text>
+    <text x="54" y="296">▸ 优先级<tspan font-weight="bold">高</tspan>：只要有信号就该用</text>
+    <text x="54" y="318">▸ 移动性：常规切换（HO）、DAPS 可用</text>
+    <text x="54" y="340">▸ 小区 ID 稳定映射到地理区块</text>
+    <text x="54" y="362" fill="#0f7a8a" font-weight="bold">"能用就用，用最好的"</text>
+  </g>
+
+  <rect x="490" y="196" width="436" height="180" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="490" y="196" width="436" height="34" rx="12" fill="#c96a1f"/>
+  <text x="708" y="219" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">卫星网 NTN：移动的稀疏世界</text>
+  <g font-size="11.5" fill="#333">
+    <text x="510" y="252">▸ 波束<tspan font-weight="bold">随卫星移动</tspan>，覆盖动态变化</text>
+    <text x="510" y="274">▸ 时延 4~270 ms，容量有限，频谱效率低</text>
+    <text x="510" y="296">▸ 优先级<tspan font-weight="bold">低</tspan>：地面网不在时的兜底</text>
+    <text x="510" y="318">▸ 移动性：CHO、无 DAPS、RACH-less HO</text>
+    <text x="510" y="340">▸ 需要 VCID/TAI 映射到地理区块</text>
+    <text x="510" y="362" fill="#c96a1f" font-weight="bold">"兜底的，别抢主网生意"</text>
+  </g>
+
+  <!-- interworking engine -->
+  <rect x="34" y="390" width="892" height="216" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="34" y="390" width="892" height="36" rx="12" fill="#4a7a3a"/>
+  <text x="480" y="415" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">混合组网的四大引擎</text>
+
+  <g font-size="11.5" fill="#333">
+    <rect x="52" y="442" width="204" height="150" rx="8" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="66" y="464" font-weight="bold" fill="#0f7a8a">① 优先级与测量</text>
+    <text x="66" y="486" font-size="10.5">TN/NTN 各属一个优先级类别</text>
+    <text x="66" y="504" font-size="10.5">（CellReselectionPriority）</text>
+    <text x="66" y="526" font-size="10.5">TN 高 → 有 TN 就不搜星</text>
+    <text x="66" y="544" font-size="10.5">NTN 高 → 优先卫星（如海事）</text>
+    <text x="66" y="566" font-size="10.5">决定"何时开始测量、测谁"</text>
+    <text x="66" y="584" font-size="10.5" fill="#0f7a8a" font-family="Consolas,monospace">TS 38.304</text>
+
+    <rect x="268" y="442" width="204" height="150" rx="8" fill="#eef5f8" stroke="#c96a1f"/>
+    <text x="282" y="464" font-weight="bold" fill="#c96a1f">② 地理感知</text>
+    <text x="282" y="486" font-size="10.5">TN 小区广播 NTN 邻区说明书</text>
+    <text x="282" y="504" font-size="10.5">（TN 的 SIB19）</text>
+    <text x="282" y="526" font-size="10.5">卫星广播"哪里有地面网"</text>
+    <text x="282" y="544" font-size="10.5">（TN 地理区域清单）</text>
+    <text x="282" y="566" font-size="10.5">把"瞎搜"变成"按图索骥"</text>
+    <text x="282" y="584" font-size="10.5" fill="#c96a1f" font-family="Consolas,monospace">SIB19 / tn-AreaList</text>
+
+    <rect x="484" y="442" width="204" height="150" rx="8" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="498" y="464" font-weight="bold" fill="#4a7a3a">③ 移动性接顺</text>
+    <text x="498" y="486" font-size="10.5">空闲态：重选（R 准则）</text>
+    <text x="498" y="504" font-size="10.5">连接态：TN↔NTN 切换</text>
+    <text x="498" y="526" font-size="10.5">CHIO/CHO + 时间/位置触发</text>
+    <text x="498" y="544" font-size="10.5">无 DAPS（馈电资源约束）</text>
+    <text x="498" y="566" font-size="10.5">RACH-less HO 减少中断</text>
+    <text x="498" y="584" font-size="10.5" fill="#4a7a3a" font-family="Consolas,monospace">38.300 / 38.331</text>
+
+    <rect x="700" y="442" width="210" height="150" rx="8" fill="#eef5f8" stroke="#8a3a6a"/>
+    <text x="714" y="464" font-weight="bold" fill="#8a3a6a">④ 身份与管辖</text>
+    <text x="714" y="486" font-size="10.5">VCID/TAI 锚定地理区块</text>
+    <text x="714" y="504" font-size="10.5">AMF 按国家选择</text>
+    <text x="714" y="526" font-size="10.5">位置验证防止越境误路由</text>
+    <text x="714" y="544" font-size="10.5">紧急呼叫 / 合法监听 / 频谱</text>
+    <text x="714" y="566" font-size="10.5">让"移动小区"有"固定语义"</text>
+    <text x="714" y="584" font-size="10.5" fill="#8a3a6a" font-family="Consolas,monospace">38.305 / 38.882</text>
+  </g>
+</svg>

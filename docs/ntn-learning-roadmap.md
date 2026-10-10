@@ -3,7 +3,7 @@
 > 更新日期：2026-10-10 ｜ 站点：https://guowu-yu.github.io/knowledge-garden/
 > 用法：逐个专题学习，完成后勾选；每个专题发布到知识站后把状态改为「已上线」并附链接。
 >
-> **当前进度**：已完成 18 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM/测量与 CSI/信道与链路预算/Rel-18 增强全集/轨道与系统架构深读/射频频段与共存/IoT NTN/Rel-19 与未来），剩余 3 个待学专题。建议顺序：P3 TN/NTN 混合组网 → P3 IDLE/INACTIVE 行为。
+> **当前进度**：已完成 19 篇（综合/再生载荷/UE 能力/SIB19/随机接入/多普勒/调度与 HARQ/定时器全表/移动性与卫星切换/功控/RLM 与 BFM/测量与 CSI/信道与链路预算/Rel-18 增强全集/轨道与系统架构深读/射频频段与共存/IoT NTN/Rel-19 与未来/TN-NTN 混合组网），剩余 1 个待学专题。建议顺序：P3 IDLE/INACTIVE 行为。
 
 ## 已完成（基础层 · 静态视角）
 
@@ -27,10 +27,11 @@
 | ✅ 已上线 | NTN 射频频段与共存 | 频段全家福与邻带地图、38.863 共存方法论、ITU EPFD 天花板、UE RF 与地面对齐、FCC SCS 补充赛道 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-rf-bands-coexistence.html |
 | ✅ 已上线 | IoT NTN（NB-IoT/eMTC） | SIB31-NB 参数地图、HARQ 关闭盲重传、极窄带+128 重复、间断覆盖与 eDRX 扩展、部署画像与竞争格局 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-iot.html |
 | ✅ 已上线 | Rel-19 NTN 与未来 | 再生载荷与 ISL、S&F、UE-Sat-UE 直连、GNSS 非必选、覆盖/容量增强、MBS/RedCap/TDD/HPUE、Ku 频段、Rel-20 与 6G 展望 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-rel19-future.html |
+| ✅ 已上线 | TN/NTN 混合组网 | TN 与 NTN 优先级建模（类别维度）、重选三问与 t-Service/distanceThresh、TN 的 SIB19 与卫星广播 TN 地理区域清单、协调区域、连接态四种切换组合与无 DAPS 约束、VDID/TAI 地理锚定与 AMF 按国选择、三种部署模式 | https://guowu-yu.github.io/knowledge-garden/topics/ntn-tn-ntn-interworking.html |
 
 ---
 
-## 待学习（3 个专题 · 动态过程视角）
+## 待学习（1 个专题 · 动态过程视角）
 
 ### 模块一：接入与链路层过程（怎么接入、怎么发数据）
 
@@ -67,7 +68,7 @@
 | --- | --- | --- | --- | --- |
 | ✅ 已上线 | Rel-18 NTN 增强全集 | Ka 频段频谱版图与 VSAT 分级、上行覆盖增强、TN/NTN 移动性接顺、RTT 位置验证、&gt;10 GHz 补偿与 IoT 节电 | TR 38.821 / 38.331 | P2 |
 | ✅ 已上线 | Rel-19 NTN 与未来 | 三块工作项（NR_NTN_Ph3/IoT_NTN_Ph3/5GSAT_Ph3）、再生载荷与 ISL、存储转发 S&amp;F、UE-Sat-UE 直连、GNSS 非必选、下行覆盖/上行容量增强、MBS、RedCap/eRedCap、NB-IoT TDD、HPUE、FR1 亚 5 MHz、Ku 频段、Rel-20（GNSS 韧性/IoT Ph4/6G）与 IMT-2030 展望 | TR 38.821 / 23.700-29 / 38.742 | P3 |
-| ☐ | TN/NTN 混合组网 | 小区选择/重选偏好、ANR、切换策略、地面网 + 星座协同的运营商部署模式 | 38.300 / 38.304 | P3 |
+| ✅ 已上线 | TN/NTN 混合组网 | TN/NTN 优先级建模（类别维度）、重选三问与 t-Service/distanceThresh、TN 的 SIB19 与卫星广播 TN 地理区域清单、协调区域、连接态四种切换组合与无 DAPS 约束、VDID/TAI 地理锚定与 AMF 按国选择、三种运营商部署模式 | 38.300 / 38.304 | P3 |
 
 ---
 
@@ -75,8 +76,8 @@
 
 1. **先啃 P1 的 6 个**：随机接入增强 → 多普勒补偿 → 调度与 HARQ → 定时器全表 → 卫星切换（NTN 相对地面 5G 改动最狠、最常被问的地方）
 2. **再补 P2 的 2 个**：功控、RLM/BFM ✅、测量 CSI ✅、链路预算 ✅、Rel-18 全集 ✅、架构 ✅（P2 工程完整性达成）
-3. **最后 P3 的 3 个**：射频频段 ✅、IoT NTN ✅、Rel-19/未来 ✅、混合组网（面向演进方向）
+3. **最后 P3 的 4 个**：射频频段 ✅、IoT NTN ✅、Rel-19/未来 ✅、TN/NTN 混合组网 ✅（仅剩 IDLE/INACTIVE 行为）
 
-> 收官篇已上线：**Rel-19 NTN 与未来** 👉 https://guowu-yu.github.io/knowledge-garden/topics/ntn-rel19-future.html —— 20 篇路线至此覆盖"物理几何 → 同步补偿 → 连接管理 → 演进融合"四层，仅剩 TN/NTN 混合组网与 IDLE/INACTIVE 行为两个组网视角专题。
+> 混合组网篇已上线：**TN/NTN 混合组网** 👉 https://guowu-yu.github.io/knowledge-garden/topics/ntn-tn-ntn-interworking.html —— 至此 20 篇路线覆盖"物理几何 → 同步补偿 → 连接管理 → 演进融合"四层，且补齐了唯一的"天地协同"视角；仅剩 NTN IDLE/INACTIVE 态行为一篇。
 
 > 性价比提示：「NTN 定时器与定时关系全表」一张表收尽 T310/DRX/HARQ RTT/SI 窗口的放大量纲，与已发布的 SIB19 有效期、再生载荷 HARQ RTT 两篇互为索引。

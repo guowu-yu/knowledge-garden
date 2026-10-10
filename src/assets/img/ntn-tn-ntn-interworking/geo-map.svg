@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">地理感知：给终端发一张"出坑地图"</text>
+
+  <!-- TN side -->
+  <rect x="34" y="62" width="436" height="248" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="62" width="436" height="34" rx="12" fill="#0f7a8a"/>
+  <text x="252" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">方向一：TN 小区广播"天上有谁"</text>
+
+  <rect x="70" y="116" width="90" height="52" rx="8" fill="#0f7a8a" opacity="0.85"/>
+  <text x="115" y="138" text-anchor="middle" font-size="11" fill="#fff">地面 gNB</text>
+  <text x="115" y="156" text-anchor="middle" font-size="9.5" fill="#fff">SIB19（NTN 邻区）</text>
+
+  <rect x="330" y="116" width="110" height="52" rx="8" fill="#c96a1f" opacity="0.85"/>
+  <text x="385" y="138" text-anchor="middle" font-size="11" fill="#fff">卫星</text>
+  <text x="385" y="156" text-anchor="middle" font-size="9.5" fill="#fff">星历 / t-Service</text>
+
+  <line x1="160" y1="142" x2="330" y2="142" stroke="#0f7a8a" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="245" y="132" text-anchor="middle" font-size="9.5" fill="#0f7a8a">预告"下一颗星几点来"</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="200">▸ Rel-18 把 SIB19 扩展到地面小区：TN 也广播 NTN 邻区参数</text>
+    <text x="54" y="222">▸ 场景：地面网边缘的"过境准备"——手机在 TN 覆盖内</text>
+    <text x="54" y="240">　就提前拿到天上邻居的接入说明书</text>
+    <text x="54" y="262">▸ 收益：出地面网→回天上的过程不再"从零搜星"</text>
+    <text x="54" y="288" fill="#0f7a8a" font-weight="bold">把 NTN 接入的冷启动变成热启动</text>
+  </g>
+
+  <!-- NTN side -->
+  <rect x="490" y="62" width="436" height="248" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="490" y="62" width="436" height="34" rx="12" fill="#c96a1f"/>
+  <text x="708" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">方向二：卫星广播"地面网在哪"</text>
+
+  <!-- map -->
+  <rect x="520" y="116" width="200" height="150" rx="8" fill="#eef5f8" stroke="#c96a1f"/>
+  <text x="620" y="134" text-anchor="middle" font-size="10.5" fill="#c96a1f" font-weight="bold">卫星覆盖波束</text>
+
+  <rect x="545" y="150" width="60" height="34" rx="5" fill="#0f7a8a" opacity="0.8"/>
+  <text x="575" y="165" text-anchor="middle" font-size="8.5" fill="#fff">TN 区 A</text>
+  <text x="575" y="178" text-anchor="middle" font-size="8" fill="#fff">n78</text>
+
+  <rect x="630" y="192" width="66" height="34" rx="5" fill="#0f7a8a" opacity="0.8"/>
+  <text x="663" y="207" text-anchor="middle" font-size="8.5" fill="#fff">TN 区 B</text>
+  <text x="663" y="220" text-anchor="middle" font-size="8" fill="#fff">n41</text>
+
+  <text x="620" y="252" text-anchor="middle" font-size="9.5" fill="#667">波束内散布的"地面网岛屿"</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="736" y="140">▸ SAN 在系统信息里广播</text>
+    <text x="740" y="158" font-weight="bold">"TN 地理区域清单"</text>
+    <text x="736" y="180">▸ 每个条目：地理区块</text>
+    <text x="740" y="198">（纬经度 / 虚拟小区 / 逻辑 TAI）</text>
+    <text x="736" y="220">+ 对应地面频点</text>
+    <text x="736" y="246">▸ 终端按图索骥，直奔正确频点</text>
+    <text x="736" y="268" fill="#c96a1f" font-weight="bold">而不是几百个频点地毯式扫描</text>
+  </g>
+
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="296" fill="#c96a1f">两侧合起来：卫星和地面网<tspan font-weight="bold">互相知道对方在哪</tspan>——这就是混合组网的"握手地图"。</text>
+  </g>
+
+  <!-- coordination regions -->
+  <rect x="34" y="326" width="892" height="278" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="34" y="326" width="892" height="34" rx="12" fill="#4a7a3a"/>
+  <text x="480" y="349" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">协调区域（TN-NTN Coordination Region）：把"地图"落到工程</text>
+
+  <g font-size="11.5" fill="#333">
+    <rect x="54" y="378" width="270" height="100" rx="7" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="68" y="400" font-weight="bold" fill="#4a7a3a">什么是协调区域</text>
+    <text x="68" y="420" font-size="10.5">需要 TN/NTN 联合配置以保证</text>
+    <text x="68" y="437" font-size="10.5">"无缝移动 + 服务连续"的地理区块：</text>
+    <text x="68" y="456" font-size="10.5">机场、港口、地面网覆盖边缘</text>
+    <text x="68" y="473" font-size="10.5">（一半有 TN、一半只有 NTN 的地带）</text>
+
+    <rect x="344" y="378" width="270" height="100" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="358" y="400" font-weight="bold" fill="#0f7a8a">怎么表达地理位置</text>
+    <text x="358" y="420" font-size="10.5">① 虚拟小区 / 逻辑小区（earth-fixed）</text>
+    <text x="358" y="438" font-size="10.5">② 地球固定跟踪区（fixed TAI）</text>
+    <text x="358" y="456" font-size="10.5">③ 基于 GNSS 的地理位置表：</text>
+    <text x="358" y="473" font-size="10.5" font-family="Consolas,monospace">{纬度, 经度, 高度} 列表</text>
+
+    <rect x="634" y="378" width="276" height="100" rx="7" fill="#eef5f8" stroke="#c96a1f"/>
+    <text x="648" y="400" font-weight="bold" fill="#c96a1f">怎么下发与作用范围</text>
+    <text x="648" y="420" font-size="10.5">· 邻区分类（TN 类 / NTN 类）只在</text>
+    <text x="648" y="437" font-size="10.5">　协调区域内下发，减少信令开销</text>
+    <text x="648" y="456" font-size="10.5">· 一个 NTN 小区可含多个区域，</text>
+    <text x="648" y="473" font-size="10.5">　只有子集是协调区域</text>
+  </g>
+
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="508" font-weight="bold" fill="#4a7a3a">落地示例</text>
+    <text x="54" y="532">飞机下降：卫星波束下飞机 → 终端通过协调区域清单得知"下方机场的 TN 频点是 n78" → 进入 TN 覆盖时直连，</text>
+    <text x="54" y="554">　　　　　无需全频段扫描；若首连失败，回退卫星（NTN）继续服务，下次过境再试。</text>
+    <text x="54" y="580" fill="#8a3a6a" font-weight="bold">协调区域的价值：把"跨系统移动"从"碰运气"变成"有预案"——尤其对信令开销与掉线率敏感的行业用户。</text>
+  </g>
+</svg>

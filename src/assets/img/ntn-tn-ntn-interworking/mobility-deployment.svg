@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="640" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">连接态移动性与部署模式：混合组网的两种落地法</text>
+
+  <!-- mobility -->
+  <rect x="34" y="62" width="892" height="272" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="62" width="892" height="34" rx="12" fill="#0f7a8a"/>
+  <text x="480" y="85" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">连接态：TN ↔ NTN 切换的四种组合</text>
+
+  <g font-size="11.5" fill="#333">
+    <rect x="54" y="110" width="204" height="96" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="68" y="132" font-weight="bold" fill="#0f7a8a">TN → TN</text>
+    <text x="68" y="152" font-size="10.5">常规切换（地面网内部）</text>
+    <text x="68" y="170" font-size="10.5">DAPS 可用、中断短</text>
+    <text x="68" y="190" font-size="10.5">不受 NTN 特殊约束</text>
+
+    <rect x="270" y="110" width="212" height="96" rx="7" fill="#eef5f8" stroke="#c96a1f"/>
+    <text x="284" y="132" font-weight="bold" fill="#c96a1f">TN → NTN（上星）</text>
+    <text x="284" y="152" font-size="10.5">地面网边缘/盲区进入卫星</text>
+    <text x="284" y="170" font-size="10.5">提前从 TN 的 SIB19 拿到星历</text>
+    <text x="284" y="190" font-size="10.5">CHO + 时间/位置触发</text>
+
+    <rect x="494" y="110" width="212" height="96" rx="7" fill="#eef5f8" stroke="#c96a1f"/>
+    <text x="508" y="132" font-weight="bold" fill="#c96a1f">NTN → TN（落地）</text>
+    <text x="508" y="152" font-size="10.5">终端据"TN 地理区域清单"</text>
+    <text x="508" y="170" font-size="10.5">直奔目标频点</text>
+    <text x="508" y="190" font-size="10.5">减少全频段扫描的时延与功耗</text>
+
+    <rect x="718" y="110" width="192" height="96" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="732" y="132" font-weight="bold" fill="#0f7a8a">NTN → NTN</text>
+    <text x="732" y="152" font-size="10.5">换星 / 换波束</text>
+    <text x="732" y="170" font-size="10.5">satSwitchWithReSync</text>
+    <text x="732" y="190" font-size="10.5">PCI 不变切换（准静止小区）</text>
+  </g>
+
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="234" font-weight="bold" fill="#0f7a8a">NTN 移动性的三条硬约束（与地面不同的地方）</text>
+    <text x="54" y="258">▸ <tspan font-weight="bold">不支持 DAPS 切换</tspan>：馈电与载荷资源不允许源/目标双连接——中断只能靠其它手段压</text>
+    <text x="54" y="280">▸ <tspan font-weight="bold">RACH-less HO</tspan>：同馈电的星内/星间切换与馈电切换，可用预分配授予跳过 PRACH，省掉长 RTT 的随机接入</text>
+    <text x="54" y="302">▸ <tspan font-weight="bold">CHO 触发扩展</tspan>：除测量事件外，新增时间（T1/t-Service）与位置（D1/D2）触发——因为卫星位置可预测</text>
+    <text x="54" y="324" fill="#c96a1f" font-weight="bold">一句话：地面靠测量触发，NTN 靠"算得准的几何"触发。</text>
+  </g>
+
+  <!-- deployment modes -->
+  <rect x="34" y="350" width="892" height="264" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="34" y="350" width="892" height="34" rx="12" fill="#4a7a3a"/>
+  <text x="480" y="373" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">运营商部署的三种模式</text>
+
+  <g font-size="11.5" fill="#333">
+    <rect x="54" y="400" width="276" height="196" rx="8" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="68" y="424" font-weight="bold" fill="#0f7a8a">模式一：地面为主 + 卫星补盲</text>
+    <text x="68" y="448" font-size="10.5">· TN 优先级高，卫星只在无地面网时启用</text>
+    <text x="68" y="468" font-size="10.5">· 目标：消除"无服务"地理与场景</text>
+    <text x="68" y="488" font-size="10.5">· 终端：普通手机（NTN 能力可选）</text>
+    <text x="68" y="508" font-size="10.5">· 典型：大众运营商 + LEO 合作</text>
+    <text x="68" y="532" font-size="10.5" fill="#0f7a8a">代表需求：短信/应急/低速数据回传</text>
+    <text x="68" y="558" font-size="10.5" fill="#667">价值锚点：覆盖率从 ~99% 人口覆盖</text>
+    <text x="68" y="576" font-size="10.5" fill="#667">→ 接近 100% 地理覆盖</text>
+
+    <rect x="342" y="400" width="276" height="196" rx="8" fill="#eef5f8" stroke="#c96a1f"/>
+    <text x="356" y="424" font-weight="bold" fill="#c96a1f">模式二：卫星为主 + 地面协同</text>
+    <text x="356" y="448" font-size="10.5">· NTN 优先级高，用于海事/航空/偏远</text>
+    <text x="356" y="468" font-size="10.5">· 地面网作为靠港/进城的"换乘站"</text>
+    <text x="356" y="488" font-size="10.5">· 终端：专业 VSAT / 相控阵终端</text>
+    <text x="356" y="508" font-size="10.5">· 典型：卫星运营商 + 地面漫游</text>
+    <text x="356" y="532" font-size="10.5" fill="#c96a1f">代表需求：船队/机队连续宽带</text>
+    <text x="356" y="558" font-size="10.5" fill="#667">价值锚点：海上/空中从"孤立平台"</text>
+    <text x="356" y="576" font-size="10.5" fill="#667">变为"网络节点"</text>
+
+    <rect x="630" y="400" width="276" height="196" rx="8" fill="#eef5f8" stroke="#8a3a6a"/>
+    <text x="644" y="424" font-weight="bold" fill="#8a3a6a">模式三：深度整合（融合核心网）</text>
+    <text x="644" y="448" font-size="10.5">· 同一 5GC 同时服务 TN 与 NTN 接入</text>
+    <text x="644" y="468" font-size="10.5">· 会话/移动性由统一核心网管理</text>
+    <text x="644" y="488" font-size="10.5">· 需 VCID/TAI 地理锚定 + AMF 按国选择</text>
+    <text x="644" y="508" font-size="10.5">· Rel-19 5GSAT_Ph3 的目标形态</text>
+    <text x="644" y="532" font-size="10.5" fill="#8a3a6a">代表需求：无缝漫游、一张账单</text>
+    <text x="644" y="558" font-size="10.5" fill="#667">价值锚点：用户完全感知不到</text>
+    <text x="644" y="576" font-size="10.5" fill="#667">"用的是地面还是卫星"</text>
+  </g>
+</svg>
