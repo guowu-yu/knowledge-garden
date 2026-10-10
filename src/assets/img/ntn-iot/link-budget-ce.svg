@@ -46,6 +46,6 @@
   <!-- verdict -->
   <rect x="40" y="470" width="880" height="105" rx="12" fill="#0f7a8a" opacity="0.08"/>
   <text x="480" y="502" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f7a8a">设计哲学：速率 20~60 kbps 级、延迟秒级都不是目标</text>
-  <text x="480" y="530" text-anchor="middle" font-size="14" fill="#333">目标是<tspan font-weight="bold">"一节电池用十年、一针数据能穿过 600 km"</tspan>——抄表、资产追踪、环境监测、海洋浮标</text>
+  <text x="480" y="530" text-anchor="middle" font-size="14" fill="#333">目标是<tspan font-weight="bold">"一节电池用十年、一帧数据能穿过 600 km"</tspan>——抄表、资产追踪、环境监测、海洋浮标</text>
   <text x="480" y="556" text-anchor="middle" font-size="13" fill="#666">所有带宽、速率、时延的牺牲，都是在为链路预算的每一分贝让路。</text>
 </svg>
