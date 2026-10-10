@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">NTN 频段全家福与"邻带地图"（TS 38.101-5）</text>
+
+  <!-- FR1 spectrum strip -->
+  <text x="60" y="82" font-size="15" font-weight="bold" fill="#0f7a8a">FR1-NTN（410 MHz – 7.125 GHz）· 手持终端</text>
+  <line x1="60" y1="260" x2="900" y2="260" stroke="#333" stroke-width="2"/>
+  <g font-family="Consolas,monospace" font-size="11" fill="#555">
+    <text x="60" y="278">1.5 GHz</text><text x="250" y="278">1.6</text><text x="360" y="278">2.0</text><text x="520" y="278">2.2</text><text x="700" y="278">2.5</text><text x="880" y="278">7.1 GHz</text>
+  </g>
+
+  <!-- n255 DL -->
+  <rect x="150" y="180" width="110" height="46" rx="5" fill="#0f7a8a" opacity="0.85"/>
+  <text x="205" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">n255 DL</text>
+  <text x="205" y="216" text-anchor="middle" font-size="10.5" fill="#fff" font-family="Consolas,monospace">1525–1559</text>
+  <!-- n255 UL -->
+  <rect x="230" y="120" width="110" height="40" rx="5" fill="#0f7a8a" opacity="0.55"/>
+  <text x="285" y="140" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#fff">n255 UL</text>
+  <text x="285" y="154" text-anchor="middle" font-size="10" fill="#fff" font-family="Consolas,monospace">1626.5–1660.5</text>
+
+  <!-- n254 UL -->
+  <rect x="370" y="120" width="90" height="40" rx="5" fill="#c96a1f" opacity="0.6"/>
+  <text x="415" y="140" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#fff">n254 UL</text>
+  <text x="415" y="154" text-anchor="middle" font-size="10" fill="#fff" font-family="Consolas,monospace">1610–1626.5</text>
+  <!-- n254 DL -->
+  <rect x="610" y="180" width="90" height="46" rx="5" fill="#c96a1f" opacity="0.9"/>
+  <text x="655" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">n254 DL</text>
+  <text x="655" y="216" text-anchor="middle" font-size="10.5" fill="#fff" font-family="Consolas,monospace">2483.5–2500</text>
+
+  <!-- n256 UL -->
+  <rect x="480" y="120" width="70" height="40" rx="5" fill="#4a7a3a" opacity="0.6"/>
+  <text x="515" y="140" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">n256 UL</text>
+  <text x="515" y="154" text-anchor="middle" font-size="10" fill="#fff" font-family="Consolas,monospace">1980–2010</text>
+  <!-- n256 DL -->
+  <rect x="540" y="180" width="70" height="46" rx="5" fill="#4a7a3a" opacity="0.9"/>
+  <text x="575" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">n256 DL</text>
+  <text x="575" y="216" text-anchor="middle" font-size="10" fill="#fff" font-family="Consolas,monospace">2170–2200</text>
+
+  <!-- adjacency callout -->
+  <path d="M 545 226 L 480 300" stroke="#c0282d" stroke-width="2" marker-end="url(#arrR)"/>
+  <defs><marker id="arrR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c0282d"/></marker></defs>
+  <text x="470" y="318" font-size="12.5" fill="#c0282d" font-weight="bold">n256 DL 紧邻地面 n1（2110–2170）/ n34 —— 共存研究的焦点带</text>
+  <text x="470" y="338" font-size="12" fill="#555">n255 远离一切地面频段 —— "干净"的 MSS 资产</text>
+
+  <!-- FR2 strip -->
+  <text x="60" y="380" font-size="15" font-weight="bold" fill="#c96a1f">FR2-NTN（17.3 – 30 GHz）· VSAT 类终端 · CBW 最高 400 MHz（Rel-18）</text>
+  <line x1="60" y1="470" x2="900" y2="470" stroke="#333" stroke-width="2"/>
+  <g font-family="Consolas,monospace" font-size="11" fill="#555">
+    <text x="60" y="488">17.3 GHz</text><text x="440" y="488">20.2</text><text x="700" y="488">27.5</text><text x="880" y="488">30 GHz</text>
+  </g>
+  <!-- shared DL -->
+  <rect x="80" y="410" width="380" height="46" rx="5" fill="#0f7a8a" opacity="0.85"/>
+  <text x="270" y="430" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">n510 / n511 / n512 共享 DL</text>
+  <text x="270" y="447" text-anchor="middle" font-size="10.5" fill="#fff" font-family="Consolas,monospace">17.3 – 20.2 GHz</text>
+  <!-- UL blocks -->
+  <rect x="620" y="410" width="90" height="46" rx="5" fill="#c96a1f" opacity="0.9"/>
+  <text x="665" y="430" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#fff">n510 UL</text>
+  <text x="665" y="447" text-anchor="middle" font-size="10" fill="#fff" font-family="Consolas,monospace">27.5–28.35</text>
+  <rect x="720" y="410" width="90" height="46" rx="5" fill="#c96a1f" opacity="0.75"/>
+  <text x="765" y="430" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#fff">n511 UL</text>
+  <text x="765" y="447" text-anchor="middle" font-size="10" fill="#fff" font-family="Consolas,monospace">28.35–30</text>
+  <text x="850" y="437" font-size="11" fill="#8a4f9e" font-weight="bold">n512 UL 27.5–30</text>
+
+  <!-- bottom notes -->
+  <rect x="60" y="530" width="840" height="70" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <g font-size="13" fill="#333">
+    <text x="80" y="556">▸ 全部 NTN 频段均为 <tspan font-weight="bold" fill="#0f7a8a">FDD</tspan>——大传播延迟下 TDD 不可行（HAPS 例外，可借 n1 当"高空基站"）。</text>
+    <text x="80" y="580">▸ 频段来源全是 MSS 传统资产（卫星行业既得频谱）+ ITU 卫星业务划分，不是给蜂窝新划的——这决定了共存的谈判格局。</text>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="600" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">共存干扰地图：谁在打扰谁（TR 38.863 场景谱系）</text>
+
+  <!-- satellite -->
+  <g transform="translate(480,120)">
+    <rect x="-24" y="-16" width="48" height="32" rx="6" fill="#0f7a8a"/>
+    <rect x="-54" y="-9" width="26" height="18" rx="2" fill="#0f7a8a" opacity="0.7"/>
+    <rect x="28" y="-9" width="26" height="18" rx="2" fill="#0f7a8a" opacity="0.7"/>
+    <text x="0" y="38" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">SAN（卫星+馈电+gNB 整体）</text>
+  </g>
+
+  <!-- beams down -->
+  <g stroke="#0f7a8a" fill="none" stroke-dasharray="6 4" opacity="0.6">
+    <path d="M 440 150 L 150 380" stroke-width="1.8"/>
+    <path d="M 480 150 L 480 390" stroke-width="1.8"/>
+    <path d="M 520 150 L 810 380" stroke-width="1.8"/>
+  </g>
+
+  <!-- ground entities -->
+  <g transform="translate(150,410)">
+    <rect x="-52" y="-18" width="104" height="36" rx="8" fill="#c96a1f"/>
+    <text x="0" y="6" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">NTN UE</text>
+    <text x="0" y="38" text-anchor="middle" font-size="11.5" fill="#555">手持 / VSAT</text>
+  </g>
+  <g transform="translate(480,420)">
+    <rect x="-58" y="-18" width="116" height="36" rx="8" fill="#4a7a3a"/>
+    <text x="0" y="6" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">地面 gNB</text>
+    <text x="0" y="38" text-anchor="middle" font-size="11.5" fill="#555">TN 基站（邻带）</text>
+  </g>
+  <g transform="translate(810,410)">
+    <rect x="-52" y="-18" width="104" height="36" rx="8" fill="#c96a1f"/>
+    <text x="0" y="6" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">TN UE</text>
+    <text x="0" y="38" text-anchor="middle" font-size="11.5" fill="#555">普通手机</text>
+  </g>
+
+  <!-- interference arrows -->
+  <path d="M 350 402 L 245 402" stroke="#c0282d" stroke-width="2.5" marker-end="url(#arrI)"/>
+  <defs><marker id="arrI" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c0282d"/></marker></defs>
+  <text x="297" y="392" text-anchor="middle" font-size="11.5" fill="#c0282d" font-weight="bold">邻带互扰①</text>
+  <path d="M 610 402 L 715 402" stroke="#c0282d" stroke-width="2.5" marker-end="url(#arrI)"/>
+  <text x="663" y="392" text-anchor="middle" font-size="11.5" fill="#c0282d" font-weight="bold">邻带互扰②</text>
+  <text x="480" y="500" text-anchor="middle" font-size="12.5" fill="#c0282d" font-weight="bold">卫星下行打地面 UE 上行 / NTN UE 上行打地面基站下行 —— 交叉极化方向的干扰最难处理</text>
+
+  <!-- scenario table -->
+  <rect x="60" y="330" width="840" height="0" fill="none"/>
+  <rect x="60" y="524" width="840" height="62" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <g font-size="12.5" fill="#333">
+    <text x="80" y="548">▸ 38.863 研究频段：2 GHz（S）、11/14 GHz（Ku）、17/27 GHz（Ka）；n256 与 n1/n34 邻带是 FR1 主战场。</text>
+    <text x="80" y="570">▸ 卫星-卫星之间的共存<tspan font-weight="bold">不归 3GPP 管</tspan>——ITU RR Article 9 与各国规则已覆盖（如 GSO/NGSO 协调）。</text>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">RF 需求对齐与终端画像：一部手机走两网</text>
+
+  <!-- alignment table -->
+  <rect x="40" y="70" width="430" height="250" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="40" y="70" width="430" height="42" rx="12" fill="#0f7a8a"/>
+  <text x="255" y="98" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">UE 需求对齐（38.101-5 vs 38.101-1）</text>
+  <g font-size="13.5" fill="#333">
+    <text x="58" y="142">▸ ACLR：<tspan font-weight="bold" font-family="Consolas,monospace">30 dB</tspan>（与地面完全一致）</text>
+    <text x="58" y="168">▸ ACS：<tspan font-weight="bold" font-family="Consolas,monospace">33 dB</tspan>（与地面完全一致）</text>
+    <text x="58" y="194">▸ PC3 = 23 dBm，全向天线，NF ≈ 7 dB</text>
+    <text x="58" y="220">▸ 频率误差 ±0.1 ppm（含 Doppler 预补偿）</text>
+    <text x="58" y="246">▸ 结论：<tspan font-weight="bold" fill="#0f7a8a">同一套射频硬件可同时满足 TN + NTN</tspan></text>
+    <text x="58" y="272">　—— 手机直连卫星没有硬件门槛，只有</text>
+    <text x="58" y="298">　协议栈与天线效率的工程账。</text>
+  </g>
+
+  <!-- SAN side -->
+  <rect x="490" y="70" width="430" height="250" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="490" y="70" width="430" height="42" rx="12" fill="#c96a1f"/>
+  <text x="705" y="98" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">SAN 侧（38.108）：比地面 gNB 宽松</text>
+  <g font-size="13.5" fill="#333">
+    <text x="508" y="142">▸ SAN = 载荷 + 馈电 + 信关站 + gNB 整体</text>
+    <text x="508" y="168">▸ 分类：<tspan font-weight="bold">GEO / LEO</tspan> 两类；类型 1-H/1-O/2-O</text>
+    <text x="508" y="194">▸ 固定 ACLR 仅 <tspan font-weight="bold" font-family="Consolas,monospace">12 dBc</tspan>、ACS 18~24 dBc</text>
+    <text x="508" y="220">　（卫星频道间隔大、邻道环境简单）</text>
+    <text x="508" y="246">▸ 传播模型专用 NTN-TDLA/C；一致性测试</text>
+    <text x="508" y="272">　归 TS 38.181（SAN）与 38.521-5（UE）。</text>
+    <text x="508" y="298">▸ HPUE：FR1 上行功率提升档位（共存专项研究）</text>
+  </g>
+
+  <!-- decision tree -->
+  <rect x="40" y="340" width="880" height="250" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <text x="60" y="370" font-size="16" font-weight="bold" fill="#4a7a3a">频段 → 终端 → 带宽 决策树（选频段即选终端生态）</text>
+  <g font-size="13.5" fill="#333">
+    <text x="60" y="404">手机直连（D2D）→ <tspan font-weight="bold">n255 / n256</tspan>（FR1 MSS）→ CBW 3~30 MHz → 23 dBm 全向 → 覆盖优先</text>
+    <text x="60" y="432">大 LEO MSS 存量频率 → <tspan font-weight="bold">n254</tspan>（L 发 S 收）→ CBW 3~15 MHz → 既有 MSS 系统升级路径</text>
+    <text x="60" y="460">固定/移动平台宽带 → <tspan font-weight="bold">n510 / n511 / n512</tspan>（FR2 Ka）→ CBW 50~400 MHz → 70 dBm+ 定向 → 容量优先</text>
+    <text x="60" y="488">NB-IoT / eMTC 卫星物联网 → 复用 n255 / n256 → 180 kHz → 极窄带、容忍间断覆盖</text>
+  </g>
+  <text x="60" y="528" font-size="13" fill="#666">FCC SCS（2024）补充赛道：借地面运营商频谱从太空重辐射（Starlink/T-Mobile、AST 路线）——</text>
+  <text x="60" y="552" font-size="13" fill="#666">不做 3GPP MSS 频段，靠超大口径卫星硬闭地面波形。两条路线并存：MSS 规范派 vs SCS 硬闭派。</text>
+  <text x="60" y="580" font-size="12.5" fill="#0f7a8a" font-weight="bold">一句话：频段选择不是技术题，是"你服务谁"的商业模式题。</text>
+</svg>
