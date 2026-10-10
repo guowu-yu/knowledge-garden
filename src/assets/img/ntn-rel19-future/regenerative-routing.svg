@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">再生载荷与星间路由：把 gNB 搬上天之后发生了什么</text>
+
+  <!-- transparent payload -->
+  <rect x="34" y="60" width="436" height="250" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="60" width="436" height="36" rx="12" fill="#0f7a8a"/>
+  <text x="252" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">透明载荷（Rel-17/18 主线）</text>
+
+  <circle cx="110" cy="155" r="30" fill="#0f7a8a" opacity="0.85"/>
+  <text x="110" y="152" text-anchor="middle" font-size="11.5" fill="#fff">UE</text>
+  <text x="110" y="166" text-anchor="middle" font-size="9" fill="#fff">终端</text>
+
+  <rect x="250" y="130" width="58" height="50" rx="8" fill="#c96a1f" opacity="0.85"/>
+  <text x="279" y="152" text-anchor="middle" font-size="10.5" fill="#fff">卫星</text>
+  <text x="279" y="168" text-anchor="middle" font-size="9" fill="#fff">仅变频放大</text>
+
+  <rect x="386" y="132" width="66" height="46" rx="8" fill="#4a7a3a" opacity="0.85"/>
+  <text x="419" y="152" text-anchor="middle" font-size="10.5" fill="#fff">信关站</text>
+  <text x="419" y="167" text-anchor="middle" font-size="9" fill="#fff">gNB 在地面</text>
+
+  <line x1="140" y1="155" x2="250" y2="155" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="195" y="145" text-anchor="middle" font-size="10" fill="#0f7a8a">服务链路</text>
+  <line x1="308" y1="155" x2="386" y2="155" stroke="#c96a1f" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="347" y="145" text-anchor="middle" font-size="10" fill="#c96a1f">馈电链路</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="52" y="212">▸ 卫星只是"会飞的弯管"：信号放大、变频，不做解调</text>
+    <text x="52" y="234">▸ 一次 RTT = 服务链路 ×2 + 馈电链路 ×2，<tspan font-weight="bold">往返被翻倍</tspan></text>
+    <text x="52" y="256">▸ 调制/调度/HARQ 全在地面 gNB，卫星透明</text>
+    <text x="52" y="278">▸ 优点：卫星简单便宜；缺点：延迟大、馈电是瓶颈</text>
+    <text x="52" y="300" fill="#0f7a8a" font-weight="bold">GEO 透明：单程 ~270 ms，RTT 可达 541 ms</text>
+  </g>
+
+  <!-- regenerative payload -->
+  <rect x="490" y="60" width="436" height="250" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="490" y="60" width="436" height="36" rx="12" fill="#c96a1f"/>
+  <text x="708" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">再生载荷（Rel-19 新主线）</text>
+
+  <circle cx="566" cy="155" r="30" fill="#0f7a8a" opacity="0.85"/>
+  <text x="566" y="152" text-anchor="middle" font-size="11.5" fill="#fff">UE</text>
+  <text x="566" y="166" text-anchor="middle" font-size="9" fill="#fff">终端</text>
+
+  <rect x="690" y="118" width="86" height="74" rx="8" fill="#c96a1f" opacity="0.9"/>
+  <text x="733" y="140" text-anchor="middle" font-size="10.5" fill="#fff">卫星</text>
+  <text x="733" y="157" text-anchor="middle" font-size="9.5" fill="#fff">含 gNB</text>
+  <text x="733" y="173" text-anchor="middle" font-size="9" fill="#fff">解调/调度/HARQ</text>
+  <text x="733" y="188" text-anchor="middle" font-size="9" fill="#fff">ISL 路由</text>
+
+  <rect x="856" y="132" width="60" height="46" rx="8" fill="#4a7a3a" opacity="0.85"/>
+  <text x="886" y="152" text-anchor="middle" font-size="10.5" fill="#fff">地面</text>
+  <text x="886" y="167" text-anchor="middle" font-size="9" fill="#fff">5GC</text>
+
+  <line x1="596" y1="155" x2="690" y2="155" stroke="#c96a1f" stroke-width="2"/>
+  <text x="643" y="145" text-anchor="middle" font-size="10" fill="#c96a1f">单跳即接入</text>
+  <line x1="776" y1="155" x2="856" y2="155" stroke="#4a7a3a" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="816" y="145" text-anchor="middle" font-size="10" fill="#4a7a3a">馈电/ISL</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="508" y="212">▸ 卫星上跑 gNB：物理层解调 + MAC 调度 + RLC/PDCP 部分</text>
+    <text x="508" y="234">▸ 空口 RTT <tspan font-weight="bold">只算服务链路</tspan>，不再把馈电往返叠加进来</text>
+    <text x="508" y="256">▸ 星间链路（ISL）让"离信关站远"的卫星也能就近回传</text>
+    <text x="508" y="278">▸ 代价：太空级器件、功耗散热、抗辐照、在轨升级</text>
+    <text x="508" y="300" fill="#c96a1f" font-weight="bold">LEO 再生：单程可降到 ~2 ms 量级</text>
+  </g>
+
+  <!-- comparison table -->
+  <rect x="34" y="326" width="892" height="278" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="54" y="354" font-size="15" font-weight="bold" fill="#0f7a8a">两种载荷对系统设计的连锁影响</text>
+
+  <line x1="54" y1="368" x2="906" y2="368" stroke="#9bb" stroke-width="1"/>
+  <g font-size="12" fill="#0f7a8a" font-weight="bold">
+    <text x="60" y="392">维度</text>
+    <text x="260" y="392">透明载荷</text>
+    <text x="560" y="392">再生载荷（Rel-19）</text>
+    <text x="820" y="392">受益方</text>
+  </g>
+  <g font-size="11.5" fill="#333">
+    <line x1="54" y1="404" x2="906" y2="404" stroke="#dde" stroke-width="1"/>
+    <text x="60" y="426">空口 RTT</text><text x="260" y="426">服务×2 + 馈电×2，翻倍</text><text x="560" y="426">仅服务链路，减半量级</text><text x="820" y="426">HARQ / RLC / TCP</text>
+    <line x1="54" y1="438" x2="906" y2="438" stroke="#dde" stroke-width="1"/>
+    <text x="60" y="460">HARQ 可行性</text><text x="260" y="460">RTT 过大 → 常需关闭</text><text x="560" y="460">可重新启用反馈</text><text x="820" y="460">时延敏感业务</text>
+    <line x1="54" y1="472" x2="906" y2="472" stroke="#dde" stroke-width="1"/>
+    <text x="60" y="494">馈电切换</text><text x="260" y="494">切换即断链，需精心规划</text><text x="560" y="494">ISL 兜底，切换平滑</text><text x="820" y="494">移动性 / 可用率</text>
+    <line x1="54" y1="506" x2="906" y2="506" stroke="#dde" stroke-width="1"/>
+    <text x="60" y="528">卫星复杂度</text><text x="260" y="528">低（弯管式）</text><text x="560" y="528">高（太空级处理载荷）</text><text x="820" y="528">制造 / 发射成本</text>
+    <line x1="54" y1="540" x2="906" y2="540" stroke="#dde" stroke-width="1"/>
+    <text x="60" y="562">覆盖逻辑</text><text x="260" y="562">波束由地面锚点决定</text><text x="560" y="562">波束与小区本地化生成</text><text x="820" y="562">密集组网 / 容量</text>
+    <line x1="54" y1="574" x2="906" y2="574" stroke="#dde" stroke-width="1"/>
+    <text x="60" y="596">定位与同步</text><text x="260" y="596">UE 预补偿依赖 GNSS</text><text x="560" y="596">星上可辅助测量</text><text x="820" y="596">非 GNSS 场景</text>
+  </g>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="640" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">Rel-19 NTN 增强全景：三块规范拼图 + 六条能力主线</text>
+
+  <!-- left: WI structure -->
+  <rect x="34" y="64" width="300" height="290" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="64" width="300" height="38" rx="12" fill="#0f7a8a"/>
+  <text x="184" y="89" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">Rel-19 NTN 工作项结构</text>
+  <g font-size="12.5" fill="#333">
+    <rect x="50" y="116" width="268" height="52" rx="7" fill="#0f7a8a" opacity="0.12" stroke="#0f7a8a"/>
+    <text x="62" y="136" font-weight="bold" fill="#0f7a8a" font-family="Consolas,monospace">NR_NTN_Ph3</text>
+    <text x="62" y="156" font-size="11.5">再生载荷·覆盖/容量·MBS·RedCap</text>
+
+    <rect x="50" y="178" width="268" height="52" rx="7" fill="#c96a1f" opacity="0.12" stroke="#c96a1f"/>
+    <text x="62" y="198" font-weight="bold" fill="#c96a1f" font-family="Consolas,monospace">IoT_NTN_Ph3</text>
+    <text x="62" y="218" font-size="11.5">S&amp;F·NB-IoT TDD·公共预警·HPUE</text>
+
+    <rect x="50" y="240" width="268" height="52" rx="7" fill="#4a7a3a" opacity="0.12" stroke="#4a7a3a"/>
+    <text x="62" y="260" font-weight="bold" fill="#4a7a3a" font-family="Consolas,monospace">5GSAT_Ph3</text>
+    <text x="62" y="280" font-size="11.5">SA 架构·UE-Sat-UE 直连·TR 23.700-29</text>
+
+    <rect x="50" y="302" width="268" height="42" rx="7" fill="#556" opacity="0.10" stroke="#667"/>
+    <text x="62" y="320" font-size="11.5" font-weight="bold" fill="#334">配套：Sec（TR 33.700-29）· Charging</text>
+    <text x="62" y="336" font-size="11">阶段冻结：<tspan font-family="Consolas,monospace">2025-12</tspan></text>
+  </g>
+
+  <!-- middle: capability pillars -->
+  <rect x="352" y="64" width="574" height="290" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="352" y="64" width="574" height="38" rx="12" fill="#c96a1f"/>
+  <text x="639" y="89" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">六条能力主线（对 Rel-18 的增量）</text>
+  <g font-size="12" fill="#333">
+    <rect x="368" y="114" width="266" height="66" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="380" y="134" font-weight="bold" fill="#0f7a8a">① 再生载荷上星</text>
+    <text x="380" y="152">gNB 部分/全部功能进入卫星</text>
+    <text x="380" y="168">馈电与 RTT 结构改写</text>
+
+    <rect x="646" y="114" width="266" height="66" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="658" y="134" font-weight="bold" fill="#0f7a8a">② 存储转发 S&amp;F（IoT）</text>
+    <text x="658" y="152">卫星携带数据过境投递</text>
+    <text x="658" y="168">无需连续馈电链路</text>
+
+    <rect x="368" y="190" width="266" height="66" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="380" y="210" font-weight="bold" fill="#0f7a8a">③ 下行覆盖 / 上行容量</text>
+    <text x="380" y="228">正交码复用 PUSCH 重复</text>
+    <text x="380" y="244">早传（early data）· 更密波束</text>
+
+    <rect x="646" y="190" width="266" height="66" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="658" y="210" font-weight="bold" fill="#0f7a8a">④ GNSS 非必选</text>
+    <text x="658" y="228">不依赖 GNSS 的早期接入步骤</text>
+    <text x="658" y="244">降低终端成本与合规门槛</text>
+
+    <rect x="368" y="266" width="266" height="72" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="380" y="286" font-weight="bold" fill="#0f7a8a">⑤ 终端类型扩张</text>
+    <text x="380" y="304">RedCap / eRedCap · NB-IoT TDD</text>
+    <text x="380" y="320">HPUE 高功率 · FR1 亚 5 MHz（至 3 MHz）</text>
+
+    <rect x="646" y="266" width="266" height="72" rx="7" fill="#eef5f8" stroke="#0f7a8a"/>
+    <text x="658" y="286" font-weight="bold" fill="#0f7a8a">⑥ 服务与安全</text>
+    <text x="658" y="304">MBS 服务区广播 · 公共预警</text>
+    <text x="658" y="320">Ku 频段 · 卫星链路安全增强</text>
+  </g>
+
+  <!-- bottom: evolution rail -->
+  <rect x="34" y="374" width="892" height="230" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <text x="54" y="402" font-size="15" font-weight="bold" fill="#4a7a3a">版本演进轨道：从"能用"到"好用"，再到"天地一体"</text>
+  <line x1="80" y1="510" x2="890" y2="510" stroke="#4a7a3a" stroke-width="3"/>
+  <g font-size="11.5" text-anchor="middle">
+    <circle cx="130" cy="510" r="9" fill="#9bb" /><text x="130" y="486" fill="#556" font-weight="bold">Rel-15/16</text><text x="130" y="540" fill="#667">研究铺垫</text><text x="130" y="558" fill="#667">TR 38.811/821</text>
+
+    <circle cx="275" cy="510" r="9" fill="#0f7a8a" /><text x="275" y="486" fill="#0f7a8a" font-weight="bold">Rel-17</text><text x="275" y="540" fill="#334">NR-NTN 首版</text><text x="275" y="558" fill="#334">透明载荷·预补偿</text>
+
+    <circle cx="420" cy="510" r="9" fill="#0f7a8a" /><text x="420" y="486" fill="#0f7a8a" font-weight="bold">Rel-18</text><text x="420" y="540" fill="#334">能力加固</text><text x="420" y="558" fill="#334">Ka·移动性·覆盖</text>
+
+    <circle cx="565" cy="510" r="12" fill="#c96a1f" /><text x="565" y="484" fill="#c96a1f" font-weight="bold" font-size="13">Rel-19</text><text x="565" y="540" fill="#c96a1f" font-weight="bold">体系成型</text><text x="565" y="558" fill="#c96a1f">再生·S&amp;F·直连</text>
+
+    <circle cx="710" cy="510" r="9" fill="#4a7a3a" /><text x="710" y="486" fill="#4a7a3a" font-weight="bold">Rel-20</text><text x="710" y="540" fill="#334">韧性与语音</text><text x="710" y="558" fill="#334">GNSS 抗扰·IoT Ph4</text>
+
+    <circle cx="855" cy="510" r="9" fill="#8a3a6a" /><text x="855" y="486" fill="#8a3a6a" font-weight="bold">Rel-21 / 6G</text><text x="855" y="540" fill="#334">Day-1 天地一体</text><text x="855" y="558" fill="#334">IMT-2030 原生融合</text>
+  </g>
+  <g font-size="11" fill="#667">
+    <text x="54" y="424">· Rel-17 解决"卫星能不能当基站"；Rel-18 解决"大规模组网下的坑"；</text>
+    <text x="54" y="442">· Rel-19 进入"载荷上星 + 网络架构重构"；Rel-20 补 "韧性 / 语音 / 更多终端"；</text>
+    <text x="54" y="460">· 6G 的目标是不再把 NTN 当作"补丁"，而是空口设计的第一天就并入（Day-1 原生统一）。</text>
+  </g>
+</svg>

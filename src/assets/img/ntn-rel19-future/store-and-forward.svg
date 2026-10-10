@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">存储转发（S&amp;F）：把"现在就转发"换成"到场再投递"</text>
+
+  <!-- timeline axis -->
+  <rect x="34" y="64" width="892" height="238" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <text x="54" y="92" font-size="15" font-weight="bold" fill="#c96a1f">一次典型的 S&amp;F 过境时序（IoT-NTN · Rel-19）</text>
+
+  <!-- ground track -->
+  <line x1="80" y1="140" x2="886" y2="140" stroke="#9bb" stroke-width="2"/>
+  <g font-size="10.5" fill="#667" text-anchor="middle">
+    <text x="110" y="128">t0 覆盖本地上空</text>
+    <text x="340" y="128">t1 收集暂存</text>
+    <text x="600" y="128">t2 卫星机动过境</text>
+    <text x="850" y="128">t3 投递目标站</text>
+  </g>
+
+  <!-- satellite arc -->
+  <path d="M 80 200 Q 480 92 886 200" fill="none" stroke="#c96a1f" stroke-width="2.4"/>
+  <circle cx="110" cy="176" r="7" fill="#c96a1f"/>
+  <circle cx="480" cy="118" r="7" fill="#c96a1f"/>
+  <circle cx="850" cy="176" r="7" fill="#c96a1f"/>
+  <text x="480" y="106" text-anchor="middle" font-size="10.5" fill="#c96a1f" font-weight="bold">卫星携带数据在轨飞行</text>
+
+  <!-- ground sites -->
+  <rect x="60" y="214" width="110" height="44" rx="7" fill="#0f7a8a" opacity="0.85"/>
+  <text x="115" y="234" text-anchor="middle" font-size="10.5" fill="#fff">IoT 终端 A</text>
+  <text x="115" y="250" text-anchor="middle" font-size="9" fill="#fff">无本地回传</text>
+
+  <rect x="790" y="214" width="118" height="44" rx="7" fill="#4a7a3a" opacity="0.85"/>
+  <text x="849" y="234" text-anchor="middle" font-size="10.5" fill="#fff">目标信关站</text>
+  <text x="849" y="250" text-anchor="middle" font-size="9" fill="#fff">有回传网络</text>
+
+  <line x1="115" y1="214" x2="110" y2="186" stroke="#0f7a8a" stroke-width="1.6"/>
+  <line x1="849" y1="214" x2="850" y2="186" stroke="#4a7a3a" stroke-width="1.6"/>
+
+  <!-- store buffer -->
+  <rect x="330" y="220" width="300" height="62" rx="8" fill="#eef5f8" stroke="#c96a1f" stroke-dasharray="4,3"/>
+  <text x="480" y="242" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a1f">星上存储缓冲区</text>
+  <text x="480" y="262" text-anchor="middle" font-size="10.5" fill="#334">上行数据先落盘 → 飞出覆盖区也不丢</text>
+  <text x="480" y="276" text-anchor="middle" font-size="10" fill="#667">典型量级：GB 级缓冲，按轨道周期刷新</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="54" y="298">▸ 面向<tspan font-weight="bold">无地面回传 / 断续覆盖</tspan>的广域 IoT：远洋、沙漠、极地、林区</text>
+  </g>
+
+  <!-- key mechanics -->
+  <rect x="34" y="318" width="436" height="286" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="318" width="436" height="36" rx="12" fill="#0f7a8a"/>
+  <text x="252" y="342" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">四个关键机制</text>
+  <g font-size="12" fill="#333">
+    <text x="54" y="382" font-weight="bold" fill="#0f7a8a">① 馈电链路不再"必须在线"</text>
+    <text x="54" y="402" font-size="11.5">数据先存星上，等到有信关站视野再下传——</text>
+    <text x="54" y="420" font-size="11.5">把"实时制"换成"邮差制"。</text>
+
+    <text x="54" y="454" font-weight="bold" fill="#0f7a8a">② 只对 IoT UE 引入（非 NR-NTN）</text>
+    <text x="54" y="474" font-size="11.5">IoT 业务对时延不敏感、允许长重传，</text>
+    <text x="54" y="492" font-size="11.5">正好容忍分钟级的存储等待。</text>
+
+    <text x="54" y="526" font-weight="bold" fill="#0f7a8a">③ 与 TAT / 频次规划耦合</text>
+    <text x="54" y="546" font-size="11.5">UE 需要知道"什么时候卫星会回来"——</text>
+    <text x="54" y="564" font-size="11.5">SIB 里的 t-Service 与过境时刻表是核心。</text>
+
+    <text x="54" y="594" font-weight="bold" fill="#0f7a8a">④ 与 eDRX / PSM 天然互补</text>
+  </g>
+
+  <!-- comparison -->
+  <rect x="490" y="318" width="436" height="286" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="490" y="318" width="436" height="36" rx="12" fill="#4a7a3a"/>
+  <text x="708" y="342" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">S&amp;F vs 实时透明链路</text>
+  <g font-size="11.5" fill="#333">
+    <line x1="508" y1="364" x2="908" y2="364" stroke="#9bb" stroke-width="1"/>
+    <text x="514" y="388" font-weight="bold" fill="#0f7a8a">能力</text>
+    <text x="690" y="388" font-weight="bold" fill="#0f7a8a">实时</text>
+    <text x="810" y="388" font-weight="bold" fill="#0f7a8a">S&amp;F</text>
+    <line x1="508" y1="398" x2="908" y2="398" stroke="#dde" stroke-width="1"/>
+    <text x="514" y="420">时延</text><text x="690" y="420">百 ms 级</text><text x="810" y="420">分钟 / 小时级</text>
+    <line x1="508" y1="430" x2="908" y2="430" stroke="#dde" stroke-width="1"/>
+    <text x="514" y="452">馈电要求</text><text x="690" y="452">必须连续可用</text><text x="810" y="452">可间断</text>
+    <line x1="508" y1="462" x2="908" y2="462" stroke="#dde" stroke-width="1"/>
+    <text x="514" y="484">信关站密度</text><text x="690" y="484">高（否则断链）</text><text x="810" y="484">低（无需实时视距）</text>
+    <line x1="508" y1="494" x2="908" y2="494" stroke="#dde" stroke-width="1"/>
+    <text x="514" y="516">适用业务</text><text x="690" y="516" fill="#c96a1f">语音 / 实时数据</text><text x="810" y="516" fill="#4a7a3a">抄表 / 传感 / 告警</text>
+    <line x1="508" y1="526" x2="908" y2="526" stroke="#dde" stroke-width="1"/>
+    <text x="514" y="548">功耗</text><text x="690" y="548">低时延但需频繁在线</text><text x="810" y="548">可与 eDRX 深度休眠</text>
+    <line x1="508" y1="558" x2="908" y2="558" stroke="#dde" stroke-width="1"/>
+    <text x="514" y="580" font-weight="bold" fill="#4a7a3a">定位</text>
+    <text x="690" y="580">城市/近海补盲</text>
+    <text x="810" y="580" font-weight="bold" fill="#4a7a3a">全球无死角遥测</text>
+    <text x="514" y="598" font-size="11">两种模式在 Rel-19 并存，由业务与卫星能力共同选择。</text>
+  </g>
+</svg>

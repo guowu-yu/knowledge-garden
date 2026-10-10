@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="640" fill="#eef5f8"/>
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">GNSS 非必选 · Rel-20 与 6G：从"依赖外部"走向"内生确定"</text>
+
+  <!-- GNSS optional -->
+  <rect x="34" y="60" width="436" height="262" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="34" y="60" width="436" height="36" rx="12" fill="#0f7a8a"/>
+  <text x="252" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">Rel-19：GNSS 非必选接入</text>
+
+  <rect x="56" y="112" width="392" height="66" rx="8" fill="#eef5f8" stroke="#9bb"/>
+  <text x="70" y="134" font-size="12" font-weight="bold" fill="#556">Rel-17/18 前提：UE 必须先有 GNSS 定位</text>
+  <text x="70" y="154" font-size="11" fill="#334">→ 预补偿延迟与多普勒都要靠"我在哪"起步</text>
+  <text x="70" y="170" font-size="11" fill="#334">→ 室内、遮挡、干扰、成本、合规都成卡点</text>
+
+  <path d="M 252 182 L 252 198" stroke="#0f7a8a" stroke-width="2" marker-end="url(#ar1)"/>
+  <defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0f7a8a"/></marker></defs>
+
+  <rect x="56" y="202" width="392" height="60" rx="8" fill="#0f7a8a" opacity="0.10" stroke="#0f7a8a"/>
+  <text x="70" y="224" font-size="12" font-weight="bold" fill="#0f7a8a">Rel-19 引入"不依赖 GNSS 的早期步骤"</text>
+  <text x="70" y="244" font-size="11" fill="#334">随机接入 / 初始同步阶段即可把 UE "挂上"网络，</text>
+  <text x="70" y="258" font-size="11" fill="#334">精确定位与补偿后移，网络侧通过测量反推位置。</text>
+
+  <g font-size="11" fill="#667">
+    <text x="56" y="286">▸ 收益：终端更便宜、可在室内起机、抗 GNSS 干扰/欺骗能力提升</text>
+    <text x="56" y="306">▸ 代价：网络侧需要更强的多普勒/延迟盲估与位置反演能力</text>
+  </g>
+
+  <!-- Rel-20 -->
+  <rect x="490" y="60" width="436" height="262" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="490" y="60" width="436" height="36" rx="12" fill="#4a7a3a"/>
+  <text x="708" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">Rel-20（目标 2027-03）：三条线</text>
+  <g font-size="12" fill="#333">
+    <rect x="512" y="112" width="392" height="58" rx="7" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="526" y="133" font-weight="bold" fill="#4a7a3a">① GNSS 韧性（TR 38.742）</text>
+    <text x="526" y="153" font-size="11">抗干扰 / 抗欺骗 · 定位完整性 · NR-NTN 场景研究</text>
+
+    <rect x="512" y="182" width="392" height="70" rx="7" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="526" y="203" font-weight="bold" fill="#4a7a3a">② IoT-NTN Phase 4</text>
+    <text x="526" y="221" font-size="11">NB-IoT 上跑 IMS 语音 · 半静态调度 SPS</text>
+    <text x="526" y="238" font-size="11">功率等级扩至 <tspan font-family="Consolas,monospace">37 dBm</tspan> · GEO 方案向 LEO 迁移</text>
+
+    <rect x="512" y="264" width="392" height="48" rx="7" fill="#eef5f8" stroke="#4a7a3a"/>
+    <text x="526" y="285" font-weight="bold" fill="#4a7a3a">③ 6G 研究启动</text>
+    <text x="526" y="303" font-size="11">SA1 + RAN 双线，规范预计落在 Rel-21</text>
+  </g>
+
+  <!-- 6G / IMT-2030 -->
+  <rect x="34" y="342" width="892" height="278" rx="12" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+  <rect x="34" y="342" width="892" height="38" rx="12" fill="#8a3a6a"/>
+  <text x="480" y="367" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">IMT-2030（ITU-R M.2160）与 6G 的"天地一体"目标</text>
+
+  <g font-size="11.5" fill="#333">
+    <text x="56" y="406" font-weight="bold" fill="#8a3a6a">六大应用场景（NTN 是其中多条的底座）</text>
+    <rect x="56" y="418" width="270" height="46" rx="7" fill="#8a3a6a" opacity="0.09" stroke="#8a3a6a"/>
+    <text x="70" y="437" font-weight="bold" fill="#8a3a6a">Imm-TC 沉浸式通信</text>
+    <text x="70" y="454" font-size="10.5">超大带宽 / 低时延（多依赖地面）</text>
+
+    <rect x="340" y="418" width="270" height="46" rx="7" fill="#8a3a6a" opacity="0.09" stroke="#8a3a6a"/>
+    <text x="354" y="437" font-weight="bold" fill="#8a3a6a">HRLLC 超可靠低时延</text>
+    <text x="354" y="454" font-size="10.5">工业级确定性</text>
+
+    <rect x="624" y="418" width="286" height="46" rx="7" fill="#8a3a6a" opacity="0.09" stroke="#8a3a6a"/>
+    <text x="638" y="437" font-weight="bold" fill="#8a3a6a">MC 海量通信</text>
+    <text x="638" y="454" font-size="10.5">全域海量连接（NTN 强相关）</text>
+
+    <rect x="56" y="474" width="270" height="52" rx="7" fill="#c96a1f" opacity="0.13" stroke="#c96a1f"/>
+    <text x="70" y="493" font-weight="bold" fill="#c96a1f">UC 泛在连接 ★</text>
+    <text x="70" y="510" font-size="10.5">"任何地点 100% 覆盖"——</text>
+    <text x="70" y="524" font-size="10.5">直接把 NTN 写进了场景定义</text>
+
+    <rect x="340" y="474" width="270" height="52" rx="7" fill="#c96a1f" opacity="0.13" stroke="#c96a1f"/>
+    <text x="354" y="493" font-weight="bold" fill="#c96a1f">ISAC 通感一体 ★</text>
+    <text x="354" y="510" font-size="10.5">通信 + 感知融合，卫星雷达化</text>
+    <text x="354" y="524" font-size="10.5">可辅助定位与环境感知</text>
+
+    <rect x="624" y="474" width="286" height="52" rx="7" fill="#8a3a6a" opacity="0.09" stroke="#8a3a6a"/>
+    <text x="638" y="493" font-weight="bold" fill="#8a3a6a">AI 与通信融合</text>
+    <text x="638" y="510" font-size="10.5">网络自智 / 星上推理（AI-Native）</text>
+  </g>
+
+  <line x1="56" y1="544" x2="904" y2="544" stroke="#9bb" stroke-width="1"/>
+  <g font-size="11.5" fill="#333">
+    <text x="56" y="568" font-weight="bold" fill="#8a3a6a">Rel-19 的工程遗产 → 6G 的设计前提</text>
+    <text x="56" y="590">· 再生载荷证明"处理能力可以上星"；S&amp;F 证明"实时性不必是硬约束"；</text>
+    <text x="56" y="609">· GNSS 非必选证明"外部依赖可以被网络内生能力替代"。三者合起来，就是 6G 把 NTN 当作</text>
+  </g>
+  <text x="480" y="609" text-anchor="middle" font-size="11.5" fill="#8a3a6a" font-weight="bold"> </text>
+  <text x="56" y="628" font-size="11.5" fill="#8a3a6a" font-weight="bold">Day-1 原生组成部分、而非后期补丁的底气所在——天地一体空口，从第一天就统一设计。</text>
+</svg>
