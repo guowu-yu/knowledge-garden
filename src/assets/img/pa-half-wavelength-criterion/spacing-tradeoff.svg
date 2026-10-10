@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">间距的两条边界：上有栅瓣红线，下有互耦红线</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">d 的可行区间既不"越大越好"，也不"越小越好"，而是一条窄带</text>
+
+  <!-- number line -->
+  <rect x="60" y="120" width="840" height="110" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <line x1="120" y1="180" x2="840" y2="180" stroke="#8899a6" stroke-width="1.8"/>
+  <text x="120" y="212" text-anchor="middle" font-size="11" fill="#556" font-family="Consolas,monospace">0.2λ</text>
+  <text x="240" y="212" text-anchor="middle" font-size="11" fill="#556" font-family="Consolas,monospace">0.3λ</text>
+  <text x="360" y="212" text-anchor="middle" font-size="11" fill="#556" font-family="Consolas,monospace">0.4λ</text>
+  <text x="480" y="212" text-anchor="middle" font-size="11" fill="#556" font-family="Consolas,monospace">0.5λ</text>
+  <text x="600" y="212" text-anchor="middle" font-size="11" fill="#556" font-family="Consolas,monospace">0.6λ</text>
+  <text x="720" y="212" text-anchor="middle" font-size="11" fill="#556" font-family="Consolas,monospace">0.8λ</text>
+  <text x="840" y="212" text-anchor="middle" font-size="11" fill="#556" font-family="Consolas,monospace">1.0λ</text>
+
+  <!-- forbidden left -->
+  <rect x="120" y="150" width="120" height="60" fill="#f6dcdc" opacity="0.85"/>
+  <rect x="480" y="150" width="360" height="60" fill="#f6dcdc" opacity="0.85"/>
+  <!-- safe -->
+  <rect x="240" y="150" width="240" height="60" fill="#dff0e4" opacity="0.95"/>
+
+  <text x="180" y="142" text-anchor="middle" font-size="11" fill="#8a3a3a">互耦过强</text>
+  <text x="660" y="142" text-anchor="middle" font-size="11" fill="#8a3a3a">栅瓣（大角扫描）/ 盲区</text>
+  <text x="360" y="142" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2f6b3a">推荐工作区间</text>
+
+  <text x="240" y="186" font-size="11" fill="#2f6b3a" font-family="Consolas,monospace">0.3λ</text>
+  <text x="474" y="186" font-size="11" fill="#2f6b3a" font-family="Consolas,monospace">0.5λ</text>
+
+  <!-- upper bound -->
+  <rect x="30" y="262" width="450" height="238" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="52" y="288" font-size="14" font-weight="bold" fill="#c96a1f">上界：栅瓣红线</text>
+  <text x="52" y="316" font-size="12" fill="#333" font-family="Consolas,monospace">d/λ_max &lt; 1 / (1 + |sinθ₀|)</text>
+  <text x="52" y="344" font-size="11.5" fill="#333">在<tspan font-weight="bold">最高工作频率</tspan>上评估（λ 最小）</text>
+  <text x="52" y="368" font-size="11.5" fill="#333">±60° 扫描 ⇒ 0.536λ；±90° ⇒ 0.5λ</text>
+  <text x="52" y="392" font-size="11.5" fill="#333">二维阵还要满足 (u,v) 单位圆约束：</text>
+  <text x="52" y="414" font-size="11.5" fill="#0f7a8a" font-family="Consolas,monospace">(u₀+mλ/dx)² + (v₀+nλ/dy)² &gt; 1</text>
+  <text x="52" y="442" font-size="11.5" fill="#333">矩形栅格 0.5λ；三角/六边栅格可放宽到</text>
+  <text x="52" y="464" font-size="11.5" fill="#0f7a8a" font-family="Consolas,monospace">d = λ/√3 ≈ 0.577λ（单元数省 ~13%）</text>
+  <text x="52" y="488" font-size="11" fill="#667">放宽的代价：波控与馈网不再行列解耦</text>
+
+  <!-- lower bound -->
+  <rect x="490" y="262" width="440" height="238" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="512" y="288" font-size="14" font-weight="bold" fill="#4a7a3a">下界：互耦与盲区</text>
+  <text x="512" y="316" font-size="11.5" fill="#333">间距过小 ⇒ 阵元间强耦合 ⇒ 有源驻波恶化</text>
+  <text x="512" y="340" font-size="11.5" fill="#333">⇒ 单元有源方向图出现<tspan font-weight="bold" fill="#8a3a6a">盲区 (blind angle)</tspan></text>
+  <text x="512" y="364" font-size="11.5" fill="#333">工程经验下界：约 <tspan font-family="Consolas,monospace" fill="#2f6b3a">0.3λ</tspan>（0.33~0.5λ 为常推荐带）</text>
+  <text x="512" y="392" font-size="11.5" fill="#333">小间距副作用：</text>
+  <text x="512" y="414" font-size="11.5" fill="#667">· 同孔径下阵元数与成本上升</text>
+  <text x="512" y="434" font-size="11.5" fill="#667">· 馈网拥挤、交叉极化变差</text>
+  <text x="512" y="454" font-size="11.5" fill="#667">· 介质基板中 λ_eff 缩短 ⇒ 实际电间距变大</text>
+  <text x="512" y="476" font-size="11.5" fill="#667">· 表面波激励增强（S1-5 已讨论）</text>
+  <text x="512" y="496" font-size="11" fill="#8a3a6a">天线罩还会把盲区与失配进一步放大</text>
+
+  <text x="480" y="524" text-anchor="middle" font-size="11.5" fill="#333">软件侧的唯一接口：把 d/λ 当作<tspan font-weight="bold">设计常量</tspan>读入，而不是硬编码 0.5——换频段/换基板时它会变</text>
+</svg>

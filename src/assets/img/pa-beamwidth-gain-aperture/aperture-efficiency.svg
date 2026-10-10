@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">孔径效率 η_ap 的账本：每一分钱都从增益里扣</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">A_e = η_ap · A_phys；G = 4π A_e / λ²。η_ap 是"物理面积能兑现多少有效面积"</text>
+
+  <!-- bar chart -->
+  <rect x="30" y="84" width="900" height="250" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">各项效率的典型量级（乘积即为 η_ap）</text>
+
+  <!-- axis -->
+  <line x1="120" y1="300" x2="880" y2="300" stroke="#8899a6" stroke-width="1.4"/>
+  <line x1="120" y1="130" x2="120" y2="300" stroke="#8899a6" stroke-width="1.4"/>
+  <text x="120" y="322" text-anchor="middle" font-size="10.5" fill="#556">0</text>
+  <text x="310" y="322" text-anchor="middle" font-size="10.5" fill="#556">0.25</text>
+  <text x="500" y="322" text-anchor="middle" font-size="10.5" fill="#556">0.50</text>
+  <text x="690" y="322" text-anchor="middle" font-size="10.5" fill="#556">0.75</text>
+  <text x="860" y="322" text-anchor="middle" font-size="10.5" fill="#556">1.0</text>
+
+  <!-- bars -->
+  <rect x="120" y="140" width="684" height="20" rx="3" fill="#0f7a8a"/>
+  <text x="816" y="155" font-size="11" fill="#0f7a8a" font-family="Consolas,monospace">0.90~1.00</text>
+  <text x="64" y="155" font-size="11" fill="#333">口径锥削 η_t</text>
+
+  <rect x="120" y="172" width="608" height="20" rx="3" fill="#4a7a3a"/>
+  <text x="740" y="187" font-size="11" fill="#4a7a3a" font-family="Consolas,monospace">0.85~0.95</text>
+  <text x="64" y="187" font-size="11" fill="#333">照射/溢漏 η_s</text>
+
+  <rect x="120" y="204" width="532" height="20" rx="3" fill="#c96a1f"/>
+  <text x="664" y="219" font-size="11" fill="#c96a1f" font-family="Consolas,monospace">0.60~0.90</text>
+  <text x="64" y="219" font-size="11" fill="#333">馈网插损 η_f</text>
+
+  <rect x="120" y="236" width="608" height="20" rx="3" fill="#8a3a6a"/>
+  <text x="740" y="251" font-size="11" fill="#8a3a6a" font-family="Consolas,monospace">0.85~0.95</text>
+  <text x="64" y="251" font-size="11" fill="#333">互耦/失配 η_m</text>
+
+  <rect x="120" y="268" width="470" height="20" rx="3" fill="#556"/>
+  <text x="602" y="283" font-size="11" fill="#556" font-family="Consolas,monospace">0.55~0.80（乘积）</text>
+  <text x="64" y="283" font-size="11" font-weight="bold" fill="#333">总 η_ap</text>
+
+  <!-- table right -->
+  <text x="480" y="360" text-anchor="middle" font-size="12" fill="#333">同一副 1024 元阵，不同 η_ap 下的增益差（N 项固定 30.1 dB，G_e 固定 6 dBi）</text>
+
+  <rect x="120" y="378" width="720" height="118" rx="8" fill="#f7fbfc" stroke="#d8e5e9" stroke-width="1.2"/>
+  <text x="150" y="402" font-size="11.5" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">η_ap 情况</text>
+  <text x="390" y="402" font-size="11.5" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">η_ap</text>
+  <text x="510" y="402" font-size="11.5" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">10log10(η_ap)</text>
+  <text x="700" y="402" font-size="11.5" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">总增益</text>
+
+  <text x="150" y="426" font-size="11.5" fill="#333" font-family="Consolas,monospace">理想无耗阵</text>
+  <text x="390" y="426" font-size="11.5" fill="#333" font-family="Consolas,monospace">1.00</text>
+  <text x="510" y="426" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.00 dB</text>
+  <text x="700" y="426" font-size="11.5" fill="#333" font-family="Consolas,monospace">36.1 dBi</text>
+
+  <text x="150" y="448" font-size="11.5" fill="#333" font-family="Consolas,monospace">均匀 + 低损馈网</text>
+  <text x="390" y="448" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.80</text>
+  <text x="510" y="448" font-size="11.5" fill="#c96a1f" font-family="Consolas,monospace">−0.97 dB</text>
+  <text x="700" y="448" font-size="11.5" fill="#333" font-family="Consolas,monospace">35.1 dBi</text>
+
+  <text x="150" y="470" font-size="11.5" fill="#333" font-family="Consolas,monospace">泰勒 −30 dB 加窗</text>
+  <text x="390" y="470" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.62</text>
+  <text x="510" y="470" font-size="11.5" fill="#8a3a6a" font-family="Consolas,monospace">−2.08 dB</text>
+  <text x="700" y="470" font-size="11.5" fill="#333" font-family="Consolas,monospace">34.0 dBi</text>
+
+  <text x="150" y="490" font-size="11.5" fill="#333" font-family="Consolas,monospace">汉明加窗（深锥削）</text>
+  <text x="390" y="490" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.51</text>
+  <text x="510" y="490" font-size="11.5" fill="#8a3a6a" font-family="Consolas,monospace">−2.92 dB</text>
+  <text x="700" y="490" font-size="11.5" fill="#333" font-family="Consolas,monospace">33.2 dBi</text>
+
+  <text x="480" y="522" text-anchor="middle" font-size="11.5" fill="#8a3a6a">从 −13.2 dB 副瓣换成 −42 dB 副瓣的代价 ≈ 2 dB 增益 + 50% 主瓣展宽——这个交换值不值得，取决于系统是"要覆盖"还是"要抗扰"</text>
+</svg>

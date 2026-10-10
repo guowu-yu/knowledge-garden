@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">两种典型的赋形需求：等通量覆盖 与 多波束</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">目标不是"最窄的笔形波束"，而是"功率或容量在空间上按需求铺开"</text>
+
+  <!-- isoflux -->
+  <rect x="30" y="84" width="440" height="250" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">等通量（isoflux）波束</text>
+  <text x="52" y="136" font-size="11.5" fill="#333">场景：卫星对地覆盖，斜距从星下点到覆盖边缘</text>
+  <text x="52" y="158" font-size="11.5" fill="#333">变化可达数倍（LEO 尤为明显）</text>
+
+  <!-- earth arc with angle markers -->
+  <path d="M 80 268 Q 250 208 420 268" fill="none" stroke="#4a7a3a" stroke-width="2.4"/>
+  <text x="250" y="286" text-anchor="middle" font-size="11" fill="#4a7a3a">地球覆盖区</text>
+
+  <!-- flat pattern -->
+  <path d="M 90 244 C 130 208, 180 200, 250 200 C 320 200, 372 208, 412 244" fill="none" stroke="#c96a1f" stroke-width="2.4"/>
+  <text x="250" y="192" text-anchor="middle" font-size="11" fill="#c96a1f">等通量：边缘功率密度抬起来</text>
+
+  <!-- pencil pattern -->
+  <path d="M 90 244 C 180 240, 230 148, 250 148 C 272 148, 322 240, 412 244" fill="none" stroke="#aab8c0" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <text x="250" y="140" text-anchor="middle" font-size="11" fill="#8899a6">若用笔形波束：中心过强、边缘不足</text>
+
+  <line x1="60" y1="248" x2="430" y2="248" stroke="#8899a6" stroke-width="1.2"/>
+  <text x="66" y="262" font-size="10.5" fill="#556">覆盖中心</text>
+  <text x="384" y="262" font-size="10.5" fill="#556">覆盖边缘</text>
+
+  <text x="52" y="316" font-size="11.5" fill="#333">综合目标：让 θ 域上的功率密度近似常数</text>
+  <text x="52" y="326" font-size="11.5" fill="#333"></text>
+
+  <!-- multibeam -->
+  <rect x="490" y="84" width="440" height="250" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="512" y="110" font-size="14" font-weight="bold" fill="#8a3a6a">多波束覆盖（cellular / 跳波束）</text>
+
+  <!-- beam grid -->
+  <ellipse cx="600" cy="160" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="680" cy="160" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="760" cy="160" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="840" cy="160" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="640" cy="212" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="720" cy="212" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="800" cy="212" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="680" cy="264" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="760" cy="264" rx="34" ry="24" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <ellipse cx="600" cy="264" rx="34" ry="24" fill="none" stroke="#d6b9c9" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <ellipse cx="840" cy="264" rx="34" ry="24" fill="none" stroke="#d6b9c9" stroke-width="1.4" stroke-dasharray="5 4"/>
+
+  <text x="600" y="164" text-anchor="middle" font-size="10" fill="#8a3a6a">B1</text>
+  <text x="720" y="216" text-anchor="middle" font-size="10" fill="#8a3a6a">B5</text>
+
+  <text x="512" y="310" font-size="11.5" fill="#333">设计要点：波束间交叠电平（通常 −3 ~ −4 dB）</text>
+  <text x="512" y="328" font-size="11.5" fill="#333">决定切换是否有缝；波束形状需近似圆形（</text>
+  <text x="512" y="328" font-size="11.5" fill="#333">需非均匀激发与相位控制）</text>
+
+  <text x="480" y="368" text-anchor="middle" font-size="12" fill="#333">综合算法的软件接口建议</text>
+
+  <rect x="30" y="384" width="290" height="128" rx="10" fill="#f7fbfc" stroke="#0f7a8a" stroke-width="1.2"/>
+  <text x="52" y="410" font-size="12.5" font-weight="bold" fill="#0f7a8a">输入</text>
+  <text x="52" y="434" font-size="11.5" fill="#333">· 目标掩模 M(u,v)（含上/下界）</text>
+  <text x="52" y="456" font-size="11.5" fill="#333">· 阵元位置、可用自由度约束</text>
+  <text x="52" y="478" font-size="11.5" fill="#333">· 权值可实现性（恒模？位数？）</text>
+  <text x="52" y="500" font-size="11.5" fill="#333">· 迭代预算与收敛阈值</text>
+
+  <rect x="335" y="384" width="290" height="128" rx="10" fill="#f7fbfc" stroke="#c96a1f" stroke-width="1.2"/>
+  <text x="357" y="410" font-size="12.5" font-weight="bold" fill="#c96a1f">输出</text>
+  <text x="357" y="434" font-size="11.5" fill="#333">· 复权值 w_n（+ 可选的量化版本）</text>
+  <text x="357" y="456" font-size="11.5" fill="#333">· 残差度量：最大旁瓣、掩模违规量</text>
+  <text x="357" y="478" font-size="11.5" fill="#333">· 收敛曲线与失败原因（不可实现时）</text>
+  <text x="357" y="500" font-size="11.5" fill="#333">· 与已有权值表的差异清单</text>
+
+  <rect x="640" y="384" width="290" height="128" rx="10" fill="#f7fbfc" stroke="#4a7a3a" stroke-width="1.2"/>
+  <text x="662" y="410" font-size="12.5" font-weight="bold" fill="#4a7a3a">工程注意</text>
+  <text x="662" y="434" font-size="11.5" fill="#333">· 综合是离线活，结果必须落表</text>
+  <text x="662" y="456" font-size="11.5" fill="#333">· 掩模要留 1~2 dB 裕量给误差</text>
+  <text x="662" y="478" font-size="11.5" fill="#333">· 不要用"零陷预置"代替自适应（S4-20）</text>
+  <text x="662" y="500" font-size="11.5" fill="#333">· 每次重综合都要回归测试</text>
+
+  <text x="480" y="532" text-anchor="middle" font-size="11.5" fill="#8a3a6a">可逆性提醒：综合出来的权值必须能被波控系统"真实下达"——否则再漂亮的方向图也上不了天</text>
+</svg>

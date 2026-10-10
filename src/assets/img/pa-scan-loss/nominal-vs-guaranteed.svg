@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">标称扫描范围 ≠ 性能保证范围</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">同一副天线在 0° 与 60° 上，可用 EIRP 可能差一倍以上功率</text>
+
+  <!-- coverage geometry -->
+  <rect x="30" y="84" width="440" height="250" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">地面覆盖与扫描角</text>
+
+  <!-- satellite -->
+  <rect x="230" y="150" width="46" height="26" rx="4" fill="#0f7a8a"/>
+  <text x="253" y="142" text-anchor="middle" font-size="11" fill="#0f7a8a">卫星平台</text>
+  <line x1="253" y1="176" x2="253" y2="316" stroke="#aab8c0" stroke-width="1.2" stroke-dasharray="5 4"/>
+
+  <!-- earth arc -->
+  <path d="M 60 306 Q 253 268 446 306" fill="none" stroke="#4a7a3a" stroke-width="2.4"/>
+  <text x="86" y="322" font-size="11" fill="#4a7a3a">地球表面</text>
+
+  <!-- nadir beam -->
+  <line x1="253" y1="176" x2="253" y2="296" stroke="#0f7a8a" stroke-width="2.4"/>
+  <text x="262" y="246" font-size="11" fill="#0f7a8a">星下点 0°</text>
+
+  <!-- edge beam -->
+  <line x1="253" y1="176" x2="120" y2="298" stroke="#8a3a6a" stroke-width="2.4"/>
+  <text x="70" y="286" font-size="11" fill="#8a3a6a">边缘 60°</text>
+  <path d="M 253 226 A 50 50 0 0 0 212 208" fill="none" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="228" y="222" font-size="12" fill="#8a3a6a">θ₀</text>
+  <text x="150" y="252" font-size="11" fill="#c96a1f">距离增加 + 投影缩小</text>
+
+  <!-- right: EIRP profile -->
+  <rect x="490" y="84" width="440" height="250" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="512" y="110" font-size="14" font-weight="bold" fill="#8a3a6a">可用 EIRP 随扫描角的变化</text>
+  <line x1="540" y1="290" x2="900" y2="290" stroke="#8899a6" stroke-width="1.4"/>
+  <line x1="540" y1="130" x2="540" y2="290" stroke="#8899a6" stroke-width="1.4"/>
+
+  <path d="M 540 146 C 620 148, 700 160, 780 186 C 830 202, 870 214, 900 222" fill="none" stroke="#8a3a6a" stroke-width="2.4"/>
+  <path d="M 540 146 C 620 158, 700 190, 780 232 C 830 258, 870 274, 900 282" fill="none" stroke="#c96a1f" stroke-width="2.2" stroke-dasharray="7 5"/>
+
+  <text x="606" y="140" font-size="11" fill="#8a3a6a">理想（k=1）</text>
+  <text x="620" y="268" font-size="11" fill="#c96a1f">实测（k≈1.4）</text>
+
+  <text x="536" y="306" font-size="10.5" fill="#556">0°</text>
+  <text x="620" y="306" font-size="10.5" fill="#556">20°</text>
+  <text x="704" y="306" font-size="10.5" fill="#556">40°</text>
+  <text x="788" y="306" font-size="10.5" fill="#556">60°</text>
+  <text x="868" y="306" font-size="10.5" fill="#556">70°</text>
+
+  <!-- table of implications -->
+  <rect x="30" y="352" width="900" height="148" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="52" y="378" font-size="14" font-weight="bold" fill="#4a7a3a">对星座与链路设计的三条连带影响</text>
+
+  <text x="60" y="406" font-size="11.5" fill="#0f7a8a" font-weight="bold">影响</text>
+  <text x="330" y="406" font-size="11.5" fill="#0f7a8a" font-weight="bold">机制</text>
+  <text x="700" y="406" font-size="11.5" fill="#0f7a8a" font-weight="bold">常用缓解手段</text>
+
+  <text x="60" y="432" font-size="11.5" fill="#333">边缘速率受限</text>
+  <text x="330" y="432" font-size="11.5" fill="#333">投影缩短 + 距离变远，双重损耗叠加</text>
+  <text x="700" y="432" font-size="11.5" fill="#333">降阶调制编码（AMC 回退）</text>
+
+  <text x="60" y="456" font-size="11.5" fill="#333">星座规模被迫加大</text>
+  <text x="330" y="456" font-size="11.5" fill="#333">单星覆盖边缘能力不足 ⇒ 需更多星或更高仰角</text>
+  <text x="700" y="456" font-size="11.5" fill="#333">多面阵（每面各朝一个方向）</text>
+
+  <text x="60" y="480" font-size="11.5" fill="#333">相控阵增益标定困难</text>
+  <text x="330" y="480" font-size="11.5" fill="#333">增益随角度连续变化，测试点无法穷举</text>
+  <text x="700" y="480" font-size="11.5" fill="#333">球面扫描建增益表 + 插值</text>
+
+  <text x="480" y="524" text-anchor="middle" font-size="11.5" fill="#8a3a6a">三面/四面阵的账：单面星下点阵最大扫描 60° 时损耗 3.9 dB，而三面阵每面最大只需 48.6°、损耗 2.3 dB——但要 2.1 倍阵元</text>
+</svg>

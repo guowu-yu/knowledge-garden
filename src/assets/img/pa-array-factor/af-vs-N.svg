@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">N 变大时方向图怎么变：主瓣变窄，第一副瓣不动</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">横轴为空间频率 u = sinθ；纵轴为归一化幅度 (dB)。d = λ/2，均匀激励</text>
+
+  <!-- plotting area -->
+  <rect x="80" y="82" width="800" height="330" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+
+  <!-- grid -->
+  <line x1="80" y1="247" x2="880" y2="247" stroke="#dfe9ec" stroke-width="1"/>
+  <line x1="80" y1="164" x2="880" y2="164" stroke="#dfe9ec" stroke-width="1"/>
+  <line x1="80" y1="330" x2="880" y2="330" stroke="#dfe9ec" stroke-width="1"/>
+  <line x1="480" y1="82" x2="480" y2="412" stroke="#dfe9ec" stroke-width="1"/>
+
+  <!-- axes -->
+  <line x1="80" y1="330" x2="880" y2="330" stroke="#8899a6" stroke-width="1.4"/>
+  <line x1="80" y1="100" x2="80" y2="330" stroke="#8899a6" stroke-width="1.4"/>
+  <text x="880" y="352" font-size="11.5" fill="#556" font-family="Consolas,monospace">u = sinθ</text>
+  <text x="46" y="106" font-size="11.5" fill="#556">dB</text>
+  <text x="60" y="334" font-size="10.5" fill="#556">0</text>
+  <text x="52" y="251" font-size="10.5" fill="#556">−10</text>
+  <text x="52" y="168" font-size="10.5" fill="#556">−20</text>
+  <text x="52" y="325" font-size="10.5" fill="#556">−30</text>
+  <text x="330" y="352" font-size="10.5" fill="#667">−0.5</text>
+  <text x="628" y="352" font-size="10.5" fill="#667">+0.5</text>
+  <text x="790" y="352" font-size="10.5" fill="#667">+1</text>
+
+  <!-- -13.2 dB line -->
+  <line x1="80" y1="184" x2="880" y2="184" stroke="#c96a1f" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="700" y="178" font-size="11.5" fill="#c96a1f">−13.2 dB（与 N 无关）</text>
+
+  <!-- main lobes (stylized) -->
+  <path d="M 480 100 C 470 160, 466 250, 462 330" fill="none" stroke="#0f7a8a" stroke-width="2.6"/>
+  <path d="M 480 100 C 490 160, 494 250, 498 330" fill="none" stroke="#0f7a8a" stroke-width="2.6"/>
+  <path d="M 480 100 C 452 170, 436 265, 430 330" fill="none" stroke="#4a7a3a" stroke-width="2.2"/>
+  <path d="M 480 100 C 508 170, 524 265, 530 330" fill="none" stroke="#4a7a3a" stroke-width="2.2"/>
+  <path d="M 480 100 C 430 180, 400 275, 392 330" fill="none" stroke="#8a3a6a" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <path d="M 480 100 C 530 180, 560 275, 568 330" fill="none" stroke="#8a3a6a" stroke-width="1.8" stroke-dasharray="7 5"/>
+
+  <!-- sidelobe bumps -->
+  <path d="M 380 330 C 372 300, 360 300, 352 330" fill="none" stroke="#4a7a3a" stroke-width="1.8"/>
+  <path d="M 580 330 C 588 300, 600 300, 608 330" fill="none" stroke="#4a7a3a" stroke-width="1.8"/>
+  <path d="M 300 330 C 292 316, 282 316, 274 330" fill="none" stroke="#8a3a6a" stroke-width="1.6"/>
+  <path d="M 660 330 C 668 316, 678 316, 686 330" fill="none" stroke="#8a3a6a" stroke-width="1.6"/>
+
+  <!-- HPBW markers -->
+  <line x1="430" y1="292" x2="530" y2="292" stroke="#0f7a8a" stroke-width="1.4"/>
+  <line x1="430" y1="286" x2="430" y2="298" stroke="#0f7a8a" stroke-width="1.4"/>
+  <line x1="530" y1="286" x2="530" y2="298" stroke="#0f7a8a" stroke-width="1.4"/>
+  <text x="480" y="284" text-anchor="middle" font-size="11" fill="#0f7a8a">HPBW ∝ 1/N</text>
+
+  <!-- legend -->
+  <rect x="620" y="92" width="248" height="86" rx="8" fill="#f7fbfc" stroke="#d8e5e9" stroke-width="1.2"/>
+  <line x1="636" y1="114" x2="672" y2="114" stroke="#0f7a8a" stroke-width="2.6"/>
+  <text x="682" y="118" font-size="11.5" fill="#333">N = 32</text>
+  <line x1="636" y1="138" x2="672" y2="138" stroke="#4a7a3a" stroke-width="2.2"/>
+  <text x="682" y="142" font-size="11.5" fill="#333">N = 16</text>
+  <line x1="636" y1="162" x2="672" y2="162" stroke="#8a3a6a" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <text x="682" y="166" font-size="11.5" fill="#333">N = 8</text>
+
+  <text x="480" y="446" text-anchor="middle" font-size="12" fill="#333">三条铁律：<tspan fill="#0f7a8a" font-weight="bold">主瓣宽度 ∝ 1/N</tspan>　·　<tspan fill="#c96a1f" font-weight="bold">第一副瓣恒为 −13.2 dB</tspan>　·　<tspan fill="#4a7a3a" font-weight="bold">零点/副瓣数量随 N 增多</tspan></text>
+  <text x="480" y="474" text-anchor="middle" font-size="11.5" fill="#667">第一副瓣位置：sinθ ≈ ±3λ/(2Nd)（u 域 ±1.43/N）；零点位置 u_p = p·λ/(Nd)</text>
+  <text x="480" y="500" text-anchor="middle" font-size="11.5" fill="#8a3a6a">工程含义：想压低副瓣只能改<tspan font-weight="bold">幅度分布</tspan>（加窗），想压窄主瓣只能加<tspan font-weight="bold">孔径</tspan>——两者是两个独立旋钮</text>
+</svg>

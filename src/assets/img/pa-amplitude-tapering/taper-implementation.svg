@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">加窗的软件实现：权值从哪来、放在哪一层、怎么验证</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">窗是"离线算一次、在线查表用"的典型对象，工程重点是版本与一致性</text>
+
+  <!-- pipeline -->
+  <rect x="30" y="84" width="900" height="196" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">离线（设计期）→ 在线（运行期）：三段式流水</text>
+
+  <rect x="60" y="132" width="240" height="112" rx="8" fill="#f2f8fa" stroke="#0f7a8a" stroke-width="1.4"/>
+  <text x="80" y="158" font-size="12.5" font-weight="bold" fill="#0f7a8a">① 生成窗系数</text>
+  <text x="80" y="182" font-size="11" fill="#333" font-family="Consolas,monospace">scipy.signal.windows.taylor</text>
+  <text x="80" y="202" font-size="11" fill="#333" font-family="Consolas,monospace">  (M=N, nbar=5, sll=30)</text>
+  <text x="80" y="222" font-size="11" fill="#333" font-family="Consolas,monospace">chebwin(N, at=30)</text>
+  <text x="80" y="240" font-size="10.5" fill="#667">注意 scipy 的窗是"对称"的，阵列需奇数/偶数对齐</text>
+
+  <rect x="360" y="132" width="240" height="112" rx="8" fill="#f2f8fa" stroke="#c96a1f" stroke-width="1.4"/>
+  <text x="380" y="158" font-size="12.5" font-weight="bold" fill="#c96a1f">② 归一化与定点化</text>
+  <text x="380" y="182" font-size="11" fill="#333" font-family="Consolas,monospace">a = a / a.max()</text>
+  <text x="380" y="202" font-size="11" fill="#333" font-family="Consolas,monospace">a_q = round(a * (2^B - 1))</text>
+  <text x="380" y="222" font-size="11" fill="#333">B 通常 10~12 bit（见 S4-23）</text>
+  <text x="380" y="240" font-size="10.5" fill="#8a3a6a">量化误差会抬高副瓣，必须回头仿真验证</text>
+
+  <rect x="660" y="132" width="240" height="112" rx="8" fill="#f2f8fa" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="680" y="158" font-size="12.5" font-weight="bold" fill="#4a7a3a">③ 合并进入权值表</text>
+  <text x="680" y="182" font-size="11" fill="#333" font-family="Consolas,monospace">w[n] = a[n] · e^{-j n k d u₀}</text>
+  <text x="680" y="202" font-size="11" fill="#333">索引：(u₀ 网格) × (频点) × (温度)</text>
+  <text x="680" y="222" font-size="11" fill="#333">或运行时"幅度表 × 相位斜坡"两级</text>
+  <text x="680" y="240" font-size="10.5" fill="#667">推荐后者：幅度表与扫描角无关，可复用</text>
+
+  <line x1="300" y1="188" x2="360" y2="188" stroke="#8899a6" stroke-width="1.6"/>
+  <line x1="600" y1="188" x2="660" y2="188" stroke="#8899a6" stroke-width="1.6"/>
+
+  <!-- decomposition -->
+  <rect x="30" y="298" width="440" height="214" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="52" y="324" font-size="14" font-weight="bold" fill="#8a3a6a">关键设计：把"幅度"和"相位"解耦</text>
+  <text x="52" y="352" font-size="11.5" fill="#333">权值 = 幅度锥削 × 扫描相位斜坡</text>
+  <text x="52" y="380" font-size="12" fill="#0f7a8a" font-family="Consolas,monospace">w_n = a_n · exp(-j·n·k·d·sinθ₀)</text>
+  <text x="52" y="410" font-size="11.5" fill="#333">好处一：幅度表与扫描角无关 ⇒ 存储量降低一个维度</text>
+  <text x="52" y="432" font-size="11.5" fill="#333">好处二：切换扫描角时无需重算幅度，只需改相位</text>
+  <text x="52" y="454" font-size="11.5" fill="#333">好处三：相位斜坡可解析生成，不占 BRAM</text>
+  <text x="52" y="482" font-size="11.5" fill="#8a3a6a">特例：若用"相位加权"实现低副瓣（相位锥削），此解耦失效，需整表存储</text>
+
+  <rect x="490" y="298" width="440" height="214" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="512" y="324" font-size="14" font-weight="bold" fill="#4a7a3a">验证清单（每次改窗都必须跑一遍）</text>
+  <text x="512" y="352" font-size="11.5" fill="#333">□ 全 u 域方向图：第一副瓣是否达到设计值</text>
+  <text x="512" y="374" font-size="11.5" fill="#333">□ HPBW 展宽因子是否与预期一致（±5%）</text>
+  <text x="512" y="396" font-size="11.5" fill="#333">□ 锥削效率 η_t 与增益预算是否吻合</text>
+  <text x="512" y="418" font-size="11.5" fill="#333">□ 定点化后的副瓣抬升量（对比浮点）</text>
+  <text x="512" y="440" font-size="11.5" fill="#333">□ 扫描到 ±60° 时副瓣是否仍满足包络</text>
+  <text x="512" y="462" font-size="11.5" fill="#333">□ 阵元失效后（随机去 1~2 个）副瓣恶化量</text>
+  <text x="512" y="484" font-size="11" fill="#8a3a6a">建议把这几项写成 pytest，与权值表一起 CI</text>
+
+  <text x="480" y="530" text-anchor="middle" font-size="11.5" fill="#333">实现提示：幅度表用 uint16 存、相位斜坡用 int16 存；把"窗是否启用"做成编译期开关，便于回退对比</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">扫描损耗的代码接口：把"一个数"换成"一个函数"</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">同一副阵在不同工作频点、不同切面、不同温度下都不同</text>
+
+  <!-- bad -->
+  <rect x="30" y="84" width="430" height="212" rx="10" fill="#ffffff" stroke="#8a3a3a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#8a3a3a">常见写法（隐患）</text>
+  <rect x="52" y="124" width="386" height="152" rx="6" fill="#faf2f2" stroke="#e2c9c9" stroke-width="1.2"/>
+  <text x="68" y="150" font-size="11.5" fill="#7a3a3a" font-family="Consolas,monospace">GAIN_BORESIGHT_DBI = 34.5</text>
+  <text x="68" y="174" font-size="11.5" fill="#7a3a3a" font-family="Consolas,monospace">SCAN_LOSS_DB = 3.0   # 常数</text>
+  <text x="68" y="198" font-size="11.5" fill="#7a3a3a" font-family="Consolas,monospace">def eirp(theta, p_tx):</text>
+  <text x="68" y="222" font-size="11.5" fill="#7a3a3a" font-family="Consolas,monospace">    g = GAIN_BORESIGHT_DBI</text>
+  <text x="68" y="246" font-size="11.5" fill="#7a3a3a" font-family="Consolas,monospace">    return p_tx + g - SCAN_LOSS_DB</text>
+  <text x="68" y="268" font-size="11" fill="#8a3a3a">问题：与扫描角解耦，边缘与中心算同一个值</text>
+
+  <!-- good -->
+  <rect x="490" y="84" width="440" height="212" rx="10" fill="#ffffff" stroke="#2f6b3a" stroke-width="1.6"/>
+  <text x="512" y="110" font-size="14" font-weight="bold" fill="#2f6b3a">工程写法</text>
+  <rect x="512" y="124" width="396" height="152" rx="6" fill="#f2f8f4" stroke="#c6ddcb" stroke-width="1.2"/>
+  <text x="528" y="150" font-size="11.5" fill="#2f5a38" font-family="Consolas,monospace">def scan_loss_db(theta0, f_ghz, cut):</text>
+  <text x="528" y="174" font-size="11.5" fill="#2f5a38" font-family="Consolas,monospace">    k = K_TABLE[f_ghz][cut]      # 1.0~1.5</text>
+  <text x="528" y="198" font-size="11.5" fill="#2f5a38" font-family="Consolas,monospace">    c = max(math.cos(theta0), 1e-3)</text>
+  <text x="528" y="222" font-size="11.5" fill="#2f5a38" font-family="Consolas,monospace">    return 10*math.log10(c**k)</text>
+  <text x="528" y="248" font-size="11.5" fill="#2f5a38" font-family="Consolas,monospace"># 数据来源：仿真/实测方向图拟合</text>
+  <text x="528" y="268" font-size="11" fill="#2f6b3a">K_TABLE 与单元表同版本、同发布流程</text>
+
+  <text x="480" y="326" text-anchor="middle" font-size="12" fill="#333">为什么必须与频率和切面挂钩：</text>
+
+  <!-- three reasons -->
+  <rect x="30" y="342" width="290" height="158" rx="10" fill="#f7fbfc" stroke="#0f7a8a" stroke-width="1.2"/>
+  <text x="52" y="368" font-size="12.5" font-weight="bold" fill="#0f7a8a">频率</text>
+  <text x="52" y="394" font-size="11.5" fill="#333">工作频段内 λ 变化 ⇒ 单元电尺寸变化</text>
+  <text x="52" y="416" font-size="11.5" fill="#333">⇒ 单元方向图与互耦都随频率变</text>
+  <text x="52" y="442" font-size="11.5" fill="#333">宽带系统必须逐频点建模</text>
+  <text x="52" y="468" font-size="11.5" fill="#667">常见带宽 10% 时 k 变化可达 ±0.15</text>
+  <text x="52" y="490" font-size="11" fill="#8a3a6a">窄带可退化为中心频单一模型</text>
+
+  <rect x="335" y="342" width="290" height="158" rx="10" fill="#f7fbfc" stroke="#c96a1f" stroke-width="1.2"/>
+  <text x="357" y="368" font-size="12.5" font-weight="bold" fill="#c96a1f">扫描切面</text>
+  <text x="357" y="394" font-size="11.5" fill="#333">E 面与 H 面的单元方向图不同，</text>
+  <text x="357" y="416" font-size="11.5" fill="#333">镜像电流/地板的投影也不同</text>
+  <text x="357" y="442" font-size="11.5" fill="#333">⇒ 同一个 θ₀ 在两个切面上损耗不同</text>
+  <text x="357" y="468" font-size="11.5" fill="#667">差值通常 0.3~1.0 dB，足以改变链路预算结论</text>
+  <text x="357" y="490" font-size="11" fill="#8a3a6a">二维扫描时应按 (θ₀, φ) 二维插值</text>
+
+  <rect x="640" y="342" width="290" height="158" rx="10" fill="#f7fbfc" stroke="#8a3a6a" stroke-width="1.2"/>
+  <text x="662" y="368" font-size="12.5" font-weight="bold" fill="#8a3a6a">温度与老化</text>
+  <text x="662" y="394" font-size="11.5" fill="#333">基板介电常数与导体损耗随温度漂移</text>
+  <text x="662" y="416" font-size="11.5" fill="#333">⇒ 单元幅度/相位响应缓慢变化</text>
+  <text x="662" y="442" font-size="11.5" fill="#333">⇒ 高低温下"同一权值"结果不同</text>
+  <text x="662" y="468" font-size="11.5" fill="#667">热表与校准表需一起交付</text>
+  <text x="662" y="490" font-size="11" fill="#8a3a6a">这是 S5 校准工程化的输入条件</text>
+</svg>

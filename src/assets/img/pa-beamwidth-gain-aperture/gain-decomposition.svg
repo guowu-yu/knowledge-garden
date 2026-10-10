@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">增益的三种"算法"，别再把它们混为一谈</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">同一副 1024 元阵：阵元增益 + 阵因子增益 + 效率损失，量级与来源完全不同</text>
+
+  <!-- three columns -->
+  <rect x="30" y="84" width="290" height="234" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="52" y="112" font-size="14" font-weight="bold" fill="#4a7a3a">① 阵元增益 G_e</text>
+  <text x="52" y="136" font-size="11.5" fill="#333">来源：单个辐射单元的尺寸与形式</text>
+  <text x="52" y="166" font-size="12.5" fill="#4a7a3a" font-family="Consolas,monospace">D_e ≈ 4π A_em / λ²</text>
+  <text x="52" y="196" font-size="11.5" fill="#333">半波振子 ≈ 2.15 dBi</text>
+  <text x="52" y="218" font-size="11.5" fill="#333">贴片（无地板反射）≈ 5~6 dBi</text>
+  <text x="52" y="240" font-size="11.5" fill="#333">贴片 + 地板 ≈ 6~8 dBi</text>
+  <text x="52" y="272" font-size="11" fill="#667">与 N 无关。想提高只能换单元</text>
+  <text x="52" y="292" font-size="11" fill="#667">或加频率（A_em 固定时 D∝f²）</text>
+
+  <rect x="335" y="84" width="290" height="234" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="357" y="112" font-size="14" font-weight="bold" fill="#0f7a8a">② 阵因子增益 ∝ N</text>
+  <text x="357" y="136" font-size="11.5" fill="#333">来源：N 个相干信号同相叠加</text>
+  <text x="357" y="166" font-size="12.5" fill="#0f7a8a" font-family="Consolas,monospace">G_AF = 10 log10(N)  (d=λ/2)</text>
+  <text x="357" y="196" font-size="11.5" fill="#333">这是"功率合成"，不是"放大"</text>
+  <text x="357" y="218" font-size="11.5" fill="#333">N 翻倍 = +3 dB，无例外</text>
+  <text x="357" y="240" font-size="11.5" fill="#333">但主瓣同时变窄，覆盖变小</text>
+  <text x="357" y="272" font-size="11" fill="#667">关键等式：</text>
+  <text x="357" y="292" font-size="11" fill="#0f7a8a" font-family="Consolas,monospace">A_e = η_ap · N · d² (d=λ/2 时 = A_phys)</text>
+
+  <rect x="640" y="84" width="290" height="234" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="662" y="112" font-size="14" font-weight="bold" fill="#c96a1f">③ 效率 η（只减不加）</text>
+  <text x="662" y="136" font-size="11.5" fill="#333">来源：各项损耗，永远 ≤ 1</text>
+  <text x="662" y="166" font-size="12.5" fill="#c96a1f" font-family="Consolas,monospace">G = G_e + 10log10(N) + 10log10(η)</text>
+  <text x="662" y="196" font-size="11.5" fill="#333">口径锥削效率 η_t：加窗 0.8~0.95</text>
+  <text x="662" y="218" font-size="11.5" fill="#333">照射/溢漏 η_s、馈网插损、互耦失配</text>
+  <text x="662" y="240" font-size="11.5" fill="#333">标称"阵列效率 0.6~0.8"通常含全部</text>
+  <text x="662" y="272" font-size="11" fill="#667">全部折算成 dB 后直接相加</text>
+  <text x="662" y="292" font-size="11" fill="#667">这是做链路预算时最容易被漏掉的一项</text>
+
+  <!-- numeric example -->
+  <rect x="30" y="338" width="900" height="160" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="52" y="366" font-size="14" font-weight="bold" fill="#8a3a6a">算一遍：32×32 = 1024 元贴片阵，28 GHz，d = λ/2，扫描到 60°</text>
+
+  <text x="52" y="400" font-size="12.5" fill="#333" font-family="Consolas,monospace">G_e = 6 dBi</text>
+  <text x="212" y="400" font-size="12.5" fill="#333">+</text>
+  <text x="228" y="400" font-size="12.5" fill="#0f7a8a" font-family="Consolas,monospace">10log10(1024) = 30.1 dB</text>
+  <text x="452" y="400" font-size="12.5" fill="#333">+</text>
+  <text x="468" y="400" font-size="12.5" fill="#c96a1f" font-family="Consolas,monospace">10log10(0.7) = −1.55 dB</text>
+  <text x="700" y="400" font-size="12.5" fill="#333">= 34.5 dBi</text>
+
+  <text x="52" y="430" font-size="12.5" fill="#333">扫描到 60° 再乘 cos¹·⁵θ₀：</text>
+  <text x="252" y="430" font-size="12.5" fill="#8a3a6a" font-family="Consolas,monospace">10log10(cos¹·⁵60°) = −4.5 dB</text>
+  <text x="512" y="430" font-size="12.5" fill="#333">⇒ 边缘 EIRP 只有中心的一半功率量级</text>
+
+  <text x="52" y="462" font-size="11.5" fill="#667">注意 ①③ 与频率/温度相关（η 会随扫描角与频率变化），② 只与 N 有关。做链路预算时把三项分开记账，</text>
+  <text x="52" y="482" font-size="11.5" fill="#667">才不会出现"把扫描损耗算两次"或"忘了算锥削效率"这类典型错误。</text>
+</svg>

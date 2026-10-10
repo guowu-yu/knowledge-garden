@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">方向图综合：把"扫描"问题换成"形状"问题</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">分析是"给激励求方向图"，综合是"给方向图求激励"——后者才是工程常态</text>
+
+  <!-- two directions -->
+  <rect x="30" y="84" width="440" height="182" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">分析（正问题）</text>
+  <text x="52" y="138" font-size="11.5" fill="#333">已知：阵元位置、N、d、权值 w_n</text>
+  <text x="52" y="162" font-size="11.5" fill="#333">求：远场方向图 AF(u)</text>
+  <text x="52" y="186" font-size="12" fill="#0f7a8a" font-family="Consolas,monospace">AF(u) = Σ w_n e^{j k pos_n u}</text>
+  <text x="52" y="216" font-size="11.5" fill="#333">良态、线性、唯一解，可 FFT 加速</text>
+  <text x="52" y="244" font-size="11.5" fill="#667">S1/S2 前面几篇讲的全是这条路</text>
+
+  <rect x="490" y="84" width="440" height="182" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="512" y="110" font-size="14" font-weight="bold" fill="#c96a1f">综合（反问题）</text>
+  <text x="512" y="138" font-size="11.5" fill="#333">已知：目标方向图掩模 / 覆盖形状</text>
+  <text x="512" y="162" font-size="11.5" fill="#333">求：一组可实现（恒模或受限）的激励</text>
+  <text x="512" y="186" font-size="12" fill="#c96a1f" font-family="Consolas,monospace">min_w ‖ |AF_w| − M ‖  s.t. w ∈ C</text>
+  <text x="512" y="216" font-size="11.5" fill="#333">欠定 / 非凸 / 存在全局解但非线性</text>
+  <text x="512" y="244" font-size="11.5" fill="#667">掩模 M 来自覆盖需求或监管包络</text>
+
+  <!-- methods -->
+  <rect x="30" y="282" width="290" height="230" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="52" y="308" font-size="13" font-weight="bold" fill="#4a7a3a">方法一：伍德沃德-劳森抽样</text>
+  <text x="52" y="334" font-size="11.5" fill="#333">用 N 个正交"虚拟波束"叠加逼近目标</text>
+  <text x="52" y="356" font-size="11.5" fill="#333">采样角取在</text>
+  <text x="52" y="378" font-size="11.5" fill="#0f7a8a" font-family="Consolas,monospace">u_i = (λ/(Nd))·i, i = -M…M</text>
+  <text x="52" y="402" font-size="11.5" fill="#333">系数直接取目标方向图在 u_i 的值</text>
+  <text x="52" y="424" font-size="11.5" fill="#333">优点：线性、无需迭代、物理直观</text>
+  <text x="52" y="448" font-size="11.5" fill="#333">缺点：采样点固定在 u 域等间隔；</text>
+  <text x="52" y="466" font-size="11.5" fill="#333">副瓣不可控（复现 −13.5 dB 量级）</text>
+  <text x="52" y="492" font-size="11" fill="#8a3a6a">二维阵扩展困难，这是它的主要局限</text>
+
+  <rect x="335" y="282" width="290" height="230" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="357" y="308" font-size="13" font-weight="bold" fill="#0f7a8a">方法二：交替投影（AP）</text>
+  <text x="357" y="334" font-size="11.5" fill="#333">两个集合之间来回投影：</text>
+  <text x="357" y="356" font-size="11.5" fill="#333">· 幅度掩模集（在方向图上投影）</text>
+  <text x="357" y="378" font-size="11.5" fill="#333">· 可实现激励集（在激励域投影）</text>
+  <text x="357" y="402" font-size="11.5" fill="#333">交替进行直至残差收敛</text>
+  <text x="357" y="424" font-size="11.5" fill="#333">优点：能同时约束主瓣/副瓣/零陷</text>
+  <text x="357" y="448" font-size="11.5" fill="#333">缺点：非凸，收敛依赖初值；</text>
+  <text x="357" y="466" font-size="11.5" fill="#333">需大量 FFT，适合离线设计</text>
+  <text x="357" y="492" font-size="11" fill="#8a3a6a">工程上常与加窗结果作为初值配合使用</text>
+
+  <rect x="640" y="282" width="290" height="230" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="662" y="308" font-size="13" font-weight="bold" fill="#8a3a6a">方法三：凸优化 / SOCP</text>
+  <text x="662" y="334" font-size="11.5" fill="#333">把副瓣约束写成二阶锥（SOCP）</text>
+  <text x="662" y="356" font-size="11.5" fill="#333">能在"最大化主瓣增益"与"副瓣 ≤ 阈值"</text>
+  <text x="662" y="376" font-size="11.5" fill="#333">之间求得全局最优折中</text>
+  <text x="662" y="400" font-size="11.5" fill="#333">优点：有最优性保证、约束灵活</text>
+  <text x="662" y="424" font-size="11.5" fill="#333">缺点：规模大时求解慢；恒模约束</text>
+  <text x="662" y="444" font-size="11.5" fill="#333">（纯移相器）会破坏凸性</text>
+  <text x="662" y="470" font-size="11" fill="#667">常用工具：CVX / CVXPY / MOSEK</text>
+  <text x="662" y="492" font-size="11" fill="#8a3a6a">适合"设计一次、长期使用"的场景</text>
+
+  <text x="480" y="532" text-anchor="middle" font-size="11.5" fill="#333">共同前提：目标方向图必须"可实现"——给定 N 与孔径，能拟合的自由度只有 ~N 个</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">稀疏阵与子阵栅瓣：用"非均匀"和"重复"换成本</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">两者都破坏"相邻等间距"这个前提，因此栅瓣规律要重新推</text>
+
+  <!-- sparse array -->
+  <rect x="30" y="84" width="440" height="212" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">稀疏阵（非均匀采样）</text>
+  <line x1="70" y1="200" x2="440" y2="200" stroke="#8899a6" stroke-width="1.4"/>
+  <!-- uniform reference -->
+  <text x="70" y="140" font-size="11" fill="#667">满阵（d=0.5λ）</text>
+  <circle cx="80" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="110" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="140" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="170" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="200" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="230" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="260" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="290" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="320" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="350" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="380" cy="160" r="4" fill="#c8d8dd"/>
+  <circle cx="410" cy="160" r="4" fill="#c8d8dd"/>
+  <!-- sparse -->
+  <text x="70" y="196" font-size="11" fill="#0f7a8a">稀疏阵（同孔径，约 1/3 阵元）</text>
+  <circle cx="80" cy="200" r="6" fill="#0f7a8a"/>
+  <circle cx="180" cy="200" r="6" fill="#0f7a8a"/>
+  <circle cx="250" cy="200" r="6" fill="#0f7a8a"/>
+  <circle cx="360" cy="200" r="6" fill="#0f7a8a"/>
+  <circle cx="410" cy="200" r="6" fill="#0f7a8a"/>
+  <text x="52" y="236" font-size="11.5" fill="#333">主瓣宽度只由<tspan font-weight="bold">总孔径</tspan>决定，因此稀疏后主瓣几乎不变</text>
+  <text x="52" y="258" font-size="11.5" fill="#333">但平均副瓣抬到 ~<tspan font-family="Consolas,monospace" fill="#c96a1f">−13 + 10log10(N_full/N_sparse)</tspan> dB</text>
+  <text x="52" y="280" font-size="11.5" fill="#8a3a6a">副瓣是"随机化"的，没有确定性栅瓣——这是它换成本的方式</text>
+
+  <!-- subarray -->
+  <rect x="490" y="84" width="440" height="212" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="512" y="110" font-size="14" font-weight="bold" fill="#c96a1f">子阵栅瓣（周期性重复）</text>
+  <line x1="520" y1="196" x2="910" y2="196" stroke="#8899a6" stroke-width="1.4"/>
+  <!-- subarrays with identical weights -->
+  <rect x="520" y="150" width="90" height="46" rx="6" fill="none" stroke="#c96a1f" stroke-width="1.6"/>
+  <rect x="670" y="150" width="90" height="46" rx="6" fill="none" stroke="#c96a1f" stroke-width="1.6"/>
+  <rect x="820" y="150" width="90" height="46" rx="6" fill="none" stroke="#c96a1f" stroke-width="1.6"/>
+  <circle cx="540" cy="196" r="4.5" fill="#0f7a8a"/>
+  <circle cx="565" cy="196" r="4.5" fill="#0f7a8a"/>
+  <circle cx="590" cy="196" r="4.5" fill="#0f7a8a"/>
+  <circle cx="690" cy="196" r="4.5" fill="#0f7a8a"/>
+  <circle cx="715" cy="196" r="4.5" fill="#0f7a8a"/>
+  <circle cx="740" cy="196" r="4.5" fill="#0f7a8a"/>
+  <circle cx="840" cy="196" r="4.5" fill="#0f7a8a"/>
+  <circle cx="865" cy="196" r="4.5" fill="#0f7a8a"/>
+  <circle cx="890" cy="196" r="4.5" fill="#0f7a8a"/>
+  <text x="565" y="142" text-anchor="middle" font-size="11" fill="#c96a1f">子阵 1</text>
+  <text x="715" y="142" text-anchor="middle" font-size="11" fill="#c96a1f">子阵 2</text>
+  <text x="865" y="142" text-anchor="middle" font-size="11" fill="#c96a1f">子阵 3</text>
+  <text x="512" y="236" font-size="11.5" fill="#333">子阵内单元间距 d₁ = 0.5λ，子阵间距 d_sub = 1.5λ</text>
+  <text x="512" y="258" font-size="11.5" fill="#333">在 <tspan font-family="Consolas,monospace" fill="#8a3a6a">sinθ = ±λ/d_sub = ±0.667</tspan> 处出现<tspan font-weight="bold">子阵栅瓣</tspan></text>
+  <text x="512" y="280" font-size="11.5" fill="#8a3a6a">本质：子阵级权值构成"周期为 d_sub 的采样"，形成新副本</text>
+
+  <text x="480" y="326" text-anchor="middle" font-size="12" fill="#333">软件侧的三个动作：</text>
+
+  <rect x="30" y="342" width="290" height="158" rx="10" fill="#f7fbfc" stroke="#0f7a8a" stroke-width="1.2"/>
+  <text x="52" y="368" font-size="12.5" font-weight="bold" fill="#0f7a8a">① 让间距成为参数</text>
+  <text x="52" y="394" font-size="11.5" fill="#333">位置数组 pos[n] 而非 pos = n*d，</text>
+  <text x="52" y="414" font-size="11.5" fill="#333">稀疏/不规则布阵才能表达</text>
+  <text x="52" y="440" font-size="11.5" fill="#333">AF = Σ w_n · e^{j k pos[n] u}</text>
+  <text x="52" y="464" font-size="11.5" fill="#667">FFT 加速失效，退化为矩阵乘</text>
+  <text x="52" y="486" font-size="11" fill="#8a3a6a">可改用 NUFFT 或按权值预累积</text>
+
+  <rect x="335" y="342" width="290" height="158" rx="10" fill="#f7fbfc" stroke="#c96a1f" stroke-width="1.2"/>
+  <text x="357" y="368" font-size="12.5" font-weight="bold" fill="#c96a1f">② 子阵栅瓣的检测</text>
+  <text x="357" y="394" font-size="11.5" fill="#333">扫描 |sinθ| &gt; 1 − λ/d_sub 时告警</text>
+  <text x="357" y="414" font-size="11.5" fill="#333">±60° 下要求 d_sub/λ &lt; 1/(1−0.866)</text>
+  <text x="357" y="436" font-size="11.5" fill="#333">⇒ d_sub 必须 &lt; 0.536λ，与满阵同量级</text>
+  <text x="357" y="464" font-size="11.5" fill="#667">代价：子阵数增大 ⇒ 射频链增多</text>
+  <text x="357" y="486" font-size="11" fill="#8a3a6a">重叠子阵可抑制但需加权换算</text>
+
+  <rect x="640" y="342" width="290" height="158" rx="10" fill="#f7fbfc" stroke="#8a3a6a" stroke-width="1.2"/>
+  <text x="662" y="368" font-size="12.5" font-weight="bold" fill="#8a3a6a">③ 不要重复"加窗"</text>
+  <text x="662" y="394" font-size="11.5" fill="#333">子阵级窗 × 阵元级窗 = 双重锥削</text>
+  <text x="662" y="414" font-size="11.5" fill="#333">总锥削效率是两者之积，增益被扣两次</text>
+  <text x="662" y="442" font-size="11.5" fill="#333">规范做法：只在<tspan font-weight="bold">一个层级</tspan>做幅度锥削</text>
+  <text x="662" y="466" font-size="11.5" fill="#667">另一层只用相位/等幅</text>
+  <text x="662" y="488" font-size="11" fill="#8a3a6a">这是 HBF 设计最常见的实现错误</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">HPBW ∝ λ / (L cosθ₀)：孔径、频率、扫描角的三个杠杆</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">L = Nd 为物理孔径；扫描使有效孔径投影缩为 L·cosθ₀，波束按 1/cosθ₀ 展宽</text>
+
+  <!-- left: aperture -->
+  <rect x="30" y="84" width="420" height="290" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">孔径越大 → 波束越窄</text>
+  <line x1="70" y1="300" x2="410" y2="300" stroke="#8899a6" stroke-width="1.3"/>
+
+  <!-- small aperture -->
+  <rect x="90" y="286" width="60" height="14" rx="3" fill="#c96a1f"/>
+  <text x="120" y="322" text-anchor="middle" font-size="11" fill="#c96a1f">L = 4λ</text>
+  <path d="M 120 286 C 100 240, 60 200, 40 180" fill="none" stroke="#c96a1f" stroke-width="1.8"/>
+  <path d="M 120 286 C 140 240, 180 200, 200 180" fill="none" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="206" y="186" font-size="11" fill="#c96a1f">HPBW ≈ 12.7°</text>
+
+  <!-- mid aperture -->
+  <rect x="160" y="286" width="130" height="14" rx="3" fill="#4a7a3a"/>
+  <text x="225" y="322" text-anchor="middle" font-size="11" fill="#4a7a3a">L = 8λ</text>
+  <path d="M 225 286 C 212 245, 186 215, 170 198" fill="none" stroke="#4a7a3a" stroke-width="1.8"/>
+  <path d="M 225 286 C 238 245, 264 215, 280 198" fill="none" stroke="#4a7a3a" stroke-width="1.8"/>
+  <text x="286" y="204" font-size="11" fill="#4a7a3a">HPBW ≈ 6.4°</text>
+
+  <!-- large aperture -->
+  <rect x="230" y="286" width="260" height="14" rx="3" fill="#0f7a8a"/>
+  <text x="360" y="322" text-anchor="middle" font-size="11" fill="#0f7a8a">L = 16λ</text>
+  <path d="M 360 286 C 352 250, 340 225, 332 210" fill="none" stroke="#0f7a8a" stroke-width="1.8"/>
+  <path d="M 360 286 C 368 250, 380 225, 388 210" fill="none" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="394" y="216" font-size="11" fill="#0f7a8a">HPBW ≈ 3.2°</text>
+
+  <text x="52" y="356" font-size="11.5" fill="#667">同样的物理尺寸下，提高频率（λ 变小）等价于增大电孔径 L/λ</text>
+
+  <!-- right: scan -->
+  <rect x="470" y="84" width="460" height="290" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="492" y="110" font-size="14" font-weight="bold" fill="#8a3a6a">扫描角越大 → 波束越宽、增益越低</text>
+
+  <!-- normal line -->
+  <line x1="700" y1="150" x2="700" y2="350" stroke="#8899a6" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <rect x="600" y="300" width="200" height="16" rx="3" fill="#dde8ec" stroke="#0f7a8a" stroke-width="1.2"/>
+  <text x="700" y="336" text-anchor="middle" font-size="11" fill="#556">平面阵（法线朝上）</text>
+
+  <!-- broadside beam -->
+  <polygon points="700,300 690,190 710,190" fill="#0f7a8a" opacity="0.75"/>
+  <text x="716" y="186" font-size="11" fill="#0f7a8a">θ₀=0°：HPBW 基准，增益 0 dB</text>
+
+  <!-- scanned beam -->
+  <polygon points="700,300 790,220 806,232" fill="#8a3a6a" opacity="0.7"/>
+  <text x="790" y="212" font-size="11" fill="#8a3a6a">θ₀=60°</text>
+  <path d="M 700 240 A 60 60 0 0 0 748 270" fill="none" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="736" y="256" font-size="12" fill="#8a3a6a">θ₀</text>
+
+  <!-- aperture projection -->
+  <line x1="620" y1="300" x2="700" y2="300" stroke="#c96a1f" stroke-width="3"/>
+  <text x="620" y="292" font-size="11" fill="#c96a1f">有效孔径 L·cosθ₀</text>
+
+  <!-- table -->
+  <text x="492" y="252" font-size="11.5" fill="#333" font-family="Consolas,monospace">θ₀     投影因子     几何滚降</text>
+  <text x="492" y="274" font-size="11.5" fill="#333" font-family="Consolas,monospace">0°     1.000        0 dB</text>
+  <text x="492" y="292" font-size="11.5" fill="#333" font-family="Consolas,monospace">30°    0.866       −0.6 dB</text>
+  <text x="492" y="310" font-size="11.5" fill="#333" font-family="Consolas,monospace">45°    0.707       −1.5 dB</text>
+  <text x="492" y="328" font-size="11.5" fill="#c96a1f" font-family="Consolas,monospace">60°    0.500       −3.0 dB</text>
+  <text x="492" y="346" font-size="11.5" fill="#333" font-family="Consolas,monospace">70°    0.342       −4.7 dB</text>
+
+  <text x="480" y="404" text-anchor="middle" font-size="12" fill="#333">软件实现：<tspan font-family="Consolas,monospace" fill="#0f7a8a">hpbw_deg = 50.8 / (L_over_lambda * cos(theta0))</tspan>　（均匀照射，弧度制 0.886λ/L）</text>
+  <text x="480" y="430" text-anchor="middle" font-size="11.5" fill="#667">点波束验证：N=16、d=λ/2、θ₀=0 ⇒ 50.8/8 = 6.35°，与全波仿真通常差 5% 以内</text>
+  <text x="480" y="456" text-anchor="middle" font-size="11.5" fill="#8a3a6a">注意：θ₀ → 90° 时 cosθ₀ → 0，公式失去意义——端射区必须改用精确方向图计算</text>
+  <text x="480" y="486" text-anchor="middle" font-size="11.5" fill="#c96a1f">孔径效率与 HPBW 是"一枚硬币"：加窗降低副瓣的同时把 HPBW 展宽 1.1~1.5 倍（见 S2-10）</text>
+</svg>

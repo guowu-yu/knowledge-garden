@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">交替投影法（AP）：在两个约束集合之间来回"打乒乓"</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">一个集合表达"想要什么形状"，另一个表达"硬件能做出来什么"</text>
+
+  <!-- set A -->
+  <circle cx="250" cy="250" r="118" fill="#e3f2f5" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="250" y="150" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">集合 A：方向图满足掩模</text>
+  <text x="250" y="250" text-anchor="middle" font-size="11.5" fill="#333">|AF(u)| 落在</text>
+  <text x="250" y="270" text-anchor="middle" font-size="11.5" fill="#333">[M_low(u), M_up(u)] 内</text>
+
+  <!-- set B -->
+  <circle cx="620" cy="250" r="118" fill="#f6e9f0" stroke="#8a3a6a" stroke-width="1.8"/>
+  <text x="620" y="150" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">集合 B：激励可实现</text>
+  <text x="620" y="250" text-anchor="middle" font-size="11.5" fill="#333">恒模 |w_n| = 1 或</text>
+  <text x="620" y="270" text-anchor="middle" font-size="11.5" fill="#333">幅度 ≤ 上限、位数受限</text>
+
+  <!-- intersection -->
+  <path d="M 435 190 A 118 118 0 0 1 435 310 A 118 118 0 0 0 435 190" fill="#dfe9cc" opacity="0.9"/>
+  <text x="445" y="256" font-size="11.5" font-weight="bold" fill="#4a7a3a">解</text>
+
+  <!-- ping-pong arrows -->
+  <path d="M 330 190 C 380 160, 480 160, 540 190" fill="none" stroke="#c96a1f" stroke-width="2" marker-end="url(#ar1)"/>
+  <path d="M 540 310 C 480 340, 380 340, 330 310" fill="none" stroke="#c96a1f" stroke-width="2" marker-end="url(#ar1)"/>
+  <defs>
+    <marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <polygon points="0,0 9,4.5 0,9" fill="#c96a1f"/>
+    </marker>
+  </defs>
+  <text x="435" y="152" text-anchor="middle" font-size="11" fill="#c96a1f">投影①：只改幅度包络</text>
+  <text x="435" y="348" text-anchor="middle" font-size="11" fill="#c96a1f">投影②：只改激励实现形式</text>
+
+  <!-- pseudocode -->
+  <rect x="30" y="384" width="560" height="128" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="408" font-size="13" font-weight="bold" fill="#0f7a8a">伪代码</text>
+  <text x="52" y="434" font-size="11.5" fill="#333" font-family="Consolas,monospace">w = window_init(N)          # 用泰勒/切比雪夫起步</text>
+  <text x="52" y="456" font-size="11.5" fill="#333" font-family="Consolas,monospace">for it in range(max_iter):</text>
+  <text x="52" y="478" font-size="11.5" fill="#333" font-family="Consolas,monospace">    AF = fftshift_fft(pad(w, L));  AF = clip_amp(AF, Mask)</text>
+  <text x="52" y="500" font-size="11.5" fill="#333" font-family="Consolas,monospace">    w  = enforce_constraint(ifft_trim(AF))</text>
+
+  <rect x="610" y="384" width="320" height="128" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="632" y="408" font-size="13" font-weight="bold" fill="#4a7a3a">收敛与失败处理</text>
+  <text x="632" y="432" font-size="11.5" fill="#333">· 残差不再下降即停（通常 100~500 次）</text>
+  <text x="632" y="454" font-size="11.5" fill="#333">· 不收敛多半是掩模本身不可实现</text>
+  <text x="632" y="476" font-size="11.5" fill="#333">· 放宽下界 / 增大孔径 / 加自由度</text>
+  <text x="632" y="498" font-size="11.5" fill="#8a3a6a">· 必须保存迭代历史，便于复现</text>
+
+  <text x="480" y="532" text-anchor="middle" font-size="11.5" fill="#333">实践建议：先用加窗得到"好看但不完全达标"的初值，再用 AP 修补边缘，比从随机初值起步收敛快得多</text>
+</svg>

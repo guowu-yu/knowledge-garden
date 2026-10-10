@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">栅瓣条件的推导：把"最近的一个副本"推回可见空间之外</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">主瓣在 u₀ = sinθ₀，栅瓣副本位于 u₀ ± λ/d；要求 |u| > 1 才安全</text>
+
+  <!-- u axis -->
+  <rect x="30" y="84" width="900" height="196" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">u = sinθ 轴：可见空间 [-1, +1]，副本间隔 λ/d</text>
+
+  <line x1="90" y1="220" x2="870" y2="220" stroke="#8899a6" stroke-width="1.6"/>
+  <!-- visible region -->
+  <rect x="240" y="150" width="480" height="70" fill="#e3f2f5" opacity="0.9"/>
+  <line x1="240" y1="150" x2="240" y2="240" stroke="#0f7a8a" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <line x1="720" y1="150" x2="720" y2="240" stroke="#0f7a8a" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="240" y="264" text-anchor="middle" font-size="11" fill="#0f7a8a" font-family="Consolas,monospace">u = -1</text>
+  <text x="720" y="264" text-anchor="middle" font-size="11" fill="#0f7a8a" font-family="Consolas,monospace">u = +1</text>
+  <text x="480" y="174" text-anchor="middle" font-size="12" fill="#0f7a8a" font-weight="bold">可见空间（真实可辐射）</text>
+
+  <!-- main lobe -->
+  <polygon points="480,148 474,110 486,110" fill="#0f7a8a"/>
+  <text x="480" y="104" text-anchor="middle" font-size="11.5" fill="#0f7a8a" font-family="Consolas,monospace">u₀ = sinθ₀</text>
+
+  <!-- grating lobe copies -->
+  <polygon points="760,196 754,166 766,166" fill="#8a3a6a"/>
+  <text x="770" y="196" font-size="11" fill="#8a3a6a" font-family="Consolas,monospace">u₀ + λ/d</text>
+  <polygon points="200,196 194,166 206,166" fill="#8a3a6a"/>
+  <text x="200" y="196" text-anchor="end" font-size="11" fill="#8a3a6a" font-family="Consolas,monospace">u₀ - λ/d</text>
+
+  <!-- arrow -->
+  <line x1="486" y1="130" x2="754" y2="176" stroke="#c96a1f" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="620" y="146" text-anchor="middle" font-size="11" fill="#c96a1f" font-family="Consolas,monospace">间隔 λ/d</text>
+
+  <text x="480" y="302" text-anchor="middle" font-size="12" fill="#333">安全条件：距主瓣最近的一个副本必须落在 u = ±1 之外 ⇒ <tspan font-weight="bold" fill="#c96a1f" font-family="Consolas,monospace">|u₀ ± λ/d| &gt; 1</tspan> ⇒ <tspan font-weight="bold" fill="#c96a1f" font-family="Consolas,monospace">d/λ &lt; 1/(1+|sinθ₀|)</tspan></text>
+
+  <!-- table -->
+  <rect x="30" y="322" width="900" height="180" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="52" y="348" font-size="14" font-weight="bold" fill="#4a7a3a">间距-扫描角对照表（在最高工作频率上评估）</text>
+
+  <text x="60" y="378" font-size="11.5" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">最大扫描角 θ_max</text>
+  <text x="290" y="378" font-size="11.5" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">允许最大 d/λ</text>
+  <text x="490" y="378" font-size="11.5" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">典型取值</text>
+  <text x="700" y="378" font-size="11.5" fill="#0f7a8a" font-weight="bold" font-family="Consolas,monospace">说明</text>
+
+  <text x="60" y="404" font-size="11.5" fill="#333" font-family="Consolas,monospace">0°（仅正扫）</text>
+  <text x="290" y="404" font-size="11.5" fill="#333" font-family="Consolas,monospace">1.000</text>
+  <text x="490" y="404" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.90 λ</text>
+  <text x="700" y="404" font-size="11" fill="#667">留裕量给互耦与公差</text>
+
+  <text x="60" y="428" font-size="11.5" fill="#333" font-family="Consolas,monospace">±30°</text>
+  <text x="290" y="428" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.667</text>
+  <text x="490" y="428" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.60 λ</text>
+  <text x="700" y="428" font-size="11" fill="#667">可放宽间距换增益</text>
+
+  <text x="60" y="452" font-size="11.5" fill="#c96a1f" font-family="Consolas,monospace">±60°</text>
+  <text x="290" y="452" font-size="11.5" fill="#c96a1f" font-family="Consolas,monospace">0.536</text>
+  <text x="490" y="452" font-size="11.5" fill="#c96a1f" font-family="Consolas,monospace">0.50 λ</text>
+  <text x="700" y="452" font-size="11" fill="#667">与 λ/2 红线几乎重合</text>
+
+  <text x="60" y="476" font-size="11.5" fill="#333" font-family="Consolas,monospace">±90°（全空间）</text>
+  <text x="290" y="476" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.500</text>
+  <text x="490" y="476" font-size="11.5" fill="#333" font-family="Consolas,monospace">0.50 λ</text>
+  <text x="700" y="476" font-size="11" fill="#667">协议/雷达常用设计红线</text>
+
+  <text x="480" y="526" text-anchor="middle" font-size="11.5" fill="#8a3a6a">注意"宽角扫描"与"大间距"本质冲突：±60° 需求下 0.536λ 的余量只有 7%，而介质基板中的有效波长缩短会进一步压缩实际间距</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">两个阵元：波程差 → 补偿相位 → 同相叠加</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">远场来波可视为平面波，相邻阵元的波程差 Δr = d·sinθ 决定相位差</text>
+
+  <!-- geometry panel -->
+  <rect x="30" y="82" width="520" height="330" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="108" font-size="14" font-weight="bold" fill="#0f7a8a">几何：波程差</text>
+
+  <!-- array axis -->
+  <line x1="90" y1="350" x2="470" y2="350" stroke="#8899a6" stroke-width="1.4"/>
+  <text x="474" y="354" font-size="11" fill="#556">阵轴</text>
+
+  <!-- elements -->
+  <circle cx="150" cy="350" r="7" fill="#0f7a8a"/>
+  <circle cx="330" cy="350" r="7" fill="#0f7a8a"/>
+  <text x="150" y="372" text-anchor="middle" font-size="11.5" fill="#0f7a8a" font-family="Consolas,monospace">n=0</text>
+  <text x="330" y="372" text-anchor="middle" font-size="11.5" fill="#0f7a8a" font-family="Consolas,monospace">n=1</text>
+
+  <!-- spacing marker -->
+  <line x1="150" y1="392" x2="330" y2="392" stroke="#4a7a3a" stroke-width="1.6"/>
+  <line x1="150" y1="386" x2="150" y2="398" stroke="#4a7a3a" stroke-width="1.6"/>
+  <line x1="330" y1="386" x2="330" y2="398" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="240" y="410" text-anchor="middle" font-size="12" fill="#4a7a3a" font-family="Consolas,monospace">d</text>
+
+  <!-- incoming plane wave fronts -->
+  <line x1="60" y1="140" x2="460" y2="236" stroke="#c96a1f" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <line x1="60" y1="196" x2="460" y2="292" stroke="#c96a1f" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <line x1="60" y1="252" x2="460" y2="348" stroke="#c96a1f" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <text x="404" y="150" font-size="12" fill="#c96a1f">平面波前</text>
+
+  <!-- ray direction -->
+  <line x1="470" y1="120" x2="300" y2="352" stroke="#8a3a6a" stroke-width="2"/>
+  <polygon points="300,352 306,338 318,344" fill="#8a3a6a"/>
+  <text x="404" y="118" font-size="12" fill="#8a3a6a">来波方向 θ</text>
+
+  <!-- normal -->
+  <line x1="330" y1="350" x2="330" y2="140" stroke="#aab8c0" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="336" y="140" font-size="11" fill="#8899a6">法线</text>
+
+  <!-- theta arc -->
+  <path d="M 330 250 A 100 100 0 0 0 285 205" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  <text x="288" y="238" font-size="12.5" font-weight="bold" fill="#8a3a6a">θ</text>
+
+  <!-- path difference -->
+  <line x1="330" y1="292" x2="390" y2="292" stroke="#0f7a8a" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <line x1="390" y1="292" x2="390" y2="348" stroke="#0f7a8a" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <text x="398" y="322" font-size="11.5" fill="#0f7a8a" font-family="Consolas,monospace">Δr=d sinθ</text>
+
+  <!-- formula box -->
+  <rect x="580" y="82" width="350" height="330" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="602" y="108" font-size="14" font-weight="bold" fill="#c96a1f">从波程差到阵列因子</text>
+
+  <text x="602" y="146" font-size="12.5" fill="#333" font-family="Consolas,monospace">Δφ = k·Δr = (2π/λ)·d·sinθ</text>
+  <text x="602" y="176" font-size="12.5" fill="#333" font-family="Consolas,monospace">w_n = a_n·e^{-j·n·kd sinθ0}</text>
+  <line x1="602" y1="192" x2="908" y2="192" stroke="#e2ebee" stroke-width="1.2"/>
+
+  <text x="602" y="222" font-size="12.5" fill="#0f7a8a" font-family="Consolas,monospace">AF(θ) = Σ a_n e^{j n kd(sinθ-sinθ0)}</text>
+  <text x="602" y="246" font-size="11" fill="#667">n = 0 … N−1</text>
+
+  <text x="602" y="284" font-size="12.5" fill="#4a7a3a" font-family="Consolas,monospace">均匀激励：令 ψ = kd(sinθ−sinθ0)</text>
+  <text x="602" y="312" font-size="12.5" fill="#4a7a3a" font-family="Consolas,monospace">AF(ψ) = sin(Nψ/2) / sin(ψ/2)</text>
+
+  <text x="602" y="352" font-size="11.5" fill="#333">ψ=0 处为最大值 N ⇒ 归一化 AF/N</text>
+  <text x="602" y="376" font-size="11.5" fill="#333">ψ=2πp 处为栅瓣（间距 λ/d）</text>
+  <text x="602" y="400" font-size="11.5" fill="#333">ψ 为 2π 整数倍以外的极大值为副瓣</text>
+
+  <text x="480" y="452" text-anchor="middle" font-size="12" fill="#333">"配相"的本质：给每个通道加上 <tspan font-weight="bold" fill="#0f7a8a">−n·kd·sinθ₀</tspan> 的相位斜坡，把平面波前的倾斜在求和前拉平</text>
+  <text x="480" y="478" text-anchor="middle" font-size="11.5" fill="#667">方向图乘积定理：总方向图 G(θ) = 阵元方向图 G_e(θ) × |AF(θ)|（理想、互耦可忽略时成立）</text>
+  <text x="480" y="504" text-anchor="middle" font-size="11.5" fill="#8a3a6a">注意：N 元阵的相位斜坡是"每元固定增量"，这才是它能用移相器实现的原因</text>
+</svg>

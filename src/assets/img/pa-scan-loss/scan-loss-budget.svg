@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">扫描损耗的三本账：几何投影 / 单元方向图 / 失配</text>
+  <text x="480" y="58" text-anchor="middle" font-size="12" fill="#556">只有第一本可以用公式算准，后两本必须从仿真或实测取数</text>
+
+  <!-- three bands -->
+  <rect x="30" y="84" width="900" height="130" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="52" y="110" font-size="14" font-weight="bold" fill="#0f7a8a">总扫描损耗 ≈ (cosθ₀)^k，k 通常 1.0 ~ 1.5（最坏到 2.0）</text>
+
+  <!-- cos curve -->
+  <line x1="90" y1="190" x2="880" y2="190" stroke="#8899a6" stroke-width="1.4"/>
+  <line x1="90" y1="120" x2="90" y2="190" stroke="#8899a6" stroke-width="1.4"/>
+  <path d="M 90 120 C 260 122, 420 130, 545 150 C 660 168, 760 182, 880 189" fill="none" stroke="#0f7a8a" stroke-width="2.4"/>
+  <path d="M 90 120 C 250 128, 400 148, 520 172 C 640 188, 770 189, 880 190" fill="none" stroke="#c96a1f" stroke-width="2.2" stroke-dasharray="7 5"/>
+  <text x="600" y="140" font-size="11.5" fill="#0f7a8a">k = 1（仅投影）</text>
+  <text x="620" y="184" font-size="11.5" fill="#c96a1f">k = 1.5（含失配）</text>
+
+  <text x="88" y="212" font-size="10.5" fill="#556">0°</text>
+  <text x="230" y="212" font-size="10.5" fill="#556">20°</text>
+  <text x="360" y="212" font-size="10.5" fill="#556">40°</text>
+  <text x="490" y="212" font-size="10.5" fill="#556">60°</text>
+  <text x="620" y="212" font-size="10.5" fill="#556">70°</text>
+  <text x="760" y="212" font-size="10.5" fill="#556">80°</text>
+  <text x="44" y="126" font-size="10.5" fill="#556">0 dB</text>
+  <text x="38" y="192" font-size="10.5" fill="#556">−8 dB</text>
+
+  <!-- breakdown -->
+  <rect x="30" y="232" width="290" height="234" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="52" y="258" font-size="13" font-weight="bold" fill="#4a7a3a">① 有效孔径投影</text>
+  <text x="52" y="286" font-size="12" fill="#4a7a3a" font-family="Consolas,monospace">L_eff = L·cosθ₀</text>
+  <text x="52" y="312" font-size="12" fill="#4a7a3a" font-family="Consolas,monospace">ΔG = 10log10(cosθ₀)</text>
+  <text x="52" y="342" font-size="11.5" fill="#333">30° → −0.6 dB</text>
+  <text x="52" y="364" font-size="11.5" fill="#333">45° → −1.5 dB</text>
+  <text x="52" y="386" font-size="11.5" fill="#333">60° → −3.0 dB</text>
+  <text x="52" y="408" font-size="11.5" fill="#333">70° → −4.7 dB</text>
+  <text x="52" y="438" font-size="11" fill="#667">不可消除、不可补偿，</text>
+  <text x="52" y="456" font-size="11" fill="#667">是平面阵的物理宿命</text>
+
+  <rect x="335" y="232" width="290" height="234" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="357" y="258" font-size="13" font-weight="bold" fill="#c96a1f">② 单元方向图滚降</text>
+  <text x="357" y="286" font-size="12" fill="#c96a1f" font-family="Consolas,monospace">G_e(θ) ≈ cos^m θ</text>
+  <text x="357" y="312" font-size="11.5" fill="#333">贴片 m ≈ 1~1.3；含地板再加一截</text>
+  <text x="357" y="342" font-size="11.5" fill="#333">60° 时量级 −1.5 ~ −3 dB</text>
+  <text x="357" y="372" font-size="11.5" fill="#333">关键：扫描时"波束转、单元不转"，</text>
+  <text x="357" y="392" font-size="11.5" fill="#333">因此单元方向图的凹口不会跟着走</text>
+  <text x="357" y="422" font-size="11" fill="#667">软件做法：把单元表按扫描角一起读进来</text>
+  <text x="357" y="442" font-size="11" fill="#667">而不是只读一个标量 G_e(0)</text>
+  <text x="357" y="460" font-size="11" fill="#8a3a6a">否则链路预算在边缘必然偏乐观</text>
+
+  <rect x="640" y="232" width="290" height="234" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="662" y="258" font-size="13" font-weight="bold" fill="#8a3a6a">③ 失配与互耦恶化</text>
+  <text x="662" y="286" font-size="11.5" fill="#333">有源驻波随扫描角恶化，</text>
+  <text x="662" y="306" font-size="11.5" fill="#333">失配损耗 0.3 ~ 1 dB 量级</text>
+  <text x="662" y="334" font-size="11.5" fill="#333">大角处可能出现<tspan font-weight="bold" fill="#8a3a6a">扫描盲区</tspan></text>
+  <text x="662" y="354" font-size="11.5" fill="#333">（表面波共振导致某个角度增益断崖式下跌）</text>
+  <text x="662" y="382" font-size="11.5" fill="#333">天线罩进一步引入插损与波束偏移</text>
+  <text x="662" y="412" font-size="11" fill="#667">这一类必须靠有源 S 参数（AEP）仿真</text>
+  <text x="662" y="432" font-size="11" fill="#667">或整机实测获得，公式算不出来</text>
+  <text x="662" y="458" font-size="11" fill="#8a3a6a">k 从 1 抬到 1.3~1.5 主要来自这里</text>
+
+  <text x="480" y="492" text-anchor="middle" font-size="12" fill="#333">软件约定：把扫描损耗建模为可配置函数 <tspan font-family="Consolas,monospace" fill="#0f7a8a">scan_loss_db(theta0, f, axis)</tspan>，</text>
+  <text x="480" y="514" text-anchor="middle" font-size="11.5" fill="#667">系数 k 与单元表一起版本化管理。同一天线在 E 面/H 面 k 不同，不要共用一个数。</text>
+</svg>
