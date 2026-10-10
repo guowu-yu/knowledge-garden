@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="660" fill="#eef5f8"/>
+  <text x="480" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">数字波束成形（DBF）算法数据流：从阵元到波束</text>
+  <text x="480" y="61" text-anchor="middle" font-size="12" fill="#556">接收链路为主；发射链路是同一套权值的复共轭反向，权值计算模块完全共用</text>
+
+  <!-- Row A: element -> RF -> ADC -->
+  <rect x="30" y="82" width="900" height="196" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="52" y="106" font-size="13" font-weight="bold" fill="#0f7a8a">① 阵元 → 射频前端 → 数字化：每个通道一次采样</text>
+
+  <g font-size="10.5" fill="#333">
+    <!-- columns -->
+    <rect x="56" y="120" width="120" height="60" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="116" y="144" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">阵列单元 1..N</text>
+    <text x="116" y="164" text-anchor="middle" font-size="9.5" fill="#556">λ/2 间距 · 互耦</text>
+
+    <rect x="212" y="120" width="120" height="60" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="272" y="144" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">LNA / 滤波</text>
+    <text x="272" y="164" text-anchor="middle" font-size="9.5" fill="#556">噪声系数在此定死</text>
+
+    <rect x="368" y="120" width="120" height="60" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="428" y="144" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">下变频</text>
+    <text x="428" y="164" text-anchor="middle" font-size="9.5" fill="#556">I / Q 正交解调</text>
+
+    <rect x="524" y="120" width="120" height="60" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="584" y="144" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">ADC</text>
+    <text x="584" y="164" text-anchor="middle" font-size="9.5" fill="#556">位宽 B → SNR</text>
+
+    <rect x="680" y="120" width="222" height="60" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="791" y="144" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">数字下变频 DDC + 抽取</text>
+    <text x="791" y="164" text-anchor="middle" font-size="9.5" fill="#556">搬基带 · 降采样到符号率</text>
+
+    <path d="M 176 150 L 212 150" stroke="#0f7a8a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M 332 150 L 368 150" stroke="#0f7a8a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M 488 150 L 524 150" stroke="#0f7a8a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M 644 150 L 680 150" stroke="#0f7a8a" stroke-width="1.6" marker-end="url(#ar)"/>
+
+    <text x="56" y="208" font-size="10.5" fill="#0f7a8a" font-weight="bold">关键结论：</text>
+    <text x="126" y="208" font-size="10.5">数字化位置（阵元级 / 子阵级）决定架构上限——DBF 体系里，"数字通道数"比"阵元数"更决定能力与代价</text>
+    <text x="56" y="232" font-size="10.5" fill="#556">ADC 位数直接决定动态范围：每增 1 bit 约换来 6 dB；同时决定能否把强干扰压到噪声之下再形成零陷</text>
+    <text x="56" y="256" font-size="10.5" fill="#556">各通道的<i>幅度不平衡 / 相位不平衡 / 采样时钟偏斜</i>都在这一步引入，是 S5 校准要抠掉的误差源</text>
+  </g>
+
+  <!-- Row B: weight & sum -->
+  <rect x="30" y="294" width="900" height="176" rx="11" fill="#ffffff" stroke="#8a3a6a" stroke-width="2.2"/>
+  <text x="52" y="318" font-size="13" font-weight="bold" fill="#8a3a6a">② 复数加权与求和：DBF 的心脏</text>
+
+  <g font-size="10.5" fill="#333">
+    <rect x="56" y="334" width="196" height="56" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="154" y="357" text-anchor="middle" font-size="11" font-weight="bold" fill="#8a3a6a">复数权值 wₙ = aₙ·e^(−jφₙ)</text>
+    <text x="154" y="377" text-anchor="middle" font-size="9.5" fill="#556">幅度加窗 + 相位配相</text>
+
+    <rect x="284" y="334" width="150" height="56" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="359" y="357" text-anchor="middle" font-size="11" font-weight="bold" fill="#8a3a6a">复数乘加</text>
+    <text x="359" y="377" text-anchor="middle" font-size="9.5" fill="#556">y = Σ wₙ·xₙ</text>
+
+    <rect x="466" y="334" width="150" height="56" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="541" y="357" text-anchor="middle" font-size="11" font-weight="bold" fill="#8a3a6a">求和成波束</text>
+    <text x="541" y="377" text-anchor="middle" font-size="9.5" fill="#556">同相相加 → 主瓣</text>
+
+    <rect x="648" y="334" width="254" height="56" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="775" y="357" text-anchor="middle" font-size="11" font-weight="bold" fill="#8a3a6a">多波束输出 B₁ … B_K</text>
+    <text x="775" y="377" text-anchor="middle" font-size="9.5" fill="#556">同一份采样，K 组权值 → K 个同时波束</text>
+
+    <path d="M 252 362 L 284 362" stroke="#8a3a6a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M 434 362 L 466 362" stroke="#8a3a6a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M 616 362 L 648 362" stroke="#8a3a6a" stroke-width="1.6" marker-end="url(#ar)"/>
+
+    <text x="56" y="416" font-size="10.5" fill="#8a3a6a" font-weight="bold">实时性约束：</text>
+    <text x="126" y="416" font-size="10.5">每个采样周期内要完成 N×K 次复数乘加。以 100 MHz 带宽、256 阵元、16 波束计，量级 ≈ 800 GOPS——这是 FPGA 的活儿</text>
+    <text x="56" y="440" font-size="10.5" fill="#556">工程分工：<b>FPGA 做乘加流水（数据面）</b>，CPU/DSP 做权值解算与调度（控制面）；权值每帧更新一次即可，不必逐采样更新</text>
+    <text x="56" y="462" font-size="10.5" fill="#556">定点化是必答题：权值 / 数据位宽不足会直接抬副瓣。经验做法是"数据 12~14 bit、权值 10~12 bit"起步再压</text>
+  </g>
+
+  <!-- Row C: algorithms -->
+  <rect x="30" y="484" width="900" height="156" rx="11" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="52" y="508" font-size="13" font-weight="bold" fill="#c96a1f">③ 权值是怎么算出来的：三类算法路线</text>
+
+  <g font-size="10.5" fill="#333">
+    <rect x="52" y="522" width="278" height="104" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="68" y="544" font-weight="bold" fill="#c96a1f" font-size="11.5">A · 数据无关（确定性）</text>
+    <text x="68" y="564" font-size="10">w = a(θ₀)：按几何直接配相</text>
+    <text x="68" y="582" font-size="10">加窗控副瓣：泰勒 / 切比雪夫 / 汉明</text>
+    <text x="68" y="600" font-size="10">先验已知，零迭代，最省算力</text>
+    <text x="68" y="618" fill="#c96a1f" font-size="10">▸ 单波束扫描、等通量赋形的主力</text>
+
+    <rect x="342" y="522" width="278" height="104" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="358" y="544" font-weight="bold" fill="#c96a1f" font-size="11.5">B · 统计最优（自适应）</text>
+    <text x="358" y="564" font-size="10" font-family="Consolas,monospace">w = R⁻¹a / (aᴴR⁻¹a)　MVDR</text>
+    <text x="358" y="582" font-size="10">LCMV 加线性约束 / 旁瓣约束</text>
+    <text x="358" y="600" font-size="10">用干扰+噪声协方差 R 自动置零陷</text>
+    <text x="358" y="618" fill="#c96a1f" font-size="10">▸ 抗干扰；R 估计需对角加载保稳定</text>
+
+    <rect x="632" y="522" width="278" height="104" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="648" y="544" font-weight="bold" fill="#c96a1f" font-size="11.5">C · 参数估计（DOA）</text>
+    <text x="648" y="564" font-size="10">MUSIC / ESPRIT 子空间超分辨测向</text>
+    <text x="648" y="582" font-size="10">波束域 MUSIC：先降维再估计</text>
+    <text x="648" y="600" font-size="10">估计出方向后再切回 A 或 B 生成权值</text>
+    <text x="648" y="618" fill="#c96a1f" font-size="10">▸ 找干扰源在哪；协方差矩阵特征分解</text>
+  </g>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#667"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="700" fill="#eef5f8"/>
+  <text x="480" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">一致性测试链路：从暗室到认证实验室</text>
+  <text x="480" y="61" text-anchor="middle" font-size="12" fill="#556">阵列天线没有可接的射频口——所有指标只能在空口（OTA）上测</text>
+
+  <!-- why OTA -->
+  <rect x="30" y="82" width="900" height="88" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="52" y="106" font-size="13" font-weight="bold" fill="#0f7a8a">① 为什么必须 OTA</text>
+  <g font-size="10.5" fill="#333">
+    <text x="52" y="130">毫米波阵列里 <tspan font-weight="bold">芯片 → 功放 → 天线</tspan> 之间没有任何连接器，无法"用电缆接出来测"</text>
+    <text x="52" y="152">天线不再是被测件的附件，而是<b>被测件本身的一部分</b>——测的必须是"整机辐射出去的那一束波"</text>
+    <text x="52" y="152" font-size="10.5" fill="#0f7a8a"></text>
+  </g>
+
+  <!-- metrics -->
+  <rect x="30" y="186" width="440" height="200" rx="11" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="52" y="210" font-size="13" font-weight="bold" fill="#c96a1f">② 关键测试量</text>
+  <g font-size="10.5" fill="#333">
+    <rect x="52" y="222" width="396" height="44" rx="7" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="68" y="242" font-weight="bold" fill="#c96a1f" font-size="11">EIRP　等效全向辐射功率</text>
+    <text x="68" y="259" font-size="9.8" fill="#556">最强波束方向的辐射功率 → 决定下行能力</text>
+
+    <rect x="52" y="274" width="396" height="44" rx="7" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="68" y="294" font-weight="bold" fill="#c96a1f" font-size="11">TRP　总辐射功率</text>
+    <text x="68" y="311" font-size="9.8" fill="#556">EIRP 在整个球面积分 → 决定功耗与 SAR/EMF 合规</text>
+
+    <rect x="52" y="326" width="396" height="44" rx="7" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="68" y="346" font-weight="bold" fill="#c96a1f" font-size="11">EIS / TRS　等效全向灵敏度</text>
+    <text x="68" y="363" font-size="9.8" fill="#556">接收方向图上的最小可解调电平 → 决定上行覆盖</text>
+  </g>
+
+  <!-- chamber types -->
+  <rect x="490" y="186" width="440" height="200" rx="11" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.8"/>
+  <text x="512" y="210" font-size="13" font-weight="bold" fill="#8a3a6a">③ 三种 OTA 方法（TR 38.810 定义）</text>
+  <g font-size="10.5" fill="#333">
+    <rect x="512" y="222" width="396" height="50" rx="7" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="528" y="242" font-weight="bold" fill="#8a3a6a" font-size="11">DFF　直接远场</text>
+    <text x="528" y="259" font-size="9.8" fill="#556">真把距离拉到 &gt; 2D²/λ。小阵列、已知位置时最省钱</text>
+
+    <rect x="512" y="280" width="396" height="50" rx="7" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="528" y="300" font-weight="bold" fill="#8a3a6a" font-size="11">IFF / CATR　紧缩场</text>
+    <text x="528" y="317" font-size="9.8" fill="#556">抛物面反射器把球面波准直成平面波 → 小暗室造远场；成本可达 DFF 的 10 倍</text>
+
+    <rect x="512" y="338" width="396" height="50" rx="7" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="528" y="358" font-weight="bold" fill="#8a3a6a" font-size="11">NFTF　近场→远场变换</text>
+    <text x="528" y="375" font-size="9.8" fill="#556">近场采样 + 数学变换得远场；另有混响室专测 TRP，速度约为暗室 1/6 时间</text>
+  </g>
+
+  <!-- sphere scan -->
+  <rect x="30" y="402" width="440" height="252" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="52" y="426" font-size="13" font-weight="bold" fill="#0f7a8a">④ 球面扫描：把整个辐射球"扫"一遍</text>
+  <g>
+    <circle cx="150" cy="530" r="76" fill="#e4f3f5" stroke="#0f7a8a" stroke-width="1.6"/>
+    <ellipse cx="150" cy="530" rx="76" ry="26" fill="none" stroke="#0f7a8a" stroke-width="1" stroke-dasharray="3 3"/>
+    <ellipse cx="150" cy="530" rx="30" ry="76" fill="none" stroke="#0f7a8a" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="150" cy="530" r="5" fill="#c96a1f"/>
+    <line x1="150" y1="530" x2="204" y2="478" stroke="#c96a1f" stroke-width="1.8"/>
+    <text x="150" y="620" text-anchor="middle" font-size="9.8" fill="#556">多轴转台把 DUT 转到球面上每个角度</text>
+    <text x="150" y="636" text-anchor="middle" font-size="9.8" fill="#556">每点记录 EIRP / EIS → 合成完整方向图</text>
+    <text x="214" y="474" font-size="9.5" fill="#c96a1f">探针</text>
+
+    <g font-size="10.4" fill="#333">
+      <text x="248" y="440" font-weight="bold" fill="#0f7a8a">测试顺序（CTIA 毫米波测试计划）</text>
+      <text x="248" y="462" font-size="10">1. 暗室基本性能与静区（quiet zone）验证</text>
+      <text x="248" y="482" font-size="10">2. 测试系统路损标定</text>
+      <text x="248" y="502" font-size="10">3. 收 / 发波束峰值方向搜索</text>
+      <text x="248" y="522" font-size="10">4. 收发性能测量（EIRP / TRP / EIS / EVM）</text>
+      <text x="248" y="546" font-size="10" fill="#8a3a6a">静区验证是commissioning的前置条件，</text>
+      <text x="248" y="562" font-size="10" fill="#8a3a6a">它把转台与支架的反射一并刻画出来</text>
+      <text x="248" y="592" font-size="10" fill="#4a7a3a">MIMO OTA（Rel-18 参考方法）：多探头</text>
+      <text x="248" y="608" font-size="10" fill="#4a7a3a">暗室 MPAC，重现空间信道而非单点增益</text>
+      <text x="248" y="634" font-size="10" fill="#556">研发阶段另加：2D/3D 波束图、交叉极化隔离、</text>
+      <text x="248" y="648" font-size="10" fill="#556">波束扫描一致性（覆盖 38.101-2 指标余量）</text>
+    </g>
+  </g>
+
+  <!-- conformance stack -->
+  <rect x="490" y="402" width="440" height="252" rx="11" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.8"/>
+  <text x="512" y="426" font-size="13" font-weight="bold" fill="#4a7a3a">⑤ 规范与认证地图</text>
+  <g font-size="10.5" fill="#333">
+    <rect x="512" y="438" width="396" height="38" rx="7" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="528" y="455" font-weight="bold" fill="#4a7a3a" font-size="11">TS 38.101-2　FR2 UE 射频收发要求</text>
+    <text x="528" y="470" font-size="9.6" fill="#556">峰值 EIRP 下限、球面覆盖、MPR、EVM、SEM…</text>
+
+    <rect x="512" y="482" width="396" height="38" rx="7" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="528" y="499" font-weight="bold" fill="#4a7a3a" font-size="11">TS 38.101-5　NTN（FR1）频段 UE 射频要求</text>
+    <text x="528" y="514" font-size="9.6" fill="#556">卫星频段的功率等级与天线指标</text>
+
+    <rect x="512" y="526" width="396" height="38" rx="7" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="528" y="543" font-weight="bold" fill="#4a7a3a" font-size="11">TR 38.810　FR2 测试方法学研究</text>
+    <text x="528" y="558" font-size="9.6" fill="#556">DFF / IFF / NFTF 三种可选方法的定义与适用边界</text>
+
+    <rect x="512" y="570" width="396" height="34" rx="7" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="528" y="591" font-weight="bold" fill="#4a7a3a" font-size="11">CTIA OTA 测试计划 / GCF · PTCRB</text>
+
+    <rect x="512" y="610" width="396" height="34" rx="7" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="528" y="631" font-weight="bold" fill="#c96a1f" font-size="11">ITU-R S.580 / S.465：旁瓣包络与 EPFD 监管约束</text>
+  </g>
+</svg>

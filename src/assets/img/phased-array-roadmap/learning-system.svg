@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="700" fill="#eef5f8"/>
+  <text x="480" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">相控阵天线 · 六阶段学习体系（算法 / 软件工程师视角）</text>
+  <text x="480" y="62" text-anchor="middle" font-size="12" fill="#556">横向可并行补课 ｜ 纵向 S3 ⇒ S4 是主战场 ｜ S6 是"能交付"的分界线</text>
+
+  <!-- S1 -->
+  <rect x="30" y="84" width="900" height="92" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <rect x="30" y="84" width="8" height="92" rx="4" fill="#0f7a8a"/>
+  <circle cx="72" cy="118" r="18" fill="#0f7a8a"/>
+  <text x="72" y="124" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">S1</text>
+  <text x="104" y="114" font-size="14.5" font-weight="bold" fill="#0f7a8a">数学与电磁地基</text>
+  <text x="104" y="136" font-size="10.8" fill="#333">复数与相量 · 傅里叶变换 · 空间频率 k·sinθ · 阵元方向图 · 互易 · 远场条件 2D²/λ</text>
+  <text x="104" y="158" font-size="10.8" fill="#556">里程碑：能从"波程差"独立推出阵列因子，并能解释为什么窄带下"相位"等价于"时延"</text>
+  <rect x="770" y="102" width="140" height="56" rx="7" fill="#e4f3f5" stroke="#0f7a8a"/>
+  <text x="840" y="124" text-anchor="middle" font-size="10" fill="#0f7a8a" font-weight="bold">难度 ★★☆</text>
+  <text x="840" y="143" text-anchor="middle" font-size="10" fill="#556">2 ~ 4 周</text>
+
+  <!-- S2 -->
+  <rect x="30" y="188" width="900" height="92" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <rect x="30" y="188" width="8" height="92" rx="4" fill="#0f7a8a"/>
+  <circle cx="72" cy="222" r="18" fill="#0f7a8a"/>
+  <text x="72" y="228" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">S2</text>
+  <text x="104" y="218" font-size="14.5" font-weight="bold" fill="#0f7a8a">阵列与波束基础</text>
+  <text x="104" y="240" font-size="10.8" fill="#333">阵列因子 AF · 方向图乘积 · λ/2 准则与栅瓣 · HPBW · 扫描损耗 cosθ · 加权加窗（泰勒 / 切比雪夫）</text>
+  <text x="104" y="262" font-size="10.8" fill="#556">里程碑：给定 N / d / 扫描角，能预测增益、波束宽度、第一副瓣，并判断有无栅瓣</text>
+  <rect x="770" y="206" width="140" height="56" rx="7" fill="#e4f3f5" stroke="#0f7a8a"/>
+  <text x="840" y="228" text-anchor="middle" font-size="10" fill="#0f7a8a" font-weight="bold">难度 ★★★</text>
+  <text x="840" y="247" text-anchor="middle" font-size="10" fill="#556">3 ~ 5 周</text>
+
+  <!-- S3 -->
+  <rect x="30" y="292" width="900" height="92" rx="11" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <rect x="30" y="292" width="8" height="92" rx="4" fill="#c96a1f"/>
+  <circle cx="72" cy="326" r="18" fill="#c96a1f"/>
+  <text x="72" y="332" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">S3</text>
+  <text x="104" y="322" font-size="14.5" font-weight="bold" fill="#c96a1f">硬件与器件（必要铺垫）</text>
+  <text x="104" y="344" font-size="10.8" fill="#333">T/R 组件 · 移相器（数字 / 矢量 / TTD）· 衰减器 · 功分合成网络 · ADC/DAC 位宽与 SNR · 互耦与有源驻波</text>
+  <text x="104" y="366" font-size="10.8" fill="#556">里程碑：读懂一份 T/R 组件数据手册，能把"6 bit 移相器"折算成量化副瓣代价</text>
+  <rect x="770" y="310" width="140" height="56" rx="7" fill="#faf0e6" stroke="#c96a1f"/>
+  <text x="840" y="332" text-anchor="middle" font-size="10" fill="#c96a1f" font-weight="bold">难度 ★★★</text>
+  <text x="840" y="351" text-anchor="middle" font-size="10" fill="#556">4 ~ 6 周</text>
+
+  <!-- S4 -->
+  <rect x="30" y="396" width="900" height="100" rx="11" fill="#ffffff" stroke="#8a3a6a" stroke-width="2.4"/>
+  <rect x="30" y="396" width="8" height="100" rx="4" fill="#8a3a6a"/>
+  <circle cx="72" cy="430" r="18" fill="#8a3a6a"/>
+  <text x="72" y="436" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">S4</text>
+  <text x="104" y="424" font-size="14.5" font-weight="bold" fill="#8a3a6a">波束成形算法与软件　★ 主战场</text>
+  <text x="104" y="446" font-size="10.8" fill="#333">权值计算 w = a(θ) · 常规 / MVDR 自适应波束 · 零陷抗干扰 · DOA 估计（MUSIC / ESPRIT）</text>
+  <text x="104" y="464" font-size="10.8" fill="#333">子阵与混合波束成形（HBF）· 宽带真时延与波束斜视补偿 · 权值定点化与 FPGA 映射（Zynq / Vivado HLS）</text>
+  <text x="104" y="484" font-size="10.8" fill="#556">里程碑：能在 Python 里搭出端到端链路仿真，并把同一套权值算法跑进 FPGA 时序预算</text>
+  <rect x="770" y="418" width="140" height="60" rx="7" fill="#f6ebf1" stroke="#8a3a6a"/>
+  <text x="840" y="442" text-anchor="middle" font-size="10" fill="#8a3a6a" font-weight="bold">难度 ★★★★</text>
+  <text x="840" y="462" text-anchor="middle" font-size="10" fill="#556">8 ~ 12 周</text>
+
+  <!-- S5 -->
+  <rect x="30" y="508" width="900" height="92" rx="11" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.8"/>
+  <rect x="30" y="508" width="8" height="92" rx="4" fill="#4a7a3a"/>
+  <circle cx="72" cy="542" r="18" fill="#4a7a3a"/>
+  <text x="72" y="548" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">S5</text>
+  <text x="104" y="538" font-size="14.5" font-weight="bold" fill="#4a7a3a">校准与实时实现</text>
+  <text x="104" y="560" font-size="10.8" fill="#333">通道幅相一致性 · REV 旋转矢量法 · 近场扫描 · 内建环回 / 耦合线自校准 · 温度漂移与温补</text>
+  <text x="104" y="582" font-size="10.8" fill="#556">里程碑：写出 REV 解算脚本，把 64 通道的幅相误差压到移相器步进以内</text>
+  <rect x="770" y="526" width="140" height="56" rx="7" fill="#edf4ea" stroke="#4a7a3a"/>
+  <text x="840" y="548" text-anchor="middle" font-size="10" fill="#4a7a3a" font-weight="bold">难度 ★★★★</text>
+  <text x="840" y="567" text-anchor="middle" font-size="10" fill="#556">4 ~ 8 周</text>
+
+  <!-- S6 -->
+  <rect x="30" y="612" width="900" height="76" rx="11" fill="#ffffff" stroke="#6a5a8a" stroke-width="1.8"/>
+  <rect x="30" y="612" width="8" height="76" rx="4" fill="#6a5a8a"/>
+  <circle cx="72" cy="642" r="18" fill="#6a5a8a"/>
+  <text x="72" y="648" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">S6</text>
+  <text x="104" y="638" font-size="14.5" font-weight="bold" fill="#6a5a8a">测试与一致性</text>
+  <text x="104" y="660" font-size="10.8" fill="#333">OTA 暗室（DFF / CATR / 混响室）· EIRP / TRP / EIS 球面扫描 · 交叉极化 · 3GPP 38.101-2 / TR 38.810 · CTIA mmWave 测试计划</text>
+  <rect x="770" y="624" width="140" height="52" rx="7" fill="#f0edf5" stroke="#6a5a8a"/>
+  <text x="840" y="646" text-anchor="middle" font-size="10" fill="#6a5a8a" font-weight="bold">难度 ★★★☆</text>
+  <text x="840" y="665" text-anchor="middle" font-size="10" fill="#556">3 ~ 5 周</text>
+</svg>
