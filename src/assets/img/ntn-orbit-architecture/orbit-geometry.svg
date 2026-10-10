@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="600" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">轨道几何：仰角决定一切（斜距 / 延迟 / Doppler）</text>
+
+  <!-- Earth -->
+  <circle cx="300" cy="380" r="160" fill="#cfe7ee" stroke="#0f7a8a" stroke-width="2.5"/>
+  <text x="300" y="390" text-anchor="middle" font-size="15" fill="#0f7a8a" font-weight="bold">地球 R = 6371 km</text>
+  <!-- center point -->
+  <circle cx="300" cy="380" r="3.5" fill="#0f7a8a"/>
+  <!-- UE on surface -->
+  <g transform="translate(300,220)">
+    <rect x="-11" y="-11" width="22" height="22" rx="5" fill="#c96a1f"/>
+    <text x="0" y="5" text-anchor="middle" font-size="11" fill="#fff">UE</text>
+  </g>
+  <text x="300" y="196" text-anchor="middle" font-size="12" fill="#c96a1f" font-weight="bold">地面参考点</text>
+
+  <!-- LEO satellite -->
+  <g transform="translate(300,80)">
+    <rect x="-20" y="-14" width="40" height="28" rx="6" fill="#0f7a8a"/>
+    <rect x="-44" y="-8" width="20" height="16" rx="2" fill="#0f7a8a" opacity="0.7"/>
+    <rect x="24" y="-8" width="20" height="16" rx="2" fill="#0f7a8a" opacity="0.7"/>
+    <text x="46" y="5" font-size="14" font-weight="bold" fill="#0f7a8a">LEO 600 km</text>
+  </g>
+  <line x1="300" y1="80" x2="300" y2="209" stroke="#0f7a8a" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="312" y="150" font-size="12" fill="#0f7a8a" font-family="Consolas,monospace">e=90°: d=600 km</text>
+
+  <!-- GEO satellite far right -->
+  <g transform="translate(830,90)">
+    <rect x="-20" y="-14" width="40" height="28" rx="6" fill="#8a4f9e"/>
+    <rect x="-44" y="-8" width="20" height="16" rx="2" fill="#8a4f9e" opacity="0.7"/>
+    <rect x="24" y="-8" width="20" height="16" rx="2" fill="#8a4f9e" opacity="0.7"/>
+    <text x="0" y="36" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a4f9e">GEO 35786 km</text>
+  </g>
+
+  <!-- horizon ray -->
+  <line x1="300" y1="220" x2="70" y2="120" stroke="#999" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="300" y1="220" x2="530" y2="120" stroke="#999" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="545" y="118" font-size="11" fill="#999">地平线（e=0°）</text>
+
+  <!-- slanted range LEO at 10 deg -->
+  <line x1="300" y1="220" x2="118" y2="60" stroke="#c96a1f" stroke-width="2" marker-end="url(#arrO)"/>
+  <defs><marker id="arrO" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c96a1f"/></marker></defs>
+  <text x="118" y="46" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a1f">e=10° 卫星</text>
+  <text x="150" y="160" font-size="12" fill="#c96a1f" font-family="Consolas,monospace" transform="rotate(-38 150 160)">d=1932 km</text>
+
+  <!-- elevation angle marker -->
+  <path d="M 270 220 A 30 30 0 0 1 288 193" fill="none" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="238" y="206" font-size="12" fill="#c96a1f" font-weight="bold">仰角 e</text>
+
+  <!-- formula -->
+  <rect x="60" y="452" width="400" height="120" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="80" y="480" font-size="15" font-weight="bold" fill="#0f7a8a">斜距公式（圆轨道，TR 38.821）</text>
+  <text x="80" y="512" font-size="15" font-family="Consolas,monospace" fill="#333">d = √((R·sin e)² + 2Rh + h²) − R·sin e</text>
+  <text x="80" y="540" font-size="12.5" fill="#555">单向延迟 = d / c；最小仰角 e 是全表的最坏情况基准——</text>
+  <text x="80" y="558" font-size="12.5" fill="#555">所有定时字段量程都是按 e=10° 的最坏斜距定的。</text>
+
+  <!-- numbers table -->
+  <rect x="490" y="452" width="410" height="120" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="510" y="480" font-size="15" font-weight="bold" fill="#c96a1f">官方数字速查（TR 38.821）</text>
+  <g font-size="12.5" fill="#333" font-family="Consolas,monospace">
+    <text x="510" y="504">LEO600 e=90°: d 600 km　RTT 4.0 ms</text>
+    <text x="510" y="522">LEO600 e=30°: d 1075 km　RTT 7.2 ms</text>
+    <text x="510" y="540">LEO600 e=10°: d 1932 km　RTT 12.9 ms</text>
+    <text x="510" y="558">GEO e=10°: d 40581 km　RTT 270.7 ms</text>
+  </g>
+  <text x="900" y="522" font-size="11" fill="#888">RTT 为服务链路</text>
+
+  <text x="480" y="435" text-anchor="middle" font-size="13.5" fill="#333">同一次过境，斜距从 600 km 拉到 1932 km —— <tspan font-weight="bold" fill="#0f7a8a">单链路 RTT 在 4~12.9 ms 间连续漂移，UE 开环定时必须全程跟随</tspan></text>
+</svg>

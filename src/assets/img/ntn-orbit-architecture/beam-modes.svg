@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="620" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">三种波束模式：小区"钉"在地上还是"扫"在地上</text>
+
+  <!-- Mode 1: earth-fixed -->
+  <rect x="30" y="70" width="290" height="250" rx="12" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <rect x="30" y="70" width="290" height="40" rx="12" fill="#0f7a8a"/>
+  <text x="175" y="97" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">地球固定波束</text>
+  <line x1="60" y1="130" x2="120" y2="235" stroke="#0f7a8a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="110" y1="122" x2="175" y2="235" stroke="#0f7a8a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="160" y1="122" x2="230" y2="235" stroke="#0f7a8a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <ellipse cx="120" cy="248" rx="42" ry="14" fill="#0f7a8a" opacity="0.25"/>
+  <ellipse cx="175" cy="255" rx="42" ry="14" fill="#0f7a8a" opacity="0.35"/>
+  <ellipse cx="230" cy="248" rx="42" ry="14" fill="#0f7a8a" opacity="0.25"/>
+  <text x="175" y="305" text-anchor="middle" font-size="13" fill="#333">波束持续指向地面固定点</text>
+  <g font-size="12.5" fill="#333">
+    <text x="48" y="336">▸ 需要"准固定"：卫星电子转向补偿运动</text>
+    <text x="48" y="356">▸ PCI/小区身份与地理位置稳定绑定</text>
+    <text x="48" y="376">▸ 切换稀疏（波束换手才切）</text>
+    <text x="48" y="396">▸ 场景 A/B/D1 的选择</text>
+  </g>
+
+  <!-- Mode 2: earth-moving -->
+  <rect x="335" y="70" width="290" height="250" rx="12" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <rect x="335" y="70" width="290" height="40" rx="12" fill="#c96a1f"/>
+  <text x="480" y="97" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">地球移动波束</text>
+  <line x1="370" y1="130" x2="410" y2="240" stroke="#c96a1f" stroke-width="1.5"/>
+  <line x1="420" y1="122" x2="455" y2="240" stroke="#c96a1f" stroke-width="1.5"/>
+  <line x1="470" y1="122" x2="500" y2="240" stroke="#c96a1f" stroke-width="1.5"/>
+  <ellipse cx="410" cy="252" rx="40" ry="13" fill="#c96a1f" opacity="0.3"/>
+  <ellipse cx="455" cy="258" rx="40" ry="13" fill="#c96a1f" opacity="0.3"/>
+  <ellipse cx="500" cy="252" rx="40" ry="13" fill="#c96a1f" opacity="0.3"/>
+  <path d="M 360 275 L 520 275" stroke="#c96a1f" stroke-width="2" marker-end="url(#arrM)"/>
+  <defs><marker id="arrM" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c96a1f"/></marker></defs>
+  <text x="540" y="280" font-size="12" fill="#c96a1f">随星扫掠</text>
+  <g font-size="12.5" fill="#333">
+    <text x="353" y="336">▸ 波束脚印随卫星一路横扫地面</text>
+    <text x="353" y="356">▸ 卫星侧实现最简单（不转向）</text>
+    <text x="353" y="376">▸ UE 即使不动也几分钟内被扫过 → 频繁切换</text>
+    <text x="353" y="396">▸ 场景 C/D2；IE：earthMovingCells</text>
+  </g>
+
+  <!-- Mode 3: quasi-earth-fixed -->
+  <rect x="640" y="70" width="290" height="250" rx="12" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <rect x="640" y="70" width="290" height="40" rx="12" fill="#4a7a3a"/>
+  <text x="785" y="97" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">准地球固定波束</text>
+  <line x1="690" y1="130" x2="750" y2="242" stroke="#4a7a3a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="740" y1="122" x2="800" y2="242" stroke="#4a7a3a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <ellipse cx="750" cy="254" rx="44" ry="14" fill="#4a7a3a" opacity="0.35"/>
+  <path d="M 715 272 q 35 -8 70 0" fill="none" stroke="#4a7a3a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="785" y="305" text-anchor="middle" font-size="13" fill="#333">名义上固定，小幅姿态抖动</text>
+  <g font-size="12.5" fill="#333">
+    <text x="658" y="336">▸ 转向维持 + 姿态误差 → 小范围晃动</text>
+    <text x="658" y="356">▸ 规范按"固定"处理，工程留抖动余量</text>
+    <text x="658" y="376">▸ LEO 大星座的主流选择</text>
+    <text x="658" y="396">▸ SIB19 星历驱动 UE 侧推演</text>
+  </g>
+
+  <!-- bottom comparison -->
+  <rect x="30" y="420" width="900" height="175" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="50" y="448" font-size="15" font-weight="bold" fill="#0f7a8a">为什么这是 NTN 最根本的架构抉择之一</text>
+  <g font-size="13.5" fill="#333">
+    <text x="50" y="476">▸ 地面网的世界观：小区静止、用户在动 → NTN 把这个前提整个翻过来：<tspan font-weight="bold">"小区"可能以 7.5 km/s 扫过地面</tspan>，静止 UE 反而被频繁切换</text>
+    <text x="50" y="502">▸ 波束模式决定移动性的"主语"：固定波束下主语是 UE（它动了才切）；移动波束下主语是小区（不动也得切）——CHO 的提前量由此而来</text>
+    <text x="50" y="528">▸ 固定波束要求卫星能力更强（转向/补偿），移动波束把复杂度甩给协议（测量、TA 更新、重选节奏全提速）</text>
+    <text x="50" y="554">▸ 38.331 用 cellConfig（earthFixed / quasiEarthFixed / earthMoving）把抉择显式暴露给 UE，UE 据此决定测量与重选策略</text>
+    <text x="50" y="580" fill="#666">一句话：波束模式是"把复杂度放在星上还是放在协议上"的分配决定。</text>
+  </g>
+</svg>
