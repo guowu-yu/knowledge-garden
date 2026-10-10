@@ -204,6 +204,35 @@ def roadmap_items(topics: list[dict]) -> str:
     return "\n".join(rows)
 
 
+def roadmap_float(topics: list[dict], href_prefix: str = "topics/") -> str:
+    """生成「5G NTN 专题学习路线图」飘动悬窗的 HTML。
+
+    href_prefix：首页用 "topics/"，专题页（位于 dist/topics/）用 "../topics/"。
+    """
+    items = roadmap_items(topics).replace('href="topics/', f'href="{href_prefix}')
+    return f"""
+    <div class="roadmap-float" id="roadmap-float">
+      <button
+        type="button"
+        class="roadmap-toggle"
+        id="roadmap-toggle"
+        aria-expanded="false"
+        aria-controls="roadmap-panel"
+      >
+        <span class="roadmap-toggle-dot" aria-hidden="true"></span>
+        <span class="roadmap-toggle-text">5G NTN 专题学习路线图</span>
+        <span class="roadmap-toggle-count">20</span>
+        <span class="roadmap-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="roadmap-panel" id="roadmap-panel" role="menu" aria-label="5G NTN 专题学习路线图">
+        <p class="roadmap-hint">点击任一项，开始学习该专题</p>
+        <div class="roadmap-list">
+          {items}
+        </div>
+      </div>
+    </div>"""
+
+
 def load_topics() -> list[dict]:
     if not CONTENT.exists():
         return []
@@ -256,7 +285,7 @@ def build() -> None:
     )
     index_html = index_tpl.replace("{{TOPIC_COUNT}}", str(len(topics))).replace(
         "{{TOPIC_CARDS}}", cards
-    ).replace("{{NTN_ROADMAP_ITEMS}}", roadmap_items(topics))
+    ).replace("{{NTN_ROADMAP_FLOAT}}", roadmap_float(topics, href_prefix="topics/"))
     (DIST / "index.html").write_text(index_html, encoding="utf-8")
 
     for topic in topics:
@@ -290,6 +319,7 @@ def build() -> None:
             "{{COVER_BLOCK}}": cover_block,
             "{{CONTENT}}": topic["html"],
             "{{RELATED}}": related_html,
+            "{{NTN_ROADMAP_FLOAT}}": roadmap_float(topics, href_prefix="../topics/"),
         }
         for k, v in replacements.items():
             html = html.replace(k, v)
