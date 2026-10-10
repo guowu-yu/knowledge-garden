@@ -102,6 +102,27 @@
       <p class="muted">知识回顾与整理 · 托管于 GitHub Pages</p>
     </footer>
 
+    <div class="roadmap-float" id="roadmap-float">
+      <button
+        type="button"
+        class="roadmap-toggle"
+        id="roadmap-toggle"
+        aria-expanded="false"
+        aria-controls="roadmap-panel"
+      >
+        <span class="roadmap-toggle-dot" aria-hidden="true"></span>
+        <span class="roadmap-toggle-text">5G NTN 专题学习路线图</span>
+        <span class="roadmap-toggle-count">20</span>
+        <span class="roadmap-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="roadmap-panel" id="roadmap-panel" role="menu" aria-label="5G NTN 专题学习路线图">
+        <p class="roadmap-hint">点击任一项，开始学习该专题</p>
+        <div class="roadmap-list">
+          {{NTN_ROADMAP_ITEMS}}
+        </div>
+      </div>
+    </div>
+
     <script src="assets/js/main.js?v=20260818" type="module"></script>
   </body>
 </html>

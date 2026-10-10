@@ -158,6 +158,52 @@ def sanitize_slug(slug: str) -> str:
     return slug or "topic"
 
 
+# NTN 学习路线的 20 个专题（按建议学习顺序排列）
+NTN_ROADMAP_ORDER = [
+    "5g-ntn",
+    "ntn-regenerative-payload",
+    "ntn-ue-capability",
+    "ntn-sib19",
+    "ntn-rach",
+    "ntn-doppler",
+    "ntn-harq",
+    "ntn-timers",
+    "ntn-mobility",
+    "ntn-power",
+    "ntn-rlm-bfm",
+    "ntn-measurement-csi",
+    "ntn-channel-link-budget",
+    "ntn-rel18-enhancements",
+    "ntn-orbit-architecture",
+    "ntn-rf-bands-coexistence",
+    "ntn-iot",
+    "ntn-rel19-future",
+    "ntn-tn-ntn-interworking",
+    "ntn-idle-inactive",
+]
+
+
+def roadmap_items(topics: list[dict]) -> str:
+    """生成悬窗里的 20 条 NTN 专题导航项（按学习顺序）。"""
+    by_slug = {t["slug"]: t for t in topics}
+    rows = []
+    for i, slug in enumerate(NTN_ROADMAP_ORDER, 1):
+        topic = by_slug.get(slug)
+        if not topic:
+            continue
+        title = topic["title"]
+        # 去掉副标题，只留主标题，避免悬窗文字过长
+        short = re.split(r"[:：]", title, maxsplit=1)[0].strip()
+        rows.append(
+            f'<a class="roadmap-item" href="topics/{escape_html(slug)}.html" '
+            f'data-title="{escape_html(title)}" title="{escape_html(title)}">'
+            f'<span class="roadmap-index">{i:02d}</span>'
+            f'<span class="roadmap-label">{escape_html(short)}</span>'
+            f"</a>"
+        )
+    return "\n".join(rows)
+
+
 def load_topics() -> list[dict]:
     if not CONTENT.exists():
         return []
@@ -210,7 +256,7 @@ def build() -> None:
     )
     index_html = index_tpl.replace("{{TOPIC_COUNT}}", str(len(topics))).replace(
         "{{TOPIC_CARDS}}", cards
-    )
+    ).replace("{{NTN_ROADMAP_ITEMS}}", roadmap_items(topics))
     (DIST / "index.html").write_text(index_html, encoding="utf-8")
 
     for topic in topics:

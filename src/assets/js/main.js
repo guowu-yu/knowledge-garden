@@ -183,6 +183,33 @@ function setupTagFilters() {
 
 setupTagFilters();
 
+function setupRoadmapFloat() {
+  const box = document.getElementById("roadmap-float");
+  const toggle = document.getElementById("roadmap-toggle");
+  if (!box || !toggle) return;
+
+  const setOpen = (open) => {
+    box.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setOpen(!box.classList.contains("is-open"));
+  });
+
+  // 点击悬窗外部收起
+  document.addEventListener("click", (e) => {
+    if (!box.contains(e.target)) setOpen(false);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+}
+
+setupRoadmapFloat();
+
 loadSearchIndex()
   .then(setupSearch)
   .catch(() => {
