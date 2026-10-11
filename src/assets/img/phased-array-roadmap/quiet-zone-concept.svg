@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="660" fill="#eef5f8"/>
+  <text x="480" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">静区：暗室里那一小块"近似自由空间"</text>
+  <text x="480" y="61" text-anchor="middle" font-size="12" fill="#556">只有静区合格，测出的方向图才是天线的真实性能——静区质量 = 你的测量分辨率上限</text>
+
+  <!-- 静区示意 -->
+  <rect x="30" y="82" width="900" height="230" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="52" y="108" font-size="13" font-weight="bold" fill="#0f7a8a">① 静区必须包住整个阵列口径</text>
+
+  <g>
+    <!-- 暗室墙 -->
+    <rect x="70" y="122" width="820" height="172" rx="8" fill="#f4f8f9" stroke="#0f7a8a" stroke-dasharray="6 4"/>
+    <text x="82" y="140" font-size="9.5" fill="#0f7a8a">暗室（吸波材料 · 反射抑制 ≥ 40 dB）</text>
+
+    <!-- 馈源/反射面 -->
+    <rect x="96" y="180" width="16" height="70" rx="3" fill="#c96a1f"/>
+    <text x="104" y="268" text-anchor="middle" font-size="9.5" fill="#c96a1f">源</text>
+
+    <!-- 静区柱 -->
+    <rect x="290" y="166" width="330" height="106" rx="10" fill="#e4f3f5" stroke="#0f7a8a" stroke-width="2"/>
+    <text x="455" y="196" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">静区 quiet zone</text>
+    <text x="455" y="216" text-anchor="middle" font-size="9.8" fill="#0a5560">幅度锥削 ≤ 0.5 dB</text>
+    <text x="455" y="234" text-anchor="middle" font-size="9.8" fill="#0a5560">相位波纹 ≤ 10°</text>
+    <text x="455" y="256" text-anchor="middle" font-size="9.4" fill="#8a3a6a">必须完整包住 DUT 口径（取 1.2D~1.5D）</text>
+
+    <!-- 平面波箭头 -->
+    <g stroke="#0f7a8a" stroke-width="1.6">
+      <path d="M 140 178 L 282 178" marker-end="url(#qz)"/>
+      <path d="M 140 202 L 282 202" marker-end="url(#qz)"/>
+      <path d="M 140 226 L 282 226" marker-end="url(#qz)"/>
+      <path d="M 140 250 L 282 250" marker-end="url(#qz)"/>
+    </g>
+    <text x="210" y="170" text-anchor="middle" font-size="9.5" fill="#0f7a8a">平面波</text>
+
+    <!-- DUT -->
+    <g>
+      <rect x="644" y="184" width="120" height="20" rx="4" fill="#a9dbe2" stroke="#0f7a8a" stroke-width="1.6"/>
+      <g font-size="8.5" fill="#0a5560">
+        <text x="654" y="198" font-weight="bold">DUT（阵列口径 D）</text>
+      </g>
+      <rect x="644" y="222" width="120" height="26" rx="4" fill="#faf0e6" stroke="#c96a1f"/>
+      <text x="704" y="239" text-anchor="middle" font-size="9.4" fill="#c96a1f">转台 / 定位器</text>
+    </g>
+
+    <text x="784" y="196" font-size="9.5" fill="#556">暗室壁</text>
+    <text x="784" y="214" font-size="9.5" fill="#556">转台、支架</text>
+    <text x="784" y="236" font-size="9.5" fill="#c96a1f" font-weight="bold">← 反射源</text>
+    <text x="784" y="254" font-size="9.5" fill="#c96a1f">会伪装成</text>
+    <text x="784" y="272" font-size="9.5" fill="#c96a1f">高副瓣</text>
+  </g>
+
+  <!-- 为什么副瓣敏感 -->
+  <rect x="30" y="330" width="900" height="176" rx="11" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="52" y="356" font-size="13" font-weight="bold" fill="#c96a1f">② 为什么静区质量决定"能测多低的副瓣"</text>
+
+  <g font-size="10.2" fill="#333">
+    <rect x="52" y="370" width="420" height="60" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="68" y="392" font-weight="bold" fill="#c96a1f">测得副瓣 = 真实副瓣 + 环境反射的矢量叠加</text>
+    <text x="68" y="414" font-family="Consolas,monospace" font-size="11" fill="#8a4a10">E_meas = E_SL + E_err</text>
+
+    <rect x="490" y="370" width="420" height="60" rx="8" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="506" y="392" font-weight="bold" fill="#4a7a3a">主瓣不敏感，副瓣极敏感</text>
+    <text x="506" y="414" font-size="9.8" fill="#2d5222">E_err ≪ E_SL → 可信；E_err ~ E_SL → 可能是 +6 dB 或完全抵消</text>
+
+    <rect x="52" y="444" width="858" height="48" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="68" y="464" font-size="10.5" font-weight="bold" fill="#0f7a8a">实务规则：要测 −30 dB 的副瓣，环境杂散电平必须比它低至少 10 dB（≤ −40 dB 相对主瓣）</text>
+    <text x="68" y="483" font-size="9.8" fill="#556">四项验收指标（锥削 0.5 dB / 波纹 10° / 背景 −50 dBm）不是虚荣指标，而是被"要测多低的副瓣"反推出来的</text>
+  </g>
+
+  <!-- 指标速查 -->
+  <rect x="30" y="522" width="900" height="118" rx="11" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.8"/>
+  <text x="52" y="548" font-size="13" font-weight="bold" fill="#8a3a6a">③ 想测的副瓣 ↔ 环境要求（相对主瓣）</text>
+
+  <g font-size="10.2">
+    <rect x="52" y="562" width="200" height="62" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="152" y="584" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#8a3a6a">−20 dB 副瓣</text>
+    <text x="152" y="604" text-anchor="middle" font-size="10">环境 ≤ −30 dB</text>
+    <text x="152" y="619" text-anchor="middle" font-size="9.3" fill="#556">测量不确定度 约 ±0.5 dB</text>
+
+    <rect x="268" y="562" width="200" height="62" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="368" y="584" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#8a3a6a">−25 dB 副瓣</text>
+    <text x="368" y="604" text-anchor="middle" font-size="10">环境 ≤ −35 dB</text>
+
+    <rect x="484" y="562" width="200" height="62" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="584" y="584" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#8a3a6a">−30 dB 副瓣</text>
+    <text x="584" y="604" text-anchor="middle" font-size="10">环境 ≤ −40 dB</text>
+
+    <rect x="700" y="562" width="210" height="62" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="805" y="584" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#8a3a6a">−35 dB 副瓣</text>
+    <text x="805" y="604" text-anchor="middle" font-size="10">环境 ≤ −45 dB</text>
+    <text x="805" y="619" text-anchor="middle" font-size="9.3" fill="#556">不确定度 约 ±1 dB</text>
+  </g>
+
+  <defs>
+    <marker id="qz" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f7a8a"/>
+    </marker>
+  </defs>
+</svg>

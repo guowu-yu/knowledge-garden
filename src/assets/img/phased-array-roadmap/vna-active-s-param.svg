@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="660" fill="#eef5f8"/>
+  <text x="480" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">为什么逐端口测是错的：有源 S 参数与无源 S 参数</text>
+  <text x="480" y="61" text-anchor="middle" font-size="12" fill="#556">同样的物理端口，在"其余端口接负载"与"全端口同时激励"两种条件下的反射系数完全不同</text>
+
+  <!-- 错误做法 -->
+  <rect x="30" y="82" width="440" height="248" rx="11" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="52" y="108" font-size="13" font-weight="bold" fill="#c96a1f">✗ 传统做法：逐端口测，其余接匹配负载</text>
+  <text x="52" y="128" font-size="10.5" fill="#556">教科书式多端口 S 参数测量流程</text>
+
+  <!-- 阵列示意：仅端口2被激励 -->
+  <g>
+    <rect x="60" y="146" width="380" height="76" rx="8" fill="#faf0e6" stroke="#c96a1f" stroke-dasharray="5 3"/>
+    <text x="72" y="164" font-size="10" fill="#c96a1f" font-weight="bold">端口 1..N（其中仅 1 个被激励）</text>
+    <g font-size="9.5">
+      <rect x="72" y="174" width="46" height="36" rx="5" fill="#ffffff" stroke="#999"/>
+      <text x="95" y="196" text-anchor="middle" fill="#666">负载</text>
+      <rect x="128" y="174" width="46" height="36" rx="5" fill="#ffffff" stroke="#999"/>
+      <text x="151" y="196" text-anchor="middle" fill="#666">负载</text>
+      <rect x="184" y="174" width="46" height="36" rx="5" fill="#f3c9a0" stroke="#c96a1f" stroke-width="1.8"/>
+      <text x="207" y="196" text-anchor="middle" fill="#8a4a10" font-weight="bold">激励</text>
+      <rect x="240" y="174" width="46" height="36" rx="5" fill="#ffffff" stroke="#999"/>
+      <text x="263" y="196" text-anchor="middle" fill="#666">负载</text>
+      <rect x="296" y="174" width="46" height="36" rx="5" fill="#ffffff" stroke="#999"/>
+      <text x="319" y="196" text-anchor="middle" fill="#666">负载</text>
+      <rect x="352" y="174" width="46" height="36" rx="5" fill="#ffffff" stroke="#999"/>
+      <text x="375" y="196" text-anchor="middle" fill="#666">负载</text>
+    </g>
+  </g>
+
+  <text x="52" y="252" font-size="10.5" font-weight="bold" fill="#8a3a6a">两个致命假设：</text>
+  <text x="52" y="272" font-size="10.3" fill="#333">① 其余端口 = 匹配负载 ≠ 真实工作状态 → 抹掉了扫描态</text>
+  <text x="52" y="290" font-size="10.3" fill="#333">② 端口互不相关 → 抹掉了互耦，I_j = 0，耦合项全部消失</text>
+  <text x="52" y="312" font-size="10.3" fill="#c96a1f">⇒ 测出的是"侧射且互耦为零"这个物理上不存在的状态</text>
+
+  <!-- 正确做法 -->
+  <rect x="490" y="82" width="440" height="248" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="512" y="108" font-size="13" font-weight="bold" fill="#0f7a8a">✓ 正确做法：多通道相参同时激励</text>
+  <text x="512" y="128" font-size="10.5" fill="#556">按目标扫描角设定各端口幅相，让阵列处于真实工作态</text>
+
+  <g>
+    <rect x="520" y="146" width="380" height="76" rx="8" fill="#e4f3f5" stroke="#0f7a8a" stroke-dasharray="5 3"/>
+    <text x="532" y="164" font-size="10" fill="#0f7a8a" font-weight="bold">所有端口按 φₙ = −2πnd·sinθ₀/λ 同时激励</text>
+    <g font-size="9.5">
+      <rect x="532" y="174" width="46" height="36" rx="5" fill="#a9dbe2" stroke="#0f7a8a" stroke-width="1.6"/>
+      <text x="555" y="196" text-anchor="middle" fill="#0a5560" font-weight="bold">φ₁</text>
+      <rect x="588" y="174" width="46" height="36" rx="5" fill="#b6e3e9" stroke="#0f7a8a" stroke-width="1.6"/>
+      <text x="611" y="196" text-anchor="middle" fill="#0a5560" font-weight="bold">φ₂</text>
+      <rect x="644" y="174" width="46" height="36" rx="5" fill="#c3ebef" stroke="#0f7a8a" stroke-width="1.6"/>
+      <text x="667" y="196" text-anchor="middle" fill="#0a5560" font-weight="bold">φ₃</text>
+      <rect x="700" y="174" width="46" height="36" rx="5" fill="#cfeef2" stroke="#0f7a8a" stroke-width="1.6"/>
+      <text x="723" y="196" text-anchor="middle" fill="#0a5560" font-weight="bold">φ₄</text>
+      <rect x="756" y="174" width="46" height="36" rx="5" fill="#dbf2f5" stroke="#0f7a8a" stroke-width="1.6"/>
+      <text x="779" y="196" text-anchor="middle" fill="#0a5560" font-weight="bold">φ₅</text>
+      <rect x="812" y="174" width="46" height="36" rx="5" fill="#e7f7f9" stroke="#0f7a8a" stroke-width="1.6"/>
+      <text x="835" y="196" text-anchor="middle" fill="#0a5560" font-weight="bold">φ₆</text>
+    </g>
+  </g>
+
+  <text x="512" y="252" font-size="10.5" font-weight="bold" fill="#4a7a3a">得到有源反射系数：</text>
+  <rect x="512" y="260" width="400" height="52" rx="6" fill="#edf4ea" stroke="#4a7a3a"/>
+  <text x="530" y="282" font-size="11" fill="#2d5222" font-family="Consolas,monospace">Γᵢᵃᶜᵗ(θ₀) = Sᵢᵢ + Σⱼ≠ᵢ Sᵢⱼ · aⱼ(θ₀)/aᵢ(θ₀)</text>
+  <text x="530" y="302" font-size="9.8" fill="#4a7a3a">第一项可测 · 第二项随扫描角变化，普通 VNA 测不到</text>
+
+  <!-- 为什么重要 -->
+  <rect x="30" y="344" width="900" height="140" rx="11" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.8"/>
+  <text x="52" y="370" font-size="13" font-weight="bold" fill="#8a3a6a">为什么它决定设计评审能否通过：扫描盲区与功放安全</text>
+
+  <g font-size="10.4" fill="#333">
+    <rect x="52" y="382" width="288" height="88" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="68" y="404" font-weight="bold" fill="#8a3a6a">现象：扫描盲区</text>
+    <text x="68" y="424" font-size="10">扫描到某角度，增益骤降一个深坑</text>
+    <text x="68" y="442" font-size="10">不是移相器故障，而是互耦让有源</text>
+    <text x="68" y="460" font-size="10">输入阻抗实部急降 → 严重失配</text>
+
+    <rect x="356" y="382" width="288" height="88" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="372" y="404" font-weight="bold" fill="#8a3a6a">后果：功放安全边界</text>
+    <text x="372" y="424" font-size="10">反射功率上升 → 超出安全工作区</text>
+    <text x="372" y="442" font-size="10">反射叠加 → 输出失真、幅度压缩</text>
+    <text x="372" y="460" font-size="10">严重时直接烧管</text>
+
+    <rect x="660" y="382" width="250" height="88" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="676" y="404" font-weight="bold" fill="#0f7a8a">必查指标</text>
+    <text x="676" y="424" font-size="10">全扫描角内最大有源驻波</text>
+    <text x="676" y="442" font-size="10">（active VSWR）</text>
+    <text x="676" y="460" font-size="10" fill="#0f7a8a">必须实测，不能靠无源数据外推</text>
+  </g>
+
+  <!-- 流程 -->
+  <rect x="30" y="500" width="900" height="134" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="52" y="524" font-size="13" font-weight="bold" fill="#0f7a8a">标准流程四步</text>
+
+  <g font-size="10">
+    <rect x="52" y="538" width="196" height="80" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="68" y="560" font-size="10.5" font-weight="bold" fill="#0f7a8a">① 预热与校准</text>
+    <text x="68" y="578" font-size="9.6">预热 30~60 min 至相位稳定</text>
+    <text x="68" y="594" font-size="9.6">全 N 端口 SOLT / TRL 校准</text>
+    <text x="68" y="610" font-size="9.6" fill="#8a3a6a">含电缆相位漂移 → 测完勿动线</text>
+
+    <rect x="272" y="538" width="196" height="80" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="288" y="560" font-size="10.5" font-weight="bold" fill="#0f7a8a">② 设置测量参数</text>
+    <text x="288" y="578" font-size="9.6">频率 / IF BW / 点数</text>
+    <text x="288" y="594" font-size="9.6">宽带快扫 → 窄带精测</text>
+    <text x="288" y="610" font-size="9.6" fill="#8a3a6a">功率从 −20 dBm 起，防压缩</text>
+
+    <rect x="492" y="538" width="196" height="80" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="508" y="560" font-size="10.5" font-weight="bold" fill="#c96a1f">③ 通道幅相提取</text>
+    <text x="508" y="578" font-size="9.6">逐通道测 S₂₁ 幅相</text>
+    <text x="508" y="594" font-size="9.6">其余通道置「参考态」</text>
+    <text x="508" y="610" font-size="9.6" fill="#8a3a6a">归一化到参考通道</text>
+
+    <rect x="712" y="538" width="198" height="80" rx="8" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="728" y="560" font-size="10.5" font-weight="bold" fill="#4a7a3a">④ 有源 S 参数</text>
+    <text x="728" y="578" font-size="9.6">相参源按 θ₀ 同时激励</text>
+    <text x="728" y="594" font-size="9.6">逐端口读反射系数</text>
+    <text x="728" y="610" font-size="9.6" fill="#4a7a3a">扫多角度 → 画驻波曲线</text>
+  </g>
+
+  <defs>
+    <marker id="av" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f7a8a"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="640" fill="#eef5f8"/>
+  <text x="480" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">"相参"的三个硬条件与仪器配置</text>
+  <text x="480" y="61" text-anchor="middle" font-size="12" fill="#556">不是"频率相同的两个源"，而是"同一个源分出来的多路"——相位关系必须可设定且稳定</text>
+
+  <!-- 三条件 -->
+  <rect x="30" y="82" width="900" height="176" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="52" y="108" font-size="13" font-weight="bold" fill="#0f7a8a">三个可检验的硬条件（缺一不可）</text>
+
+  <g font-size="10.4" fill="#333">
+    <rect x="52" y="122" width="288" height="120" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="68" y="146" font-weight="bold" fill="#0f7a8a">① 共本振</text>
+    <text x="68" y="168" font-size="10">所有通道射频源自同一参考频率</text>
+    <text x="68" y="186" font-size="10">频率完全一致（非"标称相同"）</text>
+    <text x="68" y="210" font-size="10" fill="#8a3a6a">不满足 → 通道间存在微小频差</text>
+    <text x="68" y="228" font-size="10" fill="#8a3a6a">→ 相位匀速漂移，数据报废</text>
+
+    <rect x="356" y="122" width="288" height="120" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="372" y="146" font-weight="bold" fill="#0f7a8a">② 相位可独立设定</text>
+    <text x="372" y="168" font-size="10">每通道输出相位可精确编程</text>
+    <text x="372" y="186" font-size="10">典型 0°~360° 步进（如 ≤ 1°）</text>
+    <text x="372" y="210" font-size="10" fill="#8a3a6a">不满足 → 无法构造扫描态激励</text>
+    <text x="372" y="228" font-size="10" fill="#8a3a6a">→ 测不了有源 S 参数</text>
+
+    <rect x="660" y="122" width="250" height="120" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="676" y="146" font-weight="bold" fill="#0f7a8a">③ 相位关系稳定</text>
+    <text x="676" y="168" font-size="10">设定后通道间相位差</text>
+    <text x="676" y="186" font-size="10">在测量周期内不漂移</text>
+    <text x="676" y="210" font-size="10" fill="#8a3a6a">不满足 → 长时间测量</text>
+    <text x="676" y="228" font-size="10" fill="#8a3a6a">数据不可用</text>
+  </g>
+
+  <!-- 配置决策 -->
+  <rect x="30" y="274" width="900" height="188" rx="11" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="52" y="300" font-size="13" font-weight="bold" fill="#c96a1f">配置决策：先数通道，再挑型号</text>
+
+  <g font-size="10">
+    <rect x="52" y="314" width="240" height="60" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="172" y="338" text-anchor="middle" font-size="11" font-weight="bold" fill="#c96a1f">① 数清要同时激励多少路</text>
+    <text x="172" y="358" text-anchor="middle" font-size="9.6" fill="#556">= 阵列通道数 或 子阵数</text>
+
+    <rect x="318" y="314" width="240" height="60" rx="8" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="438" y="338" text-anchor="middle" font-size="11" font-weight="bold" fill="#4a7a3a">② ≤ 4 路</text>
+    <text x="438" y="358" text-anchor="middle" font-size="9.6" fill="#556">高端多通道 VNA 内置源即可</text>
+
+    <rect x="584" y="314" width="326" height="60" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="747" y="338" text-anchor="middle" font-size="11" font-weight="bold" fill="#8a3a6a">③ &gt; 4 路 → 必须外接多通道相参源</text>
+    <text x="747" y="358" text-anchor="middle" font-size="9.6" fill="#556">32 / 64 / 128 通道；VNA 退化为接收机</text>
+
+    <path d="M 296 344 L 314 344" stroke="#c96a1f" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M 562 344 L 580 344" stroke="#c96a1f" stroke-width="1.6" marker-end="url(#ar)"/>
+
+    <text x="52" y="404" font-size="10.5" font-weight="bold" fill="#0f7a8a">为什么 8 个并行接收机有价值：</text>
+    <text x="238" y="404" font-size="10.3" fill="#333">可同时测双极化阵列的两个极化端口。若只有 4 路接收，双极化必须分两次做，</text>
+    <text x="52" y="424" font-size="10.3" fill="#333">两次之间的相位参考面漂移会让交叉极化数据处理变得麻烦。反之，串行逐通道测一个 32×32 阵列要十几小时。</text>
+    <text x="52" y="448" font-size="10.3" fill="#8a3a6a" font-weight="bold">⇒ 多通道相参同时解决两个问题：正确性（必须同时激励）与效率（并行采集）。</text>
+  </g>
+
+  <!-- 环路 -->
+  <rect x="30" y="478" width="900" height="136" rx="11" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.8"/>
+  <text x="52" y="504" font-size="13" font-weight="bold" fill="#4a7a3a">有源校准环路：激励 → 响应 → 解算 → 补偿 → 复测</text>
+
+  <g font-size="10">
+    <rect x="52" y="518" width="150" height="56" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="127" y="541" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#c96a1f">相参源施加激励</text>
+    <text x="127" y="560" text-anchor="middle" font-size="9.3" fill="#556">aₙ(θ₀)</text>
+
+    <rect x="226" y="518" width="150" height="56" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="301" y="541" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#0f7a8a">VNA 读响应</text>
+    <text x="301" y="560" text-anchor="middle" font-size="9.3" fill="#556">反射 / 传输幅相</text>
+
+    <rect x="400" y="518" width="150" height="56" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="475" y="541" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#0f7a8a">解算通道误差</text>
+    <text x="475" y="560" text-anchor="middle" font-size="9.3" fill="#556">REV / 最小二乘</text>
+
+    <rect x="574" y="518" width="150" height="56" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="649" y="541" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#c96a1f">写回补偿表</text>
+    <text x="649" y="560" text-anchor="middle" font-size="9.3" fill="#556">叠加到配相量</text>
+
+    <rect x="748" y="518" width="160" height="56" rx="8" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="828" y="541" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#4a7a3a">复测验证</text>
+    <text x="828" y="560" text-anchor="middle" font-size="9.3" fill="#556">残余误差 &lt; 移相步进</text>
+
+    <path d="M 202 546 L 222 546" stroke="#0f7a8a" stroke-width="1.5" marker-end="url(#ar)"/>
+    <path d="M 376 546 L 396 546" stroke="#0f7a8a" stroke-width="1.5" marker-end="url(#ar)"/>
+    <path d="M 550 546 L 570 546" stroke="#0f7a8a" stroke-width="1.5" marker-end="url(#ar)"/>
+    <path d="M 724 546 L 744 546" stroke="#0f7a8a" stroke-width="1.5" marker-end="url(#ar)"/>
+    <path d="M 828 578 L 828 596 L 127 596 L 127 578" stroke="#4a7a3a" stroke-width="1.3" fill="none" stroke-dasharray="4 3"/>
+    <text x="478" y="612" text-anchor="middle" font-size="10" fill="#4a7a3a">复测不达标 → 回到第 2 步重测（迭代 2~3 轮是常态）</text>
+  </g>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f7a8a"/>
+    </marker>
+  </defs>
+</svg>

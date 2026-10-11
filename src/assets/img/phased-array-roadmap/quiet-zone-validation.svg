@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="680" fill="#eef5f8"/>
+  <text x="480" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">静区验证怎么做：标准天线扫描 + 反射抑制</text>
+  <text x="480" y="61" text-anchor="middle" font-size="12" fill="#556">在静区里移动一个已知特性的标准天线，测出的场应该"几乎不变"——这就是那四项指标的量化</text>
+
+  <!-- 流程 -->
+  <rect x="30" y="82" width="900" height="184" rx="11" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+  <text x="52" y="108" font-size="13" font-weight="bold" fill="#0f7a8a">① 六步标准流程</text>
+
+  <g font-size="10">
+    <rect x="52" y="122" width="186" height="60" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="145" y="144" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#0f7a8a">1. 选参考天线</text>
+    <text x="145" y="163" text-anchor="middle" font-size="9.3" fill="#556">标准喇叭 / 探头</text>
+    <text x="145" y="177" text-anchor="middle" font-size="9.3" fill="#556">口径 ≪ 静区尺寸</text>
+
+    <rect x="256" y="122" width="186" height="60" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="349" y="144" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#0f7a8a">2. 二维网格扫描</text>
+    <text x="349" y="163" text-anchor="middle" font-size="9.3" fill="#556">静区横截面按网格移动</text>
+    <text x="349" y="177" text-anchor="middle" font-size="9.3" fill="#556">间隔 λ/2 ~ λ/4</text>
+
+    <rect x="460" y="122" width="186" height="60" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="553" y="144" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#0f7a8a">3. 记录幅相</text>
+    <text x="553" y="163" text-anchor="middle" font-size="9.3" fill="#556">每点记录幅度与相位</text>
+    <text x="553" y="177" text-anchor="middle" font-size="9.3" fill="#556">得到静区场分布</text>
+
+    <rect x="664" y="122" width="238" height="60" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="783" y="144" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#c96a1f">4. 计算指标</text>
+    <text x="783" y="163" text-anchor="middle" font-size="9.3" fill="#556">锥削 = 幅度最大−最小</text>
+    <text x="783" y="177" text-anchor="middle" font-size="9.3" fill="#556">波纹 = 相位峰谷起伏</text>
+
+    <rect x="256" y="194" width="380" height="56" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="446" y="216" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#8a3a6a">5. 反射分离（关键 · MARS）</text>
+    <text x="446" y="235" text-anchor="middle" font-size="9.3" fill="#556">把"直接波"与"反射波"在数学上分开 → 这才是要验收的量</text>
+
+    <rect x="664" y="194" width="238" height="56" rx="8" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="783" y="216" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#4a7a3a">6. 出报告</text>
+    <text x="783" y="235" text-anchor="middle" font-size="9.3" fill="#556">尺寸 · 锥削 · 波纹 · 背景 · 频段 · 日期</text>
+
+    <path d="M 238 152 L 252 152" stroke="#0f7a8a" stroke-width="1.5" marker-end="url(#qa)"/>
+    <path d="M 442 152 L 456 152" stroke="#0f7a8a" stroke-width="1.5" marker-end="url(#qa)"/>
+    <path d="M 646 152 L 660 152" stroke="#0f7a8a" stroke-width="1.5" marker-end="url(#qa)"/>
+    <path d="M 783 182 L 783 190" stroke="#c96a1f" stroke-width="1.5" marker-end="url(#qa)"/>
+    <path d="M 636 222 L 660 222" stroke="#8a3a6a" stroke-width="1.5" marker-end="url(#qa)"/>
+    <path d="M 256 222 L 200 222 L 200 182" stroke="#8a3a6a" stroke-width="1.3" fill="none" stroke-dasharray="4 3"/>
+  </g>
+
+  <!-- MARS 原理 -->
+  <rect x="30" y="276" width="900" height="146" rx="11" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.8"/>
+  <text x="52" y="302" font-size="13" font-weight="bold" fill="#8a3a6a">② 为什么 MARS 能分离反射：利用"位置依赖关系"的差异</text>
+
+  <g font-size="10.2" fill="#333">
+    <rect x="52" y="316" width="420" height="92" rx="8" fill="#f6ebf1" stroke="#8a3a6a"/>
+    <text x="68" y="338" font-weight="bold" fill="#8a3a6a">把 DUT 移动一个已知距离 Δz</text>
+    <text x="68" y="360" font-size="10">直接波：只改变一个可预测的相位 e^(−jkΔz)</text>
+    <text x="68" y="380" font-size="10">反射波：相位变化取决于那面墙的距离，与 Δz 关系不同</text>
+    <text x="68" y="400" font-size="10" fill="#8a3a6a">⇒ 多做几组不同位置，解出"跟着 DUT 走的"成分</text>
+
+    <rect x="490" y="316" width="420" height="92" rx="8" fill="#e4f3f5" stroke="#0f7a8a"/>
+    <text x="506" y="338" font-weight="bold" fill="#0f7a8a">有了 MARS 你可以做三件事</text>
+    <text x="506" y="360" font-size="10">① 判断静区波纹有多少来自环境</text>
+    <text x="506" y="380" font-size="10">② 在环境不完美的暗室里减掉一部分反射</text>
+    <text x="506" y="400" font-size="10">③ 用分离出的反射量指导吸波材料位置优化</text>
+  </g>
+
+  <!-- 现场规则 -->
+  <rect x="30" y="432" width="900" height="232" rx="11" fill="#ffffff" stroke="#c96a1f" stroke-width="1.8"/>
+  <text x="52" y="458" font-size="13" font-weight="bold" fill="#c96a1f">③ 现场规则：副瓣异常，先怀疑环境，再怀疑设计</text>
+
+  <g font-size="10.2">
+    <rect x="52" y="472" width="276" height="96" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="68" y="494" font-weight="bold" fill="#c96a1f">步骤 1 · 换一个扫描方向</text>
+    <text x="68" y="516" font-size="10">副瓣随方向变化 → 反射（源在固定方向）</text>
+    <text x="68" y="536" font-size="10">副瓣保持一致 → 更可能是天线本身</text>
+    <text x="68" y="558" font-size="9.6" fill="#8a4a10">环境反射来自固定的空间方向与距离</text>
+
+    <rect x="342" y="472" width="276" height="96" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="358" y="494" font-weight="bold" fill="#c96a1f">步骤 2 · 移动 DUT 位置</text>
+    <text x="358" y="516" font-size="10">移动几十厘米后读数变化 → 反射</text>
+    <text x="358" y="536" font-size="10">读数稳定 → 更可能是天线本身</text>
+    <text x="358" y="558" font-size="9.6" fill="#8a4a10">改变位置 → 干涉条件改变</text>
+
+    <rect x="632" y="472" width="278" height="96" rx="8" fill="#faf0e6" stroke="#c96a1f"/>
+    <text x="648" y="494" font-weight="bold" fill="#c96a1f">步骤 3 · 微调测试频率</text>
+    <text x="648" y="516" font-size="10">副瓣剧烈起伏 → 反射</text>
+    <text x="648" y="536" font-size="10">副瓣平滑变化 → 天线本身</text>
+    <text x="648" y="558" font-size="9.6" fill="#8a4a10">反射路径与直接路径产生干涉</text>
+
+    <rect x="52" y="580" width="858" height="68" rx="8" fill="#edf4ea" stroke="#4a7a3a"/>
+    <text x="68" y="602" font-size="10.5" font-weight="bold" fill="#4a7a3a">典型反直觉案例：测出"副瓣 −18 dB"超标得离谱 → 换方向变 −26 dB、移 DUT 变 −25 dB</text>
+    <text x="68" y="622" font-size="10.2" fill="#2d5222">结论：天线没问题，是暗室在某个角度有强反射（常来自转台的金属支架）。不做这一步排查，可能白费两周改天线设计。</text>
+    <text x="68" y="641" font-size="10.2" fill="#0f7a8a">推论：天线自身的副瓣"跟着天线走"；环境反射"跟着空间走"——这是三步排查法的全部依据。</text>
+  </g>
+
+  <defs>
+    <marker id="qa" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f7a8a"/>
+    </marker>
+  </defs>
+</svg>

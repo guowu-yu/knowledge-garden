@@ -222,7 +222,9 @@ PA_ROADMAP_ORDER = [
     "pa-rev-calibration",
     "pa-nearfield-encoding-loopback",
     "pa-calibration-engineering",
-    # S6 测试与一致性
+    # S6 测试与一致性（前置两篇为"进实验室之前必须懂的东西"）
+    "pa-vna-multichannel-measurement",
+    "pa-chamber-quiet-zone",
     "pa-ota-necessity",
     "pa-ota-methods-chamber",
     "pa-ota-metrics-spherical-scan",
@@ -244,7 +246,7 @@ ROADMAP_FLOATS = [
         "id": "pa",
         "title": "相控阵天线学习路线图",
         "aria": "相控阵天线学习路线图",
-        "hint": "六阶段 32 个专题，点击任一项开始学习",
+        "hint": "六阶段 34 个专题，点击任一项开始学习",
         "order": PA_ROADMAP_ORDER,
         "variant": "pa",
     },
