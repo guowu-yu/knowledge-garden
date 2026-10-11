@@ -767,6 +767,7 @@ body {
   width: min(340px, calc(100vw - 32px));
   font-family: var(--font-sans);
   animation: roadmap-float-drift 6.5s ease-in-out infinite;
+  transition: bottom 0.28s ease; /* 堆叠位置变化时平滑让位 */
 }
 
 /* NTN 悬窗固定在下角 */
@@ -774,7 +775,7 @@ body {
   bottom: 22px;
 }
 
-/* 相控阵悬窗叠在 NTN 悬窗之上，用 JS 依 NTN 实际高度回填 bottom */
+/* 相控阵悬窗叠在 NTN 悬窗之上，具体间距由 JS 按实际高度回填 */
 #roadmap-float-pa {
   bottom: 92px;
   animation-delay: -3.2s; /* 与 NTN 悬窗错开相位，避免同步浮动 */
@@ -793,6 +794,11 @@ body {
 .roadmap-float:hover,
 .roadmap-float.is-open {
   animation-play-state: paused;
+}
+
+/* 展开的那枚始终压在最上层（JS 也会写内联 z-index，此处为兜底） */
+.roadmap-float.is-open {
+  z-index: 72;
 }
 
 .roadmap-toggle {
@@ -999,6 +1005,7 @@ body {
     width: min(320px, calc(100vw - 24px));
   }
 
+  /* 兜底值；实际 bottom 由 stackRoadmapFloats() 按移动端基准 12px 回填 */
   #roadmap-float-ntn {
     bottom: 12px;
   }

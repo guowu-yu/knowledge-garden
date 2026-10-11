@@ -187,12 +187,20 @@ function setupRoadmapFloat() {
   const floats = Array.from(document.querySelectorAll(".roadmap-float"));
   if (!floats.length) return;
 
-  // 每枚悬窗独立开合
+  // 每枚悬窗独立开合；同时互斥——打开一枚会自动收起其余枚，避免面板互相遮挡
   floats.forEach((box) => {
     const toggle = box.querySelector(".roadmap-toggle");
     if (!toggle) return;
 
     const setOpen = (open) => {
+      if (open) {
+        floats.forEach((other) => {
+          if (other === box) return;
+          other.classList.remove("is-open");
+          const t = other.querySelector(".roadmap-toggle");
+          if (t) t.setAttribute("aria-expanded", "false");
+        });
+      }
       box.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     };
@@ -222,28 +230,44 @@ function setupRoadmapFloat() {
 
   stackRoadmapFloats(floats);
   window.addEventListener("resize", () => stackRoadmapFloats(floats));
+  // 开合状态变化时重新堆叠：展开的悬窗贴底，其余依次叠在其上方
+  floats.forEach((box) => {
+    box.addEventListener("transitionend", (e) => {
+      if (e.propertyName === "max-height") stackRoadmapFloats(floats);
+    });
+  });
 }
 
 /**
- * 把多枚悬窗自下而上堆叠：NTN 贴底，其余各枚依次叠在下方那枚的上面。
+ * 把多枚悬窗自下而上堆叠。
+ * 展开的那一枚优先贴底（它收起时最矮，且面板向下展开有空间），
+ * 其余各枚依次叠在下方那枚的上面，保证互不遮挡。
  * 用 ResizeObserver 跟随展开/收起引起的 toggle 高度变化。
  */
 function stackRoadmapFloats(floats) {
   const gap = 12;
-  // 自下而上排序：bottom 值越大越靠下（先处理靠下的）
-  const ordered = floats
-    .map((box) => ({ box, bottom: parseFloat(getComputedStyle(box).bottom) || 0 }))
-    .sort((a, b) => a.bottom - b.bottom);
+  const baseBottom = 22; // 贴底基准（与 CSS 中 #roadmap-float-ntn 一致）
 
-  let cursor = null;
-  ordered.forEach(({ box }) => {
-    if (cursor === null) {
-      // 贴底那枚保持自身 bottom（由 CSS 决定）
-      cursor = parseFloat(getComputedStyle(box).bottom) || 0;
-    } else {
-      box.style.bottom = cursor + gap + "px";
-      cursor = cursor + gap + box.offsetHeight;
-    }
+  // 排序优先级：展开的排最下，其余按原 CSS bottom 值由小到大
+  const ordered = floats
+    .map((box) => ({
+      box,
+      open: box.classList.contains("is-open"),
+      bottom: parseFloat(getComputedStyle(box).bottom) || 0,
+    }))
+    .sort((a, b) => {
+      if (a.open !== b.open) return a.open ? -1 : 1;
+      return a.bottom - b.bottom;
+    });
+
+  // 贴底基准：移动端底部间距更小
+  const isNarrow = window.matchMedia("(max-width: 720px)").matches;
+  let cursor = isNarrow ? 12 : baseBottom;
+
+  ordered.forEach(({ box, open }) => {
+    box.style.bottom = cursor + "px";
+    box.style.zIndex = open ? 72 : 60; // 展开的始终压在最上层
+    cursor += gap + box.offsetHeight;
   });
 
   // 观察每枚悬窗高度变化，重新堆叠
