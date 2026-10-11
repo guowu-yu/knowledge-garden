@@ -254,20 +254,26 @@ ROADMAP_FLOATS = [
 
 
 def roadmap_items(order: list[str], topics: list[dict]) -> str:
-    """生成悬窗里的专题导航项（按给定学习顺序）。"""
+    """生成悬窗里的专题导航项（按给定学习顺序）。
+
+    序号为"悬窗中实际可见的第几项"（连续编号，跳过未上线专题不留空号），
+    因此随专题逐篇上线自然增长；全部上线后与清单顺序完全一致。
+    """
     by_slug = {t["slug"]: t for t in topics}
     rows = []
-    for i, slug in enumerate(order, 1):
+    n = 0
+    for slug in order:
         topic = by_slug.get(slug)
         if not topic:
             continue
+        n += 1
         title = topic["title"]
         # 去掉副标题，只留主标题，避免悬窗文字过长
         short = re.split(r"[:：]", title, maxsplit=1)[0].strip()
         rows.append(
             f'<a class="roadmap-item" href="topics/{escape_html(slug)}.html" '
             f'data-title="{escape_html(title)}" title="{escape_html(title)}">'
-            f'<span class="roadmap-index">{i:02d}</span>'
+            f'<span class="roadmap-index">{n:02d}</span>'
             f'<span class="roadmap-label">{escape_html(short)}</span>'
             f"</a>"
         )
