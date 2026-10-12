@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">手册参数 → 系统代价：算法工程师的折算清单</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">每一项非理想都要能"翻译"成一个系统级的 dB 或 deg，否则你只是抄了一页表格</text>
+
+  <!-- header row -->
+  <rect x="30" y="76" width="270" height="34" rx="6" fill="#0f7a8a"/>
+  <text x="165" y="99" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">手册参数</text>
+  <rect x="308" y="76" width="330" height="34" rx="6" fill="#c96a1f"/>
+  <text x="473" y="99" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">折算成的系统代价</text>
+  <rect x="646" y="76" width="284" height="34" rx="6" fill="#8a3a6a"/>
+  <text x="788" y="99" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">谁受影响 / 你能做什么</text>
+
+  <!-- rows -->
+  <g font-size="11">
+    <!-- row1 -->
+    <rect x="30" y="116" width="900" height="42" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="42" y="134" font-family="Consolas,monospace" font-size="11" fill="#0f7a8a">Psat / 输出功率</text>
+    <text x="42" y="150" font-size="10.5" fill="#667">饱和输出功率</text>
+    <text x="320" y="142" fill="#333">EIRP 上限 = P_tx + G_ant；决定链路预算与覆盖</text>
+    <text x="658" y="142" fill="#556">提升功率 → 触及饱和 → 线性度恶化</text>
+
+    <!-- row2 -->
+    <rect x="30" y="158" width="900" height="42" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="42" y="176" font-family="Consolas,monospace" font-size="11" fill="#0f7a8a">PAE 效率</text>
+    <text x="42" y="192" font-size="10.5" fill="#667">功率附加效率</text>
+    <text x="320" y="184" fill="#333">DC 功耗 = P_RF / PAE；决定热密度与供电</text>
+    <text x="658" y="184" fill="#556">20%~35% 意味着 65%~80% 变热</text>
+
+    <!-- row3 -->
+    <rect x="30" y="200" width="900" height="42" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="42" y="218" font-family="Consolas,monospace" font-size="11" fill="#0f7a8a">AM-PM (deg/dB)</text>
+    <text x="42" y="234" font-size="10.5" fill="#667">幅相转换系数</text>
+    <text x="320" y="226" fill="#333">EVM / ACLR 退化；越高阶调制越敏感</text>
+    <text x="658" y="226" fill="#556">256-QAM 要求 AM-PM ≲ 1~2°</text>
+
+    <!-- row4 -->
+    <rect x="30" y="242" width="900" height="42" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="42" y="260" font-family="Consolas,monospace" font-size="11" fill="#0f7a8a">RX 增益 / NF</text>
+    <text x="42" y="276" font-size="10.5" fill="#667">接收链增益与噪声</text>
+    <text x="320" y="268" fill="#333">级联 NF → G/T → 接收灵敏度</text>
+    <text x="658" y="268" fill="#556">LNA 前任何插损都直接抬 NF</text>
+
+    <!-- row5 -->
+    <rect x="30" y="284" width="900" height="42" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="42" y="302" font-family="Consolas,monospace" font-size="11" fill="#0f7a8a">移相位数 / 精度</text>
+    <text x="42" y="318" font-size="10.5" fill="#667">RMS 相位误差</text>
+    <text x="320" y="310" fill="#333">量化副瓣地板、指向抖动</text>
+    <text x="658" y="310" fill="#556">每加 1 bit 约改善 6 dB（见专题 13）</text>
+
+    <!-- row6 -->
+    <rect x="30" y="326" width="900" height="42" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="42" y="344" font-family="Consolas,monospace" font-size="11" fill="#0f7a8a">衰减位数 / 精度</text>
+    <text x="42" y="360" font-size="10.5" fill="#667">数控衰减</text>
+    <text x="320" y="352" fill="#333">加窗深度上限（副瓣能压多低）、通道均衡</text>
+    <text x="658" y="352" fill="#556">振幅量化 ±0.5 dB → 副瓣抬升有下限</text>
+
+    <!-- row7 -->
+    <rect x="30" y="368" width="900" height="42" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="42" y="386" font-family="Consolas,monospace" font-size="11" fill="#0f7a8a">隔离度 / 切换时间</text>
+    <text x="42" y="402" font-size="10.5" fill="#667">收发隔离与 T/R 转换</text>
+    <text x="320" y="394" fill="#333">TDD 保护间隔、近端监测泄入、盲区</text>
+    <text x="658" y="394" fill="#556">切换慢 → 波束切换出现时序空洞</text>
+  </g>
+
+  <rect x="30" y="424" width="900" height="86" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="48" y="450" font-size="12.5" font-weight="bold" fill="#4a7a3a">一条经验法则</text>
+  <text x="48" y="474" font-size="11.5" fill="#333">凡是"功率/增益"类参数，折算成 <tspan font-family="Consolas,monospace" fill="#0f7a8a">dB</tspan> 后可以直接加成到链路预算；凡是"位数/精度"类参数，</text>
+  <text x="48" y="496" font-size="11.5" fill="#333">折算成"副瓣地板 / 指向误差"后是<tspan font-weight="bold" fill="#c96a1f">性能地板</tspan>——你无法靠算法把它压到该地板以下，只能靠更多位数或校准。</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">动态范围 → 零陷能力：抗干扰的"物理天花板"</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">干扰与目标同时进入接收机；ADC 必须在"大干扰不饱和"与"小目标不淹没"之间两头兼顾</text>
+
+  <!-- dynamic range scale -->
+  <rect x="30" y="80" width="900" height="130" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="48" y="106" font-size="13" font-weight="bold" fill="#0f7a8a">同一时刻的接收频谱</text>
+  <!-- axis -->
+  <line x1="70" y1="176" x2="900" y2="176" stroke="#8899a6" stroke-width="1.2"/>
+  <text x="70" y="196" font-size="10" fill="#667">−105 dBm</text>
+  <text x="840" y="196" font-size="10" fill="#667">0 dBFS</text>
+  <!-- strong interferer -->
+  <rect x="250" y="112" width="40" height="64" fill="#8a3a6a"/>
+  <text x="270" y="106" text-anchor="middle" font-size="10.5" fill="#8a3a6a">强干扰 −15 dBFS</text>
+  <!-- weak target -->
+  <rect x="620" y="156" width="40" height="20" fill="#0f7a8a"/>
+  <text x="640" y="150" text-anchor="middle" font-size="10.5" fill="#0f7a8a">目标 −70 dBFS</text>
+  <!-- noise floor -->
+  <line x1="90" y1="170" x2="890" y2="170" stroke="#c96a1f" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text x="90" y="166" font-size="10.5" fill="#c96a1f">量化/热噪声地板</text>
+  <!-- span arrow -->
+  <line x1="700" y1="126" x2="700" y2="164" stroke="#4a7a3a" stroke-width="1.6"/>
+  <polygon points="700,126 696,134 704,134" fill="#4a7a3a"/>
+  <polygon points="700,164 696,156 704,156" fill="#4a7a3a"/>
+  <text x="712" y="150" font-size="10.5" fill="#4a7a3a">需要 55 dB 余量</text>
+
+  <!-- chain of relationships -->
+  <rect x="30" y="228" width="440" height="150" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="48" y="254" font-size="13" font-weight="bold" fill="#c96a1f">零陷深度的"预算链"</text>
+  <text x="48" y="280" font-size="11.5" fill="#333">零陷可达深度 ≈ min( 前端线性度,</text>
+  <text x="48" y="300" font-size="11.5" fill="#333">　　　　　　　ADC SFDR,</text>
+  <text x="48" y="320" font-size="11.5" fill="#333">　　　　　　　权值位宽, 通道一致性 )</text>
+  <text x="48" y="346" font-size="11.5" fill="#8a3a6a">任一项不足，零陷就会在那一项的地板上"停住"。</text>
+  <text x="48" y="368" font-size="11" fill="#667">常见实测：零陷到 −40~−50 dB 就不再变深，往往卡在 ADC 或权值位宽。</text>
+
+  <!-- practical budget -->
+  <rect x="490" y="228" width="440" height="150" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="508" y="254" font-size="13" font-weight="bold" fill="#4a7a3a">一份可用的位宽预算（接收）</text>
+  <text x="508" y="280" font-size="11.5" fill="#333" font-family="Consolas,monospace">ADC 位数：12~14 bit（直接 RF 采样）</text>
+  <text x="508" y="302" font-size="11.5" fill="#333" font-family="Consolas,monospace">处理带宽内有效位：比标称少 1~2 bit</text>
+  <text x="508" y="324" font-size="11.5" fill="#333" font-family="Consolas,monospace">权值位宽：10~12 bit（副瓣敏感）</text>
+  <text x="508" y="346" font-size="11.5" fill="#333" font-family="Consolas,monospace">累加器：+6~8 bit 保护位</text>
+  <text x="508" y="368" font-size="11" fill="#8a3a6a">位宽不足时，最先暴露的往往是"最深零陷"而不是主瓣。</text>
+
+  <!-- oversampling -->
+  <rect x="30" y="394" width="900" height="126" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.4"/>
+  <text x="48" y="420" font-size="13" font-weight="bold" fill="#8a3a6a">两个实用杠杆</text>
+  <text x="48" y="446" font-size="11.5" fill="#333">① 过采样 + 数字滤波：每把采样率翻倍，处理带宽内 SNR 提升 3 dB；用"带宽换动态范围"。</text>
+  <text x="48" y="468" font-size="11.5" fill="#333">② 模拟端预滤波 + 增益控制：先把带外强干扰滤掉、把有用信号抬到合适幅度，再进 ADC，等价于"把 6 dB/bit 的账提前还掉"。</text>
+  <text x="48" y="494" font-size="11.5" fill="#8a3a6a">反直觉但重要：很多时候"提升 1 bit ADC 位数"不如"前端多一个 20 dB 抗混叠 + AGC"，因为瓶颈常在 SFDR 而非量化噪声。</text>
+  <text x="48" y="514" font-size="11.5" fill="#556">这也是为什么强抗干扰系统宁可做"多通道模拟前置 + 数字对消"，而不是单纯堆 ADC 位数。</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">强制馈电的插损账：log₂N 级功分器层层累加</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">1024 元阵 = 10 级二功分；每级 0.2~0.5 dB，累积就是 2~5 dB 的"白送"损耗</text>
+
+  <!-- binary tree levels -->
+  <g stroke="#0f7a8a" stroke-width="1.3" fill="none">
+    <line x1="480" y1="90" x2="240" y2="140"/><line x1="480" y1="90" x2="720" y2="140"/>
+    <line x1="240" y1="140" x2="120" y2="190"/><line x1="240" y1="140" x2="360" y2="190"/>
+    <line x1="720" y1="140" x2="600" y2="190"/><line x1="720" y1="140" x2="840" y2="190"/>
+    <line x1="120" y1="190" x2="60" y2="240"/><line x1="120" y1="190" x2="180" y2="240"/>
+    <line x1="360" y1="190" x2="300" y2="240"/><line x1="360" y1="190" x2="420" y2="240"/>
+    <line x1="600" y1="190" x2="540" y2="240"/><line x1="600" y1="190" x2="660" y2="240"/>
+    <line x1="840" y1="190" x2="780" y2="240"/><line x1="840" y1="190" x2="900" y2="240"/>
+  </g>
+  <g fill="#0f7a8a">
+    <circle cx="480" cy="90" r="4.5"/>
+    <circle cx="240" cy="140" r="3.8"/><circle cx="720" cy="140" r="3.8"/>
+    <circle cx="120" cy="190" r="3.2"/><circle cx="360" cy="190" r="3.2"/><circle cx="600" cy="190" r="3.2"/><circle cx="840" cy="190" r="3.2"/>
+    <circle cx="60" cy="240" r="2.8"/><circle cx="180" cy="240" r="2.8"/><circle cx="300" cy="240" r="2.8"/><circle cx="420" cy="240" r="2.8"/>
+    <circle cx="540" cy="240" r="2.8"/><circle cx="660" cy="240" r="2.8"/><circle cx="780" cy="240" r="2.8"/><circle cx="900" cy="240" r="2.8"/>
+  </g>
+  <g fill="#c96a1f" font-size="10.5" font-weight="bold">
+    <text x="490" y="86">L0 输入</text>
+    <text x="196" y="146">L1</text><text x="728" y="146">L1</text>
+    <text x="76" y="196">L2</text><text x="852" y="196">L2</text>
+    <text x="40" y="262">L3…</text>
+  </g>
+  <text x="480" y="272" text-anchor="middle" font-size="11" fill="#556">第 k 级的信号要经过前面所有级的功分器与传输线，损耗按级累加（不是每级独立）</text>
+
+  <!-- math -->
+  <rect x="30" y="292" width="440" height="118" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="48" y="318" font-size="13" font-weight="bold" fill="#c96a1f">损耗估算</text>
+  <text x="48" y="344" font-size="12" fill="#333" font-family="Consolas,monospace">级数 = log2(N)</text>
+  <text x="48" y="366" font-size="12" fill="#333" font-family="Consolas,monospace">总插损 ≈ 级数 × (单级线损 + 功分损耗)</text>
+  <text x="48" y="390" font-size="11.5" fill="#556">N=1024：10 级 × 0.2~0.5 dB = 2~5 dB（X 波段微带）</text>
+
+  <!-- comparison -->
+  <rect x="490" y="292" width="440" height="118" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="508" y="318" font-size="13" font-weight="bold" fill="#0f7a8a">折算成什么代价</text>
+  <text x="508" y="344" font-size="11.5" fill="#333">发射：EIRP 直接降同等 dB，功率与效率双输</text>
+  <text x="508" y="366" font-size="11.5" fill="#333">接收：插损 L 的噪声因子 = L，整机 NF 抬高 L</text>
+  <text x="508" y="388" font-size="11.5" fill="#8a3a6a">雷达探测距离 ∝ 第四根号，2 dB 损耗 ≈ 距离降 16%</text>
+
+  <!-- mitigation -->
+  <rect x="30" y="424" width="900" height="96" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="48" y="450" font-size="13" font-weight="bold" fill="#4a7a3a">工程对策：把长馈网"切短"</text>
+  <text x="48" y="474" font-size="11.5" fill="#333">· 瓦式（tile）架构：T/R 组件与子阵功分器集成在同一层，把长馈网压缩成"瓦内短走线"；</text>
+  <text x="48" y="496" font-size="11.5" fill="#333">· 子阵级数字：先在小范围模拟合成，再上数字，减少长距离传输；</text>
+  <text x="48" y="516" font-size="11.5" fill="#333">· 频率更高时（&gt; Ku）改用<tspan fill="#c96a1f">波导功分</tspan>：0.3 dB 级波导对 0.8 dB 级微带是量级差。</text>
+</svg>

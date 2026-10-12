@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">移相器工艺对比：位数、插损、速度、成本的四角权衡</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">同一件事（改相位）有四五条路，选错工艺后面所有预算都要重算</text>
+
+  <!-- header -->
+  <rect x="24" y="76" width="180" height="32" rx="6" fill="#0f7a8a"/>
+  <text x="114" y="98" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#ffffff">工艺</text>
+  <rect x="210" y="76" width="150" height="32" rx="6" fill="#0f7a8a"/>
+  <text x="285" y="98" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#ffffff">插损 (dB)</text>
+  <rect x="366" y="76" width="170" height="32" rx="6" fill="#0f7a8a"/>
+  <text x="451" y="98" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#ffffff">位数 / 分辨率</text>
+  <rect x="542" y="76" width="170" height="32" rx="6" fill="#0f7a8a"/>
+  <text x="627" y="98" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#ffffff">切换速度</text>
+  <rect x="718" y="76" width="218" height="32" rx="6" fill="#0f7a8a"/>
+  <text x="827" y="98" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#ffffff">典型用途</text>
+
+  <g font-size="10.8">
+    <!-- switched line PIN -->
+    <rect x="24" y="112" width="912" height="44" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="36" y="132" font-weight="bold" fill="#c96a1f">开关线 (PIN)</text>
+    <text x="36" y="148" font-size="10" fill="#667">switched-line</text>
+    <text x="222" y="139" font-family="Consolas,monospace" fill="#333">3 ~ 6</text>
+    <text x="378" y="139" font-family="Consolas,monospace" fill="#333">4 ~ 6 bit</text>
+    <text x="554" y="139" font-family="Consolas,monospace" fill="#333">10 ~ 100 ns</text>
+    <text x="730" y="139" fill="#556">雷达、5G，功率承受力强</text>
+
+    <!-- switched line FET -->
+    <rect x="24" y="156" width="912" height="44" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="36" y="176" font-weight="bold" fill="#c96a1f">开关线 (FET)</text>
+    <text x="36" y="192" font-size="10" fill="#667">switched-line</text>
+    <text x="222" y="183" font-family="Consolas,monospace" fill="#333">4 ~ 8</text>
+    <text x="378" y="183" font-family="Consolas,monospace" fill="#333">4 ~ 6 bit</text>
+    <text x="554" y="183" font-family="Consolas,monospace" fill="#333">1 ~ 10 ns</text>
+    <text x="730" y="183" fill="#556">AESA、卫星，速度快</text>
+
+    <!-- varactor -->
+    <rect x="24" y="200" width="912" height="44" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="36" y="220" font-weight="bold" fill="#4a7a3a">变容二极管</text>
+    <text x="36" y="236" font-size="10" fill="#667">analog</text>
+    <text x="222" y="227" font-family="Consolas,monospace" fill="#333">2 ~ 5</text>
+    <text x="378" y="227" font-family="Consolas,monospace" fill="#333">连续</text>
+    <text x="554" y="227" font-family="Consolas,monospace" fill="#333">1 ~ 10 ns</text>
+    <text x="730" y="227" fill="#556">敏捷调谐；幅相耦合需补偿</text>
+
+    <!-- ferrite -->
+    <rect x="24" y="244" width="912" height="44" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="36" y="264" font-weight="bold" fill="#8a3a6a">铁氧体</text>
+    <text x="36" y="280" font-size="10" fill="#667">Reggia-Spencer</text>
+    <text x="222" y="271" font-family="Consolas,monospace" fill="#333">0.5 ~ 2</text>
+    <text x="378" y="271" font-family="Consolas,monospace" fill="#333">连续</text>
+    <text x="554" y="271" font-family="Consolas,monospace" fill="#333">1 ~ 100 µs</text>
+    <text x="730" y="271" fill="#556">高功率雷达；PESA 曾大量使用</text>
+
+    <!-- MEMS -->
+    <rect x="24" y="288" width="912" height="44" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="36" y="308" font-weight="bold" fill="#4a7a3a">MEMS 开关线</text>
+    <text x="36" y="324" font-size="10" fill="#667">MEMS</text>
+    <text x="222" y="315" font-family="Consolas,monospace" fill="#333">1 ~ 3</text>
+    <text x="378" y="315" font-family="Consolas,monospace" fill="#333">4 ~ 6 bit</text>
+    <text x="554" y="315" font-family="Consolas,monospace" fill="#333">5 ~ 50 µs</text>
+    <text x="730" y="315" fill="#556">低插损；可靠性/寿命需评估</text>
+
+    <!-- SiGe/CMOS -->
+    <rect x="24" y="332" width="912" height="44" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="36" y="352" font-weight="bold" fill="#0f7a8a">SiGe / CMOS IC</text>
+    <text x="36" y="368" font-size="10" fill="#667">vector-modulator</text>
+    <text x="222" y="359" font-family="Consolas,monospace" fill="#333">5 ~ 10</text>
+    <text x="378" y="359" font-family="Consolas,monospace" fill="#333">5 ~ 7 bit</text>
+    <text x="554" y="359" font-family="Consolas,monospace" fill="#333">1 ~ 5 ns</text>
+    <text x="730" y="359" fill="#556">5G 毫米波、相控阵芯片主力</text>
+  </g>
+
+  <rect x="24" y="392" width="912" height="126" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.4"/>
+  <text x="42" y="418" font-size="13" font-weight="bold" fill="#0f7a8a">读这张表的三个要点</text>
+  <text x="42" y="442" font-size="11.5" fill="#333">① 插损不是"越低越好"那么简单：<tspan fill="#c96a1f">发射链插损吃掉功率与效率，接收链插损直接抬 NF</tspan>；</text>
+  <text x="42" y="464" font-size="11.5" fill="#333">② 位数与工艺绑定：矢量调制型（I/Q）天然容易做高位数与幅相联调，开关线型位数越高压损耗越难控制；</text>
+  <text x="42" y="486" font-size="11.5" fill="#333">③ 速度与"能否 TDD 快速切换"直接相关：µs 级器件不适合高速波束切换，ns 级才能跟上帧级波束管理。</text>
+  <text x="42" y="508" font-size="11.5" fill="#8a3a6a">算法侧结论：如果你的波束切换要求是"每时隙一次"，就必须先确认移相器的切换时间，而不是只看位数。</text>
+</svg>

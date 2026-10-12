@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">T/R 组件的信号链：一个阵元背后到底有什么</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">发射链与接收链共用阵元端口，靠 T/R 开关切换；波控总线只送"状态"，不送射频</text>
+
+  <!-- TX chain -->
+  <text x="50" y="92" font-size="13" font-weight="bold" fill="#c96a1f">发射链路（TX, 左 → 右）</text>
+  <g font-size="11.5">
+    <rect x="50" y="104" width="118" height="62" rx="8" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+    <text x="109" y="132" text-anchor="middle" fill="#333">TX 输入</text>
+    <text x="109" y="150" text-anchor="middle" font-size="10.5" fill="#667">激励 / 上变频</text>
+
+    <rect x="178" y="104" width="118" height="62" rx="8" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+    <text x="237" y="132" text-anchor="middle" fill="#333">驱动放大</text>
+    <text x="237" y="150" text-anchor="middle" font-size="10.5" fill="#667">driver</text>
+
+    <rect x="306" y="104" width="118" height="62" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+    <text x="365" y="132" text-anchor="middle" fill="#0f7a8a" font-weight="bold">移相器</text>
+    <text x="365" y="150" text-anchor="middle" font-size="10.5" fill="#667">4~6 bit 数字</text>
+
+    <rect x="434" y="104" width="118" height="62" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+    <text x="493" y="132" text-anchor="middle" fill="#0f7a8a" font-weight="bold">衰减器</text>
+    <text x="493" y="150" text-anchor="middle" font-size="10.5" fill="#667">5~6 bit 数控</text>
+
+    <rect x="562" y="104" width="118" height="62" rx="8" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.8"/>
+    <text x="621" y="132" text-anchor="middle" fill="#8a3a6a" font-weight="bold">末级 PA</text>
+    <text x="621" y="150" text-anchor="middle" font-size="10.5" fill="#667">GaN / GaAs</text>
+
+    <rect x="690" y="104" width="118" height="62" rx="8" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.8"/>
+    <text x="749" y="132" text-anchor="middle" fill="#4a7a3a" font-weight="bold">T/R 开关</text>
+    <text x="749" y="150" text-anchor="middle" font-size="10.5" fill="#667">or 环形器</text>
+
+    <rect x="818" y="104" width="118" height="62" rx="8" fill="#ffffff" stroke="#333" stroke-width="1.5"/>
+    <text x="877" y="132" text-anchor="middle" fill="#333">阵元</text>
+    <text x="877" y="150" text-anchor="middle" font-size="10.5" fill="#667">antenna</text>
+  </g>
+  <!-- TX arrows -->
+  <g stroke="#c96a1f" stroke-width="1.8" fill="#c96a1f">
+    <line x1="168" y1="135" x2="178" y2="135"/><polygon points="178,135 172,131 172,139"/>
+    <line x1="296" y1="135" x2="306" y2="135"/><polygon points="306,135 300,131 300,139"/>
+    <line x1="424" y1="135" x2="434" y2="135"/><polygon points="434,135 428,131 428,139"/>
+    <line x1="552" y1="135" x2="562" y2="135"/><polygon points="562,135 556,131 556,139"/>
+    <line x1="680" y1="135" x2="690" y2="135"/><polygon points="690,135 684,131 684,139"/>
+    <line x1="808" y1="135" x2="818" y2="135"/><polygon points="818,135 812,131 812,139"/>
+  </g>
+
+  <!-- control bus -->
+  <rect x="50" y="196" width="886" height="34" rx="6" fill="#f4f9fb" stroke="#0f7a8a" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="60" y="218" font-size="11.5" fill="#0f7a8a">波控 / 电源总线（SPI 或并行）：只传"移相码 + 衰减码 + 收发时序"，不改射频功率</text>
+  <g stroke="#0f7a8a" stroke-width="1" stroke-dasharray="4 3">
+    <line x1="365" y1="166" x2="365" y2="196"/>
+    <line x1="493" y1="166" x2="493" y2="196"/>
+    <line x1="621" y1="166" x2="621" y2="196"/>
+    <line x1="749" y1="166" x2="749" y2="196"/>
+  </g>
+
+  <!-- RX chain -->
+  <text x="50" y="266" font-size="13" font-weight="bold" fill="#0f7a8a">接收链路（RX, 右 → 左）</text>
+  <g font-size="11.5">
+    <rect x="818" y="278" width="118" height="62" rx="8" fill="#ffffff" stroke="#333" stroke-width="1.5"/>
+    <text x="877" y="306" text-anchor="middle" fill="#333">阵元</text>
+    <text x="877" y="324" text-anchor="middle" font-size="10.5" fill="#667">共用端口</text>
+
+    <rect x="690" y="278" width="118" height="62" rx="8" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.8"/>
+    <text x="749" y="306" text-anchor="middle" fill="#4a7a3a" font-weight="bold">限幅器</text>
+    <text x="749" y="324" text-anchor="middle" font-size="10.5" fill="#667">limiter</text>
+
+    <rect x="562" y="278" width="118" height="62" rx="8" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.8"/>
+    <text x="621" y="306" text-anchor="middle" fill="#8a3a6a" font-weight="bold">LNA</text>
+    <text x="621" y="324" text-anchor="middle" font-size="10.5" fill="#667">决定 NF</text>
+
+    <rect x="434" y="278" width="118" height="62" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+    <text x="493" y="306" text-anchor="middle" fill="#0f7a8a" font-weight="bold">衰减器</text>
+    <text x="493" y="324" text-anchor="middle" font-size="10.5" fill="#667">增益均衡</text>
+
+    <rect x="306" y="278" width="118" height="62" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.8"/>
+    <text x="365" y="306" text-anchor="middle" fill="#0f7a8a" font-weight="bold">移相器</text>
+    <text x="365" y="324" text-anchor="middle" font-size="10.5" fill="#667">接收配相</text>
+
+    <rect x="178" y="278" width="118" height="62" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+    <text x="237" y="306" text-anchor="middle" fill="#333">接收增益</text>
+    <text x="237" y="324" text-anchor="middle" font-size="10.5" fill="#667">gain block</text>
+
+    <rect x="50" y="278" width="118" height="62" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+    <text x="109" y="306" text-anchor="middle" fill="#333">RX 输出</text>
+    <text x="109" y="324" text-anchor="middle" font-size="10.5" fill="#667">去 ADC / 合成</text>
+  </g>
+  <!-- RX arrows -->
+  <g stroke="#0f7a8a" stroke-width="1.8" fill="#0f7a8a">
+    <line x1="818" y1="309" x2="808" y2="309"/><polygon points="808,309 814,305 814,313"/>
+    <line x1="690" y1="309" x2="680" y2="309"/><polygon points="680,309 686,305 686,313"/>
+    <line x1="562" y1="309" x2="552" y2="309"/><polygon points="552,309 558,305 558,313"/>
+    <line x1="434" y1="309" x2="424" y2="309"/><polygon points="424,309 430,305 430,313"/>
+    <line x1="306" y1="309" x2="296" y2="309"/><polygon points="296,309 302,305 302,313"/>
+    <line x1="178" y1="309" x2="168" y2="309"/><polygon points="168,309 174,305 174,313"/>
+  </g>
+
+  <!-- footer notes -->
+  <rect x="50" y="372" width="886" height="132" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.4"/>
+  <text x="66" y="398" font-size="13" font-weight="bold" fill="#0f7a8a">读手册时，先分清"射频链参数"与"控制链参数"</text>
+  <text x="66" y="424" font-size="11.5" fill="#333">射频链（决定 EIRP / G-T / EVM / 副瓣）：<tspan font-family="Consolas,monospace" fill="#c96a1f">TX 增益 · Psat · PAE · RX 增益 · NF · 隔离度 · 线性度(AM-PM)</tspan></text>
+  <text x="66" y="446" font-size="11.5" fill="#333">控制链（决定指向精度 / 副瓣地板 / 切换时间）：<tspan font-family="Consolas,monospace" fill="#0f7a8a">移相位数 · 移相精度(RMS) · 衰减位数 · 衰减精度 · 切换时间 · TTD 位</tspan></text>
+  <text x="66" y="472" font-size="11.5" fill="#8a3a6a">工程提醒：同一颗芯片里，衰减器动一下会带着相位动（幅相耦合）；这不是故障，是必须标定并补偿的固有特性。</text>
+  <text x="66" y="494" font-size="11.5" fill="#556">做算法时你只"看到"权值 w = a·e^{jφ}；但硬件能兑现的只有最靠近的量化点，且幅度与相位不是正交可分的两个旋钮。</text>
+</svg>

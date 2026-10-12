@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">混合波束成形：子阵怎么划，压缩比怎么定</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">N 个阵元只要 N_RF 套射频链；压缩比越高越省钱，但数字自由度也越少</text>
+
+  <!-- fully connected -->
+  <rect x="30" y="80" width="290" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="175" y="106" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">全连接（fully connected）</text>
+  <text x="175" y="126" text-anchor="middle" font-size="10" fill="#667">每个 RF 链连到全部阵元</text>
+  <g fill="#dceff2" stroke="#0f7a8a">
+    <rect x="70" y="140" width="60" height="24" rx="5"/><rect x="145" y="140" width="60" height="24" rx="5"/><rect x="220" y="140" width="60" height="24" rx="5"/>
+  </g>
+  <g font-size="9" fill="#0f7a8a" text-anchor="middle"><text x="100" y="156">RF1</text><text x="175" y="156">RF2</text><text x="250" y="156">RF3</text></g>
+  <!-- web of lines -->
+  <g stroke="#0f7a8a" stroke-width="0.7" opacity="0.55">
+    <line x1="100" y1="164" x2="70" y2="212"/><line x1="100" y1="164" x2="130" y2="212"/><line x1="100" y1="164" x2="190" y2="212"/><line x1="100" y1="164" x2="250" y2="212"/><line x1="100" y1="164" x2="310" y2="212"/>
+    <line x1="175" y1="164" x2="70" y2="212"/><line x1="175" y1="164" x2="130" y2="212"/><line x1="175" y1="164" x2="190" y2="212"/><line x1="175" y1="164" x2="250" y2="212"/><line x1="175" y1="164" x2="310" y2="212"/>
+    <line x1="250" y1="164" x2="70" y2="212"/><line x1="250" y1="164" x2="130" y2="212"/><line x1="250" y1="164" x2="190" y2="212"/><line x1="250" y1="164" x2="250" y2="212"/><line x1="250" y1="164" x2="310" y2="212"/>
+  </g>
+  <g fill="#ffffff" stroke="#c96a1f">
+    <rect x="58" y="212" width="24" height="26" rx="4"/><rect x="118" y="212" width="24" height="26" rx="4"/><rect x="178" y="212" width="24" height="26" rx="4"/>
+    <rect x="238" y="212" width="24" height="26" rx="4"/><rect x="298" y="212" width="24" height="26" rx="4"/>
+  </g>
+  <g font-size="9" fill="#c96a1f" text-anchor="middle">
+    <text x="70" y="229">E</text><text x="130" y="229">E</text><text x="190" y="229">E</text><text x="250" y="229">E</text><text x="310" y="229">E</text>
+  </g>
+  <text x="46" y="266" font-size="10.5" fill="#333">· 性能最好：每个 RF 链都能"看见"全阵</text>
+  <text x="46" y="286" font-size="10.5" fill="#333">· 移相器/功分器数量 = N × N_RF</text>
+  <text x="46" y="306" font-size="10.5" fill="#8a3a6a">· 硬件复杂度最高、损耗大</text>
+  <text x="46" y="330" font-size="10.5" fill="#667">· 适合 N_RF 少而要求高的场合</text>
+  <text x="46" y="352" font-size="10.5" fill="#667">　（经典相移网络 + 数字合并）</text>
+
+  <!-- subarray -->
+  <rect x="335" y="80" width="290" height="300" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="106" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a7a3a">子阵连接（sub-array）</text>
+  <text x="480" y="126" text-anchor="middle" font-size="10" fill="#667">每个 RF 链只管自己那一簇</text>
+  <g fill="#f0f7ee" stroke="#4a7a3a">
+    <rect x="360" y="140" width="110" height="96" rx="8"/><rect x="490" y="140" width="110" height="96" rx="8"/>
+  </g>
+  <g fill="#ffffff" stroke="#c96a1f">
+    <rect x="374" y="156" width="24" height="24" rx="4"/><rect x="406" y="156" width="24" height="24" rx="4"/><rect x="438" y="156" width="24" height="24" rx="4"/>
+    <rect x="374" y="192" width="24" height="24" rx="4"/><rect x="406" y="192" width="24" height="24" rx="4"/><rect x="438" y="192" width="24" height="24" rx="4"/>
+    <rect x="504" y="156" width="24" height="24" rx="4"/><rect x="536" y="156" width="24" height="24" rx="4"/><rect x="568" y="156" width="24" height="24" rx="4"/>
+    <rect x="504" y="192" width="24" height="24" rx="4"/><rect x="536" y="192" width="24" height="24" rx="4"/><rect x="568" y="192" width="24" height="24" rx="4"/>
+  </g>
+  <line x1="415" y1="146" x2="415" y2="132" stroke="#4a7a3a" stroke-width="1.4"/>
+  <line x1="545" y1="146" x2="545" y2="132" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="415" y="128" text-anchor="middle" font-size="9.5" fill="#4a7a3a">RF1</text>
+  <text x="545" y="128" text-anchor="middle" font-size="9.5" fill="#4a7a3a">RF2</text>
+  <text x="480" y="266" font-size="10.5" fill="#333">· 移相器数量 ≈ N（每阵元一个）</text>
+  <text x="480" y="286" font-size="10.5" fill="#333">· 每个子阵内共用一个 RF 链</text>
+  <text x="480" y="306" font-size="10.5" fill="#8a3a6a">· 子阵间是"真正的数字自由度"</text>
+  <text x="480" y="330" font-size="10.5" fill="#667">· 工程最常用；架构最平衡</text>
+  <text x="480" y="352" font-size="10.5" fill="#667">· 代价：子阵栅瓣、子阵级零陷受限</text>
+
+  <!-- comparison / compression -->
+  <rect x="640" y="80" width="290" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="785" y="106" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">压缩比 N / N_RF</text>
+  <text x="658" y="134" font-size="11" fill="#333">N = 64 的几种划法：</text>
+  <g font-size="10.5">
+    <rect x="658" y="146" width="254" height="26" rx="4" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="668" y="164" fill="#0f7a8a">N_RF = 16 → 压缩比 4 : 1</text>
+    <rect x="658" y="176" width="254" height="26" rx="4" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="668" y="194" fill="#4a7a3a">N_RF = 8 → 压缩比 8 : 1</text>
+    <rect x="658" y="206" width="254" height="26" rx="4" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="668" y="224" fill="#c96a1f">N_RF = 4 → 压缩比 16 : 1</text>
+    <rect x="658" y="236" width="254" height="26" rx="4" fill="#ffffff" stroke="#dbe6ea"/>
+    <text x="668" y="254" fill="#8a3a6a">N_RF = 64 → 全数字（1 : 1）</text>
+  </g>
+  <text x="658" y="284" font-size="10.5" fill="#333">压缩比 ↑ ⇒ 射频链/ADC 成本与功耗 ↓，</text>
+  <text x="658" y="304" font-size="10.5" fill="#333">但波束数、零陷自由度、宽带性能 ↓。</text>
+  <text x="658" y="330" font-size="10.5" fill="#8a3a6a">子阵越大，越容易出现"子阵栅瓣"：</text>
+  <text x="658" y="350" font-size="10.5" fill="#8a3a6a">等效间距 = 子阵尺寸 × d，可能 &gt; λ/2。</text>
+  <text x="658" y="370" font-size="10.5" fill="#667">对策：重叠子阵、非均匀子阵、子阵内配相。</text>
+
+  <text x="480" y="406" text-anchor="middle" font-size="12" fill="#333">选压缩比的经验：先问"需要几个同时波束 / 多深的零陷"，再倒推 N_RF，而不是先定 N_RF。</text>
+  <text x="480" y="432" text-anchor="middle" font-size="11.5" fill="#556">5G 毫米波常见 4:1~8:1；卫星载荷因波束数与覆盖要求，往往更接近全连接或高 N_RF。</text>
+  <text x="480" y="458" text-anchor="middle" font-size="11.5" fill="#8a3a6a">算法要点：混合架构下"模拟端只能做无频率分辨的移相"，所以宽带补偿（波束斜视）必须放在数字子带里做——见专题 21。</text>
+  <text x="480" y="484" text-anchor="middle" font-size="11.5" fill="#667">子阵级数字还意味着：你的协方差矩阵维度只有 N_RF，MUSIC/MVDR 的分辨率与可分辨源数都会受子阵数限制。</text>
+  <text x="480" y="510" text-anchor="middle" font-size="11.5" fill="#556">这是"架构选择"如何直接决定"算法能力"的最典型例子。</text>
+</svg>

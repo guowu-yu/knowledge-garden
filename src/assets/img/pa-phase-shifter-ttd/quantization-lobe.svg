@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">量化副瓣：位数决定的地板，与孔径大小无关</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">理想相位被"四舍五入"到最近的量化态，产生的误差是一个横跨孔径的锯齿</text>
+
+  <!-- stair step -->
+  <rect x="30" y="80" width="440" height="220" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="48" y="106" font-size="13" font-weight="bold" fill="#0f7a8a">理想线性相位 vs 量化相位</text>
+  <line x1="60" y1="270" x2="450" y2="270" stroke="#8899a6" stroke-width="1.3"/>
+  <line x1="60" y1="130" x2="60" y2="270" stroke="#8899a6" stroke-width="1.3"/>
+  <text x="452" y="284" font-size="10.5" fill="#667">阵元序</text>
+  <text x="40" y="136" font-size="10.5" fill="#667">φ</text>
+  <!-- ideal line -->
+  <line x1="60" y1="262" x2="440" y2="150" stroke="#0f7a8a" stroke-width="2.2"/>
+  <text x="350" y="146" font-size="10.5" fill="#0f7a8a">理想：连续斜坡</text>
+  <!-- stair -->
+  <path d="M60 262 L108 262 L108 244 L156 244 L156 226 L204 226 L204 208 L252 208 L252 190 L300 190 L300 172 L348 172 L348 154 L396 154 L396 154 L440 154"
+        fill="none" stroke="#c96a1f" stroke-width="2.2"/>
+  <text x="300" y="240" font-size="10.5" fill="#c96a1f">量化：锯齿台阶</text>
+  <line x1="60" y1="244" x2="90" y2="244" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="62" y="238" font-size="10" fill="#8a3a6a">LSB</text>
+
+  <!-- QSLL chart -->
+  <rect x="490" y="80" width="440" height="220" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="508" y="106" font-size="13" font-weight="bold" fill="#c96a1f">最坏量化副瓣 QSLL vs 位数</text>
+  <!-- axes -->
+  <line x1="540" y1="270" x2="910" y2="270" stroke="#8899a6" stroke-width="1.3"/>
+  <line x1="540" y1="130" x2="540" y2="270" stroke="#8899a6" stroke-width="1.3"/>
+  <text x="880" y="284" font-size="10.5" fill="#667">bit</text>
+  <text x="500" y="138" font-size="10.5" fill="#667">QL</text>
+  <!-- bars: 2..8 bits, levels -7,-14,-20,-26,-32,-38,-44 (scale 0 at 130, 48 at 270) -->
+  <g fill="#c96a1f">
+    <rect x="556" y="178" width="34" height="92"/>
+    <rect x="604" y="213" width="34" height="57"/>
+    <rect x="652" y="238" width="34" height="32"/>
+    <rect x="700" y="263" width="34" height="7"/>
+    <rect x="748" y="268" width="34" height="2"/>
+    <rect x="796" y="270" width="34" height="0.5"/>
+    <rect x="844" y="270" width="34" height="0.3"/>
+  </g>
+  <g font-size="10" fill="#556" text-anchor="middle">
+    <text x="573" y="286">2</text><text x="621" y="286">3</text><text x="669" y="286">4</text>
+    <text x="717" y="286">5</text><text x="765" y="286">6</text><text x="813" y="286">7</text><text x="861" y="286">8</text>
+  </g>
+  <text x="508" y="300" font-size="10" fill="#333">−7 / −14 / −20 / −26 / −32 / −38 / −44 dB（均匀加权，最坏角）</text>
+
+  <!-- formula band -->
+  <rect x="30" y="314" width="900" height="96" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="48" y="340" font-size="13" font-weight="bold" fill="#4a7a3a">两条机制，别混为一谈</text>
+  <text x="48" y="366" font-size="11.5" fill="#333" font-family="Consolas,monospace">① 周期性量化瓣：QSLL ≈ −6·B dB（每加 1 bit 改善约 6 dB；与 N 无关）</text>
+  <text x="48" y="388" font-size="11.5" fill="#333" font-family="Consolas,monospace">② 随机化后的副瓣地板：SLL ≈ σ²/N，其中 σ = LSB/√12 = 2π/(√12·2^B)</text>
+  <text x="48" y="406" font-size="11" fill="#8a3a6a">把量化瓣"打散"会降低峰值，但会抬高地板——两种指标的取舍要事先讲清楚</text>
+
+  <rect x="30" y="422" width="900" height="96" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.4"/>
+  <text x="48" y="448" font-size="13" font-weight="bold" fill="#8a3a6a">工程取值建议</text>
+  <text x="48" y="474" font-size="11.5" fill="#333">副瓣要求 −20 dB：4 bit 够； −26 dB：5 bit； −30 dB 以上：6 bit 起； 超低副瓣（−35 dB 以下）：6~8 bit + 加窗 + 校准。</text>
+  <text x="48" y="496" font-size="11.5" fill="#333">注意"位数 × 阵元数"是联合约束：<tspan fill="#c96a1f">同一副瓣指标下，大阵可以用更少的位数</tspan>（因为 ∝1/N 的随机地板降低），</text>
+  <text x="48" y="514" font-size="11.5" fill="#333">这正是"大阵对小位数容忍度更高"的定量来源，也是降本最直接的一招。</text>
+</svg>

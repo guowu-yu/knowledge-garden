@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">数据率与功耗：为什么"每阵元一颗 ADC"这么难</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">全数字相控阵的瓶颈不是"算不动"，是"数据搬不动、热量散不掉"</text>
+
+  <!-- data rate -->
+  <rect x="30" y="80" width="440" height="200" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="48" y="106" font-size="13" font-weight="bold" fill="#0f7a8a">数据率估算</text>
+  <text x="48" y="132" font-size="11.5" fill="#333" font-family="Consolas,monospace">R = N × fs × B_bits × (过采样因子)</text>
+  <text x="48" y="158" font-size="11.5" fill="#333">例：N=256，fs=1 GSPS，12 bit（+2 保护）</text>
+  <text x="48" y="180" font-size="11.5" fill="#333" font-family="Consolas,monospace">= 256 × 1e9 × 14 = 3.58 Tbps</text>
+  <text x="48" y="206" font-size="11.5" fill="#c96a1f">→ 必须先在片内做子阵合成/降采样，</text>
+  <text x="48" y="226" font-size="11.5" fill="#c96a1f">　 不可能把每通道原始数据全搬到 CPU。</text>
+  <text x="48" y="252" font-size="11" fill="#667">这就是"混合波束成形"存在的根本原因：</text>
+  <text x="48" y="270" font-size="11" fill="#667">先把 N 个通道在模拟/局部数字域压成 N_RF 路。</text>
+
+  <!-- power -->
+  <rect x="490" y="80" width="440" height="200" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="508" y="106" font-size="13" font-weight="bold" fill="#c96a1f">功耗账</text>
+  <text x="508" y="132" font-size="11.5" fill="#333">单通道 ADC + 数字前端：约 0.2 ~ 1 W（看速率）</text>
+  <text x="508" y="156" font-size="11.5" fill="#333">256 通道 → 50 ~ 256 W 仅接收数字化</text>
+  <text x="508" y="182" font-size="11.5" fill="#333">加上 T/R 组件 DC 功耗（PAE 20%~25%）</text>
+  <text x="508" y="206" font-size="11.5" fill="#8a3a6a">整阵热流密度可达 30~35 W/cm² 量级</text>
+  <text x="508" y="232" font-size="11" fill="#667">→ 与高端 CPU 散热同级，必须液冷/均热板</text>
+  <text x="508" y="254" font-size="11" fill="#667">热梯度还会引起通道间相位漂移（见专题 25）</text>
+
+  <!-- RFSoC -->
+  <rect x="30" y="302" width="900" height="218" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="48" y="328" font-size="13" font-weight="bold" fill="#4a7a3a">平台选择：RFSoC vs 传统 ADC 板卡</text>
+  <g font-size="11.5">
+    <rect x="48" y="344" width="410" height="158" rx="8" fill="#f7fbfc" stroke="#0f7a8a" stroke-width="1.2"/>
+    <text x="64" y="368" font-size="12" font-weight="bold" fill="#0f7a8a">Zynq UltraScale+ RFSoC</text>
+    <text x="64" y="392" fill="#333">· 单芯片集成多路 GSPS 级 ADC/DAC + FPGA</text>
+    <text x="64" y="412" fill="#333">· 典型：12 bit ADC ~4 GSPS，14 bit DAC ~6~10 GSPS</text>
+    <text x="64" y="432" fill="#333">· 直接 RF 采样，省掉一级混频/IF</text>
+    <text x="64" y="452" fill="#333">· 内置数字下变频/上变频（DDC/DUC）</text>
+    <text x="64" y="472" fill="#4a7a3a">· 优点：集成度高、通道间一致性好、功耗低</text>
+    <text x="64" y="492" fill="#8a3a6a">· 限制：单芯片通道数与带宽有上限</text>
+
+    <rect x="488" y="344" width="424" height="158" rx="8" fill="#f7fbfc" stroke="#c96a1f" stroke-width="1.2"/>
+    <text x="504" y="368" font-size="12" font-weight="bold" fill="#c96a1f">分立 ADC / 采集板卡</text>
+    <text x="504" y="392" fill="#333">· 可做到 12 bit / 10.4 GSPS 级单器件</text>
+    <text x="504" y="412" fill="#333">· 通道数靠多芯片板卡扩展</text>
+    <text x="504" y="432" fill="#333">· 灵活选择最高性能器件</text>
+    <text x="504" y="452" fill="#c96a1f">· 代价：功耗、体积、通道间同步与一致性更难</text>
+    <text x="504" y="472" fill="#8a3a6a">· 适合高性能、小通道数的雷达/测试场景</text>
+  </g>
+  <text x="480" y="514" text-anchor="middle" font-size="11.5" fill="#556">选型口诀：<tspan fill="#4a7a3a">通道多、成本敏感 → RFSoC</tspan>；<tspan fill="#c96a1f">单通道性能极致 → 分立器件</tspan>。二者常常混用（发射用 RFSoC，接收高端用分立）。</text>
+</svg>

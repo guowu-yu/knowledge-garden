@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">四种架构：射频链放在哪一级，决定了一切</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">从"一个收发机管全阵"到"每个阵元一个数字化收发机"，中间是连续谱，不是四选一</text>
+
+  <!-- PESA -->
+  <rect x="24" y="80" width="222" height="330" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="135" y="106" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#0f7a8a">PESA 无源</text>
+  <rect x="90" y="120" width="90" height="34" rx="6" fill="#dceff2" stroke="#0f7a8a"/>
+  <text x="135" y="142" text-anchor="middle" font-size="10.5" fill="#0f7a8a">单收发机</text>
+  <line x1="135" y1="154" x2="135" y2="176" stroke="#0f7a8a" stroke-width="1.5"/>
+  <rect x="72" y="176" width="126" height="30" rx="6" fill="#ffffff" stroke="#c96a1f"/>
+  <text x="135" y="196" text-anchor="middle" font-size="10.5" fill="#c96a1f">强制功分网络</text>
+  <g stroke="#c96a1f" stroke-width="1.2">
+    <line x1="96" y1="206" x2="96" y2="240"/><line x1="135" y1="206" x2="135" y2="240"/><line x1="174" y1="206" x2="174" y2="240"/>
+  </g>
+  <g fill="#ffffff" stroke="#0f7a8a">
+    <rect x="80" y="240" width="32" height="26" rx="4"/><rect x="119" y="240" width="32" height="26" rx="4"/><rect x="158" y="240" width="32" height="26" rx="4"/>
+  </g>
+  <g font-size="9" fill="#0f7a8a" text-anchor="middle">
+    <text x="96" y="257">移相</text><text x="135" y="257">移相</text><text x="174" y="257">移相</text>
+  </g>
+  <g stroke="#8899a6" stroke-width="1.2">
+    <line x1="96" y1="266" x2="96" y2="286"/><line x1="135" y1="266" x2="135" y2="286"/><line x1="174" y1="266" x2="174" y2="286"/>
+  </g>
+  <g fill="#556" font-size="10" text-anchor="middle"><text x="96" y="298">阵元</text><text x="135" y="298">阵元</text><text x="174" y="298">阵元</text></g>
+  <text x="42" y="330" font-size="10.5" fill="#333">· 射频链：<tspan fill="#0f7a8a">1 套</tspan></text>
+  <text x="42" y="350" font-size="10.5" fill="#333">· 单点故障、插损大</text>
+  <text x="42" y="370" font-size="10.5" fill="#333">· 只能一个波束</text>
+  <text x="42" y="392" font-size="10.5" fill="#667">· 成本最低，常见于早期/低成本</text>
+
+  <!-- AESA -->
+  <rect x="256" y="80" width="222" height="330" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="367" y="106" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#c96a1f">AESA 有源</text>
+  <rect x="322" y="120" width="90" height="30" rx="6" fill="#dceff2" stroke="#0f7a8a"/>
+  <text x="367" y="140" text-anchor="middle" font-size="10.5" fill="#0f7a8a">1 套 收发机</text>
+  <line x1="367" y1="150" x2="367" y2="172" stroke="#c96a1f" stroke-width="1.5"/>
+  <g fill="#ffffff" stroke="#c96a1f">
+    <rect x="292" y="172" width="44" height="60" rx="5"/><rect x="345" y="172" width="44" height="60" rx="5"/><rect x="398" y="172" width="44" height="60" rx="5"/>
+  </g>
+  <g font-size="8.5" fill="#c96a1f" text-anchor="middle">
+    <text x="314" y="194">PA/LNA</text><text x="314" y="208">移相器</text><text x="314" y="222">衰减器</text>
+    <text x="367" y="194">PA/LNA</text><text x="367" y="208">移相器</text><text x="367" y="222">衰减器</text>
+    <text x="420" y="194">PA/LNA</text><text x="420" y="208">移相器</text><text x="420" y="222">衰减器</text>
+  </g>
+  <g stroke="#8899a6" stroke-width="1.2">
+    <line x1="314" y1="232" x2="314" y2="252"/><line x1="367" y1="232" x2="367" y2="252"/><line x1="420" y1="232" x2="420" y2="252"/>
+  </g>
+  <g fill="#556" font-size="10" text-anchor="middle"><text x="314" y="264">阵元</text><text x="367" y="264">阵元</text><text x="420" y="264">阵元</text></g>
+  <text x="274" y="300" font-size="10.5" fill="#333">· 射频链：<tspan fill="#c96a1f">1 / 阵元（模拟）</tspan></text>
+  <text x="274" y="320" font-size="10.5" fill="#333">· 优雅降级、NF 低、EIRP 高</text>
+  <text x="274" y="340" font-size="10.5" fill="#333">· 仍用模拟移相器</text>
+  <text x="274" y="362" font-size="10.5" fill="#667">· 当代军用雷达主力（AN/APG-81 等）</text>
+
+  <!-- Hybrid -->
+  <rect x="488" y="80" width="222" height="330" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+  <text x="599" y="106" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#4a7a3a">混合波束成形</text>
+  <rect x="554" y="120" width="90" height="30" rx="6" fill="#dceff2" stroke="#4a7a3a"/>
+  <text x="599" y="140" text-anchor="middle" font-size="10.5" fill="#4a7a3a">N_RF 套收发机</text>
+  <g stroke="#4a7a3a" stroke-width="1.2">
+    <line x1="576" y1="150" x2="576" y2="180"/><line x1="622" y1="150" x2="622" y2="180"/>
+  </g>
+  <g fill="#ffffff" stroke="#4a7a3a">
+    <rect x="524" y="180" width="104" height="34" rx="5"/><rect x="534" y="222" width="104" height="34" rx="5"/>
+  </g>
+  <text x="576" y="201" text-anchor="middle" font-size="10" fill="#4a7a3a">子阵 1：模拟移相</text>
+  <text x="586" y="243" text-anchor="middle" font-size="10" fill="#4a7a3a">子阵 2：模拟移相</text>
+  <g fill="#556" font-size="9.5" text-anchor="middle">
+    <text x="544" y="274">阵元…</text><text x="586" y="274">阵元…</text><text x="620" y="274">阵元…</text>
+  </g>
+  <text x="506" y="300" font-size="10.5" fill="#333">· 射频链：<tspan fill="#4a7a3a">N / 子阵</tspan></text>
+  <text x="506" y="320" font-size="10.5" fill="#333">· 压缩比 4:1 ~ 8:1（典型）</text>
+  <text x="506" y="340" font-size="10.5" fill="#333">· 少量数字波束 + 模拟波束</text>
+  <text x="506" y="362" font-size="10.5" fill="#667">· 5G 毫米波与卫星载荷最常落地</text>
+
+  <!-- Digital -->
+  <rect x="720" y="80" width="216" height="330" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.6"/>
+  <text x="828" y="106" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#8a3a6a">全数字</text>
+  <g fill="#ffffff" stroke="#8a3a6a">
+    <rect x="744" y="130" width="52" height="40" rx="5"/><rect x="804" y="130" width="52" height="40" rx="5"/><rect x="864" y="130" width="52" height="40" rx="5"/>
+  </g>
+  <g font-size="9" fill="#8a3a6a" text-anchor="middle">
+    <text x="770" y="154">DAC/ADC</text><text x="830" y="154">DAC/ADC</text><text x="890" y="154">DAC/ADC</text>
+  </g>
+  <g stroke="#8899a6" stroke-width="1.2">
+    <line x1="770" y1="170" x2="770" y2="196"/><line x1="830" y1="170" x2="830" y2="196"/><line x1="890" y1="170" x2="890" y2="196"/>
+  </g>
+  <g fill="#556" font-size="10" text-anchor="middle"><text x="770" y="210">阵元</text><text x="830" y="210">阵元</text><text x="890" y="210">阵元</text></g>
+  <rect x="744" y="228" width="172" height="42" rx="6" fill="#f6eaf0" stroke="#8a3a6a"/>
+  <text x="830" y="245" text-anchor="middle" font-size="10" fill="#8a3a6a">FPGA：数字复加权</text>
+  <text x="830" y="261" text-anchor="middle" font-size="9.5" fill="#8a3a6a">多波束 / 自适应零陷</text>
+  <text x="738" y="296" font-size="10.5" fill="#333">· 射频链：<tspan fill="#8a3a6a">1 / 阵元（数字）</tspan></text>
+  <text x="738" y="316" font-size="10.5" fill="#333">· 权值全在软件、多波束</text>
+  <text x="738" y="336" font-size="10.5" fill="#333">· 数据率/功耗最高</text>
+  <text x="738" y="358" font-size="10.5" fill="#667">· 抗干扰、卫星直连终端方向</text>
+
+  <text x="480" y="440" text-anchor="middle" font-size="12.5" fill="#333">演进主轴：<tspan fill="#0f7a8a">集中 → 分布式</tspan>、<tspan fill="#c96a1f">模拟 → 数字</tspan>、<tspan fill="#8a3a6a">硬件定义 → 软件定义</tspan>；成本与功耗同步上升</text>
+  <text x="480" y="466" text-anchor="middle" font-size="11.5" fill="#556">工程上没有"最好"的架构：只有"在给定 N / 频段 / EIRP / 功耗 / 波束数约束下最合适"的架构。</text>
+  <text x="480" y="492" text-anchor="middle" font-size="11.5" fill="#667">大多数产品最终落在 AESA 与混合之间——全数字是确定方向，但门槛（数据率、功耗、成本）尚未对所有场景消失。</text>
+  <text x="480" y="516" text-anchor="middle" font-size="11.5" fill="#8a3a6a">算法工程师的落点：架构决定了你能做多少"数字自由度"；自由度决定了你的算法上限。</text>
+</svg>

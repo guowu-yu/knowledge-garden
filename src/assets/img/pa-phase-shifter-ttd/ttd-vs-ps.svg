@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">移相 vs 真时延：为什么宽带会"偏指"</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">移相器给的是"固定度数"，物理上需要的是"固定时延"；两者在窄带等价，在宽带分道扬镳</text>
+
+  <!-- left: phase shifter -->
+  <rect x="30" y="80" width="440" height="252" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="48" y="106" font-size="13.5" font-weight="bold" fill="#c96a1f">用移相器：波束随频率"扇形张开"</text>
+  <line x1="70" y1="290" x2="450" y2="290" stroke="#8899a6" stroke-width="1.3"/>
+  <line x1="260" y1="126" x2="260" y2="298" stroke="#8899a6" stroke-width="1.3"/>
+  <text x="452" y="304" font-size="10.5" fill="#667">θ</text>
+  <text x="252" y="140" font-size="10.5" fill="#667">0 dB</text>
+  <!-- three beams at different frequencies -->
+  <path d="M260 150 C 246 180, 226 230, 200 288" fill="none" stroke="#0f7a8a" stroke-width="2.2"/>
+  <path d="M260 150 C 258 180, 256 230, 254 288" fill="none" stroke="#4a7a3a" stroke-width="2.2" stroke-dasharray="6 4"/>
+  <path d="M260 150 C 272 182, 292 232, 322 288" fill="none" stroke="#8a3a6a" stroke-width="2.2" stroke-dasharray="3 3"/>
+  <text x="120" y="240" font-size="10.5" fill="#0f7a8a">f_low</text>
+  <text x="262" y="240" font-size="10.5" fill="#4a7a3a">f0</text>
+  <text x="330" y="240" font-size="10.5" fill="#8a3a6a">f_high</text>
+
+  <!-- right: TTD -->
+  <rect x="490" y="80" width="440" height="252" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+  <text x="508" y="106" font-size="13.5" font-weight="bold" fill="#0f7a8a">用真时延：三个频率指向同一角度</text>
+  <line x1="530" y1="290" x2="910" y2="290" stroke="#8899a6" stroke-width="1.3"/>
+  <line x1="720" y1="126" x2="720" y2="298" stroke="#8899a6" stroke-width="1.3"/>
+  <text x="912" y="304" font-size="10.5" fill="#667">θ</text>
+  <path d="M720 150 C 700 182, 676 232, 642 288" fill="none" stroke="#0f7a8a" stroke-width="2.2"/>
+  <path d="M720 150 C 700 182, 676 232, 642 288" fill="none" stroke="#4a7a3a" stroke-width="2.0" stroke-dasharray="6 4"/>
+  <path d="M720 150 C 700 182, 676 232, 642 288" fill="none" stroke="#8a3a6a" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <text x="600" y="240" font-size="10.5" fill="#333">三频同指；仅波束宽度随频率变化</text>
+
+  <!-- formula -->
+  <rect x="30" y="346" width="900" height="84" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="48" y="372" font-size="13" font-weight="bold" fill="#8a3a6a">斜视公式与判据</text>
+  <text x="48" y="398" font-size="12.5" fill="#333" font-family="Consolas,monospace">Δθ ≈ (Δf / f0) · tanθ0   [rad]        τ = (d·sinθ0)/c   [s]</text>
+  <text x="48" y="420" font-size="11.5" fill="#556">若 Δθ 达到一个波束宽度，图像/链路就开始"糊"：此时必须上 TTD。典型判据：相对带宽 &gt; 5%~10% 且窄波束。</text>
+
+  <!-- TTD implementation -->
+  <rect x="30" y="442" width="900" height="76" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="48" y="468" font-size="12.5" font-weight="bold" fill="#4a7a3a">TTD 怎么做：切换延迟线 / MMIC 有源延迟线（含均衡器）</text>
+  <text x="48" y="492" font-size="11.5" fill="#333">被动 MMIC TTD：2~20 GHz、6 bit、总时延 145 ps、LSB 2.5 ps，但 20 GHz 处插损可达 25 dB；</text>
+  <text x="48" y="510" font-size="11.5" fill="#333">有源 MMIC TTD：加分布式增益放大器与增益斜率均衡器，0.8~8 GHz、20 dB 增益、8 bit、LSB 4 ps，代价是功耗与复杂度。</text>
+</svg>

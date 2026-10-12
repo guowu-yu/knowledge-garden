@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">接收链的噪声账：Friis 级联与 G/T</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">越靠前的器件对 NF 影响越大；LNA 之前每 0.1 dB 插损都要直接加到整机 NF 上</text>
+
+  <!-- cascade boxes -->
+  <g font-size="11">
+    <rect x="40" y="96" width="150" height="70" rx="8" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.6"/>
+    <text x="115" y="124" text-anchor="middle" font-weight="bold" fill="#4a7a3a">天线 / 罩</text>
+    <text x="115" y="146" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#333">L1, T_ant</text>
+
+    <rect x="220" y="96" width="150" height="70" rx="8" fill="#ffffff" stroke="#c96a1f" stroke-width="1.6"/>
+    <text x="295" y="124" text-anchor="middle" font-weight="bold" fill="#c96a1f">开关/限幅/线</text>
+    <text x="295" y="146" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#333">L2 = 0.5 dB</text>
+
+    <rect x="400" y="96" width="150" height="70" rx="8" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+    <text x="475" y="124" text-anchor="middle" font-weight="bold" fill="#8a3a6a">LNA</text>
+    <text x="475" y="146" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#333">NF=2.5, G=22</text>
+
+    <rect x="580" y="96" width="150" height="70" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="655" y="124" text-anchor="middle" font-weight="bold" fill="#0f7a8a">后级增益</text>
+    <text x="655" y="146" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#333">NF=8, G=20</text>
+
+    <rect x="760" y="96" width="150" height="70" rx="8" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.6"/>
+    <text x="835" y="124" text-anchor="middle" font-weight="bold" fill="#0f7a8a">ADC</text>
+    <text x="835" y="146" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#333">NF=25</text>
+  </g>
+  <g stroke="#8899a6" stroke-width="1.6" fill="#8899a6">
+    <line x1="190" y1="131" x2="218" y2="131"/><polygon points="218,131 212,127 212,135"/>
+    <line x1="370" y1="131" x2="398" y2="131"/><polygon points="398,131 392,127 392,135"/>
+    <line x1="550" y1="131" x2="578" y2="131"/><polygon points="578,131 572,127 572,135"/>
+    <line x1="730" y1="131" x2="758" y2="131"/><polygon points="758,131 752,127 752,135"/>
+  </g>
+
+  <!-- Friis formula -->
+  <rect x="40" y="190" width="420" height="146" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="58" y="216" font-size="13" font-weight="bold" fill="#0f7a8a">Friis 级联（用比值或 dB 皆可）</text>
+  <text x="58" y="244" font-size="13" fill="#333" font-family="Consolas,monospace">F = F1 + (F2-1)/G1 + (F3-1)/(G1G2) + ...</text>
+  <text x="58" y="272" font-size="11.5" fill="#556">· 第一级（含天线到 LNA 之间所有损耗）几乎决定一切</text>
+  <text x="58" y="294" font-size="11.5" fill="#556">· 无源插损 L 的噪声因子 = L（dB 数即 NF 增量）</text>
+  <text x="58" y="316" font-size="11.5" fill="#8a3a6a">把开关 + 限幅 + 接头 0.5 dB 放在 LNA 前，整机 NF 直接 +0.5 dB</text>
+
+  <!-- example calc -->
+  <rect x="480" y="190" width="440" height="146" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="498" y="216" font-size="13" font-weight="bold" fill="#c96a1f">一个真实量级的例子</text>
+  <text x="498" y="242" font-size="11.5" fill="#333">天线后 0.5 dB 损耗 → F1 = 10^0.05 = 1.122</text>
+  <text x="498" y="264" font-size="11.5" fill="#333">LNA: F2 = 10^0.25 = 1.778, G1 = 0.794</text>
+  <text x="498" y="286" font-size="11.5" fill="#333">F = 1.122 + (1.778-1)/0.794 = 1.122 + 0.980</text>
+  <text x="498" y="308" font-size="12" fill="#0f7a8a" font-family="Consolas,monospace">NF = 10log10(2.102) = 3.23 dB</text>
+  <text x="498" y="328" font-size="11" fill="#667">后级贡献 &lt; 0.05 dB，可忽略</text>
+
+  <!-- G/T -->
+  <rect x="40" y="352" width="880" height="158" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="58" y="378" font-size="13" font-weight="bold" fill="#4a7a3a">G/T：卫星与地面站真正看的接收品质因数</text>
+  <text x="58" y="404" font-size="12" fill="#333" font-family="Consolas,monospace">G/T [dB/K] = G_ant [dBi] - 10log10( T_sys [K] )</text>
+  <text x="58" y="430" font-size="11.5" fill="#333">T_sys 由三部分合成：<tspan fill="#c96a1f">天线噪声温度 T_ant</tspan>（看天顶低、看地面高）、<tspan fill="#c96a1f">馈线/LNA 前损耗的温度贡献</tspan>、<tspan fill="#c96a1f">LNA 自身噪声温度 T_e = (NF-1)·290K</tspan>。</text>
+  <text x="58" y="454" font-size="11.5" fill="#333">无源损耗 L（dB）对 T_sys 的贡献：T = 290·(1 - 1/L_linear)，即 0.5 dB 损耗贡献约 34 K。</text>
+  <text x="58" y="478" font-size="11.5" fill="#8a3a6a">扫描角变大时 G_ant 下降、地面噪声进入旁瓣 → G/T 同时恶化，这是链路预算里最容易被漏掉的一项。</text>
+  <text x="58" y="500" font-size="11.5" fill="#556">工程做法：G/T 必须按扫描角建模，与 EIRP 一起作为链路两端的两条曲线交付。</text>
+</svg>
