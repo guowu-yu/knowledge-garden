@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">零陷展宽：把"点零陷"变成"宽凹口"</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">干扰一动，点零陷就落空；宽凹口用一点深度换一大片容差</text>
+
+  <line x1="80" y1="420" x2="900" y2="420" stroke="#556" stroke-width="1.3"/>
+  <line x1="80" y1="420" x2="80" y2="110" stroke="#556" stroke-width="1.3"/>
+  <text x="878" y="442" font-size="11" fill="#556">方位角 / °</text>
+  <text x="42" y="116" font-size="11" fill="#556">/ dB</text>
+  <g font-family="Consolas,monospace" font-size="9.5" fill="#667">
+    <text x="66" y="424">-60</text><text x="220" y="424">-40</text><text x="380" y="424">-20</text>
+    <text x="480" y="424">0</text><text x="620" y="424">20</text><text x="760" y="424">40</text><text x="866" y="424">60</text>
+    <text x="52" y="420">0</text><text x="46" y="342">-20</text><text x="46" y="264">-40</text><text x="46" y="186">-60</text>
+  </g>
+  <g stroke="#dbe6ea" stroke-width="0.8">
+    <line x1="80" y1="342" x2="900" y2="342"/><line x1="80" y1="264" x2="900" y2="264"/><line x1="80" y1="186" x2="900" y2="186"/>
+  </g>
+
+  <!-- interferer uncertainty region -->
+  <rect x="330" y="110" width="160" height="310" fill="#fdf4ea" opacity="0.7"/>
+  <text x="410" y="128" text-anchor="middle" font-size="10.5" fill="#c96a1f">干扰可能的角度区间（W）</text>
+  <line x1="410" y1="110" x2="410" y2="420" stroke="#c96a1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="410" y="438" text-anchor="middle" font-size="10" fill="#c96a1f">标称干扰方向 θ_i</text>
+
+  <!-- narrow null: point -->
+  <path d="M150,420 C280,300 330,180 355,170 C375,178 395,300 400,330" fill="none" stroke="#8a3a6a" stroke-width="2.2"/>
+  <line x1="400" y1="150" x2="400" y2="420" stroke="#8a3a6a" stroke-width="2.6"/>
+  <path d="M400,150 C408,160 460,300 540,410" fill="none" stroke="#8a3a6a" stroke-width="2.2"/>
+  <text x="200" y="200" font-size="11" fill="#8a3a6a">窄深零陷（点）</text>
+  <text x="200" y="218" font-size="10.5" fill="#8a3a6a">深可 −60 dB，但宽度 ≪ 1°</text>
+
+  <!-- broadened trough -->
+  <path d="M520,420 C560,380 590,360 620,352 C660,344 700,352 740,360 C780,368 830,390 880,410" fill="none" stroke="#0f7a8a" stroke-width="2.6"/>
+  <path d="M330,420 C350,380 370,362 400,355 C440,346 470,348 490,356 C510,364 540,390 560,412" fill="none" stroke="#0f7a8a" stroke-width="2.6"/>
+  <text x="640" y="330" font-size="11" fill="#0f7a8a">展宽后的"宽凹口"</text>
+  <text x="600" y="200" font-size="10.5" fill="#0f7a8a">浅一些（如 −40 dB），</text>
+  <text x="600" y="218" font-size="10.5" fill="#0f7a8a">但覆盖整个不确定区间</text>
+
+  <rect x="60" y="458" width="840" height="60" rx="8" fill="#ffffff" stroke="#dbe6ea"/>
+  <text x="80" y="480" font-size="11" fill="#333">代价的数学形式：CMT 把 R̂ 的副对角线按 sinc 锥削 ⇒ 等效于把"点干扰"替换成"一簇分布干扰"。</text>
+  <text x="80" y="502" font-size="11" fill="#8a3a6a">本质：你放弃了"零陷能多深"的峰值性能，换来"干扰漂到哪都能压住"的覆盖率——一次典型的稳健性交易。</text>
+</svg>

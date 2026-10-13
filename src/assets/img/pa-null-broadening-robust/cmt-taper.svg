@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">协方差矩阵锥削（CMT）：Mailloux / Zatman / Guerci</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">所有零陷展宽方法在数学上都是"对 R̂ 做一次 Hadamard 锥削"</text>
+
+  <!-- matrix taper -->
+  <rect x="30" y="80" width="400" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="230" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">锥削矩阵 T_MZ</text>
+  <!-- matrix grid -->
+  <g stroke="#dbe6ea" stroke-width="0.8">
+    <g>
+      <rect x="70" y="130" width="300" height="220" fill="#f7fbfc"/>
+    </g>
+  </g>
+  <!-- diagonal highlighted -->
+  <line x1="70" y1="130" x2="370" y2="350" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="220" y="248" text-anchor="middle" font-size="10" fill="#0f7a8a" transform="rotate(36 220 248)">主对角线 = 1（不衰减）</text>
+  <text x="300" y="160" font-size="9.5" fill="#8a3a6a">副对角线按 sinc 衰减</text>
+  <!-- off diagonal gradient blocks -->
+  <g fill="#8a3a6a" opacity="0.5">
+    <rect x="76" y="136" width="16" height="16"/><rect x="94" y="136" width="16" height="16"/>
+    <rect x="76" y="154" width="16" height="16"/>
+  </g>
+  <g fill="#8a3a6a" opacity="0.25">
+    <rect x="130" y="136" width="16" height="16"/><rect x="148" y="136" width="16" height="16"/>
+    <rect x="94" y="172" width="16" height="16"/>
+  </g>
+  <text x="230" y="378" text-anchor="middle" font-family="Consolas,monospace" font-size="11.5" fill="#3a2f3a">[T_MZ]_mn = sinc( (m−n)Δ / π )</text>
+  <text x="230" y="400" text-anchor="middle" font-family="Consolas,monospace" font-size="11.5" fill="#8a4a1f">Δ = π d W / λ　（W 为零陷宽度）</text>
+  <text x="230" y="424" text-anchor="middle" font-size="10.5" fill="#667">Δ 越大 → 零陷越宽 → 也越浅</text>
+
+  <!-- three methods -->
+  <rect x="460" y="80" width="470" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="695" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">三种"同一件事"的表述</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="480" y="120" width="430" height="56" rx="6" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="492" y="140" fill="#8a3a6a">Mailloux (1995)：虚拟干扰簇</text>
+    <text x="492" y="160" fill="#333">在干扰周围分布一"簇"等功率虚拟干扰</text>
+    <rect x="480" y="186" width="430" height="56" rx="6" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="492" y="206" fill="#4a7a3a">Zatman (1995)：色散合成</text>
+    <text x="492" y="226" fill="#333">用"一定带宽的干扰"替换窄带干扰</text>
+    <rect x="480" y="252" width="430" height="56" rx="6" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="492" y="272" fill="#0f7a8a">Guerci：协方差锥削（CMT）统一定义</text>
+    <text x="492" y="292" fill="#333">R_taper = R ⊙ T，两者等价</text>
+  </g>
+  <text x="695" y="330" text-anchor="middle" font-size="10.5" fill="#333">导数约束法在 Zatman 的工作中被证明</text>
+  <text x="695" y="350" text-anchor="middle" font-size="10.5" fill="#333">可等价实现为一种 CMT。</text>
+  <text x="695" y="370" text-anchor="middle" font-size="10.5" fill="#8a3a6a">⇒ 实现上：只要在求逆前对 R̂ 逐元素乘一张 T 即可。</text>
+
+  <!-- bottom -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">工程实现与代价</text>
+  <text x="60" y="450" font-family="Consolas,monospace" font-size="11" fill="#333">R_taper = R̂ ⊙ T_MZ　然后照常解 w = R_taper⁻¹a / (aᴴ R_taper⁻¹ a)</text>
+  <text x="60" y="474" font-size="11.5" fill="#333">代价① 零陷变浅（用一点深度换宽度）；代价② 主瓣略有展宽、增益略降；③ Δ 需与干扰漂移速度匹配。</text>
+  <text x="60" y="496" font-size="11.5" fill="#8a3a6a">大阵注意：全阵 CMT 需 N×N 逐元素乘（N² 代价）；工程上常"部分自适应降维"后再锥削——两难并存。</text>
+</svg>

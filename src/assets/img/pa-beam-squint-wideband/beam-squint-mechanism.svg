@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">波束斜视的成因：相位与频率被"绑死"</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">移相器给的是"固定相位"，而正确的配相应随频率线性变化</text>
+
+  <!-- left: phase shifter case -->
+  <rect x="30" y="80" width="440" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="250" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">移相器：Δφ 恒定，指向随 f 变</text>
+
+  <!-- array -->
+  <line x1="70" y1="270" x2="430" y2="270" stroke="#0f7a8a" stroke-width="1.8"/>
+  <g fill="#dceff2" stroke="#0f7a8a">
+    <circle cx="90" cy="270" r="7"/><circle cx="150" cy="270" r="7"/><circle cx="210" cy="270" r="7"/>
+    <circle cx="270" cy="270" r="7"/><circle cx="330" cy="270" r="7"/><circle cx="390" cy="270" r="7"/>
+  </g>
+  <!-- beams at three frequencies -->
+  <g stroke="#c96a1f" stroke-width="2">
+    <line x1="240" y1="270" x2="150" y2="130"/>
+  </g>
+  <g stroke="#0f7a8a" stroke-width="2">
+    <line x1="240" y1="270" x2="240" y2="130"/>
+  </g>
+  <g stroke="#4a7a3a" stroke-width="2">
+    <line x1="240" y1="270" x2="330" y2="130"/>
+  </g>
+  <text x="120" y="126" font-size="10" fill="#c96a1f">f_low → 偏</text>
+  <text x="248" y="126" font-size="10" fill="#0f7a8a">f_0 → 正指</text>
+  <text x="352" y="126" font-size="10" fill="#4a7a3a">f_high → 偏</text>
+
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <text x="52" y="300" fill="#3a2f3a">Δφ(f) = const = 2π f_0 Δt</text>
+    <text x="52" y="322" fill="#8a3a6a">⇒ 实际时延 Δt' = Δφ /(2π f) ∝ 1/f</text>
+    <text x="52" y="344" fill="#8a3a6a">⇒ 频率越高，等效时延越小，指向越窄</text>
+  </g>
+  <rect x="52" y="356" width="396" height="30" rx="5" fill="#fbf3f7" stroke="#e5d3de"/>
+  <text x="62" y="376" font-family="Consolas,monospace" font-size="10.5" fill="#8a3a6a">Δθ ≈ tanθ_0 · (Δf / f_0)　（峰值斜视角）</text>
+
+  <!-- right: TTD case -->
+  <rect x="500" y="80" width="430" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="715" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">真时延 TTD：Δt 恒定，指向不随 f 变</text>
+  <line x1="540" y1="270" x2="890" y2="270" stroke="#0f7a8a" stroke-width="1.8"/>
+  <g fill="#dceff2" stroke="#0f7a8a">
+    <circle cx="560" cy="270" r="7"/><circle cx="620" cy="270" r="7"/><circle cx="680" cy="270" r="7"/>
+    <circle cx="740" cy="270" r="7"/><circle cx="800" cy="270" r="7"/><circle cx="860" cy="270" r="7"/>
+  </g>
+  <!-- three beams overlapping at same direction -->
+  <g stroke="#c96a1f" stroke-width="2"><line x1="720" y1="270" x2="700" y2="130"/></g>
+  <g stroke="#0f7a8a" stroke-width="2"><line x1="720" y1="270" x2="700" y2="130"/></g>
+  <g stroke="#4a7a3a" stroke-width="2"><line x1="720" y1="270" x2="700" y2="130"/></g>
+  <text x="660" y="126" font-size="10" fill="#0f7a8a">三个频点指向同一方向</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <text x="522" y="300" fill="#3a2f3a">Δt(f) = const = d·sinθ_0 / c</text>
+    <text x="522" y="322" fill="#0f7a8a">⇒ Δφ(f) = 2π f Δt 随 f 线性增长</text>
+    <text x="522" y="344" fill="#0f7a8a">⇒ 全频带同相叠加 ⇒ 无斜视</text>
+  </g>
+  <rect x="522" y="356" width="386" height="30" rx="5" fill="#f7fbfc" stroke="#dbe6ea"/>
+  <text x="532" y="376" font-family="Consolas,monospace" font-size="10.5" fill="#0f7a8a">斜视 ∝ (Δf/f_0)·tanθ_0　⇒ TTD 从根上消掉它</text>
+
+  <!-- bottom numbers -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">几个工程数字（帮助建立量级感）</text>
+  <text x="60" y="450" font-size="11.5" fill="#333">· 载波 3 GHz、IBW 100 MHz、扫描 ±30° ⇒ 最坏斜视约 1.15°；改成 ±60°、IBW 200 MHz ⇒ 约 8.11°。</text>
+  <text x="60" y="472" font-size="11.5" fill="#333">· 6 位移相器 LSB 5.625°；在 10 GHz 上等效约 1.5 ps 时延步进（换成 TTD 需 ≤ 1.5 ps 分辨率）。</text>
+  <text x="60" y="494" font-size="11.5" fill="#8a3a6a">· 判断"要不要 TTD"：看 Δθ 是否与波束宽度可比——高增益窄波束阵对斜视最敏感。</text>
+</svg>

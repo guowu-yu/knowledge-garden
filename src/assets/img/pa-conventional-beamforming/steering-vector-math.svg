@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">阵列流形与导向矢量：配相的数学来源</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">导向矢量 a(θ) 就是"某个方向来波在各阵元上的相位分布"</text>
+
+  <!-- geometry -->
+  <rect x="30" y="80" width="440" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="250" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">几何：波程差 → 相位差</text>
+
+  <!-- elements -->
+  <line x1="70" y1="250" x2="430" y2="250" stroke="#0f7a8a" stroke-width="2"/>
+  <g fill="#dceff2" stroke="#0f7a8a">
+    <circle cx="90" cy="250" r="7"/><circle cx="150" cy="250" r="7"/><circle cx="210" cy="250" r="7"/>
+    <circle cx="270" cy="250" r="7"/><circle cx="330" cy="250" r="7"/><circle cx="390" cy="250" r="7"/>
+  </g>
+  <g font-family="Consolas,monospace" font-size="9" fill="#0f7a8a" text-anchor="middle">
+    <text x="90" y="272">n=0</text><text x="150" y="272">1</text><text x="210" y="272">2</text>
+    <text x="270" y="272">3</text><text x="330" y="272">4</text><text x="390" y="272">n=N-1</text>
+  </g>
+  <text x="118" y="232" text-anchor="middle" font-size="10" fill="#c96a1f">d</text>
+  <line x1="90" y1="228" x2="150" y2="228" stroke="#c96a1f" stroke-width="1.2"/>
+
+  <!-- incoming plane wave -->
+  <g stroke="#c96a1f" stroke-width="2" opacity="0.85">
+    <line x1="120" y1="120" x2="300" y2="220"/>
+    <line x1="160" y1="120" x2="340" y2="220"/>
+    <line x1="200" y1="120" x2="380" y2="220"/>
+  </g>
+  <g stroke="#c96a1f" stroke-width="1.2" opacity="0.7">
+    <line x1="132" y1="128" x2="312" y2="228"/>
+    <line x1="172" y1="128" x2="352" y2="228"/>
+  </g>
+  <text x="360" y="140" font-size="11" fill="#c96a1f">来波方向 θ</text>
+  <line x1="240" y1="180" x2="240" y2="250" stroke="#8a3a6a" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <path d="M240,214 A26,26 0 0 0 220,232" fill="none" stroke="#8a3a6a" stroke-width="1.3"/>
+  <text x="212" y="212" font-size="11" fill="#8a3a6a">θ</text>
+
+  <!-- formulas -->
+  <g font-family="Consolas,monospace" font-size="10.5" fill="#333">
+    <text x="60" y="308">Δr = d · sinθ</text>
+    <text x="60" y="330">Δφ = 2π Δr / λ = 2π d sinθ / λ</text>
+    <text x="60" y="352">a_n(θ) = exp( j · n · 2π d sinθ / λ )</text>
+  </g>
+  <text x="250" y="374" text-anchor="middle" font-size="10" fill="#667">平面波假设：远场（R &gt; 2D²/λ），见专题 4</text>
+
+  <!-- steering vector -->
+  <rect x="500" y="80" width="430" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="715" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">导向矢量与权值</text>
+  <g font-family="Consolas,monospace" font-size="11" fill="#3a2f3a">
+    <text x="520" y="134">a(θ₀) = [ 1, e^{jψ}, e^{j2ψ}, …, e^{j(N-1)ψ} ]ᵀ</text>
+    <text x="520" y="156" fill="#8a4a1f">ψ = 2π d sinθ₀ / λ　（相邻阵元递进相位）</text>
+  </g>
+  <line x1="520" y1="172" x2="910" y2="172" stroke="#dbe6ea" stroke-width="1"/>
+  <g font-family="Consolas,monospace" font-size="11" fill="#3a2f3a">
+    <text x="520" y="196">常规（配相）权值：</text>
+    <text x="520" y="220" fill="#0f7a8a">w = a*(θ₀) / N</text>
+    <text x="520" y="244" fill="#667">即每通道只补偿一个相位 −nψ，</text>
+    <text x="520" y="264" fill="#667">使来波在求和点同相叠加。</text>
+  </g>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="520" y="282" width="390" height="26" rx="4" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="532" y="299" fill="#4a7a3a">|w_n| = 1/N　→ 恒模约束（模拟移相器只需相位）</text>
+    <rect x="520" y="312" width="390" height="26" rx="4" fill="#fbf3f7" stroke="#e5d3de"/>
+    <text x="532" y="329" fill="#8a3a6a">加窗后：w_n = a_n*(θ₀) · g_n / Σg，g_n 为窗系数</text>
+  </g>
+  <text x="715" y="362" text-anchor="middle" font-size="10.5" fill="#333">注意：扫描只是"给相位加一个线性斜坡"（空间频移）</text>
+
+  <!-- key insight -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">三个必须记牢的等价关系</text>
+  <text x="60" y="452" font-size="11.5" fill="#333">① 扫描 = 给激励施加线性相位斜坡 ⇔ 空间域"频移"（空间频率 u = sinθ）——见专题 2。</text>
+  <text x="60" y="476" font-size="11.5" fill="#333">② 阵列因子 = 激励序列的 DFT ⇒ 配相后的方向图就是"把 sinc 搬到目标角度"。</text>
+  <text x="60" y="500" font-size="11.5" fill="#8a3a6a">③ 加窗 = 空间域加权 ⇒ 副瓣降低、主瓣展宽、增益下降（见专题 10 的权衡）。</text>
+</svg>

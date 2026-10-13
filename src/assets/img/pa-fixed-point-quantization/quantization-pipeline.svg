@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">定点化链路：位宽在每一级怎么长</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">浮点仿真通过 ≠ 能上硬件；位宽必须逐级设计、逐级验证</text>
+
+  <!-- chain -->
+  <rect x="30" y="80" width="900" height="200" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">数据通路位宽演进（示例：数据 14 bit、权值 12 bit、N=64）</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="50" y="122" width="140" height="60" rx="6" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="120" y="146" text-anchor="middle" fill="#0f7a8a">ADC / I-Q 数据</text>
+    <text x="120" y="166" text-anchor="middle" fill="#667">14 bit (Q1.13)</text>
+
+    <rect x="220" y="122" width="140" height="60" rx="6" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="290" y="146" text-anchor="middle" fill="#4a7a3a">权值（离线量化）</text>
+    <text x="290" y="166" text-anchor="middle" fill="#667">12 bit (Q1.11)</text>
+
+    <rect x="390" y="122" width="170" height="60" rx="6" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="475" y="146" text-anchor="middle" fill="#c96a1f">复乘输出</text>
+    <text x="475" y="166" text-anchor="middle" fill="#667">14+12 ≈ 27 bit（含符号）</text>
+
+    <rect x="590" y="122" width="150" height="60" rx="6" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="665" y="146" text-anchor="middle" fill="#8a3a6a">Σ 累加（N=64）</text>
+    <text x="665" y="166" text-anchor="middle" fill="#667">+ log₂64 = 6 保护位</text>
+
+    <rect x="770" y="122" width="140" height="60" rx="6" fill="#ffffff" stroke="#0f7a8a"/>
+    <text x="840" y="146" text-anchor="middle" fill="#0f7a8a">波束输出</text>
+    <text x="840" y="166" text-anchor="middle" fill="#667">舍入回 16 bit</text>
+  </g>
+  <g stroke="#556" stroke-width="1.4">
+    <line x1="190" y1="152" x2="218" y2="152"/><line x1="360" y1="152" x2="388" y2="152"/>
+    <line x1="560" y1="152" x2="588" y2="152"/><line x1="740" y1="152" x2="768" y2="152"/>
+  </g>
+  <text x="480" y="212" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#333">SQNR ≈ 6.02·B + 1.76 dB　（B = 小数位数）</text>
+  <text x="480" y="236" text-anchor="middle" font-size="10.5" fill="#333">波束形成后：SQNR_beam ≈ SQNR_元素 + 10·log₁₀(N)（信号相干相加，量化噪声非相干相加）</text>
+  <text x="480" y="258" text-anchor="middle" font-size="10.5" fill="#4a7a3a">例：14 bit 数据（86 dB）+ N=64（+18 dB）⇒ 约 104 dB 有效 SQNR</text>
+
+  <!-- three steps -->
+  <rect x="30" y="296" width="290" height="216" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="175" y="320" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">三步走方法论</text>
+  <text x="46" y="346" font-size="11" fill="#333">① 建立浮点参考（golden）</text>
+  <text x="46" y="366" font-size="10.5" fill="#667">先保证算法在双精度下正确、指标达标。</text>
+  <text x="46" y="392" font-size="11" fill="#333">② 逐级量化，找主导误差</text>
+  <text x="46" y="412" font-size="10.5" fill="#667">每次只量化一级，看指标掉多少；</text>
+  <text x="46" y="430" font-size="10.5" fill="#667">掉得最多的那一级 = 主导误差源。</text>
+  <text x="46" y="456" font-size="11" fill="#333">③ 位宽压缩到"刚好够"</text>
+  <text x="46" y="476" font-size="10.5" fill="#667">在指标留余量的前提下压到最小位宽，</text>
+  <text x="46" y="494" font-size="10.5" fill="#667">省 LUT/FF/DSP/功耗。</text>
+
+  <rect x="335" y="296" width="290" height="216" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="320" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">经验起点（量级参考）</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="352" y="334" width="256" height="34" rx="5" fill="#fdf4ea" stroke="#e0c3a3"/>
+    <text x="362" y="355" fill="#8a4a1f">数据 I/Q：12 ~ 14 bit</text>
+    <rect x="352" y="372" width="256" height="34" rx="5" fill="#f0f7ee" stroke="#c8dcc0"/>
+    <text x="362" y="393" fill="#3f6320">权值：10 ~ 12 bit</text>
+    <rect x="352" y="410" width="256" height="34" rx="5" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="362" y="431" fill="#0f5a66">累加保护位：6 ~ 8 bit</text>
+  </g>
+  <text x="480" y="466" text-anchor="middle" font-size="10.5" fill="#333">雷达 14~16 bit 数据 / 14~16 bit 权值 / 32~48 bit 累加</text>
+  <text x="480" y="486" text-anchor="middle" font-size="10.5" fill="#333">通信 12~14 bit 数据 / 12 bit 权值（动态范围要求低）</text>
+  <text x="480" y="504" text-anchor="middle" font-size="10.5" fill="#8a3a6a">电子战/射电天文：14~16 bit ADC + 32~48 bit 处理</text>
+
+  <rect x="640" y="296" width="290" height="216" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="785" y="320" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">位宽不足的两个"症状"</text>
+  <text x="656" y="348" font-size="11" fill="#8a3a6a">症状① 副瓣抬高</text>
+  <text x="656" y="368" font-size="10.5" fill="#667">权值位宽不足 ⇒ 加窗失效，</text>
+  <text x="656" y="386" font-size="10.5" fill="#667">副瓣"反弹"，且"先在最深零陷暴露"。</text>
+  <text x="656" y="414" font-size="11" fill="#0f7a8a">症状② 突发杂散</text>
+  <text x="656" y="434" font-size="10.5" fill="#667">累加器溢出 ⇒ 输出出现突发</text>
+  <text x="656" y="452" font-size="10.5" fill="#667">尖峰/削顶，频谱出杂散。</text>
+  <text x="656" y="478" font-size="10.5" fill="#4a7a3a">对策：加保护位、饱和处理、</text>
+  <text x="656" y="496" font-size="10.5" fill="#4a7a3a">块浮点 / 动态缩放。</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">权值位宽 → 副瓣与零陷深度</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">位宽不足最先毁掉的不是主瓣，而是"最深零陷"与"低副瓣"</text>
+
+  <!-- left chart: sidelobe vs bits -->
+  <rect x="30" y="80" width="440" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="250" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">权值位数 vs 副瓣/零陷</text>
+  <line x1="80" y1="330" x2="440" y2="330" stroke="#556" stroke-width="1.3"/>
+  <line x1="80" y1="330" x2="80" y2="150" stroke="#556" stroke-width="1.3"/>
+  <text x="420" y="350" font-size="10" fill="#667">权值位数</text>
+  <text x="34" y="156" font-size="10" fill="#667">dB</text>
+  <g font-family="Consolas,monospace" font-size="9.5" fill="#667">
+    <text x="96" y="346">8</text><text x="166" y="346">10</text><text x="236" y="346">12</text><text x="306" y="346">14</text><text x="376" y="346">16</text>
+    <text x="52" y="332">0</text><text x="46" y="290">-20</text><text x="46" y="250">-40</text><text x="46" y="210">-60</text>
+  </g>
+  <g stroke="#dbe6ea" stroke-width="0.8">
+    <line x1="80" y1="290" x2="440" y2="290"/><line x1="80" y1="250" x2="440" y2="250"/><line x1="80" y1="210" x2="440" y2="210"/>
+  </g>
+  <!-- sidelobe curve -->
+  <path d="M100,238 C150,240 190,232 236,226 C290,218 340,214 430,212" fill="none" stroke="#c96a1f" stroke-width="2.4"/>
+  <text x="150" y="264" font-size="10" fill="#c96a1f">副瓣电平</text>
+  <!-- null depth curve -->
+  <path d="M100,282 C160,272 210,250 250,236 C300,222 360,212 430,208" fill="none" stroke="#8a3a6a" stroke-width="2.4" stroke-dasharray="6 4"/>
+  <text x="290" y="286" font-size="10" fill="#8a3a6a">零陷深度</text>
+  <text x="250" y="372" text-anchor="middle" font-size="10.5" fill="#333">位数越少 ⇒ 幅相量化误差越大 ⇒ 副瓣抬高、零陷变浅。</text>
+  <text x="250" y="392" text-anchor="middle" font-size="10.5" fill="#8a3a6a">文献量级：权值 12→8 bit，零陷深度可退化约 24 dB。</text>
+
+  <!-- right: required bits -->
+  <rect x="490" y="80" width="440" height="300" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="710" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">"要多少位"由指标反推</text>
+  <text x="508" y="132" font-size="11" fill="#333">目标副瓣 −40 dB 需要：</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="508" y="146" width="404" height="30" rx="5" fill="#f0f7ee" stroke="#dbe6ea"/>
+    <text x="518" y="166" fill="#3f6320">幅度精度 ≈ 0.1 dB</text>
+    <rect x="508" y="182" width="404" height="30" rx="5" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="518" y="202" fill="#0f5a66">相位精度 ≈ 0.5°</text>
+    <rect x="508" y="218" width="404" height="30" rx="5" fill="#fdf4ea" stroke="#e0c3a3"/>
+    <text x="518" y="238" fill="#8a4a1f">⇒ 复权值约 12 bit（经验换算）</text>
+  </g>
+  <text x="508" y="276" font-size="11" fill="#333">一句话口径：</text>
+  <text x="508" y="298" font-size="10.5" fill="#333">· 副瓣目标每压 6 dB ⇒ 相位/幅度精度大致要提一档；</text>
+  <text x="508" y="318" font-size="10.5" fill="#333">· 零陷深度比副瓣对位宽更敏感（差一位可能差十几 dB）；</text>
+  <text x="508" y="338" font-size="10.5" fill="#8a3a6a">· 所以"零陷指标"往往决定权值位宽，而不是主瓣指标。</text>
+  <text x="710" y="368" text-anchor="middle" font-size="10.5" fill="#4a7a3a">大阵的安慰：量化误差随 N 平均 ⇒ 大阵对位宽略宽容（但零陷仍敏感）。</text>
+
+  <!-- bottom -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">为什么"零陷最先暴露"</text>
+  <text x="60" y="450" font-size="11.5" fill="#333">零陷是"多个通道精确对消"的结果：幅度/相位误差会直接破坏对消条件，误差按 dB 线性转化为"零陷变浅"。</text>
+  <text x="60" y="472" font-size="11.5" fill="#333">而主瓣是"多个通道同相相加"，对误差的敏感度低得多（近似平方法则）。</text>
+  <text x="60" y="494" font-size="11.5" fill="#8a3a6a">⇒ 验收时"先看零陷、再看副瓣、最后看主瓣"，是最省时间的定点化调试顺序。</text>
+</svg>

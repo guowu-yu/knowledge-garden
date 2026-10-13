@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">三条消斜视路径：TTD / 子阵TTD+移相 / 数字子带</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">按"自由度放在哪一级"分档，成本与性能同步变化</text>
+
+  <!-- path 1 -->
+  <rect x="30" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="175" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">① 阵元级 TTD</text>
+  <text x="46" y="130" font-size="10.5" fill="#333">每个阵元配一个真时延单元</text>
+  <!-- elements with TTD -->
+  <g fill="#dceff2" stroke="#0f7a8a">
+    <rect x="70" y="150" width="40" height="24" rx="4"/><rect x="130" y="150" width="40" height="24" rx="4"/>
+    <rect x="190" y="150" width="40" height="24" rx="4"/><rect x="250" y="150" width="40" height="24" rx="4"/>
+  </g>
+  <g font-size="9" fill="#0f7a8a" text-anchor="middle"><text x="90" y="166">TTD</text><text x="150" y="166">TTD</text><text x="210" y="166">TTD</text><text x="270" y="166">TTD</text></g>
+  <g fill="#fdf4ea" stroke="#c96a1f">
+    <rect x="70" y="196" width="40" height="26" rx="4"/><rect x="130" y="196" width="40" height="26" rx="4"/>
+    <rect x="190" y="196" width="40" height="26" rx="4"/><rect x="250" y="196" width="40" height="26" rx="4"/>
+  </g>
+  <line x1="90" y1="174" x2="90" y2="196" stroke="#0f7a8a"/><line x1="150" y1="174" x2="150" y2="196" stroke="#0f7a8a"/>
+  <line x1="210" y1="174" x2="210" y2="196" stroke="#0f7a8a"/><line x1="270" y1="174" x2="270" y2="196" stroke="#0f7a8a"/>
+  <text x="175" y="248" text-anchor="middle" font-size="10.5" fill="#333">性能最好：全带无斜视</text>
+  <text x="46" y="274" font-size="10.5" fill="#8a3a6a">· 时延覆盖 = 全阵最大时延差</text>
+  <text x="46" y="294" font-size="10.5" fill="#8a3a6a">　（大阵可达 ns 级）</text>
+  <text x="46" y="316" font-size="10.5" fill="#8a3a6a">· 插损大、体积大、成本最高</text>
+  <text x="46" y="338" font-size="10.5" fill="#667">· 难以塞进阵元间距内</text>
+  <text x="46" y="360" font-size="10.5" fill="#4a7a3a">适用：宽 IBW、高价值、阵元数适中</text>
+  <text x="175" y="392" text-anchor="middle" font-size="10.5" fill="#667">（交叉极化场景还需阵元级移相器配套）</text>
+
+  <!-- path 2 -->
+  <rect x="335" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">② 子阵级 TTD + 阵元级移相</text>
+  <text x="351" y="130" font-size="10.5" fill="#333">子阵间粗时延，子阵内细移相</text>
+  <!-- two subarrays -->
+  <g fill="#f0f7ee" stroke="#4a7a3a">
+    <rect x="360" y="150" width="110" height="70" rx="8"/><rect x="490" y="150" width="110" height="70" rx="8"/>
+  </g>
+  <g fill="#ffffff" stroke="#c96a1f">
+    <rect x="372" y="168" width="20" height="20" rx="3"/><rect x="398" y="168" width="20" height="20" rx="3"/><rect x="424" y="168" width="20" height="20" rx="3"/>
+    <rect x="372" y="192" width="20" height="20" rx="3"/><rect x="398" y="192" width="20" height="20" rx="3"/><rect x="424" y="192" width="20" height="20" rx="3"/>
+    <rect x="502" y="168" width="20" height="20" rx="3"/><rect x="528" y="168" width="20" height="20" rx="3"/><rect x="554" y="168" width="20" height="20" rx="3"/>
+  </g>
+  <rect x="395" y="150" width="40" height="22" rx="4" fill="#0f7a8a" stroke="#0a5a66"/>
+  <text x="415" y="165" text-anchor="middle" font-size="9" fill="#fff">TTD</text>
+  <rect x="525" y="150" width="40" height="22" rx="4" fill="#0f7a8a" stroke="#0a5a66"/>
+  <text x="545" y="165" text-anchor="middle" font-size="9" fill="#fff">TTD</text>
+  <text x="480" y="248" text-anchor="middle" font-size="10.5" fill="#333">工程最常用：成本与性能平衡</text>
+  <text x="351" y="274" font-size="10.5" fill="#333">· TTD 只覆盖"子阵间"时延差（小）</text>
+  <text x="351" y="294" font-size="10.5" fill="#4a7a3a">· 子阵内用移相器 ⇒ 仍略有残余斜视</text>
+  <text x="351" y="316" font-size="10.5" fill="#4a7a3a">· 子阵波束较宽 ⇒ 对斜视更容忍</text>
+  <text x="351" y="338" font-size="10.5" fill="#667">· TTD 分辨率要求被放宽</text>
+  <text x="351" y="360" font-size="10.5" fill="#8a3a6a">代价：子阵栅瓣、子阵级扫描损耗</text>
+  <text x="480" y="392" text-anchor="middle" font-size="10.5" fill="#667">ADI/RF 器件的主流方案</text>
+
+  <!-- path 3 -->
+  <rect x="640" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="785" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">③ 数字域子带补偿</text>
+  <text x="656" y="130" font-size="10.5" fill="#333">各频点独立加权（数字波束成形）</text>
+  <!-- freq bins -->
+  <g font-family="Consolas,monospace" font-size="9.5">
+    <rect x="660" y="146" width="250" height="26" rx="4" fill="#fbf3f7" stroke="#e5d3de"/>
+    <text x="670" y="163" fill="#8a3a6a">f_1 : w(θ₀, f_1)</text>
+    <rect x="660" y="176" width="250" height="26" rx="4" fill="#ffffff" stroke="#e5d3de"/>
+    <text x="670" y="193" fill="#8a3a6a">f_2 : w(θ₀, f_2)</text>
+    <rect x="660" y="206" width="250" height="26" rx="4" fill="#fbf3f7" stroke="#e5d3de"/>
+    <text x="670" y="223" fill="#8a3a6a">f_3 : w(θ₀, f_3)</text>
+    <text x="785" y="252" text-anchor="middle" fill="#667">⋮（子带数 = 处理带宽 / 子带带宽）</text>
+  </g>
+  <text x="656" y="280" font-size="10.5" fill="#8a3a6a">· 只有数字波束成形架构可行</text>
+  <text x="656" y="300" font-size="10.5" fill="#8a3a6a">· 需每阵元/子阵独立数字通道</text>
+  <text x="656" y="322" font-size="10.5" fill="#0f7a8a">· 全频段精确补偿，无斜视</text>
+  <text x="656" y="344" font-size="10.5" fill="#8a3a6a">· 代价：数据率、功耗、控面负荷 × 子带数</text>
+  <text x="656" y="366" font-size="10.5" fill="#4a7a3a">适用：全数字架构、中小阵、高价值载荷</text>
+
+  <!-- bottom -->
+  <rect x="30" y="430" width="900" height="82" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="454" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">选型决策</text>
+  <text x="60" y="478" font-size="11.5" fill="#333">先算"峰值斜视角 Δθ"：若 Δθ ≪ 波束宽度 ⇒ 移相器即可；Δθ ~ 波束宽度 ⇒ 必须消斜视。</text>
+  <text x="60" y="500" font-size="11.5" fill="#8a3a6a">高增益窄波束（大阵）对斜视最敏感 ⇒ 大阵 + 宽带 = TTD 或数字子带；中小阵 + 窄带 = 移相器足够。</text>
+</svg>

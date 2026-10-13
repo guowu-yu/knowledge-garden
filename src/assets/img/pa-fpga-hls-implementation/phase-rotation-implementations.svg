@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">相位旋转的三种实现：复数乘 / CORDIC / 查表</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">"把 x 旋转 φ"在硬件里有三条路，按精度、资源、吞吐各有权衡</text>
+
+  <!-- method 1 -->
+  <rect x="30" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="175" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">① 复数乘法（最直接）</text>
+  <text x="46" y="132" font-family="Consolas,monospace" font-size="10.5" fill="#3a2f3a">y = x · w = x · e^{jφ}</text>
+  <text x="46" y="156" font-family="Consolas,monospace" font-size="10.5" fill="#667">= (x_I + j x_Q)(w_I + j w_Q)</text>
+  <g font-family="Consolas,monospace" font-size="10">
+    <rect x="46" y="172" width="258" height="24" rx="4" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="56" y="188" fill="#0f7a8a">y_I = x_I w_I − x_Q w_Q</text>
+    <rect x="46" y="200" width="258" height="24" rx="4" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="56" y="216" fill="#0f7a8a">y_Q = x_I w_Q + x_Q w_I</text>
+  </g>
+  <text x="46" y="248" font-size="10.5" fill="#333">· 4 实乘 + 2 实加（或 3 乘优化）</text>
+  <text x="46" y="268" font-size="10.5" fill="#4a7a3a">· 直接映射到 DSP48/DSP58</text>
+  <text x="46" y="288" font-size="10.5" fill="#4a7a3a">· 精度最好、无迭代误差</text>
+  <text x="46" y="308" font-size="10.5" fill="#333">· 资源：DSP 数量 = O(通道数)</text>
+  <text x="46" y="332" font-size="10.5" fill="#0f7a8a">· 适合：权值已知、需高吞吐</text>
+  <text x="175" y="362" text-anchor="middle" font-size="10.5" fill="#8a3a6a">权值需先算好 cosφ/sinφ（查表或控面给）</text>
+  <text x="175" y="386" text-anchor="middle" font-size="10.5" fill="#667">最常用：数字波束成形的标准做法</text>
+
+  <!-- method 2 -->
+  <rect x="335" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">② CORDIC（迭代旋转）</text>
+  <text x="351" y="132" font-size="10.5" fill="#333">用"一系列固定角度的小旋转"逼近目标角：</text>
+  <text x="351" y="154" font-family="Consolas,monospace" font-size="10.5" fill="#3a2f3a">φ ≈ Σ ± arctan(2^−i)</text>
+  <!-- rotation ladder -->
+  <g font-family="Consolas,monospace" font-size="9.5">
+    <rect x="351" y="170" width="258" height="22" rx="4" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="361" y="185" fill="#3f6320">i=0: ±45°</text>
+    <rect x="351" y="196" width="258" height="22" rx="4" fill="#ffffff" stroke="#4a7a3a"/>
+    <text x="361" y="211" fill="#3f6320">i=1: ±26.57°</text>
+    <rect x="351" y="222" width="258" height="22" rx="4" fill="#ffffff" stroke="#4a7a3a"/>
+    <text x="361" y="237" fill="#3f6320">i=2: ±14.04° …</text>
+    <rect x="351" y="248" width="258" height="22" rx="4" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="361" y="263" fill="#3f6320">每级仅需移位 + 加/减</text>
+  </g>
+  <text x="351" y="290" font-size="10.5" fill="#333">· 无需乘法器（只用移位+加法）</text>
+  <text x="351" y="310" font-size="10.5" fill="#4a7a3a">· 适合：需在线算相位（如旋转到任意角）</text>
+  <text x="351" y="330" font-size="10.5" fill="#8a3a6a">· 增益 K ≈ 1.647 必须预缩放或后补偿</text>
+  <text x="351" y="352" font-size="10.5" fill="#8a3a6a">· 位宽须留保护位：M + ⌈log₂N_iter⌉</text>
+  <text x="480" y="380" text-anchor="middle" font-size="10.5" fill="#333">迭代次数 = 精度；(Zynq 上常用 DSP 做后补偿)</text>
+  <text x="480" y="400" text-anchor="middle" font-size="10.5" fill="#667">成熟 IP：可流水化成"每周期出结果"</text>
+
+  <!-- method 3 -->
+  <rect x="640" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="785" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">③ 查表（LUT）</text>
+  <text x="656" y="132" font-size="10.5" fill="#333">按相位码索引预先算好的 cos/sin：</text>
+  <g font-family="Consolas,monospace" font-size="10">
+    <rect x="656" y="148" width="258" height="26" rx="4" fill="#fbf3f7" stroke="#e5d3de"/>
+    <text x="666" y="166" fill="#8a3a6a">LUT[φ_code] → (cosφ, sinφ)</text>
+    <rect x="656" y="180" width="258" height="26" rx="4" fill="#ffffff" stroke="#e5d3de"/>
+    <text x="666" y="198" fill="#8a3a6a">φ_code = B 位（如 6 bit → 64 项）</text>
+  </g>
+  <text x="656" y="228" font-size="10.5" fill="#333">· 无乘法、无迭代，1 个周期出结果</text>
+  <text x="656" y="248" font-size="10.5" fill="#4a7a3a">· 资源：BRAM/URAM 或 distributed LUT</text>
+  <text x="656" y="268" font-size="10.5" fill="#0f7a8a">· 精度受表的位数与插值限制</text>
+  <text x="656" y="288" font-size="10.5" fill="#8a3a6a">· 多层 LUT / 插值可提升精度</text>
+  <text x="656" y="310" font-size="10.5" fill="#333">· 适合：固定几组权值 / 小角度范围</text>
+  <text x="785" y="338" text-anchor="middle" font-size="10.5" fill="#667">量化相位抖动（dithering）</text>
+  <text x="785" y="356" text-anchor="middle" font-size="10.5" fill="#667">可把离散量化瓣"抹成"随机副瓣底噪</text>
+  <text x="785" y="382" text-anchor="middle" font-size="10.5" fill="#0f7a8a">工程上常与"复数乘法"组合：</text>
+  <text x="785" y="400" text-anchor="middle" font-size="10.5" fill="#0f7a8a">查表给权值 → 乘法做旋转</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">子空间分解：MUSIC 的全部分量都在这张图上</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">对 R̂ 做特征分解，把 N 维空间劈成"信号子空间"与"噪声子空间"</text>
+
+  <!-- eigenvalues -->
+  <rect x="30" y="80" width="480" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="270" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">特征值谱：D 个大特征值 + (N−D) 个小特征值</text>
+  <line x1="70" y1="330" x2="490" y2="330" stroke="#556" stroke-width="1.3"/>
+  <line x1="70" y1="330" x2="70" y2="140" stroke="#556" stroke-width="1.3"/>
+  <text x="460" y="350" font-size="10" fill="#667">特征值序号</text>
+  <text x="34" y="146" font-size="10" fill="#667">λ</text>
+
+  <!-- big eigenvalues -->
+  <g fill="#c96a1f" stroke="#8a4a1f">
+    <rect x="86" y="160" width="26" height="170" rx="3"/>
+    <rect x="120" y="176" width="26" height="154" rx="3"/>
+    <rect x="154" y="196" width="26" height="134" rx="3"/>
+  </g>
+  <text x="132" y="152" text-anchor="middle" font-size="10" fill="#c96a1f">信号子空间 U_s（D 个）</text>
+
+  <!-- small eigenvalues -->
+  <g fill="#0f7a8a" stroke="#0a5a66" opacity="0.85">
+    <rect x="200" y="316" width="20" height="14" rx="2"/><rect x="226" y="316" width="20" height="14" rx="2"/>
+    <rect x="252" y="317" width="20" height="13" rx="2"/><rect x="278" y="316" width="20" height="14" rx="2"/>
+    <rect x="304" y="317" width="20" height="13" rx="2"/><rect x="330" y="316" width="20" height="14" rx="2"/>
+    <rect x="356" y="317" width="20" height="13" rx="2"/><rect x="382" y="316" width="20" height="14" rx="2"/>
+    <rect x="408" y="317" width="20" height="13" rx="2"/><rect x="434" y="316" width="20" height="14" rx="2"/>
+  </g>
+  <text x="340" y="308" text-anchor="middle" font-size="10" fill="#0f7a8a">噪声子空间 U_n（N−D 个，≈ σ²）</text>
+  <line x1="196" y1="150" x2="196" y2="330" stroke="#8a3a6a" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="188" y="252" font-size="10" fill="#8a3a6a" text-anchor="end">判源数 D 的</text>
+  <text x="188" y="268" font-size="10" fill="#8a3a6a" text-anchor="end">分割线</text>
+
+  <text x="70" y="368" font-size="10.5" fill="#333">白噪下：D 个"大"特征值对应信号；其余约等于噪声功率 σ²。</text>
+
+  <!-- orthogonality -->
+  <rect x="530" y="80" width="400" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="730" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">正交性原理（MUSIC 的全部秘密）</text>
+  <text x="548" y="132" font-size="11" fill="#333">真源方向的导向矢量 ⊥ 噪声子空间：</text>
+  <text x="548" y="158" text-anchor="middle" font-family="Consolas,monospace" font-size="12.5" fill="#0f7a8a">a(θ_k)ᴴ U_n = 0　（k=1..D）</text>
+  <line x1="548" y1="176" x2="912" y2="176" stroke="#dbe6ea" stroke-width="1"/>
+  <text x="548" y="200" font-size="11" fill="#333">于是构造伪谱，扫描 θ：</text>
+  <text x="548" y="228" text-anchor="middle" font-family="Consolas,monospace" font-size="12.5" fill="#8a3a6a">P_MUSIC(θ) = 1 / ‖ U_nᴴ a(θ) ‖²</text>
+  <!-- peak illustration -->
+  <line x1="560" y1="320" x2="900" y2="320" stroke="#556" stroke-width="1.1"/>
+  <path d="M566,318 C600,316 620,312 636,304 C646,150 654,150 664,304 C680,312 700,316 730,318 C760,316 780,300 792,150 L800,320 C820,318 860,316 898,318" fill="none" stroke="#0f7a8a" stroke-width="2.2"/>
+  <line x1="650" y1="150" x2="650" y2="320" stroke="#c96a1f" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="792" y1="150" x2="792" y2="320" stroke="#c96a1f" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="650" y="144" text-anchor="middle" font-size="9.5" fill="#c96a1f">θ₁</text>
+  <text x="792" y="144" text-anchor="middle" font-size="9.5" fill="#c96a1f">θ₂</text>
+  <text x="730" y="340" text-anchor="middle" font-size="10" fill="#667">两个尖峰 = 两个来波方向（谱是"伪谱"，峰高无绝对物理意义）</text>
+
+  <!-- bottom -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">MUSIC 的四步流程与代价</text>
+  <text x="60" y="450" font-size="11.5" fill="#333">① 估协方差 R̂ = (1/K) Σ x xᴴ （O(N²K)）　② 特征分解 R̂ = UΛUᴴ （O(N³)）</text>
+  <text x="60" y="472" font-size="11.5" fill="#333">③ 判源数 D（AIC/MDL 或特征值间隔）　④ 扫描 θ，找 P_MUSIC 的 D 个峰</text>
+  <text x="60" y="496" font-size="11.5" fill="#8a3a6a">瓶颈是 O(N³) 特征分解与逐角度扫描（复杂度 O(N²)×角度数）——大阵必须降维（波束域 MUSIC）。</text>
+</svg>

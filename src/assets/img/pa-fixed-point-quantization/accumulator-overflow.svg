@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">累加器溢出：最容易被忽略的一环</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">N 路相加会"长位宽"；不给够保护位 = 突发杂散</text>
+
+  <!-- bit growth -->
+  <rect x="30" y="80" width="440" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="250" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">位宽增长（bit growth）</text>
+  <!-- ladder -->
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="60" y="130" width="120" height="34" rx="5" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="120" y="151" text-anchor="middle" fill="#0f7a8a">16 bit 输入</text>
+    <rect x="200" y="130" width="150" height="34" rx="5" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="275" y="151" text-anchor="middle" fill="#c96a1f">× 权值 → 约 23 bit</text>
+    <rect x="60" y="180" width="290" height="34" rx="5" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="205" y="201" text-anchor="middle" fill="#8a3a6a">Σ N=128 → +log₂128 = +7 bit</text>
+    <rect x="60" y="230" width="290" height="34" rx="5" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="205" y="251" text-anchor="middle" fill="#4a7a3a">⇒ 至少 23 + 7 = 30 bit</text>
+    <rect x="60" y="280" width="290" height="34" rx="5" fill="#ffffff" stroke="#c96a1f"/>
+    <text x="205" y="301" text-anchor="middle" fill="#c96a1f">再加 2~4 bit 保护 ⇒ 32~36 bit</text>
+  </g>
+  <text x="250" y="342" text-anchor="middle" font-size="10.5" fill="#333">经验公式：累加器 ≥ 输入位宽 + ⌈log₂N⌉ + 保护位。</text>
+  <text x="250" y="362" text-anchor="middle" font-size="10.5" fill="#8a3a6a">保护位不为"凑整"——它吸收的是"最坏相干叠加"。</text>
+
+  <!-- overflow consequences -->
+  <rect x="490" y="80" width="440" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="710" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">溢出的后果与三种保护策略</text>
+  <text x="508" y="132" font-size="11" fill="#8a3a6a">后果：输出出现"突发尖峰/削顶"</text>
+  <text x="508" y="152" font-size="10.5" fill="#667">⇒ 时域出现异常幅度，频域出现杂散（spur）。</text>
+  <text x="508" y="178" font-size="11" fill="#333">策略① 加保护位（最直接）</text>
+  <text x="508" y="198" font-size="10.5" fill="#667">累加器位宽 = 输入 + ⌈log₂N⌉ + 2~4 保护位。</text>
+  <text x="508" y="224" font-size="11" fill="#333">策略② 饱和（saturate）而非回绕</text>
+  <text x="508" y="244" font-size="10.5" fill="#667">回绕（wrap）会产生"大幅翻转"（灾难性）；</text>
+  <text x="508" y="262" font-size="10.5" fill="#667">饱和虽然失真但"可控、可诊断"。</text>
+  <text x="508" y="288" font-size="11" fill="#333">策略③ 块浮点 / 动态缩放</text>
+  <text x="508" y="308" font-size="10.5" fill="#667">按块统计动态范围，统一移位数（scale）；</text>
+  <text x="508" y="326" font-size="10.5" fill="#667">牺牲一点精度换位宽效率（FPGA 常用）。</text>
+  <text x="710" y="356" text-anchor="middle" font-size="10.5" fill="#0f7a8a">舍入优先于截断：round 比 truncate 约省 6 dB 量化噪声</text>
+
+  <!-- bottom -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">验证方法：不要用"平均误差"自欺，要用"最坏情况 + 频谱"</text>
+  <text x="60" y="450" font-size="11.5" fill="#333">① 定点 vs 浮点对拍：比较输出 SNR/误差，并"扫参数空间"（不同角度、不同干扰功率、不同快拍）。</text>
+  <text x="60" y="472" font-size="11.5" fill="#333">② 统计"溢出次数"：定点仿真里给累加器加溢出计数器，要求"零溢出"或"溢出可控并饱和"。</text>
+  <text x="60" y="494" font-size="11.5" fill="#8a3a6a">③ 看频谱：量化/溢出会在频谱上留下特征（杂散、底噪抬升），"时域看不出来"的错误常常在频域暴露。</text>
+</svg>

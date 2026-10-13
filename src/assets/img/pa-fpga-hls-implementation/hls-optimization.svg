@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">HLS 优化：从"能跑"到"II=1"的四个杠杆</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">波束形成 IP 的典型优化路径（以 Vitis HLS Beamformer 教程为例）</text>
+
+  <!-- four levers -->
+  <rect x="30" y="80" width="900" height="230" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">四个杠杆（按优先级）</text>
+
+  <g font-family="Consolas,monospace" font-size="10">
+    <rect x="50" y="122" width="200" height="80" rx="6" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="150" y="144" text-anchor="middle" fill="#0f7a8a">① PIPELINE II=1</text>
+    <text x="60" y="166" font-size="9.5" fill="#667">让循环每周期启动一次</text>
+    <text x="60" y="184" font-size="9.5" fill="#667">rewind 选项提高吞吐</text>
+
+    <rect x="266" y="122" width="200" height="80" rx="6" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="366" y="144" text-anchor="middle" fill="#4a7a3a">② UNROLL</text>
+    <text x="276" y="166" font-size="9.5" fill="#667">展开内层循环</text>
+    <text x="276" y="184" font-size="9.5" fill="#667">暴露复乘加的并行度</text>
+
+    <rect x="482" y="122" width="200" height="80" rx="6" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="582" y="144" text-anchor="middle" fill="#8a3a6a">③ ARRAY_PARTITION</text>
+    <text x="492" y="166" font-size="9.5" fill="#667">拆分数组 → 多端口访问</text>
+    <text x="492" y="184" font-size="9.5" fill="#667">解决数据搬运瓶颈</text>
+
+    <rect x="698" y="122" width="210" height="80" rx="6" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="803" y="144" text-anchor="middle" fill="#c96a1f">④ ARRAY_RESHAPE</text>
+    <text x="708" y="166" font-size="9.5" fill="#667">重排存储 → 匹配接口位宽</text>
+    <text x="708" y="184" font-size="9.5" fill="#667">消除 II violation（store）</text>
+  </g>
+
+  <text x="480" y="230" text-anchor="middle" font-size="11" fill="#333">诊断流程：跑 C 综合 → 看 Synthesis Report 的 II / latency / stall → 定位 II violation → 加 pragma → 再综合</text>
+  <text x="480" y="254" text-anchor="middle" font-size="11" fill="#8a3a6a">关键：先找到"限制 II 的瓶颈"（I/O 带宽？存储端口？依赖链？），再对症下药。</text>
+  <text x="480" y="280" text-anchor="middle" font-size="11" fill="#4a7a3a">实测口径（教程）：顶层 interval 从 3147502 → 40116 → 7626 → 2625 周期；DSP 16→288，FF 2803→47456。</text>
+  <text x="480" y="302" text-anchor="middle" font-size="11" fill="#667">⇒ 优化不是"免费"：性能提升换来了资源增长，必须与 Fmax 一起权衡。</text>
+
+  <!-- resource table -->
+  <rect x="30" y="326" width="440" height="186" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="250" y="350" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">资源规划要点（复数乘加）</text>
+  <text x="46" y="376" font-size="10.5" fill="#333">· 一次复乘 = 4 实乘 ⇒ 映射到 DSP48/DSP58</text>
+  <text x="46" y="396" font-size="10.5" fill="#333">· 累加器与缓冲：BRAM 或 URAM</text>
+  <text x="46" y="416" font-size="10.5" fill="#333">· 权值存储：按通道/波束/角度索引</text>
+  <text x="46" y="436" font-size="10.5" fill="#333">· DSP 绑定：RESOURCE / BIND_STORAGE pragma</text>
+  <text x="46" y="456" font-size="10.5" fill="#4a7a3a">· 定点优先：ap_fixed / ap_int（省 LUT/DSP）</text>
+  <text x="46" y="478" font-size="10.5" fill="#8a3a6a">· DSP58（Versal）在浮点乘加上 ~4× 能效</text>
+  <text x="46" y="498" font-size="10.5" fill="#8a3a6a">　vs DSP48（Zynq US+）</text>
+
+  <rect x="490" y="326" width="440" height="186" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="710" y="350" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">平台与工具链</text>
+  <text x="506" y="376" font-size="10.5" fill="#333">· Zynq / Zynq UltraScale+ RFSoC：ARM + FPGA 单芯片</text>
+  <text x="506" y="396" font-size="10.5" fill="#333">· RFSoC 内置高速 ADC/DAC ⇒ 直接采样</text>
+  <text x="506" y="416" font-size="10.5" fill="#333">· Vivado：RTL/约束/布局布线</text>
+  <text x="506" y="436" font-size="10.5" fill="#333">· Vitis HLS：C/C++ → RTL，含 ap_fixed 位精确类型</text>
+  <text x="506" y="456" font-size="10.5" fill="#4a7a3a">· AXI4-Stream：数据流；AXI4-Lite：寄存器配置</text>
+  <text x="506" y="476" font-size="10.5" fill="#8a3a6a">· C/RTL 协同仿真：验证 RTL 与 C 位精确一致</text>
+  <text x="506" y="496" font-size="10.5" fill="#8a3a6a">· 迁移：同一 C 代码可重定向不同器件</text>
+</svg>

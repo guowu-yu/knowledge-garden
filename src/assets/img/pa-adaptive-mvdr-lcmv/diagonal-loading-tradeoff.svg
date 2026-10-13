@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">三个工程坑：快拍数、对角加载、目标自零陷</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">MVDR 在纸上很美，在工程上死在"样本不足 + 模型失配"</text>
+
+  <!-- pit 1 snapshots -->
+  <rect x="30" y="80" width="300" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="180" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">坑① 快拍数不足</text>
+  <text x="48" y="130" font-size="10.5" fill="#333">R̂ = (1/L) Σ x_l x_lᴴ</text>
+  <text x="48" y="152" font-size="10.5" fill="#8a3a6a">→ L &lt; N 时 R̂ 奇异、不可逆</text>
+  <!-- mini chart -->
+  <line x1="60" y1="300" x2="290" y2="300" stroke="#556" stroke-width="1.2"/>
+  <line x1="60" y1="300" x2="60" y2="180" stroke="#556" stroke-width="1.2"/>
+  <text x="230" y="316" font-size="9.5" fill="#667">K/N</text>
+  <text x="30" y="184" font-size="9.5" fill="#667">损失</text>
+  <path d="M60,196 C100,210 130,250 170,282 C210,294 250,298 290,299" fill="none" stroke="#8a3a6a" stroke-width="2.4"/>
+  <line x1="140" y1="180" x2="140" y2="300" stroke="#c96a1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="118" y="176" font-size="9.5" fill="#c96a1f">K=2N</text>
+  <text x="48" y="240" font-size="10" fill="#333">RMB 规则：K ≥ 2N</text>
+  <text x="48" y="258" font-size="10" fill="#333">⇒ SINR 损失 ≤ 3 dB</text>
+  <text x="48" y="278" font-size="10" fill="#4a7a3a">加载 SMI（LSMI）</text>
+  <text x="48" y="294" font-size="10" fill="#4a7a3a">只需 K ≥ 干扰数 L_i</text>
+
+  <!-- pit 2 loading -->
+  <rect x="340" y="80" width="290" height="300" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="485" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">坑② 对角加载量</text>
+  <text x="358" y="130" font-size="10.5" fill="#333">R_dl = R̂ + ε I</text>
+  <text x="358" y="152" font-size="10.5" fill="#667">ε ≈ 0.01 · tr(R̂)/N（典型）</text>
+  <text x="358" y="174" font-size="10.5" fill="#667">最优 γ ≈ 2σ²（白噪功率）</text>
+  <line x1="370" y1="300" x2="600" y2="300" stroke="#556" stroke-width="1.2"/>
+  <line x1="370" y1="300" x2="370" y2="196" stroke="#556" stroke-width="1.2"/>
+  <text x="600" y="316" font-size="9.5" fill="#667">加载量 ε</text>
+  <path d="M372,206 C410,210 450,232 480,258 C520,284 560,296 598,299" fill="none" stroke="#4a7a3a" stroke-width="2.2"/>
+  <text x="392" y="200" font-size="9.5" fill="#4a7a3a">分辨力 / 零陷深度</text>
+  <path d="M372,298 C410,294 460,272 500,248 C540,224 570,212 598,206" fill="none" stroke="#0f7a8a" stroke-width="2.2" stroke-dasharray="5 4"/>
+  <text x="512" y="212" font-size="9.5" fill="#0f7a8a">稳健性</text>
+  <text x="358" y="340" font-size="10" fill="#8a3a6a">两难：加载越大越稳，</text>
+  <text x="358" y="358" font-size="10" fill="#8a3a6a">但零陷变浅、退回常规。</text>
+
+  <!-- pit 3 self-null -->
+  <rect x="650" y="80" width="280" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="790" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">坑③ 目标自零陷</text>
+  <text x="668" y="130" font-size="10.5" fill="#333">训练数据里含期望信号 ⇒</text>
+  <text x="668" y="150" font-size="10.5" fill="#8a3a6a">R̂ 里"长"出了期望信号方向</text>
+  <text x="668" y="170" font-size="10.5" fill="#8a3a6a">的能量 ⇒ R⁻¹ 把它也压掉。</text>
+  <!-- mainlobe with notch -->
+  <path d="M690,290 C730,240 750,180 762,170" fill="none" stroke="#0f7a8a" stroke-width="2"/>
+  <line x1="762" y1="170" x2="762" y2="290" stroke="#8a3a6a" stroke-width="2.6"/>
+  <path d="M762,170 C775,180 795,240 835,290" fill="none" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="700" y="308" font-size="10" fill="#333">期望方向被"挖掉"了主瓣</text>
+  <text x="668" y="332" font-size="10" fill="#0f7a8a">对策：</text>
+  <text x="668" y="350" font-size="10" fill="#0f7a8a">· 只用"无信号"训练段</text>
+  <text x="668" y="368" font-size="10" fill="#0f7a8a">· 重构干扰+噪声协方差</text>
+
+  <!-- bottom -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">一个统一的诊断顺序</text>
+  <text x="60" y="450" font-size="11.5" fill="#333">1）先看 K/N：若 K &lt; 2N，问题多半是"样本不足"，先加对角加载或减少 N（降维）。</text>
+  <text x="60" y="472" font-size="11.5" fill="#333">2）再看零陷"偏不偏"：若零陷位置与干扰对不上，问题多半是"导向矢量失配 / 校准不足"（转 S5）。</text>
+  <text x="60" y="494" font-size="11.5" fill="#8a3a6a">3）最后看主瓣"塌没塌"：若期望方向出现凹口，几乎一定是"训练数据含期望信号"（自零陷）。</text>
+</svg>

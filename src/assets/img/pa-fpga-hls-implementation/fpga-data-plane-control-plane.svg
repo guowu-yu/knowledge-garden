@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">相控阵实现的核心架构原则：数据面 / 控制面分工</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">把"逐采样的事"和"帧级的事"分到不同的处理器、不同的时标上</text>
+
+  <!-- data plane -->
+  <rect x="30" y="80" width="440" height="240" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="250" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a7a3a">数据面（FPGA fabric，逐采样）</text>
+  <text x="250" y="126" text-anchor="middle" font-size="10.5" fill="#667">时标：ns 级 / 线速率；要求：确定性、不停顿</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="50" y="142" width="130" height="40" rx="5" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="115" y="160" text-anchor="middle" fill="#2f4f26">ADC → DDC</text>
+    <text x="115" y="176" text-anchor="middle" fill="#667">数字下变频</text>
+    <rect x="200" y="142" width="130" height="40" rx="5" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="265" y="160" text-anchor="middle" fill="#2f4f26">抽取 / 滤波</text>
+    <text x="265" y="176" text-anchor="middle" fill="#667">降采样率</text>
+    <rect x="350" y="142" width="100" height="40" rx="5" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="400" y="160" text-anchor="middle" fill="#2f4f26">复乘加</text>
+    <text x="400" y="176" text-anchor="middle" fill="#667">Σ w·x</text>
+    <rect x="50" y="196" width="400" height="40" rx="5" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="250" y="214" text-anchor="middle" fill="#8a3a6a">相关累加器（外积 x xᴴ）→ 供控面估协方差</text>
+    <text x="250" y="230" text-anchor="middle" fill="#667">（若需自适应；否则省略）</text>
+  </g>
+  <text x="250" y="262" text-anchor="middle" font-size="10.5" fill="#333">资源：DSP48/DSP58（乘加）、BRAM/URAM（缓冲）、FF/LUT（流水）</text>
+  <text x="250" y="284" text-anchor="middle" font-size="10.5" fill="#8a3a6a">接口：AXI4-Stream（数据流，单向、高吞吐）</text>
+  <text x="250" y="306" text-anchor="middle" font-size="10.5" fill="#0f7a8a">KPI：II（启动间隔）、Fmax、吞吐（采样/时钟）</text>
+
+  <!-- control plane -->
+  <rect x="490" y="80" width="440" height="240" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="710" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">控制面（CPU/ARM/DSP，帧级）</text>
+  <text x="710" y="126" text-anchor="middle" font-size="10.5" fill="#667">时标：µs~ms；要求：灵活、可维护、可升级</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="510" y="142" width="180" height="40" rx="5" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="600" y="160" text-anchor="middle" fill="#0f7a8a">权值解算 w(θ,f,T)</text>
+    <text x="600" y="176" text-anchor="middle" fill="#667">常规 / MVDR / LCMV</text>
+    <rect x="710" y="142" width="200" height="40" rx="5" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="810" y="160" text-anchor="middle" fill="#0f7a8a">DOA / 判源 / 展宽</text>
+    <text x="810" y="176" text-anchor="middle" fill="#667">MUSIC / MDL / CMT</text>
+    <rect x="510" y="196" width="400" height="40" rx="5" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="710" y="214" text-anchor="middle" fill="#c96a1f">校准解算 / 温补 / 失效识别（S5）</text>
+    <text x="710" y="230" text-anchor="middle" fill="#667">生成补偿表、监控健康状态</text>
+  </g>
+  <text x="710" y="262" text-anchor="middle" font-size="10.5" fill="#333">语言：C/C++（含定点）/ Python（离线）；矩阵库（BLAS/LAPACK）</text>
+  <text x="710" y="284" text-anchor="middle" font-size="10.5" fill="#8a3a6a">接口：AXI4-Lite（寄存器配置，低频控制）</text>
+  <text x="710" y="306" text-anchor="middle" font-size="10.5" fill="#0f7a8a">KPI：解算时延、更新周期、可维护性</text>
+
+  <!-- cross -->
+  <line x1="470" y1="180" x2="488" y2="180" stroke="#8a3a6a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="488" y1="220" x2="470" y2="220" stroke="#c96a1f" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="478" y="170" font-size="9" fill="#8a3a6a" text-anchor="middle">R̂</text>
+  <text x="478" y="240" font-size="9" fill="#c96a1f" text-anchor="middle">w</text>
+
+  <!-- mistakes -->
+  <rect x="30" y="336" width="900" height="176" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="360" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">最常见的架构错误与后果</text>
+  <text x="60" y="386" font-size="11.5" fill="#8a3a6a">✗ 把"权值解算"塞进逐采样通路</text>
+  <text x="70" y="406" font-size="10.5" fill="#333">后果：控制面算法（含特征分解/求逆）无法在采样节拍内完成 ⇒ 流水线停顿、时序崩、采样丢数。</text>
+  <text x="60" y="430" font-size="11.5" fill="#8a3a6a">✗ 在数据面里调 sin/cos/exp（软件浮点）</text>
+  <text x="70" y="450" font-size="10.5" fill="#333">后果：单次几十个周期，吞吐直接掉一个量级。相位旋转必须用 CORDIC / 查表 / 复数乘法。</text>
+  <text x="60" y="474" font-size="11.5" fill="#8a3a6a">✗ 换波束时直接改寄存器（无双缓冲）</text>
+  <text x="70" y="494" font-size="10.5" fill="#333">后果：帧中途"半新半旧"权值 ⇒ 畸变波束 + 瞬态毛刺。</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">MVDR 自适应波束形成：数据面与控制面的闭环</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">权值来自观测协方差矩阵 R̂，而不是几何；这让零陷自动对准干扰</text>
+
+  <!-- data plane -->
+  <rect x="30" y="80" width="420" height="180" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="240" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a7a3a">数据面（逐采样，ns 级）</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="50" y="120" width="120" height="34" rx="5" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="110" y="142" text-anchor="middle" fill="#2f4f26">x[n] (N 路)</text>
+    <rect x="196" y="120" width="120" height="34" rx="5" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="256" y="142" text-anchor="middle" fill="#2f4f26">复乘加 Σ w·x</text>
+    <rect x="342" y="120" width="90" height="34" rx="5" fill="#ffffff" stroke="#4a7a3a"/>
+    <text x="387" y="142" text-anchor="middle" fill="#2f4f26">y[n]</text>
+    <rect x="50" y="166" width="382" height="34" rx="5" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="241" y="188" text-anchor="middle" fill="#8a3a6a">x[n] 分流出一路 → 估计 R̂ = (1/L)Σ x xᴴ</text>
+  </g>
+  <text x="240" y="226" text-anchor="middle" font-size="10.5" fill="#333">相关矩阵估计须外积累积（N² 复乘），是"重"的一步</text>
+  <text x="240" y="246" text-anchor="middle" font-size="10.5" fill="#8a3a6a">→ 常用"相关累加器 + 控面求逆"分工</text>
+
+  <!-- control plane -->
+  <rect x="510" y="80" width="420" height="180" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="720" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">控制面（帧级，µs~ms 级）</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="530" y="120" width="180" height="30" rx="5" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="620" y="140" text-anchor="middle" fill="#0f7a8a">① 对角加载 R̂ + εI</text>
+    <rect x="730" y="120" width="180" height="30" rx="5" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="820" y="140" text-anchor="middle" fill="#0f7a8a">② 矩阵求逆 / QR</text>
+    <rect x="530" y="160" width="380" height="30" rx="5" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="720" y="180" text-anchor="middle" fill="#0f7a8a">③ w = R⁻¹a(θ₀) / (aᴴR⁻¹a(θ₀))</text>
+    <rect x="530" y="200" width="380" height="30" rx="5" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="720" y="220" text-anchor="middle" fill="#c96a1f">④ 量化 → 双缓冲写入波控</text>
+  </g>
+  <text x="720" y="250" text-anchor="middle" font-size="10.5" fill="#667">复杂度 O(N³)（求逆）/ O(N²)（降维后）</text>
+
+  <line x1="450" y1="150" x2="508" y2="150" stroke="#8a3a6a" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <polygon points="510,150 502,145 502,155" fill="#8a3a6a"/>
+  <line x1="508" y1="196" x2="452" y2="196" stroke="#c96a1f" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <polygon points="450,196 458,191 458,201" fill="#c96a1f"/>
+
+  <!-- formula -->
+  <rect x="30" y="280" width="900" height="120" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="480" y="304" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">优化问题的原点</text>
+  <text x="480" y="332" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#3a2f3a">min_w  wᴴ R w      s.t.  wᴴ a(θ₀) = 1</text>
+  <text x="480" y="358" text-anchor="middle" font-size="11" fill="#333">"在保证期望方向不失真（增益=1）的前提下，最小化输出总功率"</text>
+  <text x="480" y="382" text-anchor="middle" font-size="11" fill="#0f7a8a">直觉：干扰越强 → R 在干扰方向"凸起" → R⁻¹ 在干扰方向"塌陷" → 零陷落在干扰上</text>
+
+  <!-- pitfalls -->
+  <rect x="30" y="416" width="900" height="96" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="440" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">三个工程坑（后面逐个展开）</text>
+  <text x="60" y="466" font-size="11.5" fill="#333">① 快拍数不足：RMB 规则要求 K ≥ 2N 才把 SINR 损失压在 3 dB 内 ⇒ 否则矩阵病态。</text>
+  <text x="60" y="488" font-size="11.5" fill="#333">② 对角加载量：太小不稳、太大退化回常规 ⇒ 典型 ε ≈ 0.01·tr(R)/N（约高于底噪 5~10 dB）。</text>
+  <text x="60" y="508" font-size="11.5" fill="#8a3a6a">③ 目标自零陷：训练数据里含期望信号时，MVDR 会把主瓣"挖掉"——必须剔除或约束。</text>
+</svg>

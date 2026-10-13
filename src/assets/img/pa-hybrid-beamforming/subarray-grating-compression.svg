@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">压缩比、子阵栅瓣与重叠子阵</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">混合架构的"隐形代价"：省下的射频链，要用子阵栅瓣来偿还</text>
+
+  <!-- compression table -->
+  <rect x="30" y="80" width="290" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="175" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">压缩比 N / N_RF（N=64）</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="50" y="120" width="250" height="30" rx="4" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="60" y="140" fill="#0f7a8a">N_RF=16 → 4:1　（较好）</text>
+    <rect x="50" y="154" width="250" height="30" rx="4" fill="#f0f7ee" stroke="#dbe6ea"/>
+    <text x="60" y="174" fill="#4a7a3a">N_RF=8　→ 8:1　（5G 常用）</text>
+    <rect x="50" y="188" width="250" height="30" rx="4" fill="#fdf4ea" stroke="#dbe6ea"/>
+    <text x="60" y="208" fill="#c96a1f">N_RF=4　→ 16:1 （自由度紧张）</text>
+    <rect x="50" y="222" width="250" height="30" rx="4" fill="#fbf3f7" stroke="#dbe6ea"/>
+    <text x="60" y="242" fill="#8a3a6a">N_RF=64 → 1:1　（全数字）</text>
+  </g>
+  <text x="175" y="278" text-anchor="middle" font-size="10.5" fill="#333">压缩比 ↑ ⇒ 射频链/ADC 成本与功耗 ↓</text>
+  <text x="175" y="298" text-anchor="middle" font-size="10.5" fill="#8a3a6a">但数字自由度、波束数、零陷能力同步 ↓</text>
+  <text x="175" y="320" text-anchor="middle" font-size="10.5" fill="#333">选法：先问"需要几个同时波束 /</text>
+  <text x="175" y="340" text-anchor="middle" font-size="10.5" fill="#333">多深的零陷"，再倒推 N_RF。</text>
+  <text x="175" y="364" text-anchor="middle" font-size="10.5" fill="#4a7a3a">5G 毫米波常见 4:1~8:1</text>
+
+  <!-- grating lobes -->
+  <rect x="335" y="80" width="290" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">子阵栅瓣：等效间距超 λ/2</text>
+  <!-- subarrays periodic -->
+  <g fill="#f0f7ee" stroke="#4a7a3a">
+    <rect x="360" y="130" width="60" height="50" rx="5"/><rect x="440" y="130" width="60" height="50" rx="5"/><rect x="520" y="130" width="60" height="50" rx="5"/>
+  </g>
+  <g fill="#c96a1f"><circle cx="390" cy="200" r="5"/><circle cx="470" cy="200" r="5"/><circle cx="550" cy="200" r="5"/></g>
+  <line x1="390" y1="200" x2="470" y2="200" stroke="#8a3a6a" stroke-width="1.4"/>
+  <text x="430" y="218" text-anchor="middle" font-size="9.5" fill="#8a3a6a">d_sub = 子阵尺寸 × d</text>
+  <text x="480" y="248" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#8a3a6a">d_sub &gt; λ/2 ⇒ 栅瓣</text>
+  <text x="351" y="276" font-size="10.5" fill="#333">混合架构的压缩比往往很高 ⇒</text>
+  <text x="351" y="296" font-size="10.5" fill="#333">子阵尺寸大 ⇒ 几乎必然触发。</text>
+  <text x="351" y="320" font-size="10.5" fill="#8a3a6a">栅瓣后果：假波束、副瓣污染、</text>
+  <text x="351" y="340" font-size="10.5" fill="#8a3a6a">波束形状畸变、甚至"指错方向"。</text>
+  <text x="480" y="364" text-anchor="middle" font-size="10.5" fill="#0f7a8a">→ 必须用重叠子阵 / 不规则划分处理</text>
+
+  <!-- overlapped -->
+  <rect x="640" y="80" width="290" height="300" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="785" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">重叠子阵（overlapped）</text>
+  <g fill="#f0f7ee" stroke="#4a7a3a" opacity="0.9">
+    <rect x="656" y="126" width="60" height="40" rx="5"/>
+    <rect x="700" y="126" width="60" height="40" rx="5"/>
+    <rect x="744" y="126" width="60" height="40" rx="5"/>
+    <rect x="788" y="126" width="60" height="40" rx="5"/>
+    <rect x="832" y="126" width="60" height="40" rx="5"/>
+  </g>
+  <g fill="#c96a1f">
+    <circle cx="686" cy="188" r="5"/><circle cx="730" cy="188" r="5"/><circle cx="774" cy="188" r="5"/><circle cx="818" cy="188" r="5"/><circle cx="862" cy="188" r="5"/>
+  </g>
+  <line x1="686" y1="196" x2="730" y2="196" stroke="#4a7a3a" stroke-width="1.2"/>
+  <text x="708" y="212" text-anchor="middle" font-size="9.5" fill="#4a7a3a">等效间距被"打散"</text>
+  <text x="656" y="244" font-size="10.5" fill="#4a7a3a">相邻子阵共享部分阵元 ⇒</text>
+  <text x="656" y="264" font-size="10.5" fill="#4a7a3a">破坏周期性 ⇒ 抑制栅瓣。</text>
+  <text x="656" y="288" font-size="10.5" fill="#333">其它对策：</text>
+  <text x="656" y="308" font-size="10.5" fill="#333">· 非均匀子阵划分（大小不同）</text>
+  <text x="656" y="328" font-size="10.5" fill="#333">· 子阵内配相（补自由度）</text>
+  <text x="656" y="348" font-size="10.5" fill="#333">· 降低压缩比（加 N_RF）</text>
+  <text x="785" y="372" text-anchor="middle" font-size="10.5" fill="#0f7a8a">代价：功分网络更复杂、损耗略增</text>
+
+  <!-- bottom -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">实践差异：大规模 MIMO 与卫星载荷</text>
+  <text x="60" y="450" font-size="11.5" fill="#333">· 5G 大规模 MIMO：以"成本/功耗/数据率"为首，子阵连接 + 4:1~8:1 压缩，窄带为主（斜视压力小）。</text>
+  <text x="60" y="472" font-size="11.5" fill="#333">· 卫星载荷：需要"多个同时波束 + 覆盖/抗干扰"，往往更接近全连接或高 N_RF；宽带下还要叠 TTD/数字子带。</text>
+  <text x="60" y="494" font-size="11.5" fill="#8a3a6a">· 两者共同的算法后果：你只有 N_RF 个数字自由度 ⇒ 零陷与可分辨源数受 N_RF 限（见专题 18/19）。</text>
+</svg>

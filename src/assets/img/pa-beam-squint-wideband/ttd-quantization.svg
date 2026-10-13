@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">TTD 的量化：覆盖范围 vs 分辨率 vs 量化瓣</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">真时延是连续量，实现上必须离散化 ⇒ 又回到"位数换性能"</text>
+
+  <!-- coverage -->
+  <rect x="30" y="80" width="290" height="290" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="175" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">覆盖范围 Δt_max</text>
+  <text x="46" y="132" font-size="10.5" fill="#333">由"全阵最远两阵元"的时延差决定：</text>
+  <text x="46" y="156" font-family="Consolas,monospace" font-size="11" fill="#0f7a8a">Δt_max = (N−1)·d·sinθ_max / c</text>
+  <text x="46" y="182" font-size="10.5" fill="#333">例（文献量级）：32×32 阵、8~12 GHz、</text>
+  <text x="46" y="202" font-size="10.5" fill="#333">±60° 扫描 ⇒ Δt_max ≈ 2.45 ns</text>
+  <!-- bar -->
+  <rect x="60" y="230" width="230" height="30" rx="5" fill="#f7fbfc" stroke="#0f7a8a"/>
+  <text x="175" y="250" text-anchor="middle" font-size="10" fill="#0f7a8a">覆盖 2.45 ns</text>
+  <text x="46" y="286" font-size="10.5" fill="#8a3a6a">覆盖越大 ⇒ 需要的时延线越长</text>
+  <text x="46" y="306" font-size="10.5" fill="#8a3a6a">⇒ 插损越大、体积越大、越难布局</text>
+  <text x="175" y="336" text-anchor="middle" font-size="10.5" fill="#0f7a8a">子阵级 TTD 可把覆盖降 N_sub 倍</text>
+  <text x="175" y="358" text-anchor="middle" font-size="10.5" fill="#0f7a8a">（只补子阵间时延差）</text>
+
+  <!-- resolution -->
+  <rect x="335" y="80" width="290" height="290" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">分辨率 Δt_LSB</text>
+  <text x="351" y="132" font-size="10.5" fill="#333">等效于移相器 LSB：</text>
+  <text x="351" y="156" font-family="Consolas,monospace" font-size="11" fill="#4a7a3a">Δt_LSB = Δφ_LSB / (2π f)</text>
+  <text x="351" y="182" font-size="10.5" fill="#333">例：6 bit PS（LSB 5.625°）</text>
+  <text x="351" y="202" font-size="10.5" fill="#333">@10 GHz ⇒ ≈ 1.5 ps</text>
+  <!-- ladder -->
+  <g font-family="Consolas,monospace" font-size="9.5">
+    <rect x="356" y="226" width="240" height="22" rx="4" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="366" y="241" fill="#4a7a3a">4 bit：≈ 0.25 T 步进（粗）</text>
+    <rect x="356" y="252" width="240" height="22" rx="4" fill="#ffffff" stroke="#4a7a3a"/>
+    <text x="366" y="267" fill="#4a7a3a">6 bit：更细，QSLL 更低</text>
+    <rect x="356" y="278" width="240" height="22" rx="4" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="366" y="293" fill="#4a7a3a">8 bit：用于 ≤0.1° 角分辨</text>
+  </g>
+  <text x="480" y="326" text-anchor="middle" font-size="10.5" fill="#333">细分的目的常常不是"角分辨"，</text>
+  <text x="480" y="344" text-anchor="middle" font-size="10.5" fill="#333">而是"降低量化副瓣（QSLL）"。</text>
+
+  <!-- quantization lobes -->
+  <rect x="640" y="80" width="290" height="290" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="785" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">三类量化与量化瓣</text>
+  <g font-family="Consolas,monospace" font-size="10">
+    <rect x="660" y="122" width="250" height="42" rx="5" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="670" y="140" fill="#8a4a1f">① TTD 时延量化</text>
+    <text x="670" y="156" fill="#667">→ 时延量化瓣（QSLL）</text>
+    <rect x="660" y="172" width="250" height="42" rx="5" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="670" y="190" fill="#8a4a1f">② 移相器相位量化</text>
+    <text x="670" y="206" fill="#667">→ 相位量化副瓣</text>
+    <rect x="660" y="222" width="250" height="42" rx="5" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="670" y="240" fill="#8a3a6a">③ 子阵划分（空间）</text>
+    <text x="670" y="256" fill="#667">→ 子阵空间量化瓣</text>
+  </g>
+  <text x="785" y="288" text-anchor="middle" font-size="10.5" fill="#333">三者机理不同、位置不同，</text>
+  <text x="785" y="308" text-anchor="middle" font-size="10.5" fill="#333">必须分别评估，不能混为一谈。</text>
+  <text x="785" y="334" text-anchor="middle" font-size="10.5" fill="#0f7a8a">对策：提高 TTD 位数 / 阵元级移相</text>
+  <text x="785" y="352" text-anchor="middle" font-size="10.5" fill="#0f7a8a">补足 QSLL / 子阵不规则化</text>
+
+  <!-- bottom -->
+  <rect x="30" y="390" width="900" height="122" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="480" y="414" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">一个关键实现细节：移相器值必须"按实际施加的时延"反算</text>
+  <text x="60" y="440" font-size="11.5" fill="#333">混合 TD/PS 结构里，TTD 时延是量化/限幅的（如 ±67.7 ps、4 bit、0.25T 分辨率）。</text>
+  <text x="60" y="462" font-size="11.5" fill="#333">若移相器仍按"理想目标"设置，而不是按"TTD 实际施加的时延"设置 ⇒ 会产生指向误差与明显功率损失。</text>
+  <text x="60" y="484" font-size="11.5" fill="#4a7a3a">文献量级：正确联算时带内功率损失仅约 0.5 dB；未联算时在中心频率附近可损失约 5 dB。</text>
+  <text x="60" y="504" font-size="11.5" fill="#8a3a6a">⇒ 混合 TD/PS 的控面必须"先定 TTD，再按 TTD 反算 PS"，这一步是算法工程师的活。</text>
+</svg>

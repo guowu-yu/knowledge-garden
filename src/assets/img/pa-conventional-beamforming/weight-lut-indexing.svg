@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">权值 LUT 的工程索引与代价估算</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">「离线算、在线查」是常规波束形成能被实时兑现的关键</text>
+
+  <!-- 3 axes -->
+  <rect x="30" y="80" width="300" height="240" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="180" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">三个索引维度</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="50" y="122" width="260" height="30" rx="5" fill="#f7fbfc" stroke="#dbe6ea"/>
+    <text x="62" y="142" fill="#0f7a8a">角度 θ₀：扫描格点（如 1° × 121 点）</text>
+    <rect x="50" y="162" width="260" height="30" rx="5" fill="#f0f7ee" stroke="#dbe6ea"/>
+    <text x="62" y="182" fill="#4a7a3a">频点 f：波束斜视补偿或宽带分档</text>
+    <rect x="50" y="202" width="260" height="30" rx="5" fill="#fdf4ea" stroke="#dbe6ea"/>
+    <text x="62" y="222" fill="#c96a1f">温度 T：温补（相位随温漂移）</text>
+  </g>
+  <text x="180" y="256" text-anchor="middle" font-size="10.5" fill="#333">再加上每阵元的通道补偿相位 → 实际是 4 维表</text>
+  <text x="180" y="278" text-anchor="middle" font-size="10.5" fill="#8a3a6a">LUT 维度越高，存储与离线解算量越大</text>
+  <text x="180" y="300" text-anchor="middle" font-size="10.5" fill="#667">工程折中：角度密、频点疏；温度用"分区/插值"</text>
+
+  <!-- storage math -->
+  <rect x="350" y="80" width="280" height="240" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="490" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">存储量第一估算</text>
+  <g font-family="Consolas,monospace" font-size="10.5" fill="#3a2f3a">
+    <text x="366" y="132">size = Nθ × Nf × NT × N × B_bits</text>
+    <text x="366" y="156" fill="#667">例：121 × 8 × 4 × 256 × 12 bit</text>
+    <text x="366" y="180">= 121×8×4×256×12 / 8</text>
+    <text x="366" y="204" fill="#8a3a6a">≈ 1.49 MB　（原始，未压缩）</text>
+  </g>
+  <text x="366" y="234" font-size="10.5" fill="#333">压缩手段：</text>
+  <text x="366" y="254" font-size="10.5" fill="#333">· 相位推进规律 → 只存"步进 ψ"与"初相"</text>
+  <text x="366" y="274" font-size="10.5" fill="#333">· 幅度窗与角度无关 → 单独一张窗表</text>
+  <text x="366" y="294" font-size="10.5" fill="#4a7a3a">· 通道补偿表与角度表分离（见 S5 校准）</text>
+
+  <!-- runtime -->
+  <rect x="650" y="80" width="280" height="240" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="790" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#c96a1f">在线开销</text>
+  <g font-family="Consolas,monospace" font-size="10.5" fill="#3a2f3a">
+    <text x="666" y="134">每采样：N 次复乘 + N-1 次复加</text>
+    <text x="666" y="158" fill="#667">复乘 = 4 实乘 + 2 实加（或 3 乘）</text>
+    <text x="666" y="182">FLOPs ≈ 8N / 采样</text>
+    <text x="666" y="206" fill="#c96a1f">N=256, fs=1 GSPS → ≈ 2 TFLOPs</text>
+  </g>
+  <text x="666" y="236" font-size="10.5" fill="#333">关键：查表与乘加分离——</text>
+  <text x="666" y="256" font-size="10.5" fill="#8a3a6a">· 权值解算 = 控制面（帧级，µs~ms）</text>
+  <text x="666" y="276" font-size="10.5" fill="#8a3a6a">· 复乘加 = 数据面（逐采样，ps~ns）</text>
+  <text x="666" y="300" font-size="10.5" fill="#4a7a3a">→ 绝不能在逐采样通路上算 sin/cos</text>
+
+  <!-- bottom flow -->
+  <rect x="30" y="340" width="900" height="172" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="364" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">一次"换波束"的完整时序</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="50" y="382" width="150" height="52" rx="6" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="125" y="404" text-anchor="middle" fill="#0f7a8a">① 控面解算</text>
+    <text x="125" y="422" text-anchor="middle" fill="#667">算 w(θ,f,T)</text>
+    <rect x="220" y="382" width="150" height="52" rx="6" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="295" y="404" text-anchor="middle" fill="#4a7a3a">② 量化配相</text>
+    <text x="295" y="422" text-anchor="middle" fill="#667">→ B bit 相位码</text>
+    <rect x="390" y="382" width="150" height="52" rx="6" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="465" y="404" text-anchor="middle" fill="#c96a1f">③ 写波控寄存器</text>
+    <text x="465" y="422" text-anchor="middle" fill="#667">（双缓冲）</text>
+    <rect x="560" y="382" width="150" height="52" rx="6" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="635" y="404" text-anchor="middle" fill="#8a3a6a">④ 帧边界生效</text>
+    <text x="635" y="422" text-anchor="middle" fill="#667">避免瞬态毛刺</text>
+    <rect x="730" y="382" width="180" height="52" rx="6" fill="#ffffff" stroke="#0f7a8a"/>
+    <text x="820" y="404" text-anchor="middle" fill="#0f7a8a">⑤ 复乘加持续流</text>
+    <text x="820" y="422" text-anchor="middle" fill="#667">数据面不停顿</text>
+  </g>
+  <g stroke="#556" stroke-width="1.3">
+    <line x1="200" y1="408" x2="218" y2="408"/><line x1="370" y1="408" x2="388" y2="408"/>
+    <line x1="540" y1="408" x2="558" y2="408"/><line x1="710" y1="408" x2="728" y2="408"/>
+  </g>
+  <text x="480" y="466" text-anchor="middle" font-size="11" fill="#333">波束切换速度 = 控面解算 + 寄存器写入时间；与数据面吞吐解耦。</text>
+  <text x="480" y="490" text-anchor="middle" font-size="11" fill="#8a3a6a">双缓冲（ping-pong）设计保证"换权值不撕帧"，是工程上最容易漏掉的一环。</text>
+</svg>

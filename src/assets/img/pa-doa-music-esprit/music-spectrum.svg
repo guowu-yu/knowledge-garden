@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">分辨率对比：常规 / Capon / MUSIC</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">两个源间隔小于常规波束宽度——只有子空间类方法能分开</text>
+
+  <line x1="80" y1="430" x2="900" y2="430" stroke="#556" stroke-width="1.3"/>
+  <line x1="80" y1="430" x2="80" y2="90" stroke="#556" stroke-width="1.3"/>
+  <text x="878" y="452" font-size="11" fill="#556">方位角 / °（≈ −10 ~ +10 局部放大）</text>
+  <text x="42" y="96" font-size="11" fill="#556">归一化 / dB</text>
+  <g font-family="Consolas,monospace" font-size="9.5" fill="#667">
+    <text x="66" y="434">-12</text><text x="250" y="434">-6</text><text x="470" y="434">0</text><text x="690" y="434">6</text><text x="866" y="434">12</text>
+    <text x="52" y="430">0</text><text x="46" y="330">-10</text><text x="46" y="230">-20</text><text x="46" y="130">-30</text>
+  </g>
+  <g stroke="#dbe6ea" stroke-width="0.8">
+    <line x1="80" y1="330" x2="900" y2="330"/><line x1="80" y1="230" x2="900" y2="230"/><line x1="80" y1="130" x2="900" y2="130"/>
+  </g>
+  <!-- true sources -->
+  <g stroke="#c96a1f" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="440" y1="90" x2="440" y2="430"/><line x1="520" y1="90" x2="520" y2="430"/>
+  </g>
+  <text x="440" y="82" text-anchor="middle" font-size="9.5" fill="#c96a1f">真源 −2°</text>
+  <text x="520" y="82" text-anchor="middle" font-size="9.5" fill="#c96a1f">真源 +2°</text>
+
+  <!-- conventional: single merged lobe -->
+  <path d="M300,430 C380,300 430,120 480,118 C540,120 590,300 680,430" fill="none" stroke="#4a7a3a" stroke-width="2.6"/>
+  <text x="180" y="140" font-size="11" fill="#4a7a3a">常规(CBF)：两源合成一个宽峰 ⇒ 分不开</text>
+
+  <!-- Capon: better but still merged -->
+  <path d="M340,430 C420,320 456,150 480,148 C506,150 548,320 640,430" fill="none" stroke="#8a3a6a" stroke-width="2.2" stroke-dasharray="6 4"/>
+
+  <!-- MUSIC: two sharp peaks -->
+  <path d="M300,428 C400,424 428,410 444,200 L446,140 L450,200 C456,410 470,424 480,426 C492,424 506,408 520,200 L524,140 L528,200 C540,408 566,424 680,428" fill="none" stroke="#0f7a8a" stroke-width="2.4"/>
+  <text x="700" y="200" font-size="11" fill="#0f7a8a">MUSIC：两个独立尖峰</text>
+  <text x="180" y="320" font-size="11" fill="#8a3a6a">Capon：锐化但间隔太小仍合峰</text>
+
+  <rect x="60" y="472" width="840" height="52" rx="8" fill="#ffffff" stroke="#dbe6ea"/>
+  <text x="80" y="492" font-size="11" fill="#333">超分辨的前提：足够 SNR + 足够快拍 + 精确的阵列流形 + 已知/正确的源数 D。</text>
+  <text x="80" y="514" font-size="11" fill="#8a3a6a">任一条不满足，MUSIC 的"超分辨"就会退化成"多峰抖动"——谱峰位置漂移、虚假峰出现。</text>
+</svg>

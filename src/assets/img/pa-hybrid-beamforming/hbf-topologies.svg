@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">混合波束成形的三种拓扑</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">N 个阵元、N_RF 套射频链：全连接 / 子阵连接 / 部分连接</text>
+
+  <!-- fully connected -->
+  <rect x="30" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="175" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">全连接 fully-connected</text>
+  <g fill="#dceff2" stroke="#0f7a8a">
+    <rect x="66" y="126" width="60" height="24" rx="5"/><rect x="144" y="126" width="60" height="24" rx="5"/><rect x="222" y="126" width="60" height="24" rx="5"/>
+  </g>
+  <g font-size="9" fill="#0f7a8a" text-anchor="middle"><text x="96" y="142">RF1</text><text x="174" y="142">RF2</text><text x="252" y="142">RF3</text></g>
+  <!-- web -->
+  <g stroke="#0f7a8a" stroke-width="0.6" opacity="0.5">
+    <line x1="96" y1="150" x2="66" y2="196"/><line x1="96" y1="150" x2="114" y2="196"/><line x1="96" y1="150" x2="162" y2="196"/><line x1="96" y1="150" x2="210" y2="196"/><line x1="96" y1="150" x2="258" y2="196"/>
+    <line x1="174" y1="150" x2="66" y2="196"/><line x1="174" y1="150" x2="114" y2="196"/><line x1="174" y1="150" x2="162" y2="196"/><line x1="174" y1="150" x2="210" y2="196"/><line x1="174" y1="150" x2="258" y2="196"/>
+    <line x1="252" y1="150" x2="66" y2="196"/><line x1="252" y1="150" x2="114" y2="196"/><line x1="252" y1="150" x2="162" y2="196"/><line x1="252" y1="150" x2="210" y2="196"/><line x1="252" y1="150" x2="258" y2="196"/>
+  </g>
+  <g fill="#ffffff" stroke="#c96a1f">
+    <rect x="56" y="196" width="22" height="26" rx="4"/><rect x="104" y="196" width="22" height="26" rx="4"/><rect x="152" y="196" width="22" height="26" rx="4"/>
+    <rect x="200" y="196" width="22" height="26" rx="4"/><rect x="248" y="196" width="22" height="26" rx="4"/>
+  </g>
+  <text x="175" y="250" text-anchor="middle" font-size="10.5" fill="#333">每条 RF 链连到全部 N 个阵元</text>
+  <text x="46" y="274" font-size="10.5" fill="#0f7a8a">· 性能最好（每链"看得见"全阵）</text>
+  <text x="46" y="294" font-size="10.5" fill="#8a3a6a">· 移相器数 = N × N_RF（最贵）</text>
+  <text x="46" y="314" font-size="10.5" fill="#667">· 每个 RF 链需功分到 N 个 PS</text>
+  <text x="46" y="334" font-size="10.5" fill="#0f7a8a">· 频谱效率最接近全数字</text>
+  <text x="46" y="356" font-size="10.5" fill="#4a7a3a">· 适合 N_RF 少而要求高的载荷</text>
+  <text x="175" y="392" text-anchor="middle" font-size="10.5" fill="#667">（mmWave 预编码文献的主力结构）</text>
+
+  <!-- subarray -->
+  <rect x="335" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">子阵连接（部分连接的一种）</text>
+  <g fill="#f0f7ee" stroke="#4a7a3a">
+    <rect x="360" y="130" width="110" height="96" rx="8"/><rect x="490" y="130" width="110" height="96" rx="8"/>
+  </g>
+  <g fill="#ffffff" stroke="#c96a1f">
+    <rect x="374" y="146" width="22" height="22" rx="4"/><rect x="402" y="146" width="22" height="22" rx="4"/><rect x="430" y="146" width="22" height="22" rx="4"/>
+    <rect x="374" y="178" width="22" height="22" rx="4"/><rect x="402" y="178" width="22" height="22" rx="4"/><rect x="430" y="178" width="22" height="22" rx="4"/>
+    <rect x="504" y="146" width="22" height="22" rx="4"/><rect x="532" y="146" width="22" height="22" rx="4"/><rect x="560" y="146" width="22" height="22" rx="4"/>
+    <rect x="504" y="178" width="22" height="22" rx="4"/><rect x="532" y="178" width="22" height="22" rx="4"/><rect x="560" y="178" width="22" height="22" rx="4"/>
+  </g>
+  <line x1="415" y1="130" x2="415" y2="118" stroke="#4a7a3a" stroke-width="1.4"/>
+  <line x1="545" y1="130" x2="545" y2="118" stroke="#4a7a3a" stroke-width="1.4"/>
+  <text x="415" y="114" text-anchor="middle" font-size="9.5" fill="#4a7a3a">RF1</text>
+  <text x="545" y="114" text-anchor="middle" font-size="9.5" fill="#4a7a3a">RF2</text>
+  <text x="480" y="250" text-anchor="middle" font-size="10.5" fill="#333">每子阵共用一个 RF 链</text>
+  <text x="351" y="274" font-size="10.5" fill="#4a7a3a">· 移相器数 ≈ N（最省，工程主流）</text>
+  <text x="351" y="294" font-size="10.5" fill="#8a3a6a">· 子阵间是"真正的数字自由度"</text>
+  <text x="351" y="314" font-size="10.5" fill="#8a3a6a">· 子阵栅瓣必须处理</text>
+  <text x="351" y="334" font-size="10.5" fill="#667">· 子阵内是模拟移相 ⇒ 宽带内斜视</text>
+  <text x="351" y="356" font-size="10.5" fill="#0f7a8a">· 零陷为"子阵级"，不如阵元级深</text>
+  <text x="480" y="392" text-anchor="middle" font-size="10.5" fill="#667">5G 毫米波 Massive MIMO 常用</text>
+
+  <!-- partially connected / energy -->
+  <rect x="640" y="80" width="290" height="330" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="785" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">部分连接 / 能效视角</text>
+  <text x="656" y="132" font-size="10.5" fill="#333">每条 RF 链接阵元的一个子集</text>
+  <text x="656" y="152" font-size="10.5" fill="#333">（可重叠 ⇒ 抑制子阵栅瓣）</text>
+  <!-- energy curves -->
+  <line x1="676" y1="330" x2="900" y2="330" stroke="#556" stroke-width="1.2"/>
+  <line x1="676" y1="330" x2="676" y2="196" stroke="#556" stroke-width="1.2"/>
+  <text x="880" y="348" font-size="9.5" fill="#667">N_RF</text>
+  <text x="656" y="200" font-size="9.5" fill="#667">能效</text>
+  <path d="M680,316 C730,300 780,268 820,240 C860,214 888,202 898,198" fill="none" stroke="#4a7a3a" stroke-width="2.2"/>
+  <text x="760" y="230" font-size="9.5" fill="#4a7a3a">部分连接（更省电）</text>
+  <path d="M680,320 C720,300 750,286 790,278 C840,268 880,264 898,262" fill="none" stroke="#0f7a8a" stroke-width="2.2" stroke-dasharray="5 4"/>
+  <text x="790" y="300" font-size="9.5" fill="#0f7a8a">全连接</text>
+  <text x="656" y="374" font-size="10.5" fill="#8a3a6a">关键结论（文献）：</text>
+  <text x="656" y="392" font-size="10.5" fill="#333">RF 链数增多时，部分连接的"比特/焦耳"</text>
+  <text x="656" y="410" font-size="10.5" fill="#333">更优 ⇒ 从能效角度看更"绿色"。</text>
+
+  <!-- bottom -->
+  <rect x="30" y="424" width="900" height="88" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="448" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">选择的本质：模拟侧只能"移相"（单位模约束），数字侧才能"自由加权"</text>
+  <text x="60" y="472" font-size="11.5" fill="#333">模拟预编码 F_RF 的每个元素必须满足 |[F_RF]| = 1 ⇒ 非凸的"恒模约束" ⇒ 联合设计变成矩阵分解难题。</text>
+  <text x="60" y="494" font-size="11.5" fill="#8a3a6a">目标：让 F_RF · F_BB 尽可能逼近理想全数字预编码 F_opt（在 Frobenius 距离 / 频谱效率意义上）。</text>
+</svg>

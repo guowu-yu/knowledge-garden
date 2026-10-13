@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">自适应为什么在真实系统里失效：五类失配</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">理想模型 vs 真实世界：每一类失配都有对应的稳健化对策</text>
+
+  <!-- five failure modes -->
+  <g>
+    <rect x="30" y="80" width="176" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+    <text x="118" y="104" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a3a6a">① 干扰移动</text>
+    <text x="46" y="130" font-size="10" fill="#333">平台振动、干扰机跳变</text>
+    <text x="46" y="150" font-size="10" fill="#333">⇒ 零陷"落空"</text>
+    <text x="46" y="180" font-size="10" fill="#0f7a8a">对策：零陷展宽</text>
+    <text x="46" y="200" font-size="10" fill="#0f7a8a">（CMT / 导数约束）</text>
+    <path d="M50,250 C70,240 80,238 96,260 C112,282 124,282 140,262" fill="none" stroke="#8a3a6a" stroke-width="1.8"/>
+  </g>
+  <g>
+    <rect x="216" y="80" width="176" height="300" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+    <text x="304" y="104" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a1f">② 导向失配</text>
+    <text x="232" y="130" font-size="10" fill="#333">阵元位置/幅相误差</text>
+    <text x="232" y="150" font-size="10" fill="#333">互耦、罩体、形变</text>
+    <text x="232" y="180" font-size="10" fill="#0f7a8a">对策：校准 +</text>
+    <text x="232" y="200" font-size="10" fill="#0f7a8a">稳健波束形成</text>
+    <text x="232" y="220" font-size="10" fill="#0f7a8a">（最差情况优化）</text>
+    <path d="M250,262 L286,262 M290,250 L290,274 M294,262 L330,262" stroke="#c96a1f" stroke-width="1.8"/>
+    <text x="288" y="292" text-anchor="middle" font-size="9" fill="#c96a1f">a_实际 ≠ a_理想</text>
+  </g>
+  <g>
+    <rect x="402" y="80" width="176" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+    <text x="490" y="104" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f7a8a">③ 快拍不足</text>
+    <text x="418" y="130" font-size="10" fill="#333">K &lt; 2N ⇒ R̂ 病态</text>
+    <text x="418" y="150" font-size="10" fill="#333">非平稳场景更糟</text>
+    <text x="418" y="180" font-size="10" fill="#0f7a8a">对策：对角加载</text>
+    <text x="418" y="200" font-size="10" fill="#0f7a8a">降维、协方差重构</text>
+    <path d="M430,270 C446,250 456,286 472,266" stroke="#0f7a8a" stroke-width="1.8" stroke-dasharray="3 3"/>
+    <path d="M486,262 C500,250 510,282 526,268" stroke="#0f7a8a" stroke-width="1.8" stroke-dasharray="3 3"/>
+  </g>
+  <g>
+    <rect x="588" y="80" width="176" height="300" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+    <text x="676" y="104" text-anchor="middle" font-size="12" font-weight="bold" fill="#4a7a3a">④ 自零陷</text>
+    <text x="604" y="130" font-size="10" fill="#333">训练含期望信号</text>
+    <text x="604" y="150" font-size="10" fill="#333">⇒ 主瓣被挖</text>
+    <text x="604" y="180" font-size="10" fill="#4a7a3a">对策：协方差重构</text>
+    <text x="604" y="200" font-size="10" fill="#4a7a3a">主瓣保形约束</text>
+    <path d="M616,250 C640,246 660,220 676,214" fill="none" stroke="#4a7a3a" stroke-width="1.8"/>
+    <line x1="676" y1="214" x2="676" y2="280" stroke="#8a3a6a" stroke-width="2"/>
+    <path d="M676,214 C694,220 712,246 736,250" fill="none" stroke="#4a7a3a" stroke-width="1.8"/>
+  </g>
+  <g>
+    <rect x="774" y="80" width="156" height="300" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+    <text x="852" y="104" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a3a6a">⑤ 宽带色散</text>
+    <text x="790" y="130" font-size="10" fill="#333">相移随频率变化</text>
+    <text x="790" y="150" font-size="10" fill="#333">⇒ 各频点指向不同</text>
+    <text x="790" y="180" font-size="10" fill="#0f7a8a">对策：子带处理</text>
+    <text x="790" y="200" font-size="10" fill="#0f7a8a">TTD / 频率平滑</text>
+    <g stroke="#8a3a6a" stroke-width="1.6">
+      <line x1="800" y1="270" x2="884" y2="252"/>
+      <line x1="800" y1="270" x2="876" y2="270"/>
+      <line x1="800" y1="270" x2="868" y2="288"/>
+    </g>
+    <text x="852" y="308" text-anchor="middle" font-size="9" fill="#8a3a6a">f_low / f_0 / f_high 指向不同</text>
+  </g>
+
+  <!-- bottom -->
+  <rect x="30" y="400" width="900" height="112" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">两类"稳健波束形成"的哲学</text>
+  <text x="60" y="450" font-size="11.5" fill="#333">· 结构稳健：从模型出发，主动放宽约束（零陷展宽、主瓣保形、导数值约束、对角加载）。</text>
+  <text x="60" y="472" font-size="11.5" fill="#333">· 最差情况稳健：把"误差集合"显式建模，在集合内最坏情况下最大化性能（worst-case / RCB / 概率约束）。</text>
+  <text x="60" y="494" font-size="11.5" fill="#8a3a6a">· 工程上常混合使用：先校准把误差压小（S5），再用结构稳健吸收残余，用最差情况法兜底极端场景。</text>
+</svg>

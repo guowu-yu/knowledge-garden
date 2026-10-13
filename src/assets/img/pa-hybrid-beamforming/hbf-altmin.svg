@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">模拟-数字联合优化：矩阵分解与交替最小化</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">把"求 F_opt"变成"分解 F_RF·F_BB"，用交替优化绕开非凸</text>
+
+  <!-- problem -->
+  <rect x="30" y="80" width="900" height="120" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="104" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">优化问题</text>
+  <text x="480" y="132" text-anchor="middle" font-family="Consolas,monospace" font-size="12" fill="#3a2f3a">min ‖ F_opt − F_RF · F_BB ‖_F²</text>
+  <text x="480" y="156" text-anchor="middle" font-family="Consolas,monospace" font-size="12" fill="#8a3a6a">s.t.　|[F_RF]_{i,j}| = 1　（恒模约束）,　‖ F_RF·F_BB ‖_F² = P_tx</text>
+  <text x="480" y="184" text-anchor="middle" font-size="11" fill="#333">恒模约束把问题变成非凸 ⇒ 无法直接闭式求解；交替优化是标准武器。</text>
+
+  <!-- altmin flow -->
+  <rect x="30" y="220" width="900" height="150" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="244" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">交替最小化（AltMin）主循环</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="50" y="262" width="180" height="56" rx="6" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="140" y="284" text-anchor="middle" fill="#0f7a8a">初始化 F_RF</text>
+    <text x="140" y="302" text-anchor="middle" fill="#667">（随机相位 / 导向矢量）</text>
+    <rect x="256" y="262" width="200" height="56" rx="6" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="356" y="284" text-anchor="middle" fill="#4a7a3a">① 固定 F_RF，解 F_BB</text>
+    <text x="356" y="302" text-anchor="middle" fill="#667">最小二乘（闭式）</text>
+    <rect x="482" y="262" width="200" height="56" rx="6" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="582" y="284" text-anchor="middle" fill="#8a3a6a">② 固定 F_BB，解 F_RF</text>
+    <text x="582" y="302" text-anchor="middle" fill="#667">相位提取 / 流形优化</text>
+    <rect x="708" y="262" width="200" height="56" rx="6" fill="#ffffff" stroke="#c96a1f"/>
+    <text x="808" y="284" text-anchor="middle" fill="#c96a1f">③ 收敛判定</text>
+    <text x="808" y="302" text-anchor="middle" fill="#667">目标值 / 迭代上限</text>
+  </g>
+  <g stroke="#556" stroke-width="1.4">
+    <line x1="230" y1="290" x2="254" y2="290"/><line x1="456" y1="290" x2="480" y2="290"/>
+    <line x1="682" y1="290" x2="706" y2="290"/>
+  </g>
+  <path d="M808,318 C808,344 582,344 582,320" fill="none" stroke="#556" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="700" y="352" font-size="10" fill="#667">未收敛则回到 ①</text>
+
+  <!-- methods -->
+  <rect x="30" y="386" width="440" height="126" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="250" y="410" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">全连接：两种经典解法</text>
+  <text x="46" y="436" font-size="11" fill="#8a3a6a">MO-AltMin（流形优化）</text>
+  <text x="46" y="456" font-size="10.5" fill="#333">把恒模约束看成"复圆流形"，用黎曼梯度下降；性能近最优。</text>
+  <text x="46" y="478" font-size="11" fill="#4a7a3a">PE-AltMin（相位提取）</text>
+  <text x="46" y="498" font-size="10.5" fill="#333">对 F_BB 加正交约束 ⇒ F_RF 可闭式相位提取；快且优于 OMP。</text>
+
+  <rect x="490" y="386" width="440" height="126" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="710" y="410" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">子阵连接：SDR-AltMin 与降维</text>
+  <text x="506" y="436" font-size="11" fill="#0f7a8a">SDR-AltMin（半定松弛）</text>
+  <text x="506" y="456" font-size="10.5" fill="#333">用半定松弛把子阵的非凸问题转为可解的凸问题。</text>
+  <text x="506" y="478" font-size="11" fill="#4a7a3a">工程更常用：闭式最小二乘 AltMin</text>
+  <text x="506" y="498" font-size="10.5" fill="#333">每步用 LS 的全局最优解，迭代次数少、复杂度低。</text>
+
+  <!-- bottom -->
+  <rect x="30" y="522" width="900" height="14" rx="4" fill="#ffffff" stroke="#dbe6ea"/>
+</svg>
