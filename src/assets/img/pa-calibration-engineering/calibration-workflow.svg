@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">校准六步流水：把一次标定变成一条产线</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">每一步都有可自动化的输入、输出与判据；缺一步就会在现场返工</text>
+
+  <!-- six steps -->
+  <g font-family="Consolas,monospace" font-size="9.6">
+    <rect x="30" y="80" width="142" height="112" rx="8" fill="#f7fbfc" stroke="#0f7a8a" stroke-width="1.4"/>
+    <text x="101" y="104" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">① 架台</text>
+    <text x="42" y="126">· 远场/近场/环回就位</text>
+    <text x="42" y="144">· 探头/参考对位</text>
+    <text x="42" y="162">· 温控与稳定等待</text>
+    <text x="42" y="180" fill="#667">输出：几何与工况参数</text>
+
+    <rect x="184" y="80" width="142" height="112" rx="8" fill="#f7fbfc" stroke="#0f7a8a" stroke-width="1.4"/>
+    <text x="255" y="104" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">② 测响应</text>
+    <text x="196" y="126">· 采集原始幅相/功率</text>
+    <text x="196" y="144">· 多频点、多温度</text>
+    <text x="196" y="162">· 记录时间戳</text>
+    <text x="196" y="180" fill="#667">输出：原始数据集</text>
+
+    <rect x="338" y="80" width="142" height="112" rx="8" fill="#f0f7ee" stroke="#4a7a3a" stroke-width="1.4"/>
+    <text x="409" y="104" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4a7a3a">③ 解算</text>
+    <text x="350" y="126">· REV/编码/近场反演</text>
+    <text x="350" y="144">· 去二义性、剔粗差</text>
+    <text x="350" y="162">· 生成逐通道 Δa, Δφ</text>
+    <text x="350" y="180" fill="#667">输出：残余误差向量</text>
+
+    <rect x="492" y="80" width="142" height="112" rx="8" fill="#fdf4ea" stroke="#c96a1f" stroke-width="1.4"/>
+    <text x="563" y="104" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#c96a1f">④ 生成补偿表</text>
+    <text x="504" y="126">· 频点 × 温度 × 角度</text>
+    <text x="504" y="144">· 量化到波控字长</text>
+    <text x="504" y="162">· 版本号与校验</text>
+    <text x="504" y="180" fill="#667">输出：可加载表文件</text>
+
+    <rect x="646" y="80" width="142" height="112" rx="8" fill="#fbf3f7" stroke="#8a3a6a" stroke-width="1.4"/>
+    <text x="717" y="104" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8a3a6a">⑤ 写回波控</text>
+    <text x="658" y="126">· 双缓冲加载</text>
+    <text x="658" y="144">· 帧边界生效</text>
+    <text x="658" y="162">· 回读校验</text>
+    <text x="658" y="180" fill="#667">输出：生效的补偿态</text>
+
+    <rect x="800" y="80" width="136" height="112" rx="8" fill="#e6f2f5" stroke="#0f7a8a" stroke-width="1.4"/>
+    <text x="868" y="104" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">⑥ 复测验收</text>
+    <text x="812" y="126">· 指向/副瓣/零陷</text>
+    <text x="812" y="144">· 交叉极化</text>
+    <text x="812" y="162">· 合格才放行</text>
+    <text x="812" y="180" fill="#667">输出：验收报告</text>
+  </g>
+  <g stroke="#0f7a8a" stroke-width="1.6" fill="none" marker-end="url(#a3)">
+    <line x1="172" y1="136" x2="182" y2="136"/>
+    <line x1="326" y1="136" x2="336" y2="136"/>
+    <line x1="480" y1="136" x2="490" y2="136"/>
+    <line x1="634" y1="136" x2="644" y2="136"/>
+    <line x1="788" y1="136" x2="798" y2="136"/>
+  </g>
+  <defs>
+    <marker id="a3" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 z" fill="#0f7a8a"/>
+    </marker>
+  </defs>
+  <path d="M868,192 L868,216 L101,216 L101,194" fill="none" stroke="#c96a1f" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a4)"/>
+  <defs>
+    <marker id="a4" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 z" fill="#c96a1f"/>
+    </marker>
+  </defs>
+  <text x="480" y="234" text-anchor="middle" font-size="10.5" fill="#c96a1f">不合格 → 回到 ①：闭环迭代；同一台设备的多台次数据必须版本可追溯</text>
+
+  <!-- pipeline engineering -->
+  <rect x="30" y="252" width="446" height="260" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="253" y="276" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">自动化测试流水线（软件工程视角）</text>
+  <text x="46" y="302" font-size="10.5" fill="#333">· 仪器控制：SCPI / PyVISA 统一封装，屏蔽型号差异</text>
+  <text x="46" y="324" font-size="10.5" fill="#333">· 数据层：原始数据与解算结果分表存储（原始不可变）</text>
+  <text x="46" y="346" font-size="10.5" fill="#333">· 解算层：纯函数式（输入数据集 → 输出补偿表），可单测</text>
+  <text x="46" y="368" font-size="10.5" fill="#333">· 配置即代码：测量序列、判据阈值用 YAML 描述</text>
+  <text x="46" y="390" font-size="10.5" fill="#333">· 回归对拍：新算法对旧数据集必须复现历史结果</text>
+  <text x="46" y="412" font-size="10.5" fill="#8a3a6a">· 报告自动生成：逐通道残余误差、Pass/Fail、趋势图</text>
+  <text x="46" y="434" font-size="10.5" fill="#8a3a6a">· 产线节拍约束：单台标定时间 = 测量数 × 单次时间</text>
+  <text x="46" y="456" font-size="10.5" fill="#4a7a3a">· 数据量：N × 频点 × 温度 × 角度，需规划存储与传输</text>
+  <text x="46" y="478" font-size="10.5" fill="#c96a1f">· 可维护性：校准流程的改动必须能"重放"到已出厂设备</text>
+  <text x="46" y="498" font-size="10.5" fill="#667">心法：校准不是"一次实验"，而是一条要长期跑的软件产线。</text>
+
+  <!-- deliverables -->
+  <rect x="490" y="252" width="446" height="260" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="713" y="276" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">交付物清单：三张表缺一不可</text>
+  <rect x="510" y="292" width="406" height="60" rx="8" fill="#fdf4ea" stroke="#c96a1f"/>
+  <text x="526" y="314" font-size="11" font-weight="bold" fill="#c96a1f">① 静态幅相补偿表</text>
+  <text x="526" y="334" font-size="10" fill="#333">通道 × 频点 的 Δa、Δφ；出厂定，随设备交付</text>
+  <rect x="510" y="362" width="406" height="60" rx="8" fill="#e6f2f5" stroke="#0f7a8a"/>
+  <text x="526" y="384" font-size="11" font-weight="bold" fill="#0f7a8a">② 温度补偿表</text>
+  <text x="526" y="404" font-size="10" fill="#333">通道 × 温度（× 频点）的漂移系数，必须与①同时交付</text>
+  <rect x="510" y="432" width="406" height="66" rx="8" fill="#fbf3f7" stroke="#8a3a6a"/>
+  <text x="526" y="454" font-size="11" font-weight="bold" fill="#8a3a6a">③ 失效通道表 / 健康基线</text>
+  <text x="526" y="474" font-size="10" fill="#333">参考幅相、容差带、失效判据、隔离与降级策略</text>
+  <text x="526" y="492" font-size="10" fill="#667">三张表 + 版本号 = 可复现、可追溯、可现场修复</text>
+</svg>

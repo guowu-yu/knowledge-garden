@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">近场扫描校准：在 3~5λ 处采样，算出远场</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">最精确的"金标准"，代价是系统复杂度与时间；核心是一个变换</text>
+
+  <!-- setup -->
+  <rect x="30" y="78" width="560" height="270" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="310" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">测量几何（平面近场示意）</text>
+
+  <!-- array (bottom) -->
+  <rect x="120" y="276" width="380" height="22" rx="3" fill="#e6f2f5" stroke="#0f7a8a" stroke-width="1.4"/>
+  <g fill="#0f7a8a">
+    <circle cx="140" cy="287" r="3"/><circle cx="172" cy="287" r="3"/><circle cx="204" cy="287" r="3"/>
+    <circle cx="236" cy="287" r="3"/><circle cx="268" cy="287" r="3"/><circle cx="300" cy="287" r="3"/>
+    <circle cx="332" cy="287" r="3"/><circle cx="364" cy="287" r="3"/><circle cx="396" cy="287" r="3"/>
+    <circle cx="428" cy="287" r="3"/><circle cx="460" cy="287" r="3"/><circle cx="480" cy="287" r="3"/>
+  </g>
+  <text x="310" y="318" text-anchor="middle" font-size="10.5" fill="#333">被测阵列 AUT（逐单元开关或全开）</text>
+
+  <!-- probe -->
+  <rect x="290" y="180" width="40" height="26" rx="3" fill="#fdf4ea" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="310" y="197" text-anchor="middle" font-size="10" fill="#c96a1f">探头</text>
+  <line x1="310" y1="206" x2="310" y2="276" stroke="#c96a1f" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="318" y="244" font-size="10.5" fill="#c96a1f">z = 3 ~ 5 λ</text>
+
+  <!-- scan plane -->
+  <line x1="140" y1="140" x2="480" y2="140" stroke="#8a3a6a" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="310" y="132" text-anchor="middle" font-size="10.5" fill="#8a3a6a">扫描面（逐点采样，形成闭合面）</text>
+  <g stroke="#8a3a6a" stroke-width="0.8" stroke-opacity="0.35">
+    <line x1="160" y1="150" x2="160" y2="170"/><line x1="220" y1="150" x2="220" y2="170"/>
+    <line x1="280" y1="150" x2="280" y2="170"/><line x1="340" y1="150" x2="340" y2="170"/>
+    <line x1="400" y1="150" x2="400" y2="170"/><line x1="460" y1="150" x2="460" y2="170"/>
+  </g>
+
+  <!-- data record note -->
+  <text x="46" y="200" font-family="Consolas,monospace" font-size="10" fill="#333">每点记录：</text>
+  <text x="46" y="218" font-family="Consolas,monospace" font-size="10" fill="#667">振幅 + 相位（幅相）</text>
+  <text x="46" y="236" font-family="Consolas,monospace" font-size="10" fill="#667">或 (I, Q)</text>
+  <text x="46" y="260" font-family="Consolas,monospace" font-size="10" fill="#8a3a6a">需要相干接收</text>
+  <text x="46" y="278" font-family="Consolas,monospace" font-size="10" fill="#8a3a6a">（与 REV 的分水岭）</text>
+
+  <!-- NF-FF transform -->
+  <rect x="608" y="78" width="328" height="270" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="772" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">近场 → 远场变换（NF→FF）</text>
+  <text x="626" y="130" font-size="10.5" fill="#333">① 由扫描面场分布 E(x,y,z₀) 出发</text>
+  <text x="626" y="154" font-size="10.5" fill="#333">② 平面波谱分解（对 x,y 做二维 FFT）</text>
+  <text x="638" y="174" font-family="Consolas,monospace" font-size="10" fill="#0f7a8a">A(kx,ky) = FFT2{ E(x,y,z0) }</text>
+  <text x="626" y="198" font-size="10.5" fill="#333">③ 反向传播到远场（乘相位因子）</text>
+  <text x="638" y="218" font-family="Consolas,monospace" font-size="10" fill="#0f7a8a">e^{ j kz·z },  kz = √(k²−kx²−ky²)</text>
+  <text x="626" y="242" font-size="10.5" fill="#333">④ 由 E(x,y,z) 反推单元激励与有源方向图</text>
+  <text x="626" y="266" font-size="10.5" fill="#333">⑤ 需要：探头方向图、阵元位置、单元方向图先验</text>
+  <text x="626" y="292" font-size="10.5" fill="#4a7a3a">关键：探头必须足够远以避免耦合，又足够近以保精度</text>
+  <text x="626" y="316" font-size="10.5" fill="#8a3a6a">代价：逐点机械扫描极慢；探头定位精度直接进误差预算</text>
+  <text x="626" y="336" font-size="10" fill="#667">⇒ 主要用在工厂一次性标定，不在在线校准链路里</text>
+
+  <!-- pros cons -->
+  <rect x="30" y="364" width="906" height="148" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="388" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">近场扫描的定位：精度最高、成本最高、最难在线</text>
+  <text x="60" y="414" font-size="10.5" fill="#333">· 能测出"单元级幅相 + 有源方向图 + 互耦影响"，是唯一能把"真实单元方向图"拿到的通用手段</text>
+  <text x="60" y="436" font-size="10.5" fill="#333">· 因为把耦合与罩体影响都包含进来，它给出的余量最保守、最可信——高指标（−40 dB 副瓣）通常只能靠它</text>
+  <text x="60" y="458" font-size="10.5" fill="#333">· 但：机械扫描慢（分钟级到小时级）、需要精密转台/扫描架、需相干接收、需已知探头与几何</text>
+  <text x="60" y="480" font-size="10.5" fill="#4a7a3a">· 软件工作量集中在：二维 FFT、谱域传播、反演与标定因子 Sn 的计算——这是软件工程师的主场</text>
+  <text x="60" y="502" font-size="10.5" fill="#8a3a6a">· 反演公式：a_n e^{j k φ_n} = S_n · E_n，其中 S_n 由 r_n、单元方向图、探头方向图联合算出</text>
+</svg>

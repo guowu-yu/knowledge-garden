@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">验收判据、失效识别与优雅降级</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">校准做完了不算完——"能不能放行"和"坏了怎么办"才是工程落点</text>
+
+  <!-- acceptance criteria -->
+  <rect x="30" y="78" width="600" height="212" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="330" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">验收判据（可量化的放行条件）</text>
+  <rect x="46" y="116" width="568" height="26" rx="4" fill="#e6f2f5"/>
+  <g font-size="10.5" font-weight="bold" fill="#0f7a8a">
+    <text x="58" y="134">判据</text>
+    <text x="270" y="134">目标值（典型）</text>
+    <text x="470" y="134">为什么这样定</text>
+  </g>
+  <g font-family="Consolas,monospace" font-size="9.8" fill="#333">
+    <text x="58" y="164">残余相位误差</text>
+    <text x="270" y="164">&lt; 移相器 LSB（6bit → 5.625°）</text>
+    <text x="470" y="164">再准也没有分辨力了</text>
+
+    <text x="58" y="190">残余幅度误差</text>
+    <text x="270" y="190">&lt; 0.5 dB</text>
+    <text x="470" y="190">对应 −30 dB 级副瓣</text>
+
+    <text x="58" y="216">指向精度</text>
+    <text x="270" y="216">≤ 0.1 × 波束宽度（≈0.1°）</text>
+    <text x="470" y="216">跟踪误差 = 指向×距离</text>
+
+    <text x="58" y="242">交叉极化隔离</text>
+    <text x="270" y="242">≥ 20 ~ 25 dB</text>
+    <text x="470" y="242">双极化系统的硬指标</text>
+
+    <text x="58" y="268">副瓣 / 零陷</text>
+    <text x="270" y="268">按设计值 −2 dB 余量</text>
+    <text x="470" y="268">留温漂与老化的活口</text>
+  </g>
+  <line x1="46" y1="142" x2="614" y2="142" stroke="#cfe0e6"/>
+  <line x1="46" y1="172" x2="614" y2="172" stroke="#cfe0e6"/>
+  <line x1="46" y1="198" x2="614" y2="198" stroke="#cfe0e6"/>
+  <line x1="46" y1="224" x2="614" y2="224" stroke="#cfe0e6"/>
+  <line x1="46" y1="250" x2="614" y2="250" stroke="#cfe0e6"/>
+
+  <!-- failure detection -->
+  <rect x="646" y="78" width="290" height="212" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="791" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">失效通道识别</text>
+  <text x="662" y="128" font-size="10.5" fill="#333">判据：与健康基线的偏差超容差带</text>
+  <text x="662" y="150" font-size="10.5" fill="#333">· 增益跌落 &gt; 3 dB（PA/LNA 失效）</text>
+  <text x="662" y="172" font-size="10.5" fill="#333">· 相位跳变 &gt; 30°（移相器卡死）</text>
+  <text x="662" y="194" font-size="10.5" fill="#333">· 噪声异常升高（器件退化）</text>
+  <text x="662" y="218" font-size="10.5" fill="#4a7a3a">定位：每个通道有唯一编码/位置索引</text>
+  <text x="662" y="240" font-size="10.5" fill="#4a7a3a">⇒ 失效点可在阵列图上直接标出</text>
+  <text x="662" y="264" font-size="10.5" fill="#8a3a6a">TerraSAR-X：384 个 T/R 中关掉一个，</text>
+  <text x="662" y="280" font-size="10.5" fill="#8a3a6a">模块级检查可定位到具体行列位置</text>
+
+  <!-- degradation -->
+  <rect x="30" y="308" width="906" height="204" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="332" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">优雅降级：允许坏几个通道，但不能崩</text>
+  <g font-family="Consolas,monospace" font-size="10">
+    <rect x="50" y="350" width="210" height="146" rx="8" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="155" y="374" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">① 权值重归一</text>
+    <text x="64" y="398" fill="#333">失效通道权值置零，</text>
+    <text x="64" y="418" fill="#333">其余通道幅度重新归一化</text>
+    <text x="64" y="440" fill="#333">→ 增益略降，副瓣略升</text>
+    <text x="64" y="462" fill="#667">最简单的降级策略，</text>
+    <text x="64" y="480" fill="#667">通常可接受（损失 ~0.2 dB/个）</text>
+
+    <rect x="272" y="350" width="210" height="146" rx="8" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="377" y="374" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4a7a3a">② 低副瓣重构</text>
+    <text x="286" y="398" fill="#333">在"缺通道"约束下重新综合</text>
+    <text x="286" y="418" fill="#333">激励（S2 方向图综合）</text>
+    <text x="286" y="440" fill="#333">→ 保住副瓣指标</text>
+    <text x="286" y="462" fill="#667">计算量大，需控制面在线算</text>
+
+    <rect x="494" y="350" width="210" height="146" rx="8" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="599" y="374" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8a3a6a">③ 通道置换</text>
+    <text x="508" y="398" fill="#333">对冗余/备份通道</text>
+    <text x="508" y="418" fill="#333">切换替代（若有冗余设计）</text>
+    <text x="508" y="440" fill="#333">→ 能力完整恢复</text>
+    <text x="508" y="462" fill="#667">需硬件冗余，成本高</text>
+
+    <rect x="716" y="350" width="202" height="146" rx="8" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="817" y="374" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#c96a1f">④ 告警 + 记录</text>
+    <text x="730" y="398" fill="#333">无论哪种策略：</text>
+    <text x="730" y="418" fill="#333">失效必须上报、记录、</text>
+    <text x="730" y="438" fill="#333">带时间戳与位置。</text>
+    <text x="730" y="460" fill="#667">这是"可维护性"</text>
+    <text x="730" y="478" fill="#667">能否成立的底线</text>
+  </g>
+  <text x="60" y="510" font-size="10.5" fill="#c96a1f">心法：校准工程的验收对象不只是"现在的指标"，还有"未来坏了能不能修"。</text>
+</svg>

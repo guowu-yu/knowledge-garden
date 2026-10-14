@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">幅相误差 → 副瓣抬高的定量关系</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">随机误差把方向图抬出一层"角度无关的底噪"，这就是残余副瓣</text>
+
+  <!-- formulas -->
+  <rect x="30" y="78" width="900" height="150" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">三个核心公式（Mailloux / Ruze）</text>
+  <g font-family="Consolas,monospace" font-size="12" fill="#333">
+    <text x="60" y="130">残余副瓣功率（相对峰值）：  σ_SLL²  =  ( σ_a² + σ_ψ² ) / D</text>
+    <text x="60" y="156">增益退化：                 D / D0 =  1 / ( 1 + σ² ) ,   σ² = (σ_a − 1)² + σ_ψ²</text>
+    <text x="60" y="182">副瓣合成：                 SLL²  =  SLL0² · [ 1 + σ² / ( D0 · SLL0² ) ]</text>
+  </g>
+  <text x="60" y="210" font-size="10.5" fill="#667">σ_a = rms 幅度误差（线性比）｜σ_ψ = rms 相位误差（弧度）｜D = 阵列方向性（功率比，均匀阵约等于 N）</text>
+
+  <!-- derivation -->
+  <rect x="30" y="242" width="440" height="150" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="250" y="266" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">工程近似式（大阵、均匀激励）</text>
+  <g font-family="Consolas,monospace" font-size="11.5" fill="#333">
+    <text x="46" y="294">D ≈ N   ⇒   σ_SLL ≈ σ_ψ / √N</text>
+    <text x="46" y="320">换算 dB：  SLL_avg ≈ 20·log10(σ_ψ) − 10·log10(N)</text>
+  </g>
+  <text x="46" y="348" font-size="10.5" fill="#4a7a3a">读法：误差固定时，阵元数每翻倍，平均副瓣底噪改善 3 dB。</text>
+  <text x="46" y="368" font-size="10.5" fill="#8a3a6a">大阵"稀释"随机误差；但零陷与确定性副瓣不吃这套。</text>
+  <text x="46" y="386" font-size="10.5" fill="#667">注意：σ_ψ 用弧度，20·log10 对的是"场"不是"功率"。</text>
+
+  <!-- numeric example -->
+  <rect x="490" y="242" width="440" height="150" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="710" y="266" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">算例：N = 64，rms 相位误差不同时的平均副瓣</text>
+  <g font-family="Consolas,monospace" font-size="11" fill="#333">
+    <text x="506" y="292">σ_ψ =  5°  (0.0873 rad)  →  −15.3 dB</text>
+    <text x="506" y="314">σ_ψ = 10°  (0.1745 rad)  →  −33.2 dB</text>
+    <text x="506" y="336">σ_ψ = 20°  (0.3491 rad)  →  −27.2 dB</text>
+    <text x="506" y="358">σ_ψ = 30°  (0.5236 rad)  →  −23.7 dB</text>
+  </g>
+  <text x="506" y="382" font-size="10.5" fill="#c96a1f">Δ每 +6 dB 误差 ⇒ 副瓣底噪 +6 dB（20log10 线性关系）</text>
+
+  <!-- accuracy requirement table -->
+  <rect x="30" y="404" width="900" height="108" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="480" y="428" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">反推：想做到某个副瓣指标，通道幅相要多准？</text>
+  <text x="60" y="454" font-size="11" fill="#333">副瓣 ≥ −25 dB：相位 rms &lt; ±10°，幅度 rms &lt; ±1 dB；　副瓣 ≥ −35 dB：相位 &lt; ±3°，幅度 &lt; ±0.3 dB</text>
+  <text x="60" y="476" font-size="11" fill="#333">副瓣 ≥ −40 dB：需近场校准级别的精度，且必须同时压低温漂与老化项</text>
+  <text x="60" y="498" font-size="11" fill="#8a3a6a">例：8×8 阵在 ±2 dB / ±18° 峰值误差（rms 1 dB / 9°）下，副瓣在 −13.3 dB 附近抖动约 ±1.6 dB</text>
+</svg>

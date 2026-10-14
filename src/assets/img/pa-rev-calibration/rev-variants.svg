@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">REV 的三个工程变体：测量数与解算精度</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">从 360° 全扫 → 三态 → 两态；测量数从 N·M 一路压到 2N+1</text>
+
+  <!-- three variants -->
+  <rect x="30" y="78" width="906" height="214" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">三种变体对比（N 为阵元数，M 为单元内相位采样点数）</text>
+
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="50" y="120" width="272" height="152" rx="8" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="186" y="144" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f7a8a">经典 REV（Mano 1982）</text>
+    <text x="66" y="170" fill="#333">· 待测单元相位 0°→360° 步进</text>
+    <text x="66" y="190" fill="#333">· 逐点记录合成功率</text>
+    <text x="66" y="210" fill="#333">· 拟合正弦，取 max/min/φ_max</text>
+    <text x="66" y="232" fill="#4a7a3a">测量数：N × M（M 可达 36~72）</text>
+    <text x="66" y="252" fill="#4a7a3a">精度最高、最抗噪、最耗时</text>
+    <text x="66" y="268" fill="#667" font-size="9.5">适合：小阵、实验室高精度</text>
+
+    <rect x="342" y="120" width="272" height="152" rx="8" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="478" y="144" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a1f">三态法（Long 2017）</text>
+    <text x="358" y="170" fill="#333">· 只取 0° / 90° / 180° 三态</text>
+    <text x="358" y="190" fill="#333">· 解关于 E_m、E_r 的方程组</text>
+    <text x="358" y="210" fill="#333">· 三点位于斜率最大区</text>
+    <text x="358" y="232" fill="#c96a1f">测量数：2N + 1</text>
+    <text x="358" y="252" fill="#c96a1f">工程最常用的折中</text>
+    <text x="358" y="268" fill="#667" font-size="9.5">注意：仍有解的二义性需消除</text>
+
+    <rect x="634" y="120" width="282" height="152" rx="8" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="775" y="144" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a3a6a">ML / 正交四态（Sorace 2001）</text>
+    <text x="650" y="170" fill="#333">· 4 个正交相位 + 最大似然估计</text>
+    <text x="650" y="190" fill="#333">· 对噪声统计最优</text>
+    <text x="650" y="210" fill="#333">· 可扩展为分组（组内同时转）</text>
+    <text x="650" y="232" fill="#8a3a6a">测量数：3N + 1</text>
+    <text x="650" y="252" fill="#8a3a6a">抗噪优于三态，代价是多一轮</text>
+    <text x="650" y="268" fill="#667" font-size="9.5">适合：中低信噪比测量链路</text>
+  </g>
+
+  <!-- pitfalls -->
+  <rect x="30" y="306" width="446" height="206" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="253" y="330" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">两个必须处理的工程坑</text>
+  <text x="46" y="356" font-size="11" font-weight="bold" fill="#8a3a6a">坑一：解的二义性（π 模糊）</text>
+  <text x="46" y="376" font-size="10.5" fill="#333">REV 方程组有两组解，一组是伪解。</text>
+  <text x="46" y="394" font-size="10.5" fill="#333">根源：无法判定"旋转单元合成功率"是否小于其余单元。</text>
+  <text x="46" y="414" font-size="10.5" fill="#333">解法：设置多组不同初始相位分布做多轮测试；或分组旋转（CREV）。</text>
+  <text x="46" y="440" font-size="11" font-weight="bold" fill="#8a3a6a">坑二：单单元贡献太小（大阵）</text>
+  <text x="46" y="460" font-size="10.5" fill="#333">N 很大时，单转一个单元对总功率几乎无影响 ⇒ 曲线被噪声淹没。</text>
+  <text x="46" y="480" font-size="10.5" fill="#333">解法：分组旋转（一次转一组）+ 多轮分组正交化，提升信噪比。</text>
+  <text x="46" y="500" font-size="10.5" fill="#c96a1f">折中：先粗分组定位，再组内精解。</text>
+
+  <!-- robustness -->
+  <rect x="490" y="306" width="446" height="206" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="713" y="330" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">抗噪：别只信一个极值点</text>
+  <text x="506" y="356" font-size="10.5" fill="#333">· 单点极值对噪声极敏感（max/min 是单次测量）。</text>
+  <text x="506" y="376" font-size="10.5" fill="#333">· 把整条功率曲线当作"带噪正弦"做拟合 / 相关检测：</text>
+  <text x="518" y="396" font-size="10.5" fill="#4a7a3a">— 最小二乘正弦拟合（估 3 参数：均值、幅度、相位）</text>
+  <text x="518" y="416" font-size="10.5" fill="#4a7a3a">— 对基频做相关（匹配滤波），等效自相关检测</text>
+  <text x="506" y="440" font-size="10.5" fill="#333">· 处理增益 ≈ 10·log10(M/2) dB（M 为采样点数）：</text>
+  <text x="518" y="460" font-size="10.5" fill="#667">M = 36 时约 +12.6 dB 等效信噪比改善。</text>
+  <text x="506" y="484" font-size="10.5" fill="#8a3a6a">这正是"多测几点"比"只测三态"更稳的原因——</text>
+  <text x="506" y="502" font-size="10.5" fill="#8a3a6a">三态法的代价就是丢掉了这部分处理增益。</text>
+</svg>

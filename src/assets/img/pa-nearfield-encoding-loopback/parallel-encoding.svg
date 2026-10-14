@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">并行编码法：一次测全部，靠正交性解耦</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">Hadamard / Walsh / PN 码——串行 O(N) 变并行，还换来 N 倍的处理增益</text>
+
+  <!-- serial vs parallel -->
+  <rect x="30" y="78" width="440" height="180" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="250" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">串行（逐单元）</text>
+  <g font-family="Consolas,monospace" font-size="10">
+    <text x="46" y="130" fill="#333">t1: [1 0 0 0 ... 0] → 只测单元 1</text>
+    <text x="46" y="152" fill="#333">t2: [0 1 0 0 ... 0] → 只测单元 2</text>
+    <text x="46" y="174" fill="#333">...</text>
+    <text x="46" y="196" fill="#333">tN: [0 0 0 ... 0 1] → 只测单元 N</text>
+  </g>
+  <text x="46" y="222" font-size="10.5" fill="#8a3a6a">N 次测量；每次只用到 1/N 的功率 ⇒ 单次信噪比低</text>
+  <text x="46" y="242" font-size="10.5" fill="#667">优点：简单、无需编码；缺点：慢、信噪比差</text>
+
+  <rect x="490" y="78" width="446" height="180" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="713" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">并行（正交编码）</text>
+  <g font-family="Consolas,monospace" font-size="10">
+    <text x="506" y="130" fill="#333">t1: [+1 +1 +1 ... +1]  (H 第 1 行)</text>
+    <text x="506" y="152" fill="#333">t2: [+1 −1 +1 ... −1]  (H 第 2 行)</text>
+    <text x="506" y="174" fill="#333">...</text>
+    <text x="506" y="196" fill="#333">tN: [...  ±1 ±1 ... ]   (H 第 N 行)</text>
+  </g>
+  <text x="506" y="222" font-size="10.5" fill="#4a7a3a">每次测量都用到全部 N 个单元 ⇒ 每次都是全阵功率</text>
+  <text x="506" y="242" font-size="10.5" fill="#667">解耦：T = (1/N)·H_N · R，正交性保证通道间不串扰</text>
+
+  <!-- hadamard decoding -->
+  <rect x="30" y="272" width="546" height="240" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="303" y="296" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">Hadamard 编解码（条件数最优）</text>
+  <g font-family="Consolas,monospace" font-size="11" fill="#333">
+    <text x="46" y="326">R = H_N · T          # 测量向量 = 编码矩阵 × 待测激励</text>
+    <text x="46" y="352">H_N⁻¹ = (1/N)·H_N    # 正交 ⇒ 逆就是转置，条件数 = 1</text>
+    <text x="46" y="378">T = (1/N)·H_N · R    # 反解：一次矩阵乘搞定 N 个单元</text>
+  </g>
+  <text x="46" y="406" font-size="10.5" fill="#4a7a3a">· N 取"≥ 阵元数的 2 的幂"（不足则补零/补虚拟单元）</text>
+  <text x="46" y="426" font-size="10.5" fill="#4a7a3a">· 条件数 = 1 是它优于其他编码的根本原因：误差不被放大</text>
+  <text x="46" y="446" font-size="10.5" fill="#8a3a6a">· 编码可以是相位翻转（0°/180°）或幅度通断，硬件改动小</text>
+  <text x="46" y="468" font-size="10.5" fill="#c96a1f">· 与 REV 结合：分组正交编码 + 组内旋转矢量（CREV），兼顾</text>
+  <text x="46" y="488" font-size="10.5" fill="#c96a1f">　覆盖率、信噪比与测量数；分组把轮数逼近 O(log N) 量级</text>
+
+  <!-- TerraSAR-X case -->
+  <rect x="596" y="272" width="340" height="240" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="766" y="296" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">在轨案例：TerraSAR-X / Sentinel-1</text>
+  <text x="612" y="322" font-size="10.5" fill="#333">TerraSAR-X：384 个 T/R 组件，首次在轨实现在轨</text>
+  <text x="612" y="340" font-size="10.5" fill="#333">"PN 门控"（正交 PN / Walsh 码）标定。</text>
+  <text x="612" y="366" font-size="10.5" fill="#333">· 码长 l = 2^i ≥ N·M（模块级 512 bit / 384 模块）</text>
+  <text x="612" y="386" font-size="10.5" fill="#333">· 面板级 16 bit / 12 面板；行级 32 bit / 32 行</text>
+  <text x="612" y="406" font-size="10.5" fill="#4a7a3a">· Walsh 码在 TerraSAR-X 上被证明最稳健</text>
+  <text x="612" y="426" font-size="10.5" fill="#4a7a3a">· 全部单元同时工作（准正常态）下被表征 ⇒ 最真实</text>
+  <text x="612" y="452" font-size="10.5" fill="#8a3a6a">· Sentinel-1 采用 Walsh 码做同类在轨校准</text>
+  <text x="612" y="474" font-size="10.5" fill="#333">· 对照：Envisat/ASAR 用"模块步进"逐单元串行</text>
+  <text x="612" y="496" font-size="10.5" fill="#c96a1f">⇒ 并行编码是"大阵 + 在轨 + 高一致性"的答案</text>
+</svg>

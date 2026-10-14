@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">误差随阵元数的统计行为：大阵的"红利"与陷阱</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">随机误差被阵元数稀释，确定性误差不会——这两类必须分开治理</text>
+
+  <!-- chart area: sidelobe vs N -->
+  <rect x="30" y="78" width="560" height="330" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="310" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">平均副瓣底噪 vs 阵元数（rms 相位误差 10°）</text>
+  <!-- axes -->
+  <line x1="90" y1="360" x2="560" y2="360" stroke="#556" stroke-width="1.4"/>
+  <line x1="90" y1="130" x2="90" y2="360" stroke="#556" stroke-width="1.4"/>
+  <text x="325" y="384" text-anchor="middle" font-size="10.5" fill="#556">阵元数 N（对数轴）</text>
+  <text x="52" y="248" font-size="10.5" fill="#556" transform="rotate(-90 52 248)" text-anchor="middle">平均副瓣 (dB)</text>
+  <!-- gridlines -->
+  <g stroke="#cfe0e6" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="90" y1="187" x2="560" y2="187"/>
+    <line x1="90" y1="244" x2="560" y2="244"/>
+    <line x1="90" y1="302" x2="560" y2="302"/>
+  </g>
+  <g font-size="9.5" fill="#778">
+    <text x="80" y="190" text-anchor="end">−16</text>
+    <text x="80" y="247" text-anchor="end">−24</text>
+    <text x="80" y="305" text-anchor="end">−32</text>
+    <text x="80" y="363" text-anchor="end">−40</text>
+    <text x="128" y="376" text-anchor="middle">8</text>
+    <text x="219" y="376" text-anchor="middle">16</text>
+    <text x="310" y="376" text-anchor="middle">32</text>
+    <text x="401" y="376" text-anchor="middle">64</text>
+    <text x="492" y="376" text-anchor="middle">128</text>
+  </g>
+  <!-- curve: SLL = -10log10(N) + 20log10(0.1745) = -10log10(N) - 15.16 -->
+  <!-- N=8: -24.2 ; 16: -27.2 ; 32: -30.2 ; 64: -33.2 ; 128: -36.2 -->
+  <polyline points="128,300 219,327 310,354 401,381 492,408" fill="none" stroke="#c96a1f" stroke-width="2.6"/>
+  <g fill="#c96a1f">
+    <circle cx="128" cy="300" r="4"/>
+    <circle cx="219" cy="327" r="4"/>
+    <circle cx="310" cy="354" r="4"/>
+    <circle cx="401" cy="381" r="4"/>
+    <circle cx="492" cy="408" r="4"/>
+  </g>
+  <text x="300" y="336" font-size="10.5" fill="#c96a1f">SLL ≈ 20·log10(σ_ψ) − 10·log10(N)</text>
+  <text x="300" y="352" font-size="10" fill="#667">N 每翻倍 → 改善 3 dB（斜率恒定）</text>
+
+  <!-- right panel: two kinds -->
+  <rect x="608" y="78" width="322" height="156" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="769" y="102" text-anchor="middle" font-size="12" font-weight="bold" fill="#4a7a3a">随机误差：被"稀释"</text>
+  <text x="626" y="128" font-size="10.5" fill="#333">· 各通道误差独立、无相关性</text>
+  <text x="626" y="148" font-size="10.5" fill="#333">· 副瓣底噪 ∝ 误差/√N</text>
+  <text x="626" y="168" font-size="10.5" fill="#333">· 主瓣增益几乎不变（&lt; 0.5 dB）</text>
+  <text x="626" y="188" font-size="10.5" fill="#333">· 大阵对随机误差"天然宽容"</text>
+  <text x="626" y="212" font-size="10.5" fill="#4a7a3a">⇒ 可用较低精度器件，降成本</text>
+  <text x="626" y="230" font-size="10" fill="#667">（这就是 5G 毫米波阵列敢"免校准"的底气）</text>
+
+  <rect x="608" y="252" width="322" height="156" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="769" y="276" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a3a6a">确定性误差：不"稀释"</text>
+  <text x="626" y="302" font-size="10.5" fill="#333">· 系统性、通道间相关的偏差</text>
+  <text x="626" y="322" font-size="10.5" fill="#333">· 如整个子阵共用的馈网误差</text>
+  <text x="626" y="342" font-size="10.5" fill="#333">· 产生规则的结构性副瓣/栅瓣</text>
+  <text x="626" y="362" font-size="10.5" fill="#333">· 与 N 无关，N 再大也不会变好</text>
+  <text x="626" y="386" font-size="10.5" fill="#8a3a6a">⇒ 必须靠校准"定向消除"</text>
+  <text x="626" y="404" font-size="10" fill="#667">零陷同样不吃"阵元稀释"红利</text>
+
+  <!-- bottom: implication -->
+  <rect x="30" y="426" width="900" height="86" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="450" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">对软件/算法工程师的四条直接推论</text>
+  <text x="60" y="474" font-size="10.5" fill="#333">① 规格书上的"副瓣 −25 dB"必须问清是"平均底噪"还是"峰值"——两者可差 6~10 dB</text>
+  <text x="60" y="494" font-size="10.5" fill="#333">② 低副瓣设计里，零陷深度是最脆弱指标，校准残余误差会最先在这里暴露</text>
+  <text x="60" y="508" font-size="10.5" fill="#333">③ 大阵可放宽幅度一致性，但相位一致性要求不随 N 放宽（决定指向与零陷）</text>
+</svg>

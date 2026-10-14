@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">三维补偿表：频点 × 温度 × 扫描角</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">校准软件的核心数据结构——存什么、多大、怎么插值，全在这里</text>
+
+  <!-- cube -->
+  <rect x="30" y="78" width="470" height="230" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="265" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">三维索引结构</text>
+  <!-- cube drawing -->
+  <g stroke="#0f7a8a" stroke-width="1.4" fill="none">
+    <path d="M120,190 L280,190 L280,250 L120,250 Z" fill="#e6f2f5"/>
+    <path d="M120,190 L160,160 L320,160 L280,190" fill="#f0f7ee"/>
+    <path d="M280,190 L320,160 L320,220 L280,250" fill="#fdf4ea"/>
+  </g>
+  <text x="200" y="226" text-anchor="middle" font-size="10" fill="#0f7a8a">频点 f</text>
+  <text x="240" y="152" text-anchor="middle" font-size="10" fill="#4a7a3a">温度 T</text>
+  <text x="316" y="200" font-size="10" fill="#c96a1f" text-anchor="middle">角 θ</text>
+  <text x="300" y="276" font-size="10.5" fill="#667">每个格点存 (Δa, Δφ) 向量（长度 N，逐通道）</text>
+  <text x="60" y="150" font-size="10.5" fill="#333">轴维度（示例）：</text>
+  <text x="60" y="168" font-family="Consolas,monospace" font-size="9.5" fill="#0f7a8a">f : 8~16 点</text>
+  <text x="60" y="184" font-family="Consolas,monospace" font-size="9.5" fill="#4a7a3a">T : 4~8 点</text>
+  <text x="60" y="200" font-family="Consolas,monospace" font-size="9.5" fill="#c96a1f">θ : 16~64 点</text>
+
+  <!-- size calculation -->
+  <rect x="520" y="78" width="416" height="230" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="728" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">容量估算：别让表把存储吃爆</text>
+  <g font-family="Consolas,monospace" font-size="10.5" fill="#333">
+    <text x="536" y="128">例：N=64 通道，f=16，T=8，θ=64</text>
+    <text x="536" y="150">每格点：64 × 2 个量（Δa,Δφ）</text>
+    <text x="536" y="172">若每量 2 字节 → 64×2×2 = 256 B/格点</text>
+    <text x="536" y="194">格点数：16×8×64 = 8192</text>
+    <text x="536" y="216" fill="#8a3a6a">总计 ≈ 8192 × 256 B ≈ 2.0 MB</text>
+  </g>
+  <text x="536" y="244" font-size="10.5" fill="#c96a1f">对机载/星载嵌入式存储：2 MB 已不可忽略。</text>
+  <text x="536" y="264" font-size="10.5" fill="#4a7a3a">压缩策略：只在角向/温度向存"增量 + 稀疏零点"；</text>
+  <text x="536" y="282" font-size="10.5" fill="#4a7a3a">或用低秩近似（例如按扫描角做多项式/正弦基拟合）。</text>
+  <text x="536" y="300" font-size="10" fill="#667">经验：把"温度"和"角度"维度压到最小仍满足精度，是核心优化。</text>
+
+  <!-- interpolation -->
+  <rect x="30" y="326" width="906" height="186" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="480" y="350" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">插值策略：在线查表必须"快且准"</text>
+  <g font-family="Consolas,monospace" font-size="10">
+    <rect x="50" y="368" width="284" height="126" rx="8" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="192" y="392" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4a7a3a">① 线性插值（最常用）</text>
+    <text x="64" y="416" fill="#333">· 三线性：f、T、θ 各取相邻两点</text>
+    <text x="64" y="436" fill="#333">· 复杂度 O(8)，查表最快</text>
+    <text x="64" y="456" fill="#333">· 要求网格足够密（否则接缝可见）</text>
+    <text x="64" y="476" fill="#667">适用：角度维密网格 + 温度点较密</text>
+
+    <rect x="348" y="368" width="270" height="126" rx="8" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="483" y="392" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0f7a8a">② 样条 / 多项式拟合</text>
+    <text x="362" y="416" fill="#333">· 温度维常用线性+滞后修正</text>
+    <text x="362" y="436" fill="#333">· 角度维可用正弦/多项式基</text>
+    <text x="362" y="456" fill="#333">· 平滑、可解析求导</text>
+    <text x="362" y="476" fill="#667">适用：网格稀疏但要连续可导</text>
+
+    <rect x="632" y="368" width="286" height="126" rx="8" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="775" y="392" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8a3a6a">③ 基函数 / 低秩压缩</text>
+    <text x="646" y="416" fill="#333">· 把补偿表写成少量基的线性组合</text>
+    <text x="646" y="436" fill="#333">· 系数少 ⇒ 存储与传输大幅下降</text>
+    <text x="646" y="456" fill="#333">· 需保证残差 &lt; 验收阈值</text>
+    <text x="646" y="476" fill="#667">适用：星载/大规模阵列的存储受限场景</text>
+  </g>
+  <text x="60" y="508" font-size="10.5" fill="#8a3a6a">关键：插值引入的误差必须并入"校准残余误差"预算——否则现场会看到"明明校准了，副瓣还是超"。 </text>
+</svg>

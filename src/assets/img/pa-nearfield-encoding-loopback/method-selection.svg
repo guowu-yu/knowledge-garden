@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">环回自校准与四方法选型</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">在轨没有探头、没有暗室、没有射频口时——只有内建环回这一条路</text>
+
+  <!-- loopback diagram -->
+  <rect x="30" y="78" width="446" height="212" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="253" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">内建环回 / 耦合线自校准</text>
+  <g font-family="Consolas,monospace" font-size="10">
+    <rect x="56" y="124" width="150" height="46" rx="6" fill="#f0f7ee" stroke="#4a7a3a"/>
+    <text x="131" y="146" text-anchor="middle" fill="#4a7a3a">校准信号源</text>
+    <text x="131" y="162" text-anchor="middle" fill="#667">内建 tone / 参考</text>
+
+    <rect x="270" y="124" width="180" height="46" rx="6" fill="#f7fbfc" stroke="#0f7a8a"/>
+    <text x="360" y="146" text-anchor="middle" fill="#0f7a8a">接收/检测通道</text>
+    <text x="360" y="162" text-anchor="middle" fill="#667">幅相提取 + 存储</text>
+
+    <rect x="56" y="196" width="394" height="34" rx="6" fill="#fbf3f7" stroke="#8a3a6a"/>
+    <text x="253" y="217" text-anchor="middle" fill="#8a3a6a">耦合网络 / 校准线：把参考信号注入每条通道</text>
+
+    <rect x="56" y="242" width="394" height="34" rx="6" fill="#fdf4ea" stroke="#c96a1f"/>
+    <text x="253" y="263" text-anchor="middle" fill="#c96a1f">T/R 组件阵列：每通道测出相对幅相 → 更新补偿</text>
+  </g>
+  <line x1="206" y1="147" x2="268" y2="147" stroke="#4a7a3a" stroke-width="1.4" marker-end="url(#a2)"/>
+  <line x1="253" y1="172" x2="253" y2="194" stroke="#8a3a6a" stroke-width="1.2"/>
+  <defs>
+    <marker id="a2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 z" fill="#4a7a3a"/>
+    </marker>
+  </defs>
+
+  <!-- loopback notes -->
+  <rect x="490" y="78" width="446" height="212" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="713" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">环回法的能力与边界</text>
+  <text x="506" y="128" font-size="10.5" fill="#333">能测：通道内幅相漂移、衰减器/移相器状态、失效通道</text>
+  <text x="506" y="150" font-size="10.5" fill="#333">能测：通道间的相对幅相（以参考通道为基准）</text>
+  <text x="506" y="172" font-size="10.5" fill="#8a3a6a">测不到：天线辐射口径本身（互耦、罩体、AUT 外场）</text>
+  <text x="506" y="194" font-size="10.5" fill="#8a3a6a">⇒ 它是"通道内"校准，不是"口径上"校准</text>
+  <text x="506" y="220" font-size="10.5" fill="#4a7a3a">优势：秒级/分钟级可重复、无需外部设备、可在轨运行</text>
+  <text x="506" y="242" font-size="10.5" fill="#4a7a3a">用法：出厂用近场扫描定"口径真实值"，在轨用环回追漂移</text>
+  <text x="506" y="266" font-size="10.5" fill="#667">两者相乘（级联）才是完整校准：静态表 + 动态漂移表</text>
+  <text x="506" y="284" font-size="10.5" fill="#c96a1f">成本：多一路参考网络与耦合器，但换来长期可维护性</text>
+
+  <!-- comparison table -->
+  <rect x="30" y="304" width="906" height="208" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="328" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">四方法对比与选型</text>
+  <!-- header -->
+  <rect x="46" y="340" width="874" height="26" rx="4" fill="#e6f2f5"/>
+  <g font-size="10.5" font-weight="bold" fill="#0f7a8a">
+    <text x="58" y="358">方法</text>
+    <text x="210" y="358">测什么</text>
+    <text x="400" y="358">是否需相干</text>
+    <text x="520" y="358">测量数</text>
+    <text x="640" y="358">精度 / 场景</text>
+  </g>
+  <g font-family="Consolas,monospace" font-size="9.8" fill="#333">
+    <text x="58" y="388">近场扫描</text>
+    <text x="210" y="388">单元幅相+有源方向图</text>
+    <text x="400" y="388">需要</text>
+    <text x="520" y="388">N × 扫描点</text>
+    <text x="640" y="388">最高 / 出厂标定</text>
+
+    <text x="58" y="414">并行正交编码</text>
+    <text x="210" y="414">全部单元同时（PN/Walsh）</text>
+    <text x="400" y="414">需要（或包络）</text>
+    <text x="520" y="414">N（含码长 2^i）</text>
+    <text x="640" y="414">高 / 大阵+在轨</text>
+
+    <text x="58" y="440">REV 旋转矢量</text>
+    <text x="210" y="440">单元相对幅相（仅功率）</text>
+    <text x="400" y="440">不需要</text>
+    <text x="520" y="440">2N+1 ~ N·M</text>
+    <text x="640" y="440">中高 / 现场+低配硬件</text>
+
+    <text x="58" y="466">内建环回</text>
+    <text x="210" y="466">通道内幅相漂移</text>
+    <text x="400" y="466">不需要（自相干）</text>
+    <text x="520" y="466">O(N) 或一次全测</text>
+    <text x="640" y="466">中 / 在线追踪+失效检测</text>
+  </g>
+  <line x1="46" y1="366" x2="920" y2="366" stroke="#cfe0e6" stroke-width="1"/>
+  <line x1="46" y1="396" x2="920" y2="396" stroke="#cfe0e6" stroke-width="1"/>
+  <line x1="46" y1="422" x2="920" y2="422" stroke="#cfe0e6" stroke-width="1"/>
+  <line x1="46" y1="448" x2="920" y2="448" stroke="#cfe0e6" stroke-width="1"/>
+
+  <text x="60" y="492" font-size="10.5" fill="#4a7a3a">选型心法：出厂要"准"（近场/并行编码），现场要"快"（REV），在轨要"可持续"（环回）。三者不是替代，是级联。</text>
+</svg>

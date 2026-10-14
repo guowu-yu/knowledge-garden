@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">通道误差四分类：决定校准架构的第一张表</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">分类依据不是"误差长什么样"，而是"能不能一次性解决"</text>
+
+  <!-- four error classes -->
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <!-- 1 static -->
+    <rect x="30" y="78" width="216" height="176" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+    <text x="138" y="102" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f7a8a">① 静态制造公差</text>
+    <text x="138" y="122" text-anchor="middle" fill="#667">Manufacturing</text>
+    <text x="46" y="146" fill="#333">· 移相器每 bit 误差</text>
+    <text x="46" y="164" fill="#333">　±5 ~ ±10°</text>
+    <text x="46" y="182" fill="#333">· 衰减器 ±0.3 ~ 0.5 dB</text>
+    <text x="46" y="200" fill="#333">· 馈网/线缆长度公差</text>
+    <text x="46" y="218" fill="#333">· 阵元位置与贴装误差</text>
+    <text x="46" y="240" fill="#4a7a3a" font-size="10">一次出厂校准可消除</text>
+
+    <!-- 2 device -->
+    <rect x="258" y="78" width="216" height="176" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+    <text x="366" y="102" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a7a3a">② 器件非理想</text>
+    <text x="366" y="122" text-anchor="middle" fill="#667">Device non-ideality</text>
+    <text x="274" y="146" fill="#333">· PM-AM / AM-PM 转换</text>
+    <text x="274" y="164" fill="#333">· 插损随状态变化</text>
+    <text x="274" y="182" fill="#333">· 相位-幅度耦合</text>
+    <text x="274" y="200" fill="#333">· 增益压缩与饱和</text>
+    <text x="274" y="218" fill="#333">· 器件离散性分布</text>
+    <text x="274" y="240" fill="#c96a1f" font-size="10">随工作点变化，需查表补偿</text>
+
+    <!-- 3 coupling -->
+    <rect x="486" y="78" width="216" height="176" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+    <text x="594" y="102" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a3a6a">③ 互耦与罩体</text>
+    <text x="594" y="122" text-anchor="middle" fill="#667">Mutual + radome</text>
+    <text x="502" y="146" fill="#333">· 单元间互耦</text>
+    <text x="502" y="164" fill="#333">· 边缘效应</text>
+    <text x="502" y="182" fill="#333">· 有源驻波随扫描角变</text>
+    <text x="502" y="200" fill="#333">· 天线罩插损/折射</text>
+    <text x="502" y="218" fill="#333">· 平台与近场环境</text>
+    <text x="502" y="240" fill="#c96a1f" font-size="10">只与"阵+环境"绑定，随角变</text>
+
+    <!-- 4 drift -->
+    <rect x="714" y="78" width="216" height="176" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+    <text x="822" y="102" text-anchor="middle" font-size="13" font-weight="bold" fill="#c96a1f">④ 温漂与老化</text>
+    <text x="822" y="122" text-anchor="middle" fill="#667">Drift &amp; aging</text>
+    <text x="730" y="146" fill="#333">· 相位温漂 ~0.03 °/℃</text>
+    <text x="730" y="164" fill="#333">　（GaN 有源器件更大）</text>
+    <text x="730" y="182" fill="#333">· 增益温漂 0.05 dB/月</text>
+    <text x="730" y="200" fill="#333">· 器件老化漂移</text>
+    <text x="730" y="218" fill="#333">· 在轨辐照累积效应</text>
+    <text x="730" y="240" fill="#c96a1f" font-size="10">随时间连续变化，只能在线解决</text>
+  </g>
+
+  <!-- decision line -->
+  <rect x="30" y="272" width="900" height="118" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="480" y="296" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">决定校准架构的那条分界线</text>
+  <rect x="56" y="310" width="410" height="66" rx="8" fill="#f0f7ee" stroke="#4a7a3a"/>
+  <text x="261" y="332" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4a7a3a">一次性解决（离线校准）</text>
+  <text x="261" y="352" text-anchor="middle" font-size="10.5" fill="#333">工厂架台测 → 解算 → 生成静态补偿表 → 写回波控</text>
+  <text x="261" y="370" text-anchor="middle" font-size="10.5" fill="#667">对应 ①②，也含 ③ 中不随角变化的部分</text>
+  <rect x="494" y="310" width="410" height="66" rx="8" fill="#fdf4ea" stroke="#c96a1f"/>
+  <text x="699" y="332" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#c96a1f">必须在线解决（内建自校准）</text>
+  <text x="699" y="352" text-anchor="middle" font-size="10.5" fill="#333">内建环回/耦合线 → 周期测量 → 更新温补与漂移项</text>
+  <text x="699" y="370" text-anchor="middle" font-size="10.5" fill="#667">对应 ④ 与 ③ 中随扫描角/温度变化的部分</text>
+
+  <!-- impact summary -->
+  <rect x="30" y="404" width="900" height="108" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="1.5"/>
+  <text x="480" y="428" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#8a3a6a">不校准的系统级后果（按敏感度排序）</text>
+  <text x="60" y="452" font-size="11" fill="#333">① 零陷变浅 / 被填平（最敏感）：-40 dB 零陷在几度相位误差下可退到 -25 dB 量级 → 抗干扰能力直接塌陷</text>
+  <text x="60" y="474" font-size="11" fill="#333">② 副瓣抬高（决定合规与抗干扰）：随机误差把能量摊成均匀"底噪"，破坏设计好的低副瓣</text>
+  <text x="60" y="496" font-size="11" fill="#333">③ 波束指向偏移（决定跟踪精度）：0.5° 指向误差在 10 km 处 = 87 m；④ 增益轻微下降（非相干合成，通常 &lt; 0.5 dB）</text>
+</svg>

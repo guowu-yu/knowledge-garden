@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f7a8a">REV 旋转矢量法：只测幅度，怎么算出相位？</text>
+  <text x="480" y="56" text-anchor="middle" font-size="12" fill="#556">把"待测单元"转一圈，其余单元不动——合成矢量绕一个圆的轨迹</text>
+
+  <!-- vector diagram -->
+  <rect x="30" y="78" width="440" height="300" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="1.5"/>
+  <text x="250" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f7a8a">矢量合成（俯视）</text>
+  <!-- origin -->
+  <circle cx="150" cy="240" r="3.5" fill="#333"/>
+  <text x="150" y="262" text-anchor="middle" font-size="9.5" fill="#333">O</text>
+  <!-- E_r fixed vector -->
+  <line x1="150" y1="240" x2="330" y2="240" stroke="#4a7a3a" stroke-width="2.4"/>
+  <text x="340" y="236" font-size="11" fill="#4a7a3a">E_r</text>
+  <text x="240" y="234" font-size="9.5" fill="#4a7a3a">其余单元合成（固定）</text>
+  <!-- circle traced by tip -->
+  <circle cx="330" cy="240" r="60" fill="none" stroke="#8a3a6a" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <!-- E_m at a few angles -->
+  <line x1="150" y1="240" x2="330" y2="180" stroke="#c96a1f" stroke-width="1.6"/>
+  <text x="326" y="172" font-size="10" fill="#c96a1f">E_m</text>
+  <line x1="150" y1="240" x2="390" y2="240" stroke="#c96a1f" stroke-width="1.6" stroke-opacity="0.6"/>
+  <line x1="150" y1="240" x2="330" y2="300" stroke="#c96a1f" stroke-width="1.6" stroke-opacity="0.6"/>
+  <line x1="150" y1="240" x2="270" y2="240" stroke="#c96a1f" stroke-width="1.6" stroke-opacity="0.6"/>
+  <!-- tip marker at max -->
+  <circle cx="390" cy="240" r="4" fill="#c96a1f"/>
+  <text x="398" y="256" font-size="10" fill="#c96a1f">|E|max</text>
+  <circle cx="270" cy="240" r="4" fill="#0f7a8a"/>
+  <text x="200" y="268" font-size="10" fill="#0f7a8a">|E|min</text>
+  <!-- note -->
+  <text x="46" y="330" font-size="10.5" fill="#333">待测单元相位 φ 从 0° 转到 360°：其矢量 E_m e^{jφ} 绕 O 画圆，合成矢量 E 的</text>
+  <text x="46" y="348" font-size="10.5" fill="#333">矢端沿一个半径 |E_m| 的圆运动（该圆中心在 E_r 端点）。</text>
+  <text x="46" y="368" font-size="10.5" fill="#8a3a6a">⇒ 合成幅度 |E| 随 φ 呈正弦形：max = |E_r|+|E_m|，min = |E_r|−|E_m|</text>
+
+  <!-- sine curve -->
+  <rect x="490" y="78" width="440" height="300" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="1.5"/>
+  <text x="710" y="102" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4a7a3a">测量曲线：|E|(φ) 是一个正弦</text>
+  <line x1="530" y1="300" x2="900" y2="300" stroke="#556" stroke-width="1.4"/>
+  <line x1="530" y1="130" x2="530" y2="300" stroke="#556" stroke-width="1.4"/>
+  <g font-size="9.5" fill="#778">
+    <text x="525" y="304" text-anchor="end">0°</text>
+    <text x="617" y="316" text-anchor="middle">90°</text>
+    <text x="715" y="316" text-anchor="middle">180°</text>
+    <text x="813" y="316" text-anchor="middle">270°</text>
+    <text x="900" y="316" text-anchor="middle">360°</text>
+    <text x="525" y="256" text-anchor="end">min</text>
+    <text x="525" y="196" text-anchor="end">max</text>
+  </g>
+  <!-- sine: baseline around y=226, amplitude 30 -->
+  <path d="M530,256 C570,256 585,196 625,196 C665,196 680,256 720,256 C760,256 775,196 815,196 C855,196 870,256 900,256" fill="none" stroke="#c96a1f" stroke-width="2.4"/>
+  <line x1="530" y1="196" x2="900" y2="196" stroke="#8a3a6a" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="530" y1="256" x2="900" y2="256" stroke="#0f7a8a" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="880" y="192" font-size="10" fill="#8a3a6a" text-anchor="end">|E|max</text>
+  <text x="880" y="272" font-size="10" fill="#0f7a8a" text-anchor="end">|E|min</text>
+  <text x="546" y="338" font-size="10" fill="#333">解算：|E_m| = (max − min)/2 ，|E_r| = (max + min)/2</text>
+  <text x="546" y="356" font-size="10" fill="#333">相位：取 φ_max（曲线峰值对应的旋转相位），即 Δ0</text>
+  <text x="546" y="372" font-size="10" fill="#667">Γ = (max+min)/(max−min) = |E_r|/|E_m|（与其余单元的相对强弱）</text>
+
+  <!-- key insight -->
+  <rect x="30" y="396" width="900" height="116" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="1.5"/>
+  <text x="480" y="420" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a1f">为什么 REV 能在工程上胜出</text>
+  <text x="60" y="446" font-size="11" fill="#333">① 只测幅度/功率：不需要"相干接收"——不需要参考本振、不需要收发共源、不需要相位同步</text>
+  <text x="60" y="466" font-size="11" fill="#333">② 一个功率检波器即可：这是毫米波/在轨/无射频口场景下最便宜、最可得的测量量</text>
+  <text x="60" y="486" font-size="11" fill="#333">③ 但代价：极值点附近 dP/dφ ≈ 0——"靠近峰值时相位动了，功率几乎不动"（不敏感）</text>
+  <text x="60" y="506" font-size="11" fill="#c96a1f">⇒ 于是有了改进：只用 0°/90°/180° 三个"斜率最大"的状态，把测量数压到 2N+1</text>
+</svg>
