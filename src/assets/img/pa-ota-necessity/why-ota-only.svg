@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">为什么 FR2 相控阵必须 OTA：连接器消失之后</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- Left: FR1 conductive -->
+  <rect x="60" y="90" width="380" height="180" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <text x="250" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#4a7a3a">FR1（低频）传统传导测试</text>
+  <rect x="95" y="150" width="110" height="60" rx="6" fill="#dcefdc" stroke="#4a7a3a"/>
+  <text x="150" y="187" text-anchor="middle" font-size="15" fill="#2a5a1a">基带芯片</text>
+  <rect x="245" y="150" width="110" height="60" rx="6" fill="#dcefdc" stroke="#4a7a3a"/>
+  <text x="300" y="180" text-anchor="middle" font-size="15" fill="#2a5a1a">天线</text>
+  <text x="300" y="200" text-anchor="middle" font-size="12" fill="#555">（外置接口）</text>
+  <line x1="205" y1="180" x2="245" y2="180" stroke="#c96a1f" stroke-width="4"/>
+  <text x="225" y="168" text-anchor="middle" font-size="13" fill="#c96a1f">线缆</text>
+  <text x="250" y="248" text-anchor="middle" font-size="14" fill="#333">射频口可直接接测量仪器 → 传导测量可行</text>
+
+  <!-- Right: FR2 AAS -->
+  <rect x="520" y="90" width="380" height="180" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+  <text x="710" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#8a3a6a">FR2（毫米波）AAS 天线阵列</text>
+  <g fill="#f2d4de" stroke="#8a3a6a">
+    <rect x="600" y="140" width="22" height="22"/><rect x="630" y="140" width="22" height="22"/>
+    <rect x="660" y="140" width="22" height="22"/><rect x="690" y="140" width="22" height="22"/>
+    <rect x="600" y="170" width="22" height="22"/><rect x="630" y="170" width="22" height="22"/>
+    <rect x="660" y="170" width="22" height="22"/><rect x="690" y="170" width="22" height="22"/>
+  </g>
+  <text x="656" y="230" text-anchor="middle" font-size="13" fill="#555">28 GHz 时单元间距 ≈ 5 mm</text>
+  <text x="710" y="258" text-anchor="middle" font-size="14" fill="#8a3a6a" font-weight="bold">天线与射频/波束赋形芯片封装在一起，</text>
+  <text x="710" y="280" text-anchor="middle" font-size="14" fill="#8a3a6a" font-weight="bold">没有任何可用的射频连接器</text>
+
+  <!-- Bottom reasons -->
+  <rect x="60" y="300" width="840" height="200" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="480" y="332" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f7a8a">三个不可绕开的原因</text>
+  <g font-size="15" fill="#333">
+    <circle cx="110" cy="368" r="12" fill="#0f7a8a"/><text x="110" y="373" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">1</text>
+    <text x="135" y="373" font-weight="bold" fill="#0f3a4a">无连接器：</text><text x="240" y="373">毫米波频段射频前端与天线共封装，传导口不存在</text>
+    <circle cx="110" cy="408" r="12" fill="#0f7a8a"/><text x="110" y="413" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">2</text>
+    <text x="135" y="413" font-weight="bold" fill="#0f3a4a">性能即波束：</text><text x="250" y="413">EIRP、球面覆盖、波束指向质量都是"辐射场"指标，只能在空间中测</text>
+    <circle cx="110" cy="448" r="12" fill="#0f7a8a"/><text x="110" y="453" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">3</text>
+    <text x="135" y="453" font-weight="bold" fill="#0f3a4a">互作用不可拆：</text><text x="268" y="453">单元互耦、罩体影响、温漂补偿效果等只能通过整机辐射行为体现</text>
+  </g>
+  <text x="480" y="488" text-anchor="middle" font-size="14" fill="#c96a1f" font-weight="bold">OTA = Over The Air：把天线+整机放进受控的电磁环境里测，是 FR2 唯一可行的整机射频验证路径</text>
+</svg>

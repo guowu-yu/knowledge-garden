@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">远场判据：R = 2D²/λ 的由来</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- Geometry -->
+  <rect x="100" y="120" width="60" height="160" rx="6" fill="#0f7a8a"/>
+  <text x="130" y="300" text-anchor="middle" font-size="14" fill="#0f3a4a">待测天线 D</text>
+  <!-- waves -->
+  <path d="M 200 130 q 40 70 0 140" stroke="#4a7a3a" fill="none" stroke-width="2"/>
+  <path d="M 260 135 q 55 65 0 130" stroke="#4a7a3a" fill="none" stroke-width="2"/>
+  <path d="M 330 145 q 70 55 0 110" stroke="#4a7a3a" fill="none" stroke-width="2"/>
+  <line x1="130" y1="200" x2="480" y2="200" stroke="#c96a1f" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="300" y="190" text-anchor="middle" font-size="15" fill="#c96a1f">距离 R</text>
+  <!-- probe -->
+  <rect x="480" y="170" width="46" height="60" rx="6" fill="#8a3a6a"/>
+  <text x="503" y="255" text-anchor="middle" font-size="14" fill="#8a3a6a">测量探头</text>
+
+  <!-- phase difference arc -->
+  <path d="M 200 200 A 230 230 0 0 1 190 160" stroke="#8a3a6a" fill="none" stroke-width="2"/>
+  <text x="230" y="155" font-size="14" fill="#8a3a6a">边缘与中心的路程差 Δ</text>
+
+  <!-- formula box -->
+  <rect x="560" y="100" width="340" height="90" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="730" y="138" text-anchor="middle" font-size="18" fill="#0f3a4a">边缘相位差 = Δ·2π/λ</text>
+  <text x="730" y="170" text-anchor="middle" font-size="20" font-weight="bold" fill="#c96a1f">令 Δ = λ/16 → R = 2D²/λ</text>
+
+  <!-- zone table -->
+  <rect x="60" y="240" width="840" height="150" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="480" y="272" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f7a8a">三个区域</text>
+  <g font-size="15" fill="#333">
+    <rect x="100" y="290" width="240" height="34" rx="6" fill="#f7e2d2" stroke="#c96a1f"/>
+    <text x="220" y="312" text-anchor="middle">反应近场（r &lt; 0.62√(D³/λ)）</text>
+    <rect x="360" y="290" width="240" height="34" rx="6" fill="#e8f0dc" stroke="#4a7a3a"/>
+    <text x="480" y="312" text-anchor="middle">辐射近场（准平面波）</text>
+    <rect x="620" y="290" width="240" height="34" rx="6" fill="#dceef3" stroke="#0f7a8a"/>
+    <text x="740" y="312" text-anchor="middle">远场（r &gt; 2D²/λ）</text>
+    <text x="220" y="352" text-anchor="middle" font-size="13">强耦合，不可用于测量</text>
+    <text x="480" y="352" text-anchor="middle" font-size="13">幅度分布≈口径分布，可用于近场采样</text>
+    <text x="740" y="352" text-anchor="middle" font-size="13">波前近似球面→平面波，方向图稳定</text>
+  </g>
+
+  <!-- example -->
+  <rect x="60" y="410" width="840" height="100" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <text x="480" y="440" text-anchor="middle" font-size="16" font-weight="bold" fill="#c96a1f">一个数字说明问题</text>
+  <text x="480" y="470" text-anchor="middle" font-size="15" fill="#333">手机 FR2 模组 D ≈ 8 cm @ 28 GHz（λ ≈ 10.7 mm）→ R = 2·(0.08)²/0.0107 ≈ <tspan font-weight="bold" fill="#8a3a6a">1.2 m</tspan></text>
+  <text x="480" y="496" text-anchor="middle" font-size="14" fill="#555">对基站大口径天线（D ≈ 1 m），R 飙升到 ≈ 190 m —— 暗室根本放不下，这就是间接远场方法的动机</text>
+</svg>

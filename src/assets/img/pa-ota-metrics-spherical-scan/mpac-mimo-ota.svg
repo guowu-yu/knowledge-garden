@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">MPAC：多探头暗室与 MIMO OTA 的进阶路</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- MPAC diagram -->
+  <rect x="60" y="90" width="500" height="230" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="310" y="118" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f7a8a">MPAC 多探头幅相合成法</text>
+  <g fill="#8a3a6a">
+    <circle cx="140" cy="200" r="9"/><circle cx="140" cy="260" r="9"/>
+    <circle cx="480" cy="200" r="9"/><circle cx="480" cy="260" r="9"/>
+  </g>
+  <circle cx="310" cy="230" r="26" fill="#dceef3" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="310" y="235" text-anchor="middle" font-size="13" fill="#0f3a4a">DUT</text>
+  <g stroke="#c96a1f" stroke-width="1.5" fill="none">
+    <path d="M 150 200 Q 220 205 284 222"/><path d="M 150 260 Q 220 255 284 238"/>
+    <path d="M 470 200 Q 400 205 336 222"/><path d="M 470 260 Q 400 255 336 238"/>
+  </g>
+  <text x="310" y="180" text-anchor="middle" font-size="13" fill="#c96a1f">信道模拟器给每个探头分配独立时延/多普勒/衰落的瑞利场</text>
+  <text x="310" y="300" text-anchor="middle" font-size="13" fill="#555">在 DUT 处合成出可复现的"多径传播环境"，用于吞吐量/波束管理测试</text>
+
+  <!-- alternative methods -->
+  <rect x="590" y="90" width="310" height="230" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <text x="745" y="118" text-anchor="middle" font-size="16" font-weight="bold" fill="#4a7a3a">另两条 MIMO OTA 路线</text>
+  <g font-size="14" fill="#333">
+    <rect x="610" y="140" width="270" height="50" rx="6" fill="#e8f0dc" stroke="#4a7a3a"/>
+    <text x="745" y="160" text-anchor="middle" font-weight="bold">混响室（RC）</text>
+    <text x="745" y="180" text-anchor="middle" font-size="12">统计各向同性场，测 TRP/TIS 极快</text>
+    <rect x="610" y="205" width="270" height="50" rx="6" fill="#e8f0dc" stroke="#4a7a3a"/>
+    <text x="745" y="225" text-anchor="middle" font-weight="bold">两步法（Two-Stage）</text>
+    <text x="745" y="245" text-anchor="middle" font-size="12">先测方向图，再注入信道模型仿真</text>
+    <text x="745" y="295" text-anchor="middle" font-size="13" fill="#555">MPAC 精度最高但成本/复杂度最大，</text>
+    <text x="745" y="313" text-anchor="middle" font-size="13" fill="#555">Rel-18 起逐步纳入 FR2 波束管理用例</text>
+  </g>
+
+  <!-- bottom -->
+  <rect x="60" y="345" width="840" height="165" rx="10" fill="#fff8ee" stroke="#c96a1f" stroke-width="2"/>
+  <text x="480" y="377" text-anchor="middle" font-size="16" font-weight="bold" fill="#c96a1f">从 5G 到 6G 的演进方向</text>
+  <g font-size="14" fill="#333">
+    <circle cx="110" cy="408" r="5" fill="#0f7a8a"/><text x="130" y="413">Rel-15/16 解决了 FR1 MIMO OTA 基线；FR2 的挑战来自波束赋形和 mmWave 损耗</text>
+    <circle cx="110" cy="436" r="5" fill="#0f7a8a"/><text x="130" y="441">Rel-17/18 引入近场（NF）MIMO OTA 思路：RIS 辅助、球面波建模，把暗室距离需求压回来</text>
+    <circle cx="110" cy="464" r="5" fill="#0f7a8a"/><text x="130" y="469">6G 太赫兹时代 DUT 口径与波长比更大，Fraunhofer/3GPP 均在推进 NF-MIMO-OTA 标准化</text>
+  </g>
+  <text x="480" y="498" text-anchor="middle" font-size="13" fill="#8a3a6a" font-weight="bold">一句话：单端口 OTA 测"能不能发声"，MIMO OTA 测"在真实信道里唱得多好"</text>
+</svg>

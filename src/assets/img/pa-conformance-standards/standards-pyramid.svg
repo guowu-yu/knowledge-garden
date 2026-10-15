@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">规范金字塔：3GPP 供链 → CTIA 认证 → ITU-R 干扰协调</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- pyramid layers -->
+  <polygon points="480,80 350,160 610,160" fill="#0f7a8a"/>
+  <text x="480" y="135" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">ITU-R</text>
+  <polygon points="340,170 620,170 650,260 310,260" fill="#c96a1f"/>
+  <text x="480" y="222" text-anchor="middle" font-size="15" fill="#fff" font-weight="bold">CTIA 认证体系</text>
+  <polygon points="300,270 660,270 700,380 260,380" fill="#4a7a3a"/>
+  <text x="480" y="332" text-anchor="middle" font-size="15" fill="#fff" font-weight="bold">3GPP 射频一致性</text>
+
+  <!-- layer labels right -->
+  <g font-size="13" fill="#333">
+    <text x="640" y="120" font-weight="bold" fill="#0f7a8a">跨系统协调层</text>
+    <text x="640" y="140">S.580 / S.465 副瓣包络：保护卫星地球站</text>
+    <text x="665" y="200" font-weight="bold" fill="#c96a1f">行业认证层</text>
+    <text x="665" y="220">CTIA OTA Test Plan：EIRP/TIS 测试方法</text>
+    <text x="665" y="240">与 3GPP 对齐 + 补充商用细则</text>
+    <text x="700" y="315" font-weight="bold" fill="#4a7a3a">规格定义层</text>
+    <text x="700" y="335">TS 38.101-2（UE FR2 辐射指标）</text>
+    <text x="700" y="355">TS 38.104（BS）/ TR 38.810（OTA 方法）</text>
+    <text x="700" y="375">TS 38.521-2（一致性测试用例）</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#555" stroke-width="2" fill="#555">
+    <line x1="480" y1="380" x2="480" y2="420"/><polygon points="474,418 480,430 486,418"/>
+  </g>
+  <rect x="60" y="425" width="840" height="90" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="480" y="455" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f3a4a">为什么三层都不能少？</text>
+  <text x="480" y="482" text-anchor="middle" font-size="13.5" fill="#333">3GPP 回答"设备应该满足什么" · CTIA 回答"用什么方法测才算数" · ITU-R 回答"辐射不能砸到邻居（卫星/邻业务）"</text>
+  <text x="480" y="505" text-anchor="middle" font-size="13" fill="#8a3a6a">做相控阵产品：规格看 38.101/38.104，测试方法看 TR 38.810 + CTIA，出口/共存设计看 ITU-R S 系列副瓣包络</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">暗室里的"隐形墙"：静区与反射控制</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- chamber top view -->
+  <rect x="80" y="100" width="800" height="240" rx="14" fill="#ffffff" stroke="#0f3a4a" stroke-width="3"/>
+  <!-- absorber pyramids -->
+  <g fill="#2a2a3a">
+    <polygon points="90,110 110,100 130,110 110,140"/><polygon points="130,110 150,100 170,110 150,140"/>
+    <polygon points="170,110 190,100 210,110 190,140"/><polygon points="210,110 230,100 250,110 230,140"/>
+    <polygon points="750,300 770,290 790,300 770,330"/><polygon points="790,300 810,290 830,300 810,330"/>
+    <polygon points="830,110 850,100 870,110 850,140"/><polygon points="870,110 890,100 910,110 890,140"/>
+  </g>
+  <text x="850" y="160" font-size="12" fill="#555">吸波尖劈</text>
+  <!-- quiet zone -->
+  <ellipse cx="450" cy="220" rx="120" ry="70" fill="none" stroke="#c96a1f" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="450" y="215" text-anchor="middle" font-size="15" fill="#c96a1f" font-weight="bold">静区 Quiet Zone</text>
+  <text x="450" y="238" text-anchor="middle" font-size="13" fill="#555">幅相均匀度决定测量不确定度</text>
+  <rect x="430" y="200" width="40" height="40" rx="4" fill="#0f7a8a"/>
+  <text x="450" y="320" text-anchor="middle" font-size="13" fill="#0f3a4a">DUT 置于静区内，转台带动其扫描全空间</text>
+  <!-- feed -->
+  <rect x="110" y="205" width="36" height="30" rx="4" fill="#8a3a6a"/>
+  <text x="128" y="195" text-anchor="middle" font-size="12" fill="#8a3a6a">测量天线</text>
+  <line x1="150" y1="220" x2="325" y2="220" stroke="#4a7a3a" stroke-width="2" stroke-dasharray="6 4"/>
+
+  <!-- requirements -->
+  <rect x="60" y="370" width="840" height="140" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="480" y="400" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f7a8a">静区质量的三个硬指标</text>
+  <g font-size="14" fill="#333">
+    <rect x="95" y="420" width="250" height="64" rx="8" fill="#dceef3" stroke="#0f7a8a"/>
+    <text x="220" y="445" text-anchor="middle" font-weight="bold">幅度纹波</text>
+    <text x="220" y="468" text-anchor="middle">典型 ≤ ±0.5 dB（FR2 更严）</text>
+    <rect x="365" y="420" width="250" height="64" rx="8" fill="#dceef3" stroke="#0f7a8a"/>
+    <text x="490" y="445" text-anchor="middle" font-weight="bold">相位平整度</text>
+    <text x="490" y="468" text-anchor="middle">典型 ≤ ±5°～±10°</text>
+    <rect x="635" y="420" width="250" height="64" rx="8" fill="#dceef3" stroke="#0f7a8a"/>
+    <text x="760" y="445" text-anchor="middle" font-weight="bold">杂散反射电平</text>
+    <text x="760" y="468" text-anchor="middle">比直射波低 30～40 dB 以上</text>
+  </g>
+</svg>

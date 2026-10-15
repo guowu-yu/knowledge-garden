@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">方法选型决策树：你的 DUT 该进哪种暗室？</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- decision tree -->
+  <rect x="390" y="85" width="180" height="52" rx="26" fill="#0f7a8a"/>
+  <text x="480" y="118" text-anchor="middle" font-size="15" fill="#fff" font-weight="bold">DUT 最大口径 D？</text>
+
+  <line x1="480" y1="137" x2="250" y2="185" stroke="#555" stroke-width="2"/>
+  <line x1="480" y1="137" x2="710" y2="185" stroke="#555" stroke-width="2"/>
+  <text x="330" y="160" font-size="13" fill="#333">R = 2D²/λ 可放进房间</text>
+  <text x="590" y="160" font-size="13" fill="#333">R 过大（基站大口径）</text>
+
+  <rect x="150" y="185" width="200" height="50" rx="8" fill="#dceef3" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="250" y="216" text-anchor="middle" font-size="15" fill="#0f3a4a">DFF 直接远场</text>
+
+  <rect x="610" y="185" width="200" height="50" rx="8" fill="#fff" stroke="#555" stroke-width="2"/>
+  <text x="710" y="209" text-anchor="middle" font-size="14" fill="#333">预算与频段？</text>
+  <text x="710" y="228" text-anchor="middle" font-size="12" fill="#777">（毫米波 &gt; 6 GHz）</text>
+
+  <line x1="710" y1="235" x2="560" y2="285" stroke="#555" stroke-width="2"/>
+  <line x1="710" y1="235" x2="850" y2="285" stroke="#555" stroke-width="2"/>
+
+  <rect x="430" y="285" width="200" height="60" rx="8" fill="#f7e2d2" stroke="#c96a1f" stroke-width="2"/>
+  <text x="530" y="310" text-anchor="middle" font-size="15" fill="#7a3a10" font-weight="bold">CATR 紧缩场</text>
+  <text x="530" y="332" text-anchor="middle" font-size="12" fill="#555">短距离平面波，造价高</text>
+
+  <rect x="760" y="285" width="180" height="60" rx="8" fill="#e8f0dc" stroke="#4a7a3a" stroke-width="2"/>
+  <text x="850" y="310" text-anchor="middle" font-size="15" fill="#2a5a1a" font-weight="bold">NFTF 近场变换</text>
+  <text x="850" y="332" text-anchor="middle" font-size="12" fill="#555">研发级完整球面数据</text>
+
+  <!-- side branch: throughput -->
+  <line x1="250" y1="235" x2="250" y2="285" stroke="#555" stroke-width="2"/>
+  <rect x="100" y="285" width="300" height="60" rx="8" fill="#f2d4de" stroke="#8a3a6a" stroke-width="2"/>
+  <text x="250" y="310" text-anchor="middle" font-size="14" fill="#5a1a3a" font-weight="bold">只想快速测 TRP/TIS（不测方向图）？</text>
+  <text x="250" y="332" text-anchor="middle" font-size="12" fill="#555">→ 混响室：TRP &lt; 1 分钟，TIS 约 3–6 分钟</text>
+
+  <!-- bottom summary -->
+  <rect x="60" y="380" width="840" height="130" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="480" y="412" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f7a8a">工程经验法则</text>
+  <g font-size="14" fill="#333">
+    <circle cx="120" cy="442" r="5" fill="#c96a1f"/><text x="140" y="447">手机 FR2 一致性测试：DFF 为主流（距离约 1–2 m 即可满足）</text>
+    <circle cx="120" cy="470" r="5" fill="#c96a1f"/><text x="140" y="475">大规模基站天线（D ≥ 0.5 m）：CATR 或近场暗室几乎是必然选择</text>
+    <circle cx="120" cy="498" r="5" fill="#c96a1f"/><text x="140" y="503">量产抽检追求节拍：混响室 + 传导预筛的组合把 OTA 成本压到最低</text>
+  </g>
+</svg>

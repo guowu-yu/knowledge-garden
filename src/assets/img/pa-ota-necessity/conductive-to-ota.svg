@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">传导到 OTA 的指标迁移：测什么、在哪测</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- mapping arrows -->
+  <rect x="70" y="100" width="340" height="320" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <text x="240" y="130" text-anchor="middle" font-size="17" font-weight="bold" fill="#4a7a3a">传统传导指标（FR1）</text>
+  <g font-size="15" fill="#333">
+    <rect x="95" y="150" width="290" height="36" rx="6" fill="#e8f0dc" stroke="#4a7a3a"/><text x="110" y="173">最大输出功率（W/dBm）</text>
+    <rect x="95" y="200" width="290" height="36" rx="6" fill="#e8f0dc" stroke="#4a7a3a"/><text x="110" y="223">EVM / 频率误差</text>
+    <rect x="95" y="250" width="290" height="36" rx="6" fill="#e8f0dc" stroke="#4a7a3a"/><text x="110" y="273">邻道泄漏 ACLR / 杂散</text>
+    <rect x="95" y="300" width="290" height="36" rx="6" fill="#e8f0dc" stroke="#4a7a3a"/><text x="110" y="323">接收灵敏度（dBm）</text>
+    <rect x="95" y="350" width="290" height="36" rx="6" fill="#e8f0dc" stroke="#4a7a3a"/><text x="110" y="373">阻塞 / 互调</text>
+  </g>
+
+  <g stroke="#c96a1f" stroke-width="3" fill="#c96a1f">
+    <line x1="420" y1="168" x2="540" y2="168"/><polygon points="540,162 554,168 540,174"/>
+    <line x1="420" y1="218" x2="540" y2="218"/><polygon points="540,212 554,218 540,224"/>
+    <line x1="420" y1="268" x2="540" y2="268"/><polygon points="540,262 554,268 540,274"/>
+    <line x1="420" y1="318" x2="540" y2="318"/><polygon points="540,312 554,318 540,324"/>
+    <line x1="420" y1="368" x2="540" y2="368"/><polygon points="540,362 554,368 540,374"/>
+  </g>
+  <text x="487" y="140" text-anchor="middle" font-size="14" fill="#c96a1f" font-weight="bold">乘上"天线方向图"</text>
+
+  <rect x="560" y="100" width="340" height="320" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+  <text x="730" y="130" text-anchor="middle" font-size="17" font-weight="bold" fill="#8a3a6a">OTA 辐射指标（FR2）</text>
+  <g font-size="15" fill="#333">
+    <rect x="585" y="150" width="290" height="36" rx="6" fill="#f2d4de" stroke="#8a3a6a"/><text x="600" y="173">EIRP：功率 × 增益 × 指向效率</text>
+    <rect x="585" y="200" width="290" height="36" rx="6" fill="#f2d4de" stroke="#8a3a6a"/><text x="600" y="223">辐射方向图上的 EVM 测量</text>
+    <rect x="585" y="250" width="290" height="36" rx="6" fill="#f2d4de" stroke="#8a3a6a"/><text x="600" y="273">OTA 邻道/杂散（含旁瓣辐射）</text>
+    <rect x="585" y="300" width="290" height="36" rx="6" fill="#f2d4de" stroke="#8a3a6a"/><text x="600" y="323">EIS：考虑赋形增益的灵敏度</text>
+    <rect x="585" y="350" width="290" height="36" rx="6" fill="#f2d4de" stroke="#8a3a6a"/><text x="600" y="373">球面覆盖内的最坏角度验证</text>
+  </g>
+
+  <!-- bottom note -->
+  <rect x="70" y="440" width="830" height="70" rx="10" fill="#fff8ee" stroke="#c96a1f" stroke-width="2"/>
+  <text x="485" y="468" text-anchor="middle" font-size="15" fill="#0f3a4a" font-weight="bold">关键差异：传导测量是"一个点"，OTA 测量是"整个球面"</text>
+  <text x="485" y="494" text-anchor="middle" font-size="14" fill="#555">同一台设备的 EIRP 随波束指向变化，所以规范用 CDF 分位数（如 85% 球面覆盖）而不是单点门限</text>
+</svg>

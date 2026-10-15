@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">3GPP OTA 文档地图：读哪本、查什么</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <g>
+    <rect x="70" y="90" width="200" height="150" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+    <text x="170" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f7a8a">TS 38.101-2</text>
+    <text x="170" y="146" text-anchor="middle" font-size="13" fill="#555">UE FR2 射频规格</text>
+    <line x1="95" y1="160" x2="245" y2="160" stroke="#ccc"/>
+    <g font-size="12.5" fill="#333"><text x="95" y="182">· 功率等级与 EIRP 表</text><text x="95" y="202">· 球面覆盖 CDF 门限</text><text x="95" y="222">· EIS 与杂散要求</text><text x="95" y="242">· 灵活/非连续覆盖补充</text></g>
+  </g>
+  <g>
+    <rect x="290" y="90" width="200" height="150" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+    <text x="390" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#4a7a3a">TR 38.810</text>
+    <text x="390" y="146" text-anchor="middle" font-size="13" fill="#555">NR BS OTA 测试方法学</text>
+    <line x1="315" y1="160" x2="465" y2="160" stroke="#ccc"/>
+    <g font-size="12.5" fill="#333"><text x="315" y="182">· DFF/CATR/NFTF 定义</text><text x="315" y="202">· 暗室与静区要求</text><text x="315" y="222">· 不确定度预算框架</text><text x="315" y="242">· 相控阵 BS 适用场景</text></g>
+  </g>
+  <g>
+    <rect x="510" y="90" width="200" height="150" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+    <text x="610" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#c96a1f">TS 38.521-2</text>
+    <text x="610" y="146" text-anchor="middle" font-size="13" fill="#555">UE FR2 一致性用例</text>
+    <line x1="535" y1="160" x2="685" y2="160" stroke="#ccc"/>
+    <g font-size="12.5" fill="#333"><text x="535" y="182">· 逐条测试步骤</text><text x="535" y="202">· 测试点/信道模型</text><text x="535" y="222">· 通过/失败判据</text><text x="535" y="242">· 与 38.101 门限挂钩</text></g>
+  </g>
+  <g>
+    <rect x="730" y="90" width="170" height="150" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+    <text x="815" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#8a3a6a">TS 38.104</text>
+    <text x="815" y="146" text-anchor="middle" font-size="13" fill="#555">BS 射频规格</text>
+    <line x1="750" y1="160" x2="880" y2="160" stroke="#ccc"/>
+    <g font-size="12.5" fill="#333"><text x="750" y="182">· OTA 传导混合要求</text><text x="750" y="202">· RE 功率与 EIRP</text><text x="750" y="222">· 方向图/副瓣参考</text><text x="750" y="242">· AAS 衍生规范入口</text></g>
+  </g>
+
+  <!-- relationship flow -->
+  <rect x="60" y="270" width="840" height="120" rx="10" fill="#dceef3" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="480" y="300" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f3a4a">链条关系：规格 → 方法 → 用例 → 报告</text>
+  <g font-size="14" fill="#333">
+    <rect x="100" y="322" width="170" height="44" rx="8" fill="#fff" stroke="#0f7a8a"/><text x="185" y="350" text-anchor="middle">38.101-2 定门限</text>
+    <line x1="275" y1="344" x2="330" y2="344" stroke="#c96a1f" stroke-width="3"/><polygon points="330,338 344,344 330,350" fill="#c96a1f"/>
+    <rect x="350" y="322" width="170" height="44" rx="8" fill="#fff" stroke="#4a7a3a"/><text x="435" y="350" text-anchor="middle">38.810 定方法</text>
+    <line x1="525" y1="344" x2="580" y2="344" stroke="#c96a1f" stroke-width="3"/><polygon points="580,338 594,344 580,350" fill="#c96a1f"/>
+    <rect x="600" y="322" width="170" height="44" rx="8" fill="#fff" stroke="#c96a1f"/><text x="685" y="350" text-anchor="middle">38.521-2 定用例</text>
+  </g>
+
+  <!-- tips -->
+  <rect x="60" y="410" width="840" height="100" rx="10" fill="#fff8ee" stroke="#c96a1f" stroke-width="2"/>
+  <text x="480" y="440" text-anchor="middle" font-size="15" font-weight="bold" fill="#c96a1f">检索技巧</text>
+  <text x="480" y="468" text-anchor="middle" font-size="13.5" fill="#333">在 3GPP Portal 用版本号精确定位（如 38.101-2 版本 17.x）；表 6.2.1.x 系列是 UE 功率等级的"总账本"</text>
+  <text x="480" y="492" text-anchor="middle" font-size="13.5" fill="#555">基站侧若引入 AAS，还要接力读 TS 38.115-2（AAS BS 一致性 OTA 部分）</text>
+</svg>

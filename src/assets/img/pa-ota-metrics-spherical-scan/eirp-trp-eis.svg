@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">EIRP / TRP / EIS：三个核心 OTA 量的定义</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- EIRP -->
+  <rect x="60" y="90" width="270" height="170" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <text x="195" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#c96a1f">EIRP（发射）</text>
+  <text x="195" y="152" text-anchor="middle" font-size="17" fill="#0f3a4a">EIRP = P<tspan font-size="12" dy="3">out</tspan><tspan dy="-3"> + G(θ,φ)</tspan></text>
+  <text x="195" y="180" text-anchor="middle" font-size="13" fill="#555">（已含波束赋形与指向效率）</text>
+  <rect x="90" y="200" width="210" height="40" rx="6" fill="#fff8ee" stroke="#c96a1f"/>
+  <text x="195" y="225" text-anchor="middle" font-size="13" fill="#333">"这个方向上等效的各向同性辐射功率"</text>
+
+  <!-- TRP -->
+  <rect x="350" y="90" width="270" height="170" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="485" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#0f7a8a">TRP（发射）</text>
+  <text x="485" y="152" text-anchor="middle" font-size="17" fill="#0f3a4a">TRP = (1/4π)∮ P(θ,φ) dΩ</text>
+  <text x="485" y="180" text-anchor="middle" font-size="13" fill="#555">全空间辐射功率的球面积分平均</text>
+  <rect x="380" y="200" width="210" height="40" rx="6" fill="#eef8fb" stroke="#0f7a8a"/>
+  <text x="485" y="225" text-anchor="middle" font-size="13" fill="#333">"整台设备总共往空间里发了多少瓦"</text>
+
+  <!-- EIS -->
+  <rect x="640" y="90" width="270" height="170" rx="10" fill="#ffffff" stroke="#8a3a6a" stroke-width="2"/>
+  <text x="775" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#8a3a6a">EIS（接收）</text>
+  <text x="775" y="152" text-anchor="middle" font-size="17" fill="#0f3a4a">EIS = 要求灵敏度时</text>
+  <text x="775" y="176" text-anchor="middle" font-size="17" fill="#0f3a4a">入射平面波的最小功率密度</text>
+  <rect x="670" y="200" width="210" height="40" rx="6" fill="#faeef4" stroke="#8a3a6a"/>
+  <text x="775" y="225" text-anchor="middle" font-size="13" fill="#333">EIRP 的镜像：接收链路的"辐射灵敏度"</text>
+
+  <!-- sphere scan -->
+  <rect x="60" y="285" width="540" height="230" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="330" y="315" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f7a8a">球面扫描：一个格点一个格点地"爬"</text>
+  <circle cx="250" cy="410" r="70" fill="#dceef3" stroke="#0f7a8a"/>
+  <circle cx="250" cy="410" r="5" fill="#0f7a8a"/>
+  <g fill="#c96a1f">
+    <circle cx="250" cy="340" r="3"/><circle cx="290" cy="352" r="3"/><circle cx="318" cy="380" r="3"/>
+    <circle cx="320" cy="415" r="3"/><circle cx="310" cy="448" r="3"/><circle cx="282" cy="470" r="3"/>
+    <circle cx="250" cy="480" r="3"/><circle cx="218" cy="470" r="3"/><circle cx="190" cy="448" r="3"/>
+    <circle cx="180" cy="415" r="3"/><circle cx="182" cy="380" r="3"/><circle cx="210" cy="352" r="3"/>
+  </g>
+  <path d="M 250 340 A 70 70 0 0 1 290 352" stroke="#8a3a6a" stroke-width="3" fill="none"/>
+  <text x="250" y="505" text-anchor="middle" font-size="13" fill="#555">θ-φ 网格逐点测 P(θ,φ)，格点间隔常取 10°～15°</text>
+  <text x="560" y="360" font-size="14" fill="#333">· TRP：所有格点按立体角加权求和</text>
+  <text x="560" y="392" font-size="14" fill="#333">· 峰值 EIRP：取格点最大值（再细化）</text>
+  <text x="560" y="424" font-size="14" fill="#333">· 球面覆盖：把 CDF 画出来取分位数</text>
+  <text x="560" y="456" font-size="14" fill="#8a3a6a">· 测量时间随格点数线性增长，</text>
+  <text x="560" y="482" font-size="14" fill="#8a3a6a">  这是混响室等快速方法的核心卖点</text>
+
+  <!-- CDF mini -->
+  <rect x="620" y="285" width="290" height="230" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <text x="765" y="315" text-anchor="middle" font-size="15" font-weight="bold" fill="#c96a1f">球面覆盖 CDF 曲线</text>
+  <line x1="660" y1="480" x2="880" y2="480" stroke="#333" stroke-width="1.5"/>
+  <line x1="660" y1="480" x2="660" y2="330" stroke="#333" stroke-width="1.5"/>
+  <path d="M 660 478 C 720 470 760 440 790 400 S 850 350 878 335" stroke="#0f7a8a" stroke-width="3" fill="none"/>
+  <line x1="660" y1="375" x2="880" y2="375" stroke="#c96a1f" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="700" y="368" font-size="12" fill="#c96a1f">85% 分位线</text>
+  <circle cx="792" cy="399" r="5" fill="#8a3a6a"/>
+  <text x="765" y="505" text-anchor="middle" font-size="12" fill="#555">球面 85% 角度上的 EIRP ≥ 门限 → 覆盖合格</text>
+</svg>

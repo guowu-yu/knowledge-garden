@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">TS 38.101-2 功率等级速查（UE FR2）</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- table -->
+  <rect x="60" y="80" width="840" height="270" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <g font-size="14" fill="#333">
+    <text x="110" y="112" font-weight="bold" fill="#0f3a4a">等级</text>
+    <text x="230" y="112" font-weight="bold" fill="#0f3a4a">峰值 EIRP（dBm）</text>
+    <text x="440" y="112" font-weight="bold" fill="#0f3a4a">球面覆盖要求</text>
+    <text x="670" y="112" font-weight="bold" fill="#0f3a4a">上限（TRP / EIRP）</text>
+    <line x1="80" y1="122" x2="880" y2="122" stroke="#0f7a8a" stroke-width="1.5"/>
+
+    <text x="110" y="150" font-weight="bold" fill="#c96a1f">PC1</text>
+    <text x="230" y="150">n257/n258/n261: 40；n260: 38</text>
+    <text x="440" y="150">85%-tile：32/32/30/32</text>
+    <text x="670" y="150">35 / 55</text>
+
+    <line x1="80" y1="162" x2="880" y2="162" stroke="#eee"/>
+    <text x="110" y="190" font-weight="bold" fill="#c96a1f">PC2</text>
+    <text x="230" y="190">29</text>
+    <text x="440" y="190">60%-tile：18</text>
+    <text x="670" y="190">— / —</text>
+
+    <line x1="80" y1="202" x2="880" y2="202" stroke="#eee"/>
+    <text x="110" y="230" font-weight="bold" fill="#c96a1f">PC3</text>
+    <text x="230" y="230">22.4</text>
+    <text x="440" y="230">50%-tile：11.5</text>
+    <text x="670" y="230">23 / 43</text>
+
+    <line x1="80" y1="242" x2="880" y2="242" stroke="#eee"/>
+    <text x="110" y="270" font-weight="bold" fill="#c96a1f">PC4</text>
+    <text x="230" y="270">34（n257/n261）；31（n258/n260）</text>
+    <text x="440" y="270">20%-tile：25/19/19/25</text>
+    <text x="670" y="270">— / —</text>
+  </g>
+  <text x="480" y="316" text-anchor="middle" font-size="13" fill="#8a3a6a" font-weight="bold">读法示例：PC1 的 40 dBm 是峰值；全空间 85% 的角度上还必须 ≥ 32 dBm —— 逼着波束赋形"哪里都要能打"</text>
+  <text x="480" y="338" text-anchor="middle" font-size="12" fill="#777">PC1 面向固定无线接入（FWA）/ 车载等大功率场景；PC3 是手持终端主流等级</text>
+
+  <!-- why spherical coverage -->
+  <rect x="60" y="370" width="840" height="140" rx="10" fill="#fff8ee" stroke="#c96a1f" stroke-width="2"/>
+  <text x="480" y="400" text-anchor="middle" font-size="16" font-weight="bold" fill="#c96a1f">为什么不能只测峰值？</text>
+  <g font-size="14" fill="#333">
+    <circle cx="110" cy="430" r="5" fill="#0f7a8a"/><text x="130" y="435">手持终端的姿态由用户决定：屏幕朝下、头手遮挡、侧握…… 波束必须在整个上半球都够用</text>
+    <circle cx="110" cy="458" r="5" fill="#0f7a8a"/><text x="130" y="463">峰值高 ≠ 覆盖好：极端赋形可以把峰值堆到 40 dBm，但若 20% 角度塌陷，通信体验照样崩</text>
+    <circle cx="110" cy="486" r="5" fill="#0f7a8a"/><text x="130" y="491">CDF 分位数正是"统计意义上的可用性"：85%-tile ≈ 全空间里最差 15% 角度之外都能达标</text>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Microsoft YaHei, sans-serif">
+  <rect width="960" height="540" fill="#eef5f8"/>
+  <text x="480" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f3a4a">DFF / CATR / NFTF：三种远场获取方式对比</text>
+  <line x1="60" y1="58" x2="900" y2="58" stroke="#0f7a8a" stroke-width="2"/>
+
+  <!-- DFF -->
+  <rect x="60" y="90" width="270" height="200" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <text x="195" y="118" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f7a8a">DFF 直接远场</text>
+  <rect x="90" y="150" width="40" height="70" rx="4" fill="#0f7a8a"/>
+  <text x="110" y="240" text-anchor="middle" font-size="12" fill="#555">DUT</text>
+  <path d="M 150 170 q 40 15 40 15 q 50 15 60 15" stroke="#4a7a3a" fill="none" stroke-width="2"/>
+  <rect x="255" y="168" width="40" height="30" rx="4" fill="#8a3a6a"/>
+  <text x="195" y="268" text-anchor="middle" font-size="13" fill="#333">距离 R = 2D²/λ，暗室要足够长</text>
+  <text x="195" y="288" text-anchor="middle" font-size="13" fill="#c96a1f" font-weight="bold">成本最低，技术最直接</text>
+
+  <!-- CATR -->
+  <rect x="350" y="90" width="270" height="200" rx="10" fill="#ffffff" stroke="#c96a1f" stroke-width="2"/>
+  <text x="485" y="118" text-anchor="middle" font-size="17" font-weight="bold" fill="#c96a1f">CATR 紧缩场</text>
+  <path d="M 390 230 Q 485 120 580 230" stroke="#c96a1f" stroke-width="3" fill="none"/>
+  <text x="485" y="255" text-anchor="middle" font-size="12" fill="#c96a1f">抛物面反射器</text>
+  <rect x="375" y="180" width="34" height="26" rx="4" fill="#8a3a6a"/>
+  <text x="392" y="170" text-anchor="middle" font-size="11" fill="#8a3a6a">馈源</text>
+  <g stroke="#0f7a8a" stroke-width="1.5">
+    <line x1="470" y1="170" x2="470" y2="200"/><line x1="490" y1="170" x2="490" y2="200"/><line x1="510" y1="170" x2="510" y2="200"/>
+  </g>
+  <rect x="478" y="140" width="26" height="26" rx="4" fill="#0f7a8a"/>
+  <text x="485" y="282" text-anchor="middle" font-size="13" fill="#333">馈源球面波 → 反射器准直为平面波</text>
+  <text x="485" y="302" text-anchor="middle" font-size="13" fill="#c96a1f" font-weight="bold">短距离得远场，造价可达 DFF 的 10 倍</text>
+
+  <!-- NFTF -->
+  <rect x="640" y="90" width="260" height="200" rx="10" fill="#ffffff" stroke="#4a7a3a" stroke-width="2"/>
+  <text x="770" y="118" text-anchor="middle" font-size="17" font-weight="bold" fill="#4a7a3a">NFTF 近场→远场变换</text>
+  <rect x="680" y="150" width="34" height="60" rx="4" fill="#0f7a8a"/>
+  <g stroke="#8a3a6a" stroke-width="1.5" fill="none">
+    <path d="M 700 220 l 40 40"/><path d="M 712 212 l 44 36"/><path d="M 688 230 l 40 48"/>
+  </g>
+  <circle cx="756" cy="264" r="8" fill="#8a3a6a"/>
+  <text x="770" y="290" text-anchor="middle" font-size="13" fill="#333">探头逐点采样近场，FFT/平面波展开变换</text>
+  <text x="770" y="310" text-anchor="middle" font-size="13" fill="#4a7a3a" font-weight="bold">采样架精度要求高，后处理自由度大</text>
+
+  <!-- comparison table -->
+  <rect x="60" y="310" width="840" height="200" rx="10" fill="#ffffff" stroke="#0f7a8a" stroke-width="2"/>
+  <g font-size="14" fill="#333">
+    <text x="100" y="342" font-weight="bold" fill="#0f3a4a">维度</text><text x="300" y="342" font-weight="bold" fill="#0f3a4a">DFF</text><text x="500" y="342" font-weight="bold" fill="#0f3a4a">CATR</text><text x="690" y="342" font-weight="bold" fill="#0f3a4a">NFTF</text>
+    <line x1="80" y1="352" x2="880" y2="352" stroke="#ccc"/>
+    <text x="100" y="376">暗室尺寸</text><text x="300" y="376">大（长度≥2D²/λ）</text><text x="500" y="376">紧凑</text><text x="690" y="376">紧凑</text>
+    <text x="100" y="406">频率下限</text><text x="300" y="406">低频无压力</text><text x="500" y="406">受反射器尺寸限制（&gt;6 GHz 典型）</text><text x="690" y="406">低频可行</text>
+    <text x="100" y="436">典型造价</text><text x="300" y="436">€15–40 万量级</text><text x="500" y="436">可达 DFF 10 倍（百万欧元级）</text><text x="690" y="436">介于两者之间</text>
+    <text x="100" y="466">适合场景</text><text x="300" y="466">手机/模组量产线</text><text x="500" y="466">基站大口径、波束赋形验证</text><text x="690" y="466">研发表征、完整球面数据</text>
+  </g>
+  <text x="480" y="498" text-anchor="middle" font-size="13" fill="#8a3a6a">3GPP TR 38.810 对三者均予认可，选择取决于 DUT 口径、频段与预算</text>
+</svg>
