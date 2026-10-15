@@ -12,7 +12,7 @@ cover: https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&
 [随机接入专题](ntn-rach.html)讲完「第一次开口」，本篇讲开口之后的常态：**数据面怎么在几百毫秒 RTT 的管道里保持流动**。HARQ 是 NR 数据面的心跳——停等重传（stop-and-wait）+ 软合并，每 7 ms 一个来回。NTN 把这个来回拉长到 25–550 ms，心跳直接停摆。
 
 对照：**TS 38.214 §5.1**（PDSCH 接收与 K_offset 时序）、**TS 38.213 §4.2/§9.2**（K_offset 定义与 PUCCH 定时）、**TS 38.331**（`nrofHARQ-ProcessesForPDSCH-v1700`、`downlinkHARQ-FeedbackDisabled`）、**TS 38.321**（MAC HARQ 实体、DRX RTT 定时器）、**TS 38.322**（RLC ARQ 兜底）、**TR 38.821 §7.2**（各轨道 RTT 与进程数需求）。
-相关：[5G NTN 综合专题](5g-ntn.html)、[NTN SIB19](ntn-sib19.html)（K_offset 的广播源头）、[NTN 再生载荷](ntn-regenerative-payload.html)（星上 gNB 如何砍短 RTT）、[NTN 多普勒与时频补偿](ntn-doppler.md)。
+相关：[5G NTN 综合专题](5g-ntn.html)、[NTN SIB19](ntn-sib19.html)（K_offset 的广播源头）、[NTN 再生载荷](ntn-regenerative-payload.html)（星上 gNB 如何砍短 RTT）、[NTN 多普勒与时频补偿](ntn-doppler.html)。
 
 ---
 

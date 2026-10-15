@@ -163,9 +163,9 @@ ITU-R S 系列副瓣包络（S.580/S.465）与协调建议书：用包络线量�
 
 | 相关主题 | 关系 |
 |---|---|
-| [测试量：EIRP/TRP/EIS 与球面扫描](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-metrics-spherical-scan/) | 上一篇：38.101-2 门限的具体测量方法 |
-| [OTA 三方法与暗室工程](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-methods-chamber/) | TR 38.810 方法学的完整展开 |
-| [通道误差的来源与影响](https://guowu-yu.github.io/knowledge-garden/topics/pa-channel-error-impact/) | S5 起点：误差 → 副瓣 → ITU-R 包络合规的因果链 |
+| [测试量：EIRP/TRP/EIS 与球面扫描](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-metrics-spherical-scan.html) | 上一篇：38.101-2 门限的具体测量方法 |
+| [OTA 三方法与暗室工程](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-methods-chamber.html) | TR 38.810 方法学的完整展开 |
+| [通道误差的来源与影响](https://guowu-yu.github.io/knowledge-garden/topics/pa-channel-error-impact.html) | S5 起点：误差 → 副瓣 → ITU-R 包络合规的因果链 |
 | [相控阵学习路线图](https://guowu-yu.github.io/knowledge-garden/topics/phased-array-roadmap.html) | 32 篇专题总览 |
 
 ## 延伸阅读

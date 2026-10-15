@@ -154,10 +154,10 @@ EIRP 是功率与赋形后方向图增益的合成。若波束赋形系数配错
 
 | 相关主题 | 关系 |
 |---|---|
-| [OTA 三方法与暗室工程](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-methods-chamber/) | 下一篇：DFF/CATR/NFTF 三条远场获取路线与暗室工程细节 |
-| [测试量：EIRP/TRP/EIS 与球面扫描](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-metrics-spherical-scan/) | 第三篇：OTA 核心测试量与球面扫描流程 |
-| [通道误差的来源与影响](https://guowu-yu.github.io/knowledge-garden/topics/pa-channel-error-impact/) | S5 起点：误差如何损害辐射指标——OTA 要抓的目标 |
-| [校准工程化](https://guowu-yu.github.io/knowledge-garden/topics/pa-calibration-engineering/) | 校准补偿效果最终也要在 OTA 里验收 |
+| [OTA 三方法与暗室工程](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-methods-chamber.html) | 下一篇：DFF/CATR/NFTF 三条远场获取路线与暗室工程细节 |
+| [测试量：EIRP/TRP/EIS 与球面扫描](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-metrics-spherical-scan.html) | 第三篇：OTA 核心测试量与球面扫描流程 |
+| [通道误差的来源与影响](https://guowu-yu.github.io/knowledge-garden/topics/pa-channel-error-impact.html) | S5 起点：误差如何损害辐射指标——OTA 要抓的目标 |
+| [校准工程化](https://guowu-yu.github.io/knowledge-garden/topics/pa-calibration-engineering.html) | 校准补偿效果最终也要在 OTA 里验收 |
 
 ## 延伸阅读
 
