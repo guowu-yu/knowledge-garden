@@ -134,10 +134,10 @@ cover: https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?auto=format&
 
 | 相关主题 | 关系 |
 |---|---|
-| [为什么必须 OTA](/topics/pa-ota-necessity/) | 上一篇：远场判据 R=2D²/λ 的推导——三种方法共同的出发点 |
-| [测试量：EIRP/TRP/EIS 与球面扫描](/topics/pa-ota-metrics-spherical-scan/) | 下一篇：在选好的暗室里具体测什么、怎么算 |
-| [近场校准与编码标定](/topics/pa-nearfield-encoding-loopback/) | S5：近场采样的物理与探头选择同源 |
-| [规范与认证地图](/topics/pa-conformance-standards/) | 收官篇：TR 38.810 如何规定这些方法的适用性 |
+| [为什么必须 OTA](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-necessity/) | 上一篇：远场判据 R=2D²/λ 的推导——三种方法共同的出发点 |
+| [测试量：EIRP/TRP/EIS 与球面扫描](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-metrics-spherical-scan/) | 下一篇：在选好的暗室里具体测什么、怎么算 |
+| [近场校准与编码标定](https://guowu-yu.github.io/knowledge-garden/topics/pa-nearfield-encoding-loopback/) | S5：近场采样的物理与探头选择同源 |
+| [规范与认证地图](https://guowu-yu.github.io/knowledge-garden/topics/pa-conformance-standards/) | 收官篇：TR 38.810 如何规定这些方法的适用性 |
 
 ## 延伸阅读
 

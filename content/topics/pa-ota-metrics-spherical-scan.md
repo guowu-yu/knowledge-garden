@@ -171,10 +171,10 @@ EIS 是 EIRP 的接收镜像：达到要求灵敏度（吞吐量/BLER 判据）�
 
 | 相关主题 | 关系 |
 |---|---|
-| [OTA 三方法与暗室工程](/topics/pa-ota-methods-chamber/) | 上一篇：这些测试量在哪种暗室里测 |
-| [规范与认证地图](/topics/pa-conformance-standards/) | 收官篇：38.101-2 门限如何进入认证链 |
-| [通道误差的来源与影响](/topics/pa-channel-error-impact/) | 误差决定了 CDF 尾部——球面覆盖的物理源头 |
-| [方向图综合与赋形](/topics/pa-pattern-synthesis-shaping/) | 球面覆盖不达标时回到权值设计找原因 |
+| [OTA 三方法与暗室工程](https://guowu-yu.github.io/knowledge-garden/topics/pa-ota-methods-chamber/) | 上一篇：这些测试量在哪种暗室里测 |
+| [规范与认证地图](https://guowu-yu.github.io/knowledge-garden/topics/pa-conformance-standards/) | 收官篇：38.101-2 门限如何进入认证链 |
+| [通道误差的来源与影响](https://guowu-yu.github.io/knowledge-garden/topics/pa-channel-error-impact/) | 误差决定了 CDF 尾部——球面覆盖的物理源头 |
+| [方向图综合与赋形](https://guowu-yu.github.io/knowledge-garden/topics/pa-pattern-synthesis-shaping/) | 球面覆盖不达标时回到权值设计找原因 |
 
 ## 延伸阅读
 
